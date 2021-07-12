@@ -1,0 +1,30 @@
+//************************************************************
+//* Description of _global.scss
+//* @project : Hyosung B system
+//* @category : SCSS
+//* @date : 2021.07
+//* @content : 공통 레이아웃 설정
+//* @author : bhlbest20@gmail.com
+//************************************************************
+@charset "utf-8";
+
+// Common
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: $fontFamily;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: $BG;
+}
+

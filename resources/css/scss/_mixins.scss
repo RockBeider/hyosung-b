@@ -1,0 +1,16 @@
+//************************************************************
+//* Description of _mixins.scss
+//* @project : Hyosung B system
+//* @category : SCSS
+//* @date : 2021.07
+//* @content : Mixin 설정
+//* @author : bhlbest20@gmail.com
+//************************************************************
+@charset "utf-8";
+
+// Font Set
+@mixin Noto($weight) { //400(Regular), 500(Medium), 700(Bold)
+    font-family: 'Noto Sans Kr';
+    font-style: normal;
+    font-weight: $weight;
+}

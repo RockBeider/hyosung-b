@@ -1,0 +1,315 @@
+//************************************************************
+//* Description of _flexbox.scss
+//* @project : Hyosung B system
+//* @category : SCSS
+//* @date : 2019.04
+//* @content : Flexbox SASS mixins(http://www.w3.org/TR/css3-flexbox)
+//* @author : bhlbest20@gmail.com
+//************************************************************
+@charset "utf-8";
+
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin inline-flex() {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+  -moz-flex-flow: $flow;
+  -ms-flex-flow: $flow;
+  flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  order: $val;
+}
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+  -moz-flex-grow: $grow;
+  -ms-flex-grow: $grow;
+  flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+  -moz-flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+  -moz-flex-basis: $width;
+  -ms-flex-basis: $width;
+  flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
+
+/* Flexbox Class */
+.flexbox {
+  @include flexbox();
+}
+.inline-flexbox {
+  @include inline-flex();
+}
+.flex-row {
+  @include flex-direction(row !important);
+}
+.flex-column {
+  @include flex-direction(column !important);
+}
+.flex-row-reverse {
+  @include flex-direction(row-reverse !important);
+}
+.flex-column-reverse {
+  @include flex-direction(column-reverse !important);
+}
+.flex-wrap {
+  @include flex-wrap(wrap !important);
+}
+.flex-nowrap {
+  @include flex-wrap(nowrap !important);
+}
+.flex-wrap-reverse {
+  @include flex-wrap(wrap-reverse !important);
+}
+.flex-1 {
+  @include flex(1 !important);
+}
+.flex-half {
+  @include flex(0 0 50% !important);
+}
+.flex-fill {
+  @include flex(1 1 auto !important);
+}
+.flex-grow-0 {
+  @include flex-grow(0 !important);
+}
+.flex-grow-1 {
+  @include flex-grow(1 !important);
+}
+.flex-shrink-0 {
+  @include flex-shrink(0 !important);
+}
+.flex-shrink-1 {
+  @include flex-shrink(1 !important);
+}
+.flex-basis-0 {
+  @include flex-basis(0 !important);
+}
+.flex-basis-auto {
+  @include flex-basis(auto !important);
+}
+.justify-content-start {
+  @include justify-content(flex-start !important);
+}
+.justify-content-end {
+  @include justify-content(flex-end !important);
+}
+.justify-content-center {
+  @include justify-content(center !important);
+}
+.justify-content-between {
+  @include justify-content(space-between !important);
+}
+.justify-content-around {
+  @include justify-content(space-around !important);
+}
+.align-items-start {
+  @include align-items(flex-start !important);
+}
+.align-items-end {
+  @include align-items(flex-end !important);
+}
+.align-items-center {
+  @include align-items(center !important);
+}
+.align-items-baseline {
+  @include align-items(baseline !important);
+}
+.align-items-stretch {
+  @include align-items(stretch !important);
+}
+.align-content-start {
+  @include align-content(flex-start !important);
+}
+.align-content-end {
+  @include align-content(flex-end !important);
+}
+.align-content-center {
+  @include align-content(center !important);
+}
+.align-content-between {
+  @include align-content(space-between !important);
+}
+.align-content-around {
+  @include align-content(space-around !important);
+}
+.align-content-stretch {
+  @include align-content(stretch !important);
+}
+.align-self-auto {
+  @include align-self(auto !important);
+}
+.align-self-start {
+  @include align-self(flex-start !important);
+}
+.align-self-end {
+  @include align-self(flex-end !important);
+}
+.align-self-center {
+  @include align-self(center !important);
+}
+.align-self-baseline {
+  @include align-self(baseline !important);
+}
+.align-self-stretch {
+  @include align-self(stretch !important);
+}
+.order-first {
+  @include order(-1);
+}
+.order-last {
+  @include order(13);
+}
+.order-0 {
+  @include order(0);
+}
+.order-1 {
+  @include order(1);
+}
+.order-2 {
+  @include order(2);
+}
+.order-3 {
+  @include order(3);
+}
+.order-4 {
+  @include order(4);
+}
+.order-5 {
+  @include order(5);
+}
+.order-6 {
+  @include order(6);
+}
+.order-7 {
+  @include order(7);
+}
+.order-8 {
+  @include order(8);
+}
+.order-9 {
+  @include order(9);
+}
+.order-10 {
+  @include order(10);
+}
+.order-11 {
+  @include order(11);
+}
+.order-12 {
+  @include order(12);
+}
