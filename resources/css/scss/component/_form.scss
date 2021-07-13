@@ -69,9 +69,10 @@
 		height: 28px;
         color: $Gray;
 		font-size: 14px;
-        line-height: 26px;
+        line-height: 28px;
         letter-spacing: -0.7px;
 		white-space: nowrap;
+		font-weight: 500;
 	}
 	.form-radio input[type="radio"] + label {
 		display: flex;

@@ -11,7 +11,7 @@
 }
 
 [class*=input-]:not(.input-group):not(.input-search) {
-	@include input_data;
+	// @include input_data;
 	flex-grow: 1;
 	flex-shrink: 1;
 	flex-basis: auto;
@@ -21,6 +21,10 @@
 	background-color: #fff;
 	border:  1px solid $inputDefault;
 	border-radius: 3px;
+	color: $gray_dark2;
+	font-size: 14px;
+	line-height: 28px;
+	letter-spacing: -0.7px;
 	transition: 0.3s ease-in-out;
 	&:focus {
 		border:  1px solid #24a9e8;
@@ -44,7 +48,10 @@
 		color: #666666;
 	}
 	&::placeholder {
-		@include input_placeholder;
+		// @include input_placeholder;
+		font-size: 14px;
+		letter-spacing: -0.75px;
+		color: #aaaaaa;
 	}
 }
 .input {

@@ -75,11 +75,16 @@
     }
 } 
 .profile-box {
-    @include GNB;
+    // @include GNB;
+	font-size: 15px;
+    line-height: 1.73;
+    letter-spacing: -0.75px;
+    color: $white;
     display: flex;
     align-items: center;
     .name {
         margin-left: 6px;
+		font-weight: 500;
     }
 }
 .timer-box {
@@ -121,7 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 32px;
+    height: 32px;
     margin: 20px 0;
     .left-group, .right-group {
         display: flex;
@@ -152,29 +157,35 @@
 	z-index: 10;
 	.sidebar-head {
 		position: relative;
-		padding: 22px 0 16px;
+		padding: 12px 0 19px;
 		border-bottom: 1px solid $lnbLine;
 		.main-menu {
-			@include LNB_1depth_Default;
+			// @include LNB_1depth_Default;
 			display: flex;
 			align-items: center;
-			padding: 0 20px 7px;
+			padding: 0 20px;
+			font-size: 15px;
+			line-height: 40px;
 			font-weight: 500;
 			[class*=ico] {
-				margin-right: 8px;
+				margin-right: 10px;
 			}
 		}
 		.sub-menu a { 
-            @include LNB_2depth_Defaultbookmark;
+            // @include LNB_2depth_Defaultbookmark;
+			// @include LNB_2depth_Default;
             display: block;
             padding: 0 rem(20) 0 rem(49); 
+			color: $Gray;
+			font-size: 14px;
+			line-height: 28px;
+			letter-spacing: -0.7px;
         
 		}
 	}
 	.sidebar-body {
 		flex: 1;
 		overflow: auto;
-		// border-top: 1px solid #ddd;
 	}
 	.sidebar-foot {
 		padding: 0 10px 10px;
@@ -188,7 +199,7 @@
 		}
 		.btn {
 			height: 40px;
-			padding: 0 32px;
+			padding: 0 30px;
 		}
 	}
 }
@@ -201,6 +212,9 @@
 		position: relative;
 		height: 40px;
 		padding: 0 20px;
+		color: $Default;
+		font-size: 15px;
+		// line-height: 26px;
 		&::after {
 			display: inline-block;
 			content: "";
@@ -208,20 +222,11 @@
 		[class*=ico] {
 			margin-right: 8px;
 		}
-		&.active::before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0; 
-			width: 4px; 
-			height: 100%;
-			background-color: $Main;
-		}
 	}
 	&-2depth {
 		display: none;
-		background-color: $lnbBG;
+		padding: 4px 0;
+		background-color: $TableBG1;
 		
 		ul {
 			position: relative;
@@ -240,10 +245,14 @@
 			}
 		}
 		a {
-			@include LNB_2depth_Default;
+			// @include LNB_2depth_Default;
 			display: flex;
 			position: relative;
 			padding-left: 49px;
+			color: $gray_dark2;
+			font-size: 14px;
+			line-height: 36px;
+			letter-spacing: -0.7px;
 			transition: color 0.3s ease;
 			&:hover {
 				color: $Main;
@@ -270,6 +279,16 @@
 /* 사이드바 - 2뎁스 메뉴 */
 .has-submenu.active .sidebar-2depth {
 	display: block;
+}
+.has-submenu.active .sidebar-1depth::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0; 
+	width: 4px; 
+	height: 100%;
+	background-color: $Main;
 }
 .has-submenu .sidebar-1depth::after {
 	display: inline-block;

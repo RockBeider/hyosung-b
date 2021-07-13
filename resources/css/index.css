@@ -936,7 +936,6 @@ button {
 
 .profile-box {
   font-size: 15px;
-  font-weight: 500;
   line-height: 1.73;
   letter-spacing: -0.75px;
   color: #fff;
@@ -945,6 +944,7 @@ button {
 }
 .profile-box .name {
   margin-left: 6px;
+  font-weight: 500;
 }
 
 .timer-box {
@@ -989,7 +989,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 32px;
+  height: 32px;
   margin: 20px 0;
 }
 .title-box .left-group, .title-box .right-group {
@@ -1025,31 +1025,27 @@ button {
 }
 .web-sidebar .sidebar-head {
   position: relative;
-  padding: 22px 0 16px;
+  padding: 12px 0 19px;
   border-bottom: 1px solid #ddd;
 }
 .web-sidebar .sidebar-head .main-menu {
-  font-size: 15px;
-  font-weight: normal;
-  line-height: 1.73;
-  letter-spacing: -0.75px;
-  color: #222222;
   display: flex;
   align-items: center;
-  padding: 0 20px 7px;
+  padding: 0 20px;
+  font-size: 15px;
+  line-height: 40px;
   font-weight: 500;
 }
 .web-sidebar .sidebar-head .main-menu [class*=ico] {
-  margin-right: 8px;
+  margin-right: 10px;
 }
 .web-sidebar .sidebar-head .sub-menu a {
-  font-size: 15px;
-  font-weight: normal;
-  line-height: 2;
-  letter-spacing: -0.75px;
-  color: #777777;
   display: block;
   padding: 0 1.25rem 0 3.0625rem;
+  color: #777;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: -0.7px;
 }
 .web-sidebar .sidebar-body {
   flex: 1;
@@ -1066,7 +1062,7 @@ button {
 }
 .web-sidebar .sidebar-foot .btn {
   height: 40px;
-  padding: 0 32px;
+  padding: 0 30px;
 }
 
 /* 사이드바 */
@@ -1076,6 +1072,8 @@ button {
   position: relative;
   height: 40px;
   padding: 0 20px;
+  color: #222;
+  font-size: 15px;
 }
 .sidebar-1depth::after {
   display: inline-block;
@@ -1084,19 +1082,10 @@ button {
 .sidebar-1depth [class*=ico] {
   margin-right: 8px;
 }
-.sidebar-1depth.active::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background-color: #0e4194;
-}
 .sidebar-2depth {
   display: none;
-  background-color: #f4f6f9;
+  padding: 4px 0;
+  background-color: #eff2f7;
 }
 .sidebar-2depth ul {
   position: relative;
@@ -1115,14 +1104,13 @@ button {
   border-radius: 50%;
 }
 .sidebar-2depth a {
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 2.57;
-  letter-spacing: -0.7px;
-  color: #777777;
   display: flex;
   position: relative;
   padding-left: 49px;
+  color: #555;
+  font-size: 14px;
+  line-height: 36px;
+  letter-spacing: -0.7px;
   transition: color 0.3s ease;
 }
 .sidebar-2depth a:hover {
@@ -1148,6 +1136,17 @@ button {
 /* 사이드바 - 2뎁스 메뉴 */
 .has-submenu.active .sidebar-2depth {
   display: block;
+}
+
+.has-submenu.active .sidebar-1depth::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #0e4194;
 }
 
 .has-submenu .sidebar-1depth::after {
@@ -1199,7 +1198,7 @@ button {
 .breadcrumb .breadcrumb-item {
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
 }
 .breadcrumb .breadcrumb-item.active {
@@ -1232,16 +1231,15 @@ button {
 .table-content thead th, .table-content thead td {
   font-size: 14px;
   font-weight: 500;
-  line-height: 3.21;
   letter-spacing: -0.7px;
   color: #555555;
+  background: #eee;
   border: 1px solid #ddd;
   text-align: left;
 }
 .table-content tbody th, .table-content tbody td {
   font-size: 14px;
   font-weight: normal;
-  line-height: 2.64;
   letter-spacing: -0.7px;
   color: #222222;
   background: #fff;
@@ -1253,12 +1251,6 @@ button {
 .table-content tr th:last-child, .table-content tr td:last-child {
   border-right: 0;
 }
-.table-content tfoot td {
-  background: #fafafa;
-  color: #002222;
-  font-size: 0.8125rem;
-  font-weight: bold;
-}
 
 table {
   width: 100%;
@@ -1267,6 +1259,14 @@ table {
 
 thead th {
   text-align: center;
+}
+
+tr td {
+  transition: background 0.3s ease;
+}
+
+tr:hover td {
+  background-color: #eff2f7;
 }
 
 .text-center th,
@@ -1302,13 +1302,8 @@ td .form-box, th .form-box {
 }
 
 .amount-set {
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.86;
-  letter-spacing: -0.7px;
-  color: #0e4194;
   color: #aaa;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1;
 }
@@ -1317,10 +1312,10 @@ td .form-box, th .form-box {
   font-weight: bold;
 }
 .amount-set .dash {
-  margin: 0 2px;
+  margin: 0 1px;
 }
 .amount-set .unit {
-  margin-left: 2px;
+  margin-left: 1px;
 }
 
 .table-bottom {
@@ -1402,9 +1397,10 @@ td .form-box, th .form-box {
   height: 28px;
   color: #777;
   font-size: 14px;
-  line-height: 26px;
+  line-height: 28px;
   letter-spacing: -0.7px;
   white-space: nowrap;
+  font-weight: 500;
 }
 .search-control .form-radio input[type=radio] + label {
   display: flex;
@@ -1448,11 +1444,6 @@ td .form-box, th .form-box {
 }
 
 [class*=input-]:not(.input-group):not(.input-search) {
-  font-size: 15px;
-  font-weight: normal;
-  line-height: 1.73;
-  letter-spacing: -0.75px;
-  color: #555555;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
@@ -1462,6 +1453,10 @@ td .form-box, th .form-box {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 3px;
+  color: #555;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: -0.7px;
   transition: 0.3s ease-in-out;
 }
 [class*=input-]:not(.input-group):not(.input-search):focus {
@@ -1482,9 +1477,7 @@ td .form-box, th .form-box {
   color: #666666;
 }
 [class*=input-]:not(.input-group):not(.input-search)::placeholder {
-  font-size: 15px;
-  font-weight: normal;
-  line-height: 1.73;
+  font-size: 14px;
   letter-spacing: -0.75px;
   color: #aaaaaa;
 }
@@ -1521,11 +1514,6 @@ select::-ms-expand {
 }
 
 [class*=select-] {
-  font-size: 15px;
-  font-weight: normal;
-  line-height: 1.73;
-  letter-spacing: -0.75px;
-  color: #555555;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
@@ -1539,6 +1527,10 @@ select::-ms-expand {
   background-position: calc(100% - 10px) 50%;
   background-size: 15px 15px;
   border-radius: 3px;
+  color: #555;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: -0.7px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1700,6 +1692,7 @@ select::-ms-expand {
   position: relative;
   flex: 0 1 auto;
   width: auto;
+  height: 28px;
   padding: 0 20px;
   background-color: #0e4194;
   border-radius: 0.1875rem;
@@ -1789,6 +1782,9 @@ select::-ms-expand {
 .btn-period-box .btn + .btn {
   margin-left: 0;
   border-left: 0;
+}
+.btn-period-box .btn + .btn.active {
+  margin-left: -1px;
 }
 
 [class*=ico] {
