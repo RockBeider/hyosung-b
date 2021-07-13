@@ -6,7 +6,7 @@
 //* @content : Mixin 설정
 //* @author : bhlbest20@gmail.com
 //************************************************************
-@charset "utf-8";
+// @charset "utf-8";
 
 // Font Set
 @mixin Noto($weight) { //400(Regular), 500(Medium), 700(Bold)
@@ -14,3 +14,122 @@
     font-style: normal;
     font-weight: $weight;
 }
+
+
+
+
+/* px 단위를 rem 으로 교체한다.
+* @access public
+* @param {String} $pixels - 픽셀 고정값
+* @return {String}
+*/
+@function rem($pixels, $context: $base-font-size) {
+    @if ($pixels == 'auto') {
+        @return auto;
+    }
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    
+    @return $pixels / $context * 1rem;
+}
+    
+@function rems($width, $height) {
+    @return rem($width) rem($height);
+}
+
+/*
+* Example of usage:
+* .wrap {
+*  ...
+*   @include@ clearfix;
+* }
+*/  
+@mixin clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+  
+@mixin blind {
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden;
+}
+  
+@mixin hide-text{
+    overflow:hidden;
+    text-indent:-9000px;
+    white-space: nowrap;
+}
+
+  /* 
+  * 한 번에 여러 properties 앞에 prefix를 붙이는 Mixin
+  * @param {Map} $declarations - prefix 선언
+  * @param {List} $prefixes (()) - 출력될 prefix들 목록
+  * Example of usage:
+  * .selector {
+  *   @include prefix((
+  *     column-count: 3,
+  *     column-gap: 1.5em,
+  *     column-rule: 2px solid hotpink
+  *   ), webkit moz);
+  *  }
+  */
+  @mixin prefix($declarations, $prefixes: ()) {
+    @each $property, $value in $declarations {
+      @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+      }
+      // Output standard non-prefixed declaration
+      #{$property}: $value;
+    }
+  }
+  
+  
+  /* 
+  * $ max-height - max-height 속성 값. 필수
+  * non-webkit 브라우저에서 텍스트를 제한하는 매개 변수.
+  * 속성 재정의에 주의하십시오.
+  * 모든 속성 뒤에이 mixin을 포함하는 것이 강력히 권장됩니다.
+  * 표시 속성의 재정의를 방지하려면 :
+  * .element {
+  *   display: block;
+  *   ...
+  *   @include ellipsis(2rem, 2);
+  * }
+  * Example of usage:
+  * @include ellipsis(2em, 2);
+  */
+  @mixin ellipsis ($max-height, $lines: 2) {
+    // Fallback for non-webkit browsers.
+    // Fallback does not render ellipsis.
+    overflow: hidden;
+    max-height: $max-height;
+  
+    // Webkit solution for multiline ellipsis
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+  
+    // Solution for Opera
+    text-overflow: -o-ellipsis-lastline;
+  }
+
+   /* 
+  * Example of useage:
+  * @include background-opacity(#000, 0.3);
+  */
+  @mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+  }
+  

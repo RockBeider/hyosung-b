@@ -1,1 +1,163 @@
-07서비스 품질 - 01상담정보관리 - 01조회
+<div class="title-box">
+    <div class="left-group">
+        <h2 class="main-title">메인 타이틀</h2>
+        <button type="button" class="ico-lg tip ml-8">팁</button>
+        <button type="button" class="ico-sm bookmark ml-4">북마크</button>
+    </div>
+    <div class="right-group">
+        <div class="breadcrumb">
+            <span class="breadcrumb-item">서비스품질</span>
+            <span class="breadcrumb-item active">상담정보 관리</span>
+        </div>
+    </div>
+</div>
+
+<div class="search-control">
+    <div class="form-group">
+        <span class="label">검색항목</span>
+        <div class="form-set">
+            <select class="select-sm">
+                <option value="선택">선택</option>
+            </select>
+            <div class="input-search input-lg">
+                <input type="text" class="input-" placeholder="입력해주세요">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <span class="label">상담부서</span>
+        <div class="form-set">
+            <select class="select-sm">
+                <option value="전체">전체</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <span class="label">검색기간</span>
+        <div class="form-period-box">
+            <input type="text" class="datepicker input-sm" value="2021/06/02">
+            <span>~</span>
+            <input type="text" class="datepicker input-sm" value="2021/06/04">
+            <div class="btn-box btn-period-box">
+                <!-- [D] 선택된 값 .active 추가 -->
+                <button type="button" class="btn active">오늘</button>
+                <button type="button" class="btn">7일</button>
+                <button type="button" class="btn">15일</button>
+                <button type="button" class="btn">1개월</button>
+                <button type="button" class="btn">3개월</button>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn search">검색</button>
+</div>
+
+<div class="table-set">
+    <div class="table-control">
+        <div class="left-group">
+            <span class="amount-set">
+                <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                <span class="amount">26</span><span class="unit">건</span>
+            </span>
+        </div>
+        <div class="right-group">
+            <button type="button" class="btn">상품등록</button>
+        </div>
+    </div>
+    <div class="table-content">
+        <table>
+            <colgroup>
+                <col width="60px">
+                <col width="60px">
+                <col width="110px">
+                <col width="210px">
+                <col width="*">
+                <col width="*">
+                <col width="*">
+                <col width="*">
+                <col width="*">
+                <col width="*">
+                <col width="*">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <div class="form-checkbox no-label">
+                            <input type="checkbox" id="checkbox-1" name="checkbox" aria-label="조회선택"/>
+                            <label for="checkbox-1"></label>
+                        </div>
+                    </th>
+                    <th>NO.</th>
+                    <th>
+                        <div class="form-box">
+                            상품코드<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            상품명<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            어플리케이션<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            표준가격<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            최소가격<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            승인상태<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            사용가능업종<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            등록일<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="form-box">
+                            종료일<button type="button" class="ico filter">필터</button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-checkbox no-label">
+                            <input type="checkbox" id="checkbox-2" name="checkbox" aria-label="조회선택"/>
+                            <label for="checkbox-2"></label>
+                        </div>
+                    </td>
+                    <td>1</td>
+                    <td>00001</td>
+                    <td>효성CMS</td>
+                    <td>CMS</td>
+                    <td>100,000원</td>
+                    <td>80,000원</td>
+                    <td>승인완료</td>
+                    <td>전업종</td>
+                    <td>2020.12.31</td>
+                    <td>2027.12.31</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-bottom">
+            <button type="button" class="btn gray-border">삭제</button>
+        </div>
+    </div>
+    
+</div>
