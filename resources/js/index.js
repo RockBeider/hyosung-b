@@ -183,8 +183,8 @@ var sidebar = `
 						<a href="#;">하위</a>
 					</div>
 				</li>
-				<li class="has-submenu">
-					<a class="sidebar-1depth active" aria-label=""><i class="ico-sm bookmark">북마크</i><span>서비스 품질</span></a>
+				<li class="has-submenu active">
+					<a class="sidebar-1depth" aria-label=""><i class="ico-sm bookmark">북마크</i><span>서비스 품질</span></a>
 					<!-- [D] 개발시 인라인 스타일 삭제 : 보여주기 위한 스타일임 -->
 					<div class="sidebar-2depth" style="display: block; overflow: visible">
 						<a href="#;">상담정보관리</a>

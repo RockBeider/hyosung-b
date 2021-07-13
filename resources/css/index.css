@@ -1082,16 +1082,6 @@ button {
 .sidebar-1depth [class*=ico] {
   margin-right: 8px;
 }
-.sidebar-1depth.active::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background-color: #0e4194;
-}
 .sidebar-2depth {
   display: none;
   padding: 4px 0;
@@ -1146,6 +1136,17 @@ button {
 /* 사이드바 - 2뎁스 메뉴 */
 .has-submenu.active .sidebar-2depth {
   display: block;
+}
+
+.has-submenu.active .sidebar-1depth::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #0e4194;
 }
 
 .has-submenu .sidebar-1depth::after {
