@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
     <!-- Load Styles -->
-    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="./resources/css/index.css">
 </head>
 <body>
     <div class="wrap">
@@ -14,17 +14,18 @@
         <div data-include-path="/pages/layout/header.html"></div>
 
         <!-- Contents -->
-        <main class="content-main">
-            <div data-include-path="/pages/SA/SA0101.html"></div>
+        <main class="web-container">
+            <div data-include-path="/pages/layout/sidebar.html"></div>
+            <div class="main-content">
+                <div data-include-path="/pages/SA/SA0101.html"></div>
+            </div>  
         </main>
 
-
-        <!-- Header Include -->
-        <div data-include-path="/pages/layout/footer.html"></div>
     </div>
 
     <!-- Load Scripts -->
-    <script src="/resources/js/jquery.min.js"></script>
-    <script src="/resources/js/index.js"></script>
+    <script src="./resources/js/jquery.min.js"></script>
+    <script src="./resources/js/jquery-ui.min.js"></script>
+    <script src="./resources/js/index.js"></script>
 </body>
 </html>
