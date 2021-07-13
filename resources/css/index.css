@@ -1062,7 +1062,7 @@ button {
 }
 .web-sidebar .sidebar-foot .btn {
   height: 40px;
-  padding: 0 32px;
+  padding: 0 30px;
 }
 
 /* 사이드바 */
@@ -1095,7 +1095,7 @@ button {
 .sidebar-2depth {
   display: none;
   padding: 4px 0;
-  background-color: #f4f6f9;
+  background-color: #eff2f7;
 }
 .sidebar-2depth ul {
   position: relative;
@@ -1232,6 +1232,7 @@ button {
   font-weight: 500;
   letter-spacing: -0.7px;
   color: #555555;
+  background: #eee;
   border: 1px solid #ddd;
   text-align: left;
 }
@@ -1248,12 +1249,6 @@ button {
 }
 .table-content tr th:last-child, .table-content tr td:last-child {
   border-right: 0;
-}
-.table-content tfoot td {
-  background: #fafafa;
-  color: #002222;
-  font-size: 0.8125rem;
-  font-weight: bold;
 }
 
 table {

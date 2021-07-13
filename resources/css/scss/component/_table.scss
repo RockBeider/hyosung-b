@@ -14,13 +14,14 @@
     }
     thead th, thead td {
         @include Table_title;
-        border:  1px solid #ddd;
+        background: $SearchLine;
+        border:  1px solid $lnbLine;
         text-align: left;
     }
     tbody th, tbody td { 
         @include Table_body;
         background: #fff;
-        border:  1px solid #ddd;
+        border:  1px solid $lnbLine;
     }
     tr th:first-child, tr td:first-child {
         border-left: 0;
@@ -28,14 +29,6 @@
     tr th:last-child, tr td:last-child {
         border-right: 0;
     }
-	tfoot {
-		td {
-			background: #fafafa;
-			color: #002222;
-			font-size: rem(13);
-			font-weight: bold;
-		}
-	}
 }
 table {
 	width: 100%;
