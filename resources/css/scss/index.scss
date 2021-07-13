@@ -7,7 +7,7 @@
 @import 'fonts';
 @import 'variables';
 @import 'mixins'; 
-@import './modules/modules'; 
+@import './modules/modules';  
 @import 'global';
 @import 'layout'; 
  
@@ -20,8 +20,8 @@
 @import 'component/checkbox'; // 체크, 라디오 박스
 @import 'component/button'; // 버튼
 @import 'component/icon'; // 아이콘 
-
+ 
       
  /* 라이브러리 */
- @import 'lib/_jquery-ui.min';
+ @import 'lib/_jquery-ui.min'; 
    

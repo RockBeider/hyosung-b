@@ -133,14 +133,14 @@ $base-font-size:    16px;
 @mixin Table_title {
     font-size: 14px;
     font-weight: 500;
-    line-height: 3.21;
+    // line-height: ;
     letter-spacing: -0.7px;
     color: #555555;
 }
 @mixin Table_body {
     font-size: 14px;
     font-weight: normal;
-    line-height: 2.64;
+    // line-height: 2.64;
     letter-spacing: -0.7px;
     color: #222222;
 }
