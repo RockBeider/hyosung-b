@@ -69,22 +69,11 @@ $(document).on('click', '.btn-period-box .btn', function() {
 	$('.btn-period-box .btn').removeClass('active');
 	$(this).addClass('active');
 });
-/* =====================================
-* datepicker
-* =====================================
-*/
-$(document).on('click', '.datepicker', function() {
-	$(this).datepicker({
-		dateFormat: 'yy/mm/dd'
-	})
-	.datepicker( "show" );
-});
 
 /* =====================================
 * 헤더 시간 카운트다운
 * =====================================
 */
-
 var time = 570; //기준 초
 var min = ""; //분
 var sec = "" //초
@@ -206,7 +195,6 @@ var sidebar = `
 						<a href="#;">하위</a>
 					</div>
 				</li>
-
 			</ul>
 		</div>
 		<!-- 하단 고정영역 -->
