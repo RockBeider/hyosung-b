@@ -64,20 +64,14 @@
         <table class="tbl_guide">
             <colgroup>
                 <col>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
+                <col width="10%">
+                <col width="10%">
+                <col width="10%">
+                <col width="20%">
             </colgroup>
             <thead>
                 <tr>
-                    <th scope="col">Depth1</th>
-                    <th scope="col">Depth2</th>
-                    <th scope="col">화면ID</th>
+                    <th scope="col">경로</th>
                     <th scope="col">작업자</th>
                     <th scope="col">작업일</th>
                     <th scope="col">상태</th>
@@ -86,17 +80,13 @@
             </thead>
             <tbody>
                 <tr class="">
-                    <th sceop="row" class="d1"></th>
-                    <th sceop="row" class="d2"></th>
-                    <td class="sbid"><span class="pc"></span><span class="mo"></span></td>
+                    <td class="sbid"><span class="pc">SA0101</span><span class="mo"></span></td>
                     <td class="coder">주진희</td>
                     <td class="date"></td>
                     <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
                 <tr class="">
-                    <th sceop="row" class="d1"></th>
-                    <th sceop="row" class="d2"></th>
                     <td class="sbid"><span class="pc"></span><span class="mo"></span></td>
                     <td class="coder">주진희</td>
                     <td class="date"></td>
@@ -149,16 +139,16 @@
     // SBID 링크 처리 
     $('.tbl_guide .sbid .pc').each(function(){
         let thisHtml = $(this).text()+'.html';
-        let thisCate = $(this).text().substr(9, 2);
+        let thisCate = $(this).text().substr(0, 2);
         console.log('thisCate', thisCate);
         switch (thisCate) {
-            case 'MA' : //메인
-                thisHtml = 'ma/'+thisHtml;
+            case 'SA' : //서비스품질
+                thisHtml = 'SA/'+thisHtml;
                 break;
             default :
                 break;
         }
-        $(this).append('<a href="/html/'+thisHtml+'" target="_blank">'+$(this).text()+'</a>');
+        $(this).append('<a href="/pages/'+thisHtml+'" target="_blank">'+$(this).text()+'</a>');
     });
 </script>
 </body>

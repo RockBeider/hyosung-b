@@ -77,14 +77,13 @@
 			display: block;
 			width: 18px;
 			height: 18px;
-			background-image: url('./../images/icon/sm-18/icon_search@3x.png');
-			background-image: url('./../images/icon/sm-18/icon_search.svg');
+			background-image: url('./../images/icon/icon_search.svg');
 			background-size: 18px 18px;
 		}
 		.h-input {
 			padding-left: 32px;
 		}
-	}
+	} 
 	&.error {
 		.h-input {
 			border: 1px solid $error;

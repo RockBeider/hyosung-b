@@ -47,23 +47,19 @@
     // vertical-align: middle;
 }
 .h-checkbox input[type="checkbox"] + label::before { //20px(md)
-    background-image: url('./../images/icon/md-20/btn_checkbox_off@3x.png');
-    background-image: url('./../images/icon/md-20/btn_checkbox_off.svg');
+    background-image: url('./../images/icon/btn_checkbox_off.svg');
     transition: background 0.3s ease;
 }
 .h-checkbox input[type="radio"] + label::before { //20px(md)
-    background-image: url('./../images/icon/md-20/btn_radio_default@3x.png');
-    background-image: url('./../images/icon/md-20/btn_radio_default.svg');
+    background-image: url('./../images/icon/btn_radio_default.svg');
     transition: background 0.3s ease;
 } 
 
 .h-checkbox input[type="checkbox"]:checked + label::before {
-    background-image: url('./../images/icon/md-20/btn_checkbox_checked@3x.png');
-    background-image: url('./../images/icon/md-20/btn_checkbox_checked.svg');
+    background-image: url('./../images/icon/btn_checkbox_checked.svg');
 }
 .h-checkbox input[type="radio"]:checked + label::before {
-    background-image: url('./../images/icon/md-20/btn_radio_checked@3x.png');
-    background-image: url('./../images/icon/md-20/btn_radio_checked.svg');
+    background-image: url('./../images/icon/btn_radio_checked.svg');
 }
 
 

@@ -13,16 +13,6 @@
 * ------------------------------
 */
 
-.k-autocomplete,
-.k-dropdown-wrap,
-.k-numeric-wrap,
-.k-picker-wrap,
-.k-textbox {
-	border: 1px solid $gray-c;
-	border-radius: 3px;
-	width: 110px !important;
-}
-.k-autocomplete,
 .k-dropdown-wrap {
 	&.k-state-border-down {
 		border-bottom-width: 1px;
@@ -32,25 +22,24 @@
 		background-color: $white;
 	}
 }
-.k-widget.k-dropdown.k-header {
+.k-dropdown {
 	width: 110px !important;
+	padding: 0 10px;
+	background: $white;
+	border: 1px solid $gray-c;
+	border-radius: 3px;
 }
-.k-autocomplete,
-.k-dropdown-wrap,
-.k-numeric-wrap,
-.k-picker-wrap,
-.k-textbox {
+.k-dropdown-wrap {
 	height: 28px;
 	box-sizing: border-box;
-}
-.k-autocomplete .k-input,
-.k-dropdown-wrap .k-input {
-	height: 26px;
-	padding: 0;
-	font-size: 14px;
-	line-height: 26px;
-	text-indent: 10px;
-	box-sizing: border-box;
+	.k-input {
+		height: 26px;
+		padding: 0;
+		font-size: 14px;
+		line-height: 26px;
+		text-indent: 10px;
+		box-sizing: border-box;
+	}
 }
 .k-animation-container {
 	width: 150px !important;
@@ -65,9 +54,7 @@
 	border-radius: 3px;
 	box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.15);
 }
-.k-dropdown-wrap .k-select,
-.k-numeric-wrap .k-select,
-.k-picker-wrap .k-select {
+.k-dropdown-wrap .k-select {
 	line-height: 26px;
 }
 .k-listbox .k-item,
@@ -94,7 +81,7 @@
 //화살표
 .k-i-arrow-60-down:before {
 	content: "";
-	background-image: url("./../images/icon/xs-15/icon_arrow_down@3x.png");
+	background-image: url("./../images/icon/icon_arrow_down.svg");
 	background-size: 15px 15px;
 	transition: all 0.3s ease;
 }
@@ -104,7 +91,6 @@
 		margin-top: -2px;
 	}
 }
-
 //인풋, 텍스트박스
 .k-dateinput.k-widget {
 	border-radius: 3px;
@@ -127,13 +113,11 @@ textarea.k-textbox {
 	border-top: 1px solid $gray-2;
 	border-bottom: 1px solid $gray-a;
 }
-
+  
 //thead
 .k-grid .k-grouping-header,
 .k-grid-header,
-.k-grid-header-wrap,
-.k-grouping-header .k-group-indicator,
-.k-header {
+.k-grid-header-wrap {
 	background: $gray-e;
 	border: 1px solid $gray-e4;
 }
@@ -168,11 +152,11 @@ textarea.k-textbox {
 }
 .k-i-sort-desc-sm:before {
 	//아래로 화살표
-	background-image: url(../images/icon/btn_filter_default@3x.png);
+	background-image: url('../images/icon/btn_filter_default.svg');
 }
 .k-i-sort-asc-sm:before {
 	//위로 화살표
-	background-image: url(../images/icon/btn_filter_default@3x.png);
+	background-image: url('../images/icon/btn_filter_default.svg');
 }
 
 //body

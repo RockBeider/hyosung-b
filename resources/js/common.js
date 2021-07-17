@@ -28,3 +28,45 @@ window.addEventListener("load", function () {
 $(document).ready(function () {
     kendo.bind($(".wrap"), {});
 });
+
+
+
+/* =====================================
+* side submenu accordion
+* =====================================
+*/
+$('.sidebar-wrap .has-submenu:first-child').addClass('active'); //첫번째 메뉴는 열림
+$(document).on('click', '.sidebar-wrap .has-submenu > .sidebar-1depth', function () {
+	$('.sidebar-wrap .sidebar-2depth.has-submenu:first-of-type').addClass('active'); //첫번째 메뉴는 열림
+	if ($(this).parent().hasClass('active')) {
+		$(this).next('.sidebar-wrap .sidebar-2depth').slideUp(200);
+		$(this).parent().removeClass('active');
+	} else {
+		$(this).next('.sidebar-wrap .sidebar-2depth').slideDown(200);
+		setTimeout(function () {
+			$('.sidebar-wrap .sidebar-2depth').css({ "overflow": "visible" });
+		}, 200);
+		$(this).parent().addClass('active');
+	}
+});
+
+$(document).on('click', '.sidebar-wrap .sidebar-2depth.has-submenu > a', function () {
+	if ($(this).parent('.sidebar-2depth').hasClass('active')) {
+		$(this).next('.sidebar-wrap .sidebar-3depth').slideUp(200);
+		$(this).parent('.sidebar-2depth').removeClass('active');
+	} else {
+		$(this).next('.sidebar-wrap .sidebar-3depth').slideDown(200);
+		setTimeout(function () {
+			$('.sidebar-wrap .sidebar-3depth').css({ "overflow": "visible" });
+		}, 200);
+		$(this).parent('.sidebar-2depth').addClass('active');
+	}
+});
+
+/* =====================================
+* 타이틀 영역 토글버튼 SA0101.html
+* =====================================
+*/
+$(document).on('click', '.funcToggle', function() {
+	$(this).toggleClass('active');
+});

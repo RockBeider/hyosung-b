@@ -149,9 +149,6 @@
 	}
 	.sidebar-foot {
 		padding: 10px;
-		.h-ico.mail {
-			background-color: $white;
-		}
 		.btn-box {
 			> * + * {
 				margin-left: 6px;
@@ -160,6 +157,11 @@
 		.h-btn {
 			height: 40px;
 			padding: 0 30px;
+			&.lnb-close {
+				padding: 0 2px;
+				background-color: $tableBG1;
+				border: 1px solid $gray-c;
+			}
 		}
 	}
 }
@@ -254,7 +256,7 @@
 	right: 20px;
 	width: 15px;
 	height: 15px;
-	background-image: url("./../images/icon/xs-15/icon_arrow_down@3x.png");
+	background-image: url("./../images/icon/icon_arrow_down.svg");
 	background-repeat: no-repeat;
 	background-size: 15px 15px;
 	text-align: center;

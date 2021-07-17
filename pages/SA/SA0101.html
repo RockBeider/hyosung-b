@@ -18,7 +18,7 @@
                         <div class="left-group">
                             <h2 class="main-title">메인 타이틀</h2>
                             <button type="button" class="h-ico lg tip ml-8">팁</button>
-                            <button type="button" class="h-ico sm bookmark ml-4">북마크</button>
+                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
                         </div>
                         <div class="right-group">
                             <div class="breadcrumb">
@@ -49,8 +49,10 @@
                             <div class="form-group">
                                 <span class="label">상담부서</span>
                                 <div class="form-set">
-                                    <select class="select-sm">
-                                        <option value="전체">전체</option>
+                                    <select data-role="dropdownlist">
+                                        <option value="" selected>전체</option>
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
                                     </select>
                                 </div>
                             </div>
