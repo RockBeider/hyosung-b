@@ -8,8 +8,8 @@
 //************************************************************
 // @charset "utf-8";
 .wrap {
-	width: 100%; 
-	height: 100%; 
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
 }
 
@@ -58,7 +58,7 @@
         display: inline-block;
         @include hide-text;
         background: #fff;
-        width: 124px; 
+        width: 124px;
         height: 18px;
         &-info {
 			@include font-size-md;
@@ -71,9 +71,10 @@
         display: flex;
         align-items: center;
     }
-} 
+}
 .profile-box {
 	@include font-size-sm;
+	font-size: $base-font-size;
     color: $white;
     display: flex;
     align-items: center;
@@ -148,10 +149,10 @@
 				margin-right: 10px;
 			}
 		}
-		.sub-menu a { 
+		.sub-menu a {
 			@include font-size-sm;
             display: block;
-            padding: 0 20px 0 49px; 
+            padding: 0 20px 0 49px;
 			color: $gray-7;
 		}
 	}
@@ -252,8 +253,8 @@
 	display: block;
 	position: absolute;
 	top: 0;
-	left: 0; 
-	width: 4px; 
+	left: 0;
+	width: 4px;
 	height: 100%;
 	background-color: $main;
 }

@@ -8,12 +8,11 @@
 //************************************************************
 // @charset "utf-8";
 
-$fontFamily: "Noto Sans KR", "Roboto", HelveticaNeue-Light, AppleSDGothicNeo-Light, "Malgun Gothic", "맑은 고딕",
-    sans-serif;
+$fontFamily: "Noto Sans KR", "Roboto", HelveticaNeue-Light, AppleSDGothicNeo-Light, "Malgun Gothic", "맑은 고딕", sans-serif;
 /*
 * Regular font size
 */
-$base-font-size:    16px;
+$base-font-size: 16px;
 
 /*
 * Text style
@@ -43,37 +42,40 @@ $base-font-size:    16px;
 */
 
 // 메뉴사이즈
-@mixin font-size-menu { //1dpepth 메뉴
-    font-size: 15px; 
+@mixin font-size-menu {
+    //1dpepth 메뉴
+    font-size: 15px;
     line-height: 26px;
     letter-spacing: -0.75px;
 }
 
-
-@mixin font-size-xs { //인풋하단 에러상태
+@mixin font-size-xs {
+    //인풋하단 에러상태
     font-size: 12px;
     line-height: 26px;
     letter-spacing: -0.6px;
 }
-@mixin font-size-sm { //버튼, 드롭다운, 인풋, search, 2depth 메뉴, 테이블허데, 테이블바디
-    font-size: 14px; 
+@mixin font-size-sm {
+    //버튼, 드롭다운, 인풋, search, 2depth 메뉴, 테이블허데, 테이블바디
+    font-size: 14px;
     line-height: 26px;
     letter-spacing: -0.7px;
 }
-@mixin font-size-md { //로고부분
+@mixin font-size-md {
+    //로고부분
     font-size: 16px;
     line-height: 26px;
     letter-spacing: -0.8px;
 }
-@mixin font-size-lg { //서브타이틀
+@mixin font-size-lg {
+    //서브타이틀
     font-size: 17px;
     line-height: 26px;
     letter-spacing: -0.85px;
 }
-@mixin font-size-xl { //메인타이틀
+@mixin font-size-xl {
+    //메인타이틀
     font-size: 22px;
     line-height: 26px;
     letter-spacing: -1.1px;
 }
-
-
