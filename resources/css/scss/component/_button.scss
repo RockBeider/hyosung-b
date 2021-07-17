@@ -1,0 +1,146 @@
+/*
+ * ------------------------------
+ * 버튼
+ * ------------------------------
+ */
+.h-btn {
+    @include font-size-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 0 1 auto;
+    height: 28px;
+    padding: 0 20px;
+    border-radius: rem(3);
+    white-space: nowrap;
+    transition: background 0.2s ease-in;
+
+    background-color: $main;
+    color: $white;
+    &:hover, &:focus {
+        background-color: $marine-blue;
+    }
+
+    > * + * {
+        // 아이콘 같이 있는 경우
+        margin-left: rem(6);
+    }
+    &.hidden {
+        @include hide-text;
+        padding: 0 !important;
+        background-color: transparent;
+    }
+    &.has-ico {
+        padding: 0 12px;
+        .h-ico {
+            width: 16px;
+            height: 16px;
+            background: $gray-e;
+        }
+        span {
+            color: inherit;
+        }
+        > * + * {
+            margin-left: 4px;
+        }
+    }
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus,
+    &:disabled:active { //disabled 상태
+        cursor: default;
+        background: $gray-e !important;
+        border: $gray-e !important;
+        color: $gray-2 !important;
+        opacity: 0.7;
+    }
+    &.blue {
+        background-color: $main;
+        color: $white;
+        &:hover, &:focus {
+            background-color: $marine-blue;
+        }
+    }
+    &.light-blue {
+        background-color: $lavender;
+        color: $main;
+        &:hover, &:focus {
+            background-color: $btn-light-blue-hover-bg;
+        }
+    }
+    &.blue-border {
+        background: $white;
+        border: 1px solid $main;
+        color: $main;
+        &:hover, &:focus {
+            background-color: $btn-blue-border-hover-bg;
+        }
+    }
+    &.gray-border {
+        background-color: $white;
+        border: 1px solid $gray-9;
+        color: $gray-2;
+        &:hover, &:focus {
+            background-color: $gray-e;
+            border: 1px solid $gray-a;
+        }
+    }
+    &.green {
+        background-color: $green;
+        color: $white;
+        &:hover, &:focus {
+            background-color: $green-dark;
+        }
+    }
+    &.logout { //로그아웃
+        margin-left: 6px;
+        border: 1px solid $btn-light-border;
+    }
+}
+
+/*
+ * ------------------------------
+ * 버튼 그룹
+ * ------------------------------
+ */
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    .h-btn {
+        flex: 0 1 auto;
+    }
+    .h-btn + .h-btn {
+        margin-left: 6px;
+    }
+    &.period { //버튼 그룹(기간선택)
+        .h-btn {
+            @include font-size-sm;
+            min-width: 57px;
+            background-color: $white;
+            border:  1px solid $gray-a;
+            color: $gray-7;
+            border-radius: 0;
+            &:first-child {
+                border-radius: 3px 0 0 3px;
+            }
+            &:last-child {
+                border-radius: 0 3px 3px 0;
+            }
+            &.active {
+                background-color: $accent;
+                border-color: $accent;
+                color: $white;
+            }
+            + .h-btn {
+                margin-left: 0;
+                border-left: 0;
+                &.active {
+                    margin-left: -1px;
+                    padding-left: 21px;
+                }
+            }
+        }
+    }
+}

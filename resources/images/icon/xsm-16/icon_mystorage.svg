@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_mystorage" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <path id="Path_346" d="M51.571 115.429v9.714H38.429v-9.714h13.142M53 114H37v12.571h16V114z" class="cls-2" transform="translate(-37 -112)"/>
+    <path id="Path_347" d="M46.451 122.908l-7.3-6.211.913-1.118 6.389 5.434 6.389-5.434.913 1.118z" class="cls-2" transform="translate(-38.524 -113.12)"/>
+</svg>

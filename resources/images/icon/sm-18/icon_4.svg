@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_4" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <style>
+            .cls-2{fill:#666}
+        </style>
+    </defs>
+    <path id="Path_46" d="M209.268 35.4v5.315H196.4V35.4h12.869m1.4-1.4H195v8.113h15.666V34z" class="cls-2" transform="translate(-193.833 -31.436)"/>
+    <path id="Rectangle_20" d="M0 0H15.666V1.399H0z" class="cls-2" transform="translate(1.167 11.796)"/>
+    <path id="Rectangle_21" d="M0 0H15.666V1.399H0z" class="cls-2" transform="translate(1.167 14.035)"/>
+    <g id="Group_10" transform="translate(6.402 5.116)">
+        <path id="Path_47" d="M213.712 43.122h.985l.286 1.421c.05.319.084.632.134.957h.028c.056-.325.106-.643.185-.957l.33-1.421h.856l.342 1.421c.073.319.129.632.2.957h.028c.051-.325.084-.638.14-.957l.274-1.421h.923l-.75 3.184H216.5l-.269-1.214c-.061-.3-.112-.587-.168-.935h-.028c-.05.347-.1.638-.151.935l-.257 1.214H214.5z" class="cls-2" transform="translate(-213.712 -43.122)"/>
+    </g>
+    <path id="Rectangle_22" d="M0 0H5.875V1.399H0z" class="cls-2" transform="translate(5.923 5.922)"/>
+</svg>

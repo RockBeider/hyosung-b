@@ -1,0 +1,103 @@
+/*
+ * ------------------------------
+ * 폼
+ * ------------------------------
+ */
+
+ .form-group {
+	display: flex;
+	align-items: center;
+	> * + * {
+		margin-left: 6px; 
+	}
+	&.row {
+		//세로 정렬일 경우
+		flex-direction: column;
+		flex-wrap: wrap;
+		> * + * {
+			margin-left: 0;
+			margin-top: 6px;
+		}
+		.form-set {
+			width: 100%;
+		}
+	}
+}
+
+.form-set {
+	display: flex;
+	align-items: center;
+	> *:not(.bar) + *:not(.bar) {
+		margin-left: 8px;
+	}
+	.bar { margin: 0 2px; }
+	.h-btn {
+		flex: 0 0 auto;
+	}
+	.h-checkbox input[type="radio"] + label,
+	.h-checkbox input[type="checkbox"] + label {
+		white-space: nowrap;
+	}
+}
+.label {
+	@include font-size-sm;
+	margin-right: 12px;
+	height: 28px;
+	color: $gray-7;
+	white-space: nowrap;
+	font-weight: 500;
+}
+.search-control {
+	display: flex;
+	align-items: center;
+    position: relative;
+    padding: 24px 20px;
+	background: #fff;
+	border:  1px solid $searchLine;
+	overflow: hidden;
+    .form-group {
+        white-space: nowrap;
+        > * + * {
+            margin-left: 0;
+        }
+	}
+    .form-set {
+        float: left;
+        padding-right: 20px;
+    }
+    .btn.search {
+        margin-left: 10px;
+        background: $white;
+        border: 1px solid $main;
+        color: $main;
+    }
+	.label {
+		@include font-size-sm;
+        margin-right: 12px;
+		height: 28px;
+        color: $gray-7;
+		white-space: nowrap;
+		font-weight: 500;
+	}
+	.h-checkbox input[type="radio"] + label {
+		display: flex;
+		align-items: center;
+		height: 28px;
+	}
+	.h-checkbox input[type="radio"] + label:before {
+		top: 50%;
+		margin-top: rem(-9);
+	}
+}
+
+
+// .form-set {
+// 	display: flex;
+// 	align-items: center;
+// 	color: $gray-5;
+// 	font-size: 14px;
+	
+// 	// .btn-box.period {
+// 	// 	margin-left: 8px;
+// 	// }
+// }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_rotate_right" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-2{fill:#555}
+        </style>
+    </defs>
+    <g id="Group_512" transform="translate(-1270 -334)">
+        <path id="Path_365" d="M158.9 288.19l-2.4-2.4.948-.948 1.452 1.452 1.453-1.452.948.949z" class="cls-2" transform="translate(1124.538 54.974)"/>
+        <path id="Path_366" d="M125.732 287.146H115V274h10.732zm-9.39-1.341h8.049v-10.464h-8.049z" class="cls-2" transform="translate(1155 62.854)"/>
+        <path id="Path_367" d="M148.976 270.244h-1.341v-3.152a2.753 2.753 0 0 0-2.75-2.75H142V263h2.884a4.1 4.1 0 0 1 4.091 4.091z" class="cls-2" transform="translate(1135.147 71)"/>
+    </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="btn_filter_default" width="8" height="12" viewBox="0 0 8 12">
+    <defs>
+        <style>
+            .cls-1{fill:#bbb}
+        </style>
+    </defs>
+    <path id="Polygon_3" d="M4 0l4 4H0z" class="cls-1"/>
+    <path id="Polygon_4" d="M4 0l4 4H0z" class="cls-1" transform="translate(8 12) rotate(180)"/>
+</svg>

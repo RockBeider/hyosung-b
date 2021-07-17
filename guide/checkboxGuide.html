@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Guide Styles -->
+    <link rel="stylesheet" type="text/css" href="./highlight/default.css">
+    <link rel="stylesheet" type="text/css" href="./css/guide.css" />
+    <!-- Load Styles -->
+    <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <section class="content-main">
+            <div class="content-wrap">
+                <div class="g-example-wrap">
+                    <div class="g-example-head">
+                        <p class="title">checkbox (텍스트가 없는 경우 - 센터정렬)</p>
+                    </div>
+                    <div class="g-example-body">
+                        <div class="h-checkbox no-label">
+                            <input type="checkbox" id="checkbox-nolabel" name="checkbox" />
+                            <label for="checkbox-nolabel"></label>
+                        </div>
+                    </div>
+                    <div class="g-example-foot">
+                        <pre><code class="html">
+                        </code></pre>
+                    </div>
+                </div>
+
+
+                
+                <div class="g-example-wrap">
+                    <div class="g-example-head">
+                        <p class="title">checkbox group</p>
+                    </div>
+                    <div class="g-example-body">
+                        <div class="check-group">
+                            <div class="h-checkbox">
+                                <input type="checkbox" id="checkbox1-1" name="checkbox" />
+                                <label for="checkbox1-1"><span>unchecked</span></label>
+                            </div>
+                            <div class="h-checkbox">
+                                <input type="checkbox" id="checkbox1-2" name="checkbox" checked="checked" />
+                                <label for="checkbox1-2"><span>checked</span></label>
+                            </div>
+                            <div class="h-checkbox">
+                                <input type="checkbox" id="checkbox1-3" name="checkbox" disabled="disabled" />
+                                <label for="checkbox1-3"><span>disabled</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-example-foot">
+                        <pre><code class="html">
+                        </code></pre>
+                    </div>
+                </div>
+
+
+
+                <div class="g-example-wrap">
+                    <div class="g-example-head">
+                        <p class="title">radio group</p>
+                    </div>
+                    <div class="g-example-body">
+                        <div class="check-group">
+                            <div class="h-checkbox">
+                                <input type="radio" id="radio1-1" name="radio" checked="checked"/>
+                                <label for="radio1-1"><span>unchecked</span></label>
+                            </div>
+                            <div class="h-checkbox">
+                                <input type="radio" id="radio1-2" name="radio"/>
+                                <label for="radio1-2"><span>checked</span></label>
+                            </div>
+                            <div class="h-checkbox">
+                                <input type="radio" id="radio1-3" name="radio" disabled="disabled"/>
+                                <label for="radio1-3"><span>disabled</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-example-foot">
+                        <pre><code class="html">
+                        </code></pre>
+                    </div>
+                </div>
+
+
+                
+
+               
+            </div>
+        </section>
+    </div>
+    <!-- Load Scripts -->
+    <script src="../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="../resources/lib/kendo/js/jszip.min.js"></script>
+    <script src="../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <!-- Guide Script -->
+    <script type="text/javascript" src="/guide/highlight/highlight.pack.js"></script>
+    <!-- Publish Script -->
+    <script src="../resources/js/index.js"></script>
+    <script>
+        $(document).ready(function () {
+            // create CheckBoxGroup from ul HTML element
+            var checkBoxGroup = $("#checkboxgroup").kendoCheckBoxGroup({
+                items: [
+                    {
+                        label: "Day pack",
+                        value: "1"
+                    },
+                    {
+                        label: "Hiking poles",
+                        value: "2"
+                    },
+                    {
+                        label: "Hiking boots",
+                        value: "3"
+                    },
+                    {
+                        label: "UV protection sunglasses",
+                        value: "4"
+                    },
+                    {
+                        enabled: false,
+                        label: "Trousers",
+                        value: "5"
+                    }],
+                layout: "vertical",
+                value: ["1", "2"]
+            }).data("kendoCheckBoxGroup");
+
+            $("#selectAllCheckbox").change(function () {
+                if (this.checked) {
+                    checkBoxGroup.checkAll(true)
+                } else {
+                    checkBoxGroup.checkAll(false)
+                }
+            });
+        });
+
+
+    </script>
+</body>
+</html>

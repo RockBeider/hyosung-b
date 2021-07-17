@@ -1,0 +1,113 @@
+/*
+* ------------------------------
+* Title
+* ------------------------------
+*/
+
+.main-title {
+    @include font-size-xl;
+	color: $gray-2;
+	font-weight: bold;
+}
+.sub-title {
+	@include font-size-lg;
+	color: $gray-2;
+	font-weight: 500;
+	&.dot {
+		position: relative;
+		padding-left: 8px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			margin-top: -2px;
+			background: $gray-2;
+		}
+	}
+}
+/*
+* ------------------------------
+* Title Group
+* ------------------------------
+*/
+.title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left-group, .right-group {
+		display: flex;
+        align-items: center;
+    }
+	&.lg {
+		height: 32px;
+		margin: 20px 0;
+	}
+	&.md {
+		min-height: 28px;
+		margin: 12px 0 4px;
+	}
+	&.sm {
+		min-height: 28px;
+		margin: 12px 0 8px;
+	}
+}
+
+/*
+* ------------------------------
+*  숫자 카운트
+* ------------------------------
+*/
+.amount-set {
+    color: $gray-a;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    .amount {
+        &.current {
+            color: $main;
+            font-weight: bold;
+        }
+    }
+    .dash {
+        margin: 0 1px;
+    }
+    .unit {
+        margin-left: 1px;
+    }
+}
+
+/*
+* ------------------------------
+* BreadCrumb
+* ------------------------------
+*/
+.breadcrumb {
+	position: relative;
+	display: flex;
+	align-items: center;
+	&::before {
+		display: none;
+	}
+	.breadcrumb-item {
+		@include font-size-sm;
+		display: flex;
+		align-items: center;
+		color: $gray-9;
+		&.active {
+			color: $gray-4;
+		}
+		+ .breadcrumb-item::before {
+			content: '>';
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0 4px;
+			color: $gray-9;
+			font-family: 'roboto';
+		}
+	}
+}

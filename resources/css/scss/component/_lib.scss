@@ -1,0 +1,196 @@
+.k-checkbox-label, .k-radio-label {
+    position: initial;
+    padding: 0;
+}
+.k-checkbox-label:before {
+    border: none
+}
+
+/*
+* ------------------------------
+* dropdown
+* ------------------------------
+*/
+
+
+.k-autocomplete, 
+.k-dropdown-wrap,
+.k-numeric-wrap, 
+.k-picker-wrap, 
+.k-textbox {
+    border: 1px solid $gray-c;
+    border-radius: 3px;
+    width: 110px !important;
+ }
+.k-autocomplete, 
+.k-dropdown-wrap {
+    &.k-state-border-down {
+        border-bottom-width: 1px;
+    }
+    &.k-state-hover, &.k-state-hover:hover {
+        background-color: $white;
+    }
+}
+.k-widget.k-dropdown.k-header {
+    width: 110px !important;
+}
+.k-autocomplete, .k-dropdown-wrap,
+.k-numeric-wrap, .k-picker-wrap,
+.k-textbox {
+    height: 28px;
+    box-sizing: border-box;
+}
+.k-autocomplete .k-input, 
+.k-dropdown-wrap .k-input {
+    height: 26px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 26px;
+    text-indent: 10px;
+    box-sizing: border-box;
+}
+.k-animation-container {
+    width: 150px !important;
+    margin: 3px 0;
+}
+.k-popup.k-list-container {
+    width: 100% !important;
+    padding: 8px 5px;
+    border: none;
+    background-color: $white;
+    border: 1px solid $gray-2;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px 0px rgba(0,0,0,0.15);
+}
+.k-dropdown-wrap .k-select, 
+.k-numeric-wrap .k-select, .k-picker-wrap .k-select {
+    line-height: 26px;
+}
+.k-listbox .k-item, 
+.k-popup .k-list .k-item { //리스트
+    min-height: 28px;
+    height: 28px;
+    padding: 0 5px;
+    border-radius: 0;
+    line-height: 1;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: -0.7px;
+    color: $gray-7;
+    font-weight: 400;
+    box-sizing: border-box;
+    &.k-state-hover, &.k-state-hover:hover { //hover 시
+        background-color: $gray-f5;
+        color: $gray-2;
+    }
+}
+//화살표
+.k-i-arrow-60-down:before {
+    content: '';
+    background-image: url('./../images/icon/xs-15/icon_arrow_down@3x.png');
+    background-size: 15px 15px;
+    transition: all 0.3s ease;
+}
+.k-dropdown-wrap.k-state-active {
+    .k-i-arrow-60-down:before {
+        transform: rotate(180deg);
+        margin-top: -2px;
+    }
+}
+
+//인풋, 텍스트박스
+.k-dateinput.k-widget {
+    border-radius: 3px;
+}
+input.k-textbox, textarea.k-textbox {
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+
+/*
+* ------------------------------
+* Grid
+* ------------------------------
+*/
+//껍데기
+.k-grid {
+    border: none;
+    border-top: 1px solid $gray-2; 
+    border-bottom: 1px solid $gray-a;
+}
+
+//thead
+.k-grid .k-grouping-header, 
+.k-grid-header, 
+.k-grid-header-wrap, 
+.k-grouping-header .k-group-indicator, 
+.k-header {
+    background: $gray-e;
+    border:  1px solid $gray-e4;
+}
+.k-filter-row th, 
+.k-grid-header th.k-header {
+    @include font-size-sm;
+    position: relative;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    line-height: 36px;
+    .k-link {
+        margin: 0;
+        padding: 0 30px 0 10px;
+        line-height: unset;
+    }
+}
+// 헤더 필터 아이콘
+.k-grid-header .k-link .k-icon.k-i-sort-asc-sm, 
+.k-grid-header .k-link .k-icon.k-i-sort-desc-sm {
+    position: absolute;
+    top: 50%; 
+    right: 4px;
+    margin-top: -8px;
+}
+.k-i-sort-desc-sm:before,
+.k-i-sort-asc-sm:before {
+    content: '';
+    background-size: 8px 15px; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.k-i-sort-desc-sm:before { //아래로 화살표
+    background-image: url(../images/icon/btn_filter_default@3x.png);
+}
+.k-i-sort-asc-sm:before { //위로 화살표
+    background-image: url(../images/icon/btn_filter_default@3x.png);
+}
+
+//body 
+.k-grid {
+    tr {
+        &:last-child td {
+            border-width: 0 0 0 1px;
+            &:first-child { border-left-width: 0;}
+        }
+        &:hover {
+            background-color: $tableBG1;
+        }
+    }
+    td {
+        @include font-size-sm;
+        height: 36px;
+        padding: 0 10px;
+        border-width: 0 0 1px 1px;
+        border-color: $gray-e4;
+    }
+}
+
+.k-grid th input.k-checkbox {// thead 체크박스
+
+}
+.k-grid input.k-checkbox+label.k-checkbox-label
+.k-grid input.k-checkbox { //tbody 체크박스
+
+}
+
