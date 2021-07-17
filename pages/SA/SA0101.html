@@ -1,5 +1,6 @@
 <!-- 07서비스 품질 - 01상담정보관리 - 01조회 -->
 <div data-include-path="/pages/layout/doctype.html"></div>
+
 <body>
     <div class="wrap">
         <!-- Header Include -->
@@ -10,6 +11,7 @@
             <div data-include-path="/pages/layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
+
                 <!-- Contents Header -->
                 <div class="contents-header">
                     <div class="title-box lg">
@@ -27,13 +29,18 @@
                     </div>
                 </div>
 
+                <!-- Contents Body -->
                 <div class="contents-body">
                     <div class="contents1">
                         <div class="search-control">
                             <div class="form-group">
                                 <span class="label">검색항목</span>
                                 <div class="form-set">
-                                    <input class="kd-dropdown"/>
+                                    <select data-role="dropdownlist">
+                                        <option value="" selected>선택</option>
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
                                     <div class="input-box search lg">
                                         <input type="text" class="h-input" placeholder="입력해주세요">
                                     </div>
@@ -96,7 +103,7 @@
                                         <tr>
                                             <th>
                                                 <div class="h-checkbox no-label">
-                                                    <input type="checkbox" id="checkbox-1" name="checkbox" aria-label="조회선택"/>
+                                                    <input type="checkbox" id="checkbox-1" name="checkbox" aria-label="조회선택" />
                                                     <label for="checkbox-1"></label>
                                                 </div>
                                             </th>
@@ -152,7 +159,7 @@
                                         <tr>
                                             <td>
                                                 <div class="h-checkbox no-label">
-                                                    <input type="checkbox" id="checkbox-2" name="checkbox" aria-label="조회선택"/>
+                                                    <input type="checkbox" id="checkbox-2" name="checkbox" aria-label="조회선택" />
                                                     <label for="checkbox-2"></label>
                                                 </div>
                                             </td>
@@ -176,20 +183,16 @@
                         </div>
                     </div>
                 </div>
+
             </main>
         </div>
 
     </div>
 
-    <!-- Load Scripts -->
+    <!-- Default Script Include -->
     <script src="/resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="/resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="/resources/js/common.js"></script>
 </body>
+
 </html>
-
-
-
-<div class="content-wrap">
-
-</div>
-
