@@ -10,25 +10,148 @@
 
 // Common
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    font-family: $fontFamily;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+html,
+body {
+	font-family: $fontFamily;
+	padding: 0;
+	margin: 0;
+	width: 100%;
 	height: 100%;
 	overflow: hidden;
 }
 
 html {
-    height: 100%;
+	height: 100%;
 }
 
 body {
-    min-height: 100%;
-    background-color: $BG;
+	min-height: 100%;
+	background-color: $bg;
+}
+ul,
+li,
+ol {
+	padding: 0;
+	margin: 0;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #222;
+}
+div,
+p,
+span,
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: inherit;
+	font-size: inherit;
+	margin: 0;
+	padding: 0;
+}
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+button,
+input,
+textarea {
+	outline: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.ml-4 {
+	margin-left: 4px !important;
+}
+.ml-8 {
+	margin-left: 8px !important;
+}
+
+/* Icon */
+.icon {
+	display: inline-flex;
+	flex: 0 0 auto;
+	vertical-align: middle;
+	text-indent: -9999px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	// &.icon-logo {
+	// 	@include icon(144px, 18px, logo);
+	// }
+}
+
+/*
+* ------------------------------
+* Title
+* ------------------------------
+*/
+
+.main-title {
+	@include font-size-xl;
+	color: $gray-2;
+	font-weight: bold;
+}
+.sub-title {
+	@include font-size-lg;
+	color: $gray-2;
+	font-weight: 500;
+	&.dot {
+		position: relative;
+		padding-left: 8px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			margin-top: -2px;
+			background: $gray-2;
+		}
+	}
+}
+/*
+* ------------------------------
+* Title Group
+* ------------------------------
+*/
+.title-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	.left-group,
+	.right-group {
+		display: flex;
+		align-items: center;
+	}
+	&.lg {
+		height: 32px;
+		margin: 20px 0;
+	}
+	&.md {
+		min-height: 28px;
+		margin: 12px 0 4px;
+	}
+	&.sm {
+		min-height: 28px;
+		margin: 12px 0 8px;
+	}
 }
 ul, li, ol {
     padding: 0; margin: 0;
@@ -47,9 +170,58 @@ button {
     cursor: pointer;
 }
 
-.ml-4 {
-    margin-left: 4px !important;
+/*
+* ------------------------------
+*  숫자 카운트
+* ------------------------------
+*/
+.amount-set {
+	color: $gray-a;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	.amount {
+		&.current {
+			color: $main;
+			font-weight: bold;
+		}
+	}
+	.dash {
+		margin: 0 1px;
+	}
+	.unit {
+		margin-left: 1px;
+	}
 }
-.ml-8 {
-    margin-left: 8px !important;
+
+/*
+* ------------------------------
+* BreadCrumb
+* ------------------------------
+*/
+.breadcrumb {
+	position: relative;
+	display: flex;
+	align-items: center;
+	&::before {
+		display: none;
+	}
+	.breadcrumb-item {
+		@include font-size-sm;
+		display: flex;
+		align-items: center;
+		color: $gray-9;
+		&.active {
+			color: $gray-4;
+		}
+		+ .breadcrumb-item::before {
+			content: ">";
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0 4px;
+			color: $gray-9;
+			font-family: "roboto";
+		}
+	}
 }

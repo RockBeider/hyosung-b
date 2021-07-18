@@ -1,2 +1,9 @@
 // Import Modules Scss
-@import '_flexbox';
+@import 'flexbox';
+@import 'table'; // 테이블
+@import 'form'; // 폼
+@import 'input'; // 인풋
+@import 'select'; // 셀렉트
+@import 'checkbox'; // 체크, 라디오 박스
+@import 'button'; // 버튼
+@import 'icon'; // 아이콘

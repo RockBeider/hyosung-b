@@ -1,27 +1,13 @@
-
 @charset 'utf-8';
- 
+
 // Import Scss
-@import 'reset';
-@import 'colors';
-@import 'fonts';
-@import 'variables';
-@import 'mixins'; 
-@import './modules/modules';  
-@import 'global';
-@import 'layout'; 
- 
-/* 공통 - 컴포넌트 */
-@import 'component/common'; // 여백, 정렬, 컬러, 상태, 차트, 툴팁
-@import 'component/table'; // 테이블
-@import 'component/form'; // 폼
-@import 'component/input'; // 인풋 
-@import 'component/select'; // 셀렉트
-@import 'component/checkbox'; // 체크, 라디오 박스
-@import 'component/button'; // 버튼
-@import 'component/icon'; // 아이콘 
- 
-      
- /* 라이브러리 */
- @import 'lib/_jquery-ui.min'; 
-   
+@import "reset";
+@import "colors";
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "global";
+@import "./modules/modules";
+@import 'overrides';
+@import "layout";
+

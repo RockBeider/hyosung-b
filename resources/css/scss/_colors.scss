@@ -8,42 +8,58 @@
 //************************************************************
 @charset "utf-8";
 
-$Default: #222;
-$gray_dark: #444;
-$gray_dark2: #555;
-$Dot-bg: #aaa;
-$Light-gray: #999;
-$Btn-light-border: #e0e5ec;
-$Blue: #3064b8;
-$Gray: #777;
-$Form-color: #555;
+$btn-light-border: #e0e5ec; //확인필요
+$blue: #3064b8;
 
+// Common
+$gray-2: #222;
+$gray-4: #444;
+$gray-5: #555;
+$gray-7: #777;
+$gray-9: #999;
+$gray-a: #aaa;
+$gray-c: #ccc;
+$gray-e: #eee;
+$gray-e4: #e4e4e4;
+$gray-f5: #f5f5f5;
 
 // Common
 $white: #fff;
 $black: #000;
+$lavender: #cfdef5;
+$marine-blue: #002a70;
+
+//Button
+$btn-light-blue-hover-bg: #99b6e2;
+$btn-blue-border-hover-bg: #e4e9ef;
+
+$green: #1e6c42;
+$green-dark: #0d5a30;
 
 // Background
-$BG: #f5f5f5;
+$bg: #f5f5f5;
 
 // State
-$State: #ffe282;
-$Accent: #48c3e6;
+$state: #ffe282;
+$accent: #48c3e6;
+$error: #f14747;
 
 // Main
-$Main: #0e4194;
-$Main_sub: #05146e;
+$main: #0e4194;
+$main_sub: #05146e;
 
 // Input
 $inputDefault: #ccc;
 
 // Table
-$TableBG1: #eff2f7;
-$TableBG2: #ededed;
-$TableLine: #e4e4e4;
+$tableBG1: #eff2f7;
+$tableBG2: #ededed;
+$tableLine: #e4e4e4;
 
 // Layout
 $lnbBG: #f4f6f9;
 $lnbLine: #ddd;
-$SearchLine: #eee;
+$searchLine: #eee;
+
+
 

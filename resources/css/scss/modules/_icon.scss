@@ -1,0 +1,118 @@
+
+
+.h-ico {
+    display: inline-flex;
+	flex: 0 0 auto;
+	vertical-align: middle;
+	text-indent: -9999px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+    padding: 0;
+	position: relative; //IE 버튼 흔들림 방지
+    transition: background 0.3s ease;
+}
+.h-ico {
+    &.filter {
+        width: 28px;
+        height: 28px;
+        margin-right: -10px;
+        background-image: url('/resources/images/icon/btn_filter_default.svg');
+        background-size: 8px 15px;
+    }
+    &.lnb-close { 
+        width: 18px;
+        height: 40px;
+        background-image: url('/resources/images/btn_lnb_close.svg');
+    }
+    &.xs {
+        width: 15px;
+        height: 15px;
+        &.up {
+            background-image: url('/resources/images/icon/icon_arrow_up.svg');
+        }
+        &.down {
+            background-image: url('/resources/images/icon/icon_arrow_down.svg');
+        }
+        &.time {
+            background-image: url('/resources/images/icon/icon_time.svg');
+        }
+    }
+    &.xsm {
+        width: 16px;
+        height: 16px;
+        &.mail {
+            background-image: url('/resources/images/icon/icon_mystorage.svg');
+        }
+        &.rotate-left {
+            background-image: url('/resources/images/icon/icon_rotate_left.svg');
+        }
+        &.rotate-right {
+            background-image: url('/resources/images/icon/icon_rotate_right.svg');
+        }
+        &.close {
+            background-image: url('/resources/images/icon/icon_lnb_close.svg');
+        }
+    }
+    &.sm {
+        width: 18px;
+        height: 18px;
+        &.bookmark {
+            background-image: url('/resources/images/icon/btn_bookmark_default.svg');
+            &.active {
+                background-image: url('/resources/images/icon/btn_bookmark_active.svg');
+            }
+        }
+        &.search {
+            background-image: url('/resources/images/icon/icon_search.svg');
+            &:disabled {
+                background-image: url('/resources/images/icon/icon_search_disabled.svg');
+            }
+        }
+        &.blue {
+            background-image: url('/resources/images/icon/icon_search_btn.svg');
+        }
+        &.menu1 {
+            background-image: url('/resources/images/icon/icon_profile.svg');
+        }
+        &.menu2 {
+            background-image: url('/resources/images/icon/icon_4.svg');
+        }
+        &.menu3 {
+            background-image: url('/resources/images/icon/icon_1.svg');
+        }
+        &.menu4 {
+            background-image: url('/resources/images/icon/icon_3.svg');
+        }
+        &.menu5 {
+            background-image: url('/resources/images/icon/icon_profile.svg');
+        }
+        &.menu6 {
+            background-image: url('/resources/images/icon/icon_4.svg');
+        }
+        &.menu7 {
+            background-image: url('/resources/images/icon/icon_3.svg');
+        }
+        &.menu8 {
+            background-image: url('/resources/images/icon/icon_2.svg');
+        }
+    }
+    &.md {
+        width: 20px; 
+        height: 20px;
+        &.profile {
+            background-image: url('/resources/images/icon/icon_profile.svg');
+        }
+    }
+    &.lg {
+        width: 26px; 
+        height: 26px;
+        &.tip {
+            background-image: url('/resources/images/icon/btn_tip_default.svg');
+            &:hover {
+                background-image: url('/resources/images/icon/btn_tip_hover.svg');
+            }
+        }
+    }
+}

@@ -8,53 +8,16 @@
 //************************************************************
 // @charset "utf-8";
 
-$fontFamily: "Noto Sans KR", "Roboto", HelveticaNeue-Light, AppleSDGothicNeo-Light, "Malgun Gothic", "맑은 고딕",
-    sans-serif;
+$fontFamily: "Noto Sans KR", "Roboto", sans-serif;
 /*
 * Regular font size
 */
-$base-font-size:    16px;
+$base-font-size: 16px;
 
 /*
 * Text style
 */
-@mixin Page_main_title {
-    color: #222;
-    font-size: 22px;
-    line-height: 26px;
-    letter-spacing: -1.1px;
-    font-weight: bold;
-}
 // (디자인팀 변수와 같이 사용)
-
-@mixin GNB {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.73;
-    letter-spacing: -0.75px;
-    color: $white;
-}
-@mixin GNBBtn {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1.73;
-    letter-spacing: -0.75px;
-    color: $white;
-}
-@mixin input_placeholder {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1.73;
-    letter-spacing: -0.75px;
-    color: #aaaaaa;
-}
-@mixin input_data {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1.73;
-    letter-spacing: -0.75px;
-    color: #555555;
-}
 
 @mixin Num {
     font-family: Roboto;
@@ -62,23 +25,7 @@ $base-font-size:    16px;
     font-weight: bold;
     line-height: 1.86;
     letter-spacing: -0.7px;
-    color: $Main;
-}
-
-@mixin Search_title {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.86;
-    letter-spacing: -0.7px;
-    color: #777777;
-}
-
-@mixin Btn {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.86;
-    letter-spacing: -0.7px;
-    color: $Main;
+    color: $main;
 }
 @mixin State {
     font-family: Roboto;
@@ -86,68 +33,49 @@ $base-font-size:    16px;
     font-weight: normal;
     line-height: 1.86;
     letter-spacing: -0.7px;
-    color: $State;
+    color: $state;
 }
-@mixin LNB_1depth_Default {
+/*
+* ------------------------------
+* font size
+* ------------------------------
+*/
+
+// 메뉴사이즈
+@mixin font-size-menu {
+    //1dpepth 메뉴
     font-size: 15px;
-    font-weight: normal;
-    line-height: 1.73;
+    line-height: 26px;
     letter-spacing: -0.75px;
-    color: #222222;
 }
-@mixin LNB_1depth_Selcted {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.75px;
-    color: $Main;
+
+@mixin font-size-xs {
+    //인풋하단 에러상태
+    font-size: 12px;
+    line-height: 26px;
+    letter-spacing: -0.6px;
 }
-@mixin LNB_2depth_Defaultbookmark {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 2;
-    letter-spacing: -0.75px;
-    color: #777777;
-}
-@mixin LNB_2depth_Default {
+@mixin font-size-sm {
+    //버튼, 드롭다운, 인풋, search, 2depth 메뉴, 테이블허데, 테이블바디
     font-size: 14px;
-    font-weight: normal;
-    line-height: 2.57;
+    line-height: 26px;
     letter-spacing: -0.7px;
-    color: #777777;
 }
-@mixin LNB_2depth_Selcted {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 2.57;
-    letter-spacing: -0.7px;
-    color: $Main;
+@mixin font-size-md {
+    //로고부분
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.8px;
 }
-@mixin btn {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.86;
-    letter-spacing: -0.7px;
-    color: $white;
+@mixin font-size-lg {
+    //서브타이틀
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: -0.85px;
 }
-@mixin Table_title {
-    font-size: 14px;
-    font-weight: 500;
-    // line-height: ;
-    letter-spacing: -0.7px;
-    color: #555555;
-}
-@mixin Table_body {
-    font-size: 14px;
-    font-weight: normal;
-    // line-height: 2.64;
-    letter-spacing: -0.7px;
-    color: #222222;
-}
-@mixin Tab_default {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.86;
-    letter-spacing: -0.7px;
-    color: #777777;
+@mixin font-size-xl {
+    //메인타이틀
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -1.1px;
 }

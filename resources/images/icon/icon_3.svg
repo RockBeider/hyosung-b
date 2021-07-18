@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_3" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <style>
+            .cls-2{fill:#666}
+        </style>
+    </defs>
+    <path id="Rectangle_15" d="M0 0H1.399V5.036H0z" class="cls-2" transform="translate(2.9 11.687)"/>
+    <path id="Rectangle_16" d="M0 0H1.399V7.553H0z" class="cls-2" transform="translate(6.537 9.169)"/>
+    <path id="Rectangle_17" d="M0 0H1.399V6.714H0z" class="cls-2" transform="translate(10.173 10.008)"/>
+    <path id="Rectangle_18" d="M0 0H1.399V10.071H0z" class="cls-2" transform="translate(13.81 6.651)"/>
+    <path id="Path_32" d="M278.744 38.052l-.96-1.017 4.793-4.524 3.528 1.665 4.1-4.384 1.022.955-4.794 5.128-3.587-1.692z" class="cls-2" transform="translate(-275.504 -28.515)"/>
+</svg>
