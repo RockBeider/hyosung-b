@@ -16,17 +16,23 @@
 	font-weight: $weight;
 }
 
+// Icon Background
+@mixin icon($width, $height, $icon-name, $size: contain) {
+	font-size: 0;
+	width: $width;
+	height: $height;
+	display: inline-flex;
+	background-image: url("../images/#{$icon-name}.png");
+	background-size: $size;
+}
+
 // SVG Background
 @mixin svg($width, $height, $name, $size: cover) {
 	$url: "../images/#{$name}.svg";
 	width: $width;
 	height: $height;
-	mask-image: url($url);
-	mask-repeat: no-repeat;
-	mask-size: $size;
-	-webkit-mask-image: url($url);
-	-webkit-mask-repeat: no-repeat;
-	-webkit-mask-size: $size;
+	background-image: url($url);
+	background-size: $size;
 }
 
 /* px 단위를 rem 으로 교체한다.

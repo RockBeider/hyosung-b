@@ -80,6 +80,21 @@ textarea {
 	margin-left: 8px !important;
 }
 
+/* Icon */
+.icon {
+	display: inline-flex;
+	flex: 0 0 auto;
+	vertical-align: middle;
+	text-indent: -9999px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	// &.icon-logo {
+	// 	@include icon(144px, 18px, logo);
+	// }
+}
+
 /*
 * ------------------------------
 * Title
