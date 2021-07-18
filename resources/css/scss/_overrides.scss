@@ -6,39 +6,74 @@
 .k-checkbox-label:before {
 	border: none;
 }
-
 /*
 * ------------------------------
 * dropdown
 * ------------------------------
 */
-
-.k-dropdown-wrap {
-	&.k-state-border-down {
-		border-bottom-width: 1px;
-	}
-	&.k-state-hover,
-	&.k-state-hover:hover {
-		background-color: $white;
-	}
-}
 .k-dropdown {
+	white-space: nowrap;
+	display: inline-flex;
 	width: 110px !important;
-	padding: 0 10px;
-	background: $white;
-	border: 1px solid $gray-c;
-	border-radius: 3px;
-}
-.k-dropdown-wrap {
-	height: 28px;
-	box-sizing: border-box;
-	.k-input {
-		height: 26px;
+	.k-dropdown-wrap {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		width: 100%;
+		height: 28px;
 		padding: 0;
-		font-size: 14px;
-		line-height: 26px;
-		text-indent: 10px;
+		background: $white;
+		border: 1px solid $gray-c;
+		border-radius: 3px;
+		color: $gray-5;
 		box-sizing: border-box;
+		&.k-state-disabled,
+		&.k-state-disabled:hover {
+			background-color: $gray-f5;
+			color: $gray-a;
+			.k-i-arrow-60-down:before {
+				background-image: url("/resources/images/icon/icon_arrow_down_diabled.svg");
+			}
+		}
+		&.k-state-hover,
+		&:hover {
+			background-color: $white;
+		}
+		&.k-state-focused {
+			border: 1px solid $gray-2;
+			color: $gray-2;
+		}
+		.k-input {
+			@include font-size-sm;
+			text-indent: 10px;
+		}
+		.k-select {
+			vertical-align: middle;
+			text-align: center;
+			width: 28px;
+			height: 100%;
+			.k-icon {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.k-i-arrow-60-down:before {
+			content: "";
+			position: absolute;
+			top: 6px;
+			right: 10px;
+			width: 15px;
+			height: 15px;
+			background: url("/resources/images/icon/icon_arrow_down.svg") no-repeat center /15px 15px;
+			transition: all 0.3s ease;
+		}
+		&.k-state-active {
+			.k-i-arrow-60-down:before {
+				transform: rotate(180deg);
+			}
+		}
 	}
 }
 .k-animation-container {
@@ -53,54 +88,63 @@
 	border: 1px solid $gray-2;
 	border-radius: 3px;
 	box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.15);
-}
-.k-dropdown-wrap .k-select {
-	line-height: 26px;
-}
-.k-listbox .k-item,
-.k-popup .k-list .k-item {
-	//리스트
-	min-height: 28px;
-	height: 28px;
-	padding: 0 5px;
-	border-radius: 0;
-	line-height: 1;
-	font-size: 14px;
-	line-height: 28px;
-	letter-spacing: -0.7px;
-	color: $gray-7;
-	font-weight: 400;
-	box-sizing: border-box;
-	&.k-state-hover,
-	&.k-state-hover:hover {
-		//hover 시
-		background-color: $gray-f5;
-		color: $gray-2;
+	.k-list .k-item { //리스트
+		min-height: 28px;
+		height: 28px;
+		padding: 0 5px;
+		border-radius: 0;
+		line-height: 1;
+		font-size: 14px;
+		line-height: 28px;
+		letter-spacing: -0.7px;
+		color: $gray-7; 
+		font-weight: 400;
+		box-sizing: border-box;
+		&.k-state-hover,
+		&.k-state-hover:hover {
+			background-color: $gray-f5;
+			color: $gray-2;
+		}
 	}
 }
-//화살표
-.k-i-arrow-60-down:before {
-	content: "";
-	background-image: url("./../images/icon/icon_arrow_down.svg");
-	background-size: 15px 15px;
-	transition: all 0.3s ease;
-}
-.k-dropdown-wrap.k-state-active {
-	.k-i-arrow-60-down:before {
-		transform: rotate(180deg);
-		margin-top: -2px;
+/*
+* ------------------------------
+* 인풋 (date range)
+* ------------------------------
+*/
+.k-dateinput {
+	display: flex;
+	width: 110px;
+	&.k-state-disabled {
+		.k-textbox {
+			background-color: $gray-f5;
+			color: $gray-a;
+		}
+	}
+	.k-textbox {
+		@include font-size-sm;
+		display: flex;
+		height: 28px;
+		padding: 0 10px;
+		border: 1px solid $gray-c;
+		border-radius: 3px;
+		color: $gray-5;
+		box-sizing: border-box;
+		overflow: hidden; 
+		&:focus {
+			border: 1px solid $gray-2;
+			color: $gray-2;
+		}
 	}
 }
-//인풋, 텍스트박스
-.k-dateinput.k-widget {
-	border-radius: 3px;
-}
-input.k-textbox,
-textarea.k-textbox {
-	height: 28px;
-	line-height: 28px;
-	font-size: 14px;
-}
+
+// .k-state-disabled, 
+// .k-state-disabled .k-draghandle, 
+// .k-state-disabled .k-icon, 
+// .k-state-disabled .k-link, 
+// .k-state-disabled .k-upload-button input {
+
+// }
 
 /*
 * ------------------------------
@@ -152,11 +196,11 @@ textarea.k-textbox {
 }
 .k-i-sort-desc-sm:before {
 	//아래로 화살표
-	background-image: url('../images/icon/btn_filter_default.svg');
+	background-image: url('/resources/images/icon/btn_filter_default.svg');
 }
 .k-i-sort-asc-sm:before {
 	//위로 화살표
-	background-image: url('../images/icon/btn_filter_default.svg');
+	background-image: url('/resources/images/icon/btn_filter_default.svg');
 }
 
 //body

@@ -168,6 +168,7 @@ ul.state li strong{margin-right:1rem; margin-left:1rem;}
     line-height: 18px;
 }
 .content-wrap {
+    height: 100%;
     overflow: scroll;
     padding: 0 20px;
     min-width: unset !important;

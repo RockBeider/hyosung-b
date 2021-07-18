@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="./highlight/default.css">
     <link rel="stylesheet" type="text/css" href="./css/guide.css" />
     <!-- Load Styles -->
-    <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.common.min.css">
-    <!-- <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.default.min.css"> -->
+    <!-- <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.default.min.css"> -->
     <link rel="stylesheet" href="../resources/css/index.css">
 </head>
 <body>
@@ -22,13 +22,21 @@
                         <div class="g-example-head">
                             <p class="title">Dropdown</p>
                         </div>
-                        <div class="g-example-body">
-                            <input class="kd-dropdown"/>
+                        <div class="g-example-body flex-block">
+                            <select data-role="dropdownlist">
+                                <option value="" selected>선택</option>
+                                <option value="1">온라인</option>
+                                <option value="2">오프라인</option>
+                            </select>
+                            <select data-role="dropdownlist" disabled>
+                                <option value="" selected>선택</option>
+                                <option value="1">온라인</option>
+                                <option value="2">오프라인</option>
+                            </select>
                         </div>
 
                         <div class="g-example-foot">
                             <pre><code class="html">
-&lt;input class="kd-dropdown"/>
                             </code></pre>
                         </div>
                     </div>
@@ -37,13 +45,13 @@
                         <div class="g-example-head">
                             <p class="title">Date Range</p>
                         </div>
-                        <div class="g-example-body">
-                            <input class="kd-dateinput" title="please enter date"/>
+                        <div class="g-example-body flex-block">
+                            <input data-role="dateinput"/> 
+                            <input data-role="dateinput" disabled/> 
                         </div>
 
                         <div class="g-example-foot">
                             <pre><code class="html">
-&lt;input class="kd-dateinput" title="please enter date"/>
                             </code></pre>
                         </div>
                     </div>
@@ -68,12 +76,6 @@
                         </div>
                         <div class="g-example-foot">
                             <pre><code class="html">
-    &lt;!-- [D] default 상태 -->
-    &lt;input type="text" class="h-input" placeholder="default" />
-    &lt;!-- [D] readonly 상태 -->
-    &lt;input type="text" class="h-input" value="readonly" readonly="readonly" />
-    &lt;!-- [D] disabled 상태 -->
-    &lt;input type="text" class="h-input" value="disabled" disabled="disabled" />
                             </code></pre>
                         </div>
                     </div>
@@ -86,7 +88,12 @@
                             <div class="form-group">
                                 <span class="label">검색항목</span>
                                 <div class="form-set">
-                                    <input class="kd-dropdown">
+                                    <!-- <input class="kd-dropdown"> -->
+                                    <select data-role="dropdownlist">
+                                        <option value="" selected>선택</option>
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
                                     <div class="input-box search lg">
                                         <input type="text" class="h-input" placeholder="입력해주세요">
                                     </div>
@@ -95,15 +102,22 @@
                             <div class="form-group">
                                 <span class="label">상담부서</span>
                                 <div class="form-set">
-                                    <input class="kd-dropdown">
+                                    <!-- <input class="kd-dropdown"> -->
+                                    <select data-role="dropdownlist">
+                                        <option value="" selected>선택</option>
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <span class="label">검색기간</span>
                                 <div class="form-set">
-                                    <input type="text" class="datepicker h-input sm" placeholder="yyyymmdd" value="2021/06/02">
+                                    <input data-role="dateinput"/> 
+                                    <!-- <input type="text" class="datepicker h-input sm" placeholder="yyyymmdd" value="2021/06/02"> -->
                                     <span class="bar">~</span>
-                                    <input type="text" class="datepicker h-input sm" placeholder="yyyymmdd" value="2021/06/04">
+                                    <input data-role="dateinput"/> 
+                                    <!-- <input type="text" class="datepicker h-input sm" placeholder="yyyymmdd" value="2021/06/04"> -->
                                     <div class="btn-box period">
                                         <!-- [D] 선택된 값 .active 추가 -->
                                         <button type="button" class="h-btn active">오늘</button>

@@ -24,15 +24,15 @@
 	&:disabled:focus {
 		border:  1px solid $gray-c;
 		background-color: $gray-f5;
-		color: $gray-7;
+		color: $gray-a;
 	}
-	&.readonly,
-	&.readonly:focus,
-	&[readonly],
-	&[readonly]:focus {
-		border:  1px solid $gray-e4;
-		background-color: $white;
-	}
+	// &.readonly,
+	// &.readonly:focus,
+	// &[readonly],
+	// &[readonly]:focus {
+	// 	border:  1px solid $gray-e4;
+	// 	background-color: $white;
+	// }
 	&::placeholder {
 		// @include input_placeholder;
 		font-size: 14px;
@@ -77,7 +77,7 @@
 			display: block;
 			width: 18px;
 			height: 18px;
-			background-image: url('./../images/icon/icon_search.svg');
+			background-image: url('/resources/images/icon/icon_search.svg');
 			background-size: 18px 18px;
 		}
 		.h-input {
