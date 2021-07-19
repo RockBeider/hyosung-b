@@ -13,9 +13,9 @@
         tbody tr.do :not(.d1):not(.d2):not(.d3) {
             background-color: lightblue;
         }
-        tbody tr.todo th:not(.d1):not(.d2):not(.d3), 
-        tbody tr.todo th:not(.d1):not(.d2):not(.d3) span, 
-        tbody tr.todo td:not(.d1):not(.d2):not(.d3), 
+        tbody tr.todo th:not(.d1):not(.d2):not(.d3),
+        tbody tr.todo th:not(.d1):not(.d2):not(.d3) span,
+        tbody tr.todo td:not(.d1):not(.d2):not(.d3),
         tbody tr.todo td:not(.d1):not(.d2):not(.d3) span,
         tbody tr.todo td:not(.d1):not(.d2):not(.d3) a {
             color: rgb(0, 119, 255);
@@ -43,9 +43,9 @@
 <div class="guide_wrap">
     <header class="g_header">
         <ul>
-            <!-- <li><h1><a  href="/guide/list.html">효성</a></h1></li> -->
-            <li><a href="/guide/list.html">List</a></li>
-            <li><a href="/guide/elements.html">Elements</a></li>
+            <!-- <li><h1><a  href="./list.html">효성</a></h1></li> -->
+            <li><a href="./list.html">List</a></li>
+            <li><a href="./elements.html">Elements</a></li>
         </ul>
     </header>
     <div class="g_container" style="flex-direction: column; padding: 0 20px;">
@@ -103,7 +103,7 @@
 <script type="text/javascript">
     let total = $('.tbl_guide tbody tr').length;
     $('.total .no').text(total);
-    // 작업 상태 처리 
+    // 작업 상태 처리
     $('.tbl_guide .state').each(function(){
         let letter = $(this).attr('data-state');
         let letterDel = $('.tbl_guide .state[data-state=del]');
@@ -136,7 +136,7 @@
                 break;
         }
     });
-    // SBID 링크 처리 
+    // SBID 링크 처리
     $('.tbl_guide .sbid .pc').each(function(){
         let thisHtml = $(this).text()+'.html';
         let thisCate = $(this).text().substr(0, 2);
@@ -148,7 +148,7 @@
             default :
                 break;
         }
-        $(this).append('<a href="/pages/'+thisHtml+'" target="_blank">'+$(this).text()+'</a>');
+        $(this).append('<a href="../pages/'+thisHtml+'" target="_blank">'+$(this).text()+'</a>');
     });
 </script>
 </body>
