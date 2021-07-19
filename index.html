@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv='refresh' content='0;url=./guide/list.html'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>효성 FMS</title>
+    <title>효성 FMS B System</title>
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <style>
+        body{height:auto;}
+        h1{color:#fff;font-size:24px;background-color:#000;padding:20px 30px;}
+        .working{font-size:18px;padding:20px 30px;}
+        .working .title {display: flex;align-items: center;}
+        .working .title .link {text-decoration: underline;margin-left: 10px;}
+        .working > p{font-size: 24px;color:#fff;font-weight:bold;padding:20px 10px;background-color:rgb(12,140,226);margin-top: 8px;}
+        .working > p span {color: #000;font-size: 18px;}
+    </style>
+    <script src="./resources/lib/kendo/js/jquery.min.js"></script>
+    <script>
+        let today = new Date();
+
+        let year = today.getFullYear(); // 년도
+        let month = today.getMonth() + 1;  // 월
+        let date = today.getDate();  // 날짜
+        $(function() {
+            $('.date').text(year + '년 ' + month + '월 ' + date + '일');
+        })
+    </script>
 </head>
+
 <body>
-    <!-- 리스트 페이지로 이동 -->
+    <div class="index">
+        <h1>효성 FMS B System</h1>
+        <div class="working">
+            <div class="title">
+                <span class="date"></span>
+                <a href="./guide/list.html" class="link">Work List 전체 보기</a>
+            </div>
+            <p><span>현재 작업 내역 : </span> LNB 및 베이스 작업</p>
+        </div>
+    </div>
 </body>
+
 </html>
