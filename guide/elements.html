@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML 가이드 | 효성</title>
+    <title>효성 B System Elements Guide</title>
     <!-- Guide Styles -->
     <link rel="stylesheet" type="text/css" href="./highlight/default.css">
     <link rel="stylesheet" type="text/css" href="./css/guide.css" />
@@ -13,13 +14,14 @@
     <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.default.min.css">
     <link rel="stylesheet" href="../resources/css/index.css">
 </head>
+
 <body>
     <div class="wrapper">
         <header class="g_header">
             <ul>
-                <!-- <li><h1><a  href="/guide/list.html">효성</a></h1></li> -->
-                <li><a href="/guide/list.html">List</a></li>
-                <li><a href="/guide/elements.html">Elements</a></li>
+                <!-- <li><h1><a  href="./list.html">효성</a></h1></li> -->
+                <li><a href="./list.html">List</a></li>
+                <li><a href="./elements.html?elements=button">Elements</a></li>
             </ul>
         </header>
         <!-- hasList -->
@@ -28,35 +30,58 @@
                 <div id="elements">
                     <h2>elements</h2>
                     <ul>
-                        <li><a href="/guide/buttonGuide.html" target="_iframe">Button</a></li>
-                        <li><a href="/guide/checkboxGuide.html" target="_iframe">Checkbox</a></li>
-                        <li><a href="/guide/iconGuide.html" target="_iframe">iconGuide</a></li>
-                        <!-- <li><a href="/guide/dropdownGuide.html" target="_iframe">Dropdown</a></li> -->
-                        <!-- <li><a href="/guide/pickerGuide.html" target="_iframe">Datepicker</a></li> -->
-                        <li><a href="/guide/formGuide.html" target="_iframe">formGuide</a></li>
-                        <!-- <li><a href="/guide/searchGuide.html" target="_iframe">Search Group</a></li> -->
-                        <li><a href="/guide/tableTitleGuide.html" target="_iframe">TableTitleGuide</a></li>
-                        <li><a href="/guide/tableGuide.html" target="_iframe">Table</a></li>
-                        <!-- <li><a href="/guide/popupGuide.html" target="_iframe">Popup</a></li>
-                        <li><a href="/guide/etcGuide.html" target="_iframe">Etc</a></li> -->
+                        <li><a href="#button">Button</a></li>
+                        <li><a href="#checkbox">Checkbox</a></li>
+                        <li><a href="#icon">icon</a></li>
+                        <!-- <li><a href="#dropdown">Dropdown</a></li> -->
+                        <!-- <li><a href="#datepicker">Datepicker</a></li> -->
+                        <li><a href="#form">form</a></li>
+                        <!-- <li><a href="#search">Search Group</a></li> -->
+                        <li><a href="#tabletitle">TableTitle</a></li>
+                        <li><a href="#table">Table</a></li>
+                        <!-- <li><a href="#popup">Popup</a></li>
+                        <li><a href="#etc">Etc</a></li> -->
                     </ul>
                 </div>
             </div>
             <div class="g_content">
-                <!-- <iframe src="/guide/buttonGuide.html" frameborder="0" class="ifr_con" name="_iframe"></iframe> -->
-                <iframe src="./guide/tableGuide.html" frameborder="0" class="ifr_con" name="_iframe"></iframe>
+
             </div>
         </div>
-    </div><!--// .wrapper-->
+    </div>
+    <!--// .wrapper-->
 
     <!-- Load Scripts -->
     <script src="../resources/lib/kendo/js/jquery.min.js"></script>
     <script src="../resources/lib/kendo/js/kendo.all.min.js"></script>
     <!-- Guide Script -->
-    <script type="text/javascript" src="/guide/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="./highlight/highlight.pack.js"></script>
+    <script>
+        sch = location.search
+        console.log(sch)
+        var params = new URLSearchParams(sch);
+        var elmId = params.get('elements');
+        var elmPath = './elements/'+elmId+'.html';
+        var g = $('.g_content');
+        g.load(elmPath);
+
+        $('#elements li a').click(function (e) {
+            e.preventDefault();
+            var t = $(this).attr('href');
+            var tId = t.substring(1);
+            elmPath = './elements/'+tId+'.html';
+            g.html('');
+            g.load(elmPath);
+
+            params.set('elements', tId);
+            url = location.pathname+'?'+params.toString();
+            history.pushState('', '', url);
+        });
+    </script>
     <!-- Publish Script -->
     <script src="../resources/js/common.js"></script>
 
 
 </body>
+
 </html>
