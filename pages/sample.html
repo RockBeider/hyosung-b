@@ -1,12 +1,22 @@
-<div data-include-path="/pages/layout/doctype.html"></div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <!-- Load Styles -->
+    <!-- <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.common.min.css"> -->
+    <link rel="stylesheet" href="../resources/css/index.css">
+</head>
 <body>
     <div class="wrap">
         <!-- Header Include -->
-        <div data-include-path="/pages/layout/header.html"></div>
+        <div data-include-path="./layout/header.html"></div>
 
         <div class="container">
             <!-- Header Include -->
-            <div data-include-path="/pages/layout/lnb.html"></div>
+            <div data-include-path="./layout/lnb.html"></div>
             <!-- Contents -->
             <main class="content-main">
                 메인
@@ -16,7 +26,8 @@
     </div>
 
     <!-- Default Script Include -->
-    <div data-include-path="/pages/layout/script.html"></div>
-    <script src="/resources/js/common.js"></script>
+    <script src="../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../resources/js/common.js"></script>
 </body>
 </html>
