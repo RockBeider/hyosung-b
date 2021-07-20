@@ -71,7 +71,9 @@
             var tId = t.substring(1);
             elmPath = './elements/'+tId+'.html';
             g.html('');
-            g.load(elmPath);
+            g.load(elmPath, function() {
+                kendo.bind($(".wrapper"), {});
+            });
 
             params.set('elements', tId);
             url = location.pathname+'?'+params.toString();
