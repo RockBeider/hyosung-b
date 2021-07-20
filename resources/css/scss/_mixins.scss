@@ -17,18 +17,18 @@
 }
 
 // Icon Background
-@mixin icon($width, $height, $icon-name, $size: contain) {
+@mixin iconPng($width, $height, $name, $size: contain) {
 	font-size: 0;
 	width: $width;
 	height: $height;
 	display: inline-flex;
-	background-image: url("../images/#{$icon-name}.png");
+	background-image: url("../images/icon/#{$name}.png");
 	background-size: $size;
 }
 
 // SVG Background
-@mixin svg($width, $height, $name, $size: cover) {
-	$url: "../images/#{$name}.svg";
+@mixin iconSvg($width, $height, $name, $size: cover) {
+	$url: "../images/icon/#{$name}.svg";
 	width: $width;
 	height: $height;
 	background-image: url($url);

@@ -14,105 +14,106 @@
     transition: background 0.3s ease;
 }
 .h-ico {
-    &.filter {
-        width: 28px;
-        height: 28px;
-        margin-right: -10px;
-        background-image: url('/resources/images/icon/btn_filter_default.svg');
-        background-size: 8px 15px;
-    }
-    &.lnb-close { 
-        width: 18px;
-        height: 40px;
-        background-image: url('/resources/images/btn_lnb_close.svg');
-    }
     &.xs {
         width: 15px;
         height: 15px;
-        &.up {
-            background-image: url('/resources/images/icon/icon_arrow_up.svg');
-        }
-        &.down {
-            background-image: url('/resources/images/icon/icon_arrow_down.svg');
-        }
-        &.time {
-            background-image: url('/resources/images/icon/icon_time.svg');
-        }
     }
     &.xsm {
         width: 16px;
         height: 16px;
-        &.mail {
-            background-image: url('/resources/images/icon/icon_mystorage.svg');
-        }
-        &.rotate-left {
-            background-image: url('/resources/images/icon/icon_rotate_left.svg');
-        }
-        &.rotate-right {
-            background-image: url('/resources/images/icon/icon_rotate_right.svg');
-        }
-        &.close {
-            background-image: url('/resources/images/icon/icon_lnb_close.svg');
-        }
     }
     &.sm {
         width: 18px;
         height: 18px;
-        &.bookmark {
-            background-image: url('/resources/images/icon/btn_bookmark_default.svg');
-            &.active {
-                background-image: url('/resources/images/icon/btn_bookmark_active.svg');
-            }
-        }
-        &.search {
-            background-image: url('/resources/images/icon/icon_search.svg');
-            &:disabled {
-                background-image: url('/resources/images/icon/icon_search_disabled.svg');
-            }
-        }
-        &.blue {
-            background-image: url('/resources/images/icon/icon_search_btn.svg');
-        }
-        &.menu1 {
-            background-image: url('/resources/images/icon/icon_profile.svg');
-        }
-        &.menu2 {
-            background-image: url('/resources/images/icon/icon_4.svg');
-        }
-        &.menu3 {
-            background-image: url('/resources/images/icon/icon_1.svg');
-        }
-        &.menu4 {
-            background-image: url('/resources/images/icon/icon_3.svg');
-        }
-        &.menu5 {
-            background-image: url('/resources/images/icon/icon_profile.svg');
-        }
-        &.menu6 {
-            background-image: url('/resources/images/icon/icon_4.svg');
-        }
-        &.menu7 {
-            background-image: url('/resources/images/icon/icon_3.svg');
-        }
-        &.menu8 {
-            background-image: url('/resources/images/icon/icon_2.svg');
-        }
     }
     &.md {
         width: 20px; 
         height: 20px;
-        &.profile {
-            background-image: url('/resources/images/icon/icon_profile.svg');
-        }
     }
     &.lg {
         width: 26px; 
         height: 26px;
-        &.tip {
-            background-image: url('/resources/images/icon/btn_tip_default.svg');
-            &:hover {
-                background-image: url('/resources/images/icon/btn_tip_hover.svg');
-            }
+    }
+    &.filter {
+        @include iconSvg($width: 28px, $height: 28px, $name: 'btn_filter_default', $size: 8px 15px );
+        margin-right: -10px;
+    }
+    
+    //xs 15*15
+    &.up {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_arrow_up', $size: contain );
+    }
+    &.down {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_arrow_down', $size: contain );
+    }
+    &.time {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_time', $size: contain );
+    }
+    //xsm 16*16
+    &.mail {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_mystorage', $size: contain );
+    }
+    &.rotate-left {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_rotate_left', $size: contain );
+    }
+    &.rotate-right {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_rotate_right', $size: contain );
+    }
+    &.lnb-close { 
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_lnb_close', $size: contain );
+    }
+    //sm 18*18
+    &.bookmark {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'btn_bookmark_default', $size: contain );
+        &.active {
+            background-image: url('./../images/icon/btn_bookmark_active.svg');
+        }
+    }
+    &.search {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
+        &:disabled {
+            background-image: url('./../images/icon/icon_search_disabled.svg');
+        }
+    }
+    &.blue {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search_btn', $size: contain );
+    }
+    &.menu1 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_profile', $size: contain );
+    }
+    &.menu2 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_4', $size: contain );
+    }
+    &.menu3 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_1', $size: contain );
+    }
+    &.menu4 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_3', $size: contain );
+    }
+    &.menu5 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_profile', $size: contain );
+    }
+    &.menu6 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_4', $size: contain );
+    }
+    &.menu7 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_3', $size: contain );
+    }
+    &.menu8 {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_2', $size: contain );
+    }
+    // 20*20
+    &.profile {
+        @include iconSvg($width: 20px, $height: 20px, $name: 'icon_profile', $size: contain );
+    }
+    &.profile-blue {
+        @include iconPng($width: 20px, $height: 20px, $name: 'icon_profile_blue@3x', $size: contain );
+    }
+    // 26*26
+    &.tip {
+        @include iconSvg($width: 26px, $height: 26px, $name: 'btn_tip_default', $size: contain );
+        &:hover {
+            background-image: url('./../images/icon/btn_tip_hover.svg');
         }
     }
 }

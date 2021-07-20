@@ -3,7 +3,7 @@
  * 버튼
  * ------------------------------
  */
-.h-btn {
+.h-btn, .k-button {
     @include font-size-sm;
     display: flex;
     align-items: center;
@@ -12,14 +12,28 @@
     flex: 0 1 auto;
     height: 28px;
     padding: 0 20px;
-    border-radius: rem(3);
+    border-radius: 3px;
     white-space: nowrap;
     transition: background 0.2s ease-in;
 
     background-color: $main;
     color: $white;
+    
     &:hover, &:focus {
         background-color: $marine-blue;
+    }
+    &.text {
+        background: transparent;
+        height: auto;
+        padding: 0; 
+        text-decoration: underline;
+    }
+    &.time-add {
+
+    }
+    .k-icon {
+        width: 16px;
+        height: 16px;
     }
 
     > * + * {
@@ -31,16 +45,8 @@
         padding: 0 !important;
         background-color: transparent;
     }
-    &.has-ico {
+    &.k-button-icontext { 
         padding: 0 12px;
-        .h-ico {
-            width: 16px;
-            height: 16px;
-            background: $gray-e;
-        }
-        span {
-            color: inherit;
-        }
         > * + * {
             margin-left: 4px;
         }
@@ -50,17 +56,25 @@
     &:disabled:focus,
     &:disabled:active { //disabled 상태
         cursor: default;
-        background: $gray-e !important;
-        border: $gray-e !important;
-        color: $gray-2 !important;
+        background: $gray-f5 !important;
+        border: 1px solid $gray-c !important;
+        color: $gray-a !important;
         opacity: 0.7;
     }
     &.blue {
         background-color: $main;
+        border: 1px soild $main;
         color: $white;
         &:hover, &:focus {
             background-color: $marine-blue;
         }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $marine-blue;
+        }
+
     }
     &.light-blue {
         background-color: $lavender;
@@ -68,12 +82,28 @@
         &:hover, &:focus {
             background-color: $btn-light-blue-hover-bg;
         }
+        &.k-state-active {
+    
+        }
+        &.k-state-focused {
+            background-color: $btn-light-blue-hover-bg;
+        }
+    }
+    &.light-blue-border {
+        background-color: $tableBG1;
+        border: 1px solid $gray-c;
     }
     &.blue-border {
         background: $white;
         border: 1px solid $main;
         color: $main;
         &:hover, &:focus {
+            background-color: $btn-blue-border-hover-bg;
+        }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
             background-color: $btn-blue-border-hover-bg;
         }
     }
@@ -85,17 +115,39 @@
             background-color: $gray-e;
             border: 1px solid $gray-a;
         }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $gray-e;
+            border: 1px solid $gray-a;
+        }
+
     }
     &.green {
         background-color: $green;
         color: $white;
         &:hover, &:focus {
             background-color: $green-dark;
+            border: 1px solid $green;
         }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $green-dark;
+        }
+
     }
     &.logout { //로그아웃
         margin-left: 6px;
         border: 1px solid $btn-light-border;
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            border: 1px solid $btn-light-border;
+        }
     }
 }
 
@@ -108,14 +160,14 @@
 .btn-box {
     display: flex;
     justify-content: center;
-    .h-btn {
+    .k-button {
         flex: 0 1 auto;
     }
-    .h-btn + .h-btn {
+    .k-button + .k-button {
         margin-left: 6px;
     }
     &.period { //버튼 그룹(기간선택)
-        .h-btn {
+        .k-button {
             @include font-size-sm;
             min-width: 57px;
             background-color: $white;
@@ -128,18 +180,60 @@
             &:last-child {
                 border-radius: 0 3px 3px 0;
             }
-            &.active {
+            &.k-state-active, &.k-state-focused  {
                 background-color: $accent;
                 border-color: $accent;
                 color: $white;
             }
-            + .h-btn {
+            + .k-button {
                 margin-left: 0;
                 border-left: 0;
-                &.active {
+                &.k-state-active {
                     margin-left: -1px;
                     padding-left: 21px;
                 }
+            }
+        }
+    }
+}
+.k-button-group {
+    display: flex;
+    justify-content: center;
+    .k-button {
+        @include font-size-sm;
+        flex: 0 1 auto;
+        min-width: 57px;
+        background-color: $white;
+        border:  1px solid $gray-a;
+        border-right: 0;
+        color: $gray-7;
+        border-radius: 0;
+        &.k-state-active, &.k-state-focused  {
+            background-color: $accent;
+            border: 1px solid $accent;
+            border-right: 0;
+            color: $white;
+            + .k-button {
+                border-left: 1px solid $accent;
+            }
+        }
+        &:first-child {
+            border-radius: 3px 0 0 3px;
+        }
+        &:last-child {
+            border-radius: 0 3px 3px 0;
+            border-right: 1px solid $gray-a;
+            &.k-state-active, &.k-state-focused  {
+                border-right: 1px solid $accent;
+            }
+        }
+        
+        + .k-button {
+            // margin-left: 0;
+            // border-left: 0;
+            &.k-state-active {
+                margin-left: 0px;
+                padding-left: 20px;
             }
         }
     }

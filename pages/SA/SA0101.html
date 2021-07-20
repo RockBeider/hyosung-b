@@ -5,16 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
-    <!-- Load Styles -->
-    <!-- <link rel="stylesheet" href="../../resources/lib/kendo/styles/kendo.common.min.css"> -->
     <link rel="stylesheet" href="../../resources/css/index.css">
-
-    <!-- Default Script Include -->
-    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
-    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
 </head>
-
 <body>
     <div class="wrap">
         <!-- Header Include -->
@@ -25,7 +17,6 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-
                 <!-- Contents Header -->
                 <div class="contents-header">
                     <div class="title-box lg">
@@ -45,7 +36,7 @@
 
                 <!-- Contents Body -->
                 <div class="contents-body">
-                    <div class="contents1">
+                    <div class="table-group">
                         <div class="search-control">
                             <div class="form-group">
                                 <span class="label">검색항목</span>
@@ -73,18 +64,17 @@
                             <div class="form-group">
                                 <span class="label">검색기간</span>
                                 <div class="form-set">
-                                    <input data-role="dateinput"/>
-                                    <input type="text" class="datepicker h-input sm" value="2021/06/02">
+                                    <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
                                     <span class="bar">~</span>
-                                    <input type="text" class="datepicker h-input sm" value="2021/06/04">
-                                    <div class="btn-box period">
-                                        <!-- [D] 선택된 값 .active 추가 -->
-                                        <button type="button" class="h-btn active">오늘</button>
-                                        <button type="button" class="h-btn">7일</button>
-                                        <button type="button" class="h-btn">15일</button>
-                                        <button type="button" class="h-btn">1개월</button>
-                                        <button type="button" class="h-btn">3개월</button>
-                                    </div>
+                                    <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+                                    <ul data-role="buttongroup" class=""
+                                    data-index="0">
+                                        <li data-role="button">오늘</li>
+                                        <li data-role="button">7일</li>
+                                        <li data-role="button">15일</li>
+                                        <li data-role="button">1개월</li>
+                                        <li data-role="button">3개월</li>
+                                    </ul>
                                 </div>
                             </div>
                             <button type="submit" class="h-btn search">검색</button>
@@ -102,97 +92,22 @@
                                 </div>
                             </div>
                             <div class="table-content">
-                                <table>
-                                    <colgroup>
-                                        <col width="60px">
-                                        <col width="60px">
-                                        <col width="110px">
-                                        <col width="210px">
-                                        <col width="*">
-                                        <col width="*">
-                                        <col width="*">
-                                        <col width="*">
-                                        <col width="*">
-                                        <col width="*">
-                                        <col width="*">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <div class="h-checkbox no-label">
-                                                    <input type="checkbox" id="checkbox-1" name="checkbox" aria-label="조회선택" />
-                                                    <label for="checkbox-1"></label>
-                                                </div>
-                                            </th>
-                                            <th>NO.</th>
-                                            <th>
-                                                <div class="form-box">
-                                                    상품코드<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    상품명<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    어플리케이션<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    표준가격<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    최소가격<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    승인상태<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    사용가능업종<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    등록일<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div class="form-box">
-                                                    종료일<button type="button" class="h-ico filter">필터</button>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="h-checkbox no-label">
-                                                    <input type="checkbox" id="checkbox-2" name="checkbox" aria-label="조회선택" />
-                                                    <label for="checkbox-2"></label>
-                                                </div>
-                                            </td>
-                                            <td>1</td>
-                                            <td>00001</td>
-                                            <td>효성CMS</td>
-                                            <td>CMS</td>
-                                            <td>100,000원</td>
-                                            <td>80,000원</td>
-                                            <td>승인완료</td>
-                                            <td>전업종</td>
-                                            <td>2020.12.31</td>
-                                            <td>2027.12.31</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="demo-section k-content wide">
+                                    <div data-role="grid" data-sortable="true" data-editable="false" data-columns='[
+                                        { "field": "NO", "width": 50 },
+                                        { "field": "N", "width": 50 },
+                                        { "field": "상품코드", "width": 90 },
+                                        { "field": "상품명", "width": 170 },
+                                        { "field": "어플리케이션", "width": 146 },
+                                        { "field": "표준가격", "width": 140 },
+                                        { "field": "최소가격", "width": 146 },
+                                        { "field": "승인상태", "width": 140 },
+                                        { "field": "사용가능업종", "width": 140 },
+                                        { "field": "등록일", "width": 120 },
+                                        { "field": "종료일", "width": 120 }
+                                    ]' data-bind="source: gridSource">
+                                    </div>
+                                </div>
                                 <div class="table-bottom">
                                     <button type="button" class="h-btn gray-border">삭제</button>
                                 </div>
@@ -205,6 +120,66 @@
         </div>
 
     </div>
+
+    <!-- Default Script Include -->
+    <script src="/resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="/resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="/resources/js/common.js"></script>
+    <script>
+            var viewModel = kendo.observable({
+                colors: [
+                    { name: "Red", value: "#f00" },
+                    { name: "Green", value: "#0f0" },
+                    { name: "Blue", value: "#00f" }
+                ],
+                gridSource: [
+                    { "NO":"11", "NO":"11",  "상품코드":"11","상품명":"11", "어플리케이션":"11","표준가격":"11","최소가격":"11","승인상태":"11","사용가능업종":"11","등록일":"11","종료일":"11" },
+                    { "NO":"11", "NO":"11",  "상품코드":"11","상품명":"11", "어플리케이션":"11","표준가격":"11","최소가격":"11","승인상태":"11","사용가능업종":"11","등록일":"11","종료일":"11" },
+                    { "NO":"11", "NO":"11",  "상품코드":"11","상품명":"11", "어플리케이션":"11","표준가격":"11","최소가격":"11","승인상태":"11","사용가능업종":"11","등록일":"11","종료일":"11" }
+                    // { , Price: 18.00, UnitsInStock: 39 },
+                    // {, Price: 19.00, UnitsInStock: 17 },
+                    // {  Price: 97.00, UnitsInStock: 29 },
+                    // {  Price: 97.00, UnitsInStock: 29 },
+                    // {  Price: 97.00, UnitsInStock: 29 },
+                    // {  Price: 97.00, UnitsInStock: 29 },
+                    // {  Price: 97.00, UnitsInStock: 29 },
+                    // { , Price: 97.00, UnitsInStock: 29 },
+                    // { Price: 97.00, UnitsInStock: 29 },
+                    // {  Price: 97.00, UnitsInStock: 29 },
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+               
+            });
+
+            kendo.bind($("div.demo-section"), viewModel);
+    </script>
+    <!-- <style>      
+        .demo-section > div {
+            float: left;
+            margin-bottom: 2em;
+        }
+        .fieldlist {
+            float: left;
+            margin: 0 3em 2em 0;
+            padding: 0;
+            max-width: 50%;
+        }
+
+        .fieldlist li {
+            list-style: none;
+            padding-bottom: 1.5em;
+            text-align: left;
+        }
+
+        .prettyprint {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            overflow: auto;
+            padding: 5px;
+        }
+    </style> -->
 </body>
 
 </html>

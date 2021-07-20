@@ -4,9 +4,8 @@
     margin-top: 12px;
 }
 .table-content {
-    border-top: 1px solid $gray-2;
     table {
-		table-layout: fixed;
+		// table-layout: fixed;
 	}
     th, td {
         height: 36px;
@@ -14,13 +13,11 @@
     }
     thead th, thead td {
         background: $searchLine;
-        border:  1px solid $lnbLine;
         text-align: left;
         color: $gray-5;
     }
     tbody th, tbody td { 
         background: $white;
-        border:  1px solid $lnbLine;
         color: $gray-2;
     }
     tr th:first-child, tr td:first-child {
@@ -71,7 +68,7 @@ td .form-box, th .form-box {
 .table-bottom {
     padding: 15px 20px;
     background: $white;
-    border-top: 1px solid $inputDefault;
+    // border-top: 1px solid $inputDefault;
     border-bottom: 1px solid $inputDefault;
     box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
 }

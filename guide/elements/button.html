@@ -4,47 +4,49 @@
             <p class="title">Default Button</p>
         </div>
         <div class="g-example-body flex-inline">
-            <button type="button" class="h-btn blue">Button</button>
-            <button type="button" class="h-btn light-blue">Button</button>
-            <button type="button" class="h-btn blue-border">Button</button>
-            <button type="button" class="h-btn gray-border">Button</button>
-            <button type="button" class="h-btn green">엑셀</button>
-            <button type="button" class="h-btn blue">로그아웃</button>
+            <button data-role="button" class="blue">Button</button>
+            <button data-role="button" class="light-blue">Button</button>
+            <button data-role="button" class="blue-border">Button</button>
+            <button data-role="button" class="gray-border">Button</button>
+            <button data-role="button" class="green">Button</button>
+            <button data-role="button" class="blue">Button</button>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
             </code></pre>
         </div>
     </div>
+
 
     <div class="g-example-wrap">
         <div class="g-example-head">
             <p class="title">Disabled Button(임시)</p>
         </div>
         <div class="g-example-body flex-inline">
-            <button type="button" class="h-btn blue" disabled="disabled">Button</button>
-            <button type="button" class="h-btn light-blue" disabled="disabled">Button</button>
-            <button type="button" class="h-btn blue-border" disabled="disabled">Button</button>
-            <button type="button" class="h-btn gray-border" disabled="disabled">Button</button>
-            <button type="button" class="h-btn green" disabled="disabled">엑셀</button>
-            <button type="button" class="h-btn blue" disabled="disabled">로그아웃</button>
+            <button data-role="button" class="blue" disabled="disabled">Button</button>
+            <button data-role="button" class="light-blue" disabled="disabled">Button</button>
+            <button data-role="button" class="blue-border" disabled="disabled">Button</button>
+            <button data-role="button" class="gray-border" disabled="disabled">Button</button>
+            <button data-role="button" class="green" disabled="disabled">엑셀</button>
+            <button data-role="button" class="blue" disabled="disabled">로그아웃</button>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
             </code></pre>
         </div>
     </div>
+
 
     <div class="g-example-wrap">
         <div class="g-example-head">
             <p class="title">Button with icons</p>
         </div>
         <div class="g-example-body flex-inline">
-            <button type="button" class="h-btn blue has-ico"><i class="h-ico"></i><span>Button</span></button>
-            <button type="button" class="h-btn light-blue has-ico"><i class="h-ico"></i><span>Button</span></button>
-            <button type="button" class="h-btn blue-border has-ico"><i class="h-ico"></i><span>Button</span></button>
-            <button type="button" class="h-btn gray-border has-ico"><i class="h-ico"></i><span>Button</span></button>
-            <button type="button" class="h-btn green has-ico"><i class="h-ico"></i><span>Button</span></button>
+            <button data-role="button" data-icon="example"><span>Button</span></button>
+            <button data-role="button" class="light-blue" data-icon="example"><span>Button</span></button>
+            <button data-role="button" class="blue-border" data-icon="example"><span>Button</span></button>
+            <button data-role="button" class="gray-border" data-icon="example"><span>Button</span></button>
+            <button data-role="button" class="green" data-icon="example"><span>Button</span></button>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
@@ -52,23 +54,27 @@
         </div>
     </div>
 
+
     <div class="g-example-wrap">
         <div class="g-example-head">
             <p class="title">Button group</p>
         </div>
         <div class="g-example-body flex-inline">
-            <div class="btn-box period">
-                <!-- [D] 선택된 값 .active 추가 -->
-                <button type="button" class="h-btn active">오늘</button>
-                <button type="button" class="h-btn">7일</button>
-                <button type="button" class="h-btn">15일</button>
-                <button type="button" class="h-btn">1개월</button>
-                <button type="button" class="h-btn">3개월</button>
-            </div>
+            <ul data-role="buttongroup" class="btn-box period"
+            data-index="0">
+                <li data-role="button">Button</li>
+                <li data-role="button">Button</li>
+                <li data-role="button">Button</li>
+                <li data-role="button">Button</li>
+                <li data-role="button">Button</li>
+                <li data-role="button">Button</li>
+            </ul>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
             </code></pre>
         </div>
     </div>
+
+
 </div>

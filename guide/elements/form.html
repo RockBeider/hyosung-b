@@ -5,8 +5,8 @@
                 <p class="title">Dropdown</p>
             </div>
             <div class="g-example-body flex-block">
-                <select data-role="dropdownlist">
-                    <option value="" selected>선택</option>
+                <select data-role="dropdownlist" data-option-label="선택">
+                    <!-- <option value="" selected>선택</option> -->
                     <option value="1">온라인</option>
                     <option value="2">오프라인</option>
                 </select>
@@ -28,8 +28,8 @@
                 <p class="title">Date Range</p>
             </div>
             <div class="g-example-body flex-block">
-                <input data-role="dateinput" />
-                <input data-role="dateinput" disabled />
+                <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+                <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31" disabled/> 
             </div>
 
             <div class="g-example-foot">
@@ -95,19 +95,17 @@
                 <div class="form-group">
                     <span class="label">검색기간</span>
                     <div class="form-set">
-                        <input data-role="dateinput" />
-                        <!-- <input type="text" class="datepicker h-input sm" placeholder="yyyymmdd" value="2021/06/02"> -->
+                        <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
                         <span class="bar">~</span>
-                        <input data-role="dateinput" />
-                        <!-- <input type="text" class="datepicker h-input sm" placeholder="yyyymmdd" value="2021/06/04"> -->
-                        <div class="btn-box period">
-                            <!-- [D] 선택된 값 .active 추가 -->
-                            <button type="button" class="h-btn active">오늘</button>
-                            <button type="button" class="h-btn">7일</button>
-                            <button type="button" class="h-btn">15일</button>
-                            <button type="button" class="h-btn">1개월</button>
-                            <button type="button" class="h-btn">3개월</button>
-                        </div>
+                        <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+                        <ul data-role="buttongroup" class="btn-box period"
+                        data-index="0">
+                            <li data-role="button">오늘</li>
+                            <li data-role="button">7일</li>
+                            <li data-role="button">15일</li>
+                            <li data-role="button">1개월</li>
+                            <li data-role="button">3개월</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -120,16 +118,17 @@
     </div>
 
 
-    <!-- <div class="g-example-wrap">
+    <div class="g-example-wrap">
         <div class="g-example-head">
             <p class="title">Form Group</p>
         </div>
         <div class="g-example-body flex-block">
+            
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
 
             </code></pre>
         </div>
-    </div> -->
+    </div>
 </div>
