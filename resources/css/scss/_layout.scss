@@ -65,7 +65,7 @@ body {
 		// background: #fff;
 		width: 124px;
 		height: 18px;
-		background: url('./../images/gms_ci_ko@3x.png') no-repeat center /contain;
+		background: url('../images/gms_ci_ko@3x.png') no-repeat center /contain;
 		&-info {
 			@include font-size-md;
 			color: $white;
