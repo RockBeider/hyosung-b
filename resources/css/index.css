@@ -1303,7 +1303,7 @@ td .form-box, th .form-box {
   display: block;
   width: 18px;
   height: 18px;
-  background-image: url("./../resources/images/icon/icon_search.svg");
+  background-image: url("./../images/icon/icon_search.svg");
   background-size: 18px 18px;
 }
 .input-box.search .h-input {
@@ -2000,7 +2000,7 @@ td .form-box, th .form-box {
   color: #aaa;
 }
 .k-dropdown .k-dropdown-wrap.k-state-disabled .k-i-arrow-60-down:before, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover .k-i-arrow-60-down:before {
-  background-image: url("./../resources/images/icon/icon_arrow_down_diabled.svg");
+  background-image: url("./../images/icon/icon_arrow_down_diabled.svg");
 }
 .k-dropdown .k-dropdown-wrap.k-state-hover, .k-dropdown .k-dropdown-wrap:hover {
   background-color: #fff;
@@ -2034,7 +2034,7 @@ td .form-box, th .form-box {
   right: 10px;
   width: 15px;
   height: 15px;
-  background: url("./../resources/images/icon/icon_arrow_down.svg") no-repeat center/15px 15px;
+  background: url("./../images/icon/icon_arrow_down.svg") no-repeat center/15px 15px;
   transition: all 0.3s ease;
 }
 .k-dropdown .k-dropdown-wrap.k-state-active .k-i-arrow-60-down:before {
