@@ -68,13 +68,13 @@
     &.bookmark {
         @include iconSvg($width: 18px, $height: 18px, $name: 'btn_bookmark_default', $size: contain );
         &.active {
-            background-image: url('./../images/icon/btn_bookmark_active.svg');
+            background-image: url('../images/icon/btn_bookmark_active.svg');
         }
     }
     &.search {
         @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
         &:disabled {
-            background-image: url('./../images/icon/icon_search_disabled.svg');
+            background-image: url('../images/icon/icon_search_disabled.svg');
         }
     }
     &.blue {
@@ -115,7 +115,7 @@
     &.tip {
         @include iconSvg($width: 26px, $height: 26px, $name: 'btn_tip_default', $size: contain );
         &:hover {
-            background-image: url('./../images/icon/btn_tip_hover.svg');
+            background-image: url('../images/icon/btn_tip_hover.svg');
         }
     }
 }
@@ -152,13 +152,13 @@
     &bookmark {
         @include iconSvg($width: 18px, $height: 18px, $name: 'btn_bookmark_default', $size: contain );
         &active {
-            background-image: url('./../images/icon/btn_bookmark_active.svg');
+            background-image: url('../images/icon/btn_bookmark_active.svg');
         }
     }
     &search {
         @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
         &:disabled {
-            background-image: url('./../images/icon/icon_search_disabled.svg');
+            background-image: url('../images/icon/icon_search_disabled.svg');
         }
     }
     &search-blue {
@@ -199,7 +199,7 @@
     &tip {
         @include iconSvg($width: 26px, $height: 26px, $name: 'btn_tip_default', $size: contain );
         &:hover {
-            background-image: url('./../images/icon/btn_tip_hover.svg');
+            background-image: url('../images/icon/btn_tip_hover.svg');
         }
     }
 }
