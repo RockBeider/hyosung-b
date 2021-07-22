@@ -1303,7 +1303,7 @@ td .form-box, th .form-box {
   display: block;
   width: 18px;
   height: 18px;
-  background-image: url("/resources/images/icon/icon_search.svg");
+  background-image: url("./../resources/images/icon/icon_search.svg");
   background-size: 18px 18px;
 }
 .input-box.search .h-input {
