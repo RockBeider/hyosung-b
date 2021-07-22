@@ -2000,7 +2000,7 @@ td .form-box, th .form-box {
   color: #aaa;
 }
 .k-dropdown .k-dropdown-wrap.k-state-disabled .k-i-arrow-60-down:before, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover .k-i-arrow-60-down:before {
-  background-image: url("./../images/icon/icon_arrow_down_diabled.svg");
+  background-image: url("../images/icon/icon_arrow_down_diabled.svg");
 }
 .k-dropdown .k-dropdown-wrap.k-state-hover, .k-dropdown .k-dropdown-wrap:hover {
   background-color: #fff;
@@ -2034,7 +2034,7 @@ td .form-box, th .form-box {
   right: 10px;
   width: 15px;
   height: 15px;
-  background: url("./../images/icon/icon_arrow_down.svg") no-repeat center/15px 15px;
+  background: url("../images/icon/icon_arrow_down.svg") no-repeat center/15px 15px;
   transition: all 0.3s ease;
 }
 .k-dropdown .k-dropdown-wrap.k-state-active .k-i-arrow-60-down:before {
@@ -2183,7 +2183,7 @@ td .form-box, th .form-box {
   background-size: 8px 15px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url("./../images/icon/btn_filter_default.svg");
+  background-image: url("../images/icon/btn_filter_default.svg");
 }
 .k-grid .k-grouping-header .k-icon.k-i-sort-asc-sm,
 .k-grid .k-grouping-header .k-icon.k-i-sort-desc-sm,
@@ -2208,11 +2208,11 @@ td .form-box, th .form-box {
 }
 .k-grid .k-grouping-header .k-i-sort-desc-sm:before,
 .k-grid-header .k-i-sort-desc-sm:before {
-  background-image: url("./../images/icon/btn_filter_down.svg");
+  background-image: url("../images/icon/btn_filter_down.svg");
 }
 .k-grid .k-grouping-header .k-i-sort-asc-sm:before,
 .k-grid-header .k-i-sort-asc-sm:before {
-  background-image: url("./../images/icon/btn_filter_up.svg");
+  background-image: url("../images/icon/btn_filter_up.svg");
 }
 
 .k-grid tr:last-child td {
@@ -6682,7 +6682,7 @@ td .form-box, th .form-box {
   right: 20px;
   width: 15px;
   height: 15px;
-  background-image: url("./../images/icon/icon_arrow_down.svg");
+  background-image: url("../images/icon/icon_arrow_down.svg");
   background-repeat: no-repeat;
   background-size: 15px 15px;
   text-align: center;
