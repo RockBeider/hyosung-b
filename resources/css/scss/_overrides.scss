@@ -32,7 +32,7 @@
 			background-color: $gray-f5;
 			color: $gray-a;
 			.k-i-arrow-60-down:before {
-				background-image: url("/resources/images/icon/icon_arrow_down_diabled.svg");
+				background-image: url("./../resources/images/icon/icon_arrow_down_diabled.svg");
 			}
 		}
 		&.k-state-hover,
@@ -66,7 +66,7 @@
 			right: 10px;
 			width: 15px;
 			height: 15px;
-			background: url("/resources/images/icon/icon_arrow_down.svg") no-repeat center / 15px 15px;
+			background: url("./../resources/images/icon/icon_arrow_down.svg") no-repeat center / 15px 15px;
 			transition: all 0.3s ease;
 		}
 		&.k-state-active {
