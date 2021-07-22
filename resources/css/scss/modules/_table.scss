@@ -1,48 +1,25 @@
 
 
+table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table-group + .table-group {
+    margin-top :30px;
+}
 .table-set {
     margin-top: 12px;
 }
 .table-content {
-    border-top: 1px solid $gray-2;
     table {
-		table-layout: fixed;
+		// table-layout: fixed;
 	}
-    th, td {
-        height: 36px;
-        padding: 0 10px;
-    }
-    thead th, thead td {
-        background: $searchLine;
-        border:  1px solid $lnbLine;
-        text-align: left;
-        color: $gray-5;
-    }
-    tbody th, tbody td { 
-        background: $white;
-        border:  1px solid $lnbLine;
-        color: $gray-2;
-    }
-    tr th:first-child, tr td:first-child {
-        border-left: 0;
-    }
-    tr th:last-child, tr td:last-child {
-        border-right: 0;
-    }
+    
 }
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-thead th {
-	text-align: center;
-}
-tr td {
-    transition: background 0.3s ease;
-}
-tr:hover td {
-    background-color: $tableBG1;
-}
+
 .text-center th,
 .text-center td {
 	text-align: center !important;
@@ -71,7 +48,7 @@ td .form-box, th .form-box {
 .table-bottom {
     padding: 15px 20px;
     background: $white;
-    border-top: 1px solid $inputDefault;
+    // border-top: 1px solid $inputDefault;
     border-bottom: 1px solid $inputDefault;
     box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
 }

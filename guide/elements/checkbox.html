@@ -6,11 +6,15 @@
         <div class="g-example-body">
             <div class="h-checkbox no-label">
                 <input type="checkbox" id="checkbox-nolabel" name="checkbox" />
-                <label for="checkbox-nolabel"></label>
+                <label for="checkbox-nolabel"></label> 
             </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
+&lt;div class="h-checkbox no-label">
+    &lt;input type="checkbox" id="checkbox-nolabel" name="checkbox" />
+    &lt;label for="checkbox-nolabel">&lt;/label> 
+&lt;/div>
             </code></pre>
         </div>
     </div>
@@ -37,6 +41,20 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
+&lt;div class="check-group">
+    &lt;div class="h-checkbox">
+        &lt;input type="checkbox" id="checkbox1-1" name="checkbox" />
+        &lt;label for="checkbox1-1">&lt;span>unchecked&lt;/span>&lt;/label>
+    &lt;/div>
+    &lt;div class="h-checkbox">
+        &lt;input type="checkbox" id="checkbox1-2" name="checkbox" checked="checked" />
+        &lt;label for="checkbox1-2">&lt;span>checked&lt;/span>&lt;/label>
+    &lt;/div>
+    &lt;div class="h-checkbox">
+        &lt;input type="checkbox" id="checkbox1-3" name="checkbox" disabled="disabled" />
+        &lt;label for="checkbox1-3">&lt;span>disabled&lt;/span>&lt;/label>
+    &lt;/div>
+&lt;/div>
             </code></pre>
         </div>
     </div>
@@ -63,46 +81,21 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
+&lt;div class="check-group">
+    &lt;div class="h-checkbox">
+        &lt;input type="radio" id="radio1-1" name="radio" checked="checked" />
+        &lt;label for="radio1-1">&lt;span>unchecked&lt;/span>&lt;/label>
+    &lt;/div>
+    &lt;div class="h-checkbox">
+        &lt;input type="radio" id="radio1-2" name="radio" />
+        &lt;label for="radio1-2">&lt;span>checked&lt;/span>&lt;/label>
+    &lt;/div>
+    &lt;div class="h-checkbox">
+        &lt;input type="radio" id="radio1-3" name="radio" disabled="disabled" />
+        &lt;label for="radio1-3">&lt;span>disabled&lt;/span>&lt;/label>
+    &lt;/div>
+&lt;/div>
             </code></pre>
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        // create CheckBoxGroup from ul HTML element
-        var checkBoxGroup = $("#checkboxgroup").kendoCheckBoxGroup({
-            items: [
-                {
-                    label: "Day pack",
-                    value: "1"
-                },
-                {
-                    label: "Hiking poles",
-                    value: "2"
-                },
-                {
-                    label: "Hiking boots",
-                    value: "3"
-                },
-                {
-                    label: "UV protection sunglasses",
-                    value: "4"
-                },
-                {
-                    enabled: false,
-                    label: "Trousers",
-                    value: "5"
-                }],
-            layout: "vertical",
-            value: ["1", "2"]
-        }).data("kendoCheckBoxGroup");
-
-        $("#selectAllCheckbox").change(function () {
-            if (this.checked) {
-                checkBoxGroup.checkAll(true)
-            } else {
-                checkBoxGroup.checkAll(false)
-            }
-        });
-    });
-</script>

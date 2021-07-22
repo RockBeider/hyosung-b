@@ -8,28 +8,24 @@
 //************************************************************
 
 // Include Html
-window.addEventListener("load", function () {
-    var allElements = document.getElementsByTagName("*");
-    Array.prototype.forEach.call(allElements, function (el) {
-        var includePath = el.dataset.includePath;
-        if (includePath) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    el.outerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", includePath, true);
-            xhttp.send();
-        }
-    });
-});
-
-$(document).ready(function () {
-    kendo.bind($(".wrap"), {});
-});
-
-
+function includePath() {
+	var dataAttr = "data-include-path";
+	var include = $("[" + dataAttr + "]");
+	$.each(include, function (index, item) {
+	   var self = $(this);
+	   var path = self.attr(dataAttr);
+	   self.load(path, function() {
+		  $(this).before($(this).children())
+		  $(this).remove();
+		  kendo.bind($(".wrap"), {});
+	   });
+	});
+ };
+ 
+ $(window).load(function () {
+	kendo.bind($(".wrap"), {});
+	includePath();
+ });
 
 /* =====================================
 * side submenu accordion
@@ -70,3 +66,21 @@ $(document).on('click', '.sidebar-wrap .sidebar-2depth.has-submenu > a', functio
 $(document).on('click', '.funcToggle', function() {
 	$(this).toggleClass('active');
 });
+
+
+/* =====================================
+* file upload
+* =====================================
+*/
+$(document).ready(function(){
+	var fileTarget = $('.filebox .upload-hidden');
+	fileTarget.on('change', function(){
+		if(window.FileReader){
+			var filename = $(this)[0].files[0].name;
+			console.log('filename', filename);
+		} else {
+			var filename = $(this).val().split('/').pop().split('\\').pop();
+		}
+		$(this).siblings('.h-input').val(filename);
+	});
+}); 

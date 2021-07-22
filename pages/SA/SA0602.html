@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+            <!-- Contents -->
+            <main class="contents-wrap">
+                <!-- Contents Header -->
+                <div class="contents-header">
+                    <div class="title-box lg">
+                        <div class="left-group">
+                            <h2 class="main-title">이메일발송</h2>
+                        </div>
+                        <div class="right-group">
+                            <nav id="breadcrumb"
+                                data-role="breadcrumb"
+                                data-editable=false,
+                                data-navigational=true,
+                                data-items='[
+                                { type: "rootitem", href: "", text: "서비스품질", showText: true, showIcon: false },
+                                { type: "item", href: "", text: "이메일관리", showText: true, showIcon: false},
+                                { type: "item", href: "", text: "이메일발송", showText: true, showIcon: false}
+                            ]'/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contents Body -->
+                <div class="contents-body">
+                    <div class="send-form-set">
+                        <div class="list">
+                            <label class="label" for="ID-send-receiver">수신자</label>
+                            <div class="form-group row">
+                                <div class="form-set">
+                                    <input id="ID-send-receiver" class="h-input" placeholder="수신자를 추가해주세요"/>
+                                    <button data-role="button" class="gray-border">수신자추가</button>
+                                    <button data-role="button" class="gray-border">대량수신자추가</button>
+                                </div>
+                                <!-- <div class="form-set filebox">
+                                    <h4 class="label">대량입력</h4>
+                                    <input class="h-input xl" value="파일을 업로드해주세요" disabled="disabled">
+                                    <label for="ex_filename" class="h-btn">업로드</label> 
+                                    <input type="file" id="ex_filename" class="upload-hidden"> 
+                                    <button data-role="button" class="light-green">샘플파일다운로드</button>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="list">
+                            <label class="label" for="ID-send-title">제목</label>
+                            <div class="form-set">
+                                <input id="ID-send-title" class="h-input" placeholder="제목을 입력해주세요"/>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <label class="label">내용</label>
+                            <div class="form-set editor-box">
+                                <textarea data-role="editor"
+                                    data-tools="['bold',
+                                                'italic',
+                                                'underline',
+                                                'strikethrough',
+                                                'justifyLeft',
+                                                'justifyCenter',
+                                                'justifyRight',
+                                                'justifyFull']"
+                                    
+                                    style="height: 746px;">
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="btn-box justify-content-end">
+                            <button data-role="button" class="light-blue">취소</button>
+                            <button data-role="button">발송</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="/resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="/resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="/resources/js/common.js"></script>
+    <script>
+            var viewModel = kendo.observable({
+                gridSource: [
+                    { "N":"ch", "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "N":"ch", "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "N":"ch", "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+            });
+            kendo.bind($(".table-content.grid"), viewModel);
+    </script>
+</body>
+
+</html>

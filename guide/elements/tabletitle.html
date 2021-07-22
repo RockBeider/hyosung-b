@@ -11,15 +11,36 @@
                     <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
                 </div>
                 <div class="right-group">
-                    <div class="breadcrumb">
-                        <span class="breadcrumb-item">서비스품질</span>
-                        <span class="breadcrumb-item active">상담정보 관리</span>
-                    </div>
+                    <nav id="breadcrumb"
+                        data-role="breadcrumb"
+                        data-editable=false,
+                        data-navigational=true,
+                        data-items='[
+            	    { type:"rootitem", href: "", text: "서비스품질", showText: true },
+            	    { type:"item", href: "", text: "상담정보 관리", showText: true}
+        		 ]'/>
                 </div>
             </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
+&lt;div class="title-box lg">
+    &lt;div class="left-group">
+        &lt;h2 class="main-title">메인 타이틀&lt;/h2>
+        &lt;button type="button" class="h-ico lg tip ml-8">팁&lt;/button>
+        &lt;button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크&lt;/button>
+    &lt;/div>
+    &lt;div class="right-group">
+        &lt;nav id="breadcrumb"
+            data-role="breadcrumb"
+            data-editable=false,
+            data-navigational=true,
+            data-items='[
+        { type:"rootitem", href: "", text: "서비스품질", showText: true },
+        { type:"item", href: "", text: "상담정보 관리", showText: true}
+        ]'/>
+    &lt;/div>
+&lt;/div>
             </code></pre>
         </div>
     </div>
@@ -34,13 +55,15 @@
                 <div class="left-group">
                     <h2 class="sub-title dot">서브 타이틀</h2>
                 </div>
-                <div class="right-group">
-
-                </div>
             </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
+&lt;div class="title-box md">
+    &lt;div class="left-group">
+        &lt;h2 class="sub-title dot">서브 타이틀&lt;/h2>
+    &lt;/div>
+&lt;/div>
             </code></pre>
         </div>
     </div>
@@ -61,11 +84,20 @@
                     <button type="button" class="h-btn">상품등록</button>
                 </div>
             </div>
-
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-
+&lt;div class="title-box sm align-items-end">
+    &lt;div class="left-group">
+        &lt;span class="amount-set">
+            &lt;span class="amount current">1&lt;/span>&lt;span class="unit">건&lt;/span>&lt;span class="dash">/&lt;/span>
+            &lt;span class="amount">26&lt;/span>&lt;span class="unit">건&lt;/span>
+        &lt;/span>
+    &lt;/div>
+    &lt;div class="right-group">
+        &lt;button type="button" class="h-btn">상품등록&lt;/button>
+    &lt;/div>
+&lt;/div>
             </code></pre>
         </div>
     </div>

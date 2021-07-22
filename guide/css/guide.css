@@ -35,7 +35,7 @@ body {
 code.html,
 .g_html {
 	display: block;
-	padding: 1rem 2rem;
+	padding: 0 10px;
 	background-color: #fff;
 	border: 1px #ddd solid;
 } /* highlight.js */
@@ -96,7 +96,8 @@ code.html,
 	width: 100%;
 }
 .g_menu {
-	width: 220px;
+	min-width: 180px;
+	width: 180px;
 	border-right: 1px #ddd solid;
 	background: #fff;
 }
@@ -216,7 +217,7 @@ ul.state li strong {
 	font-size: 0;
 }
 .tbl_guide .sbid a {
-	font-size: 14px;
+	font-size: 16px;
 }
 .tbl_guide .hidden {
 	font-size: 0;

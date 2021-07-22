@@ -16,7 +16,7 @@
         flex-wrap: wrap;
         > * + * {
             margin-left: 0;
-            margin-top: 6px;
+            margin-top: 10px;
         }
         .form-set {
             width: 100%;
@@ -32,6 +32,7 @@
     }
     .bar {
         margin: 0 2px;
+        color: $gray-5;
     }
     .h-btn {
         flex: 0 0 auto;
@@ -67,10 +68,22 @@
         float: left;
         padding-right: 20px;
     }
-    .btn.search {
+    .h-btn.search {
         margin-left: 10px;
         background: $white;
         border: 1px solid $main;
+        color: $main;
+    }
+    .k-button.search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 89px; 
+        height: 100%;
+        background-color: transparent;
+        border: 0;
+        border-left: 1px solid $gray-e;
         color: $main;
     }
     .label {
