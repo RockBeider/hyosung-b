@@ -48,3 +48,8 @@
   src: local("Roboto Bold"), local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype");
   unicode-range: U+0030-0039;
 }
+@font-face {
+  font-family: "WebComponentsIcons";
+  src: url("../lib/kendo/styles/fonts/glyphs/WebComponentsIcons.woff") format("woff"),
+       url("../lib/kendo/styles/fonts/glyphs/WebComponentsIcons.ttf") format("truetype");
+}

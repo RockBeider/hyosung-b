@@ -139,6 +139,19 @@
         }
 
     }
+    &.light-green {
+        background-color: $green-light;
+        color: $green;
+        &:hover, &:focus {
+            // background-color: $btn-light-blue-hover-bg;
+        }
+        &.k-state-active {
+    
+        }
+        &.k-state-focused {
+            // background-color: $btn-light-blue-hover-bg;
+        }
+    }
     &.logout { //로그아웃
         margin-left: 6px;
         border: 1px solid $btn-light-border;

@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">상담정보 관리</h2>
+                            <h2 class="main-title">이메일 관리</h2>
                             <button type="button" class="h-ico lg tip ml-8">팁</button>
                             <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
                         </div>
@@ -32,7 +32,7 @@
                                 data-navigational=true,
                                 data-items='[
                             { type:"rootitem", href: "", text: "서비스품질", showText: true },
-                            { type:"item", href: "", text: "상담정보 관리", showText: true}
+                            { type:"item", href: "", text: "이메일 관리", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -45,38 +45,13 @@
                             <div class="form-group">
                                 <span class="label">검색항목</span>
                                 <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체">
+                                    <select data-role="dropdownlist" data-value="제목" data-option-label="제목">
                                         <option value="1">온라인</option>
                                         <option value="2">오프라인</option>
                                     </select>
                                     <div class="input-box search lg">
                                         <input type="text" class="h-input" placeholder="입력해주세요">
                                     </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <span class="label">상담부서</span>
-                                <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <span class="label">검색기간</span>
-                                <div class="form-set">
-                                    <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-                                    <span class="bar">~</span>
-                                    <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-                                    <ul data-role="buttongroup" class=""
-                                    data-index="0">
-                                        <li data-role="button">오늘</li>
-                                        <li data-role="button">7일</li>
-                                        <li data-role="button">15일</li>
-                                        <li data-role="button">1개월</li>
-                                        <li data-role="button">3개월</li>
-                                    </ul>
                                 </div>
                             </div>
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
@@ -91,7 +66,8 @@
                                 </div>
                                 <div class="right-group">
                                     <div class="btn-box">
-                                        <button data-role="button">상품등록</button>
+                                        <button data-role="button">이메일발송</button>
+                                        <button data-role="button" class="light-blue">수신거부관리</button>
                                     </div>
                                 </div>
                             </div>

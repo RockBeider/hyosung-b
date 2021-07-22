@@ -134,7 +134,7 @@ textarea {
 	}
 	&.lg {
 		height: 32px;
-		margin: 20px 0;
+		margin: 0 0 20px;
 	}
 	&.md {
 		min-height: 28px;
@@ -215,5 +215,35 @@ button {
 			color: $gray-9;
 			font-family: "roboto";
 		}
+	}
+}
+
+/*
+* ------------------------------
+* File upload
+* ------------------------------
+*/
+
+.filebox {
+	padding: 20px;
+	background-color: $gray-f5;
+}
+.filebox {
+	.label {
+		margin-right: 0;
+	}
+	input[type="file"] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip:rect(0,0,0,0);
+		border: 0;
+	}
+	.h-input:disabled, .h-input:disabled:focus {
+		background-color: $white;
+		color: $gray-a;
 	}
 }

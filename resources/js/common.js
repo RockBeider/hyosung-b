@@ -66,3 +66,21 @@ $(document).on('click', '.sidebar-wrap .sidebar-2depth.has-submenu > a', functio
 $(document).on('click', '.funcToggle', function() {
 	$(this).toggleClass('active');
 });
+
+
+/* =====================================
+* file upload
+* =====================================
+*/
+$(document).ready(function(){
+	var fileTarget = $('.filebox .upload-hidden');
+	fileTarget.on('change', function(){
+		if(window.FileReader){
+			var filename = $(this)[0].files[0].name;
+			console.log('filename', filename);
+		} else {
+			var filename = $(this).val().split('/').pop().split('\\').pop();
+		}
+		$(this).siblings('.h-input').val(filename);
+	});
+}); 
