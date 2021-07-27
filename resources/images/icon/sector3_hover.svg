@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_금융_hover" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:#2476dd}
+        </style>
+    </defs>
+    <g id="Group_578" transform="translate(1.41 3.411)">
+        <g id="Triangle_1" transform="translate(0)">
+            <path id="Path_283" d="M475.127 572.142l-15.348-10.328-15.347 10.328h30.784m3.146 1.573H441v-1.277l18.68-12.52 18.681 12.52z" class="cls-2" transform="translate(-441 -559.919)"/>
+        </g>
+        <g id="Ellipse_3" transform="translate(16.119 5.427)">
+            <path id="Path_284" d="M484.646 579.083a2.683 2.683 0 1 1 2.66-2.682 2.674 2.674 0 0 1-2.66 2.682zm0-3.792a1.11 1.11 0 1 0 1.087 1.109 1.1 1.1 0 0 0-1.087-1.109z" class="cls-2" transform="translate(-481.986 -573.718)"/>
+        </g>
+        <g id="Rectangle_6_copy_7" transform="translate(3.933 13.403)">
+            <path id="Path_285" d="M479.316 608.945V594h1.573v14.945zm-3.54 0V594h1.573v14.945zm-4.326 0V594h1.573v14.945zm-3.54 0V594h1.573v14.945zm-4.719 0V594h1.573v14.945zm-3.539 0V594h1.573v14.945zm-5.113 0V594h1.573v14.945zm-3.539 0V594h1.573v14.945z" class="cls-2" transform="translate(-451 -594)"/>
+            <path id="Path_286" d="M480.889 608.221h-1.573V594h1.573zm-3.54 0h-1.573V594h1.573zm-4.326 0h-1.573V594h1.573zm-3.54 0h-1.573V594h1.573zm-4.719 0h-1.573V594h1.573zm-3.539 0h-1.573V594h1.573zm-5.113 0h-1.573V594h1.573zm-3.539 0H451V594h1.573z" class="cls-2" transform="translate(-451 -594)"/>
+        </g>
+        <g id="Rectangle_7" transform="translate(0.787 26.775)">
+            <path id="Path_287" d="M478.788 633.506H443V628h35.788zm-34.215-1.573h32.642v-2.36h-32.642z" class="cls-2" transform="translate(-443 -628)"/>
+        </g>
+    </g>
+</svg>

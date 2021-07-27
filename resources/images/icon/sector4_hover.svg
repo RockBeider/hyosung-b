@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_대행용역_hover" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:#2476dd}
+        </style>
+    </defs>
+    <g id="Group_576" transform="translate(7.955 0.343)">
+        <path id="Rectangle_860" d="M0 0H1.972V7.889H0z" class="cls-2" transform="translate(6.988 20.912)"/>
+        <path id="Rectangle_861" d="M0 0H7.889V1.315H0z" class="cls-2" transform="translate(3.701 24.199)"/>
+        <path id="Path_331" d="M629.719 563.573v3.539h-3.146v-3.539h3.146m1.573-1.573H625v6.686h6.292V562z" class="cls-2" transform="translate(-620.281 -558.978)"/>
+        <path id="Path_332" d="M629.079 576.573v2.753h-5.506v-2.753h5.506m1.573-1.573H622v5.9h8.652V575z" class="cls-2" transform="translate(-618.461 -566.865)"/>
+        <path id="Path_333" d="M622.045 587.573a5.512 5.512 0 0 1 5.506 5.506v17.3h-12.978v-17.3a5.512 5.512 0 0 1 5.506-5.506h1.966m0-1.573h-1.966a7.079 7.079 0 0 0-7.079 7.079v18.877h16.124v-18.877a7.079 7.079 0 0 0-7.079-7.079z" class="cls-2" transform="translate(-613 -573.539)"/>
+        <path id="Rectangle_862" d="M0 0H14.027V1.315H0z" class="cls-2" transform="translate(0.632 33.403)"/>
+        <path id="Rectangle_863" d="M0 0H1.972V1.315H0z" class="cls-2" transform="translate(13.562 5.792)"/>
+        <path id="Rectangle_864" d="M0 0H1.972V1.315H0z" class="cls-2" transform="translate(16.849 5.792)"/>
+        <path id="Rectangle_865" d="M0 0H1.972V1.315H0z" class="cls-2" transform="translate(20.136 5.792)"/>
+        <path id="Rectangle_866" d="M0 0H1.972V1.315H0z" class="cls-2" transform="translate(23.423 5.792)"/>
+        <path id="Rectangle_867" d="M0 0H1.966V1.573H0z" class="cls-2" transform="translate(13.756 2.952) rotate(-15)"/>
+        <path id="Rectangle_868" d="M0 0H1.966V1.573H0z" class="cls-2" transform="translate(16.795 2.138) rotate(-15)"/>
+        <path id="Rectangle_869" d="M0 0H1.966V1.573H0z" class="cls-2" transform="translate(19.833 1.323) rotate(-15)"/>
+        <path id="Rectangle_870" d="M0 0H1.966V1.573H0z" class="cls-2" transform="translate(22.873 0.509) rotate(-15)"/>
+        <path id="Rectangle_871" d="M0 0H1.573V1.966H0z" class="cls-2" transform="translate(13.756 10.171) rotate(-75.002)"/>
+        <path id="Rectangle_872" d="M0 0H1.573V1.966H0z" class="cls-2" transform="translate(16.795 10.986) rotate(-75.002)"/>
+        <path id="Rectangle_873" d="M0 0H1.573V1.966H0z" class="cls-2" transform="translate(19.833 11.8) rotate(-75.002)"/>
+        <path id="Rectangle_874" d="M0 0H1.573V1.966H0z" class="cls-2" transform="translate(22.873 12.614) rotate(-75.002)"/>
+    </g>
+</svg>

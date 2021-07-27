@@ -34,6 +34,17 @@
         width: 26px; 
         height: 26px;
     }
+    &.xl {
+        width: 40px; 
+        height: 40px;
+    }
+}
+th .required {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 2px;
+    color: $error;
+    font-size: 14px;
 }
 .h-ico {
     &.filter {
@@ -118,11 +129,31 @@
             background-image: url('../images/icon/btn_tip_hover.svg');
         }
     }
+    // 40*40
+    @for $i from 1 through 14 {
+        &.sector#{$i} {
+            @include iconSvg($width: 40px, $height: 40px, $name: 'sector#{$i}', $size: contain );
+        }
+    }
+    
+}
+.k-button.k-state-active, .k-button.k-state-focused, .k-button:hover {
+    @for $i from 1 through 14 {
+        .h-ico.sector#{$i} {
+            background-image: url('../images/icon/sector#{$i}_hover.svg');
+        }
+    }
 }
 .k-i- {
+    &example {
+     background: gray;
+    }
     &filter {
         @include iconSvg($width: 28px, $height: 28px, $name: 'btn_filter_default', $size: 8px 15px );
         margin-right: -10px;
+    }
+    &bp-search {
+        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_search_btn', $size: contain);
     }
     
     //xs 15*15
@@ -147,6 +178,24 @@
     }
     &lnb-close { 
         @include iconSvg($width: 16px, $height: 16px, $name: 'icon_lnb_close', $size: contain );
+    }
+    &refresh {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'bp_icon_refresh', $size: contain);
+    }
+    &link {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'bp_icon_link', $size: contain);
+    }
+    &bp-down {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'bp_icon_arrow_down', $size: contain);
+    }
+    &bp-up {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'bp_icon_arrow_up', $size: contain);
+    }
+    &bp-close {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'bp_btn_X', $size: contain );
+    }
+    &bp-plus {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'bp_icon_plus', $size: contain );
     }
     //sm 18*18
     &bookmark {

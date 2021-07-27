@@ -79,3 +79,28 @@ $base-font-size: 16px;
     line-height: 26px;
     letter-spacing: -1.1px;
 }
+
+
+@mixin bp-font-size-xs {
+    font-size: 13px;
+    line-height: 26px;
+    letter-spacing: -0.98px;
+}
+
+@mixin bp-font-size-sm {
+    font-size: 14px;
+    // line-height: 26px;
+    line-height: 18px;
+    letter-spacing: -1.05px;
+}
+
+@mixin bp-font-size-md { // 팝업 컨텐츠 타이틀
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: -1.28px;
+}
+@mixin bp-font-size-lg { // 팝업 컨텐츠 타이틀
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -1.5px;
+}

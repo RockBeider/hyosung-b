@@ -7,10 +7,10 @@
 .form-group {
     display: flex;
     align-items: center;
-    > * + * {
-        margin-left: 6px;
-    }
-    &.row {
+    // > * + * {
+    //     margin-left: 6px;
+    // }
+    &.col {
         //세로 정렬일 경우
         flex-direction: column;
         flex-wrap: wrap;
@@ -22,6 +22,40 @@
             width: 100%;
         }
     }
+    .form-label {
+        white-space: nowrap;
+    }
+}
+.bp {
+    .box-group {
+        display: flex;
+        > * + * {
+            margin-left: 6px;
+        }
+    }
+    .form-group {
+        .label {
+            @include bp-font-size-sm;
+            color: $gray-2;
+        }
+        &.box {
+            padding: 16px 21px;
+            border: 1px solid $gray-c;
+            border-radius: 3px;
+            // + .form-group.box {
+            //     margin: 0 0 0 6px; //가이드 때문
+            // }
+        }
+        > * + * {
+            margin-left: 20px;
+        }
+        &.col {
+            > * + * {
+                margin-left: 0;
+                margin-top: 6px;
+            }
+        }
+    }
 }
 
 .form-set {
@@ -29,6 +63,9 @@
     align-items: center;
     > *:not(.bar) + *:not(.bar) {
         margin-left: 8px;
+    }
+    .form-label {
+        white-space: nowrap;
     }
     .bar {
         margin: 0 2px;
@@ -42,13 +79,15 @@
         white-space: nowrap;
     }
 }
-.label {
-    @include font-size-sm;
-    margin-right: 12px;
-    height: 28px;
-    color: $gray-7;
-    white-space: nowrap;
-    font-weight: 500;
+.bp {
+    .form-set {
+        > *:not(.bar) + *:not(.bar) {
+            margin-left: 6px;
+        }
+        .h-checkbox + .input-box {
+            margin-left: 10px;
+        }
+    }
 }
 .search-control {
     display: flex;
@@ -58,6 +97,14 @@
     background: #fff;
     border: 1px solid $searchLine;
     overflow: hidden;
+    .label {
+        @include font-size-sm;
+        margin-right: 12px;
+        height: 28px;
+        color: $gray-7;
+        white-space: nowrap;
+        font-weight: 500;
+    }
     .form-group {
         white-space: nowrap;
         > * + * {

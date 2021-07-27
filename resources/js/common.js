@@ -73,14 +73,17 @@ $(document).on('click', '.funcToggle', function() {
 * =====================================
 */
 $(document).ready(function(){
-	var fileTarget = $('.filebox .upload-hidden');
-	fileTarget.on('change', function(){
+	$(document).on('change','.filebox .upload-hidden', function(){
 		if(window.FileReader){
 			var filename = $(this)[0].files[0].name;
 			console.log('filename', filename);
 		} else {
 			var filename = $(this).val().split('/').pop().split('\\').pop();
 		}
-		$(this).siblings('.h-input').val(filename);
+		$(this).parent('.filebox').find('.h-input').val(filename);
 	});
 }); 
+/* =====================================
+* popup
+* =====================================
+*/

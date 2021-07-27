@@ -59,7 +59,7 @@
                 <!-- [D] disabled 상태 -->
                 <input type="text" class="h-input sm" value="disabled" disabled="disabled" />
                 <!-- [D] error 상태 -->
-                <div class="input-box sm error">
+                <div class="input-box col sm error">
                     <input type="text" class="h-input" value="error" />
                     <p class="note">Error Message</p>
                 </div>
@@ -174,7 +174,13 @@
             <p class="title">Form Group</p>
         </div>
         <div class="g-example-body flex-block">
-            
+            <div class="form-set filebox">
+                <h4 class="label">대량입력</h4>
+                <input class="h-input xl" placeholder="파일을 업로드해주세요" disabled="disabled">
+                <label for="ex_filename2" class="h-btn">업로드</label> 
+                <input type="file" id="ex_filename2" class="upload-hidden"> 
+                <button data-role="button" class="light-green">샘플파일다운로드</button>
+            </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
@@ -182,4 +188,35 @@
             </code></pre>
         </div>
     </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">BP - 파일 업로드 </p>
+        </div>
+        <div class="g-example-body flex-block bp">
+            <div class="form-group col filebox">
+                <label for="bp_filename" data-role="button" data-icon="bp-plus" class="blue-border"><span>파일 업로드</span></label> 
+                <div class="form-set">
+                    <select data-role="dropdownlist" data-value="이용약관동의서" data-option-label="이용약관동의서" class="md">
+                        <option value="1">온라인</option>
+                        <option value="2">오프라인</option>
+                    </select>
+                    <div class="input-box lg">
+                        <input class="h-input" placeholder="파일을 업로드해주세요" disabled="disabled">
+                        <button data-role="button" data-icon="bp-close" class="hidden"></button>
+                    </div>
+                    <input type="file" id="bp_filename" class="upload-hidden"> 
+                    <button data-role="button" class="gray-border">선택</button>
+                </div>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+
+            </code></pre>
+        </div>
+    </div>
+
+
 </div>

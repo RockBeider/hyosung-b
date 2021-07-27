@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_it서비스" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:#222}
+        </style>
+    </defs>
+    <g id="Group_604" transform="translate(-527.607 -34)">
+        <path id="Path_371" d="M554.956 62.2H529V39h35.395v12.585h-1.573V40.573h-32.249V60.63h24.383z" class="cls-2"/>
+        <path id="Path_372" d="M607.259 76.573v12.978h-6.686V76.573h6.686M608.832 75H599v16.124h9.832V75z" class="cls-2" transform="translate(-42.471 -21.842)"/>
+        <path id="Path_373" d="M564.439 95.573V98.4l.868.434 3.065 1.533v1.105h-11.8v-1.084l3.069-1.512.864-.425v-2.878h3.933M566.012 94h-7.079v3.48L555 99.427v3.618h14.945v-3.618l-3.933-1.947V94z" class="cls-2" transform="translate(-15.775 -33.37)"/>
+        <path id="Path_374" d="M565.408 59.347a7.082 7.082 0 0 0-5.041 2.088l1.113 1.112a5.556 5.556 0 0 1 7.856 0l1.113-1.112a7.08 7.08 0 0 0-5.041-2.088z" class="cls-2" transform="translate(-19.031 -12.345)"/>
+        <path id="Path_375" d="M570.493 69.318a2.547 2.547 0 0 0-3.6 0l-1.112-1.112a4.119 4.119 0 0 1 5.825 0z" class="cls-2" transform="translate(-22.315 -16.988)"/>
+        <circle id="Ellipse_106" cx="1" cy="1" r="1" class="cls-2" transform="translate(545.692 53)"/>
+        <path id="Rectangle_1239" d="M0 0H2V1H0z" class="cls-2" transform="translate(560.692 65)"/>
+    </g>
+</svg>

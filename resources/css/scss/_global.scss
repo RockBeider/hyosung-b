@@ -65,13 +65,23 @@ textarea {
 	padding: 0;
 	border: none;
 }
-.ml-4 {
-	margin-left: 4px !important;
+
+
+ul, li, ol {
+    padding: 0; margin: 0;
 }
-.ml-8 {
-	margin-left: 8px !important;
+li  {
+    list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 /* Icon */
 .icon {
 	display: inline-flex;
@@ -87,6 +97,26 @@ textarea {
 	// }
 }
 
+
+
+/*
+* ------------------------------
+* 여백
+* ------------------------------
+*/
+.ml-4 {
+	margin-left: 4px !important;
+}
+.ml-8 {
+	margin-left: 8px !important;
+}
+.mt-20 {
+	margin-top: 20px !important;
+}
+.mt-0 { margin-top: 0px !important; }
+.mb-0 { margin-bottom: 0px !important; }
+.ml-20 { margin-left: 20px !important; }
+.text-left { text-align: left !important; }
 /*
 * ------------------------------
 * Title
@@ -145,22 +175,72 @@ textarea {
 		margin: 12px 0 8px;
 	}
 }
-ul, li, ol {
-    padding: 0; margin: 0;
-}
-li  {
-    list-style: none;
+.bp .sub-title {
+    display: flex;
+    align-items: center;
+    &.sm {
+        @include bp-font-size-sm;
+        line-height: 18px;
+        font-weight: bold;  
+    }
+    &.md {
+        @include bp-font-size-md;
+        min-height: 30px;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+} 
+.bp {
+    .title-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+		.right-group {
+			> * + * {
+				margin-left: 6px;
+			}
+		}
+        &.sm {
+			min-height: unset;
+			max-height: 18px;
+			margin: 20px 0 10px 0;
+            .sub-title {
+                @include bp-font-size-sm;
+                line-height: 18px;
+                font-weight: bold; 
+            }
+            .noti {
+                @include bp-font-size-sm;
+                line-height: 18px;
+            }
+        }
+		&.md {
+			min-height: unset;
+			height: 23px;
+			margin: 30px 0 6px 0;
+			.sub-title {
+				@include bp-font-size-md;
+				min-height: 30px;
+				// margin-bottom: 6px;
+				font-weight: 500;
+			}
+			.right-group, .btn-box {
+				margin-bottom: 6px;
+			}
+		}
+    }
+	.noti {
+		&.sm {
+			@include bp-font-size-sm;
+			line-height: 18px;
+		}
+		&.red {
+			color: $error;
+		}
+	}
 }
 
-a {
-    text-decoration: none;
-    color: #222;
-}
-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
+
 
 /*
 * ------------------------------
@@ -220,17 +300,283 @@ button {
 
 /*
 * ------------------------------
+* List 
+* ------------------------------
+*/
+.list-group {
+	display: flex;
+}
+.bp {
+	.list-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        border-radius: 3px;
+        white-space: nowrap;
+        .list { display: flex; }
+        .label {
+            @include bp-font-size-sm;
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            width: 120px;
+            font-weight: bold;
+            &.has-bar::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 1px;
+            }
+        }
+        .desc {
+            @include bp-font-size-sm;
+        }
+        .info {
+            @include bp-font-size-xs;
+            padding-right: 20px;
+        }
+        &.border {
+            border: 1px solid $gray-c;
+            .label {
+                color: $gray-2;
+                &.has-bar::after {
+                    height: 20px;
+                    margin-top: -10px;
+                    background-color: $gray-d;
+                }
+            }
+            .desc { padding: 0 20px; }
+            .info {
+                color: $gray-6;
+            }
+        }
+        &.blue { //blue bg
+            border: 1px solid $layer-blue;
+            background-color: $layer-blue;
+            color: $white;
+            .label {
+                color: $white;
+                &.has-bar::after {
+                    height: 20px;
+                    margin-top: -10px;
+                    background-color: $bp-light-blue;
+                }
+            }
+            .desc { padding: 0 20px; }
+            .info {
+                color: $bp-light-blue;
+            }
+        }
+        &.total { //gray bg
+			position: relative;
+            justify-content: flex-start;
+            width: 100%;
+            height: 58px;
+            padding: 0 23px;
+            background: $bp-gray;
+            &.sm {
+				padding: 0;
+                height: 40px;
+				.price-set {
+					@include bp-font-size-sm;
+					position: absolute;
+					right: 130px;
+					color: $error;
+				}
+				.list {
+					.label {
+						width: 125px;
+						padding: 0;
+						text-align: center;
+					}
+					.bp-close {
+						position: absolute;
+						top: 0;
+						right: 8px;
+						width: 40px;
+						height: 40px;
+					}
+				}
+            }
+            .list {
+                justify-content: space-between;
+                margin-right: 50px;
+                .label {
+                    width: auto;
+                    margin-right: 10px;
+                    padding-right: 10px;
+                    color: $gray-2;
+                    &.has-bar::after {
+                        height: 18px;
+                        margin-top: -9px;
+                        background-color: $gray-c;
+                    }
+                }
+                .desc {
+                    color: $gray-2;
+                }
+            }
+        }
+        &.pay { //최종 지불
+			margin-top: 10px;
+            flex-direction: column;
+            border: 2px solid $gray-3;
+            height: auto;
+            padding: 14px 0;
+			background: $white;
+            .list { 
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                max-width: 640px;
+                height: 30px;
+                padding: 6px 0;
+                .label {
+                    @include bp-font-size-sm;
+                    align-items: center;
+                    width: auto;
+                    color: $gray-5;
+                    line-height: 18px;
+                    font-weight: 400;
+                    .badge {
+                        margin-left: 6px;
+                    }
+                }
+                .desc {
+                    @include bp-font-size-sm;
+                    color: $gray-5;
+                    line-height: 18px;
+                    font-weight: 400;
+                }
+                &.result {
+                    height: 40px;
+                    margin-top: 12px;
+                    padding: 14px 0 5px;
+                    border-top: 1px dotted $gray-c;
+                    .label {
+                        @include bp-font-size-sm;
+                        color: $gray-2;
+                    }
+                    .desc {
+                        @include bp-font-size-sm;
+                        display: flex;
+                        line-height: 27px;
+                        color: $gray-2;
+                        .extra-info {
+                            margin-right: 6px;
+                            color: $gray-5;
+                        }
+                        .price {
+                            @include bp-font-size-lg;
+                            font-weight: bold;
+                        }
+                        .unit {
+                            @include bp-font-size-lg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.adding-wrap {
+	
+}
+.adding-box {
+	display: flex;
+	+ .adding-box {
+		margin-top: 12px;
+	}
+	.label {
+		@include bp-font-size-sm;
+		white-space: nowrap;
+		width: 73px;
+		line-height: 30px;
+	}
+}
+.adding-set {
+	width: 100%;
+	.added {
+		display: flex;
+		flex-direction: column;
+		margin-top: 6px;
+		> * + * {
+			margin-top: 6px;
+		}
+	}
+}
+
+/*
+* ------------------------------
+* badge
+* ------------------------------
+*/
+.bp .badge {
+	display: flex;
+	align-items: center;
+	height: 22px;
+	padding: 0 8px;
+	border-radius: 11px;
+	&.pink {
+		background-color: $badge-pink;
+		color: $error;
+	}
+	&.blue {
+		
+	}
+}
+
+/*
+* ------------------------------
 * File upload
 * ------------------------------
 */
+
 
 .filebox {
 	padding: 20px;
 	background-color: $gray-f5;
 }
+.bp .filebox.col {
+	align-items: flex-start;
+	padding: 0; 
+	background: $white;
+	label {
+		.k-icon {
+			margin-left: -2px;
+		}
+	}
+	.input-box {
+		.h-input {
+			text-align: left;
+		}
+	}
+	.k-button.gray-border {
+		width: 60px;
+		min-width: 60px;
+	}
+}
 .filebox {
 	.label {
 		margin-right: 0;
+	}
+	.input-box {
+		.h-input { 
+			&:disabled, &:disabled:focus {
+				// background-color: $white;
+				// color: $gray-a;
+			}
+		}
+		.k-button {
+			position: absolute;
+			top: 0;
+			right: 5px;
+			width: 30px;
+			height: 28px;
+		}
 	}
 	input[type="file"] {
 		position: absolute;
@@ -247,3 +593,10 @@ button {
 		color: $gray-a;
 	}
 }
+
+
+/*
+* ------------------------------
+* File upload BP type
+* ------------------------------
+*/
