@@ -96,7 +96,10 @@ button {
 	// 	@include icon(144px, 18px, logo);
 	// }
 }
+.bp > * {
+	font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif !important;
 
+}
 
 
 /*
@@ -109,6 +112,9 @@ button {
 }
 .ml-8 {
 	margin-left: 8px !important;
+}
+.mt-10 {
+	margin-top: 10px !important;
 }
 .mt-20 {
 	margin-top: 20px !important;

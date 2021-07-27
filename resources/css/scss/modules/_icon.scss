@@ -47,6 +47,12 @@ th .required {
     font-size: 14px;
 }
 .h-ico {
+
+    &.pop-timer {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'bc_icon_logout_time', $size: contain );
+    }
+
+
     &.filter {
         @include iconSvg($width: 28px, $height: 28px, $name: 'btn_filter_default', $size: 8px 15px );
         margin-right: -10px;
@@ -197,6 +203,8 @@ th .required {
     &bp-plus {
         @include iconSvg($width: 16px, $height: 16px, $name: 'bp_icon_plus', $size: contain );
     }
+
+    
     //sm 18*18
     &bookmark {
         @include iconSvg($width: 18px, $height: 18px, $name: 'btn_bookmark_default', $size: contain );

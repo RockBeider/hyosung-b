@@ -10,27 +10,43 @@
 <body class="bc">
     <div class="wrap">
         <!-- Header Include -->
-        <div data-include-path="../layout/header_bc.html"></div>
+        <div data-include-path="../layout/header_bp.html"></div>
 
-        <div id="container" class="logout-page">
-            <div class="logout-con">
-                <img src="../../resources/images/icon/bc_icon_logout_check.svg" class="check">
-                <p class="main-info">자동 <span class="strong">로그아웃</span> 되었습니다.</p>
-                <p class="sub-info">
-                    로그인 후 <span class="strong">60분</span> 동안 상담센터 이용이 없어<br/>
-                    <span class="strong">자동으로 접속을 종료</span>하였습니다.<br/>
-                    상담센터를 계속 이용하시려면 재로그인해 주시기 바랍니다.
-                </p>
-                <button data-role="button">확인</button>
+        <div id="container">
+        </div>
+        <div class="layer-wrap bp">
+            <div data-role="dialog"
+                 data-title="자동 로그아웃 알림"
+                 data-width="450"
+                 data-modal="false"
+                >
+                <div class="content-group">
+                   <div class="pop-timer-box">
+                       <i class="h-ico pop-timer">타이머</i>
+                       <span class="time-label">자동 로그아웃 남은 시간</span>
+                       <span class="time-set"><span class="time">56</span>초 후</span>
+                   </div>
+                   <ul class="pop-guide">
+                       <li class="list">* <span class="error">60분동안</span> 상담센터 이용이 없어 자동로그아웃 예정입니다.</li>
+                       <li class="list">* 계속 이용하시려면 "<span class="error">로그인연장</span>" 버튼을 클릭하십시오.</li>
+                   </ul>
+                   <div class="btn-box">
+                       <button data-role="button" class="gray-border">로그인연장</button>
+                       <button data-role="button" class="">로그아웃</button>
+                   </div>
+                </div>
             </div>
         </div>
- 
     </div>
+
+
     <!-- Default Script Include -->
     <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
    
+    </script>
+    
 </body>
 
 </html>

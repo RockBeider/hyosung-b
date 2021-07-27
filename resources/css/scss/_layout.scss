@@ -357,6 +357,7 @@ body {
 			left: 30px;
 			.logo {
 				img {
+					display: block;
 					max-width: 124px;
 				}
 			}
@@ -367,6 +368,20 @@ body {
 				line-height: 24px;
 				letter-spacing: -0.8px;
 				font-weight: 500;
+			}
+		}
+		.login-box {
+			.main-desc {
+				margin-top: 6px;
+				margin-bottom: 30px;
+				color: $gray-2;
+				font-size: 28px;
+				letter-spacing: -1.4px;
+				line-height: 40px;
+				.strong {
+					color: #3b6ac5;
+					font-weight: bold;
+				}
 			}
 		}
 	}
@@ -441,9 +456,7 @@ body {
 	border: 1px solid $gray-e4;
 	border-top: none;
 	border-radius: 0 0 10px 10px;
-	.form {
-		margin-top: 30px;
-	}
+	
 	.form-group.col > * + * {
 		margin-top: 6px;
 	}
@@ -462,17 +475,7 @@ body {
 		line-height: 20px;
 		letter-spacing: -0.75px;
 	}
-	.main-desc {
-		margin-top: 6px;
-		color: $gray-2;
-		font-size: 28px;
-		letter-spacing: -1.4px;
-		line-height: 40px;
-		.strong {
-			color: #3b6ac5;
-			font-weight: bold;
-		}
-	}
+	
 	.k-button.login {
 		width: 100%;
 		height: 36px;

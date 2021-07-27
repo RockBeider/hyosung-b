@@ -338,7 +338,7 @@ template {
   display: none;
 }
 
-.discount {
+.discount, .error {
   color: #f14747 !important;
 }
 
@@ -438,7 +438,7 @@ template {
 
 html,
 body {
-  font-family: "Noto Sans KR", "Roboto", sans-serif;
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -524,6 +524,10 @@ button {
   background-position: center center;
 }
 
+.bp > * {
+  font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif !important;
+}
+
 /*
 * ------------------------------
 * 여백
@@ -535,6 +539,10 @@ button {
 
 .ml-8 {
   margin-left: 8px !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
 }
 
 .mt-20 {
@@ -1380,6 +1388,7 @@ button {
   background: #f7f7f7;
 }
 .bp .k-dialog-buttongroup {
+  background-color: #f7f7f7;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   padding: 10px;
@@ -1390,13 +1399,35 @@ button {
   justify-content: flex-end;
   align-items: center;
   overflow: hidden;
+  height: 80px;
 }
-.bp .k-dialog {
+.bp .k-dialog-buttongroup .k-button {
+  width: 120px;
+  height: 40px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.bp .k-dialog-buttongroup .k-button::before {
+  content: "";
+  display: block;
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon/bp_icon_regi.svg");
+  background-size: contain;
+}
+.bp .k-dialog, .bp .k-window {
   padding: 0;
   box-sizing: border-box;
   margin: 0 10px;
   max-height: calc(100% - 20px);
-  border-radius: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.bp .content-group .agree-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 .bp .select-industry-box {
   display: flex;
@@ -1405,7 +1436,7 @@ button {
   background: #f7f7f7;
   border: 1px solid #eee;
 }
-.bp .k-dialog-close {
+.bp .k-button.k-dialog-close {
   width: 20px;
   height: 20px;
   background-image: url("../images/icon/bp_icon_close.svg");
@@ -1418,10 +1449,123 @@ button {
   height: 30px !important;
   background-color: transparent;
 }
-.bp .k-dialog-close:hover, .bp .k-dialog-close:focus {
+.bp .k-button.k-dialog-close:hover, .bp .k-button.k-dialog-close:focus {
   background-color: transparent;
 }
 
+.bc .k-dialog {
+  border: 1px solid #555;
+}
+.bc .k-dialog-titlebar {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 30px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+.bc .k-dialog-titlebar .k-button {
+  padding: 0;
+}
+.bc .k-dialog-content {
+  padding: 30px;
+}
+
+/*
+ * ------------------------------
+ * BC0002
+ * ------------------------------
+ */
+.bc .k-button.k-dialog-close {
+  width: 18px;
+  height: 18px;
+  background-image: url("../images/icon/bc_btn_X.svg");
+  background-size: 18px 18px;
+  position: absolute;
+  right: 22px;
+  top: 10px;
+  min-width: 0 !important;
+  width: 30px;
+  height: 30px !important;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0;
+}
+.bc .k-button.k-dialog-close:hover, .bc .k-button.k-dialog-close:focus {
+  background-color: transparent;
+}
+.bc .pop-timer-box {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: -0.85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85px;
+  background: #f5f5f5;
+  border: 1px solid #eee;
+}
+.bc .pop-timer-box .time-label {
+  color: #555;
+  font-weight: 500;
+}
+.bc .pop-timer-box .time-set {
+  margin-left: 10px;
+  color: #f14747;
+  font-weight: bold;
+}
+.bc .pop-guide {
+  margin-top: 10px;
+}
+.bc .pop-guide .list {
+  font-size: 13px;
+  line-height: 26px;
+  letter-spacing: -0.98px;
+  color: #777;
+  line-height: 18px;
+}
+.bc .btn-box {
+  margin-top: 20px;
+}
+
+/*
+ * ------------------------------
+ * BC0003
+ * ------------------------------
+ */
+.bc .main-info {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: -0.85px;
+  margin-top: 20px;
+  color: #222;
+  font-weight: bold;
+  text-align: center;
+}
+.bc .sub-info {
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: -0.65px;
+  margin-top: 12px;
+  color: #777;
+  text-align: center;
+}
+.bc .check {
+  display: block;
+  margin: 0 auto;
+}
+
+/*
+ * ------------------------------
+ * BC0004
+ * ------------------------------
+ */
 table {
   display: table;
   width: 100%;
@@ -1521,6 +1665,37 @@ td .form-box, th .form-box {
   color: #2476dd;
 }
 
+.bc .table {
+  width: 100%;
+  overflow: hidden;
+}
+.bc .table table {
+  width: calc(100% + 2px);
+  margin: 0 -1px;
+  table-layout: fixed;
+}
+.bc .table th, .bc .table td {
+  border: 1px solid #e4e4e4;
+}
+.bc .table th {
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: -0.65px;
+  padding: 0 7px;
+  background: #f2f4f7;
+  color: #5e6b85;
+  font-weight: 500;
+  text-align: center;
+}
+.bc .table td {
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: -0.65px;
+  height: 38px;
+  padding: 6px 10px;
+  color: #222;
+}
+
 /*
  * ------------------------------
  * 폼
@@ -1561,6 +1736,9 @@ td .form-box, th .form-box {
   padding: 16px 21px;
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+.bp .form-group.box.is-checked {
+  border: 1px solid #2476dd;
 }
 .bp .form-group > * + * {
   margin-left: 20px;
@@ -1877,6 +2055,7 @@ td .form-box, th .form-box {
   padding: 0;
   background-color: #fff;
   border-radius: 0px 3px 3px 0;
+  border: none;
   border-left: 1px solid #ccc;
 }
 .bp .input-box.search .k-i-bp-search {
@@ -1922,6 +2101,13 @@ td .form-box, th .form-box {
 .bp .table th .h-checkbox input[type=radio] + label {
   /*체크해제 상태*/
   color: #222;
+}
+
+.bp .table th .h-checkbox.gray input[type=checkbox] + label,
+.bp .table th .h-checkbox.gray input[type=radio] + label {
+  /*체크해제 상태*/
+  color: #555;
+  font-weight: 400;
 }
 
 .h-checkbox input[type=checkbox] + label span,
@@ -2033,6 +2219,16 @@ td .form-box, th .form-box {
  * 버튼
  * ------------------------------
  */
+.h-btn.hidden, .k-button.hidden {
+  overflow: hidden;
+  text-indent: -9000px;
+  white-space: nowrap;
+  min-width: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
 .h-btn, .k-button {
   font-size: 14px;
   line-height: 26px;
@@ -2065,13 +2261,6 @@ td .form-box, th .form-box {
 }
 .h-btn:not(.col) > * + *, .k-button:not(.col) > * + * {
   margin-left: 0.375rem;
-}
-.h-btn.hidden, .k-button.hidden {
-  overflow: hidden;
-  text-indent: -9000px;
-  white-space: nowrap;
-  padding: 0 !important;
-  background-color: transparent;
 }
 .h-btn.k-button-icontext, .k-button.k-button-icontext {
   padding: 0 12px;
@@ -2151,19 +2340,6 @@ td .form-box, th .form-box {
   background-color: #d4eee0;
   color: #1e6c42;
 }
-.h-btn.yellow, .k-button.yellow {
-  background-color: #faab00;
-  border: 1px solid #faab00;
-  color: #fff;
-}
-.h-btn.yellow:hover, .h-btn.yellow:focus, .k-button.yellow:hover, .k-button.yellow:focus {
-  background-color: #de9800;
-  border: 1px solid #de9800;
-}
-.h-btn.yellow.k-state-focused, .k-button.yellow.k-state-focused {
-  background-color: #de9800;
-  border: 1px solid #de9800;
-}
 .h-btn.logout, .k-button.logout {
   margin-left: 6px;
   border: 1px solid #e0e5ec;
@@ -2172,101 +2348,146 @@ td .form-box, th .form-box {
   border: 1px solid #e0e5ec;
 }
 
-.bp .h-btn:not(.hidden), .bp .k-button:not(.hidden) {
+.bp .h-btn, .bp .k-button {
   min-width: 80px;
   height: 30px;
   padding: 0 16px;
+  background: #2476dd;
+  border: 1px solid #2476dd;
+  color: #fff;
 }
-.bp .h-btn:not(.hidden).refresh, .bp .k-button:not(.hidden).refresh {
+.bp .h-btn:hover, .bp .h-btn:focus, .bp .k-button:hover, .bp .k-button:focus {
+  background-color: #0053bb;
+  border: 1px solid #2476dd;
+}
+.bp .h-btn.k-state-focused, .bp .k-button.k-state-focused {
+  background-color: #0053bb;
+  border: 1px solid #0053bb;
+}
+.bp .h-btn.refresh, .bp .k-button.refresh {
   min-width: unset;
   padding: 0 4px;
   background-color: transparent;
   border: none;
   color: #555;
 }
-.bp .h-btn:not(.hidden).blue, .bp .k-button:not(.hidden).blue {
+.bp .h-btn.blue, .bp .k-button.blue {
   background: #2476dd;
   border: 1px solid #2476dd;
   color: #fff;
 }
-.bp .h-btn:not(.hidden).blue:hover, .bp .h-btn:not(.hidden).blue:focus, .bp .k-button:not(.hidden).blue:hover, .bp .k-button:not(.hidden).blue:focus {
+.bp .h-btn.blue:hover, .bp .h-btn.blue:focus, .bp .k-button.blue:hover, .bp .k-button.blue:focus {
   background-color: #0053bb;
   border: 1px solid #2476dd;
 }
-.bp .h-btn:not(.hidden).blue.k-state-focused, .bp .k-button:not(.hidden).blue.k-state-focused {
+.bp .h-btn.blue.k-state-focused, .bp .k-button.blue.k-state-focused {
   background-color: #0053bb;
   border: 1px solid #0053bb;
 }
-.bp .h-btn:not(.hidden).blue-border, .bp .k-button:not(.hidden).blue-border {
+.bp .h-btn.blue-border, .bp .k-button.blue-border {
   background: #fff;
   border: 1px solid #2476dd;
   color: #2476dd;
 }
-.bp .h-btn:not(.hidden).blue-border:hover, .bp .h-btn:not(.hidden).blue-border:focus, .bp .k-button:not(.hidden).blue-border:hover, .bp .k-button:not(.hidden).blue-border:focus {
+.bp .h-btn.blue-border:hover, .bp .h-btn.blue-border:focus, .bp .k-button.blue-border:hover, .bp .k-button.blue-border:focus {
   background-color: #e3ecf9;
 }
-.bp .h-btn:not(.hidden).blue-border.k-state-focused, .bp .k-button:not(.hidden).blue-border.k-state-focused {
+.bp .h-btn.blue-border.k-state-focused, .bp .k-button.blue-border.k-state-focused {
   background-color: #e3ecf9;
 }
-.bp .h-btn:not(.hidden).gray-border, .bp .k-button:not(.hidden).gray-border {
+.bp .h-btn.gray-border, .bp .k-button.gray-border {
   background: #fff;
   border: 1px solid #999;
   color: #222;
 }
-.bp .h-btn:not(.hidden).gray-border:hover, .bp .h-btn:not(.hidden).gray-border:focus, .bp .k-button:not(.hidden).gray-border:hover, .bp .k-button:not(.hidden).gray-border:focus {
+.bp .h-btn.gray-border:hover, .bp .h-btn.gray-border:focus, .bp .k-button.gray-border:hover, .bp .k-button.gray-border:focus {
   background: #eff0f2;
   border: 1px solid #555;
 }
-.bp .h-btn:not(.hidden).gray-border.k-state-focused, .bp .k-button:not(.hidden).gray-border.k-state-focused {
+.bp .h-btn.gray-border.k-state-focused, .bp .k-button.gray-border.k-state-focused {
   background: #eff0f2;
   border: 1px solid #555;
+}
+.bp .h-btn.yellow, .bp .k-button.yellow {
+  background-color: #faab00;
+  border: 1px solid #faab00;
+  color: #fff;
+}
+.bp .h-btn.yellow:hover, .bp .h-btn.yellow:focus, .bp .k-button.yellow:hover, .bp .k-button.yellow:focus {
+  background-color: #de9800;
+  border: 1px solid #de9800;
+}
+.bp .h-btn.yellow.k-state-focused, .bp .k-button.yellow.k-state-focused {
+  background-color: #de9800;
+  border: 1px solid #de9800;
 }
 
-.bc .h-btn:not(.hidden), .bc .k-button:not(.hidden) {
+.bc .h-btn, .bc .k-button {
   height: 30px;
   padding: 0 20px;
   background-color: #3b6ac5;
   border: 1px solid #3b6ac5;
   color: #fff;
 }
-.bc .h-btn:not(.hidden).blue, .bc .k-button:not(.hidden).blue {
+.bc .h-btn:hover, .bc .h-btn:focus, .bc .k-button:hover, .bc .k-button:focus {
+  background-color: #2253b4;
+  border: 1px solid #2253b4;
+}
+.bc .h-btn.k-state-focused, .bc .k-button.k-state-focused {
+  background-color: #2253b4;
+  border: 1px solid #2253b4;
+}
+.bc .h-btn.blue, .bc .k-button.blue {
   background: #3b6ac5;
   border: 1px solid #3b6ac5;
   color: #fff;
 }
-.bc .h-btn:not(.hidden).blue:hover, .bc .h-btn:not(.hidden).blue:focus, .bc .k-button:not(.hidden).blue:hover, .bc .k-button:not(.hidden).blue:focus {
+.bc .h-btn.blue:hover, .bc .h-btn.blue:focus, .bc .k-button.blue:hover, .bc .k-button.blue:focus {
   background-color: #2253b4;
   border: 1px solid #2253b4;
 }
-.bc .h-btn:not(.hidden).blue.k-state-focused, .bc .k-button:not(.hidden).blue.k-state-focused {
+.bc .h-btn.blue.k-state-focused, .bc .k-button.blue.k-state-focused {
   background-color: #2253b4;
   border: 1px solid #2253b4;
 }
-.bc .h-btn:not(.hidden).light-blue, .bc .k-button:not(.hidden).light-blue {
+.bc .h-btn.light-blue, .bc .k-button.light-blue {
   background: #dee9ff;
   border: 1px solid #dee9ff;
   color: #3b6ac5;
 }
-.bc .h-btn:not(.hidden).light-blue:hover, .bc .h-btn:not(.hidden).light-blue:focus, .bc .k-button:not(.hidden).light-blue:hover, .bc .k-button:not(.hidden).light-blue:focus {
+.bc .h-btn.light-blue:hover, .bc .h-btn.light-blue:focus, .bc .k-button.light-blue:hover, .bc .k-button.light-blue:focus {
   background-color: #bcccee;
   border: 1px solid #bcccee;
 }
-.bc .h-btn:not(.hidden).light-blue.k-state-focused, .bc .k-button:not(.hidden).light-blue.k-state-focused {
+.bc .h-btn.light-blue.k-state-focused, .bc .k-button.light-blue.k-state-focused {
   background-color: #bcccee;
   border: 1px solid #bcccee;
 }
-.bc .h-btn:not(.hidden).blue-border, .bc .k-button:not(.hidden).blue-border {
+.bc .h-btn.blue-border, .bc .k-button.blue-border {
   background: #fff;
   border: 1px solid #3b6ac5;
   color: #2476dd;
 }
-.bc .h-btn:not(.hidden).blue-border:hover, .bc .h-btn:not(.hidden).blue-border:focus, .bc .k-button:not(.hidden).blue-border:hover, .bc .k-button:not(.hidden).blue-border:focus {
+.bc .h-btn.blue-border:hover, .bc .h-btn.blue-border:focus, .bc .k-button.blue-border:hover, .bc .k-button.blue-border:focus {
   background-color: #dee9ff;
   border: 1px solid #3b6ac5;
 }
-.bc .h-btn:not(.hidden).blue-border.k-state-focused, .bc .k-button:not(.hidden).blue-border.k-state-focused {
+.bc .h-btn.blue-border.k-state-focused, .bc .k-button.blue-border.k-state-focused {
   background-color: #dee9ff;
   border: 1px solid #3b6ac5;
+}
+.bc .h-btn.gray-border, .bc .k-button.gray-border {
+  background: #fff;
+  border: 1px solid #555;
+  color: #222;
+}
+.bc .h-btn.gray-border:hover, .bc .h-btn.gray-border:focus, .bc .k-button.gray-border:hover, .bc .k-button.gray-border:focus {
+  background-color: #eee;
+  border: 1px solid #999;
+}
+.bc .h-btn.gray-border.k-state-focused, .bc .k-button.gray-border.k-state-focused {
+  background-color: #eee;
+  border: 1px solid #999;
 }
 
 /*
@@ -2425,6 +2646,12 @@ th .required {
   font-size: 14px;
 }
 
+.h-ico.pop-timer {
+  width: 18px;
+  height: 18px;
+  background-image: url("../images/icon/bc_icon_logout_time.svg");
+  background-size: contain;
+}
 .h-ico.filter {
   width: 28px;
   height: 28px;
@@ -7798,6 +8025,7 @@ th .required {
   left: 30px;
 }
 .login-content.type-a .logo-set .logo img {
+  display: block;
   max-width: 124px;
 }
 .login-content.type-a .logo-set .info {
@@ -7807,6 +8035,18 @@ th .required {
   line-height: 24px;
   letter-spacing: -0.8px;
   font-weight: 500;
+}
+.login-content.type-a .login-box .main-desc {
+  margin-top: 6px;
+  margin-bottom: 30px;
+  color: #222;
+  font-size: 28px;
+  letter-spacing: -1.4px;
+  line-height: 40px;
+}
+.login-content.type-a .login-box .main-desc .strong {
+  color: #3b6ac5;
+  font-weight: bold;
 }
 .login-content.type-b {
   display: flex;
@@ -7879,9 +8119,6 @@ th .required {
   border-top: none;
   border-radius: 0 0 10px 10px;
 }
-.login-box .form {
-  margin-top: 30px;
-}
 .login-box .form-group.col > * + * {
   margin-top: 6px;
 }
@@ -7899,17 +8136,6 @@ th .required {
   font-size: 15px;
   line-height: 20px;
   letter-spacing: -0.75px;
-}
-.login-box .main-desc {
-  margin-top: 6px;
-  color: #222;
-  font-size: 28px;
-  letter-spacing: -1.4px;
-  line-height: 40px;
-}
-.login-box .main-desc .strong {
-  color: #3b6ac5;
-  font-weight: bold;
 }
 .login-box .k-button.login {
   width: 100%;

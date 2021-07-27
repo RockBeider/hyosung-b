@@ -14,13 +14,11 @@
 
         <div id="container">
         </div>
-
-        
-
         <div class="layer-wrap bp">
             <div data-role="dialog"
                  data-title="고객등록"
                  data-width="1130"
+                 data-actions="[{text:'등록'}]"
                  data-modal="false"
                 >
                 <div class="content-group">
@@ -229,7 +227,7 @@
                                             </td>
                                             <th scope="row">
                                                 우편물 수령주소<span class="required">*</span>
-                                                <div class="h-checkbox">
+                                                <div class="h-checkbox gray">
                                                     <input type="checkbox" id="checkbox1-1" name="checkbox" />
                                                     <label for="checkbox1-1"><span>주소 동일</span></label>
                                                 </div>
@@ -271,7 +269,7 @@
                             </div>
 
                             <div class="table box-group">
-                                <div class="form-group box">
+                                <div class="form-group box is-checked">
                                     <span class="label">CMS</span>
                                     <div class="h-checkbox">
                                         <input type="checkbox" id="checkbox1-1" name="checkbox" checked="checked">
@@ -282,7 +280,7 @@
                                         <label for="checkbox1-2"><span>실시간</span></label>
                                     </div>
                                 </div>
-                                <div class="form-group box">
+                                <div class="form-group box is-checked">
                                     <span class="label">신용카드</span>
                                     <div class="h-checkbox">
                                         <input type="checkbox" id="checkbox2-1" name="checkbox" checked="checked">
@@ -297,7 +295,7 @@
                                         <label for="checkbox2-3"><span>PG</span></label>
                                     </div>
                                 </div>
-                                <div class="form-group box">
+                                <div class="form-group box is-checked">
                                     <div class="h-checkbox">
                                         <input type="checkbox" id="checkbox3-1" name="checkbox" checked="checked">
                                         <label for="checkbox3-1"><span>휴대폰</span></label>
@@ -592,10 +590,12 @@
                                     <colgroup>
                                         <col width="130px">
                                         <col width="*">
+                                        <col width="130px">
+                                        <col width="*">
                                     </colgroup>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">회원관리<span class="required">*</span></th>
+                                            <th scope="row">회원관리여부<span class="required">*</span></th>
                                             <td>
                                                 <div class="check-group">
                                                     <div class="h-checkbox">
@@ -608,16 +608,18 @@
                                                     </div>
                                                 </div>
                                             </td>
+                                            <th scope="row">상품명</th>
+                                            <td><input type="text" class="h-input" placeholder="6자 이내 "/></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">이용목적<span class="required">*</span></th>
-                                            <td>
+                                            <td colspan="3">
                                                 <input type="text" class="h-input" value="이용목적 입력"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">특약사항</th>
-                                            <td>
+                                            <td colspan="3">
                                                 <textarea data-role="textarea"
                                                     data-format="c"
                                                     data-min="0"
@@ -816,8 +818,7 @@
                                 </div>
                             </div>
                             <!-- // 할인 정보 -->
-                        </div>
-                        
+                        </div>     
 
                         <ul class="list-box pay">
                             <li class="list">
@@ -1122,6 +1123,13 @@
                         </div>
                         <!-- //구비 서류 -->
 
+                        <div class="agree-area">
+                            <div class="h-checkbox">
+                                <input type="checkbox" id="checkboxAgree" name="checkbox" />
+                                <label for="checkboxAgree"><span>개인정보 수집 동의</span></label>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1134,49 +1142,6 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
    
-    <script>
-
-    // Implement custom binder for the 'visible' configuration option
-    // kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
-    //     init: function (widget, bindings, options) {
-    //         kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
-    //     },
-    //     refresh: function () {
-    //         var that = this;
-    //         var value = that.bindings["dialogOpen"].get();
-    //         var dialog = $(that.element).data("kendoDialog");
-
-    //         if (value) {
-    //             dialog.open();
-    //         } else {
-    //             dialog.close();
-    //         }
-    //     }
-    // });
-    // var viewModel_layer = kendo.observable({
-    //     isVisible: true,
-    //     isClosable: true,
-    //     isEnabled: false,
-    //     onClose: function (e) {
-    //         this.set("isVisible", false);
-    //         this.set("isEnabled", true);
-    //     },
-    //     show: function (e) {
-    //         this.set("isVisible", true);
-    //         this.set("isEnabled", false);
-    //     },
-    // });
-    // kendo.bind($(".layer-wrap"), viewModel_layer);
-    function onSkip(e) {
-        kendoConsole.log("Action :: Skip this version");
-    }
-    function onRemind(e) {
-        kendoConsole.log("Action :: Remind me later");
-    }
-    function onInstall(e) {
-        kendoConsole.log("Action :: Install update");
-    }
-
     </script>
     
 </body>

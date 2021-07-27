@@ -8,7 +8,7 @@
 //************************************************************
 // @charset "utf-8";
 
-$fontFamily: "Noto Sans KR", "Roboto", sans-serif;
+$fontFamily: "Roboto", "Noto Sans KR", sans-serif;
 /*
 * Regular font size
 */
@@ -103,4 +103,25 @@ $base-font-size: 16px;
     font-size: 20px;
     line-height: 26px;
     letter-spacing: -1.5px;
+}
+
+@mixin bc-font-size-xs {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.6px;
+}
+@mixin bc-font-size-xsm {
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: -0.65px;
+}
+@mixin bc-font-size-sm {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.75px;
+}
+@mixin bc-font-size-md {
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -0.85px;
 }

@@ -42,6 +42,9 @@
             padding: 16px 21px;
             border: 1px solid $gray-c;
             border-radius: 3px;
+            &.is-checked {
+                border: 1px solid $layer-blue;
+            }
             // + .form-group.box {
             //     margin: 0 0 0 6px; //가이드 때문
             // }

@@ -27,6 +27,12 @@
     /*체크해제 상태*/
     color: $gray-2;
 }
+.bp .table th .h-checkbox.gray input[type="checkbox"] + label,
+.bp .table th .h-checkbox.gray input[type="radio"] + label {
+    /*체크해제 상태*/
+    color: $gray-5;
+    font-weight: 400;
+}
 .h-checkbox input[type="checkbox"] + label span,
 .h-checkbox input[type="radio"] + label span {
     position: relative;

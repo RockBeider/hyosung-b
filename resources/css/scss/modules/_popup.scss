@@ -30,6 +30,7 @@
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
 }
+
 .bp {
     .k-window-titlebar { //head
         display: flex;
@@ -57,6 +58,7 @@
         background: $gray-f7;
     }
     .k-dialog-buttongroup { //foot
+        background-color: $gray-f7;
         border-bottom-right-radius: 3px;
         border-bottom-left-radius: 3px;
         padding: 10px;
@@ -67,16 +69,34 @@
         justify-content: flex-end;
         align-items: center;
         overflow: hidden;
+        height: 80px;
+        .k-button { 
+            width: 120px;
+            height: 40px;
+            font-size: 17px;
+            font-weight: bold;
+            &::before {
+                content: '';
+                display: block;
+                margin-right: 8px;
+                @include iconSvg($width: 24px, $height: 24px, $name: 'bp_icon_regi', $size: contain );
+            }
+        }
     } 
-     .k-dialog {
+     .k-dialog, .k-window {
         padding: 0;
         box-sizing: border-box;
         margin: 0 10px;
         max-height: calc(100% - 20px);
-        border-radius: 10px;
+        border-radius: 6px;
+        overflow: hidden;
     }
     .content-group {
-
+        .agree-area {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
     }
     .select-industry-box {
         display: flex;
@@ -88,7 +108,7 @@
             border: 1px solid $gray-e;
         }
     }
-    .k-dialog-close {
+    .k-button.k-dialog-close {
         @include iconSvg($width: 20px, $height: 20px, $name: 'bp_icon_close', $size: contain);
         position: absolute;
         right: 22px;
@@ -103,4 +123,114 @@
 
     }
 }
+.bc {
+    .k-dialog {
+        border: 1px solid $gray-5;
+    }
+    .k-dialog-titlebar {
+        @include bc-font-size-sm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        padding: 0 30px;
+        border-bottom: 1px solid $gray-d;
+        font-weight: bold;
+        .k-button {
+            padding: 0;
+        }
+    }
+    .k-dialog-content {
+        padding: 30px;
+    }
+}
+
+/*
+ * ------------------------------
+ * BC0002
+ * ------------------------------
+ */
+.bc {
+    .k-button.k-dialog-close {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'bc_btn_X', $size: 18px 18px);
+        position: absolute;
+        right: 22px;
+        top: 10px;
+        min-width: 0 !important;
+        width: 30px;
+        height: 30px !important;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 0;
+        &:hover, &:focus {
+            background-color: transparent;
+        }
+
+    }
+    .pop-timer-box {
+        @include bc-font-size-md;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 85px;
+        background: $gray-f5;
+        border: 1px solid $gray-e;
+        .time-label {
+            color: $gray-5;
+            font-weight: 500;
+        }
+        .time-set {
+            margin-left: 10px;
+            color: $error;
+            font-weight: bold;
+        }
+    }
+    .pop-guide {
+        margin-top: 10px;
+        .list {
+            @include bp-font-size-xs;
+            color: $gray-7;
+            line-height: 18px;
+        }
+    }
+    .btn-box {
+        margin-top: 20px;
+    }
+}
+
+
+/*
+ * ------------------------------
+ * BC0003
+ * ------------------------------
+ */
+.bc {
+    .main-info {
+        @include bc-font-size-md;
+        margin-top: 20px;
+        color: $gray-2;
+        font-weight: bold;
+        text-align: center;
+    }
+    .sub-info {
+        @include bc-font-size-xsm;
+        margin-top: 12px;
+        color: $gray-7;
+        text-align: center;
+    }
+    .check {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/*
+ * ------------------------------
+ * BC0004
+ * ------------------------------
+ */
+
+
 

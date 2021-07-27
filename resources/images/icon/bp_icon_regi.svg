@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_regi" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="Group_592" transform="translate(-1201.697 -265.037)">
+        <path id="Path_340" d="M1234.058 269.844a2.213 2.213 0 1 1-2.213 2.213 2.216 2.216 0 0 1 2.213-2.213m0-1.844a4.058 4.058 0 1 0 4.058 4.058 4.058 4.058 0 0 0-4.058-4.058z" class="cls-2" transform="translate(-17.04)"/>
+        <path id="Path_341" d="M1235.755 300.784h-1.844V298.9a5.851 5.851 0 0 0-1.885-4.3 5.368 5.368 0 0 0-4.119-1.435 5.563 5.563 0 0 0-5.062 5.514v2.1H1221v-2.1a7.418 7.418 0 0 1 6.751-7.351 7.185 7.185 0 0 1 5.522 1.914 7.7 7.7 0 0 1 2.482 5.654z" class="cls-2" transform="translate(-11.36 -14.71)"/>
+        <path id="Rectangle_1149" d="M0 0H8V2H0z" class="cls-2" transform="translate(1203 276)"/>
+        <path id="Rectangle_1150" d="M0 0H2V8H0z" class="cls-2" transform="translate(1206 273)"/>
+    </g>
+</svg>

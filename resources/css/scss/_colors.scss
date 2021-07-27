@@ -89,7 +89,7 @@ $bp-yellow-hover: #de9800;
 
 $badge-pink: #fde3e3;
 
-.discount {
+.discount, .error {
     color: $error !important;
 }
 
@@ -109,3 +109,6 @@ $bc-green-hover: #074d27;
 
 $bc-light-green: #d4eee0;
 $bc-light-green-hover: #98d2b3;
+
+$bc-table-th-bg: #f2f4f7;
+$bc-table-th: #5e6b85;

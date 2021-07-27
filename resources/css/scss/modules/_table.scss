@@ -104,3 +104,34 @@ td .form-box, th .form-box {
    }
 }
 
+
+
+.bc {
+    .table {
+        width: 100%; 
+        overflow: hidden;
+        table {
+            width: calc(100% + 2px);
+            margin: 0 -1px;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid $gray-e4;
+        }
+        th {
+            @include bc-font-size-xsm;
+            padding: 0 7px;
+            background: $bc-table-th-bg;
+            color: $bc-table-th;
+            font-weight: 500;
+            text-align: center;
+        }
+        td {
+            @include bc-font-size-xsm;
+            height: 38px;
+            padding: 6px 10px;
+            color: $gray-2;
+        }
+    }
+
+}
