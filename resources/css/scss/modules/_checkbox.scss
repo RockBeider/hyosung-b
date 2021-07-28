@@ -22,6 +22,17 @@
     color: $gray-5;
     display: block;
 }
+.bp .table th .h-checkbox input[type="checkbox"] + label,
+.bp .table th .h-checkbox input[type="radio"] + label {
+    /*체크해제 상태*/
+    color: $gray-2;
+}
+.bp .table th .h-checkbox.gray input[type="checkbox"] + label,
+.bp .table th .h-checkbox.gray input[type="radio"] + label {
+    /*체크해제 상태*/
+    color: $gray-5;
+    font-weight: 400;
+}
 .h-checkbox input[type="checkbox"] + label span,
 .h-checkbox input[type="radio"] + label span {
     position: relative;
@@ -61,6 +72,45 @@
 .h-checkbox input[type="radio"]:checked + label::before {
     background-image: url('../images/icon/btn_radio_checked.svg');
 }
+
+
+.bp {
+    .h-checkbox input[type="checkbox"] + label::before { //20px(md)
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_checkbox_default', $size: contain );
+    }
+    .h-checkbox input[type="radio"] + label::before { //20px(md)
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_radio_default', $size: contain );
+    } 
+    .h-checkbox input[type="checkbox"]:checked + label::before {
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_checkbox_checked', $size: contain );
+    }
+    .h-checkbox input[type="radio"]:checked + label::before {
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_radio_checked', $size: contain );
+    }
+    .h-checkbox {
+        padding-left: 20px + 6px;
+    }
+}
+
+
+.bc {
+    .h-checkbox input[type="checkbox"] + label::before { //20px(md)
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_checkbox_default', $size: contain );
+    }
+    .h-checkbox input[type="radio"] + label::before { //20px(md)
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_radio_default', $size: contain );
+    } 
+    .h-checkbox input[type="checkbox"]:checked + label::before {
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_checkbox_checked', $size: contain );
+    }
+    .h-checkbox input[type="radio"]:checked + label::before {
+        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_radio_checked', $size: contain );
+    }
+    .h-checkbox {
+        padding-left: 20px + 6px;
+    }
+}
+
 
 
 .h-checkbox input[type="checkbox"]:disabled + label::before {

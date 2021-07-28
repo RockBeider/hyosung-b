@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_체크기_hover" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:#2476dd}
+        </style>
+    </defs>
+    <g id="Group_573" transform="translate(6.825 3.286)">
+        <g id="Group_572" transform="translate(0 0)">
+            <path id="Path_310" d="M1819.349 593.429H1793V560h26.349v33.429h-1.573v-31.856h-23.2v30.282h24.776z" class="cls-2" transform="translate(-1793 -560)"/>
+            <path id="Path_311" d="M1816.551 572.573v7.079h-12.978v-7.079h12.978m1.573-1.573H1802v10.225h16.124V571z" class="cls-2" transform="translate(-1798.461 -566.674)"/>
+            <path id="Path_312" d="M1804.36 603H1802v2.36h2.36V603z" class="cls-2" transform="translate(-1798.461 -586.089)"/>
+            <path id="Path_313" d="M1814.36 603H1812v2.36h2.36V603z" class="cls-2" transform="translate(-1804.528 -586.089)"/>
+            <path id="Path_314" d="M1824.36 603H1822v2.36h2.36V603z" class="cls-2" transform="translate(-1810.595 -586.089)"/>
+            <path id="Path_315" d="M1804.36 616H1802v2.36h2.36V616z" class="cls-2" transform="translate(-1798.461 -593.976)"/>
+            <path id="Path_316" d="M1814.36 616H1812v2.36h2.36V616z" class="cls-2" transform="translate(-1804.528 -593.976)"/>
+            <path id="Path_317" d="M1804.36 629H1802v2.36h2.36V629z" class="cls-2" transform="translate(-1798.461 -601.864)"/>
+            <path id="Path_318" d="M1814.36 629H1812v2.36h2.36V629z" class="cls-2" transform="translate(-1804.528 -601.864)"/>
+            <path id="Path_319" d="M1824.36 616H1822v2.36h2.36V616z" class="cls-2" transform="translate(-1810.595 -593.976)"/>
+            <path id="Path_320" d="M1824.36 629H1822v2.36h2.36V629z" class="cls-2" transform="translate(-1810.595 -601.864)"/>
+            <path id="Rectangle_857" d="M0 0H1.315V25.5H0z" class="cls-2" transform="translate(21.5 4.214)"/>
+        </g>
+        <path id="Path_321" d="M1834.753 603.573v4.327h-1.18v-4.326h1.18m1.573-1.573H1832v7.472h4.326V602z" class="cls-2" transform="translate(-1816.662 -585.482)"/>
+        <path id="Path_322" d="M1834.753 626.573v1.18h-1.18v-1.18h1.18m1.573-1.573H1832v4.326h4.326V625z" class="cls-2" transform="translate(-1816.662 -599.437)"/>
+    </g>
+</svg>

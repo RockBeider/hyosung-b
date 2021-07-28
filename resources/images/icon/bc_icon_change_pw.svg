@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_change_pw" width="90" height="90" viewBox="0 0 90 90">
+    <defs>
+        <style>
+            .cls-2{fill:#f14747}
+        </style>
+    </defs>
+    <circle id="Ellipse_18" cx="45" cy="45" r="45" fill="#fddbdb"/>
+    <g id="Group_281" transform="translate(-328 -162.105)">
+        <g id="Group_280" transform="translate(354 198.975)">
+            <path id="Path_20" d="M387.964 209.466v19.408h-30.5v-19.408h30.5M391.43 206H354v26.339h37.43V206z" class="cls-2" transform="translate(-354 -206)"/>
+        </g>
+        <path id="Path_21" d="M378.2 218.466a1.73 1.73 0 0 1 .576 3.362l-.576.2-.576-.2a1.73 1.73 0 0 1 .576-3.362m0-3.466a5.2 5.2 0 0 0-1.733 10.095v2.035a1.733 1.733 0 0 0 3.466 0v-2.035A5.2 5.2 0 0 0 378.2 215z" class="cls-2" transform="translate(-5.83 -9.787)"/>
+        <path id="Path_22" d="M376.4 183.1a10.4 10.4 0 0 0-10.4 10.4v4.086h3.466V193.5a6.931 6.931 0 1 1 13.863 0v4.013h3.466V193.5a10.4 10.4 0 0 0-10.395-10.4z" class="cls-2" transform="translate(-3.682)"/>
+    </g>
+</svg>

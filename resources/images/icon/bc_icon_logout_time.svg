@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_logout_time" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <style>
+            .cls-2{fill:#555}
+        </style>
+    </defs>
+    <g id="Group_293" transform="translate(-218 -139)">
+        <path id="Path_360" d="M440 188.607a7.393 7.393 0 1 1-7.393 7.393 7.4 7.4 0 0 1 7.393-7.393m0-1.607a9 9 0 1 0 9 9 9 9 0 0 0-9-9z" class="cls-2" transform="translate(-213 -48)"/>
+        <path id="Path_361" d="M450.456 205.419H445v-1.6h3.851V199h1.6z" class="cls-2" transform="translate(-222.497 -56.14)"/>
+    </g>
+</svg>

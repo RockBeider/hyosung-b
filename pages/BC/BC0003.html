@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body class="bc">
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bp.html"></div>
+
+        <div id="container">
+        </div>
+        <div class="layer-wrap bp">
+            <div data-role="dialog"
+                 data-title="비밀번호 변경"
+                 data-width="450"
+                 data-modal="false"
+                >
+                <div class="content-group has-check">
+                    <img src="../../resources/images/icon/bc_icon_change_pw.svg" class="check">
+                    <p class="main-info">고객님께서는 <span class="error">3개월동안</span><br/>
+                        <span class="error">비밀번호</span>를 변경하지 않으셨습니다.</p>
+                    <p class="sub-info">
+                        고객님의 소중한 개인정보를 위해 주기적인 비밀번호 변경을 권장 드립니다.
+                    </p>
+                    <div class="btn-box">
+                        <button data-role="button" class="gray-border">다음에 변경하기</button>
+                        <button data-role="button" class="">비밀번호 변경</button>
+                    </div>
+                </div>
+                <div class="check-group">
+                    <div class="h-checkbox">
+                        <input type="checkbox" id="chekNolonger" name="checkbox" />
+                        <label for="chekNolonger"><span>2주간 표시 안함</span></label>
+                    </div>
+                </div>
+            </div> 
+        </div>
+ 
+    </div>
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+   
+</body>
+
+</html>

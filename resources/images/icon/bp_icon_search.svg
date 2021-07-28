@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_search" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-2{fill:#555}
+        </style>
+    </defs>
+    <g id="Group_600" transform="translate(-115.134 -107.087)">
+        <path id="Path_343" d="M121.938 120.462a6.433 6.433 0 1 1 6.438-6.433 6.443 6.443 0 0 1-6.438 6.433zm0-11.555a5.123 5.123 0 1 0 5.127 5.122 5.13 5.13 0 0 0-5.127-5.122z" class="cls-2"/>
+        <path id="Rectangle_1173" d="M0 0H1.311V5.842H0z" class="cls-2" transform="translate(125.709 118.446) rotate(-45)"/>
+    </g>
+</svg>

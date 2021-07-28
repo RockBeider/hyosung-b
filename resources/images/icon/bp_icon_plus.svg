@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_plus" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-2{fill:#2476dd}
+        </style>
+    </defs>
+    <path id="Rectangle_1267" d="M0 0H1.2V12H0z" class="cls-2" transform="translate(7.4 2)"/>
+    <path id="Rectangle_1268" d="M0 0H1.2V12H0z" class="cls-2" transform="translate(2 8.6) rotate(-90)"/>
+</svg>

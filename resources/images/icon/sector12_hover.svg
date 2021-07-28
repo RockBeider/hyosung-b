@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_할부판매_hover" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:#2476dd}
+        </style>
+    </defs>
+    <g id="Group_570" transform="translate(7 3.009)">
+        <path id="Path_291" d="M1211.113 592.221H1198V560h22.479v16.86h-1.5V561.5H1199.5v29.223h11.614z" class="cls-2" transform="translate(-1198 -560)"/>
+        <path id="Path_292" d="M1220.862 572.5v3.747H1208.5V572.5h12.364m1.5-1.5H1207v6.744h15.361V571z" class="cls-2" transform="translate(-1203.628 -566.879)"/>
+        <path id="Path_293" d="M1213.248 600H1211v2.248h2.248V600z" class="cls-2" transform="translate(-1206.13 -585.014)"/>
+        <path id="Path_294" d="M1227.248 600H1225v2.248h2.248V600z" class="cls-2" transform="translate(-1214.884 -585.014)"/>
+        <path id="Path_295" d="M1241.248 600H1239v2.248h2.248V600z" class="cls-2" transform="translate(-1223.639 -585.014)"/>
+        <path id="Path_296" d="M1213.248 613H1211v2.248h2.248V613z" class="cls-2" transform="translate(-1206.13 -593.143)"/>
+        <path id="Path_297" d="M1227.248 613H1225v2.248h2.248V613z" class="cls-2" transform="translate(-1214.884 -593.143)"/>
+        <path id="Path_298" d="M1213.248 626H1211v2.248h2.248V626z" class="cls-2" transform="translate(-1206.13 -601.273)"/>
+        <path id="Path_299" d="M1227.248 626H1225v2.248h2.248V626z" class="cls-2" transform="translate(-1214.884 -601.273)"/>
+        <path id="Path_300" d="M1243.242 611.5a6.744 6.744 0 1 1-6.744 6.744 6.751 6.751 0 0 1 6.744-6.744m0-1.5a8.242 8.242 0 1 0 8.242 8.242 8.242 8.242 0 0 0-8.242-8.242z" class="cls-2" transform="translate(-1221.138 -591.267)"/>
+        <path id="Path_301" d="M1247.686 621.5a.18.18 0 0 1 .132.055.188.188 0 0 1 0 .265.187.187 0 0 1-.265 0 .188.188 0 0 1 0-.265.181.181 0 0 1 .133-.055m0-1.5a1.686 1.686 0 1 0 1.192.494 1.68 1.68 0 0 0-1.192-.494z" class="cls-2" transform="translate(-1228.017 -597.521)"/>
+        <path id="Path_302" d="M1261.686 634.5a.18.18 0 0 1 .132.055.188.188 0 0 1 0 .265.188.188 0 0 1-.265 0 .188.188 0 0 1 0-.265.182.182 0 0 1 .133-.055m0-1.5a1.686 1.686 0 1 0 1.192.494 1.68 1.68 0 0 0-1.192-.494z" class="cls-2" transform="translate(-1236.771 -605.65)"/>
+        <path id="Rectangle_855" d="M0 0H11.399V1.498H0z" class="cls-2" transform="translate(17.473 30.394) rotate(-45)"/>
+    </g>
+</svg>

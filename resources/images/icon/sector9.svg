@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_전문" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:#222}
+        </style>
+    </defs>
+    <g id="Group_569" transform="translate(4 3.286)">
+        <g id="Rectangle_49" transform="translate(16.124 5.506)">
+            <path id="Path_288" d="M1103.911 601.6H1087V578h16.911zm-15.338-1.573h13.765v-20.454h-13.765z" class="cls-2" transform="translate(-1087 -578)"/>
+        </g>
+        <path id="Rectangle_50" d="M0 0H9.861V1.315H0z" class="cls-2" transform="translate(19.453 10.53)"/>
+        <path id="Rectangle_50_copy_4" d="M1103.866 613.832v-1.966h1.966v1.966zm-3.933 0v-1.966h1.966v1.966zm-3.933 0v-1.966h1.966v1.966zm7.866-3.933v-1.966h1.966v1.967zm-3.933 0v-1.966h1.966v1.967zm-3.933 0v-1.966h1.966v1.967zm7.866-3.933V604h1.966v1.966zm-3.933 0V604h1.966v1.966zm-3.933 0V604h1.966v1.966z" class="cls-2" transform="translate(-1076.336 -588.269)"/>
+        <path id="Path_289" d="M1070.383 597.429H1046v-26.541l6.128-6.888h18.256v3.933h-1.573v-2.36h-15.987l-5.25 5.913v24.369h21.237v-1.573h1.573z" class="cls-2" transform="translate(-1046 -564)"/>
+        <path id="Path_290" d="M1055.079 573.472H1048V571.9h5.113V566h1.966z" class="cls-2" transform="translate(-1047.214 -565.213)"/>
+        <path id="Op_component_1" d="M0 0H1.315V5.259H0z" class="cls-2" transform="translate(3.676 18.418)"/>
+        <path id="Op_component_2" d="M0 0H1.315V9.203H0z" class="cls-2" transform="translate(6.963 14.474)"/>
+        <path id="Op_component_3" d="M0 0H1.972V4.602H0z" class="cls-2" transform="translate(9.592 19.076)"/>
+        <path id="Op_component_4" d="M0 0H1.972V7.889H0z" class="cls-2" transform="translate(12.879 15.789)"/>
+    </g>
+</svg>

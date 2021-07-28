@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효성 B System Working Page List</title>
+    <!-- Guide Styles -->
+    <link rel="stylesheet" type="text/css" href="./css/guide.css" />
+
+    <style>
+        table { table-layout: fixed; }
+        thead tr { background: #eee; }
+        tbody tr.do {
+            background-color: lightblue;
+        }
+        .d4 { display: none; }
+        .del {
+            position: relative;
+        }
+        .del td {
+            background: red;
+            text-decoration: line-through;
+        }
+        .d1, .d2, .d3 { text-align: left !important;}
+        tr td:last-child {
+            text-align: left;
+        }
+        th[rowspan] {
+            background: #fff !important;
+        }
+        .state .no, .state .unit {
+            color: rgb(0, 119, 255);
+        }
+    </style>
+</head>
+<body>
+<div class="guide_wrap">
+    <header class="g_header">
+        <ul>
+            <li><a href="./list_other.html">BP & BC</a></li>
+            <li><a href="./list.html">List</a></li>
+            <li><a href="./elements.html?elements=button">Elements</a></li>
+        </ul>
+    </header>
+    <div class="g_container" style="flex-direction: column; padding: 0 20px;">
+        <div class="hgroup">
+            <h1> HTML 목록 | 효성 FMS BP(협력사) & BC(상담센터) </h1>
+            <ul class="state">
+                <li class="progress"><strong>진척률</strong><span class="no">0</span><span class="unit">%</span></li>
+                <li class="total"><strong>총본수</strong><span class="no">0</span></li>
+                <!-- <li class="ing"><strong>작업중</strong><span class="no">0</span></li> -->
+                <!-- <li class="review"><strong>검수중</strong><span class="no">0</span></li> -->
+                <li class="del"><strong>삭제</strong><span class="no">0</span></li>
+                <li class="left"><strong>남은수</strong><span class="no">0</span></li>
+                <li class="done"><strong>완료</strong><span class="no">0</span></li>
+            </ul>
+        </div>
+        <table class="tbl_guide">
+            <colgroup>
+                <col width="110px">
+                <col width="150px">
+                <col width="">
+                <col width="100px">
+                <col width="80px">
+                <col width="90px">
+                <col width="80px">
+                <col width="">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">1depth</th>
+                    <th scope="col">2depth</th>
+                    <th scope="col">화면명</th>
+                    <th scope="col">경로</th>
+                    <th scope="col">작업자</th>
+                    <th scope="col">작업일</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="">
+                    <td class="d1">고객등록</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BP0110</span><span class="mo"></span></td>
+                    <td class="coder">주진희</td>
+                    <td class="date"></td>
+                    <td class="state" data-state="ing"></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BCloginA</span><span class="mo"></span></td>
+                    <td class="coder">주진희</td>
+                    <td class="date"></td>
+                    <td class="state" data-state="ing"></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BCloginB</span><span class="mo"></span></td>
+                    <td class="coder">주진희</td>
+                    <td class="date"></td>
+                    <td class="state" data-state="ing"></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0001</span><span class="mo"></span></td>
+                    <td class="coder">주진희</td>
+                    <td class="date"></td>
+                    <td class="state" data-state="ing"></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0002</span><span class="mo"></span></td>
+                    <td class="coder">주진희</td>
+                    <td class="date"></td>
+                    <td class="state" data-state="ing"></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0003</span><span class="mo"></span></td>
+                    <td class="coder">주진희</td>
+                    <td class="date"></td>
+                    <td class="state" data-state="ing"></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0004</span><span class="mo"></span></td>
+                    <td class="coder">주진희</td>
+                    <td class="date"></td>
+                    <td class="state" data-state="ing"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Load Scripts -->
+<script src="../resources/lib/kendo/js/jquery.min.js"></script>
+<!-- script -->
+<script type="text/javascript">
+    let total = $('.tbl_guide tbody tr').length;
+    $('.total .no').text(total);
+    // 작업 상태 처리
+    $('.tbl_guide .state').each(function(){
+        let letter = $(this).attr('data-state');
+        let letterDel = $('.tbl_guide .state[data-state=del]');
+        let letterIng = $('.tbl_guide .state[data-state=ing]');
+        let letterReview = $('.tbl_guide .state[data-state=review]');
+        let letterDone = $('.tbl_guide .state[data-state=done]');
+        let letterProgress = Math.round((letterDone.length + letterDel.length) / total * 100);
+        let letterLeft = total - (letterDone.length + letterDel.length);
+        console.log('letterLeft', letterLeft);
+        letterDel.text('삭제');
+        letterIng.text('작업중');
+        letterReview.text('검수중');
+        letterDone.text('완료');
+        $('ul.state .left .no').text(letterLeft);
+        switch (letter) {
+            case 'del' :
+                $('ul.state .del .no').text(letterDel.length);
+                break;
+            case 'ing' :
+                $('ul.state .ing .no').text(letterIng.length);
+                break;
+            case 'review' :
+                $('ul.state .review .no').text(letterReview.length);
+                break;
+            case 'done' :
+                $('ul.state .done .no').text(letterDone.length);
+                $('ul.state .progress .no').text(letterProgress);
+                break;
+            default :
+                break;
+        }
+    });
+    // SBID 링크 처리
+    $('.tbl_guide .sbid .pc').each(function(){
+        let thisHtml = $(this).text()+'.html';
+        let thisCate = $(this).text().substr(0, 2);
+        console.log('thisCate', thisCate);
+        switch (thisCate) {
+            case 'BP' : //서비스품질
+                thisHtml = 'BP/'+thisHtml;
+                break;
+            case 'BC' : //서비스품질
+                thisHtml = 'BC/'+thisHtml;
+                break;
+            default :
+                break;
+        }
+        $(this).append('<a href="../pages/'+thisHtml+'" target="_blank">'+$(this).text()+'</a>');
+    });
+</script>
+</body>
+</html>
