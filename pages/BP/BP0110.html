@@ -7,32 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="../../resources/css/index.css">
-    <style>
-        /* 임시! */
-        .bp .k-window-content {
-            padding: 0;
-            overflow: hidden;
-        }
-        .k-window-actions .k-button {
-            border: 1px solid #000;
-        }
-        .content-group {
-            overflow: auto;
-            height: calc(100% - 90px);
-            padding: 10px
-        }
 
-        .window-footer {
-            position: absolute;
-            bottom: 0;
-            display: block;
-            width: 95%;
-            margin-top: 150px;
-            padding: 19px 0 20px;
-            text-align: right;
-            border-top: 1px solid #e5e5e5;
-        }
-    </style>
 </head>
 
 <body class="bp">
@@ -45,7 +20,7 @@
                 data-role="window"
                 data-title="고객등록"
                 data-width="1130"
-                data-height="90vh"
+                data-height="calc(100% - 20px)"
                 data-actions="['Minimize', 'Close']">
                 <div class="content-group">
                     <div class="title-box md mt-0">
@@ -1157,8 +1132,9 @@
                     </div>
                 </div>
                 <div class="window-footer">
-                    <button type="button" class="k-primary k-button">Save changes</button>
-                    <button type="button" class="k-button">Close</button>
+                    <div class="btn-box justify-content-end">
+                        <button data-role="button" data-icon="bp-register" class="md"><span>등록</span></button>
+                    </div>
                 </div>
             </div>
         </div>

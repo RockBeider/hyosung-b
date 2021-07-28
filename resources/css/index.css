@@ -1363,6 +1363,95 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+/*
+* ------------------------------
+* window
+* ------------------------------
+*/
+/* 임시! */
+/*
+* ------------------------------
+* window
+* ------------------------------
+*/
+/* 임시! */
+.bp .k-window {
+  margin: 10px 0;
+  box-sizing: border-box;
+  margin: 0 10px;
+  max-height: calc(100% - 20px);
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 7px 1px rgba(128, 128, 128, 0.3);
+}
+.bp .k-window-titlebar {
+  justify-content: space-between;
+}
+.bp .k-window-content {
+  padding: 0;
+  overflow: hidden;
+}
+.bp .k-window-actions {
+  display: flex;
+}
+.bp .k-window-actions .k-button {
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  outline: none;
+}
+.bp .k-window-actions .k-button:hover, .bp .k-window-actions .k-button:focus {
+  background-color: transparent;
+  border: none;
+}
+.bp .k-window-actions .k-button.k-state-focused {
+  background-color: transparent;
+  border: none;
+}
+.bp .k-window-actions .k-button .k-i-window-minimize {
+  font-size: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  background-image: url("../images/icon/bp_btn_pop_min.png");
+  background-size: contain;
+}
+.bp .k-window-actions .k-button .k-i-window-restore {
+  font-size: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  background-image: url("../images/icon/bp_btn_pop_minimized.png");
+  background-size: contain;
+}
+.bp .k-window-actions .k-button .k-i-close {
+  font-size: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  background-image: url("../images/icon/bp_btn_pop_closed.png");
+  background-size: contain;
+}
+.bp .content-group {
+  overflow: auto;
+  height: calc(100% - 90px);
+  padding: 30px;
+  border-top: 0;
+  border-bottom: 0;
+}
+.bp .window-footer {
+  display: block;
+  padding: 20px 30px;
+  border-top: 1px solid #e5e5e5;
+  text-align: right;
+}
+
+/*
+* ------------------------------
+* dialog
+* ------------------------------
+*/
 .bp .k-window-titlebar {
   display: flex;
   align-items: center;
@@ -1370,9 +1459,6 @@ button {
   min-height: 60px;
   padding: 0 30px;
   background-color: #2476dd;
-  border-bottom: 1px solid gray;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
   white-space: nowrap;
   color: #fff;
   font-size: 20px;
@@ -1380,7 +1466,6 @@ button {
   letter-spacing: -1.5px;
 }
 .bp .k-window-content {
-  padding: 30px;
   outline: 0;
   overflow: auto;
   position: relative;
@@ -1401,23 +1486,8 @@ button {
   overflow: hidden;
   height: 80px;
 }
-.bp .k-dialog-buttongroup .k-button {
-  width: 120px;
-  height: 40px;
-  font-size: 17px;
-  font-weight: bold;
-}
-.bp .k-dialog-buttongroup .k-button::before {
-  content: "";
-  display: block;
-  margin-right: 8px;
-  width: 24px;
-  height: 24px;
-  background-image: url("../images/icon/bp_icon_regi.svg");
-  background-size: contain;
-}
-.bp .k-dialog, .bp .k-window {
-  padding: 0;
+.bp .k-dialog {
+  padding: 30px;
   box-sizing: border-box;
   margin: 0 10px;
   max-height: calc(100% - 20px);
@@ -2311,6 +2381,9 @@ td .form-box, th .form-box {
 .h-btn.k-button-icontext > * + *, .k-button.k-button-icontext > * + * {
   margin-left: 4px;
 }
+.h-btn.k-button-icontext.md > * + *, .k-button.k-button-icontext.md > * + * {
+  margin-left: 8px;
+}
 .h-btn:disabled, .h-btn:disabled:hover, .h-btn:disabled:focus, .h-btn:disabled:active, .k-button:disabled, .k-button:disabled:hover, .k-button:disabled:focus, .k-button:disabled:active {
   cursor: default;
   background: #f5f5f5 !important;
@@ -2398,6 +2471,17 @@ td .form-box, th .form-box {
   background: #2476dd;
   border: 1px solid #2476dd;
   color: #fff;
+}
+.bp .h-btn.md, .bp .k-button.md {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -1.28px;
+  height: 40px;
+  padding: 0 30px;
+}
+.bp .h-btn.md .k-icon, .bp .k-button.md .k-icon {
+  width: 24px;
+  height: 24px;
 }
 .bp .h-btn:hover, .bp .h-btn:focus, .bp .k-button:hover, .bp .k-button:focus {
   background-color: #0053bb;
@@ -2971,6 +3055,12 @@ th .required {
 
 .k-i-example {
   background: gray;
+}
+.k-i-bp-register {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon/bp_icon_regi.svg");
+  background-size: contain;
 }
 .k-i-filter {
   width: 28px;

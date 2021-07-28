@@ -3,18 +3,18 @@
  * 팝업
  * ------------------------------
  */
-
+ 
  .layer-wrap {
-     position: fixed;
-     top: 0;
-     left: 0; 
-     right: 0;
-     bottom: 0;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
- }
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .k-window {
     border-radius: 3px;
     padding: 0;
@@ -30,7 +30,112 @@
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
 }
+    
+/*
+* ------------------------------
+* window
+* ------------------------------
+*/
+/* 임시! */
+// .bp .k-window-content {
+//     padding: 0;
+//     overflow: hidden;
+// }
+// .k-window-actions .k-button {
+//     border: 1px solid #000;
+// }
+// .content-group {
+//     overflow: auto;
+//     height: calc(100% - 90px);
+//     padding: 10px
+// }
 
+// .window-footer {
+//     position: absolute;
+//     bottom: 0;
+//     display: block;
+//     width: 95%;
+//     margin-top: 150px;
+//     padding: 19px 0 20px;
+//     text-align: right;
+//     border-top: 1px solid #e5e5e5;
+// }
+
+    
+/*
+* ------------------------------
+* window
+* ------------------------------
+*/
+/* 임시! */
+.bp {
+    .k-window {
+        margin: 10px 0;
+        box-sizing: border-box;
+        margin: 0 10px;
+        max-height: calc(100% - 20px);
+        border-radius: 0;
+        overflow: hidden;
+        border: 1px solid $gray-c;
+        box-shadow: 1px 1px 7px 1px rgba(128,128,128,.3);
+    }
+    .k-window-titlebar {
+        justify-content: space-between;
+    }
+    .k-window-content {
+        padding: 0;
+        overflow: hidden;
+    }
+    .k-window-actions {
+        display: flex;
+        .k-button {
+            min-width: 0;
+            width: 40px;
+            height: 40px;
+            outline: none;
+            &:hover, &:focus {
+                background-color: transparent;
+                border: none;
+            }
+            &.k-state-focused {
+                background-color: transparent;
+                border: none;
+            }
+            .k-i- {
+                &window-minimize {
+                    @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_min', $size: contain );
+                }
+                &window-restore {
+                    @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_minimized', $size: contain );
+                }
+                &close {
+                    @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_closed', $size: contain );
+                }
+            }
+        }
+    }
+    .content-group {
+        overflow: auto;
+        height: calc(100% - 90px);
+        padding: 30px;
+        // border: 1px solid $gray-c;
+        border-top: 0;
+        border-bottom: 0;
+    }
+    
+    .window-footer {
+        display: block;
+        padding: 20px 30px;
+        // border: 1px solid $gray-c;
+        border-top: 1px solid #e5e5e5;
+        text-align: right;
+    }
+}
+/*
+* ------------------------------
+* dialog
+* ------------------------------
+*/
 .bp {
     .k-window-titlebar { //head
         display: flex;
@@ -39,9 +144,6 @@
         min-height: 60px;
         padding: 0 30px;
         background-color: $layer-blue;
-        border-bottom: 1px solid gray;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
         white-space: nowrap;
     
         color: $white;
@@ -50,7 +152,7 @@
         letter-spacing: -1.5px;
     }
     .k-window-content { //body
-        padding: 30px;
+        // padding: 30px;
         outline: 0;
         overflow: auto;
         position: relative;
@@ -70,21 +172,21 @@
         align-items: center;
         overflow: hidden;
         height: 80px;
-        .k-button { 
-            width: 120px;
-            height: 40px;
-            font-size: 17px;
-            font-weight: bold;
-            &::before {
-                content: '';
-                display: block;
-                margin-right: 8px;
-                @include iconSvg($width: 24px, $height: 24px, $name: 'bp_icon_regi', $size: contain );
-            }
-        }
+        // .k-button { 
+        //     width: 120px;
+        //     height: 40px;
+        //     font-size: 17px;
+        //     font-weight: bold;
+        //     &::before {
+        //         content: '';
+        //         display: block;
+        //         margin-right: 8px;
+        //         @include iconSvg($width: 24px, $height: 24px, $name: 'bp_icon_regi', $size: contain );
+        //     }
+        // }
     } 
-     .k-dialog, .k-window {
-        padding: 0;
+     .k-dialog {
+        padding: 30px;
         box-sizing: border-box;
         margin: 0 10px;
         max-height: calc(100% - 20px);

@@ -150,9 +150,13 @@ th .required {
         }
     }
 }
+
 .k-i- {
     &example {
      background: gray;
+    }
+    &bp-register {
+        @include iconSvg($width: 24px, $height: 24px, $name: 'bp_icon_regi', $size: contain );
     }
     &filter {
         @include iconSvg($width: 28px, $height: 28px, $name: 'btn_filter_default', $size: 8px 15px );
