@@ -1433,6 +1433,7 @@ button {
   display: flex;
 }
 .bp .select-industry-box .right-group {
+  margin-left: 10px;
   background: #f7f7f7;
   border: 1px solid #eee;
 }
@@ -2550,7 +2551,7 @@ td .form-box, th .form-box {
 .btn-box.half {
   display: flex;
   flex-wrap: wrap;
-  width: 250px;
+  max-width: 250px;
   padding: 7px;
 }
 .btn-box.half .list {
@@ -2574,6 +2575,8 @@ td .form-box, th .form-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  width: 770px;
+  min-width: 770px;
   margin: -3px;
 }
 .btn-box.square .list {

@@ -394,7 +394,7 @@
     &.half { 
         display: flex;
         flex-wrap: wrap;
-        width: 250px; 
+        max-width: 250px; 
         padding: 7px;
         
         .list {
@@ -419,6 +419,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+        width: 770px;
+        min-width: 770px;
         margin: -3px;
         .list {
             padding: 3px;
