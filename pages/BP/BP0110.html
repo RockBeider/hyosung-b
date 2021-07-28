@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="../../resources/css/index.css">
+    <style>
+        /* 임시! */
+        .bp .k-window-content {
+            padding: 0;
+            overflow: hidden;
+        }
+        .k-window-actions .k-button {
+            border: 1px solid #000;
+        }
+        .content-group {
+            overflow: auto;
+            height: calc(100% - 90px);
+            padding: 10px
+        }
+
+        .window-footer {
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 95%;
+            margin-top: 150px;
+            padding: 19px 0 20px;
+            text-align: right;
+            border-top: 1px solid #e5e5e5;
+        }
+    </style>
 </head>
+
 <body class="bp">
     <div class="wrap">
         <!-- Header Include -->
         <div data-include-path="../layout/header_bp.html"></div>
 
         <div id="container">
-        </div>
-        <div class="layer-wrap bp">
-            <div data-role="dialog"
-                 data-title="고객등록"
-                 data-width="1130"
-                 data-actions="[{text:'등록'}]"
-                 data-modal="false"
-                >
+            <div id="windowLayer"
+                data-role="window"
+                data-title="고객등록"
+                data-width="1130"
+                data-height="90vh"
+                data-actions="['Minimize', 'Close']">
                 <div class="content-group">
                     <div class="title-box md mt-0">
                         <h3 class="sub-title">업종 정보</h3>
@@ -384,11 +410,11 @@
                                                     <div class="form-group">
                                                         <div class="form-set">
                                                             <div class="h-checkbox">
-                                                                <input type="checkbox" id="GG1" name="checkbox" checked="checked"/>
+                                                                <input type="checkbox" id="GG1" name="checkbox" checked="checked" />
                                                                 <label for="GG1"><span>보증보험</span></label>
                                                             </div>
                                                             <div class="input-box xxs ml-10">
-                                                                <input type="text" class="h-input" placeholder="10"/>
+                                                                <input type="text" class="h-input" placeholder="10" />
                                                                 <span class="unit">%</span>
                                                             </div>
                                                         </div>
@@ -398,7 +424,7 @@
                                                                 <label for="GG2"><span>현금담보</span></label>
                                                             </div>
                                                             <div class="input-box xxs ml-10">
-                                                                <input type="text" class="h-input" placeholder="3"/>
+                                                                <input type="text" class="h-input" placeholder="3" />
                                                                 <span class="unit">%</span>
                                                             </div>
                                                         </div>
@@ -413,7 +439,7 @@
                                                                 <input type="checkbox" id="GG4" name="checkbox" />
                                                                 <label for="GG4"><span>기타</span></label>
                                                             </div>
-                                                            <input type="text" class="h-input lg" placeholder="본사보증"/>
+                                                            <input type="text" class="h-input lg" placeholder="본사보증" />
                                                         </div>
                                                     </div>
                                                 </td>
@@ -427,14 +453,14 @@
                                                             <label for="radio1-1"><span>직접신청</span></label>
                                                         </div>
                                                         <div class="h-checkbox">
-                                                            <input type="radio" id="radio1-2" name="radio1" checked="checked"/>
+                                                            <input type="radio" id="radio1-2" name="radio1" checked="checked" />
                                                             <label for="radio1-2"><span>자동신청</span></label>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <th scope="row">통장기재내역</th>
                                                 <td>
-                                                    <input type="text" class="h-input" placeholder="효성에프엠에스"/>
+                                                    <input type="text" class="h-input" placeholder="효성에프엠에스" />
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -536,11 +562,11 @@
                                                     <div class="form-group">
                                                         <div class="form-set">
                                                             <div class="h-checkbox">
-                                                                <input type="checkbox" id="G1" name="checkbox" checked="checked"/>
+                                                                <input type="checkbox" id="G1" name="checkbox" checked="checked" />
                                                                 <label for="G1"><span>보증보험</span></label>
                                                             </div>
                                                             <div class="input-box xxs ml-10">
-                                                                <input type="text" class="h-input" placeholder="10"/>
+                                                                <input type="text" class="h-input" placeholder="10" />
                                                                 <span class="unit">%</span>
                                                             </div>
                                                         </div>
@@ -555,7 +581,7 @@
                                                                 <input type="checkbox" id="G4" name="checkbox" />
                                                                 <label for="G4"><span>기타</span></label>
                                                             </div>
-                                                            <input type="text" class="h-input lg" placeholder="본사보증"/>
+                                                            <input type="text" class="h-input lg" placeholder="본사보증" />
                                                         </div>
                                                     </div>
                                                 </td>
@@ -576,7 +602,7 @@
                                                 </td>
                                                 <th scope="row">통장기재내역</th>
                                                 <td>
-                                                    <input type="text" class="h-input" placeholder="효성에프엠에스"/>
+                                                    <input type="text" class="h-input" placeholder="효성에프엠에스" />
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -609,26 +635,21 @@
                                                 </div>
                                             </td>
                                             <th scope="row">상품명</th>
-                                            <td><input type="text" class="h-input" placeholder="6자 이내 "/></td>
+                                            <td><input type="text" class="h-input" placeholder="6자 이내 " /></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">이용목적<span class="required">*</span></th>
                                             <td colspan="3">
-                                                <input type="text" class="h-input" value="이용목적 입력"/>
+                                                <input type="text" class="h-input" value="이용목적 입력" />
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">특약사항</th>
                                             <td colspan="3">
-                                                <textarea data-role="textarea"
-                                                    data-format="c"
-                                                    data-min="0"
-                                                    data-max="100"
-                                                    data-rows="4"
-                                                    data-placeholder="특약사항을 입력해주세요." class="sm"></textarea>
+                                                <textarea data-role="textarea" data-format="c" data-min="0" data-max="100" data-rows="4" data-placeholder="특약사항을 입력해주세요." class="sm"></textarea>
                                             </td>
                                         </tr>
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
@@ -781,7 +802,7 @@
                                             </div>
                                         </div>
                                     </div>
-                              
+
                                 </div>
                                 <div class="adding-box">
                                     <span class="label">프로모션</span>
@@ -813,12 +834,12 @@
                                         </div>
                                     </div>
                                     <script>
-                                        
+
                                     </script>
                                 </div>
                             </div>
                             <!-- // 할인 정보 -->
-                        </div>     
+                        </div>
 
                         <ul class="list-box pay">
                             <li class="list">
@@ -1109,14 +1130,18 @@
                         </div>
                         <div class="table-box">
                             <div class="form-group col filebox">
-                                <label for="bp_filename" data-role="button" data-icon="bp-plus" class="blue-border k-button k-button-icontext" role="button" aria-disabled="false" tabindex="0"><span class="k-icon k-i-bp-plus"></span><span>파일 업로드</span></label> 
+                                <label for="bp_filename" data-role="button" data-icon="bp-plus" class="blue-border k-button k-button-icontext" role="button" aria-disabled="false" tabindex="0"><span class="k-icon k-i-bp-plus"></span><span>파일 업로드</span></label>
                                 <div class="form-set">
-                                    <span title="" class="k-widget k-dropdown md" unselectable="on" role="listbox" aria-haspopup="listbox" aria-expanded="false" tabindex="0" aria-owns="d37402f3-a7a8-4a46-a807-48c4fda2cb18_listbox" aria-controls="d37402f3-a7a8-4a46-a807-48c4fda2cb18_listbox" aria-live="polite" aria-disabled="false" aria-readonly="false" aria-busy="false" aria-activedescendant="b7ad754c-0c5c-47c2-84c5-5c33a20f3425" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span id="b7ad754c-0c5c-47c2-84c5-5c33a20f3425" unselectable="on" role="option" aria-selected="true" class="k-input">이용약관동의서</span><span role="button" unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><select data-role="dropdownlist" data-value="이용약관동의서" data-option-label="이용약관동의서" class="md" style="display: none;"><option value="" selected="selected">이용약관동의서</option><option value="1">온라인</option><option value="2">오프라인</option></select></span>
+                                    <span title="" class="k-widget k-dropdown md" unselectable="on" role="listbox" aria-haspopup="listbox" aria-expanded="false" tabindex="0" aria-owns="d37402f3-a7a8-4a46-a807-48c4fda2cb18_listbox" aria-controls="d37402f3-a7a8-4a46-a807-48c4fda2cb18_listbox" aria-live="polite" aria-disabled="false" aria-readonly="false" aria-busy="false" aria-activedescendant="b7ad754c-0c5c-47c2-84c5-5c33a20f3425" style=""><span unselectable="on" class="k-dropdown-wrap k-state-default"><span id="b7ad754c-0c5c-47c2-84c5-5c33a20f3425" unselectable="on" role="option" aria-selected="true" class="k-input">이용약관동의서</span><span role="button" unselectable="on" class="k-select" aria-label="select"><span class="k-icon k-i-arrow-60-down"></span></span></span><select data-role="dropdownlist" data-value="이용약관동의서" data-option-label="이용약관동의서" class="md" style="display: none;">
+                                            <option value="" selected="selected">이용약관동의서</option>
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select></span>
                                     <div class="input-box lg">
                                         <input class="h-input" placeholder="파일을 업로드해주세요" disabled="disabled">
                                         <button data-role="button" data-icon="bp-close" class="hidden k-button k-button-icon" role="button" aria-disabled="false" tabindex="0"><span class="k-icon k-i-bp-close"></span></button>
                                     </div>
-                                    <input type="file" id="bp_filename" class="upload-hidden"> 
+                                    <input type="file" id="bp_filename" class="upload-hidden">
                                     <button data-role="button" class="gray-border k-button" role="button" aria-disabled="false" tabindex="0">선택</button>
                                 </div>
                             </div>
@@ -1129,8 +1154,11 @@
                                 <label for="checkboxAgree"><span>개인정보 수집 동의</span></label>
                             </div>
                         </div>
-
                     </div>
+                </div>
+                <div class="window-footer">
+                    <button type="button" class="k-primary k-button">Save changes</button>
+                    <button type="button" class="k-button">Close</button>
                 </div>
             </div>
         </div>
@@ -1141,9 +1169,6 @@
     <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
-   
-    </script>
-    
 </body>
 
 </html>
