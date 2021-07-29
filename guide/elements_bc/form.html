@@ -1,0 +1,82 @@
+<div class="content-wrap">
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Dropdown</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                <option value="1">온라인</option>
+                <option value="2">오프라인</option>
+            </select>
+            <select data-role="dropdownlist" data-value="선택" data-option-label="선택" disabled>
+                <option value="1">온라인</option>
+                <option value="2">오프라인</option>
+            </select>
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+&lt;option value="1">온라인&lt;/option>
+&lt;option value="2">오프라인&lt;/option>
+&lt;/select>
+&lt;select data-role="dropdownlist" data-value="선택" data-option-label="선택" disabled>
+&lt;option value="1">온라인&lt;/option>
+&lt;option value="2">오프라인&lt;/option>
+&lt;/select>
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Date Range</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+            <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31" disabled/> 
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+&lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31" disabled/> 
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Input Status</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <!-- [D] default 상태 -->
+            <input type="text" class="h-input sm" placeholder="placeholder" />
+            <!-- [D] with Data -->
+            <input type="text" class="h-input sm" value="Data" />
+            <!-- [D] disabled 상태 -->
+            <input type="text" class="h-input sm" value="disabled" disabled="disabled" />
+            <!-- [D] error 상태 -->
+            <div class="input-box col sm error">
+                <input type="text" class="h-input" value="error" />
+                <p class="note">Error Message</p>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;!-- [D] default 상태 -->
+&lt;input type="text" class="h-input sm" placeholder="placeholder" />
+&lt;!-- [D] with Data -->
+&lt;input type="text" class="h-input sm" value="Data" />
+&lt;!-- [D] disabled 상태 -->
+&lt;input type="text" class="h-input sm" value="disabled" disabled="disabled" />
+&lt;!-- [D] error 상태 -->
+&lt;div class="input-box sm error">
+&lt;input type="text" class="h-input" value="error" />
+&lt;p class="note">Error Message&lt;/p>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+</div>

@@ -2350,34 +2350,22 @@ td .form-box, th .form-box {
   justify-content: center;
   position: relative;
   flex: 0 0 auto;
-  height: 28px;
+  height: 26px;
   padding: 0 20px;
   border-radius: 3px;
   white-space: nowrap;
   transition: background 0.2s ease-in;
-  background-color: #0e4194;
-  border: 1px solid #0e4194;
+  background-color: #3b6ac5;
+  border: 1px solid #3b6ac5;
   color: #fff;
-  /*
-  * ------------------------------
-  * 헤더버튼
-  * ------------------------------
-  */
 }
 .h-btn:hover, .h-btn:focus, .k-button:hover, .k-button:focus {
-  background-color: #002a70;
-  border: 1px solid #002a70;
+  background-color: #2253b4;
+  border: 1px solid #2253b4;
 }
 .h-btn.k-state-focused, .k-button.k-state-focused {
-  background-color: #002a70;
-  border: 1px solid #002a70;
-}
-.h-btn:disabled, .h-btn:disabled:hover, .h-btn:disabled:focus, .h-btn:disabled:active, .k-button:disabled, .k-button:disabled:hover, .k-button:disabled:focus, .k-button:disabled:active {
-  cursor: default;
-  background: #f5f5f5 !important;
-  border: 1px solid #ccc !important;
-  color: #aaa !important;
-  opacity: 0.7;
+  background-color: #2253b4;
+  border: 1px solid #2253b4;
 }
 .h-btn.text, .k-button.text {
   background: transparent;
@@ -2390,7 +2378,7 @@ td .form-box, th .form-box {
   height: 16px;
 }
 .h-btn:not(.col) > * + *, .k-button:not(.col) > * + * {
-  margin-left: 6px;
+  margin-left: 0.375rem;
 }
 .h-btn.k-button-icontext, .k-button.k-button-icontext {
   padding: 0 12px;
@@ -2401,6 +2389,13 @@ td .form-box, th .form-box {
 .h-btn.k-button-icontext.md > * + *, .k-button.k-button-icontext.md > * + * {
   margin-left: 8px;
 }
+.h-btn:disabled, .h-btn:disabled:hover, .h-btn:disabled:focus, .h-btn:disabled:active, .k-button:disabled, .k-button:disabled:hover, .k-button:disabled:focus, .k-button:disabled:active {
+  cursor: default;
+  background: #f5f5f5 !important;
+  border: 1px solid #ccc !important;
+  color: #aaa !important;
+  opacity: 0.7;
+}
 .h-btn.logout, .k-button.logout {
   margin-left: 6px;
   border: 1px solid #e0e5ec;
@@ -2410,80 +2405,56 @@ td .form-box, th .form-box {
 }
 
 .h-btn.blue, .k-button.blue {
-  background-color: #0e4194;
-  border: 1px soild #0e4194;
+  background: #3b6ac5;
+  border: 1px solid #3b6ac5;
   color: #fff;
 }
 .h-btn.blue:hover, .h-btn.blue:focus, .k-button.blue:hover, .k-button.blue:focus {
-  background-color: #002a70;
+  background-color: #2253b4;
+  border: 1px solid #2253b4;
 }
 .h-btn.blue.k-state-focused, .k-button.blue.k-state-focused {
-  background-color: #002a70;
+  background-color: #2253b4;
+  border: 1px solid #2253b4;
 }
 .h-btn.light-blue, .k-button.light-blue {
-  background-color: #cfdef5;
-  color: #0e4194;
+  background: #dee9ff;
+  border: 1px solid #dee9ff;
+  color: #3b6ac5;
 }
 .h-btn.light-blue:hover, .h-btn.light-blue:focus, .k-button.light-blue:hover, .k-button.light-blue:focus {
-  background-color: #99b6e2;
+  background-color: #bcccee;
+  border: 1px solid #bcccee;
 }
 .h-btn.light-blue.k-state-focused, .k-button.light-blue.k-state-focused {
-  background-color: #99b6e2;
-}
-.h-btn.light-blue-border, .k-button.light-blue-border {
-  background-color: #eff2f7;
-  border: 1px solid #ccc;
+  background-color: #bcccee;
+  border: 1px solid #bcccee;
 }
 .h-btn.blue-border, .k-button.blue-border {
   background: #fff;
-  border: 1px solid #0e4194;
-  color: #0e4194;
+  border: 1px solid #3b6ac5;
+  color: #2476dd;
 }
 .h-btn.blue-border:hover, .h-btn.blue-border:focus, .k-button.blue-border:hover, .k-button.blue-border:focus {
-  background-color: #e4e9ef;
+  background-color: #dee9ff;
+  border: 1px solid #3b6ac5;
 }
 .h-btn.blue-border.k-state-focused, .k-button.blue-border.k-state-focused {
-  background-color: #e4e9ef;
+  background-color: #dee9ff;
+  border: 1px solid #3b6ac5;
 }
 .h-btn.gray-border, .k-button.gray-border {
-  background-color: #fff;
-  border: 1px solid #999;
+  background: #fff;
+  border: 1px solid #555;
   color: #222;
 }
 .h-btn.gray-border:hover, .h-btn.gray-border:focus, .k-button.gray-border:hover, .k-button.gray-border:focus {
   background-color: #eee;
-  border: 1px solid #aaa;
+  border: 1px solid #999;
 }
 .h-btn.gray-border.k-state-focused, .k-button.gray-border.k-state-focused {
   background-color: #eee;
-  border: 1px solid #aaa;
-}
-.h-btn.green, .k-button.green {
-  background-color: #1e6c42;
-  border: 1px solid #0d5a30;
-  color: #fff;
-}
-.h-btn.green:hover, .h-btn.green:focus, .k-button.green:hover, .k-button.green:focus {
-  background-color: #0d5a30;
-  border: 1px solid #0d5a30;
-}
-.h-btn.green.k-state-focused, .k-button.green.k-state-focused {
-  background-color: #0d5a30;
-}
-.h-btn.light-green, .k-button.light-green {
-  background-color: #d4eee0;
-  border: 1px solid #d4eee0;
-  color: #1e6c42;
-}
-.h-btn.light-green:hover, .h-btn.light-green:focus, .k-button.light-green:hover, .k-button.light-green:focus {
-  background-color: #d4eee0;
-  border: 1px solid #d4eee0;
-  color: #1e6c42;
-}
-.h-btn.light-green.k-state-focused, .k-button.light-green.k-state-focused {
-  background-color: #d4eee0;
-  border: 1px solid #d4eee0;
-  color: #1e6c42;
+  border: 1px solid #999;
 }
 
 /*

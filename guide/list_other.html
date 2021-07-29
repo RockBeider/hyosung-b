@@ -22,7 +22,7 @@
             background: red;
             text-decoration: line-through;
         }
-        .d1, .d2, .d3 { text-align: left !important;}
+        .d1, .d2, .d3, .sbid { text-align: left !important;}
         tr td:last-child {
             text-align: left;
         }
@@ -38,14 +38,16 @@
 <div class="guide_wrap">
     <header class="g_header">
         <ul>
-            <li><a href="./list_other.html">BP & BC</a></li>
-            <li><a href="./list.html">List</a></li>
-            <li><a href="./elements.html?elements=button">Elements</a></li>
+            <li><a href="./list_other.html">LIST - BP & BC</a></li>
+            <li><a href="./list.html">LIST - B System</a></li>
+            <li><a href="./elements.html?elements=button">Guide - B System</a></li>
+            <li><a href="./elements_bp.html?elements_bp=button">Guide - BP</a></li>
+            <li><a href="./elements_bc.html?elements_bc=button">Guide - BC</a></li>
         </ul>
     </header>
     <div class="g_container" style="flex-direction: column; padding: 0 20px;">
         <div class="hgroup">
-            <h1> HTML 목록 | 효성 FMS BP(협력사) & BC(상담센터) </h1>
+            <h1> HTML 목록 | 효성 FMS BP & BC </h1>
             <ul class="state">
                 <li class="progress"><strong>진척률</strong><span class="no">0</span><span class="unit">%</span></li>
                 <li class="total"><strong>총본수</strong><span class="no">0</span></li>
@@ -58,13 +60,16 @@
         </div>
         <table class="tbl_guide">
             <colgroup>
-                <col width="110px">
-                <col width="150px">
-                <col width="">
-                <col width="100px">
-                <col width="80px">
-                <col width="90px">
-                <col width="80px">
+                <col width="120px">
+                <col width="200px">
+                <col width="200px">
+                <col width="120px">
+                <!-- <col width="80px"> -->
+                <col width="76px">
+                <col width="76px">
+                <col width="76px">
+                <col width="76px">
+                <col width="76px">
                 <col width="">
             </colgroup>
             <thead>
@@ -73,81 +78,924 @@
                     <th scope="col">2depth</th>
                     <th scope="col">화면명</th>
                     <th scope="col">경로</th>
-                    <th scope="col">작업자</th>
-                    <th scope="col">작업일</th>
+                    <!-- <th scope="col">작업자</th> -->
+                    <th scope="col">시작<br/>예정일</th>
+                    <th scope="col">종료<br/>예정일</th>
+                    <th scope="col">시작일</th>
+                    <th scope="col">종료일</th>
                     <th scope="col">상태</th>
                     <th scope="col">비고</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="">
-                    <td class="d1">고객등록</td>
+                    <td class="d1">고객등록(BP)</td>
                     <td class="d2"></td>
-                    <td class="d3"></td>
+                    <td class="d3">고객등록</td>
                     <td class="sbid"><span class="pc">BP0110</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
-                    <td class="state" data-state="ing"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">07-23</td>
+                    <td class="ex_end">07-27</td>
+                    <td class="date_start">07-23</td>
+                    <td class="date_end">07-27</td>
+                    <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
                 <tr class="">
-                    <td class="d1"></td>
+                    <td class="d1">공통(BC)</td>
                     <td class="d2"></td>
-                    <td class="d3"></td>
+                    <td class="d3">알럿</td>
+                    <td class="sbid"><span class="pc">Alert</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-09</td>
+                    <td class="ex_end"></td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1">메인</td>
+                    <td class="d2"></td>
+                    <td class="d3">메인</td>
+                    <td class="sbid"><span class="pc">Main</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">09-02</td>
+                    <td class="ex_end">09-02</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td class="d1">로그인</td>
+                    <td class="d2"></td>
+                    <td class="d3">로그인A</td>
                     <td class="sbid"><span class="pc">BCloginA</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
-                    <td class="state" data-state="ing"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">07-23</td>
+                    <td class="ex_end">07-27</td>
+                    <td class="date_start">07-23</td>
+                    <td class="date_end">07-27</td>
+                    <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
                 <tr class="">
-                    <td class="d1"></td>
+                    <td class="d1">로그인</td>
                     <td class="d2"></td>
-                    <td class="d3"></td>
+                    <td class="d3">로그인B</td>
                     <td class="sbid"><span class="pc">BCloginB</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
-                    <td class="state" data-state="ing"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">07-23</td>
+                    <td class="ex_end">07-27</td>
+                    <td class="date_start">07-23</td>
+                    <td class="date_end">07-27</td>
+                    <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
                 <tr class="">
-                    <td class="d1"></td>
+                    <td class="d1">로그인</td>
                     <td class="d2"></td>
-                    <td class="d3"></td>
-                    <td class="sbid"><span class="pc">BC0001</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
-                    <td class="state" data-state="ing"></td>
+                    <td class="d3">자동로그아웃</td>
+                    <td class="sbid"><span class="pc">BC010001</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">07-23</td>
+                    <td class="ex_end">07-27</td>
+                    <td class="date_start">07-23</td>
+                    <td class="date_end">07-27</td>
+                    <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
                 <tr class="">
-                    <td class="d1"></td>
+                    <td class="d1">로그인</td>
                     <td class="d2"></td>
-                    <td class="d3"></td>
-                    <td class="sbid"><span class="pc">BC0002</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
-                    <td class="state" data-state="ing"></td>
+                    <td class="d3">자동로그아웃 알림</td>
+                    <td class="sbid"><span class="pc">BC010002</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">07-23</td>
+                    <td class="ex_end">07-27</td>
+                    <td class="date_start">07-23</td>
+                    <td class="date_end">07-27</td>
+                    <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
                 <tr class="">
-                    <td class="d1"></td>
+                    <td class="d1">로그인</td>
                     <td class="d2"></td>
-                    <td class="d3"></td>
-                    <td class="sbid"><span class="pc">BC0003</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
-                    <td class="state" data-state="ing"></td>
+                    <td class="d3">비밀번호변경안내</td>
+                    <td class="sbid"><span class="pc">BC010003</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">07-23</td>
+                    <td class="ex_end">07-27</td>
+                    <td class="date_start">07-23</td>
+                    <td class="date_end">07-27</td>
+                    <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
                 <tr class="">
-                    <td class="d1"></td>
+                    <td class="d1">로그인</td>
                     <td class="d2"></td>
+                    <td class="d3">비밀번호변경</td>
+                    <td class="sbid"><span class="pc">BC010004</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">07-23</td>
+                    <td class="ex_end">07-27</td>
+                    <td class="date_start">07-23</td>
+                    <td class="date_end">07-27</td>
+                    <td class="state" data-state="done"></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">01사용자등록</td>
                     <td class="d3"></td>
-                    <td class="sbid"><span class="pc">BC0004</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
-                    <td class="state" data-state="ing"></td>
+                    <td class="sbid"><span class="pc">BC010101</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-09</td>
+                    <td class="ex_end">08-09</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">02문자발송</td>
+                    <td class="d3">발송</td>
+                    <td class="sbid"><span class="pc">BC010201</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-09</td>
+                    <td class="ex_end">08-09</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">02문자발송</td>
+                    <td class="d3">발송(불러오기)</td>
+                    <td class="sbid"><span class="pc">BC010201_01</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-09</td>
+                    <td class="ex_end">08-09</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">02문자발송</td>
+                    <td class="d3">발송(엑셀업로드)</td>
+                    <td class="sbid"><span class="pc">BC010201_02</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-09</td>
+                    <td class="ex_end">08-09</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">02문자발송</td>
+                    <td class="d3">메세지설정</td>
+                    <td class="sbid"><span class="pc">BC010202</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-10</td>
+                    <td class="ex_end">08-10</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">02문자발송</td>
+                    <td class="d3">발송현황</td>
+                    <td class="sbid"><span class="pc">BC010203</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-10</td>
+                    <td class="ex_end">08-10</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">03전화걸기</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC010301</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-10</td>
+                    <td class="ex_end">08-10</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">04상담등록</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC010401</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-10</td>
+                    <td class="ex_end">08-10</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">01GNB</td>
+                    <td class="d2">04상담등록</td>
+                    <td class="d3">설문조사</td>
+                    <td class="sbid"><span class="pc">BC010402</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-11</td>
+                    <td class="ex_end">08-11</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">02업체주요정보</td>
+                    <td class="d2">01리스트</td>
+                    <td class="d3">default</td>
+                    <td class="sbid"><span class="pc">BC0201</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-11</td>
+                    <td class="ex_end">08-11</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">02업체주요정보</td>
+                    <td class="d2">01리스트</td>
+                    <td class="d3">검색Data</td>
+                    <td class="sbid"><span class="pc">BC020102_01A</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-11</td>
+                    <td class="ex_end">08-11</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">02업체주요정보</td>
+                    <td class="d2">01리스트</td>
+                    <td class="d3">검색Data</td>
+                    <td class="sbid"><span class="pc">BC020102_01B</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-11</td>
+                    <td class="ex_end">08-11</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">02업체주요정보</td>
+                    <td class="d2">02비번초기화</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0202</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-12</td>
+                    <td class="ex_end">08-12</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">02업체주요정보</td>
+                    <td class="d2">03비번재발급</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0203</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-12</td>
+                    <td class="ex_end">08-12</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">01업체특이사항관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0301</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-12</td>
+                    <td class="ex_end">08-12</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">02이용서비스</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0302</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-12</td>
+                    <td class="ex_end">08-12</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">02이용서비스</td>
+                    <td class="d3">카드수수료 변경이력 조회</td>
+                    <td class="sbid"><span class="pc">BC030201</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-13</td>
+                    <td class="ex_end">08-13</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">02이용서비스</td>
+                    <td class="d3">간편동의 세부설정</td>
+                    <td class="sbid"><span class="pc">BC030202</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-13</td>
+                    <td class="ex_end">08-13</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">03변경이력</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0303</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-13</td>
+                    <td class="ex_end">08-13</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">04사용료관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0304</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-13</td>
+                    <td class="ex_end">08-13</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">04사용료관리</td>
+                    <td class="d3">사용료수정</td>
+                    <td class="sbid"><span class="pc">BC030401</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-17</td>
+                    <td class="ex_end">08-17</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">05정산내역관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0305</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-17</td>
+                    <td class="ex_end">08-17</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">03업체상세정보</td>
+                    <td class="d2">06제출서류</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0306</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-17</td>
+                    <td class="ex_end">08-17</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">04업체이력정보</td>
+                    <td class="d2">01상담이력</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0401</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-17</td>
+                    <td class="ex_end">08-17</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">04업체이력정보</td>
+                    <td class="d2">02업체담당자정보</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0402</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-18</td>
+                    <td class="ex_end">08-18</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">04업체이력정보</td>
+                    <td class="d2">03LMS회원신청현황</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0403</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-18</td>
+                    <td class="ex_end">08-18</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">04업체이력정보</td>
+                    <td class="d2">04정산일계산</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0404</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-18</td>
+                    <td class="ex_end">08-18</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">01상담조회</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0501</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-18</td>
+                    <td class="ex_end">08-18</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">02공지사항</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0502</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-19</td>
+                    <td class="ex_end">08-19</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">02공지사항</td>
+                    <td class="d3">상세</td>
+                    <td class="sbid"><span class="pc">BC050201</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-19</td>
+                    <td class="ex_end">08-19</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">03고객문의관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0503</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-19</td>
+                    <td class="ex_end">08-19</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">03고객문의관리</td>
+                    <td class="d3">할당건 영업진행상황관리</td>
+                    <td class="sbid"><span class="pc">BC050301</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-19</td>
+                    <td class="ex_end">08-19</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">04회원/결제정보</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0504</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-20</td>
+                    <td class="ex_end">08-20</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">05해피콜</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0505</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-20</td>
+                    <td class="ex_end">08-20</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">06해피콜 질의응답</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0506</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-20</td>
+                    <td class="ex_end">08-20</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">07콜백</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0507</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-20</td>
+                    <td class="ex_end">08-20</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">08가입비통장내역관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0508</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-23</td>
+                    <td class="ex_end">08-23</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0509</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-23</td>
+                    <td class="ex_end">08-23</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3">상세</td>
+                    <td class="sbid"><span class="pc">BC050901</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-23</td>
+                    <td class="ex_end">08-23</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3">요청접수</td>
+                    <td class="sbid"><span class="pc">BC050902</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-23</td>
+                    <td class="ex_end">08-23</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3">요청접수 결과</td>
+                    <td class="sbid"><span class="pc">BC050902_01</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-24</td>
+                    <td class="ex_end">08-24</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3">수정요청</td>
+                    <td class="sbid"><span class="pc">BC050903</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-24</td>
+                    <td class="ex_end">08-24</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3">수정요청_결과</td>
+                    <td class="sbid"><span class="pc">BC050903_01</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-24</td>
+                    <td class="ex_end">08-24</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3">접수/수정_업체입력(default)</td>
+                    <td class="sbid"><span class="pc">BC050904</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-25</td>
+                    <td class="ex_end">08-25</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">09요청사항관리</td>
+                    <td class="d3">접수/수정_업체입력</td>
+                    <td class="sbid"><span class="pc">BC050904_01</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-25</td>
+                    <td class="ex_end">08-25</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">10결제차단관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0510</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-25</td>
+                    <td class="ex_end">08-25</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">11아웃바인드</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0511</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-26</td>
+                    <td class="ex_end">08-26</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">11아웃바인드</td>
+                    <td class="d3">엑셀업로드</td>
+                    <td class="sbid"><span class="pc">BC051101</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-26</td>
+                    <td class="ex_end">08-26</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">12CMS동의서관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0512</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-26</td>
+                    <td class="ex_end">08-26</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">12CMS동의서관리</td>
+                    <td class="d3">결제정보등록일</td>
+                    <td class="sbid"><span class="pc">BC051201</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-27</td>
+                    <td class="ex_end">08-27</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">12CMS동의서관리</td>
+                    <td class="d3">건별등록</td>
+                    <td class="sbid"><span class="pc">BC051202</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-27</td>
+                    <td class="ex_end">08-27</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">13장기미사용회원관리</td>
+                    <td class="d3">결제정보등록일</td>
+                    <td class="sbid"><span class="pc">BC0513</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-27</td>
+                    <td class="ex_end">08-27</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">14세금계산서 재발행</td>
+                    <td class="d3">결제정보등록일</td>
+                    <td class="sbid"><span class="pc">BC0514</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-30</td>
+                    <td class="ex_end">08-30</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">15Q&A관리/협력사Q&A관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0515</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-30</td>
+                    <td class="ex_end">08-30</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">15Q&A관리/협력사Q&A관리</td>
+                    <td class="d3">상세정보</td>
+                    <td class="sbid"><span class="pc">BC051501</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-30</td>
+                    <td class="ex_end">08-30</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">15Q&A관리/협력사Q&A관리</td>
+                    <td class="d3">Q&A수정</td>
+                    <td class="sbid"><span class="pc">BC051502</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-31</td>
+                    <td class="ex_end">08-31</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">15Q&A관리/협력사Q&A관리</td>
+                    <td class="d3">Q&A답변</td>
+                    <td class="sbid"><span class="pc">BC051503</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-31</td>
+                    <td class="ex_end">08-31</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">16업체특이사항관리</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0516</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">08-31</td>
+                    <td class="ex_end">08-31</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">17ARS녹취내역조회</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0517</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">09-01</td>
+                    <td class="ex_end">09-01</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">18뉴스레터 수신거부</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0518</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">09-01</td>
+                    <td class="ex_end">09-01</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
+                    <td></td>
+                </tr>
+                <tr class="do">
+                    <td class="d1">05상담관리</td>
+                    <td class="d2">18뉴스레터 수신거부</td>
+                    <td class="d3"></td>
+                    <td class="sbid"><span class="pc">BC0518</span><span class="mo"></span></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="ex_start">09-01</td>
+                    <td class="ex_end">09-01</td>
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
+                    <td class="state" data-state=""></td>
                     <td></td>
                 </tr>
             </tbody>

@@ -1,0 +1,114 @@
+//************************************************************
+//* Description of _colors.scss
+//* @project : Hyosung B system
+//* @category : SCSS
+//* @date : 2021.07
+//* @content : 컬러 설정
+//* @author : bhlbest20@gmail.com
+//************************************************************
+@charset "utf-8";
+
+$btn-light-border: #e0e5ec; //확인필요
+$blue: #3064b8;
+
+
+// Common
+$gray-2: #222;
+$gray-4: #444;
+$gray-5: #555;
+$gray-7: #777;
+$gray-9: #999;
+$gray-a: #aaa;
+$gray-c: #ccc;
+$gray-e: #eee;
+$gray-e4: #e4e4e4;
+$gray-f5: #f5f5f5;
+
+
+// Common
+$white: #fff;
+$black: #000;
+$lavender: #cfdef5;
+$marine-blue: #002a70;
+
+
+//Button
+$btn-light-blue-hover-bg: #99b6e2;
+$btn-blue-border-hover-bg: #e4e9ef;
+
+$green-light: #d4eee0;
+
+
+$green: #1e6c42;
+$green-dark: #0d5a30;
+
+// Background
+$bg: #f5f5f5;
+
+// State
+$state: #ffe282;
+$accent: #48c3e6;
+$error: #f14747;
+
+// Main
+$main: #0e4194;
+$main_sub: #05146e;
+
+// Input
+$inputDefault: #ccc;
+
+// Table
+$tableBG1: #eff2f7;
+$tableBG2: #ededed;
+$tableLine: #e4e4e4;
+
+// Layout
+$lnbBG: #f4f6f9;
+$lnbLine: #ddd;
+$searchLine: #eee;
+
+
+
+// BP
+
+$gray-3: #333;
+$gray-6: #666;
+$gray-d: #ddd;
+$gray-f7: #f7f7f7;
+
+$layer-blue: #2476dd;
+$layer-blue-hover: #0053bb;
+
+$bp-light-blue: #bdd6f5;
+$bp-light-blue-hover: #e3ecf9;
+
+$bp-gray: #eff0f2;
+$bp-gray-hover: #eff0f2;
+$bp-yellow: #faab00;
+$bp-yellow-hover: #de9800;
+
+$badge-pink: #fde3e3;
+
+.discount, .error {
+    color: $error !important;
+}
+
+//BC
+
+$bc-blue: #3b6ac5;
+$bc-blue-hover: #2253b4;
+$bc-blue-disabled: #d7e1f4;
+
+$bc-light-blue: #dee9ff;
+$bc-light-blue-hover: #bcccee;
+$bc-light-blue-disabled: #f4f8ff;
+
+
+$bc-green: #1e6c42;
+$bc-green-hover: #074d27;
+
+$bc-light-green: #d4eee0;
+$bc-light-green-hover: #98d2b3;
+
+$bc-table-th-bg: #f2f4f7;
+$bc-table-th: #5e6b85;
