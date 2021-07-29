@@ -2356,6 +2356,7 @@ td .form-box, th .form-box {
   white-space: nowrap;
   transition: background 0.2s ease-in;
   background-color: #0e4194;
+  border: 1px solid #0e4194;
   color: #fff;
   /*
   * ------------------------------
@@ -2471,8 +2472,20 @@ td .form-box, th .form-box {
 }
 .h-btn.light-green, .k-button.light-green {
   background-color: #d4eee0;
+  border: 1px solid #d4eee0;
   color: #1e6c42;
 }
+.h-btn.light-green:hover, .h-btn.light-green:focus, .k-button.light-green:hover, .k-button.light-green:focus {
+  background-color: #d4eee0;
+  border: 1px solid #d4eee0;
+  color: #1e6c42;
+}
+.h-btn.light-green.k-state-focused, .k-button.light-green.k-state-focused {
+  background-color: #d4eee0;
+  border: 1px solid #d4eee0;
+  color: #1e6c42;
+}
+
 /*
  * ------------------------------
  * 버튼 그룹

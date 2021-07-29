@@ -26,6 +26,7 @@
     transition: background 0.2s ease-in;
 
     background-color: $main;
+    border: 1px solid $main;
     color: $white;
     
     &:hover, &:focus {
@@ -164,15 +165,20 @@
     }
     &.light-green {
         background-color: $green-light;
+        border: 1px solid $green-light;
         color: $green;
         &:hover, &:focus {
-            // background-color: $btn-light-blue-hover-bg;
+            background-color: $green-light;
+            border: 1px solid $green-light;
+            color: $green;
         }
         &.k-state-active {
-    
+     
         }
         &.k-state-focused {
-            // background-color: $btn-light-blue-hover-bg;
+            background-color: $green-light;
+            border: 1px solid $green-light;
+            color: $green;
         }
     }    
 }
