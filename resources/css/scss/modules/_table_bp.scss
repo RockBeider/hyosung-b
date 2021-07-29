@@ -1,0 +1,137 @@
+
+
+table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table-group + .table-group {
+    margin-top :30px;
+}
+.table-set {
+    margin-top: 12px;
+}
+.table-content {
+    table {
+		// table-layout: fixed;
+	}
+    
+}
+
+.text-center th,
+.text-center td {
+	text-align: center !important;
+	&.text-right {
+		text-align: right !important;
+	}
+	&.text-left {
+		text-align: left !important;
+	}
+}
+td .form-box, th .form-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*
+* ------------------------------
+* 
+* ------------------------------
+*/
+
+
+.table {
+    width: 100%; 
+    overflow: hidden;
+    table {
+        width: calc(100% + 2px);
+        margin: 0 -1px;
+        table-layout: fixed;
+    }
+    th, td {
+        border: 1px solid $gray-e4;
+    }
+    th {
+        @include bp-font-size-sm;
+        padding: 0 10px;
+        background: $bp-light-blue-hover;
+        font-weight: bold;
+        color: $gray-2;
+    }
+    td {
+        @include bp-font-size-sm;
+        height: 42px;
+        padding: 6px 10px;
+        color: $gray-2;
+    }
+    tbody {
+        th, td { text-align: left; }
+    }
+}
+
+.table-bottom {
+    padding: 15px 20px;
+    background: $white;
+    // border-top: 1px solid $inputDefault;
+    border-bottom: 1px solid $inputDefault;
+    box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.table-box {
+    > [class^="table"]+ [class^="table"] {
+        margin-top: 10px;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: $white;
+    border: 1px solid $gray-e;
+    border-top: 2px solid $layer-blue;
+   &.has-bar {
+    //    margin-top: 10px;
+       padding: 20px;
+       border: 1px solid $gray-c;
+       border-left: 1px solid $gray-3;
+       .sub-title {
+           color: $layer-blue;
+           
+       }
+   }
+}
+
+
+
+.bc {
+    .table {
+        width: 100%; 
+        overflow: hidden;
+        table {
+            width: calc(100% + 2px);
+            margin: 0 -1px;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid $gray-e4;
+        }
+        th {
+            @include bc-font-size-xsm;
+            padding: 0 7px;
+            background: $bc-table-th-bg;
+            color: $bc-table-th;
+            font-weight: 500;
+            text-align: center;
+        }
+        td {
+            @include bc-font-size-xsm;
+            height: 38px;
+            padding: 6px 10px;
+            color: $gray-2;
+        }
+    }
+
+}

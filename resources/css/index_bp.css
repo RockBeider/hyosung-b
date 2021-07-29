@@ -2331,7 +2331,14 @@ td .form-box, th .form-box {
  * 버튼
  * ------------------------------
  */
-.h-btn.hidden, .k-button.hidden {
+.bp {
+  /*
+  * ------------------------------
+  * 버튼 그룹
+  * ------------------------------
+  */
+}
+.bp .h-btn.hidden, .bp .k-button.hidden {
   overflow: hidden;
   text-indent: -9000px;
   white-space: nowrap;
@@ -2340,8 +2347,7 @@ td .form-box, th .form-box {
   background-color: transparent !important;
   border: 0 !important;
 }
-
-.h-btn, .k-button {
+.bp .h-btn, .bp .k-button {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
@@ -2350,12 +2356,14 @@ td .form-box, th .form-box {
   justify-content: center;
   position: relative;
   flex: 0 0 auto;
-  height: 28px;
-  padding: 0 20px;
+  min-width: 80px;
+  height: 30px;
+  padding: 0 16px;
   border-radius: 3px;
   white-space: nowrap;
   transition: background 0.2s ease-in;
-  background-color: #0e4194;
+  background: #2476dd;
+  border: 1px solid #2476dd;
   color: #fff;
   /*
   * ------------------------------
@@ -2363,170 +2371,182 @@ td .form-box, th .form-box {
   * ------------------------------
   */
 }
-.h-btn:hover, .h-btn:focus, .k-button:hover, .k-button:focus {
-  background-color: #002a70;
-  border: 1px solid #002a70;
+.bp .h-btn:hover, .bp .h-btn:focus, .bp .k-button:hover, .bp .k-button:focus {
+  background-color: #0053bb;
+  border: 1px solid #2476dd;
 }
-.h-btn.k-state-focused, .k-button.k-state-focused {
-  background-color: #002a70;
-  border: 1px solid #002a70;
+.bp .h-btn.k-state-focused, .bp .k-button.k-state-focused {
+  background-color: #0053bb;
+  border: 1px solid #0053bb;
 }
-.h-btn:disabled, .h-btn:disabled:hover, .h-btn:disabled:focus, .h-btn:disabled:active, .k-button:disabled, .k-button:disabled:hover, .k-button:disabled:focus, .k-button:disabled:active {
+.bp .h-btn:disabled, .bp .h-btn:disabled:hover, .bp .h-btn:disabled:focus, .bp .h-btn:disabled:active, .bp .k-button:disabled, .bp .k-button:disabled:hover, .bp .k-button:disabled:focus, .bp .k-button:disabled:active {
   cursor: default;
   background: #f5f5f5 !important;
   border: 1px solid #ccc !important;
   color: #aaa !important;
   opacity: 0.7;
 }
-.h-btn.text, .k-button.text {
+.bp .h-btn.text, .bp .k-button.text {
   background: transparent;
   height: auto;
   padding: 0;
   text-decoration: underline;
 }
-.h-btn .k-icon, .k-button .k-icon {
+.bp .h-btn .k-icon, .bp .k-button .k-icon {
   width: 16px;
   height: 16px;
 }
-.h-btn:not(.col) > * + *, .k-button:not(.col) > * + * {
+.bp .h-btn:not(.col) > * + *, .bp .k-button:not(.col) > * + * {
   margin-left: 6px;
 }
-.h-btn.k-button-icontext, .k-button.k-button-icontext {
+.bp .h-btn.k-button-icontext, .bp .k-button.k-button-icontext {
   padding: 0 12px;
 }
-.h-btn.k-button-icontext > * + *, .k-button.k-button-icontext > * + * {
+.bp .h-btn.k-button-icontext > * + *, .bp .k-button.k-button-icontext > * + * {
   margin-left: 4px;
 }
-.h-btn.k-button-icontext.md > * + *, .k-button.k-button-icontext.md > * + * {
+.bp .h-btn.k-button-icontext.md > * + *, .bp .k-button.k-button-icontext.md > * + * {
   margin-left: 8px;
 }
-.h-btn.logout, .k-button.logout {
+.bp .h-btn.md, .bp .k-button.md {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -1.28px;
+  height: 40px;
+  padding: 0 30px;
+}
+.bp .h-btn.md .k-icon, .bp .k-button.md .k-icon {
+  width: 24px;
+  height: 24px;
+}
+.bp .h-btn.refresh, .bp .k-button.refresh {
+  min-width: unset;
+  padding: 0 4px;
+  background-color: transparent;
+  border: none;
+  color: #555;
+}
+.bp .h-btn.logout, .bp .k-button.logout {
   margin-left: 6px;
   border: 1px solid #e0e5ec;
 }
-.h-btn.logout.k-state-focused, .k-button.logout.k-state-focused {
+.bp .h-btn.logout.k-state-focused, .bp .k-button.logout.k-state-focused {
   border: 1px solid #e0e5ec;
 }
-
-.h-btn.blue, .k-button.blue {
-  background-color: #0e4194;
-  border: 1px soild #0e4194;
+.bp .h-btn.blue, .bp .k-button.blue {
+  background: #2476dd;
+  border: 1px solid #2476dd;
   color: #fff;
 }
-.h-btn.blue:hover, .h-btn.blue:focus, .k-button.blue:hover, .k-button.blue:focus {
-  background-color: #002a70;
+.bp .h-btn.blue:hover, .bp .h-btn.blue:focus, .bp .k-button.blue:hover, .bp .k-button.blue:focus {
+  background-color: #0053bb;
+  border: 1px solid #2476dd;
 }
-.h-btn.blue.k-state-focused, .k-button.blue.k-state-focused {
-  background-color: #002a70;
+.bp .h-btn.blue.k-state-focused, .bp .k-button.blue.k-state-focused {
+  background-color: #0053bb;
+  border: 1px solid #0053bb;
 }
-.h-btn.light-blue, .k-button.light-blue {
-  background-color: #cfdef5;
-  color: #0e4194;
-}
-.h-btn.light-blue:hover, .h-btn.light-blue:focus, .k-button.light-blue:hover, .k-button.light-blue:focus {
-  background-color: #99b6e2;
-}
-.h-btn.light-blue.k-state-focused, .k-button.light-blue.k-state-focused {
-  background-color: #99b6e2;
-}
-.h-btn.light-blue-border, .k-button.light-blue-border {
-  background-color: #eff2f7;
-  border: 1px solid #ccc;
-}
-.h-btn.blue-border, .k-button.blue-border {
+.bp .h-btn.blue-border, .bp .k-button.blue-border {
   background: #fff;
-  border: 1px solid #0e4194;
-  color: #0e4194;
+  border: 1px solid #2476dd;
+  color: #2476dd;
 }
-.h-btn.blue-border:hover, .h-btn.blue-border:focus, .k-button.blue-border:hover, .k-button.blue-border:focus {
-  background-color: #e4e9ef;
+.bp .h-btn.blue-border:hover, .bp .h-btn.blue-border:focus, .bp .k-button.blue-border:hover, .bp .k-button.blue-border:focus {
+  background-color: #e3ecf9;
 }
-.h-btn.blue-border.k-state-focused, .k-button.blue-border.k-state-focused {
-  background-color: #e4e9ef;
+.bp .h-btn.blue-border.k-state-focused, .bp .k-button.blue-border.k-state-focused {
+  background-color: #e3ecf9;
 }
-.h-btn.gray-border, .k-button.gray-border {
-  background-color: #fff;
+.bp .h-btn.gray-border, .bp .k-button.gray-border {
+  background: #fff;
   border: 1px solid #999;
   color: #222;
 }
-.h-btn.gray-border:hover, .h-btn.gray-border:focus, .k-button.gray-border:hover, .k-button.gray-border:focus {
-  background-color: #eee;
-  border: 1px solid #aaa;
+.bp .h-btn.gray-border:hover, .bp .h-btn.gray-border:focus, .bp .k-button.gray-border:hover, .bp .k-button.gray-border:focus {
+  background: #eff0f2;
+  border: 1px solid #555;
 }
-.h-btn.gray-border.k-state-focused, .k-button.gray-border.k-state-focused {
-  background-color: #eee;
-  border: 1px solid #aaa;
+.bp .h-btn.gray-border.k-state-focused, .bp .k-button.gray-border.k-state-focused {
+  background: #eff0f2;
+  border: 1px solid #555;
 }
-.h-btn.green, .k-button.green {
-  background-color: #1e6c42;
-  border: 1px solid #0d5a30;
+.bp .h-btn.yellow, .bp .k-button.yellow {
+  background-color: #faab00;
+  border: 1px solid #faab00;
   color: #fff;
 }
-.h-btn.green:hover, .h-btn.green:focus, .k-button.green:hover, .k-button.green:focus {
-  background-color: #0d5a30;
-  border: 1px solid #0d5a30;
+.bp .h-btn.yellow:hover, .bp .h-btn.yellow:focus, .bp .k-button.yellow:hover, .bp .k-button.yellow:focus {
+  background-color: #de9800;
+  border: 1px solid #de9800;
 }
-.h-btn.green.k-state-focused, .k-button.green.k-state-focused {
-  background-color: #0d5a30;
+.bp .h-btn.yellow.k-state-focused, .bp .k-button.yellow.k-state-focused {
+  background-color: #de9800;
+  border: 1px solid #de9800;
 }
-.h-btn.light-green, .k-button.light-green {
-  background-color: #d4eee0;
-  color: #1e6c42;
-}
-/*
- * ------------------------------
- * 버튼 그룹
- * ------------------------------
- */
-.btn-box {
+.bp .btn-box {
   display: flex;
   justify-content: center;
 }
-.btn-box .k-button {
+.bp .btn-box .k-button {
   flex: 0 1 auto;
 }
-.btn-box .k-button + .k-button {
+.bp .btn-box .k-button + .k-button {
   margin-left: 6px;
 }
-
-.k-button-group {
+.bp .btn-box.half {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 250px;
+  padding: 7px;
 }
-.k-button-group.period .k-button {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
-  flex: 0 1 auto;
-  min-width: 57px;
-  background-color: #fff;
-  border: 1px solid #aaa;
-  border-right: 0;
-  color: #777;
-  border-radius: 0;
+.bp .btn-box.half .list {
+  width: 50%;
+  padding: 3px;
 }
-.k-button-group.period .k-button.k-state-active, .k-button-group.period .k-button.k-state-focused {
-  background-color: #48c3e6;
-  border: 1px solid #48c3e6;
-  border-right: 0;
-  color: #fff;
+.bp .btn-box.half .k-button {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #222;
 }
-.k-button-group.period .k-button.k-state-active + .k-button, .k-button-group.period .k-button.k-state-focused + .k-button {
-  border-left: 1px solid #48c3e6;
+.bp .btn-box.half .k-button.k-state-active, .bp .btn-box.half .k-button.k-state-focused {
+  background: #e3ecf9;
+  border: 1px solid #2476dd;
+  color: #2476dd;
 }
-.k-button-group.period .k-button:first-child {
-  border-radius: 3px 0 0 3px;
+.bp .btn-box.square {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 770px;
+  min-width: 770px;
+  margin: -3px;
 }
-.k-button-group.period .k-button:last-child {
-  border-radius: 0 3px 3px 0;
-  border-right: 1px solid #aaa;
+.bp .btn-box.square .list {
+  padding: 3px;
 }
-.k-button-group.period .k-button:last-child.k-state-active, .k-button-group.period .k-button:last-child.k-state-focused {
-  border-right: 1px solid #48c3e6;
+.bp .btn-box.square .list .h-ico {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 3px;
 }
-.k-button-group.period .k-button + .k-button.k-state-active {
-  margin-left: 0px;
-  padding-left: 20px;
+.bp .btn-box.square .list .k-button {
+  width: 104px;
+  height: 90px;
+  padding: 14px 3px 3px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #222;
+}
+.bp .btn-box.square .list .k-button.k-state-active, .bp .btn-box.square .list .k-button.k-state-focused, .bp .btn-box.square .list .k-button:hover {
+  border: 1px solid #2476dd;
+  color: #2476dd;
+}
+.bp .btn-box.square .list .k-button.col {
+  flex-direction: column;
 }
 
 .h-ico, .k-icon {

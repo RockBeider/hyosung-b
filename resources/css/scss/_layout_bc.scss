@@ -1,0 +1,484 @@
+//************************************************************
+//* Description of _layout.scss
+//* @project : Hyosung B system
+//* @category : SCSS
+//* @date : 2021.07
+//* @content : 개별 레이아웃 설정
+//* @author : bhlbest20@gmail.com
+//************************************************************
+
+/*
+* ------------------------------
+* Wrap
+* ------------------------------
+*/
+body { 
+	// overflow: hidden;
+}
+.wrap {
+	width: 100%;
+	min-width: 1920px;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	-webkit-overflow-scrolling: touch;
+	background-color: $bg;
+}
+
+
+/*
+* ------------------------------
+* Container
+* ------------------------------
+*/
+.bc .logout-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: unset;
+	.logout-con {
+		text-align: center;
+		.check {
+			width: 90px;
+			height: 90px;
+		}
+		.main-info {
+			margin-top: 20px;
+			font-size: 28px;
+			line-height: 40px;
+			letter-spacing: -1.4px;
+			font-weight: bold;
+			.strong {
+				color: $error;
+			}
+		}
+		.sub-info {
+			margin-top: 20px;
+			color: $gray-7;
+			font-size: 14px;
+			line-height: 24px;
+			.strong {
+				color: $gray-2;
+			}
+		}
+		.k-button {
+			margin: 20px auto 0;
+		}
+	}
+}
+#container {
+	flex: 1;
+	display: flex;
+	overflow: hidden;
+}
+.contents-wrap {
+	flex: 1 0;
+	padding: 20px 30px 30px;
+	overflow: auto;
+}
+
+/*
+* ------------------------------
+* Header
+* ------------------------------
+*/
+.bc .header-wrap { 
+	height: 56px;
+	padding: 0 28px;
+	background: #3b6ac5;
+}
+.header-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30px 0 20px;
+	height: 60px;
+	background: #0e4194;
+	.left-group {
+		display: flex;
+		align-items: center;
+	}
+	.logo {
+		display: inline-block;
+		@include hide-text;
+		// background: #fff;
+		width: 124px;
+		height: 18px;
+		background: url('../images/gms_ci_ko@3x.png') no-repeat center /contain;
+		&-info {
+			@include font-size-md;
+			color: $white;
+			margin-left: 4px;
+			font-weight: 500;
+		}
+	}
+	.right-group {
+		display: flex;
+		align-items: center;
+	}
+}
+.profile-box {
+	@include font-size-sm;
+	font-size: $base-font-size;
+	color: $white;
+	display: flex;
+	align-items: center;
+	.name {
+		margin-left: 6px;
+		font-weight: 500;
+	}
+}
+.timer-box {
+	display: flex;
+	align-items: center;
+	height: 28px;
+	margin-left: 14px;
+	padding: 0 10px 0 12px;
+	background-color: $blue;
+	border-radius: 3px;
+	.btn-text {
+		@include font-size-sm;
+		text-decoration: underline;
+	}
+	> * + * {
+		margin-left: 8px;
+	}
+}
+.timer-set {
+	@include font-size-sm;
+	display: flex;
+	align-items: center;
+	color: $state;
+	> * + * {
+		margin-left: 5px;
+	}
+}
+
+/*
+* ------------------------------
+* Sidebar
+* ------------------------------
+*/
+.sidebar-wrap {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 220px;
+	max-width: 220px;
+	background-color: #fff;
+	border-right: 1px solid #ddd;
+	transition: margin 0.2s;
+	.sidebar-head {
+		position: relative;
+		padding: 12px 0 19px;
+		border-bottom: 1px solid $lnbLine;
+		.main-menu {
+			display: flex;
+			align-items: center;
+			padding: 0 20px;
+			font-size: 15px;
+			line-height: 40px;
+			font-weight: 500;
+			.h-ico {
+				margin-right: 10px;
+			}
+		}
+		.sub-menu a {
+			@include font-size-sm;
+			display: block;
+			padding: 0 20px 0 49px;
+			color: $gray-7;
+		}
+	}
+	.sidebar-body {
+		flex: 1;
+		overflow: auto;
+	}
+	.sidebar-foot {
+		padding: 10px;
+		.btn-box {
+			> * + * {
+				margin-left: 6px;
+			}
+		}
+		.k-button {
+			height: 40px;
+			padding: 0 30px;
+			&.lnb-close {
+				padding: 0 2px;
+				background-color: $tableBG1;
+				border: 1px solid $gray-c;
+			}
+		}
+		.k-button.light-blue-border {
+			padding: 0 2px;
+		}
+	}
+}
+
+/* 사이드바 */
+.sidebar {
+	&-1depth {
+		@include font-size-menu;
+		display: flex;
+		align-items: center;
+		position: relative;
+		height: 40px;
+		padding: 0 20px;
+		color: $gray-2;
+		&::after {
+			display: inline-block;
+			content: "";
+		}
+		.h-ico {
+			margin-right: 8px;
+		}
+	}
+	&-2depth {
+		display: none;
+		padding: 4px 0;
+		background-color: $tableBG1;
+		ul {
+			position: relative;
+			padding: 17px 0;
+			border-bottom: 1px solid #ddd;
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 37px;
+				content: "";
+				display: block;
+				width: 2px;
+				height: 100%;
+				background-color: #f5f5f5;
+				border-radius: 50%;
+			}
+		}
+		a {
+			@include font-size-sm;
+			display: flex;
+			position: relative;
+			padding-left: 49px;
+			color: $gray-5;
+			line-height: 36px;
+			transition: color 0.3s ease;
+			&:hover {
+				color: $main;
+				font-weight: 500;
+				&::before {
+					background-color: $main;
+				}
+			}
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 28px;
+				content: "";
+				display: block;
+				width: 4px;
+				height: 4px;
+				margin-top: -2px;
+				background-color: $gray-a;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+/* 사이드바 - 2뎁스 메뉴 */
+.has-submenu.active .sidebar-2depth {
+	display: block;
+}
+.has-submenu.active .sidebar-1depth::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4px;
+	height: 100%;
+	background-color: $main;
+}
+.has-submenu .sidebar-1depth::after {
+	display: inline-block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -7px;
+	right: 20px;
+	width: 15px;
+	height: 15px;
+	background-image: url("../images/icon/icon_arrow_down.svg");
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+	text-align: center;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.has-submenu.active .sidebar-1depth::after {
+	transform: rotate(180deg);
+}
+/* 사이드바 - 3뎁스 메뉴 */
+.sidebar-3depth {
+	display: none;
+}
+.sidebar-2depth.active .sidebar-3depth {
+	display: block;
+}
+
+
+/*
+* ------------------------------
+* login page
+* ------------------------------
+*/
+.login-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: unset;
+}
+.login-content {
+	border-radius: 10px;
+	overflow: hidden;
+	&.type-a {
+		width: 450px; 
+		.login-image-box {
+			position: relative;
+			width: 100%;
+			height: 320px;
+			background-image: url('../images/bc_img_login@2x.jpg');
+			background-size: contain;
+		}
+		.logo-set {
+			display: flex;
+			align-items: center;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			.logo {
+				img {
+					display: block;
+					max-width: 124px;
+				}
+			}
+			.info {
+				margin-left: 3px;
+				color: $white;
+				font-size: 16px;
+				line-height: 24px;
+				letter-spacing: -0.8px;
+				font-weight: 500;
+			}
+		}
+		.login-box {
+			.main-desc {
+				margin-top: 6px;
+				margin-bottom: 30px;
+				color: $gray-2;
+				font-size: 28px;
+				letter-spacing: -1.4px;
+				line-height: 40px;
+				.strong {
+					color: #3b6ac5;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	&.type-b {
+		display: flex;
+		.login-image-box {
+			position: relative;
+			width: 450px;
+			height: 440px;
+			padding: 40px 30px 30px;
+			background: #214997;
+			.sort {
+				color: #dee9ff;
+				font-size: 14px;
+				line-height: 19px;
+				letter-spacing: -0.7px;
+			}
+			
+			.main-desc {
+				margin-top: 10px;
+				color: #dee9ff;
+				font-size: 28px;
+				letter-spacing: -1.4px;
+				line-height: 40px;
+				.strong {
+					color: $white;
+					font-weight: bold;
+				}
+			}
+			.copyright {
+				position: absolute;
+				left: 30px;
+				bottom: 30px;
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 13px;
+				line-height: 24px;
+				letter-spacing: -0.65px;
+			}
+		}
+		.login-box {
+			display: flex;
+			align-items: center;
+			width: 300px;
+			height: 440px;
+			border: 1px solid $gray-e4;
+			border-left: none;
+			border-radius: 0 10px 10px 0;
+			.form {
+				width: 100%;
+				margin: 0;
+			}
+			.main-title {
+				margin-bottom: 30px;
+				color: #3b6ac5;
+				font-size: 17px;
+				line-height: 24px;
+				letter-spacing: -0.85px;
+				font-weight: 500;
+				text-align: center;
+			}
+			.k-button.login {
+				width: 100%;
+				height: 40px;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+.login-box {
+	padding: 30px 40px 40px;
+	background: $white;
+	border: 1px solid $gray-e4;
+	border-top: none;
+	border-radius: 0 0 10px 10px;
+	
+	.form-group.col > * + * {
+		margin-top: 6px;
+	}
+	.login-label {
+		align-self: flex-start;
+		margin-top: 10px;
+		color: $gray-2;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: -0.7px;
+		font-weight: 500;
+	}
+	.sort {
+		color: $gray-7;
+		font-size: 15px;
+		line-height: 20px;
+		letter-spacing: -0.75px;
+	}
+	
+	.k-button.login {
+		width: 100%;
+		height: 36px;
+		margin-top: 10px;
+	}
+}

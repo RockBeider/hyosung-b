@@ -12,10 +12,10 @@
     <!-- Load Styles -->
     <!-- <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.common.min.css">
     <link rel="stylesheet" href="../resources/lib/kendo/styles/kendo.default.min.css"> -->
-    <link rel="stylesheet" href="../resources/css/index.css">
+    <link rel="stylesheet" href="../resources/css/index_bp.css">
 </head>
 
-<body>
+<body class="bp">
     <div class="wrapper">
         <header class="g_header">
             <ul>
@@ -63,8 +63,8 @@
         sch = location.search
         console.log(sch)
         var params = new URLSearchParams(sch);
-        var elmId = params.get('elements');
-        var elmPath = './elements/'+elmId+'.html';
+        var elmId = params.get('elements_bp');
+        var elmPath = './elements_bp/'+elmId+'.html';
         var g = $('.g_content');
         g.load(elmPath, function() {
                 kendo.bind($(".wrapper"), {});
@@ -74,13 +74,13 @@
             e.preventDefault();
             var t = $(this).attr('href');
             var tId = t.substring(1);
-            elmPath = './elements/'+tId+'.html';
+            elmPath = './elements_bp/'+tId+'.html';
             g.html('');
             g.load(elmPath, function() {
                 kendo.bind($(".wrapper"), {});
             }); 
 
-            params.set('elements', tId);
+            params.set('elements_bp', tId);
             url = location.pathname+'?'+params.toString();
             history.pushState('', '', url);
         });

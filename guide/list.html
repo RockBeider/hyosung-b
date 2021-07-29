@@ -22,7 +22,7 @@
             background: red;
             text-decoration: line-through;
         }
-        .d1, .d2, .d3 { text-align: left !important;}
+        .d1, .d2, .d3, .sbid { text-align: left !important;}
         tr td:last-child {
             text-align: left;
         }
@@ -39,8 +39,10 @@
     <header class="g_header">
         <ul>
             <li><a href="./list_other.html">BP & BC</a></li>
-            <li><a href="./list.html">List</a></li>
-            <li><a href="./elements.html?elements=button">Elements</a></li>
+            <li><a href="./list.html">B System</a></li>
+            <li><a href="./elements.html?elements=button">Guide - B System</a></li>
+            <li><a href="./elements_bp.html?elements_bp=button">Guide - BP</a></li>
+            <li><a href="./elements_bc.html?elements_bc=button">Guide - BC</a></li>
         </ul>
     </header>
     <div class="g_container" style="flex-direction: column; padding: 0 20px;">
@@ -60,9 +62,10 @@
             <colgroup>
                 <col width="110px">
                 <col width="150px">
-                <col width="">
+                <col width="230px">
                 <col width="100px">
-                <col width="80px">
+                <!-- <col width="80px"> -->
+                <col width="90px">
                 <col width="90px">
                 <col width="80px">
                 <col width="">
@@ -73,8 +76,9 @@
                     <th scope="col">2depth</th>
                     <th scope="col">화면명</th>
                     <th scope="col">경로</th>
-                    <th scope="col">작업자</th>
-                    <th scope="col">작업일</th>
+                    <!-- <th scope="col">작업자</th> -->
+                    <th scope="col">시작일</th>
+                    <th scope="col">종료일</th>
                     <th scope="col">상태</th>
                     <th scope="col">비고</th>
                 </tr>
@@ -85,8 +89,9 @@
                     <td class="d2"></td>
                     <td class="d3"></td>
                     <td>Base Template</td>
-                    <td class="coder">방휘랑</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">방휘랑</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="done"></td>
                     <td></td>
                 </tr>
@@ -95,138 +100,152 @@
                     <td class="d2">01상담정보관리</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0101</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">01상담정보관리</td>
-                    <td class="d3">02상세_popup</td>
+                    <td class="d3">02상세</td>
                     <td class="sbid"><span class="pc">SA0102</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">02요청사항관리</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0201</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">02요청사항관리</td>
-                    <td class="d3">02등록_popup</td>
+                    <td class="d3">02등록</td>
                     <td class="sbid"><span class="pc">SA0202</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">02요청사항관리</td>
-                    <td class="d3">03고객사검색_popup</td>
+                    <td class="d3">03고객사검색</td>
                     <td class="sbid"><span class="pc">SA0203</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">02요청사항관리</td>
-                    <td class="d3">03등록결과_popup</td>
+                    <td class="d3">03등록결과</td>
                     <td class="sbid"><span class="pc">SA0203_2</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">02요청사항관리</td>
-                    <td class="d3">04상세정보_popup</td>
+                    <td class="d3">04상세정보</td>
                     <td class="sbid"><span class="pc">SA0204</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">02요청사항관리</td>
-                    <td class="d3">05계약변경심사처리상세_popup</td>
+                    <td class="d3">05계약변경심사처리상세</td>
                     <td class="sbid"><span class="pc">SA0205</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">03민원조치</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0301</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">03민원조치</td>
-                    <td class="d3">02해지계좌복원_popup</td>
+                    <td class="d3">02해지계좌복원</td>
                     <td class="sbid"><span class="pc">SA0302</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">03민원조치</td>
-                    <td class="d3">02해지계좌복원_처리결과_popup</td>
+                    <td class="d3">02해지계좌복원_처리결과</td>
                     <td class="sbid"><span class="pc">SA0302_2</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">03민원조치</td>
-                    <td class="d3">03회원정보해지_popup</td>
+                    <td class="d3">03회원정보해지</td>
                     <td class="sbid"><span class="pc">SA0303</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">03민원조치</td>
-                    <td class="d3">03회원정보해지_alert</td>
+                    <td class="d3">03회원정보해지</td>
                     <td class="sbid"><span class="pc">SA0303_2</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>alert</td>
                 </tr>
                 <tr class="">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">04공지사항관리</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0401</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
@@ -235,8 +254,9 @@
                     <td class="d2">04공지사항관리</td>
                     <td class="d3">02공지안내발송</td>
                     <td class="sbid"><span class="pc">SA0402</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
@@ -245,68 +265,75 @@
                     <td class="d2">04공지사항관리</td>
                     <td class="d3">03등록수정</td>
                     <td class="sbid"><span class="pc">SA0403</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">05SMS관리</td>
-                    <td class="d3">01발송_popup</td>
+                    <td class="d3">01발송</td>
                     <td class="sbid"><span class="pc">SA0501</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">05SMS관리</td>
-                    <td class="d3">01발송_01불러오기_popup</td>
+                    <td class="d3">01발송_01불러오기</td>
                     <td class="sbid"><span class="pc">SA0501_01</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">05SMS관리</td>
-                    <td class="d3">01발송_02엑셀업로드_popup</td>
+                    <td class="d3">01발송_02엑셀업로드</td>
                     <td class="sbid"><span class="pc">SA0501_02</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">05SMS관리</td>
-                    <td class="d3">02메세지설정_popup</td>
+                    <td class="d3">02메세지설정</td>
                     <td class="sbid"><span class="pc">SA0502</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">05SMS관리</td>
-                    <td class="d3">03발송현황_popup</td>
+                    <td class="d3">03발송현황</td>
                     <td class="sbid"><span class="pc">SA0503</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">06이메일관리</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0601</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
@@ -315,8 +342,9 @@
                     <td class="d2">06이메일관리</td>
                     <td class="d3">02이메일발송</td>
                     <td class="sbid"><span class="pc">SA0602</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
@@ -325,8 +353,9 @@
                     <td class="d2">06이메일관리</td>
                     <td class="d3">02이메일발송_01수신자추가</td>
                     <td class="sbid"><span class="pc">SA0602_01</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
@@ -335,58 +364,64 @@
                     <td class="d2">06이메일관리</td>
                     <td class="d3">02이메일발송_02대량수신자추가</td>
                     <td class="sbid"><span class="pc">SA0602_02</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">06이메일관리</td>
-                    <td class="d3">02이메일발송_03수신거부관리_popup</td>
+                    <td class="d3">02이메일발송_03수신거부관리</td>
                     <td class="sbid"><span class="pc">SA0603</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">07서류양식관리</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0701</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">07서류양식관리</td>
-                    <td class="d3">02상세_popup</td>
+                    <td class="d3">02상세</td>
                     <td class="sbid"><span class="pc">SA0702</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="do">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">07서류양식관리</td>
-                    <td class="d3">03등록수정_popup</td>
+                    <td class="d3">03등록수정</td>
                     <td class="sbid"><span class="pc">SA0703</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
-                    <td></td>
+                    <td>popup</td>
                 </tr>
                 <tr class="">
                     <td class="d1">07서비스품질</td>
                     <td class="d2">08정기자료관리</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0801</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
@@ -395,8 +430,9 @@
                     <td class="d2">09사후점검제출확인</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA0901</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
@@ -405,8 +441,9 @@
                     <td class="d2">10동의자료확인</td>
                     <td class="d3">01조회</td>
                     <td class="sbid"><span class="pc">SA1001</span><span class="mo"></span></td>
-                    <td class="coder">주진희</td>
-                    <td class="date"></td>
+                    <!-- <td class="coder">주진희</td> -->
+                    <td class="date_start"></td>
+                    <td class="date_end"></td>
                     <td class="state" data-state="ing"></td>
                     <td></td>
                 </tr>
