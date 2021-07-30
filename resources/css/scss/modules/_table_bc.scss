@@ -13,12 +13,7 @@ table {
 .table-set {
     margin-top: 12px;
 }
-.table-content {
-    table {
-		// table-layout: fixed;
-	}
-    
-}
+
 
 .text-center th,
 .text-center td {
@@ -43,35 +38,38 @@ td .form-box, th .form-box {
 * ------------------------------
 */
 
-
-.table {
-    width: 100%; 
-    overflow: hidden;
-    table {
-        width: calc(100% + 2px);
-        margin: 0 -1px;
-        table-layout: fixed;
-    }
-    th, td {
-        border: 1px solid $gray-e4;
-    }
-    th {
-        @include bp-font-size-sm;
-        padding: 0 10px;
-        background: $bp-light-blue-hover;
-        font-weight: bold;
-        color: $gray-2;
-    }
-    td {
-        @include bp-font-size-sm;
-        height: 42px;
-        padding: 6px 10px;
-        color: $gray-2;
-    }
-    tbody {
-        th, td { text-align: left; }
+.bc {
+    .table {
+        width: 100%; 
+        overflow: hidden;
+        table {
+            width: calc(100% + 2px);
+            margin: 0 -1px;
+            table-layout: fixed;
+        }
+        tbody {
+            th, td { text-align: left; }
+        }
+        th, td {
+            border: 1px solid $gray-e4;
+        }
+        th {
+            @include bc-font-size-xsm;
+            padding: 0 7px;
+            background: $bc-table-th-bg;
+            color: $bc-table-th;
+            font-weight: 500;
+            text-align: center;
+        }
+        td {
+            @include bc-font-size-xsm;
+            height: 38px;
+            padding: 6px 10px;
+            color: $gray-2;
+        }
     }
 }
+
 
 .table-bottom {
     padding: 15px 20px;
@@ -102,36 +100,4 @@ td .form-box, th .form-box {
            
        }
    }
-}
-
-
-
-.bc {
-    .table {
-        width: 100%; 
-        overflow: hidden;
-        table {
-            width: calc(100% + 2px);
-            margin: 0 -1px;
-            table-layout: fixed;
-        }
-        th, td {
-            border: 1px solid $gray-e4;
-        }
-        th {
-            @include bc-font-size-xsm;
-            padding: 0 7px;
-            background: $bc-table-th-bg;
-            color: $bc-table-th;
-            font-weight: 500;
-            text-align: center;
-        }
-        td {
-            @include bc-font-size-xsm;
-            height: 38px;
-            padding: 6px 10px;
-            color: $gray-2;
-        }
-    }
-
 }

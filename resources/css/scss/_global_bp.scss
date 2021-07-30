@@ -130,12 +130,12 @@ button {
 */
 
 .main-title {
-	@include font-size-xl;
+	// @include font-size-xl;
 	color: $gray-2;
 	font-weight: bold;
 }
 .sub-title {
-	@include font-size-lg;
+	// @include font-size-lg;
 	color: $gray-2;
 	font-weight: 500;
 	&.dot {
@@ -285,7 +285,7 @@ button {
 		display: none;
 	}
 	.breadcrumb-item {
-		@include font-size-sm;
+		// @include font-size-sm;
 		display: flex;
 		align-items: center;
 		color: $gray-9;
@@ -541,65 +541,63 @@ button {
 * ------------------------------
 */
 
-
-.filebox {
-	padding: 20px;
-	background-color: $gray-f5;
-}
-.bp .filebox.col {
-	align-items: flex-start;
-	padding: 0; 
-	background: $white;
-	label {
-		.k-icon {
-			margin-left: -2px;
-		}
-	}
-	.input-box {
-		.h-input {
-			text-align: left;
-		}
-	}
-	.k-button.gray-border {
-		width: 60px;
-		min-width: 60px;
-	}
-}
-.filebox {
-	.label {
-		margin-right: 0;
-	}
-	.input-box {
-		.h-input { 
-			&:disabled, &:disabled:focus {
-				// background-color: $white;
-				// color: $gray-a;
+.bp {
+	.filebox {
+		padding: 20px;
+		background-color: $gray-f5;
+		&.col {
+			align-items: flex-start;
+			padding: 0; 
+			background: $white;
+			label {
+				.k-icon {
+					margin-left: -2px;
+				}
+			}
+			.input-box {
+				.h-input {
+					text-align: left;
+				}
+			}
+			.k-button.gray-border {
+				width: 60px;
+				min-width: 60px;
 			}
 		}
-		.k-button {
+		.label {
+			margin-right: 0;
+		}
+		.input-box {
+			.h-input { 
+				&:disabled, &:disabled:focus {
+					// background-color: $white;
+					// color: $gray-a;
+				}
+			}
+			.k-button {
+				position: absolute;
+				top: 0;
+				right: 5px;
+				width: 30px;
+				height: 28px;
+			}
+		}
+		input[type="file"] {
 			position: absolute;
-			top: 0;
-			right: 5px;
-			width: 30px;
-			height: 28px;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip:rect(0,0,0,0);
+			border: 0;
+		}
+		.h-input:disabled, .h-input:disabled:focus {
+			background-color: $white;
+			color: $gray-a;
 		}
 	}
-	input[type="file"] {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip:rect(0,0,0,0);
-		border: 0;
-	}
-	.h-input:disabled, .h-input:disabled:focus {
-		background-color: $white;
-		color: $gray-a;
-	}
 }
-
 
 /*
 * ------------------------------

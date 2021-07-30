@@ -14,7 +14,7 @@
         }
     }
     .h-btn, .k-button {
-        @include font-size-sm;
+        @include bp-font-size-sm;
         display: flex;
         align-items: center;
         justify-content: center;

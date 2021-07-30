@@ -3,17 +3,7 @@
 * input - common
 * ------------------------------
 */
-.bp {
-	.h-input {
-		height: 30px;
-		line-height: 30px;
-		&::placeholder {
-			@include bp-font-size-sm;
-			color: $gray-a;
-			font-weight: 400;
-		}
-	}
-}
+
 .h-input { //상태
 	@include font-size-sm;
 	flex-grow: 1;
@@ -65,20 +55,6 @@
 		min-width: 400px;
 	}
 }
-.bp .h-input { //사이즈
-	&.sm {
-		max-width: 106px;
-		min-width: 106px;
-	}
-	&.lg {
-		max-width: 200px;
-		min-width: 200px;
-	}
-	&.xl {
-		// max-width: 400px;
-		// min-width: 400px;
-	}
-}
 
 /*
 * ------------------------------
@@ -112,7 +88,7 @@
 			display: block;
 			width: 18px;
 			height: 18px;
-			background-image: url('../images/icon/icon_search.svg');
+			background-image: url($imgPathIcon+'/icon_search.svg');
 			background-size: 18px 18px;
 		}
 		.h-input {
@@ -129,89 +105,5 @@
 		}
 	}
 }
-.bp {
-	.input-box {
-		display: flex;
-		align-items: center;
-		padding: 0 10px;
-		border: 1px solid $gray-c;
-		border-radius: 3px;
-		width: 100%;
-		height: 30px;
-		background-color: $white;
-		&.xxs {
-			max-width: 60px;
-			min-width: unset;
-		}
-		&.xs {
-			max-width: 100px;
-			min-width: unset;
-		}
-		&.sm {
-			max-width: 134px;
-			min-width: 134px;
-		}
-		&.md {
-			max-width: 170px;
-			min-width: unset;
-		}
-		&.lg {
-			max-width: 320px; 
-			min-width: unset;
-		}
-		.input-label {
-			@include bp-font-size-sm;
-			margin-right: 6px;
-			color: $gray-6;
-		}
-		.h-input {
-			min-width: unset;
-			height: 28px;
-			padding: 0;
-			border: none;
-			font-weight: bold;
-			text-align: right;
-		}
-		.unit {
-			@include bp-font-size-sm;
-			margin-left: 6px;
-			color: $gray-2;
-		}
-
-		
-		&.search {
-			padding: 0;
-			&::after {
-				display: none;
-			}
-			.h-input {
-				height: 28px;
-				border-radius: 3px 0px 0px 3px;
-				padding-left: 10px;
-				text-align: left;
-				// min-width: unset;
-			}
-			.k-button {
-				min-width: 30px;
-				height: 28px;
-				padding: 0;
-				background-color: $white;
-				border-radius: 0px 3px 3px 0;
-				border: none;
-				border-left: 1px solid $gray-c;
-			}
-			.k-i-bp-search {
-				@include iconSvg($width: 30px, $height: 28px, $name: 'bp_icon_search', $size: 16px 16px );
-				content: '';
-				position: absolute;
-				top: 0px; 
-				right: 0px;
-				background-position: center;
-			}
-			
-		} 
-	}
-}
-
 
 

@@ -629,77 +629,6 @@ button {
   margin: 12px 0 8px;
 }
 
-.bp .sub-title {
-  display: flex;
-  align-items: center;
-}
-.bp .sub-title.sm {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  line-height: 18px;
-  font-weight: bold;
-}
-.bp .sub-title.md {
-  font-size: 17px;
-  line-height: 26px;
-  letter-spacing: -1.28px;
-  min-height: 30px;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-.bp .title-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.bp .title-box .right-group > * + * {
-  margin-left: 6px;
-}
-.bp .title-box.sm {
-  min-height: unset;
-  max-height: 18px;
-  margin: 20px 0 10px 0;
-}
-.bp .title-box.sm .sub-title {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  line-height: 18px;
-  font-weight: bold;
-}
-.bp .title-box.sm .noti {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  line-height: 18px;
-}
-.bp .title-box.md {
-  min-height: unset;
-  height: 23px;
-  margin: 30px 0 6px 0;
-}
-.bp .title-box.md .sub-title {
-  font-size: 17px;
-  line-height: 26px;
-  letter-spacing: -1.28px;
-  min-height: 30px;
-  font-weight: 500;
-}
-.bp .title-box.md .right-group, .bp .title-box.md .btn-box {
-  margin-bottom: 6px;
-}
-.bp .noti.sm {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  line-height: 18px;
-}
-.bp .noti.red {
-  color: #f14747;
-}
-
 /*
 * ------------------------------
 *  숫자 카운트
@@ -765,220 +694,6 @@ button {
   display: flex;
 }
 
-.bp .list-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 50px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-.bp .list-box .list {
-  display: flex;
-}
-.bp .list-box .label {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  width: 120px;
-  font-weight: bold;
-}
-.bp .list-box .label.has-bar::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 1px;
-}
-.bp .list-box .desc {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-}
-.bp .list-box .info {
-  font-size: 13px;
-  line-height: 26px;
-  letter-spacing: -0.98px;
-  padding-right: 20px;
-}
-.bp .list-box.border {
-  border: 1px solid #ccc;
-}
-.bp .list-box.border .label {
-  color: #222;
-}
-.bp .list-box.border .label.has-bar::after {
-  height: 20px;
-  margin-top: -10px;
-  background-color: #ddd;
-}
-.bp .list-box.border .desc {
-  padding: 0 20px;
-}
-.bp .list-box.border .info {
-  color: #666;
-}
-.bp .list-box.blue {
-  border: 1px solid #2476dd;
-  background-color: #2476dd;
-  color: #fff;
-}
-.bp .list-box.blue .label {
-  color: #fff;
-}
-.bp .list-box.blue .label.has-bar::after {
-  height: 20px;
-  margin-top: -10px;
-  background-color: #bdd6f5;
-}
-.bp .list-box.blue .desc {
-  padding: 0 20px;
-}
-.bp .list-box.blue .info {
-  color: #bdd6f5;
-}
-.bp .list-box.total {
-  position: relative;
-  justify-content: flex-start;
-  width: 100%;
-  height: 58px;
-  padding: 0 23px;
-  background: #eff0f2;
-}
-.bp .list-box.total.sm {
-  padding: 0;
-  height: 40px;
-}
-.bp .list-box.total.sm .price-set {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  position: absolute;
-  right: 130px;
-  color: #f14747;
-}
-.bp .list-box.total.sm .list .label {
-  width: 125px;
-  padding: 0;
-  text-align: center;
-}
-.bp .list-box.total.sm .list .bp-close {
-  position: absolute;
-  top: 0;
-  right: 8px;
-  width: 40px;
-  height: 40px;
-}
-.bp .list-box.total .list {
-  justify-content: space-between;
-  margin-right: 50px;
-}
-.bp .list-box.total .list .label {
-  width: auto;
-  margin-right: 10px;
-  padding-right: 10px;
-  color: #222;
-}
-.bp .list-box.total .list .label.has-bar::after {
-  height: 18px;
-  margin-top: -9px;
-  background-color: #ccc;
-}
-.bp .list-box.total .list .desc {
-  color: #222;
-}
-.bp .list-box.pay {
-  margin-top: 10px;
-  flex-direction: column;
-  border: 2px solid #333;
-  height: auto;
-  padding: 14px 0;
-  background: #fff;
-}
-.bp .list-box.pay .list {
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 640px;
-  height: 30px;
-  padding: 6px 0;
-}
-.bp .list-box.pay .list .label {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  align-items: center;
-  width: auto;
-  color: #555;
-  line-height: 18px;
-  font-weight: 400;
-}
-.bp .list-box.pay .list .label .badge {
-  margin-left: 6px;
-}
-.bp .list-box.pay .list .desc {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  color: #555;
-  line-height: 18px;
-  font-weight: 400;
-}
-.bp .list-box.pay .list.result {
-  height: 40px;
-  margin-top: 12px;
-  padding: 14px 0 5px;
-  border-top: 1px dotted #ccc;
-}
-.bp .list-box.pay .list.result .label {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  color: #222;
-}
-.bp .list-box.pay .list.result .desc {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  display: flex;
-  line-height: 27px;
-  color: #222;
-}
-.bp .list-box.pay .list.result .desc .extra-info {
-  margin-right: 6px;
-  color: #555;
-}
-.bp .list-box.pay .list.result .desc .price {
-  font-size: 20px;
-  line-height: 26px;
-  letter-spacing: -1.5px;
-  font-weight: bold;
-}
-.bp .list-box.pay .list.result .desc .unit {
-  font-size: 20px;
-  line-height: 26px;
-  letter-spacing: -1.5px;
-}
-
-.adding-box {
-  display: flex;
-}
-.adding-box + .adding-box {
-  margin-top: 12px;
-}
-.adding-box .label {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  white-space: nowrap;
-  width: 73px;
-  line-height: 30px;
-}
-
 .adding-set {
   width: 100%;
 }
@@ -996,17 +711,6 @@ button {
 * badge
 * ------------------------------
 */
-.bp .badge {
-  display: flex;
-  align-items: center;
-  height: 22px;
-  padding: 0 8px;
-  border-radius: 11px;
-}
-.bp .badge.pink {
-  background-color: #fde3e3;
-  color: #f14747;
-}
 /*
 * ------------------------------
 * File upload
@@ -1016,23 +720,6 @@ button {
   padding: 20px;
   background-color: #f5f5f5;
 }
-
-.bp .filebox.col {
-  align-items: flex-start;
-  padding: 0;
-  background: #fff;
-}
-.bp .filebox.col label .k-icon {
-  margin-left: -2px;
-}
-.bp .filebox.col .input-box .h-input {
-  text-align: left;
-}
-.bp .filebox.col .k-button.gray-border {
-  width: 60px;
-  min-width: 60px;
-}
-
 .filebox .label {
   margin-right: 0;
 }
@@ -1432,30 +1119,6 @@ button {
   background-color: transparent;
   border: none;
 }
-.bp .k-window-actions .k-button .k-i-window-minimize {
-  font-size: 0;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  background-image: url("../images/icon/bp_btn_pop_min.png");
-  background-size: contain;
-}
-.bp .k-window-actions .k-button .k-i-window-restore {
-  font-size: 0;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  background-image: url("../images/icon/bp_btn_pop_minimized.png");
-  background-size: contain;
-}
-.bp .k-window-actions .k-button .k-i-close {
-  font-size: 0;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  background-image: url("../images/icon/bp_btn_pop_closed.png");
-  background-size: contain;
-}
 .bp .content-group {
   overflow: auto;
   height: calc(100% - 90px);
@@ -1524,9 +1187,6 @@ button {
   border: 1px solid #555;
 }
 .bc .k-dialog-titlebar {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1557,96 +1217,6 @@ button {
   padding: 0 10px;
 }
 
-/*
- * ------------------------------
- * BC0002
- * ------------------------------
- */
-.bc .k-button.k-dialog-close {
-  width: 18px;
-  height: 18px;
-  background-image: url("../images/icon/bc_btn_X.svg");
-  background-size: 18px 18px;
-  position: absolute;
-  right: 22px;
-  top: 10px;
-  min-width: 0 !important;
-  width: 30px;
-  height: 30px !important;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 0;
-}
-.bc .k-button.k-dialog-close:hover, .bc .k-button.k-dialog-close:focus {
-  background-color: transparent;
-}
-.bc .pop-timer-box {
-  font-size: 17px;
-  line-height: 24px;
-  letter-spacing: -0.85px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 85px;
-  background: #f5f5f5;
-  border: 1px solid #eee;
-}
-.bc .pop-timer-box .time-label {
-  color: #555;
-  font-weight: 500;
-}
-.bc .pop-timer-box .time-set {
-  margin-left: 10px;
-  color: #f14747;
-  font-weight: bold;
-}
-.bc .pop-guide {
-  margin-top: 10px;
-}
-.bc .pop-guide .list {
-  font-size: 13px;
-  line-height: 26px;
-  letter-spacing: -0.98px;
-  color: #777;
-  line-height: 18px;
-}
-.bc .btn-box {
-  margin-top: 20px;
-}
-
-/*
- * ------------------------------
- * BC0003
- * ------------------------------
- */
-.bc .main-info {
-  font-size: 17px;
-  line-height: 24px;
-  letter-spacing: -0.85px;
-  margin-top: 20px;
-  color: #222;
-  font-weight: bold;
-  text-align: center;
-}
-.bc .sub-info {
-  font-size: 13px;
-  line-height: 24px;
-  letter-spacing: -0.65px;
-  margin-top: 12px;
-  color: #777;
-  text-align: center;
-}
-.bc .check {
-  display: block;
-  margin: 0 auto;
-}
-
-/*
- * ------------------------------
- * BC0004
- * ------------------------------
- */
 table {
   display: table;
   width: 100%;
@@ -1700,8 +1270,8 @@ td .form-box, th .form-box {
 }
 .table th {
   font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
   padding: 0 10px;
   background: #e3ecf9;
   font-weight: bold;
@@ -1709,8 +1279,8 @@ td .form-box, th .form-box {
 }
 .table td {
   font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
   height: 42px;
   padding: 6px 10px;
   color: #222;
@@ -1746,37 +1316,6 @@ td .form-box, th .form-box {
   color: #2476dd;
 }
 
-.bc .table {
-  width: 100%;
-  overflow: hidden;
-}
-.bc .table table {
-  width: calc(100% + 2px);
-  margin: 0 -1px;
-  table-layout: fixed;
-}
-.bc .table th, .bc .table td {
-  border: 1px solid #e4e4e4;
-}
-.bc .table th {
-  font-size: 13px;
-  line-height: 24px;
-  letter-spacing: -0.65px;
-  padding: 0 7px;
-  background: #f2f4f7;
-  color: #5e6b85;
-  font-weight: 500;
-  text-align: center;
-}
-.bc .table td {
-  font-size: 13px;
-  line-height: 24px;
-  letter-spacing: -0.65px;
-  height: 38px;
-  padding: 6px 10px;
-  color: #222;
-}
-
 /*
  * ------------------------------
  * 폼
@@ -1799,36 +1338,6 @@ td .form-box, th .form-box {
 }
 .form-group .form-label {
   white-space: nowrap;
-}
-
-.bp .box-group {
-  display: flex;
-}
-.bp .box-group > * + * {
-  margin-left: 6px;
-}
-.bp .form-group .label {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  color: #222;
-  white-space: nowrap;
-}
-.bp .form-group.box {
-  padding: 16px 21px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  flex: 1 1 auto;
-}
-.bp .form-group.box.is-checked {
-  border: 1px solid #2476dd;
-}
-.bp .form-group > * + * {
-  margin-left: 20px;
-}
-.bp .form-group.col > * + * {
-  margin-left: 0;
-  margin-top: 6px;
 }
 
 .form-set {
@@ -1932,32 +1441,6 @@ td .form-box, th .form-box {
 * input - common
 * ------------------------------
 */
-.bp .h-input {
-  height: 30px;
-  line-height: 30px;
-}
-.bp .h-input::-moz-placeholder {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  color: #aaa;
-  font-weight: 400;
-}
-.bp .h-input:-ms-input-placeholder {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  color: #aaa;
-  font-weight: 400;
-}
-.bp .h-input::placeholder {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  color: #aaa;
-  font-weight: 400;
-}
-
 .h-input {
   font-size: 14px;
   line-height: 26px;
@@ -2012,14 +1495,6 @@ td .form-box, th .form-box {
   min-width: 400px;
 }
 
-.bp .h-input.sm {
-  max-width: 106px;
-  min-width: 106px;
-}
-.bp .h-input.lg {
-  max-width: 200px;
-  min-width: 200px;
-}
 /*
 * ------------------------------
 * input - common
@@ -2066,91 +1541,6 @@ td .form-box, th .form-box {
   line-height: 26px;
   letter-spacing: -0.6px;
   color: #f14747;
-}
-
-.bp .input-box {
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 100%;
-  height: 30px;
-  background-color: #fff;
-}
-.bp .input-box.xxs {
-  max-width: 60px;
-  min-width: unset;
-}
-.bp .input-box.xs {
-  max-width: 100px;
-  min-width: unset;
-}
-.bp .input-box.sm {
-  max-width: 134px;
-  min-width: 134px;
-}
-.bp .input-box.md {
-  max-width: 170px;
-  min-width: unset;
-}
-.bp .input-box.lg {
-  max-width: 320px;
-  min-width: unset;
-}
-.bp .input-box .input-label {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  margin-right: 6px;
-  color: #666;
-}
-.bp .input-box .h-input {
-  min-width: unset;
-  height: 28px;
-  padding: 0;
-  border: none;
-  font-weight: bold;
-  text-align: right;
-}
-.bp .input-box .unit {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-  margin-left: 6px;
-  color: #222;
-}
-.bp .input-box.search {
-  padding: 0;
-}
-.bp .input-box.search::after {
-  display: none;
-}
-.bp .input-box.search .h-input {
-  height: 28px;
-  border-radius: 3px 0px 0px 3px;
-  padding-left: 10px;
-  text-align: left;
-}
-.bp .input-box.search .k-button {
-  min-width: 30px;
-  height: 28px;
-  padding: 0;
-  background-color: #fff;
-  border-radius: 0px 3px 3px 0;
-  border: none;
-  border-left: 1px solid #ccc;
-}
-.bp .input-box.search .k-i-bp-search {
-  width: 30px;
-  height: 28px;
-  background-image: url("../images/icon/bp_icon_search.svg");
-  background-size: 16px 16px;
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-position: center;
 }
 
 /*
@@ -2234,62 +1624,6 @@ td .form-box, th .form-box {
 
 .h-checkbox input[type=radio]:checked + label::before {
   background-image: url("../images/icon/btn_radio_checked.svg");
-}
-
-.bp .h-checkbox input[type=checkbox] + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bp_checkbox_default.svg");
-  background-size: contain;
-}
-.bp .h-checkbox input[type=radio] + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bp_radio_default.svg");
-  background-size: contain;
-}
-.bp .h-checkbox input[type=checkbox]:checked + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bp_checkbox_checked.svg");
-  background-size: contain;
-}
-.bp .h-checkbox input[type=radio]:checked + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bp_radio_checked.svg");
-  background-size: contain;
-}
-.bp .h-checkbox {
-  padding-left: 26px;
-}
-
-.bc .h-checkbox input[type=checkbox] + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bc_checkbox_default.svg");
-  background-size: contain;
-}
-.bc .h-checkbox input[type=radio] + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bc_radio_default.svg");
-  background-size: contain;
-}
-.bc .h-checkbox input[type=checkbox]:checked + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bc_checkbox_checked.svg");
-  background-size: contain;
-}
-.bc .h-checkbox input[type=radio]:checked + label::before {
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/icon/bc_radio_checked.svg");
-  background-size: contain;
-}
-.bc .h-checkbox {
-  padding-left: 26px;
 }
 
 /*
@@ -2589,12 +1923,6 @@ th .required {
   font-size: 14px;
 }
 
-.h-ico.pop-timer {
-  width: 18px;
-  height: 18px;
-  background-image: url("../images/icon/bc_icon_logout_time.svg");
-  background-size: contain;
-}
 .h-ico.filter {
   width: 28px;
   height: 28px;
@@ -2824,57 +2152,8 @@ th .required {
   background-size: contain;
 }
 
-.k-button.k-state-active .h-ico.sector1, .k-button.k-state-focused .h-ico.sector1, .k-button:hover .h-ico.sector1 {
-  background-image: url("../images/icon/sector1_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector2, .k-button.k-state-focused .h-ico.sector2, .k-button:hover .h-ico.sector2 {
-  background-image: url("../images/icon/sector2_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector3, .k-button.k-state-focused .h-ico.sector3, .k-button:hover .h-ico.sector3 {
-  background-image: url("../images/icon/sector3_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector4, .k-button.k-state-focused .h-ico.sector4, .k-button:hover .h-ico.sector4 {
-  background-image: url("../images/icon/sector4_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector5, .k-button.k-state-focused .h-ico.sector5, .k-button:hover .h-ico.sector5 {
-  background-image: url("../images/icon/sector5_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector6, .k-button.k-state-focused .h-ico.sector6, .k-button:hover .h-ico.sector6 {
-  background-image: url("../images/icon/sector6_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector7, .k-button.k-state-focused .h-ico.sector7, .k-button:hover .h-ico.sector7 {
-  background-image: url("../images/icon/sector7_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector8, .k-button.k-state-focused .h-ico.sector8, .k-button:hover .h-ico.sector8 {
-  background-image: url("../images/icon/sector8_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector9, .k-button.k-state-focused .h-ico.sector9, .k-button:hover .h-ico.sector9 {
-  background-image: url("../images/icon/sector9_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector10, .k-button.k-state-focused .h-ico.sector10, .k-button:hover .h-ico.sector10 {
-  background-image: url("../images/icon/sector10_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector11, .k-button.k-state-focused .h-ico.sector11, .k-button:hover .h-ico.sector11 {
-  background-image: url("../images/icon/sector11_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector12, .k-button.k-state-focused .h-ico.sector12, .k-button:hover .h-ico.sector12 {
-  background-image: url("../images/icon/sector12_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector13, .k-button.k-state-focused .h-ico.sector13, .k-button:hover .h-ico.sector13 {
-  background-image: url("../images/icon/sector13_hover.svg");
-}
-.k-button.k-state-active .h-ico.sector14, .k-button.k-state-focused .h-ico.sector14, .k-button:hover .h-ico.sector14 {
-  background-image: url("../images/icon/sector14_hover.svg");
-}
-
 .k-i-example {
   background: gray;
-}
-.k-i-bp-register {
-  width: 24px;
-  height: 24px;
-  background-image: url("../images/icon/bp_icon_regi.svg");
-  background-size: contain;
 }
 .k-i-filter {
   width: 28px;
@@ -2929,42 +2208,6 @@ th .required {
   width: 16px;
   height: 16px;
   background-image: url("../images/icon/icon_lnb_close.svg");
-  background-size: contain;
-}
-.k-i-refresh {
-  width: 16px;
-  height: 16px;
-  background-image: url("../images/icon/bp_icon_refresh.svg");
-  background-size: contain;
-}
-.k-i-link {
-  width: 16px;
-  height: 16px;
-  background-image: url("../images/icon/bp_icon_link.svg");
-  background-size: contain;
-}
-.k-i-bp-down {
-  width: 16px;
-  height: 16px;
-  background-image: url("../images/icon/bp_icon_arrow_down.svg");
-  background-size: contain;
-}
-.k-i-bp-up {
-  width: 16px;
-  height: 16px;
-  background-image: url("../images/icon/bp_icon_arrow_up.svg");
-  background-size: contain;
-}
-.k-i-bp-close {
-  width: 16px;
-  height: 16px;
-  background-image: url("../images/icon/bp_btn_X.svg");
-  background-size: contain;
-}
-.k-i-bp-plus {
-  width: 16px;
-  height: 16px;
-  background-image: url("../images/icon/bp_icon_plus.svg");
   background-size: contain;
 }
 .k-i-bookmark {
@@ -3519,9 +2762,6 @@ th .required {
 * ------------------------------
 */
 .k-textarea {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
   display: flex;
   padding: 6px 10px;
   border: 1px solid #ccc;
@@ -3533,23 +2773,14 @@ th .required {
   height: 80px;
 }
 .k-textarea ::-moz-placeholder {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
   color: #aaa;
   font-weight: 400;
 }
 .k-textarea :-ms-input-placeholder {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
   color: #aaa;
   font-weight: 400;
 }
 .k-textarea ::placeholder {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
   color: #aaa;
   font-weight: 400;
 }
@@ -7963,7 +7194,7 @@ th .required {
   position: relative;
   width: 100%;
   height: 320px;
-  background-image: url("../images/bc_img_login@2x.jpg");
+  background-image: url("../images/img_login@2x.jpg");
   background-size: contain;
 }
 .login-content.type-a .logo-set {

@@ -26,43 +26,6 @@
         white-space: nowrap;
     }
 }
-.bp {
-    .box-group {
-        display: flex;
-        > * + * {
-            margin-left: 6px;
-        }
-    }
-    .form-group {
-        .label {
-            @include bp-font-size-sm;
-            color: $gray-2;
-            white-space: nowrap;
-        }
-        &.box {
-            padding: 16px 21px;
-            border: 1px solid $gray-c;
-            border-radius: 3px;
-            flex: 1 1 auto;
-            &.is-checked {
-                border: 1px solid $layer-blue;
-            }
-            // + .form-group.box {
-            //     margin: 0 0 0 6px; //가이드 때문
-            // }
-        }
-        > * + * {
-            margin-left: 20px;
-        }
-        &.col {
-            > * + * {
-                margin-left: 0;
-                margin-top: 6px;
-            }
-        }
-    }
-}
-
 .form-set {
     display: flex;
     align-items: center;

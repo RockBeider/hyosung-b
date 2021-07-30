@@ -58,63 +58,25 @@
     // vertical-align: middle;
 }
 .h-checkbox input[type="checkbox"] + label::before { //20px(md)
-    background-image: url('../images/icon/btn_checkbox_off.svg');
+    background-image: url($imgPathIcon+'/btn_checkbox_off.svg');
     transition: background 0.3s ease;
 }
 .h-checkbox input[type="radio"] + label::before { //20px(md)
-    background-image: url('../images/icon/btn_radio_default.svg');
+    background-image: url($imgPathIcon+'/btn_radio_default.svg');
     transition: background 0.3s ease;
 } 
 
 .h-checkbox input[type="checkbox"]:checked + label::before {
-    background-image: url('../images/icon/btn_checkbox_checked.svg');
+    background-image: url($imgPathIcon+'/btn_checkbox_checked.svg');
 }
 .h-checkbox input[type="radio"]:checked + label::before {
-    background-image: url('../images/icon/btn_radio_checked.svg');
-}
-
-
-.bp {
-    .h-checkbox input[type="checkbox"] + label::before { //20px(md)
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_checkbox_default', $size: contain );
-    }
-    .h-checkbox input[type="radio"] + label::before { //20px(md)
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_radio_default', $size: contain );
-    } 
-    .h-checkbox input[type="checkbox"]:checked + label::before {
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_checkbox_checked', $size: contain );
-    }
-    .h-checkbox input[type="radio"]:checked + label::before {
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_radio_checked', $size: contain );
-    }
-    .h-checkbox {
-        padding-left: 20px + 6px;
-    }
-}
-
-
-.bc {
-    .h-checkbox input[type="checkbox"] + label::before { //20px(md)
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_checkbox_default', $size: contain );
-    }
-    .h-checkbox input[type="radio"] + label::before { //20px(md)
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_radio_default', $size: contain );
-    } 
-    .h-checkbox input[type="checkbox"]:checked + label::before {
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_checkbox_checked', $size: contain );
-    }
-    .h-checkbox input[type="radio"]:checked + label::before {
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bc_radio_checked', $size: contain );
-    }
-    .h-checkbox {
-        padding-left: 20px + 6px;
-    }
+    background-image: url($imgPathIcon+'/btn_radio_checked.svg');
 }
 
 
 
 .h-checkbox input[type="checkbox"]:disabled + label::before {
-//  background-image: url('../images/icon/');
+//  background-image: url($imgPathIcon+'/');
 }
 .h-checkbox input[type="radio"]:disabled + label::before {
 //  background-image: url('');

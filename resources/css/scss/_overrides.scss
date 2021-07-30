@@ -13,7 +13,7 @@
 */
 .bp {
 	.k-dropdown {
-		height: 30px;
+		height: 30px; 
 		&.sm {
 			min-width: 106px !important;
 		}
@@ -49,7 +49,7 @@
 			background-color: $gray-f5;
 			color: $gray-a;
 			.k-i-arrow-60-down:before {
-				background-image: url("../images/icon/icon_arrow_down_diabled.svg");
+				background-image: url($imgPathIcon+'/icon_arrow_down_diabled.svg');
 			}
 		}
 		&.k-state-hover,
@@ -83,7 +83,7 @@
 			right: 10px;
 			width: 15px;
 			height: 15px;
-			background: url("../images/icon/icon_arrow_down.svg") no-repeat center / 15px 15px;
+			background: url($imgPathIcon+'/icon_arrow_down.svg') no-repeat center / 15px 15px;
 			transition: all 0.3s ease;
 		}
 		&.k-state-active {
@@ -231,7 +231,7 @@
 				background-size: 8px 15px;
 				background-repeat: no-repeat;
 				background-position: center center;
-				background-image: url("../images/icon/btn_filter_default.svg");
+				background-image: url($imgPathIcon+'/btn_filter_default.svg');
 			}
 		}
 	}
@@ -254,11 +254,11 @@
 	}
 	.k-i-sort-desc-sm:before {
 		//아래로 화살표
-		background-image: url("../images/icon/btn_filter_down.svg");
+		background-image: url($imgPathIcon+'/btn_filter_down.svg');
 	}
 	.k-i-sort-asc-sm:before {
 		//위로 화살표
-		background-image: url("../images/icon/btn_filter_up.svg");
+		background-image: url($imgPathIcon+'/btn_filter_up.svg');
 	}
 }
 
@@ -450,7 +450,7 @@
 * ------------------------------
 */
 .k-textarea {
-	@include bp-font-size-sm;
+	// @include bp-font-size-sm;
 	display: flex;
 	padding: 6px 10px;
 	border: 1px solid $gray-c;
@@ -461,7 +461,7 @@
 		height: 80px;
 	}
 	::placeholder {
-		@include bp-font-size-sm;
+		// @include bp-font-size-sm;
 		color: $gray-a;
 		font-weight: 400;
 	}

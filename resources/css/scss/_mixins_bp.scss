@@ -24,7 +24,6 @@
 	background-image: url($imgPathIcon+'/#{$name}.png');
 	background-size: $size;
 }
-
 // SVG Background
 @mixin iconSvg($width, $height, $name, $size: cover) {
 	$url: $imgPathIcon+'/#{$name}.svg';
