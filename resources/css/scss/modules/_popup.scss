@@ -128,17 +128,17 @@
                 background-color: transparent;
                 border: none;
             }
-            .k-i- {
-                &window-minimize {
-                    @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_min', $size: contain );
-                }
-                &window-restore {
-                    @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_minimized', $size: contain );
-                }
-                &close {
-                    @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_closed', $size: contain );
-                }
-            }
+            // .k-i- {
+            //     &window-minimize {
+            //         @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_min', $size: contain );
+            //     }
+            //     &window-restore {
+            //         @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_minimized', $size: contain );
+            //     }
+            //     &close {
+            //         @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_closed', $size: contain );
+            //     }
+            // }
         }
     }
     .content-group {
@@ -211,7 +211,7 @@
         border: 1px solid $gray-5;
     }
     .k-dialog-titlebar {
-        @include bc-font-size-sm;
+        // @include bc-font-size-sm;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -245,91 +245,5 @@
         padding: 0 10px;
     }
 }
-
-/*
- * ------------------------------
- * BC0002
- * ------------------------------
- */
-.bc {
-    .k-button.k-dialog-close {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'bc_btn_X', $size: 18px 18px);
-        position: absolute;
-        right: 22px;
-        top: 10px;
-        min-width: 0 !important;
-        width: 30px;
-        height: 30px !important;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: center;
-        border: 0;
-        &:hover, &:focus {
-            background-color: transparent;
-        }
-    }
-    .pop-timer-box {
-        @include bc-font-size-md;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 85px;
-        background: $gray-f5;
-        border: 1px solid $gray-e;
-        .time-label {
-            color: $gray-5;
-            font-weight: 500;
-        }
-        .time-set {
-            margin-left: 10px;
-            color: $error;
-            font-weight: bold;
-        }
-    }
-    .pop-guide {
-        margin-top: 10px;
-        .list {
-            @include bp-font-size-xs;
-            color: $gray-7;
-            line-height: 18px;
-        }
-    }
-    .btn-box {
-        margin-top: 20px;
-    }
-}
-
-
-/*
- * ------------------------------
- * BC0003
- * ------------------------------
- */
-.bc {
-    .main-info {
-        @include bc-font-size-md;
-        margin-top: 20px;
-        color: $gray-2;
-        font-weight: bold;
-        text-align: center;
-    }
-    .sub-info {
-        @include bc-font-size-xsm;
-        margin-top: 12px;
-        color: $gray-7;
-        text-align: center;
-    }
-    .check {
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-/*
- * ------------------------------
- * BC0004
- * ------------------------------
- */
-
 
 

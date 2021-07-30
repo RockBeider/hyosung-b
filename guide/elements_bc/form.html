@@ -52,30 +52,43 @@
         </div>
         <div class="g-example-body flex-block">
             <!-- [D] default 상태 -->
-            <input type="text" class="h-input sm" placeholder="placeholder" />
+            <input type="text" class="h-input md" placeholder="placeholder" />
             <!-- [D] with Data -->
-            <input type="text" class="h-input sm" value="Data" />
+            <input type="text" class="h-input md" value="Data" />
             <!-- [D] disabled 상태 -->
-            <input type="text" class="h-input sm" value="disabled" disabled="disabled" />
+            <input type="text" class="h-input md" value="disabled" disabled="disabled" />
             <!-- [D] error 상태 -->
-            <div class="input-box col sm error">
+            <div class="input-box col md error">
                 <input type="text" class="h-input" value="error" />
                 <p class="note">Error Message</p>
             </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;!-- [D] default 상태 -->
-&lt;input type="text" class="h-input sm" placeholder="placeholder" />
-&lt;!-- [D] with Data -->
-&lt;input type="text" class="h-input sm" value="Data" />
-&lt;!-- [D] disabled 상태 -->
-&lt;input type="text" class="h-input sm" value="disabled" disabled="disabled" />
-&lt;!-- [D] error 상태 -->
-&lt;div class="input-box sm error">
-&lt;input type="text" class="h-input" value="error" />
-&lt;p class="note">Error Message&lt;/p>
-&lt;/div>
+
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Input Status</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="form-group col">
+                <div class="form-set">
+                    <div class="input-box search sm">
+                        <input type="text" class="h-input" placeholder="검색해주세요." disabled="disabled">
+                        <button data-role="button" data-icon="bp-search"><span></span></button>
+                    </div>
+                    <input type="text" class="h-input" placeholder="기본 주소" disabled="disabled">
+                </div>
+                <input type="text" class="h-input" placeholder="상세주소">
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+
             </code></pre>
         </div>
     </div>

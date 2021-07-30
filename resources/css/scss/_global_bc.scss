@@ -130,12 +130,12 @@ button {
 */
 
 .main-title {
-	@include font-size-xl;
+	// @include font-size-xl;
 	color: $gray-2;
 	font-weight: bold;
 }
 .sub-title {
-	@include font-size-lg;
+	// @include font-size-lg;
 	color: $gray-2;
 	font-weight: 500;
 	&.dot {
@@ -181,70 +181,6 @@ button {
 		margin: 12px 0 8px;
 	}
 }
-.bp .sub-title {
-    display: flex;
-    align-items: center;
-    &.sm {
-        @include bp-font-size-sm;
-        line-height: 18px;
-        font-weight: bold;  
-    }
-    &.md {
-        @include bp-font-size-md;
-        min-height: 30px;
-        margin-bottom: 6px;
-        font-weight: 500;
-    }
-} 
-.bp {
-    .title-box {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-		.right-group {
-			> * + * {
-				margin-left: 6px;
-			}
-		}
-        &.sm {
-			min-height: unset;
-			max-height: 18px;
-			margin: 20px 0 10px 0;
-            .sub-title {
-                @include bp-font-size-sm;
-                line-height: 18px;
-                font-weight: bold; 
-            }
-            .noti {
-                @include bp-font-size-sm;
-                line-height: 18px;
-            }
-        }
-		&.md {
-			min-height: unset;
-			height: 23px;
-			margin: 30px 0 6px 0;
-			.sub-title {
-				@include bp-font-size-md;
-				min-height: 30px;
-				// margin-bottom: 6px;
-				font-weight: 500;
-			}
-			.right-group, .btn-box {
-				margin-bottom: 6px;
-			}
-		}
-    }
-	.noti {
-		&.sm {
-			@include bp-font-size-sm;
-			line-height: 18px;
-		}
-		&.red {
-			color: $error;
-		}
-	}
-}
 
 
 
@@ -285,7 +221,7 @@ button {
 		display: none;
 	}
 	.breadcrumb-item {
-		@include font-size-sm;
+		// @include font-size-sm;
 		display: flex;
 		align-items: center;
 		color: $gray-9;
@@ -322,7 +258,7 @@ button {
         white-space: nowrap;
         .list { display: flex; }
         .label {
-            @include bp-font-size-sm;
+            // @include bp-font-size-sm;
             position: relative;
             display: inline-flex;
             justify-content: center;
@@ -338,10 +274,10 @@ button {
             }
         }
         .desc {
-            @include bp-font-size-sm;
+            // @include bp-font-size-sm;
         }
         .info {
-            @include bp-font-size-xs;
+            // @include bp-font-size-xs;
             padding-right: 20px;
         }
         &.border {
@@ -387,7 +323,7 @@ button {
 				padding: 0;
                 height: 40px;
 				.price-set {
-					@include bp-font-size-sm;
+					// @include bp-font-size-sm;
 					position: absolute;
 					right: 130px;
 					color: $error;
@@ -441,7 +377,7 @@ button {
                 height: 30px;
                 padding: 6px 0;
                 .label {
-                    @include bp-font-size-sm;
+                    // @include bp-font-size-sm;
                     align-items: center;
                     width: auto;
                     color: $gray-5;
@@ -452,7 +388,7 @@ button {
                     }
                 }
                 .desc {
-                    @include bp-font-size-sm;
+                    // @include bp-font-size-sm;
                     color: $gray-5;
                     line-height: 18px;
                     font-weight: 400;
@@ -463,11 +399,11 @@ button {
                     padding: 14px 0 5px;
                     border-top: 1px dotted $gray-c;
                     .label {
-                        @include bp-font-size-sm;
+                        // @include bp-font-size-sm;
                         color: $gray-2;
                     }
                     .desc {
-                        @include bp-font-size-sm;
+                        // @include bp-font-size-sm;
                         display: flex;
                         line-height: 27px;
                         color: $gray-2;
@@ -476,11 +412,11 @@ button {
                             color: $gray-5;
                         }
                         .price {
-                            @include bp-font-size-lg;
+                            // @include bp-font-size-lg;
                             font-weight: bold;
                         }
                         .unit {
-                            @include bp-font-size-lg;
+                            // @include bp-font-size-lg;
                         }
                     }
                 }
@@ -497,7 +433,7 @@ button {
 		margin-top: 12px;
 	}
 	.label {
-		@include bp-font-size-sm;
+		// @include bp-font-size-sm;
 		white-space: nowrap;
 		width: 73px;
 		line-height: 30px;

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_lnb_close" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#0e4194;stroke-width:2px}
+        </style>
+    </defs>
+    <path id="Path_356" d="M0 6V0h6" class="cls-2" transform="translate(3.515 8) rotate(-45)"/>
+    <path id="Path_357" d="M0 6V0h6" class="cls-2" transform="translate(7.515 8) rotate(-45)"/>
+</svg>

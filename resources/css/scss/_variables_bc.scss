@@ -9,101 +9,23 @@
 // @charset "utf-8";
 
 $fontFamily: "Roboto", "Noto Sans KR", sans-serif;
+$imgPath: '../images_bc';
+$imgPathIcon: '../images_bc/icon';
 /*
 * Regular font size
 */
 $base-font-size: 16px;
-
-/*
-* Text style
-*/
-// (디자인팀 변수와 같이 사용)
-
-@mixin Num {
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.86;
-    letter-spacing: -0.7px;
-    color: $main;
-}
-@mixin State {
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.86;
-    letter-spacing: -0.7px;
-    color: $state;
-}
-/*
-* ------------------------------
-* font size
-* ------------------------------
-*/
-
 // 메뉴사이즈
-@mixin font-size-menu {
+@mixin bc-font-size-menu {
     //1dpepth 메뉴
     font-size: 15px;
     line-height: 26px;
     letter-spacing: -0.75px;
 }
-
-@mixin font-size-xs {
-    //인풋하단 에러상태
-    font-size: 12px;
-    line-height: 26px;
-    letter-spacing: -0.6px;
-}
-@mixin font-size-sm {
-    //버튼, 드롭다운, 인풋, search, 2depth 메뉴, 테이블허데, 테이블바디
-    font-size: 14px;
-    line-height: 26px;
-    letter-spacing: -0.7px;
-}
-@mixin font-size-md {
-    //로고부분
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: -0.8px;
-}
-@mixin font-size-lg {
-    //서브타이틀
-    font-size: 17px;
-    line-height: 26px;
-    letter-spacing: -0.85px;
-}
-@mixin font-size-xl {
-    //메인타이틀
-    font-size: 22px;
-    line-height: 26px;
-    letter-spacing: -1.1px;
-}
-
-
-@mixin bp-font-size-xs {
-    font-size: 13px;
-    line-height: 26px;
-    letter-spacing: -0.98px;
-}
-
-@mixin bp-font-size-sm {
-    font-size: 14px;
-    // line-height: 26px;
-    line-height: 18px;
-    letter-spacing: -1.05px;
-}
-
-@mixin bp-font-size-md { // 팝업 컨텐츠 타이틀
-    font-size: 17px;
-    line-height: 26px;
-    letter-spacing: -1.28px;
-}
-@mixin bp-font-size-lg { // 팝업 컨텐츠 타이틀
-    font-size: 20px;
-    line-height: 26px;
-    letter-spacing: -1.5px;
-}
+/*
+* Text style
+*/
+// (디자인팀 변수와 같이 사용)
 
 @mixin bc-font-size-xs {
     font-size: 12px;

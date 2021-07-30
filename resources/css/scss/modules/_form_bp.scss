@@ -103,7 +103,7 @@
     border: 1px solid $searchLine;
     overflow: hidden;
     .label {
-        @include font-size-sm;
+        // @include font-size-sm;
         margin-right: 12px;
         height: 28px;
         color: $gray-7;
@@ -139,7 +139,7 @@
         color: $main;
     }
     .label {
-        @include font-size-sm;
+        // @include font-size-sm;
         margin-right: 12px;
         height: 28px;
         color: $gray-7;
