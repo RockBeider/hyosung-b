@@ -1715,6 +1715,7 @@ td .form-box, th .form-box {
 }
 .h-btn.text, .k-button.text {
   background: transparent;
+  border: 1px solid transparent;
   height: auto;
   padding: 0;
   text-decoration: underline;
@@ -1756,6 +1757,7 @@ td .form-box, th .form-box {
 }
 .h-btn.light-blue, .k-button.light-blue {
   background-color: #cfdef5;
+  border: 1px solid #cfdef5;
   color: #0e4194;
 }
 .h-btn.light-blue:hover, .h-btn.light-blue:focus, .k-button.light-blue:hover, .k-button.light-blue:focus {
