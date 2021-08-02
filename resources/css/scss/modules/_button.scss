@@ -49,6 +49,7 @@
     }
     &.text {
         background: transparent;
+        border: 1px solid transparent;
         height: auto;
         padding: 0; 
         text-decoration: underline;
@@ -103,6 +104,7 @@
     }
     &.light-blue {
         background-color: $lavender;
+        border: 1px solid $lavender;
         color: $main;
         &:hover, &:focus {
             background-color: $btn-light-blue-hover-bg;
