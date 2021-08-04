@@ -2,12 +2,19 @@
 
 // Import Scss
 @import "reset";
-@import "colors";
-@import "fonts";  
-@import "variables";
-@import "mixins"; 
-@import "global";
-@import "./modules/modules";  
-@import 'overrides';
-@import "layout";   
+@import "colors"; //공통
+@import "colors_b";
+@import "fonts"; //공통  
+@import "fonts_b";  
+@import "variables"; //공통
+@import "variables_b";
+@import "mixins"; //공통 
+@import "mixins_b"; 
+@import "global"; //공통
+@import "global_b";
+@import "./modules/modules"; //공통  
+@import 'overrides'; //공통
+@import 'overrides_b';
+@import "layout"; //공통   
+@import "layout_b";  
    

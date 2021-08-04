@@ -113,11 +113,17 @@ button {
 .ml-8 {
 	margin-left: 8px !important;
 }
+.mt-4 {
+	margin-top: 4px !important;
+}
 .mt-10 {
 	margin-top: 10px !important;
 }
 .mt-20 {
 	margin-top: 20px !important;
+}
+.mt-30 {
+	margin-top: 30px !important;
 }
 .mt-0 { margin-top: 0px !important; }
 .mb-0 { margin-bottom: 0px !important; }
@@ -168,6 +174,9 @@ button {
 		display: flex;
 		align-items: center;
 	}
+	.btn-box {
+		margin-top: 0;
+	}
 	&.lg {
 		height: 32px;
 		margin: 0 0 20px;
@@ -175,13 +184,57 @@ button {
 	&.md {
 		min-height: 28px;
 		margin: 12px 0 4px;
+        .sub-title {
+            @include font-size-md;
+            min-height: 30px;
+            // margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .right-group, .btn-box {
+            margin-bottom: 6px;
+        }
 	}
 	&.sm {
 		min-height: 28px;
 		margin: 12px 0 8px;
+        .sub-title {
+            @include font-size-sm;
+            // line-height: 18px;
+            // font-weight: bold; 
+        }
+        .noti {
+            @include font-size-sm;
+            // line-height: 18px;
+        }
+	}
+    .noti {
+		&.sm {
+			@include font-size-sm;
+			// line-height: 18px;
+		}
+		&.red {
+			color: $error;
+		}
 	}
 }
 
+
+
+/*
+* ------------------------------
+*  리스트
+* ------------------------------
+*/
+.list-group {
+	display: flex;
+	align-items: center;
+	&.half {
+		> * { flex: 1; }
+		> * + * {
+			margin-left: 10px;
+		}
+	}
+}
 
 
 /*
@@ -249,32 +302,6 @@ button {
 	display: flex;
 }
 
-.adding-wrap {
-	
-}
-// .adding-box {
-// 	display: flex;
-// 	+ .adding-box {
-// 		margin-top: 12px;
-// 	}
-// 	.label {
-// 		@include bp-font-size-sm;
-// 		white-space: nowrap;
-// 		width: 73px;
-// 		line-height: 30px;
-// 	}
-// }
-.adding-set {
-	width: 100%;
-	.added {
-		display: flex;
-		flex-direction: column;
-		margin-top: 6px;
-		> * + * {
-			margin-top: 6px;
-		}
-	}
-}
 
 /*
 * ------------------------------
@@ -288,21 +315,15 @@ button {
 * File upload
 * ------------------------------
 */
-
-
 .filebox {
 	padding: 20px;
 	background-color: $gray-f5;
 	.label {
+		@include font-size-sm;
 		margin-right: 0;
+		white-space: nowrap;
 	}
-	.input-box {
-		.h-input { 
-			&:disabled, &:disabled:focus {
-				// background-color: $white;
-				// color: $gray-a;
-			}
-		}
+	.input-set {
 		.k-button {
 			position: absolute;
 			top: 0;

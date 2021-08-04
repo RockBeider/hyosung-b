@@ -28,23 +28,6 @@
         </div>
     </div>
 
-    <div class="g-example-wrap">
-        <div class="g-example-head">
-            <p class="title">Date Range</p>
-        </div>
-        <div class="g-example-body flex-block">
-            <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-            <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31" disabled/> 
-        </div>
-
-        <div class="g-example-foot">
-            <pre><code class="html">
-&lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-&lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31" disabled/> 
-            </code></pre>
-        </div>
-    </div>
-
 
     <div class="g-example-wrap">
         <div class="g-example-head">
@@ -57,11 +40,6 @@
             <input type="text" class="h-input sm" value="Data" />
             <!-- [D] disabled 상태 -->
             <input type="text" class="h-input sm" value="disabled" disabled="disabled" />
-            <!-- [D] error 상태 -->
-            <div class="input-box col sm error">
-                <input type="text" class="h-input" value="error" />
-                <p class="note">Error Message</p>
-            </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
@@ -71,30 +49,350 @@
 &lt;input type="text" class="h-input sm" value="Data" />
 &lt;!-- [D] disabled 상태 -->
 &lt;input type="text" class="h-input sm" value="disabled" disabled="disabled" />
-&lt;!-- [D] error 상태 -->
-&lt;div class="input-box sm error">
-&lt;input type="text" class="h-input" value="error" />
-&lt;p class="note">Error Message&lt;/p>
-&lt;/div>
             </code></pre>
         </div>
     </div>
 
     <div class="g-example-wrap">
         <div class="g-example-head">
+            <p class="title">Dropdown</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="form-set">
+                <input type="text" class="h-input" placeholder="영,숫자 8~10자 입력" />
+                <button type="button" data-role="button" class="yellow">아이디 확인</button>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-set">
+    &lt;input type="text" class="h-input" placeholder="영,숫자 8~10자 입력" />
+    &lt;button type="button" data-role="button" class="yellow">아이디 확인&lt;/button>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Dropdown</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="form-group col">
+                <div class="form-set">
+                    <div class="input-set search sm">
+                        <input type="text" class="h-input" placeholder="검색해주세요." disabled="disabled">
+                        <button data-role="button" data-icon="search"></button>
+                    </div>
+                    <input type="text" class="h-input" placeholder="기본 주소" disabled="disabled">
+                </div>
+                <input type="text" class="h-input" placeholder="상세주소">
+            </div>
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-group col">
+    &lt;div class="form-set">
+        &lt;div class="input-set search sm">
+            &lt;input type="text" class="h-input" placeholder="검색해주세요." disabled="disabled">
+            &lt;button data-role="button" data-icon="search">&lt;/button>
+        &lt;/div>
+        &lt;input type="text" class="h-input" placeholder="기본 주소" disabled="disabled">
+    &lt;/div>
+    &lt;input type="text" class="h-input" placeholder="상세주소">
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Dropdown</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="form-set">
+                <input type="text" class="h-input" placeholder="이메일 계정 입력">
+                <span class="bar">@</span>
+                <select data-role="dropdownlist" data-value="메일주소" data-option-label="메일주소" class="sm">
+                    <option value="1">온라인</option>
+                    <option value="2">오프라인</option>
+                </select>
+                <input type="text" class="h-input sm" placeholder="직접입력">
+            </div>
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-set">
+    &lt;input type="text" class="h-input" placeholder="이메일 계정 입력">
+    &lt;span class="bar">@&lt;/span>
+    &lt;select data-role="dropdownlist" data-value="메일주소" data-option-label="메일주소" class="sm">
+        &lt;option value="1">온라인&lt;/option>
+        &lt;option value="2">오프라인&lt;/option>
+    &lt;/select>
+    &lt;input type="text" class="h-input sm" placeholder="직접입력">
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">form - 가로정렬</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="form-set">
+                <div class="input-set">
+                    <span class="input-label">일반</span>
+                    <input type="text" class="h-input" placeholder="2.8" />
+                    <span class="unit">%</span>
+                </div>
+                <div class="input-set">
+                    <span class="input-label">영세</span>
+                    <input type="text" class="h-input" value="1.8" />
+                    <span class="unit">%</span>
+                </div>
+                <div class="input-set">
+                    <span class="input-label">중소1</span>
+                    <input type="text" class="h-input" placeholder="2.0" />
+                    <span class="unit">%</span>
+                </div>
+                <div class="input-set">
+                    <span class="input-label">중소2</span>
+                    <input type="text" class="h-input" placeholder="2.1" />
+                    <span class="unit">%</span>
+                </div>
+                <div class="input-set">
+                    <span class="input-label">중소3</span>
+                    <input type="text" class="h-input" placeholder="2.3" />
+                    <span class="unit">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-set">
+    &lt;div class="input-set">
+        &lt;span class="input-label">일반&lt;/span>
+        &lt;input type="text" class="h-input" placeholder="2.8" />
+        &lt;span class="unit">%&lt;/span>
+    &lt;/div>
+    &lt;div class="input-set">
+        &lt;span class="input-label">영세&lt;/span>
+        &lt;input type="text" class="h-input" value="1.8" />
+        &lt;span class="unit">%&lt;/span>
+    &lt;/div>
+    &lt;div class="input-set">
+        &lt;span class="input-label">중소1&lt;/span>
+        &lt;input type="text" class="h-input" placeholder="2.0" />
+        &lt;span class="unit">%&lt;/span>
+    &lt;/div>
+    &lt;div class="input-set">
+        &lt;span class="input-label">중소2&lt;/span>
+        &lt;input type="text" class="h-input" placeholder="2.1" />
+        &lt;span class="unit">%&lt;/span>
+    &lt;/div>
+    &lt;div class="input-set">
+        &lt;span class="input-label">중소3&lt;/span>
+        &lt;input type="text" class="h-input" placeholder="2.3" />
+        &lt;span class="unit">%&lt;/span>
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+    
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">form Size</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="form-set">
+                <span class="form-label">xs size</span>
+                <div class="input-set xs">
+                    <input type="text" class="h-input" value="2" />
+                    <span class="unit">영업일</span>
+                </div>
+            </div>
+            <div class="form-set">
+                <span class="form-label">small size</span>
+                <div class="input-set sm">
+                    <span class="input-label">건당</span>
+                    <input type="text" class="h-input" placeholder="50">
+                    <span class="unit">원</span>
+                </div>
+            </div>
+            <div class="form-set">
+                <span class="form-label">md size</span>
+                <div class="input-set md">
+                    <span class="input-label">의뢰</span>
+                    <input type="text" class="h-input" value="50" />
+                    <span class="unit">원</span>
+                </div>
+                <div class="input-set md">
+                    <span class="input-label">성공</span>
+                    <input type="text" class="h-input" value="250" />
+                    <span class="unit">원</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-set">
+    &lt;span class="form-label">xs size&lt;/span>
+    &lt;div class="input-set xs">
+        &lt;input type="text" class="h-input" value="2" />
+        &lt;span class="unit">영업일&lt;/span>
+    &lt;/div>
+&lt;/div>
+&lt;div class="form-set">
+    &lt;span class="form-label">small size&lt;/span>
+    &lt;div class="input-set sm">
+        &lt;span class="input-label">건당&lt;/span>
+        &lt;input type="text" class="h-input" placeholder="50">
+        &lt;span class="unit">원&lt;/span>
+    &lt;/div>
+&lt;/div>
+&lt;div class="form-set">
+    &lt;span class="form-label">md size&lt;/span>
+    &lt;div class="input-set md">
+        &lt;span class="input-label">의뢰&lt;/span>
+        &lt;input type="text" class="h-input" value="50" />
+        &lt;span class="unit">원&lt;/span>
+    &lt;/div>
+    &lt;div class="input-set md">
+        &lt;span class="input-label">성공&lt;/span>
+        &lt;input type="text" class="h-input" value="250" />
+        &lt;span class="unit">원&lt;/span>
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+    
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Check form</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="check-group">
+                <div class="h-checkbox">
+                    <input type="radio" id="radio1-1" name="radio" checked="checked" />
+                    <label for="radio1-1"><span>개인</span></label>
+                </div>
+                <div class="h-checkbox">
+                    <input type="radio" id="radio1-2" name="radio" />
+                    <label for="radio1-2"><span>법인</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="check-group">
+    &lt;div class="h-checkbox">
+        &lt;input type="radio" id="radio1-1" name="radio" checked="checked" />
+        &lt;label for="radio1-1">&lt;span>개인&lt;/span>&lt;/label>
+    &lt;/div>
+    &lt;div class="h-checkbox">
+        &lt;input type="radio" id="radio1-2" name="radio" />
+        &lt;label for="radio1-2">&lt;span>법인&lt;/span>&lt;/label>
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Dropdown</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="form-group">
+                <div class="form-set">
+                    <div class="h-checkbox">
+                        <input type="checkbox" id="G1" name="checkbox" checked="checked" />
+                        <label for="G1"><span>보증보험</span></label>
+                    </div>
+                    <div class="input-set xxs ml-10">
+                        <input type="text" class="h-input" placeholder="10" />
+                        <span class="unit">%</span>
+                    </div>
+                </div>
+                <div class="form-set">
+                    <div class="h-checkbox">
+                        <input type="checkbox" id="G3" name="checkbox" />
+                        <label for="G3"><span>협력사 보증</span></label>
+                    </div>
+                </div>
+                <div class="form-set">
+                    <div class="h-checkbox">
+                        <input type="checkbox" id="G4" name="checkbox" />
+                        <label for="G4"><span>기타</span></label>
+                    </div>
+                    <input type="text" class="h-input lg" placeholder="본사보증" />
+                </div>
+            </div>
+        </div>
+
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-group">
+    &lt;div class="form-set">
+        &lt;div class="h-checkbox">
+            &lt;input type="checkbox" id="G1" name="checkbox" checked="checked" />
+            &lt;label for="G1">&lt;span>보증보험&lt;/span>&lt;/label>
+        &lt;/div>
+        &lt;div class="input-set xxs ml-10">
+            &lt;input type="text" class="h-input" placeholder="10" />
+            &lt;span class="unit">%&lt;/span>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="form-set">
+        &lt;div class="h-checkbox">
+            &lt;input type="checkbox" id="G3" name="checkbox" />
+            &lt;label for="G3">&lt;span>협력사 보증&lt;/span>&lt;/label>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="form-set">
+        &lt;div class="h-checkbox">
+            &lt;input type="checkbox" id="G4" name="checkbox" />
+            &lt;label for="G4">&lt;span>기타&lt;/span>&lt;/label>
+        &lt;/div>
+        &lt;input type="text" class="h-input lg" placeholder="본사보증" />
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
             <p class="title">BP - 파일 업로드 </p>
         </div>
-        <div class="g-example-body flex-block bp">
+        <div class="g-example-body flex-block">
             <div class="form-group col filebox">
-                <label for="bp_filename" data-role="button" data-icon="bp-plus" class="blue-border"><span>파일 업로드</span></label> 
+                <label for="bp_filename" data-role="button" data-icon="plus" class="blue-border"><span>파일 업로드</span></label> 
                 <div class="form-set">
                     <select data-role="dropdownlist" data-value="이용약관동의서" data-option-label="이용약관동의서" class="md">
                         <option value="1">온라인</option>
                         <option value="2">오프라인</option>
                     </select>
-                    <div class="input-box lg">
+                    <div class="input-set lg">
                         <input class="h-input" placeholder="파일을 업로드해주세요" disabled="disabled">
-                        <button data-role="button" data-icon="bp-close" class="hidden"></button>
+                        <button data-role="button" data-icon="close" class="hidden"></button>
                     </div>
                     <input type="file" id="bp_filename" class="upload-hidden"> 
                     <button data-role="button" class="gray-border">선택</button>
@@ -103,7 +401,21 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-
+&lt;div class="form-group col filebox">
+    &lt;label for="bp_filename" data-role="button" data-icon="plus" class="blue-border">&lt;span>파일 업로드&lt;/span>&lt;/label> 
+    &lt;div class="form-set">
+        &lt;select data-role="dropdownlist" data-value="이용약관동의서" data-option-label="이용약관동의서" class="md">
+            &lt;option value="1">온라인&lt;/option>
+            &lt;option value="2">오프라인&lt;/option>
+        &lt;/select>
+        &lt;div class="input-set lg">
+            &lt;input class="h-input" placeholder="파일을 업로드해주세요" disabled="disabled">
+            &lt;button data-role="button" data-icon="close" class="hidden">&lt;/button>
+        &lt;/div>
+        &lt;input type="file" id="bp_filename" class="upload-hidden"> 
+        &lt;button data-role="button" class="gray-border">선택&lt;/button>
+    &lt;/div>
+&lt;/div>
             </code></pre>
         </div>
     </div>

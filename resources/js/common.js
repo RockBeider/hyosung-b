@@ -79,10 +79,94 @@ $(document).ready(function () {
 		} else {
 			var filename = $(this).val().split("/").pop().split("\\").pop();
 		}
-		$(this).parent(".filebox").find(".h-input").val(filename);
+		$(this).parents(".filebox").find(".h-input").val(filename);
 	});
 });
 /* =====================================
  * popup
  * =====================================
  */
+
+
+/* =====================================
+ * BP0110 고객등록 - 할인/프로모션 추가 삭제
+ * =====================================
+ */
+
+$(document).on('click', '.adding-set .k-button[data-function="add"]', function() {
+	var listbox = '';
+	listbox += ' <div class="list-box total sm">';
+	listbox += ' <div class="list">';
+	listbox += ' <span class="label has-bar">할인 적용</span>';
+	listbox += ' <span class="desc">업종 할인 &gt; 학원할인</span>';
+	listbox += ' <span class="price-set"><span class="price">- 10,000</span><span class="unit">원</span></span>';
+	listbox += ' <button data-function="close" class="h-ico close hidden"></button>';
+	listbox += ' </div>';
+	listbox += ' </div>';
+	$(this).parents('.adding-set').find('.added').append(listbox);
+});
+
+$(document).on('click', '.list-box .close[data-function="close"]', function() {
+	$(this).parents('.list-box').remove();
+});
+
+/* =====================================
+ * BP0110 고객등록 - 결제서비스 정보 서비스구분
+ * =====================================
+ */
+$(window).load(function () {
+	$('[data-function^="checkbox-check"] input[type="checkbox"]').trigger('change');
+});
+$(document).on('change', '[data-function="checkbox-check1"] input[type="checkbox"]', function(e) { 
+	e.stopPropagation();
+	if($('[data-function="checkbox-check1"] input[type="checkbox"]:checked').length > 0) {
+		$(this).parents('.form-group.box').addClass('is-checked');
+	}else {
+		$(this).parents('.form-group.box').removeClass('is-checked');
+	}
+}).trigger('change');
+
+$(document).on('change', '[data-function="checkbox-check2"] input[type="checkbox"]', function(e) { 
+	e.stopPropagation();
+	if($('[data-function="checkbox-check2"] input[type="checkbox"]:checked').length > 0) {
+		$(this).parents('.form-group.box').addClass('is-checked');
+	}else {
+		$(this).parents('.form-group.box').removeClass('is-checked');
+	}
+}).trigger('change');
+
+$(document).on('change', '[data-function="checkbox-check3"] input[type="checkbox"]', function(e) { 
+	e.stopPropagation();
+	if($('[data-function="checkbox-check3"] input[type="checkbox"]:checked').length > 0) {
+		$(this).parents('.form-group.box').addClass('is-checked');
+	}else {
+		$(this).parents('.form-group.box').removeClass('is-checked');
+	}
+}).trigger('change');
+
+$(document).on('change', '[data-function="checkbox-check4"] input[type="checkbox"]', function(e) { 
+	e.stopPropagation();
+	if($('[data-function="checkbox-check4"] input[type="checkbox"]:checked').length > 0) {
+		$(this).parents('.form-group.box').addClass('is-checked');
+	}else {
+		$(this).parents('.form-group.box').removeClass('is-checked');
+	}
+}).trigger('change');
+
+$(document).on('change', '[data-function="checkbox-check5"] input[type="checkbox"]', function(e) { 
+	e.stopPropagation();
+	if($('[data-function="checkbox-check5"] input[type="checkbox"]:checked').length > 0) {
+		$(this).parents('.form-group.box').addClass('is-checked');
+	}else {
+		$(this).parents('.form-group.box').removeClass('is-checked');
+	}
+}).trigger('change');
+
+$(document).on('change', '[data-function="checkbox-check6"] input[type="checkbox"]', function(e) { 
+	e.stopPropagation();
+	if($('[data-function="checkbox-check6"] input[type="checkbox"]:checked').length > 0) {
+		$(this).parents('.form-group.box').addClass('is-checked');
+	}else {
+		$(this).parents('.form-group.box').removeClass('is-checked');
+	}
+}).trigger('change');

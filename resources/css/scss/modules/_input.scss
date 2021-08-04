@@ -4,7 +4,7 @@
 * ------------------------------
 */
 
-.h-input { //상태
+.h-input, .k-input { //상태
 	@include font-size-sm;
 	flex-grow: 1;
 	flex-shrink: 1;
@@ -38,13 +38,22 @@
 		// @include input_placeholder;
 		font-size: 14px;
 		letter-spacing: -0.75px;
+		font-weight: 400;
 		color: $gray-a;
 	}
 }
-.h-input { //사이즈
+.h-input,.k-input { //사이즈
 	&.sm {
 		max-width: 110px;
 		min-width: 110px;
+	}
+	&.xsm {
+		max-width: 120px;
+		min-width: 120px;
+	}
+	&.md {
+		max-width: 140px;
+		min-width: 140px;
 	}
 	&.lg {
 		max-width: 230px;
@@ -61,42 +70,72 @@
 * input - common
 * ------------------------------
 */
-.input-box {
+.input-set {
 	position: relative;
-	&.sm .h-input {
+	&.sm {
 		max-width: 110px;
 		min-width: 110px;
 	}
-	&.lg .h-input {
+	&.lg {
 		max-width: 230px;
 		min-width: 230px;
 	}
 }
 
-.input-box {
+.input-set {
 	display: flex;
+	align-items: center;
     white-space: nowrap;
+	padding: 0 10px;
+	border: 1px solid $gray-c;
+	border-radius: 3px;
+	width: 100%;
+	height: 28px;
+	background-color: $white;
+	overflow: hidden;
+	
 	&.col {
 		flex-direction: column;
 	}
+	.input-label {
+		@include font-size-sm;
+		margin-right: 6px;
+		color: $gray-6;
+	}
+	.h-input,.k-input {
+		min-width: unset;
+		height: 28px;
+		padding: 0;
+		border: none;
+		font-weight: bold;
+		// text-align: right;
+		
+	}
+	.unit {
+		@include font-size-sm;
+		margin-left: 6px;
+		color: $gray-2;
+	}
 	&.search {
-		&::after {
-			content: '';
-			position: absolute;
-			top: 5px; 
-			left: 10px;
-			display: block;
-			width: 18px;
-			height: 18px;
-			background-image: url($imgPathIcon+'/icon_search.svg');
-			background-size: 18px 18px;
+		padding: 0;
+		.h-input, .k-input {
+			height: 28px;
+			border-radius: 3px 0px 0px 3px;
+			padding-left: 10px;
+			text-align: left;
 		}
-		.h-input {
-			padding-left: 32px;
+		.k-button {
+			min-width: 0;
+			width: 30px;
+			height: 28px;
+			padding: 0;
+			background-color: $white;
+			border-radius: 0px 3px 3px 0;
+			border: none;
 		}
 	} 
 	&.error {
-		.h-input {
+		.h-input,.k-input {
 			border: 1px solid $error;
 		}
 		.note {

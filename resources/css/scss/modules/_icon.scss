@@ -81,8 +81,8 @@ th .required {
             background-image: url($imgPathIcon+'/btn_bookmark_active.svg');
         }
     }
-    &.search {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
+    &.search { //공통
+        @include iconSvg($width: 30px, $height: 100%, $name: 'icon_search', $size: 18px 18px );
         &:disabled {
             background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
@@ -128,12 +128,6 @@ th .required {
             background-image: url($imgPathIcon+'/btn_tip_hover.svg');
         }
     }
-    // 40*40
-    @for $i from 1 through 14 {
-        &.sector#{$i} {
-            @include iconSvg($width: 40px, $height: 40px, $name: 'sector#{$i}', $size: contain );
-        }
-    }
 }
 
 .k-i- {
@@ -144,10 +138,6 @@ th .required {
         @include iconSvg($width: 28px, $height: 28px, $name: 'btn_filter_default', $size: 8px 15px );
         margin-right: -10px;
     }
-    &bp-search {
-        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_search_btn', $size: contain);
-    }
-    
     //xs 15*15
     &up {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_arrow_up', $size: contain );
@@ -173,19 +163,22 @@ th .required {
     }
    
     //sm 18*18
+    &calendar {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_calendar', $size: contain );
+    }
     &bookmark {
         @include iconSvg($width: 18px, $height: 18px, $name: 'btn_bookmark_default', $size: contain );
         &active {
             background-image: url($imgPathIcon+'/btn_bookmark_active.svg');
         }
     }
-    &search {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
+    &search { //공통
+        @include iconSvg($width: 30px, $height: 100%, $name: 'icon_search', $size: 18px 18px );
         &:disabled {
             background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
     }
-    &search-blue {
+    &search-blue { //공통
         @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search_btn', $size: contain );
     }
     &menu1 {

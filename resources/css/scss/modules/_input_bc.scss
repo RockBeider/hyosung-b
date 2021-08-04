@@ -4,7 +4,7 @@
 * ------------------------------
 */
 .bc {
-	.h-input { //상태
+	.h-input,.k-input { //상태
 		@include bc-font-size-xsm;
 		flex-grow: 1;
 		flex-shrink: 1;
@@ -43,7 +43,7 @@
 	}
 }
 .bc {
-	.h-input { //사이즈
+	.h-input,.k-input { //사이즈
 		// &.sm {
 		// 	max-width: 106px;
 		// 	min-width: 106px;
@@ -69,52 +69,17 @@
 * input - common
 * ------------------------------
 */
-.bc {
-	.input-box {
-		position: relative;
-		&.md {
-			max-width: 140px;
-			min-width: 140px;
-		}
-		// &.sm .h-input {
-		// 	max-width: 110px;
-		// 	min-width: 110px;
-		// }
-		// &.lg .h-input {
-		// 	max-width: 230px;
-		// 	min-width: 230px;
-		// }
+.input-set {
+	position: relative;
+	&.md {
+		max-width: 140px;
+		min-width: 140px;
 	}
-	.input-box {
-		display: flex;
-		white-space: nowrap;
-		&.col {
-			flex-direction: column;
-		}
-		&.search {
-			&::after {
-				content: '';
-				position: absolute;
-				top: 5px; 
-				left: 10px;
-				display: block;
-				width: 18px;
-				height: 18px;
-				background-image: url($imgPathIcon+'/icon_search.svg');
-				background-size: 18px 18px;
-			}
-			.h-input {
-				padding-left: 32px;
-			}
-		} 
-		&.error {
-			.h-input {
-				border: 1px solid $error;
-			}
-			.note {
-				@include bc-font-size-xs;
-				color: $error;
-			}
+}
+.input-set {
+	&.error {
+		.note {
+			@include bc-font-size-xs;
 		}
 	}
 }

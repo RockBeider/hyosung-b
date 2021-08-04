@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_contact_04" width="52" height="52" viewBox="0 0 52 52">
+    <defs>
+        <style>
+            .cls-3{fill:#ff8629}
+        </style>
+    </defs>
+    <circle id="Ellipse_32" cx="26" cy="26" r="26" fill="#ffe4cf"/>
+    <g id="Group_648" transform="translate(12.829 13.344)">
+        <g id="Group_637" transform="translate(0.171 0.037)">
+            <g id="Group_634" transform="translate(1.947 2.041)">
+                <path id="Path_424" d="M364.155 531.425h-6.085v-10.354h12.284l1.24-2.071H356v14.5h6.916z" class="cls-3" transform="translate(-356 -519)"/>
+                <g id="Group_633" transform="translate(9.329)">
+                    <path id="Path_425" d="M398.356 522.313h2.071V519h-2.7l-1.24 2.071h1.869z" class="cls-3" transform="translate(-389.048 -519)"/>
+                    <path id="Path_426" d="M387.833 549h-8.068l-1.24 2.071H389.9V549z" class="cls-3" transform="translate(-378.525 -536.575)"/>
+                </g>
+            </g>
+            <g id="Group_635" transform="translate(0 14.466)">
+                <path id="Path_427" d="M372.912 551.071h9.535l1.139 4.556h-13.4l-1.24 2.071h17.294l-2.174-8.7h-9.912z" class="cls-3" transform="translate(-361.636 -549)"/>
+                <path id="Path_428" d="M357.433 555.627h-3.483l1.139-4.556h5.072L361.4 549h-7.928l-2.174 8.7h4.9z" class="cls-3" transform="translate(-351.298 -549)"/>
+            </g>
+            <g id="Group_636" transform="translate(13.13 9.082)">
+                <path id="Path_429" d="M387.746 536l-1.24 2.071h8.074V536z" class="cls-3" transform="translate(-385.054 -536)"/>
+                <path id="Path_430" d="M383.279 536H383v.465z" class="cls-3" transform="translate(-383 -536)"/>
+            </g>
+            <path id="Path_431" d="M401.177 536.844l-1.559-1.364 2.3-2.631-2.3-2.631 1.559-1.364 3.5 4z" class="cls-3" transform="translate(-379.606 -522.731)"/>
+            <path id="Rectangle_1455" d="M0 0H28.621V2.07H0z" class="cls-3" transform="matrix(0.514, -0.858, 0.858, 0.514, 1.99, 24.555)"/>
+        </g>
+    </g>
+</svg>

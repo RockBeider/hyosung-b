@@ -37,16 +37,7 @@
         background-color: $marine-blue;
         border: 1px solid $marine-blue;
     }
-    &:disabled,
-    &:disabled:hover,
-    &:disabled:focus,
-    &:disabled:active { //disabled 상태
-        cursor: default;
-        background: $gray-f5 !important;
-        border: 1px solid $gray-c !important;
-        color: $gray-a !important;
-        opacity: 0.7;
-    }
+    
     &.text {
         background: transparent;
         border: 1px solid transparent;
@@ -88,6 +79,15 @@
     }
 }
 .h-btn, .k-button { //color
+    &:disabled,
+    &:disabled:hover, 
+    &:disabled:focus,
+    &:disabled:active { //disabled 상태
+        cursor: default;
+        background: $btn-blue-disabled !important;
+        border: 1px solid $btn-blue-disabled !important;
+        color: $white !important;
+    }
     &.blue {
         background-color: $main;
         border: 1px soild $main;
@@ -101,6 +101,7 @@
         &.k-state-focused {
             background-color: $marine-blue;
         }
+        
     }
     &.light-blue {
         background-color: $lavender;
@@ -114,6 +115,15 @@
         }
         &.k-state-focused {
             background-color: $btn-light-blue-hover-bg;
+        }
+        &:disabled,
+        &:disabled:hover, 
+        &:disabled:focus,
+        &:disabled:active { //disabled 상태
+            cursor: default;
+            background: $btn-light-blue-disabled !important;
+            border: 1px solid $btn-light-blue-disabled !important;
+            color: $btn-blue-disabled !important;
         }
     }
     &.light-blue-border {
@@ -133,6 +143,15 @@
         &.k-state-focused {
             background-color: $btn-blue-border-hover-bg;
         }
+        &:disabled,
+        &:disabled:hover, 
+        &:disabled:focus,
+        &:disabled:active { //disabled 상태
+            cursor: default;
+            background: $white !important;
+            border: 1px solid $btn-blue-disabled !important;
+            color: $btn-blue-disabled !important;
+        }
     }
     &.gray-border {
         background-color: $white;
@@ -148,6 +167,15 @@
         &.k-state-focused {
             background-color: $gray-e;
             border: 1px solid $gray-a;
+        }
+        &:disabled,
+        &:disabled:hover, 
+        &:disabled:focus,
+        &:disabled:active { //disabled 상태
+            cursor: default;
+            background: $white !important;
+            border: 1px solid $gray-c !important;
+            color: $gray-c !important;
         }
     }
     &.green {
@@ -170,17 +198,17 @@
         border: 1px solid $green-light;
         color: $green;
         &:hover, &:focus {
-            background-color: $green-light;
-            border: 1px solid $green-light;
+            background-color: $green-light-hover;
+            border: 1px solid $green-light-hover;
             color: $green;
         }
         &.k-state-active {
      
         }
         &.k-state-focused {
-            background-color: $green-light;
-            border: 1px solid $green-light;
-            color: $green;
+            background-color: $green-light-hover;
+            border: 1px solid $green-light-hover;
+            color: $green; 
         }
     }    
 }
@@ -232,6 +260,44 @@
                 border-right: 1px solid $gray-a;
                 &.k-state-active, &.k-state-focused  {
                     border-right: 1px solid $accent;
+                }
+            }
+            + .k-button {
+                &.k-state-active {
+                    margin-left: 0px;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    &.multi {
+        .k-button {
+            @include font-size-sm;
+            flex: 0 1 auto;
+            height: 28px;
+            // min-width: 57px;
+            background-color: $white;
+            border:  1px solid $gray-c;
+            border-right: 0;
+            color: $gray-5;
+            border-radius: 0;
+            &.k-state-active, &.k-state-focused  {
+                background-color: $white;
+                border: 1px solid $main;
+                border-right: 0;
+                color: $main;
+                + .k-button {
+                    border-left: 1px solid $main;
+                }
+            }
+            &:first-child {
+                // border-radius: 3px 0 0 3px;
+            }
+            &:last-child {
+                // border-radius: 0 3px 3px 0;
+                border-right: 1px solid $gray-a;
+                &.k-state-active, &.k-state-focused  {
+                    border-right: 1px solid $main;
                 }
             }
             + .k-button {

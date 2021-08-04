@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_contact_06" width="52" height="52" viewBox="0 0 52 52">
+    <defs>
+        <style>
+            .cls-3{fill:#9957ec}
+        </style>
+    </defs>
+    <circle id="Ellipse_34" cx="26" cy="26" r="26" fill="#f4ecfe"/>
+    <g id="Group_647" transform="translate(14.076 13.344)">
+        <g id="Group_685" transform="translate(-511.966 -514.071)">
+            <path id="Rectangle_1529" d="M0 0H28.663V2.074H0z" class="cls-3" transform="matrix(0.514, -0.858, 0.858, 0.514, 513.104, 538.662)"/>
+            <g id="Group_688" transform="translate(515.135 516.53)">
+                <g id="Group_687" transform="translate(0 0)">
+                    <path id="Path_470" d="M555.244 563.244H554v2.074h3.318V562h-2.074z" class="cls-3" transform="translate(-539.068 -544.58)"/>
+                    <path id="Rectangle_1530" d="M0 0H3.733V2.074H0z" class="cls-3" transform="translate(9.954 18.664)"/>
+                    <path id="Path_471" d="M529 567.074h3.733V565h-3.344l-.389.65z" class="cls-3" transform="translate(-524.438 -546.336)"/>
+                    <path id="Path_472" d="M519.074 563.244l1-1.244H518v3.318h.293l1.242-2.074z" class="cls-3" transform="translate(-518 -544.58)"/>
+                    <path id="Rectangle_1531" d="M0 0H2.074V4.562H0z" class="cls-3" transform="translate(0 11.199)"/>
+                    <path id="Rectangle_1532" d="M0 0H2.074V4.562H0z" class="cls-3" transform="translate(0 4.977)"/>
+                    <path id="Path_473" d="M520.074 522.074h1.244V520H518v3.318h2.074z" class="cls-3" transform="translate(-518 -520)"/>
+                    <path id="Path_474" d="M545.4 520H542v2.074h2.291l1.111-2.036z" class="cls-3" transform="translate(-532.046 -520)"/>
+                    <path id="Rectangle_1533" d="M0 0H3.733V2.074H0z" class="cls-3" transform="translate(4.562)"/>
+                    <path id="Path_475" d="M555.2 520l-1.2 2v.077h1.244v1.244h2.074V520z" class="cls-3" transform="translate(-539.068 -520)"/>
+                    <path id="Rectangle_1534" d="M0 0H2.074V4.562H0z" class="cls-3" transform="translate(16.176 4.977)"/>
+                    <path id="Rectangle_1535" d="M0 0H2.074V4.562H0z" class="cls-3" transform="translate(16.176 11.199)"/>
+                </g>
+            </g>
+            <g id="Group_689" transform="translate(523.015 524.411)">
+                <path id="Path_476" d="M543.512 541.074h3.935V539h-2.693z" class="cls-3" transform="translate(-540.811 -539)"/>
+                <path id="Path_477" d="M537 552.074h6.636V550h-5.425L537 552.023z" class="cls-3" transform="translate(-537 -545.438)"/>
+            </g>
+        </g>
+    </g>
+</svg>

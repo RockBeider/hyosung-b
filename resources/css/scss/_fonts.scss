@@ -1,55 +1,55 @@
-//************************************************************
-//* Description of _fonts.scss
-//* @project : Hyosung B system
-//* @category : SCSS
-//* @date : 2021.07
-//* @content : 폰트 설정
-//* @author : bhlbest20@gmail.com
-//************************************************************
-@charset "utf-8";
+// //************************************************************
+// //* Description of _fonts.scss
+// //* @project : Hyosung B system
+// //* @category : SCSS
+// //* @date : 2021.07
+// //* @content : 폰트 설정
+// //* @author : bhlbest20@gmail.com
+// //************************************************************
+// @charset "utf-8";
 
-// 폰트 선언 Mixins > Noto($weight)
+// // 폰트 선언 Mixins > Noto($weight)
 
-// 한글선언
-@font-face {
-  font-family: "Noto Sans Kr";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Noto Sans Regular"), local("NotoSans-Regular"), url("../fonts/NotoSansKR-Regular.woff2") format("woff2"), url("../fonts/NotoSansKR-Regular.woff") format("woff"), url("../fonts/NotoSansKR-Regular.otf") format("opentype");
-}
+// // 한글선언
+// @font-face {
+//   font-family: "Noto Sans Kr";
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local("Noto Sans Regular"), local("NotoSans-Regular"), url("../fonts/NotoSansKR-Regular.woff2") format("woff2"), url("../fonts/NotoSansKR-Regular.woff") format("woff"), url("../fonts/NotoSansKR-Regular.otf") format("opentype");
+// }
 
-@font-face {
-  font-family: "Noto Sans Kr";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Noto Sans Medium"), local("NotoSans-Medium"), url("../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../fonts/NotoSansKR-Medium.woff") format("woff"), url("../fonts/NotoSansKR-Medium.otf") format("opentype");
-}
+// @font-face {
+//   font-family: "Noto Sans Kr";
+//   font-style: normal;
+//   font-weight: 500;
+//   src: local("Noto Sans Medium"), local("NotoSans-Medium"), url("../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../fonts/NotoSansKR-Medium.woff") format("woff"), url("../fonts/NotoSansKR-Medium.otf") format("opentype");
+// }
 
-@font-face {
-  font-family: "Noto Sans Kr";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Noto Sans Bold"), local("NotoSans-Bold"), url("../fonts/NotoSansKR-Bold.woff2") format("woff2"), url("../fonts/NotoSansKR-Bold.woff") format("woff"), url("../fonts/NotoSansKR-Bold.otf") format("opentype");
-}
+// @font-face {
+//   font-family: "Noto Sans Kr";
+//   font-style: normal;
+//   font-weight: 700;
+//   src: local("Noto Sans Bold"), local("NotoSans-Bold"), url("../fonts/NotoSansKR-Bold.woff2") format("woff2"), url("../fonts/NotoSansKR-Bold.woff") format("woff"), url("../fonts/NotoSansKR-Bold.otf") format("opentype");
+// }
 
-// 숫자 선언
-@font-face {
-  font-family: "Noto Sans Kr";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Roboto Regular"), local("Roboto-Regular"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
-  unicode-range: U+0030-0039;
-}
+// // 숫자 선언
+// @font-face {
+//   font-family: "Noto Sans Kr";
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local("Roboto Regular"), local("Roboto-Regular"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+//   unicode-range: U+0030-0039;
+// }
 
-@font-face {
-  font-family: "Noto Sans Kr";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Roboto Bold"), local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype");
-  unicode-range: U+0030-0039;
-}
-@font-face {
-  font-family: "WebComponentsIcons";
-  src: url("../lib/kendo/styles/fonts/glyphs/WebComponentsIcons.woff") format("woff"),
-       url("../lib/kendo/styles/fonts/glyphs/WebComponentsIcons.ttf") format("truetype");
-}
+// @font-face {
+//   font-family: "Noto Sans Kr";
+//   font-style: normal;
+//   font-weight: 700;
+//   src: local("Roboto Bold"), local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype");
+//   unicode-range: U+0030-0039;
+// }
+// @font-face {
+//   font-family: "WebComponentsIcons";
+//   src: url("../lib/kendo/styles/fonts/glyphs/WebComponentsIcons.woff") format("woff"),
+//        url("../lib/kendo/styles/fonts/glyphs/WebComponentsIcons.ttf") format("truetype");
+// }

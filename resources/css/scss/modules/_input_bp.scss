@@ -3,46 +3,24 @@
 * input - common
 * ------------------------------
 */
-.bp {
-	.h-input { //상태
+.h-input, .k-input { //상태
+	@include bp-font-size-sm;
+	height: 30px;
+	
+	// &.readonly,
+	// &.readonly:focus,
+	// &[readonly],
+	// &[readonly]:focus {
+	// 	border:  1px solid $gray-e4;
+	// 	background-color: $white;
+	// }
+	&::placeholder {
 		@include bp-font-size-sm;
-		flex-grow: 1;
-		flex-shrink: 1;
-		flex-basis: auto;
-		width: 100%;
-		height: 30px;
-		padding: 0 10px;
-		background-color: $white;
-		border:  1px solid $gray-c;
-		border-radius: 3px;
-		color: $gray-5;
-		line-height: 30px;
-		transition: 0.3s ease-in-out;
-		&:focus {
-			border:  1px solid $gray-2;
-			color: $gray-2
-		}
-		&:disabled,
-		&:disabled:focus {
-			border:  1px solid $gray-c;
-			background-color: $gray-f5;
-			color: $gray-a;
-		}
-		// &.readonly,
-		// &.readonly:focus,
-		// &[readonly],
-		// &[readonly]:focus {
-		// 	border:  1px solid $gray-e4;
-		// 	background-color: $white;
-		// }
-		&::placeholder {
-			@include bp-font-size-sm;
-			color: $gray-a;
-			font-weight: 400;
-		}
+		color: $gray-a;
+		font-weight: 400;
 	}
 }
-.bp .h-input { //사이즈
+.h-input, .k-input { //사이즈
 	&.sm {
 		max-width: 106px;
 		min-width: 106px;
@@ -62,7 +40,7 @@
 * input - common
 * ------------------------------
 */
-.input-box {
+.input-set {
 	// &.sm .h-input {
 	// 	max-width: 110px;
 	// 	min-width: 110px;
@@ -73,101 +51,79 @@
 	// }
 }
 
-.bp {
-	.input-box {
-		position: relative;
-		display: flex;
-		align-items: center;
-		padding: 0 10px;
-		border: 1px solid $gray-c;
-		border-radius: 3px;
-		width: 100%;
-		height: 30px;
-		background-color: $white;
-		white-space: nowrap;
-		&.col {
-			flex-direction: column;
-			align-items: flex-start;
+.input-set {
+	&.col {
+		align-items: flex-start;
+	}
+	&.xxs {
+		max-width: 60px;
+		min-width: unset;
+	}
+	&.xs {
+		max-width: 100px;
+		min-width: unset;
+	}
+	&.sm {
+		max-width: 134px;
+		min-width: 134px;
+	}
+	&.md {
+		max-width: 170px;
+		min-width: unset;
+	}
+	&.lg {
+		max-width: 320px; 
+		min-width: unset;
+	}
+}
+.input-set {
+	height: 30px;
+	&.search {
+		.h-input, .k-input {
+			padding: 0 10px;
 		}
-		&.xxs {
-			max-width: 60px;
-			min-width: unset;
-		}
-		&.xs {
-			max-width: 100px;
-			min-width: unset;
-		}
-		&.sm {
-			max-width: 134px;
-			min-width: 134px;
-		}
-		&.md {
-			max-width: 170px;
-			min-width: unset;
-		}
-		&.lg {
-			max-width: 320px; 
-			min-width: unset;
-		}
-		.input-label {
-			@include bp-font-size-sm;
-			margin-right: 6px;
-			color: $gray-6;
-		}
-		.h-input {
-			min-width: unset;
-			height: 28px;
+		.k-button {
 			padding: 0;
-			border: none;
-			font-weight: bold;
-			text-align: right;
+			border-left: 1px solid $gray-c;
 		}
-		.unit {
-			@include bp-font-size-sm;
-			margin-left: 6px;
-			color: $gray-2;
+		.k-i-search { 
+			background-size: 16px 16px;
 		}
-
+	}
+	.input-label {
+		@include bp-font-size-sm;
+		font-weight: bold;
+	}
+	.unit {
+		@include bp-font-size-sm;
+	}
+	.h-input ,.k-input {
+		color: $gray-2;
+		border-radius: 3px 0px 0px 3px;
+		// padding-left: 10px;
+		text-indent: -1px;
+		text-align: right;
+		&::after {
+			content: '';
+			display: block;
+			width: 1px;
+			height: 100%;
+		}
+	}
+	.k-button {
+		height: 28px;
 		
-		&.search {
-			padding: 0;
-			.h-input {
-				height: 28px;
-				border-radius: 3px 0px 0px 3px;
-				padding-left: 10px;
-				text-align: left;
-				// min-width: unset;
-			}
-			.k-button {
-				min-width: 30px;
-				height: 28px;
-				padding: 0;
-				background-color: $white;
-				border-radius: 0px 3px 3px 0;
-				border: none;
-				border-left: 1px solid $gray-c;
-			}
-			.k-i-bp-search {
-				@include iconSvg($width: 30px, $height: 28px, $name: 'icon_search', $size: 16px 16px );
-				content: '';
-				position: absolute;
-				top: 0px; 
-				right: 0px;
-				background-position: center;
-			}
-		} 
-		&.error {
-			border: none;
-			padding: 0;
-			.h-input {
-				padding: 0 10px;
-				border: 1px solid $error;
-				text-align: left;
-			}
-			.note {
-				@include bp-font-size-xs;
-				color: $error;
-			}
+	}
+	&.error {
+		border: none;
+		padding: 0;
+		.h-input,.k-input {
+			padding: 0 10px;
+			border: 1px solid $error;
+			text-align: left;
+		}
+		.note {
+			@include bp-font-size-xs;
 		}
 	}
 }

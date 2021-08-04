@@ -1,102 +1,81 @@
 
 
-.bp {
-    .h-ico, .k-icon {
-        display: inline-flex;
-        flex: 0 0 auto;
-        vertical-align: middle;
-        text-indent: -9999px;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
-        padding: 0;
-        position: relative; //IE 버튼 흔들림 방지
-        transition: background 0.3s ease;
-    }
-    .h-ico {
-        &.xs {
-            width: 15px;
-            height: 15px;
-        }
-        &.xsm {
-            width: 16px;
-            height: 16px;
-        }
-        &.sm {
-            width: 18px;
-            height: 18px;
-        }
-        &.md {
-            width: 20px; 
-            height: 20px;
-        }
-        &.lg {
-            width: 26px; 
-            height: 26px;
-        }
-        &.xl {
-            width: 40px; 
-            height: 40px;
+.h-ico {
+    // 40*40
+    @for $i from 1 through 14 { //업종구분
+        &.sector#{$i} {
+            @include iconSvg($width: 40px, $height: 40px, $name: 'sector#{$i}', $size: contain );
         }
     }
-    th .required {
-        vertical-align: middle;
-        display: inline-block;
-        margin-left: 2px;
-        color: $error;
-        font-size: 14px;
-    }
-    .h-ico {
-        // 40*40
-        @for $i from 1 through 14 { //업종구분
-            &.sector#{$i} {
-                @include iconSvg($width: 40px, $height: 40px, $name: 'sector#{$i}', $size: contain );
-            }
+}
+.k-button.k-state-active, .k-button.k-state-focused, .k-button:hover {
+    @for $i from 1 through 14 {
+        .h-ico.sector#{$i} {
+            background-image: url($imgPathIcon+'/sector#{$i}_hover.svg');
         }
     }
-    .k-button.k-state-active, .k-button.k-state-focused, .k-button:hover {
-        @for $i from 1 through 14 {
-            .h-ico.sector#{$i} {
-                background-image: url($imgPathIcon+'/sector#{$i}_hover.svg');
-            }
-        }
+}
+.h-ico { 
+    &.refresh {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_refresh', $size: contain);
+    }
+    &.link {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_link', $size: contain);
+    }
+    &.down {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_down', $size: contain);
+    }
+    &.up {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_up', $size: contain);
+    }
+    &.close {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'btn_X', $size: 16px 16px );
+    }
+    &.plus {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_plus', $size: contain );
     }
 
-    .k-i- { 
-        &example {
-        background: gray;
+    //lg 24*24 
+    &.register {
+        @include iconSvg($width: 24px, $height: 24px, $name: 'icon_regi', $size: contain );
+    }
+
+    &.search { //공통
+        @include iconSvg($width: 30px, $height: 100%, $name: 'icon_search', $size: 16px 16px );
+        &:disabled {
+            background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
-        &bp-register {
-            @include iconSvg($width: 24px, $height: 24px, $name: 'icon_regi', $size: contain );
+    }
+}
+.k-i- { 
+    &refresh {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_refresh', $size: contain);
+    }
+    &link {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_link', $size: contain);
+    }
+    &down {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_down', $size: contain);
+    }
+    &up {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_up', $size: contain);
+    }
+    &close {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'btn_X', $size: contain );
+    }
+    &plus {
+        @include iconSvg($width: 16px, $height: 16px, $name: 'icon_plus', $size: contain );
+    }
+
+    //lg 24*24 
+    &register {
+        @include iconSvg($width: 24px, $height: 24px, $name: 'icon_regi', $size: contain );
+    }
+
+    &search { //공통
+        @include iconSvg($width: 30px, $height: 100%, $name: 'icon_search', $size: 16px 16px );
+        &:disabled {
+            background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
-        &refresh {
-            @include iconSvg($width: 16px, $height: 16px, $name: 'icon_refresh', $size: contain);
-        }
-        &link {
-            @include iconSvg($width: 16px, $height: 16px, $name: 'icon_link', $size: contain);
-        }
-        &bp-down {
-            @include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_down', $size: contain);
-        }
-        &bp-up {
-            @include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_up', $size: contain);
-        }
-        &bp-close {
-            @include iconSvg($width: 16px, $height: 16px, $name: 'btn_X', $size: contain );
-        }
-        &bp-plus {
-            @include iconSvg($width: 16px, $height: 16px, $name: 'icon_plus', $size: contain );
-        }
-        &search {
-            @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
-            &:disabled {
-                background-image: url($imgPathIcon+'icon_search_disabled.svg');
-            }
-        }
-        &search-blue {
-            @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search_btn', $size: contain );
-        }
-    
     }
 }

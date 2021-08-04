@@ -52,6 +52,9 @@ td .form-box, th .form-box {
         margin: 0 -1px;
         table-layout: fixed;
     }
+    tbody {
+        th, td { text-align: left; }
+    }
     th, td {
         border: 1px solid $gray-e4;
     }
@@ -68,9 +71,7 @@ td .form-box, th .form-box {
         padding: 6px 10px;
         color: $gray-2;
     }
-    tbody {
-        th, td { text-align: left; }
-    }
+    
 }
 
 .table-bottom {

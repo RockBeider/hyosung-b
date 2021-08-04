@@ -58,7 +58,7 @@
             <!-- [D] disabled 상태 -->
             <input type="text" class="h-input sm" value="disabled" disabled="disabled" />
             <!-- [D] error 상태 -->
-            <div class="input-box col sm error">
+            <div class="input-set col sm error">
                 <input type="text" class="h-input" value="error" />
                 <p class="note">Error Message</p>
             </div>
@@ -72,7 +72,7 @@
 &lt;!-- [D] disabled 상태 -->
 &lt;input type="text" class="h-input sm" value="disabled" disabled="disabled" />
 &lt;!-- [D] error 상태 -->
-&lt;div class="input-box sm error">
+&lt;div class="input-set sm error">
 &lt;input type="text" class="h-input" value="error" />
 &lt;p class="note">Error Message&lt;/p>
 &lt;/div>
@@ -82,7 +82,41 @@
 
     <div class="g-example-wrap">
         <div class="g-example-head">
-            <p class="title">Form Group</p>
+            <p class="title">Date picker</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <input data-role="datepicker"
+                   style="width: 100%">
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Tooltip</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <span class="k-button k-primary"
+                  title="툴팁 메세지 입니다."
+                  data-role="tooltip"
+                  data-auto-hide="false"
+                  data-position="bottom"
+            >Hover me!</span>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">검색부분</p>
         </div>
         <div class="g-example-body flex-block">
             <div class="form-group">
@@ -92,7 +126,7 @@
                         <option value="1">온라인</option>
                         <option value="2">오프라인</option>
                     </select>
-                    <div class="input-box search lg">
+                    <div class="input-set search lg">
                         <input type="text" class="h-input" placeholder="입력해주세요">
                     </div>
                 </div>
@@ -132,7 +166,7 @@
         &lt;option value="1">온라인&lt;/option>
         &lt;option value="2">오프라인&lt;/option>
     &lt;/select>
-    &lt;div class="input-box search lg">
+    &lt;div class="input-set search lg">
         &lt;input type="text" class="h-input" placeholder="입력해주세요">
     &lt;/div>
 &lt;/div>

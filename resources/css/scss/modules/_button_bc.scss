@@ -3,253 +3,182 @@
  * 버튼
  * ------------------------------
  */
-.bc {
-    .h-btn , .k-button {
-        &.hidden {
-            @include hide-text;
-            min-width: 0 !important;
-            padding: 0 !important;
-            background-color: transparent !important;
-            border: 0 !important;
+.h-btn, .k-button {
+    @include bc-font-size-sm;
+
+    height: 26px;
+    padding: 0 16px;
+    border-radius: 3px;
+    
+    background-color: $bc-blue;
+    border: 1px solid $bc-blue;
+    color: $white;
+    
+    &:hover, &:focus {
+        background-color: $bc-blue-hover;
+        border: 1px solid $bc-blue-hover;
+    }
+    &.k-state-focused {
+        background-color: $bc-blue-hover;
+        border: 1px solid $bc-blue-hover;
+    }
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus,
+    &:disabled:active { //disabled 상태
+        cursor: default;
+        background: $gray-f5 !important;
+        border: 1px solid $gray-c !important;
+        color: $gray-a !important;
+        opacity: 0.7;
+    }
+    &.md {
+        height: 30px;
+        padding: 0 20px;
+    }
+    .k-icon {
+        width: 16px;
+        height: 16px;
+    }
+    &:not(.col)> * + * {
+        // 아이콘 같이 있는 경우
+        margin-left: 6px;
+    }
+    &.k-button-icontext { //아이콘 + 텍스트 버튼
+        padding: 0 12px;
+        > * + * {
+            margin-left: 4px;
+        }
+        &.md > * + * {
+            margin-left: 8px; 
         }
     }
-    .h-btn, .k-button {
-        @include bc-font-size-sm;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        flex: 0 0 auto;
-        height: 26px;
-        padding: 0 16px;
-        border-radius: 3px;
-        white-space: nowrap;
-        transition: background 0.2s ease-in;
-        
-        background-color: $bc-blue;
+    /*
+    * ------------------------------
+    * 헤더버튼
+    * ------------------------------
+    */
+}
+.h-btn, .k-button { //color
+    &.blue {
+        background: $bc-blue;
         border: 1px solid $bc-blue;
         color: $white;
-        
         &:hover, &:focus {
             background-color: $bc-blue-hover;
             border: 1px solid $bc-blue-hover;
+        }
+        &.k-state-active {
+
         }
         &.k-state-focused {
             background-color: $bc-blue-hover;
             border: 1px solid $bc-blue-hover;
         }
-        &:disabled,
-        &:disabled:hover,
-        &:disabled:focus,
-        &:disabled:active { //disabled 상태
-            cursor: default;
-            background: $gray-f5 !important;
-            border: 1px solid $gray-c !important;
-            color: $gray-a !important;
-            opacity: 0.7;
+    }
+    &.light-blue {
+        background: $bc-light-blue;
+        border: 1px solid $bc-light-blue;
+        color: $bc-blue;
+        &:hover, &:focus {
+            background-color: $bc-light-blue-hover;
+            border: 1px solid $bc-light-blue-hover;
         }
-        &.md {
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $bc-light-blue-hover;
+            border: 1px solid $bc-light-blue-hover;
+        }
+    }
+    &.blue-border {
+        background: $white;
+        border: 1px solid $bc-blue;
+        color: $layer-blue;
+        &:hover, &:focus {
+            background-color: $bc-light-blue;
+            border: 1px solid $bc-blue;
+        }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $bc-light-blue;
+            border: 1px solid $bc-blue;
+        }
+    }
+    &.gray-border {
+        background: $white;
+        border: 1px solid $gray-5;
+        color: $gray-2;
+        &:hover, &:focus {
+            background-color: $gray-e;
+            border: 1px solid $gray-9;
+        }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $gray-e;
+            border: 1px solid $gray-9;
+        }
+    }
+    &.green {
+        background: $white;
+        border: 1px solid $gray-5;
+        color: $gray-2;
+        &:hover, &:focus {
+            background-color: $gray-e;
+            border: 1px solid $gray-9;
+        }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $gray-e;
+            border: 1px solid $gray-9;
+        }
+    }
+    &.light-green {
+        background: $white;
+        border: 1px solid $gray-5;
+        color: $gray-2;
+        &:hover, &:focus {
+            background-color: $gray-e;
+            border: 1px solid $gray-9;
+        }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $gray-e;
+            border: 1px solid $gray-9;
+        }
+    }
+}
+/*
+* ------------------------------
+* 버튼 그룹
+* ------------------------------
+*/
+.btn-box {
+    &.md {
+        .k-button {
             height: 30px;
             padding: 0 20px;
         }
-        &.text {
-            background: transparent;
-            height: auto;
-            padding: 0; 
-            text-decoration: underline;
-        }
-        .k-icon {
-            width: 16px;
-            height: 16px;
-        }
-        &:not(.col)> * + * {
-            // 아이콘 같이 있는 경우
-            margin-left: 6px;
-        }
-        &.k-button-icontext { //아이콘 + 텍스트 버튼
-            padding: 0 12px;
-            > * + * {
-                margin-left: 4px;
-            }
-            &.md > * + * {
-                margin-left: 8px; 
-            }
-        }
-        /*
-        * ------------------------------
-        * 헤더버튼
-        * ------------------------------
-        */
-        &.logout { //로그아웃
-            margin-left: 6px;
-            border: 1px solid $btn-light-border;
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                border: 1px solid $btn-light-border;
-            }
-        }
     }
-    .h-btn, .k-button { //color
-        &.blue {
-            background: $bc-blue;
-            border: 1px solid $bc-blue;
-            color: $white;
-            &:hover, &:focus {
-                background-color: $bc-blue-hover;
-                border: 1px solid $bc-blue-hover;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $bc-blue-hover;
-                border: 1px solid $bc-blue-hover;
-            }
-        }
-        &.light-blue {
-            background: $bc-light-blue;
-            border: 1px solid $bc-light-blue;
-            color: $bc-blue;
-            &:hover, &:focus {
-                background-color: $bc-light-blue-hover;
-                border: 1px solid $bc-light-blue-hover;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $bc-light-blue-hover;
-                border: 1px solid $bc-light-blue-hover;
-            }
-        }
-        &.blue-border {
-            background: $white;
-            border: 1px solid $bc-blue;
-            color: $layer-blue;
-            &:hover, &:focus {
-                background-color: $bc-light-blue;
-                border: 1px solid $bc-blue;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $bc-light-blue;
-                border: 1px solid $bc-blue;
-            }
-        }
-        &.gray-border {
-            background: $white;
-            border: 1px solid $gray-5;
-            color: $gray-2;
-            &:hover, &:focus {
-                background-color: $gray-e;
-                border: 1px solid $gray-9;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $gray-e;
-                border: 1px solid $gray-9;
-            }
-        }
-        &.green {
-            background: $white;
-            border: 1px solid $gray-5;
-            color: $gray-2;
-            &:hover, &:focus {
-                background-color: $gray-e;
-                border: 1px solid $gray-9;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $gray-e;
-                border: 1px solid $gray-9;
-            }
-        }
-        &.light-green {
-            background: $white;
-            border: 1px solid $gray-5;
-            color: $gray-2;
-            &:hover, &:focus {
-                background-color: $gray-e;
-                border: 1px solid $gray-9;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $gray-e;
-                border: 1px solid $gray-9;
-            }
-        }
+    .k-button + .k-button {
+        margin-left: 6px;
     }
-    /*
-    * ------------------------------
-    * 버튼 그룹
-    * ------------------------------
-    */
-    .btn-box {
-        &.md {
-            .k-button {
-                height: 30px;
-                padding: 0 20px;
-            }
-        }
-        display: flex;
-        justify-content: center;
+}
+
+.k-button-group {
+    &.period {
         .k-button {
-            flex: 0 1 auto;
-        }
-        .k-button + .k-button {
-            margin-left: 6px;
-        }
-    }
-
-    .k-button-group {
-        display: flex;
-        justify-content: center;
-        &.period {
-            .k-button {
-                @include bc-font-size-sm;
-                flex: 0 1 auto;
-                min-width: 57px;
-                background-color: $white;
-                border:  1px solid $gray-a;
-                border-right: 0;
-                color: $gray-7;
-                border-radius: 0;
-                &.k-state-active, &.k-state-focused  {
-                    background-color: $accent;
-                    border: 1px solid $accent;
-                    border-right: 0;
-                    color: $white;
-                    + .k-button {
-                        border-left: 1px solid $accent;
-                    }
-                }
-                &:first-child {
-                    border-radius: 3px 0 0 3px;
-                }
-                &:last-child {
-                    border-radius: 0 3px 3px 0;
-                    border-right: 1px solid $gray-a;
-                    &.k-state-active, &.k-state-focused  {
-                        border-right: 1px solid $accent;
-                    }
-                }
-                + .k-button {
-                    &.k-state-active {
-                        margin-left: 0px;
-                        padding-left: 20px;
-                    }
-                }
-            }
+            @include bc-font-size-sm;
+            
         }
     }
 }

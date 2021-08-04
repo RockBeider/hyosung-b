@@ -4,166 +4,41 @@
  * ------------------------------
  */
 
-.form-group {
+.box-group {
     display: flex;
-    align-items: center;
-    // > * + * {
-    //     margin-left: 6px;
-    // }
-    &.col {
-        //세로 정렬일 경우
-        flex-direction: column;
-        flex-wrap: wrap;
-        > * + * {
-            margin-left: 0;
-            margin-top: 10px;
-        }
-        .form-set {
-            width: 100%;
-        }
-    }
-    .form-label {
-        white-space: nowrap;
+    > * + * {
+        margin-left: 6px;
     }
 }
-.bp {
-    .box-group {
-        display: flex;
-        > * + * {
-            margin-left: 6px;
+.form-group {
+    .label {
+        @include bp-font-size-sm;
+    }
+    &.box {
+        padding: 16px 21px;
+        border: 1px solid $gray-c;
+        border-radius: 3px;
+        flex: 1 1 auto;
+        &.is-checked {
+            border: 1px solid $layer-blue;
         }
     }
-    .form-group {
-        .label {
-            @include bp-font-size-sm;
-            color: $gray-2;
-            white-space: nowrap;
-        }
-        &.box {
-            padding: 16px 21px;
-            border: 1px solid $gray-c;
-            border-radius: 3px;
-            flex: 1 1 auto;
-            &.is-checked {
-                border: 1px solid $layer-blue;
-            }
-            // + .form-group.box {
-            //     margin: 0 0 0 6px; //가이드 때문
-            // }
-        }
+    > * + * {
+        margin-left: 20px;
+    }
+    &.col {
         > * + * {
-            margin-left: 20px;
-        }
-        &.col {
-            > * + * {
-                margin-left: 0;
-                margin-top: 6px;
-            }
+            margin-left: 0;
+            margin-top: 6px;
         }
     }
 }
 
 .form-set {
-    display: flex;
-    align-items: center;
     > *:not(.bar) + *:not(.bar) {
-        margin-left: 8px;
+        margin-left: 6px;
     }
-    .form-label {
-        white-space: nowrap;
-    }
-    .bar {
-        margin: 0 2px;
-        color: $gray-5;
-    }
-    .h-btn {
-        flex: 0 0 auto;
-    }
-    .h-checkbox input[type="radio"] + label,
-    .h-checkbox input[type="checkbox"] + label {
-        white-space: nowrap;
-    }
-}
-.bp {
-    .form-set {
-        > *:not(.bar) + *:not(.bar) {
-            margin-left: 6px;
-        }
-        .h-checkbox + .input-box {
-            margin-left: 10px;
-        }
-    }
-}
-.search-control {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 24px 20px;
-    background: #fff;
-    border: 1px solid $searchLine;
-    overflow: hidden;
-    .label {
-        // @include font-size-sm;
-        margin-right: 12px;
-        height: 28px;
-        color: $gray-7;
-        white-space: nowrap;
-        font-weight: 500;
-    }
-    .form-group {
-        white-space: nowrap;
-        > * + * {
-            margin-left: 0;
-        }
-    }
-    .form-set {
-        float: left;
-        padding-right: 20px;
-    }
-    .h-btn.search {
+    .h-checkbox + .input-set {
         margin-left: 10px;
-        background: $white;
-        border: 1px solid $main;
-        color: $main;
-    }
-    .k-button.search {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 89px; 
-        height: 100%;
-        background-color: transparent;
-        border: 0;
-        border-left: 1px solid $gray-e;
-        color: $main;
-    }
-    .label {
-        // @include font-size-sm;
-        margin-right: 12px;
-        height: 28px;
-        color: $gray-7;
-        white-space: nowrap;
-        font-weight: 500;
-    }
-    .h-checkbox input[type="radio"] + label {
-        display: flex;
-        align-items: center;
-        height: 28px;
-    }
-    .h-checkbox input[type="radio"] + label:before {
-        top: 50%;
-        margin-top: rem(-9);
     }
 }
-
-// .form-set {
-// 	display: flex;
-// 	align-items: center;
-// 	color: $gray-5;
-// 	font-size: 14px;
-
-// 	// .btn-box.period {
-// 	// 	margin-left: 8px;
-// 	// }
-// }

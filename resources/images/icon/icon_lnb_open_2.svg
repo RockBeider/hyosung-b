@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_lnb_open" width="15" height="15" viewBox="0 0 15 15">
+    <defs>
+        <style>
+            .cls-2{fill:#0e4194}
+        </style>
+    </defs>
+    <g id="Group_692" transform="translate(2.287 2.111)">
+        <path id="Path_482" d="M199.81 360.264l5.388-5.388-5.388-5.388-1.147 1.146 4.242 4.242-4.242 4.242z" class="cls-2" transform="translate(-194.124 -349.487)"/>
+        <path id="Path_483" d="M219.409 360.264l5.388-5.388-5.388-5.388-1.147 1.146 4.242 4.242-4.242 4.242z" class="cls-2" transform="translate(-218.263 -349.487)"/>
+    </g>
+</svg>

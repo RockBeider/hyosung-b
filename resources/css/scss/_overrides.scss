@@ -8,35 +8,209 @@
 }
 /*
 * ------------------------------
+* tooltip
+* ------------------------------
+*/
+.k-tooltip {
+	@include font-size-sm;
+	margin: 3px;
+	padding: 10px;
+	background: $white;
+	border: 1px solid $main;
+	border-radius: 3px;
+	color: $main;
+	.k-tooltip-button {
+		display: none;
+	}
+}
+/*
+* ------------------------------
+* datepicker
+* ------------------------------
+*/
+.k-datepicker {
+    position: relative;
+    display: inline-flex;
+	max-width: 120px;
+	height: 28px;
+
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+	.k-picker-wrap {
+		display: flex;
+		padding: 0 10px 0 4px;
+		border: 1px solid $gray-c;
+		border-radius: 3px;
+		.k-input {
+			padding: 0 0 0 2px;
+			height: 26px;
+			border: none;
+			order: 2;
+		} 
+		&.k-state-active , 
+		&.k-state-focused  {	
+			border: 1px solid $gray-2;
+		}
+	}
+	.k-select {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 26px;
+		flex: 0 0 auto;
+		text-align: center;
+		cursor: pointer;
+		order: 1;
+	}
+}
+.k-popup .k-calendar {
+	height: 100%;
+}
+.k-calendar-container .k-calendar {
+
+}
+.k-calendar {
+	width: 256px;
+	height: 247px;
+	margin-top: 3px;
+	border: 1px solid $gray-2;
+	background-color: $white;
+	overflow: hidden;
+	.k-header {
+		@include font-size-sm;
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		// text-align: center;
+		position: relative;
+		height: 45px;
+		padding: 10px;
+		background-color: $white;
+		border-bottom: 1px solid $gray-d;
+		color: $gray-2;
+		font-weight: 500;
+		z-index: 2;
+		.k-link {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		.k-i-arrow-60-left {
+			@include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_left', $size: contain );
+		}
+		.k-i-arrow-60-right {
+			@include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_right', $size: contain );
+
+		}
+	}
+	.k-nav-next, .k-nav-prev {
+		
+	}
+	.k-nav-fast {
+		padding: 0 10px;
+	}
+	.k-calendar-view {
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		margin: auto;
+		padding: 0 10px;
+	}
+	table.k-content {
+		display: inline-table;
+		vertical-align: top;
+		table {
+			margin: 0;
+			border-width: 0;
+			border-color: inherit;
+			border-spacing: 0;
+			border-collapse: separate;
+			table-layout: fixed;
+			outline: 0;
+			position: relative;
+			z-index: 1;
+		}
+	}
+	.k-calendar-view {
+		height: 201px;
+	}
+	.k-calendar-view th { //요일
+		padding: 10px 0 4px;
+		color: $gray-7;
+		font-size: 13px;
+		line-height: 19px;
+		letter-spacing: -0.65px;
+		font-weight: 500;
+	}
+	.k-content { //일자
+		.k-other-month .k-link {
+			color: $gray-a;
+		}
+		.k-link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 24px; 
+			height: 24px;
+			margin: 1px 3px;
+			border-radius: 50%;
+			font-size: 13px;
+			letter-spacing: -0.65px;
+			// line-height: 26px;
+			font-weight: 400;
+		}
+		.k-state-hover .k-link {
+			background-color: $lavender;
+			border: 1px solid $lavender;
+		}
+		.k-state-selected .k-link, .k-state-focused .k-link {
+			background-color: $main;
+			border: 1px solid $main;
+			color: $white;
+		}
+		.k-today .k-link {
+			background-color: $white;
+			border: 1px solid $main;
+			color: $main;
+		}
+	}
+	.k-footer {
+		display: none !important;
+	}
+	// .k-calendar .k-calendar-content .k-calendar-th, 
+	// .k-calendar .k-calendar-content th, 
+	// .k-calendar .k-calendar-view .k-calendar-th .k-meta-header, 
+	// .k-calendar .k-calendar-view th, 
+	// .k-calendar .k-content .k-calendar-th, 
+	// .k-calendar .k-content th, 
+	// .k-calendar .k-month-header
+}
+
+
+/*
+* ------------------------------
 * dropdown
 * ------------------------------
 */
-.bp {
-	.k-dropdown {
-		height: 30px; 
-		&.sm {
-			min-width: 106px !important;
-		}
-		&.md {
-			min-width: 180px !important;
-			max-width: 180px !important;
-		}
-	}
-}
 .k-dropdown {
 	width: 100%;
 	white-space: nowrap;
 	display: inline-flex;
 	min-width: 110px !important;
 	height: 28px;
-	
+	&.sm {
+	}
+	&.md {
+	}
 	.k-dropdown-wrap {
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		// height: 28px;
 		height: 100%;
 		padding: 0;
 		background: $white;
@@ -61,8 +235,8 @@
 			color: $gray-2;
 		}
 		.k-input {
-			@include font-size-sm;
-			text-indent: 10px;
+			height: 100%;
+			border: none;
 		}
 		.k-select {
 			vertical-align: middle;
@@ -95,10 +269,11 @@
 }
 .k-animation-container {
 	width: 150px !important;
-	margin: 3px 0;
+	margin: 0 !important;
 }
 .k-popup.k-list-container {
 	width: 100% !important;
+	margin-top: 3px;
 	padding: 8px 5px;
 	border: none;
 	background-color: $white;
@@ -450,7 +625,7 @@
 * ------------------------------
 */
 .k-textarea {
-	// @include bp-font-size-sm;
+	@include font-size-sm;
 	display: flex;
 	padding: 6px 10px;
 	border: 1px solid $gray-c;
@@ -460,8 +635,14 @@
 	&.sm {
 		height: 80px;
 	}
+	.k-input {
+		max-width: unset;
+		border: 0;
+		padding: 0;
+		height: 100%;
+	}
 	::placeholder {
-		// @include bp-font-size-sm;
+		@include font-size-sm;
 		color: $gray-a;
 		font-weight: 400;
 	}
@@ -476,12 +657,12 @@
 * ------------------------------
 */
 
-$icon-size: 16px;
+// $icon-size: 16px;
 .k-icon {
 	// width: 16px;
 	// height: 16px;
 	outline: 0;
-	font-size: $icon-size;
+	// font-size: $icon-size;
 	font-family: "WebComponentsIcons";
 	font-style: normal;
 	font-variant: normal;
@@ -571,11 +752,12 @@ $icon-size: 16px;
 		cursor: pointer;
 	}
 }
-.k-icon-xs { font-size: ( $icon-size * .5 ); }
-.k-icon-sm { font-size: ( $icon-size * .75 ); }
-.k-icon-md { font-size: ( $icon-size * 2 ); }
-.k-icon-lg { font-size: ( $icon-size * 3 ); }
-.k-icon-xl { font-size: ( $icon-size * 4 ); }
+
+// .k-icon-xs { font-size: ( $icon-size * .5 ); }
+// .k-icon-sm { font-size: ( $icon-size * .75 ); }
+// .k-icon-md { font-size: ( $icon-size * 2 ); }
+// .k-icon-lg { font-size: ( $icon-size * 3 ); }
+// .k-icon-xl { font-size: ( $icon-size * 4 ); }
 
 
 .k-i-caret-tr::before { content: "\e000"; }

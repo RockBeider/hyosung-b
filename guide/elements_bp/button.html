@@ -4,19 +4,17 @@
             <p class="title">Default Button </p>
         </div>
         <div class="g-example-body flex-inline bp">
-            <button data-role="button" class="gray-border">Button</button>
-            <button data-role="button" class="blue-border">Button</button>
-            <button data-role="button" class="blue">Button</button>
-            <button data-role="button" class="yellow">Button</button>
+            <button data-role="button" class="gray-border"><span>Button</span></button>
+            <button data-role="button" class="blue-border"><span>Button</span></button>
+            <button data-role="button" class="blue"><span>Button</span></button>
+            <button data-role="button" class="yellow"><span>Button</span></button>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;button data-role="button" class="blue">Button&lt;/button>
-&lt;button data-role="button" class="light-blue">Button&lt;/button>
-&lt;button data-role="button" class="blue-border">Button&lt;/button>
-&lt;button data-role="button" class="gray-border">Button&lt;/button>
-&lt;button data-role="button" class="green">Button&lt;/button>
-&lt;button data-role="button" class="blue">Button&lt;/button>
+&lt;button data-role="button" class="gray-border">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="blue-border">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="blue">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="yellow">&lt;span>Button&lt;/span>&lt;/button>
             </code></pre>
         </div>
     </div>
@@ -26,17 +24,17 @@
             <p class="title">Disabled Button(임시)</p>
         </div>
         <div class="g-example-body flex-inline">
-            <button data-role="button" class="gray-border" disabled="disabled">Button</button>
-            <button data-role="button" class="blue-border" disabled="disabled">Button</button>
-            <button data-role="button" class="blue" disabled="disabled">Button</button>
-            <button data-role="button" class="yellow" disabled="disabled">Button</button>
+            <button data-role="button" class="gray-border" disabled="disabled"><span>Button</span></button>
+            <button data-role="button" class="blue-border" disabled="disabled"><span>Button</span></button>
+            <button data-role="button" class="blue" disabled="disabled"><span>Button</span></button>
+            <button data-role="button" class="yellow" disabled="disabled"><span>Button</span></button>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;button data-role="button" class="gray-border" disabled="disabled">Button&lt;/button>
-&lt;button data-role="button" class="blue-border" disabled="disabled">Button&lt;/button>
-&lt;button data-role="button" class="blue" disabled="disabled">Button&lt;/button>
-&lt;button data-role="button" class="yellow" disabled="disabled">Button&lt;/button>
+&lt;button data-role="button" class="gray-border" disabled="disabled">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="blue-border" disabled="disabled">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="blue" disabled="disabled">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="yellow" disabled="disabled">&lt;span>Button&lt;/span>&lt;/button>
             </code></pre>
         </div>
     </div>
@@ -54,10 +52,10 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;button data-role="button" class="gray-border" data-icon="example">Button&lt;/button>
-&lt;button data-role="button" class="blue-border" data-icon="example">Button&lt;/button>
-&lt;button data-role="button" class="blue" data-icon="example">Button&lt;/button>
-&lt;button data-role="button" class="yellow" data-icon="example">Button&lt;/button>
+&lt;button data-role="button" class="gray-border" data-icon="example">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="blue-border" data-icon="example">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="blue" data-icon="example">&lt;span>Button&lt;/span>&lt;/button>
+&lt;button data-role="button" class="yellow" data-icon="example">&lt;span>Button&lt;/span>&lt;/button>
             </code></pre>
         </div>
     </div>
@@ -69,24 +67,23 @@
         </div>
         <div class="g-example-body flex-inline">
             <ul class="btn-box half">
-                <li class="list"><button data-role="button">Button</button></li>
-                <li class="list"><button data-role="button">Button</button></li>
-                <li class="list"><button data-role="button">Button</button></li>
-                <li class="list"><button data-role="button">Button</button></li>
-                <li class="list"><button data-role="button">Button</button></li>
-                <li class="list"><button data-role="button">Button</button></li>
+                <li class="list"><button data-role="button"><span>Button</span></button></li>
+                <li class="list"><button data-role="button"><span>Button</span></button></li>
+                <li class="list"><button data-role="button"><span>Button</span></button></li>
+                <li class="list"><button data-role="button"><span>Button</span></button></li>
+                <li class="list"><button data-role="button"><span>Button</span></button></li>
+                <li class="list"><button data-role="button"><span>Button</span></button></li>
             </ul>
         </div>
         <div class="g-example-foot"> 
             <pre><code class="html">
-&lt;ul data-role="buttongroup" class="btn-box period"
-data-index="0">
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
+&lt;ul class="btn-box half">
+    &lt;li class="list">&lt;button data-role="button">&lt;span>Button&lt;/span>&lt;/button>&lt;/li>
+    &lt;li class="list">&lt;button data-role="button">&lt;span>Button&lt;/span>&lt;/button>&lt;/li>
+    &lt;li class="list">&lt;button data-role="button">&lt;span>Button&lt;/span>&lt;/button>&lt;/li>
+    &lt;li class="list">&lt;button data-role="button">&lt;span>Button&lt;/span>&lt;/button>&lt;/li>
+    &lt;li class="list">&lt;button data-role="button">&lt;span>Button&lt;/span>&lt;/button>&lt;/li>
+    &lt;li class="list">&lt;button data-role="button">&lt;span>Button&lt;/span>&lt;/button>&lt;/li>
 &lt;/ul>
             </code></pre>
         </div>
@@ -187,14 +184,91 @@ data-index="0">
         </div>
         <div class="g-example-foot"> 
             <pre><code class="html">
-&lt;ul data-role="buttongroup" class="btn-box period"
-data-index="0">
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
-    &lt;li data-role="button">Button&lt;/li>
+&lt;ul class="btn-box square">
+    &lt;li class="list">
+        &lt;button data-role="button" class="col active">
+            &lt;i class="h-ico sector1">&lt;/i>
+            &lt;span>IT서비스&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector2">&lt;/i>
+            &lt;span>교육&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector3">&lt;/i>
+            &lt;span>금융&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector4">&lt;/i>
+            &lt;span>대형용역&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector5">&lt;/i>
+            &lt;span>배달&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector6">&lt;/i>
+            &lt;span>보육&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector7">&lt;/i>
+            &lt;span>상조&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector8">&lt;/i>
+            &lt;span>장기요양&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector9">&lt;/i>
+            &lt;span>전문&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector10">&lt;/i>
+            &lt;span>체인도매&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector11">&lt;/i>
+            &lt;span>체크기&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector12">&lt;/i>
+            &lt;span>할부판매&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector13">&lt;/i>
+            &lt;span>협회/단체&lt;/span>
+        &lt;/button>
+    &lt;/li>
+    &lt;li class="list">
+        &lt;button data-role="button" class="col">
+            &lt;i class="h-ico sector14">&lt;/i>
+            &lt;span>후원&lt;/span>
+        &lt;/button>
+    &lt;/li>
 &lt;/ul>
             </code></pre>
         </div>
