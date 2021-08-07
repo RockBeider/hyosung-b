@@ -44,6 +44,12 @@
         height: auto;
         padding: 0; 
         text-decoration: underline;
+        &.is-checked {
+            color: $main;
+        }
+        &.is-important {
+            color: $error;
+        }
     }
     .k-icon {
         width: 16px;

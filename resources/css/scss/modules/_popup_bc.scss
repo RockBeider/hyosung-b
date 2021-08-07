@@ -1,20 +1,19 @@
 
+
 /*
 * ------------------------------
 * window
 * ------------------------------
 */
-.bc {
-    .select-industry-box {
-        display: flex;
-        .left-group {
+.select-industry-box {
+    display: flex;
+    .left-group {
 
-        }
-        .right-group {
-            margin-left: 10px;
-            background: $gray-f7;
-            border: 1px solid $gray-e;
-        }
+    }
+    .right-group {
+        margin-left: 10px;
+        background: $gray-f7;
+        border: 1px solid $gray-e;
     }
 }
 /*
@@ -23,9 +22,21 @@
 * ------------------------------
 */
 
-.bc {
+
+/*
+* ------------------------------
+* dialog
+* ------------------------------
+*/
+.k-window.k-dialog {
     .k-dialog-titlebar {
         @include bc-font-size-sm;  
+    }
+    .content-group {
+        padding: 30px;
+    }
+    .btn-box.justify-content-end {
+        margin-top: 10px;
     }
     .pop-guide {
         .list {
@@ -33,8 +44,6 @@
         }
     }
 }
-
-
 /*
  * ------------------------------
  * BC0003

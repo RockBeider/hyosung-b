@@ -389,16 +389,16 @@ template {
 * Text style
 */
 /*
-* ------------------------------
-* font size
-* ------------------------------
-*/
-/*
 * Regular font size
 */
 /*
 * Text style
 */
+/*
+* ------------------------------
+* font size
+* ------------------------------
+*/
 /* px 단위를 rem 으로 교체한다.
 * @access public
 * @param {String} $pixels - 픽셀 고정값
@@ -485,371 +485,6 @@ template {
   * Example of useage:
   * @include background-opacity(#000, 0.3);
   */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  font-family: "Roboto", "Noto Sans KR", sans-serif;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-}
-
-ul,
-li,
-ol {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: #222;
-}
-
-div,
-p,
-span,
-a,
-button,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: inherit;
-  font-size: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-button,
-input,
-textarea {
-  outline: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-ul, li, ol {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-/* Icon */
-.icon {
-  display: inline-flex;
-  flex: 0 0 auto;
-  vertical-align: middle;
-  text-indent: -9999px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.bp > * {
-  font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif !important;
-}
-
-/*
-* ------------------------------
-* 여백
-* ------------------------------
-*/
-.ml-4 {
-  margin-left: 4px !important;
-}
-
-.ml-8 {
-  margin-left: 8px !important;
-}
-
-.mt-4 {
-  margin-top: 4px !important;
-}
-
-.mt-10 {
-  margin-top: 10px !important;
-}
-
-.mt-20 {
-  margin-top: 20px !important;
-}
-
-.mt-30 {
-  margin-top: 30px !important;
-}
-
-.mt-0 {
-  margin-top: 0px !important;
-}
-
-.mb-0 {
-  margin-bottom: 0px !important;
-}
-
-.ml-20 {
-  margin-left: 20px !important;
-}
-
-.text-left {
-  text-align: left !important;
-}
-
-/*
-* ------------------------------
-* Title
-* ------------------------------
-*/
-.main-title {
-  font-size: 22px;
-  line-height: 26px;
-  letter-spacing: -1.1px;
-  color: #222;
-  font-weight: bold;
-}
-
-.sub-title {
-  font-size: 17px;
-  line-height: 26px;
-  letter-spacing: -0.85px;
-  color: #222;
-  font-weight: 500;
-}
-.sub-title.dot {
-  position: relative;
-  padding-left: 8px;
-}
-.sub-title.dot::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: #222;
-}
-
-/*
-* ------------------------------
-* Title Group
-* ------------------------------
-*/
-.title-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.title-box .left-group,
-.title-box .right-group {
-  display: flex;
-  align-items: center;
-}
-.title-box .btn-box {
-  margin-top: 0;
-}
-.title-box.lg {
-  height: 32px;
-  margin: 0 0 20px;
-}
-.title-box.md {
-  min-height: 28px;
-  margin: 12px 0 4px;
-}
-.title-box.md .sub-title {
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: -0.8px;
-  min-height: 30px;
-  font-weight: 500;
-}
-.title-box.md .right-group, .title-box.md .btn-box {
-  margin-bottom: 6px;
-}
-.title-box.sm {
-  min-height: 28px;
-  margin: 12px 0 8px;
-}
-.title-box.sm .sub-title {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
-}
-.title-box.sm .noti {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
-}
-.title-box .noti.sm {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
-}
-.title-box .noti.red {
-  color: #f14747;
-}
-
-/*
-* ------------------------------
-*  리스트
-* ------------------------------
-*/
-.list-group {
-  display: flex;
-  align-items: center;
-}
-.list-group.half > * {
-  flex: 1;
-}
-.list-group.half > * + * {
-  margin-left: 10px;
-}
-
-/*
-* ------------------------------
-*  숫자 카운트
-* ------------------------------
-*/
-.amount-set {
-  color: #aaa;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-}
-.amount-set .amount.current {
-  color: #0e4194;
-  font-weight: bold;
-}
-.amount-set .dash {
-  margin: 0 1px;
-}
-.amount-set .unit {
-  margin-left: 1px;
-}
-
-/*
-* ------------------------------
-* BreadCrumb
-* ------------------------------
-*/
-.breadcrumb {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.breadcrumb::before {
-  display: none;
-}
-.breadcrumb .breadcrumb-item {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
-  display: flex;
-  align-items: center;
-  color: #999;
-}
-.breadcrumb .breadcrumb-item.active {
-  color: #444;
-}
-.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-  content: ">";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 4px;
-  color: #999;
-  font-family: "roboto";
-}
-
-/*
-* ------------------------------
-* List 
-* ------------------------------
-*/
-.list-group {
-  display: flex;
-}
-
-/*
-* ------------------------------
-* badge
-* ------------------------------
-*/
-/*
-* ------------------------------
-* File upload
-* ------------------------------
-*/
-.filebox {
-  padding: 20px;
-  background-color: #f5f5f5;
-}
-.filebox .label {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
-  margin-right: 0;
-  white-space: nowrap;
-}
-.filebox .input-set .k-button {
-  position: absolute;
-  top: 0;
-  right: 5px;
-  width: 30px;
-  height: 28px;
-}
-.filebox input[type=file] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.filebox .h-input:disabled, .filebox .h-input:disabled:focus {
-  background-color: #fff;
-  color: #aaa;
-}
-
-/*
-* ------------------------------
-* File upload BP type
-* ------------------------------
-*/
 /*
 * ------------------------------
 * Title
@@ -1237,6 +872,390 @@ button {
 * File upload BP type
 * ------------------------------
 */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+div,
+p,
+span,
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button,
+input,
+textarea {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+ul, li, ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Icon */
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  vertical-align: middle;
+  text-indent: -9999px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bp > * {
+  font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif !important;
+}
+
+/*
+* ------------------------------
+* 여백
+* ------------------------------
+*/
+.ml-4 {
+  margin-left: 4px !important;
+}
+
+.ml-8 {
+  margin-left: 8px !important;
+}
+
+.mt-4 {
+  margin-top: 4px !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-0 {
+  margin-top: 0px !important;
+}
+
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
+.ml-20 {
+  margin-left: 20px !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/*
+* ------------------------------
+* Title
+* ------------------------------
+*/
+.main-title {
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -1.1px;
+  color: #222;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  color: #222;
+  font-weight: 500;
+}
+.sub-title.dot {
+  position: relative;
+  padding-left: 8px;
+}
+.sub-title.dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin-top: -2px;
+  background: #222;
+}
+
+/*
+* ------------------------------
+* Title Group
+* ------------------------------
+*/
+.title-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-box .left-group,
+.title-box .right-group {
+  display: flex;
+  align-items: center;
+}
+.title-box .btn-box {
+  margin-top: 0;
+}
+.title-box.lg {
+  height: 32px;
+  margin: 0 0 20px;
+}
+.title-box.md {
+  min-height: 28px;
+  margin: 12px 0 4px;
+}
+.title-box.md .sub-title {
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.75px;
+  min-height: 30px;
+  font-weight: 500;
+}
+.title-box.md .right-group, .title-box.md .btn-box {
+  margin-bottom: 6px;
+}
+.title-box.xsm {
+  min-height: 28px;
+  margin: 12px 0 6px;
+  align-items: flex-end;
+}
+.title-box.xsm .sub-title {
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.75px;
+}
+.title-box.xsm .noti {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
+.title-box.sm {
+  min-height: 28px;
+  margin: 12px 0 8px;
+}
+.title-box.sm .sub-title {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
+.title-box.sm .noti {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
+.title-box .noti.sm {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
+.title-box .noti.red {
+  color: #f14747;
+}
+
+/*
+* ------------------------------
+*  리스트
+* ------------------------------
+*/
+.list-group {
+  display: flex;
+  align-items: center;
+}
+.list-group.half > * {
+  flex: 1;
+}
+.list-group.half > * + * {
+  margin-left: 10px;
+}
+
+/*
+* ------------------------------
+*  숫자 카운트
+* ------------------------------
+*/
+.amount-set {
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+.amount-set .amount.current {
+  color: #0e4194;
+  font-weight: bold;
+}
+.amount-set .dash {
+  margin: 0 1px;
+}
+.amount-set .unit {
+  margin-left: 1px;
+}
+
+/*
+* ------------------------------
+* BreadCrumb
+* ------------------------------
+*/
+.breadcrumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.breadcrumb::before {
+  display: none;
+}
+.breadcrumb .breadcrumb-item {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+.breadcrumb .breadcrumb-item.active {
+  color: #444;
+}
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  color: #999;
+  font-family: "roboto";
+}
+
+/*
+* ------------------------------
+* List 
+* ------------------------------
+*/
+.list-group {
+  display: flex;
+}
+
+/*
+* ------------------------------
+* badge
+* ------------------------------
+*/
+/*
+* ------------------------------
+* File upload
+* ------------------------------
+*/
+.filebox {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+.filebox .label {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  margin-right: 0;
+  white-space: nowrap;
+}
+.filebox .input-set .k-button {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 30px;
+  height: 28px;
+}
+.filebox input[type=file] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.filebox .h-input:disabled, .filebox .h-input:disabled:focus {
+  background-color: #fff;
+  color: #aaa;
+}
+
+/*
+* ------------------------------
+* File upload BP type
+* ------------------------------
+*/
 /* Flexbox Class */
 .flexbox {
   display: flex;
@@ -1564,7 +1583,17 @@ button {
   box-shadow: 1px 1px 7px 1px rgba(128, 128, 128, 0.3);
 }
 .k-window .content-group {
+  overflow: auto;
+  height: calc(100% - 90px);
   background-color: #f7f7f7;
+  padding: 30px;
+  border-top: 0;
+  border-bottom: 0;
+}
+.k-window .content-group .agree-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .k-window-titlebar {
@@ -1587,7 +1616,6 @@ button {
   position: relative;
   flex: 1 1 auto;
   background: #f7f7f7;
-  overflow: hidden;
   overflow: auto;
 }
 
@@ -1633,19 +1661,6 @@ button {
   background-size: contain;
 }
 
-.content-group {
-  overflow: auto;
-  height: calc(100% - 90px);
-  padding: 30px;
-  border-top: 0;
-  border-bottom: 0;
-}
-.content-group .agree-area {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
 .window-footer {
   display: block;
   padding: 20px 30px;
@@ -1662,13 +1677,14 @@ button {
   padding: 0;
   background: #fff;
   outline: 0;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   position: absolute;
   z-index: 10002;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
   border: 1px solid #555;
+  overflow: hidden;
 }
 .k-window.k-dialog .k-dialog-titlebar {
   font-size: 14px;
@@ -1688,6 +1704,10 @@ button {
 }
 .k-window.k-dialog .k-dialog-titlebar .k-button {
   padding: 0;
+}
+.k-window.k-dialog .k-dialog-content {
+  height: 100%;
+  height: calc(100% - 50px);
 }
 .k-window.k-dialog .k-button.k-dialog-close {
   width: 18px;
@@ -1711,11 +1731,16 @@ button {
   border: 1px solid transparent;
 }
 .k-window.k-dialog .content-group {
+  height: 100%;
   background: #fff;
-  padding: 30px;
 }
 .k-window.k-dialog .content-group.has-check {
   padding-bottom: 70px;
+}
+.k-window.k-dialog .pop-guide .list {
+  font-size: 12px;
+  line-height: 26px;
+  letter-spacing: -0.6px;
 }
 
 .check-group.bottom {
@@ -1764,6 +1789,23 @@ button {
 
 .btn-box {
   margin-top: 20px;
+}
+
+/*
+* ------------------------------
+* dialog
+* ------------------------------
+*/
+.k-window.k-dialog .content-group {
+  padding: 30px;
+}
+.k-window.k-dialog .btn-box.justify-content-end {
+  margin-top: 10px;
+}
+.k-window.k-dialog .pop-guide .list {
+  font-size: 13px;
+  line-height: 26px;
+  letter-spacing: -0.98px;
 }
 
 /*
@@ -1848,17 +1890,12 @@ td .form-box, th .form-box {
   line-height: 26px;
   letter-spacing: -0.7px;
   padding: 0 10px;
-  background: #e3ecf9;
-  font-weight: bold;
-  color: #222;
+  white-space: nowrap;
 }
 .table td {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
-  height: 42px;
-  padding: 6px 10px;
-  color: #222;
 }
 
 .table-bottom {
@@ -1893,15 +1930,22 @@ td .form-box, th .form-box {
 * 
 * ------------------------------
 */
+.table th, .table td {
+  color: #222;
+}
 .table th {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -1.05px;
+  font-weight: bold;
+  background: #e3ecf9;
 }
 .table td {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -1.05px;
+  height: 42px;
+  padding: 6px 10px;
 }
 
 /*
@@ -2082,6 +2126,8 @@ td .form-box, th .form-box {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
+  display: flex;
+  align-items: center;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
@@ -2452,6 +2498,7 @@ td .form-box, th .form-box {
   white-space: nowrap;
 }
 .h-checkbox.no-label {
+  min-width: 20px;
   width: 20px;
   height: 20px;
   padding-left: 0;
@@ -2576,6 +2623,12 @@ td .form-box, th .form-box {
   height: auto;
   padding: 0;
   text-decoration: underline;
+}
+.h-btn.text.is-checked, .k-button.text.is-checked {
+  color: #0e4194;
+}
+.h-btn.text.is-important, .k-button.text.is-important {
+  color: #f14747;
 }
 .h-btn .k-icon, .k-button .k-icon {
   width: 16px;
@@ -3050,6 +3103,24 @@ th .required {
   background-image: url("../images_bp/icon/icon_time.svg");
   background-size: contain;
 }
+.h-ico.input-check {
+  width: 15px;
+  height: 15px;
+  background-image: url("../images_bp/icon/icon_check_default.svg");
+  background-size: contain;
+}
+.h-ico.is-checked .input-check {
+  background-image: url("../images_bp/icon/icon_check_blue.svg");
+}
+.h-ico.is-important .input-check {
+  background-image: url("../images_bp/icon/icon_check_active.svg");
+}
+.h-ico.plus {
+  width: 15px;
+  height: 15px;
+  background-image: url("../images_bp/icon/icon_plus.svg");
+  background-size: contain;
+}
 .h-ico.mail {
   width: 16px;
   height: 16px;
@@ -3166,8 +3237,16 @@ th .required {
   background-image: url("../images_bp/icon/btn_tip_default.svg");
   background-size: contain;
 }
-.h-ico.tip:hover {
+.h-ico.tip.k-state-border-down {
   background-image: url("../images_bp/icon/btn_tip_hover.svg");
+}
+
+.is-checked .k-i-input-check {
+  background-image: url("../images_bp/icon/icon_check_blue.svg");
+}
+
+.is-important .k-i-input-check {
+  background-image: url("../images_bp/icon/icon_check_active.svg");
 }
 
 .k-i-example {
@@ -3196,6 +3275,18 @@ th .required {
   width: 15px;
   height: 15px;
   background-image: url("../images_bp/icon/icon_time.svg");
+  background-size: contain;
+}
+.k-i-input-check {
+  width: 15px;
+  height: 15px;
+  background-image: url("../images_bp/icon/icon_check_default.svg");
+  background-size: contain;
+}
+.k-i-plus {
+  width: 15px;
+  height: 15px;
+  background-image: url("../images_bp/icon/icon_plus.svg");
   background-size: contain;
 }
 .k-i-mail {
@@ -3556,6 +3647,65 @@ th .required {
   background-image: url("../images_bp/icon/icon_search_disabled.svg");
 }
 
+/*
+* ------------------------------
+* dropdown
+* ------------------------------
+*/
+.k-dropdown {
+  height: 30px;
+}
+.k-dropdown.sm {
+  min-width: 106px !important;
+  max-width: 106px !important;
+}
+.k-dropdown.md {
+  min-width: 180px !important;
+  max-width: 180px !important;
+}
+.k-dropdown .k-dropdown-wrap {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #222;
+}
+.k-dropdown .k-dropdown-wrap .k-input {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -1.05px;
+}
+
+/*
+* ------------------------------
+* 인풋 (date range)
+* ------------------------------
+*/
+.k-dateinput .k-textbox {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -1.05px;
+}
+
+/*
+* ------------------------------
+* Grid
+* ------------------------------
+*/
+/*
+* ------------------------------
+* breadcrumb
+* ------------------------------
+*/
+/*
+* ------------------------------
+* editor
+* ------------------------------
+*/
+/*
+* ------------------------------
+* textarea
+* ------------------------------
+*/
 .k-checkbox-label,
 .k-radio-label {
   position: initial;
@@ -3568,6 +3718,68 @@ th .required {
 
 /*
 * ------------------------------
+* tab
+* ------------------------------
+*/
+.k-tabstrip-wrapper {
+  display: flex;
+}
+.k-tabstrip-wrapper > .k-tabstrip {
+  flex: 1 1 auto;
+}
+.k-tabstrip-wrapper > .k-content {
+  border-color: #dee2e6;
+  color: #212529;
+  background-color: #fff;
+}
+
+.k-tabstrip-content.k-state-active,
+.k-tabstrip > .k-content.k-state-active {
+  display: block;
+}
+
+.k-tabstrip-content,
+.k-tabstrip > .k-content {
+  display: none;
+}
+
+.k-tabstrip-items {
+  height: 27px;
+  border-bottom: 1px solid #ddd;
+  color: #777;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+  position: relative;
+}
+.k-tabstrip-items .k-item {
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.75px;
+  height: 100%;
+  line-height: 21px;
+  margin-right: 20px;
+}
+.k-tabstrip-items .k-link {
+  padding-bottom: 5px;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  vertical-align: middle;
+  flex: 1 1 auto;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+.k-tabstrip-items .k-item.k-state-active,
+.k-tabstrip-items .k-item.k-state-selected {
+  border-bottom: 2px solid #0e4194;
+  color: #0e4194;
+  font-weight: bold;
+}
+
+/*
+* ------------------------------
 * tooltip
 * ------------------------------
 */
@@ -3575,7 +3787,7 @@ th .required {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
-  margin: 3px;
+  margin: 10px 0;
   padding: 10px;
   background: #fff;
   border: 1px solid #0e4194;
@@ -3584,6 +3796,16 @@ th .required {
 }
 .k-tooltip .k-tooltip-button {
   display: none;
+}
+.k-tooltip::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 7px;
+  width: 12px;
+  height: 10px;
+  background-image: url("../images_bp/icon/img_tooltip.svg");
 }
 
 /*
@@ -3594,15 +3816,19 @@ th .required {
 .k-datepicker {
   position: relative;
   display: inline-flex;
-  max-width: 120px;
+  width: 100%;
   height: 28px;
   white-space: nowrap;
   vertical-align: middle;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
 }
+.k-datepicker.sm {
+  max-width: 120px;
+}
 .k-datepicker .k-picker-wrap {
   display: flex;
+  width: 100%;
   padding: 0 10px 0 4px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -3744,6 +3970,60 @@ th .required {
 
 /*
 * ------------------------------
+* listbox
+* ------------------------------
+*/
+.optional-box {
+  display: flex;
+  position: relative;
+  border-top: 1px solid #222;
+}
+
+.k-listbox {
+  display: block;
+  width: 50%;
+  height: 190px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+.k-listbox.k-listbox-toolbar-right {
+  background-color: #fff;
+  border-right: 0;
+}
+
+.k-list {
+  height: auto;
+}
+.k-list .k-item {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  width: 100%;
+  padding: 0 10px;
+}
+.k-list .k-item:hover, .k-list .k-item.k-state-focused, .k-list .k-item.k-state-selected {
+  background-color: #efefef;
+}
+
+.k-listbox-toolbar {
+  position: absolute;
+  top: 0;
+}
+.k-listbox-toolbar .k-button {
+  background: #fff;
+  color: #222;
+}
+.k-listbox-toolbar .k-button .k-i-arrow-60-right {
+  content: "ddd";
+}
+.k-list-scroller {
+  width: 100%;
+}
+
+/*
+* ------------------------------
 * dropdown
 * ------------------------------
 */
@@ -3751,7 +4031,6 @@ th .required {
   width: 100%;
   white-space: nowrap;
   display: inline-flex;
-  min-width: 110px !important;
   height: 28px;
 }
 .k-dropdown .k-dropdown-wrap {
@@ -3887,7 +4166,6 @@ th .required {
 */
 .k-grid {
   border: none;
-  border-top: 1px solid #222;
   border-bottom: 1px solid #aaa;
 }
 .k-grid thead th {
@@ -3917,6 +4195,10 @@ th .required {
 }
 .k-grid tr:hover td {
   background-color: #eff2f7;
+}
+
+.k-grid-header {
+  border-top: 1px solid #222;
 }
 
 .k-grid .k-grouping-header,
@@ -8248,61 +8530,22 @@ th .required {
 
 /*
 * ------------------------------
-* dropdown
-* ------------------------------
-*/
-.k-dropdown {
-  height: 30px;
-}
-.k-dropdown.sm {
-  min-width: 106px !important;
-  max-width: 106px !important;
-}
-.k-dropdown.md {
-  min-width: 180px !important;
-  max-width: 180px !important;
-}
-.k-dropdown .k-dropdown-wrap {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  color: #222;
-}
-.k-dropdown .k-dropdown-wrap .k-input {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-}
-
-/*
-* ------------------------------
-* 인풋 (date range)
-* ------------------------------
-*/
-.k-dateinput .k-textbox {
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -1.05px;
-}
-
-/*
-* ------------------------------
-* Grid
+* Wrap
 * ------------------------------
 */
 /*
 * ------------------------------
-* breadcrumb
+* Container
 * ------------------------------
 */
 /*
 * ------------------------------
-* editor
+* Header
 * ------------------------------
 */
 /*
 * ------------------------------
-* textarea
+* Sidebar
 * ------------------------------
 */
 /*
@@ -8792,24 +9035,3 @@ th .required {
   height: 36px;
   margin-top: 10px;
 }
-
-/*
-* ------------------------------
-* Wrap
-* ------------------------------
-*/
-/*
-* ------------------------------
-* Container
-* ------------------------------
-*/
-/*
-* ------------------------------
-* Header
-* ------------------------------
-*/
-/*
-* ------------------------------
-* Sidebar
-* ------------------------------
-*/

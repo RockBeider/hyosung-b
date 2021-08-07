@@ -17,13 +17,15 @@ function includePath() {
 		self.load(path, function () {
 			$(this).before($(this).children());
 			$(this).remove();
-			kendo.bind($(".wrap"), {});
+			kendo.bind($(".sidebar-wrap"), {});
+			kendo.bind($("#header"), {});
+			// kendo.bind($(".wrap"), {});
 		});
 	});
 }
 
 $(window).load(function () {
-	kendo.bind($(".wrap"), {});
+	// kendo.bind($(".wrap"), {});
 	includePath();
 });
 

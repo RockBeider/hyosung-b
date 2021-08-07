@@ -82,15 +82,44 @@
 
     <div class="g-example-wrap">
         <div class="g-example-head">
-            <p class="title">Date picker</p>
+            <p class="title">Form set</p>
         </div>
         <div class="g-example-body flex-block">
-            <input data-role="datepicker"
-                   style="width: 100%">
+            <div class="form-set">
+                <input type="text" class="h-input" placeholder="" />
+                <button type="button" data-role="button" data-icon="input-check" class="text"><span>ID체크</span></button>
+            </div>
+            <div class="form-set">
+                <input type="text" class="h-input" placeholder="" />
+                <!-- [D] 체크 됐을 때 .is-checked 추가 -->
+                <button type="button" data-role="button" data-icon="input-check" class="text is-checked"><span>ID체크</span></button>
+            </div>
+            <div class="form-set">
+                <input type="text" class="h-input" placeholder="" />
+                <!-- [D] 강조일경우 .is-important 추가 -->
+                <button type="button" data-role="button" data-icon="input-check" class="text is-important"><span>ID체크</span></button>
+            </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-
+&lt;div class="form-set">
+    &lt;input type="text" class="h-input" placeholder="" />
+    &lt;button type="button" data-role="button" data-icon="input-check" class="text">&lt;span>ID체크&lt;/span>&lt;/button>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+    
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Date picker</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <input data-role="datepicker" placeholder="yyyymmdd">
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;input data-role="datepicker" placeholder="yyyymmdd">
             </code></pre>
         </div>
     </div>
@@ -109,7 +138,12 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-
+&lt;span class="k-button k-primary"
+    title="툴팁 메세지 입니다."
+    data-role="tooltip"
+    data-auto-hide="false"
+    data-position="bottom"
+>Hover me!&lt;/span>
             </code></pre>
         </div>
     </div>
@@ -118,83 +152,87 @@
         <div class="g-example-head">
             <p class="title">검색부분</p>
         </div>
-        <div class="g-example-body flex-block">
-            <div class="form-group">
-                <span class="label">검색항목</span>
-                <div class="form-set">
-                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
-                        <option value="1">온라인</option>
-                        <option value="2">오프라인</option>
-                    </select>
-                    <div class="input-set search lg">
-                        <input type="text" class="h-input" placeholder="입력해주세요">
+        <div class="g-example-body">
+            <div class="search-control">
+                <div class="form-group">
+                    <span class="label">검색항목</span>
+                    <div class="form-set">
+                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                            <option value="1">온라인</option>
+                            <option value="2">오프라인</option>
+                        </select>
+                        <div class="input-set search lg">
+                            <input type="text" class="h-input" placeholder="입력해주세요">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <span class="label">상담부서</span>
-                <div class="form-set">
-                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
-                        <option value="1">온라인</option>
-                        <option value="2">오프라인</option>
-                    </select>
+                <div class="form-group">
+                    <span class="label">상담부서</span>
+                    <div class="form-set">
+                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                            <option value="1">온라인</option>
+                            <option value="2">오프라인</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <span class="label">검색기간</span>
-                <div class="form-set">
-                    <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-                    <span class="bar">~</span>
-                    <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-                    <ul data-role="buttongroup" class="period"
-                    data-index="0">
-                        <li data-role="button">오늘</li>
-                        <li data-role="button">7일</li>
-                        <li data-role="button">15일</li>
-                        <li data-role="button">1개월</li>
-                        <li data-role="button">3개월</li>
-                    </ul>
+                <div class="form-group">
+                    <span class="label">검색기간</span>
+                    <div class="form-set">
+                        <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+                        <span class="bar">~</span>
+                        <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+                        <ul data-role="buttongroup" class="period"
+                        data-index="0">
+                            <li data-role="button"><span>오늘</span></li>
+                            <li data-role="button"><span>7일</span></li>
+                            <li data-role="button"><span>15일</span></li>
+                            <li data-role="button"><span>1개월</span></li>
+                            <li data-role="button"><span>3개월</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;div class="form-group">
-&lt;span class="label">검색항목&lt;/span>
-&lt;div class="form-set">
-    &lt;select data-role="dropdownlist" data-value="선택" data-option-label="선택">
-        &lt;option value="1">온라인&lt;/option>
-        &lt;option value="2">오프라인&lt;/option>
-    &lt;/select>
-    &lt;div class="input-set search lg">
-        &lt;input type="text" class="h-input" placeholder="입력해주세요">
+&lt;div class="search-control">
+    &lt;div class="form-group">
+        &lt;span class="label">검색항목&lt;/span>
+        &lt;div class="form-set">
+            &lt;select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                &lt;option value="1">온라인&lt;/option>
+                &lt;option value="2">오프라인&lt;/option>
+            &lt;/select>
+            &lt;div class="input-set search lg">
+                &lt;input type="text" class="h-input" placeholder="입력해주세요">
+            &lt;/div>
+        &lt;/div>
     &lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;div class="form-group">
-&lt;span class="label">상담부서&lt;/span>
-&lt;div class="form-set">
-    &lt;select data-role="dropdownlist" data-value="선택" data-option-label="선택">
-        &lt;option value="1">온라인&lt;/option>
-        &lt;option value="2">오프라인&lt;/option>
-    &lt;/select>
-&lt;/div>
-&lt;/div>
-&lt;div class="form-group">
-&lt;span class="label">검색기간&lt;/span>
-&lt;div class="form-set">
-    &lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-    &lt;span class="bar">~&lt;/span>
-    &lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
-    &lt;ul data-role="buttongroup" class="btn-box period"
-    data-index="0">
-        &lt;li data-role="button">오늘&lt;/li>
-        &lt;li data-role="button">7일&lt;/li>
-        &lt;li data-role="button">15일&lt;/li>
-        &lt;li data-role="button">1개월&lt;/li>
-        &lt;li data-role="button">3개월&lt;/li>
-    &lt;/ul>
-&lt;/div>
+    &lt;div class="form-group">
+        &lt;span class="label">상담부서&lt;/span>
+        &lt;div class="form-set">
+            &lt;select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                &lt;option value="1">온라인&lt;/option>
+                &lt;option value="2">오프라인&lt;/option>
+            &lt;/select>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="form-group">
+        &lt;span class="label">검색기간&lt;/span>
+        &lt;div class="form-set">
+            &lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+            &lt;span class="bar">~&lt;/span>
+            &lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+            &lt;ul data-role="buttongroup" class="period"
+            data-index="0">
+                &lt;li data-role="button">&lt;span>오늘&lt;/span>&lt;/li>
+                &lt;li data-role="button">&lt;span>7일&lt;/span>&lt;/li>
+                &lt;li data-role="button">&lt;span>15일&lt;/span>&lt;/li>
+                &lt;li data-role="button">&lt;span>1개월&lt;/span>&lt;/li>
+                &lt;li data-role="button">&lt;span>3개월&lt;/span>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+    &lt;/div>
 &lt;/div>
             </code></pre>
         </div>
@@ -216,7 +254,13 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-
+&lt;div class="form-set filebox">
+    &lt;h4 class="label">대량입력&lt;/h4>
+    &lt;input class="h-input xl" placeholder="파일을 업로드해주세요" disabled="disabled">
+    &lt;label for="ex_filename2" class="h-btn">업로드&lt;/label> 
+    &lt;input type="file" id="ex_filename2" class="upload-hidden"> 
+    &lt;button data-role="button" class="light-green">샘플파일다운로드&lt;/button>
+&lt;/div>
             </code></pre>
         </div>
     </div>

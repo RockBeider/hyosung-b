@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+            <!-- Contents -->
+            <main class="contents-wrap">
+                <!-- Contents Header -->
+                <div class="contents-header">
+                    <div class="title-box lg">
+                        <div class="left-group">
+                            <h2 class="main-title">원가정보</h2>
+                            <span class="h-ico lg tip ml-8"
+                                title="툴팁 메세지 입니다."
+                                data-role="tooltip"
+                                data-auto-hide="false"
+                                data-position="left bottom"
+                            >팁</span>
+                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                        </div>
+                        <div class="right-group">
+                            <nav id="breadcrumb"
+                                data-role="breadcrumb"
+                                data-editable=false,
+                                data-navigational=true,
+                                data-items='[
+                            { type:"rootitem", href: "", text: "기준정보", showText: true },
+                            { type:"item", href: "", text: "심사조건", showText: true}
+                         ]'/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contents Body -->
+                <div class="contents-body">
+
+                    <div class="table-group">
+                        <div data-role="tabstrip" class="tab-control"
+                            data-bind="events: { select: onSelect },
+                            visible: isVisible">
+                            <ul>
+                                <li>은행</li>
+                                <li>카드사</li>
+                                <li class="k-state-active">통신사</li>
+                                <li>기타</li>
+                                <li>간편결제사</li>
+                            </ul>
+                            <!-- 첫번째 탭 -->
+                            <div>
+                                <div class="table-set">
+                                    <div class="title-box sm mt-20">
+                                        <div class="left-group">
+                                            <span class="amount-set">
+                                                <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                <span class="amount">26</span><span class="unit">건</span>
+                                            </span>
+                                        </div>
+                                        <div class="right-group">
+                                            <div class="btn-box">
+                                                <button data-role="button">저장</button>
+                                                <button data-role="button" class="">등록</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-content grid">
+                                        <div data-role="grid" data-sortable="true" data-editable="false" data-columns='[
+                                            { "field": "N", "width": 50 },
+                                            { "field": "NO", "width": 50 },
+                                            { "field": "상품코드", "width": 90 },
+                                            { "field": "상품명", "width": 170 },
+                                            { "field": "어플리케이션", "width": 146 },
+                                            { "field": "표준가격", "width": 140 },
+                                            { "field": "최소가격", "width": 146 },
+                                            { "field": "승인상태", "width": 140 },
+                                            { "field": "사용가능업종", "width": 140 },
+                                            { "field": "등록일", "width": 120 },
+                                            { "field": "종료일", "width": 120 }
+                                        ]' data-bind="source: gridSource">
+                                        </div>
+                                        <div class="table-bottom">
+                                            <button data-role="button" class="gray-border">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //첫번째 탭 -->
+                            <!-- 두번째 탭 -->
+                            <div>
+                                두번째 탭
+                            </div>
+                            <!-- //두번째 탭 -->
+                            <!-- 세번째 탭 -->
+                            <div>
+                                세번째 탭
+                            </div>
+                            <!-- //세번째 탭 -->
+                            <!-- 네번째 탭 -->
+                            <div>
+                                네번째 탭
+                            </div>
+                            <!-- //네번째 탭 -->
+                            <!-- 다섯번째 탭 -->
+                            <div>
+                                다섯번째 탭
+                            </div>
+                            <!-- //다섯번째 탭 -->
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script>
+        var viewModel = kendo.observable({ //테이블
+            gridSource: [
+                { "N":"ch", "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "N":"ch", "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "N":"ch", "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($(".wrap"), viewModel);
+    </script>
+    <script>
+        var viewModel_tab = kendo.observable({
+            isVisible: true,
+            onSelect: function (e) {
+                var text = $(e.item).children(".k-link").text();
+            }
+        });
+        kendo.bind($(".tab-control"), viewModel_tab);
+    </script>
+</body>
+
+</html>

@@ -1,3 +1,21 @@
+/*
+* ------------------------------
+* dialog
+* ------------------------------
+*/
+.k-window.k-dialog {
+    .content-group {
+        padding: 30px;
+    }
+    .btn-box.justify-content-end {
+        margin-top: 10px;
+    }
+    .pop-guide {
+        .list {
+            @include bp-font-size-xs; 
+        }
+    }
+}
 
 /*
 * ------------------------------

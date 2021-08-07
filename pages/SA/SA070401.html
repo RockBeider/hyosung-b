@@ -22,7 +22,12 @@
                     <div class="title-box lg">
                         <div class="left-group">
                             <h2 class="main-title">공지사항 관리</h2>
-                            <button type="button" class="h-ico lg tip ml-8">팁</button>
+                            <span class="h-ico lg tip ml-8"
+                                title="툴팁 메세지 입니다."
+                                data-role="tooltip"
+                                data-auto-hide="false"
+                                data-position="left bottom"
+                            >팁</span>
                             <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
                         </div>
                         <div class="right-group">
@@ -115,7 +120,7 @@
                     return stringify(this.get("gridSource").toJSON());
                 },
             });
-            kendo.bind($(".table-content.grid"), viewModel);
+            kendo.bind($(".wrap"), viewModel);
     </script>
 </body>
 

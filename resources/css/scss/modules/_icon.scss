@@ -61,6 +61,18 @@ th .required {
     &.time {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_time', $size: contain );
     }
+    &.input-check {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_check_default', $size: contain );
+    }
+    &.is-checked .input-check {
+        background-image: url($imgPathIcon+'/icon_check_blue.svg');
+    }
+    &.is-important .input-check {
+        background-image: url($imgPathIcon+'/icon_check_active.svg');
+    }
+    &.plus {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_plus', $size: contain );
+    }
     //xsm 16*16
     &.mail {
         @include iconSvg($width: 16px, $height: 16px, $name: 'icon_mystorage', $size: contain );
@@ -124,12 +136,18 @@ th .required {
     // 26*26
     &.tip {
         @include iconSvg($width: 26px, $height: 26px, $name: 'btn_tip_default', $size: contain );
-        &:hover {
+        &.k-state-border-down {
             background-image: url($imgPathIcon+'/btn_tip_hover.svg');
         }
     }
 }
 
+.is-checked .k-i-input-check {
+    background-image: url($imgPathIcon+'/icon_check_blue.svg');
+}
+.is-important .k-i-input-check {
+    background-image: url($imgPathIcon+'/icon_check_active.svg');
+}
 .k-i- {
     &example {
      background: gray;
@@ -148,6 +166,13 @@ th .required {
     &time {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_time', $size: contain );
     }
+    &input-check {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_check_default', $size: contain );
+    }
+    &plus {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_plus', $size: contain );
+    }
+   
     //xsm 16*16
     &mail {
         @include iconSvg($width: 16px, $height: 16px, $name: 'icon_mystorage', $size: contain );

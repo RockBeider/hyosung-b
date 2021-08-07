@@ -63,7 +63,18 @@
     border: 1px solid $gray-c;
     box-shadow: 1px 1px 7px 1px rgba(128,128,128,.3);
     .content-group {
+        
+        overflow: auto;
+        height: calc(100% - 90px);
         background-color: $gray-f7;
+        padding: 30px;
+        border-top: 0;
+        border-bottom: 0;
+        .agree-area {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
     }
 }
 .k-window-titlebar { //head
@@ -86,7 +97,7 @@
     position: relative;
     flex: 1 1 auto;
     background: $gray-f7;
-    overflow: hidden;
+    // overflow: hidden;
     overflow: auto;
 }
 .k-window-actions {
@@ -117,18 +128,7 @@
         }
     }
 }
-.content-group {
-    overflow: auto;
-    height: calc(100% - 90px);
-    padding: 30px;
-    border-top: 0;
-    border-bottom: 0;
-    .agree-area {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-    }
-}
+
 .window-footer {
     display: block;
     padding: 20px 30px;
@@ -142,20 +142,18 @@
 * ------------------------------
 */
 .k-window.k-dialog {
-    // border-radius: 3px;
+    // height: 100%;
     padding: 0;
-    // border-bottom: 1px solid $gray-c;
     background: $white;
     outline: 0;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-direction: column;
+    display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 10002;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
     border: 1px solid $gray-5;
+    overflow: hidden;
     
     .k-dialog-titlebar {
         @include font-size-sm;
@@ -175,9 +173,9 @@
         }
     }
     .k-dialog-content {
-        // padding: 30px;
+        height: 100%;
+        height: calc(100% - 50px);
     }
-
     .k-button.k-dialog-close {
         @include iconSvg($width: 18px, $height: 18px, $name: 'btn_X', $size: 18px 18px);
         position: absolute;
@@ -197,10 +195,15 @@
         }
     }
     .content-group {
+        height: 100%;
         background: $white;
-        padding: 30px;
         &.has-check {
             padding-bottom: 30px + 40px;
+        }
+    }
+    .pop-guide {
+        .list {
+            @include font-size-xs; 
         }
     }
 }

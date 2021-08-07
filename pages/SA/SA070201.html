@@ -22,7 +22,12 @@
                     <div class="title-box lg">
                         <div class="left-group">
                             <h2 class="main-title">요청사항 관리</h2>
-                            <button type="button" class="h-ico lg tip ml-8">팁</button>
+                            <span class="h-ico lg tip ml-8"
+                                title="툴팁 메세지 입니다."
+                                data-role="tooltip"
+                                data-auto-hide="false"
+                                data-position="left bottom"
+                            >팁</span>
                             <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
                         </div>
                         <div class="right-group">
@@ -45,7 +50,7 @@
                             <div class="form-group">
                                 <span class="label">검색항목</span>
                                 <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체">
+                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
                                         <option value="1">온라인</option>
                                         <option value="2">오프라인</option>
                                     </select>
@@ -120,7 +125,7 @@
                     return stringify(this.get("gridSource").toJSON());
                 },
             });
-            kendo.bind($(".table-content.grid"), viewModel);
+            kendo.bind($(".wrap"), viewModel);
     </script>
 </body>
 
