@@ -58,26 +58,38 @@
                                 <li>간편결제사</li>
                             </ul>
                             <!-- 첫번째 탭 -->
-                            <div>
+                            <div class="tabpanel">
                                 <div class="table-set">
-                                    <div class="title-box sm mt-20">
-                                        <div class="left-group">
-                                            <span class="amount-set">
-                                                <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                                <span class="amount">26</span><span class="unit">건</span>
-                                            </span>
-                                        </div>
-                                        <div class="right-group">
-                                            <div class="btn-box">
-                                                <button data-role="button">저장</button>
-                                                <button data-role="button" class="">등록</button>
+                                    <script type="text/x-kendo-template" id="toolbarTemplate1">
+                                        <div class="title-box sm mt-20">
+                                            <div class="left-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="right-group">
+                                                <div class="btn-box">
+                                                    <button role="button" class="k-button">수정</button>
+                                                    <button role="button" class="k-button k-grid-add">등록</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </script>
+                                    <script type="text/x-kendo-template" id="checkboxTemplate1">
+                                        <div class="h-checkbox no-label">
+                                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                            <label for="checkbox-nolabel"></label> 
+                                        </div>
+                                    </script>
+
                                     <div class="table-content grid">
-                                        <div data-role="grid" data-sortable="true" data-editable="false" data-columns='[
-                                            { "field": "N", "width": 50 },
-                                            { "field": "NO", "width": 50 },
+                                        <div data-role="grid" 
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-columns='[
+                                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                            { "title": "NO.", "width": 50 },
                                             { "field": "상품코드", "width": 90 },
                                             { "field": "상품명", "width": 170 },
                                             { "field": "어플리케이션", "width": 146 },
@@ -87,8 +99,23 @@
                                             { "field": "사용가능업종", "width": 140 },
                                             { "field": "등록일", "width": 120 },
                                             { "field": "종료일", "width": 120 }
-                                        ]' data-bind="source: gridSource">
+                                            ]' 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate()#"
+                                            data-filterable="{mode:'row'}">
                                         </div>
+                                        <script>
+                                        function toolbarTemplate() {
+                                            var template = kendo.template($('#toolbarTemplate1').html());
+                                            var result = template({});
+                                            return result
+                                        }
+                                        function checkboxTemplate() {
+                                            var template = kendo.template($('#checkboxTemplate1').html());
+                                            var result = template({});
+                                            return result
+                                        }
+                                        </script>
                                         <div class="table-bottom">
                                             <button data-role="button" class="gray-border">삭제</button>
                                         </div>
@@ -97,22 +124,143 @@
                             </div>
                             <!-- //첫번째 탭 -->
                             <!-- 두번째 탭 -->
-                            <div>
-                                두번째 탭
+                            <div class="tabpanel">
+                                <div class="table-set">
+                                    <script type="text/x-kendo-template" id="toolbarTemplate2">
+                                        <div class="title-box sm mt-20">
+                                            <div class="left-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="right-group">
+                                                <div class="btn-box">
+                                                    <button role="button" class="k-button">수정</button>
+                                                    <button role="button" class="k-button k-grid-add">등록</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <script type="text/x-kendo-template" id="checkboxTemplate2">
+                                        <div class="h-checkbox no-label">
+                                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                            <label for="checkbox-nolabel"></label> 
+                                        </div>
+                                    </script>
+
+                                    <div class="table-content grid">
+                                        <div data-role="grid" 
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-columns='[
+                                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                            { "title": "NO.", "width": 50 },
+                                            { "field": "상품코드", "width": 90 },
+                                            { "field": "상품명", "width": 170 },
+                                            { "field": "어플리케이션", "width": 146 },
+                                            { "field": "표준가격", "width": 140 },
+                                            { "field": "최소가격", "width": 146 },
+                                            { "field": "승인상태", "width": 140 },
+                                            { "field": "사용가능업종", "width": 140 },
+                                            { "field": "등록일", "width": 120 },
+                                            { "field": "종료일", "width": 120 }
+                                            ]' 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate()#"
+                                            data-filterable="{mode:'row'}">
+                                        </div>
+                                        <script>
+                                        function toolbarTemplate() {
+                                            var template = kendo.template($('#toolbarTemplate2').html());
+                                            var result = template({});
+                                            return result
+                                        }
+                                        function checkboxTemplate() {
+                                            var template = kendo.template($('#checkboxTemplate2').html());
+                                            var result = template({});
+                                            return result
+                                        }
+                                        </script>
+                                        <div class="table-bottom">
+                                            <button data-role="button" class="gray-border">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- //두번째 탭 -->
                             <!-- 세번째 탭 -->
-                            <div>
-                                세번째 탭
+                            <div class="tabpanel">
+                                <div class="table-set">
+                                    <script type="text/x-kendo-template" id="toolbarTemplate3">
+                                        <div class="title-box sm mt-20">
+                                            <div class="left-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="right-group">
+                                                <div class="btn-box">
+                                                    <button role="button" class="k-button">수정</button>
+                                                    <button role="button" class="k-button k-grid-add">등록</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <script type="text/x-kendo-template" id="checkboxTemplate3">
+                                        <div class="h-checkbox no-label">
+                                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                            <label for="checkbox-nolabel"></label> 
+                                        </div>
+                                    </script>
+                                    <div class="table-content grid">
+                                        <div data-role="grid" 
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-columns='[
+                                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                            { "title": "NO.", "width": 50 },
+                                            { "field": "상품코드", "width": 90 },
+                                            { "field": "상품명", "width": 170 },
+                                            { "field": "어플리케이션", "width": 146 },
+                                            { "field": "표준가격", "width": 140 },
+                                            { "field": "최소가격", "width": 146 },
+                                            { "field": "승인상태", "width": 140 },
+                                            { "field": "사용가능업종", "width": 140 },
+                                            { "field": "등록일", "width": 120 },
+                                            { "field": "종료일", "width": 120 }
+                                            ]' 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate()#"
+                                            data-filterable="{mode:'row'}">
+                                        </div>
+                                        <script>
+                                        function toolbarTemplate() {
+                                            var template = kendo.template($('#toolbarTemplate3').html());
+                                            var result = template({});
+                                            return result
+                                        }
+                                        function checkboxTemplate() {
+                                            var template = kendo.template($('#checkboxTemplate3').html());
+                                            var result = template({});
+                                            return result
+                                        }
+                                        </script>
+                                        <div class="table-bottom">
+                                            <button data-role="button" class="gray-border">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- //세번째 탭 -->
                             <!-- 네번째 탭 -->
-                            <div>
+                            <div class="tabpanel">
                                 네번째 탭
                             </div>
                             <!-- //네번째 탭 -->
                             <!-- 다섯번째 탭 -->
-                            <div>
+                            <div class="tabpanel">
                                 다섯번째 탭
                             </div>
                             <!-- //다섯번째 탭 -->
@@ -131,23 +279,26 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-        var viewModel = kendo.observable({ //테이블
-            gridSource: [
-                { "N":"ch", "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                { "N":"ch", "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                { "N":"ch", "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
-            ],
-            displayGridSource: function() {
-                return stringify(this.get("gridSource").toJSON());
-            },
-        });
-        kendo.bind($(".wrap"), viewModel);
+            var viewModel = kendo.observable({
+                gridSource: [
+                    { "N":"ch", "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "N":"ch", "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "N":"ch", "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+            });
+            kendo.bind($(".wrap"), viewModel);
+
     </script>
+    
     <script>
         var viewModel_tab = kendo.observable({
             isVisible: true,
             onSelect: function (e) {
                 var text = $(e.item).children(".k-link").text();
+                // kendoConsole.log("event :: select (" + text + ")");
             }
         });
         kendo.bind($(".tab-control"), viewModel_tab);

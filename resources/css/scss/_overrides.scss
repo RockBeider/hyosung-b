@@ -495,6 +495,9 @@
 	border: none;
 	
 	border-bottom: 1px solid $gray-a;
+	table {
+		table-layout: fixed;
+	}
 	thead th {
 		text-align: center;
 	}
@@ -504,12 +507,24 @@
     }
 	td {
 		transition: background 0.3s ease;
+		overflow: hidden;
 	}
     thead th, thead td {
         background: $searchLine;
         text-align: left;
         color: $gray-5;
     }
+	.k-filter-row th {
+		height: 30px;
+		padding-bottom: 4px;
+		border-left: 1px solid $gray-e4;
+		border-right: 1px solid $gray-e4;
+		.k-dropdown-operator,
+		.k-clear-value,
+		.k-button {
+			display: none;
+		}
+	}
     tbody th, tbody td { 
         background: $white;
         color: $gray-2;
@@ -525,8 +540,23 @@
 			background-color: $tableBG1;
 		}
 	}
+	.k-edit-cell .k-textbox {
+		width: 100%;
+		height: 28px;
+		border: 1px solid $gray-c;
+		border-radius: 3px;
+		padding: 0 10px;
+	}
 }
-
+.k-grid .k-dropdown-operator {
+	display: none;
+}
+.k-grid .k-grid-header .k-grid-header-wrap {
+	th.k-header {
+		line-height: unset;
+		// padding-top: 6px;
+	}
+}
 .k-grid-header {
 	border-top: 1px solid $gray-2;
 }
@@ -539,13 +569,14 @@
 		position: relative;
 		height: 36px;
 		margin: 0;
-		padding: 0;
+		// padding: 0;
 		border-left: 1px solid $gray-e4;
 		line-height: 36px;
+		text-align: center;
 		.k-link {
 			display: block;
 			margin: 0;
-			padding: 0 18px 0 10px;
+			padding-right: 8px;
 			line-height: unset;
 			&::before {
 				position: absolute;
@@ -590,6 +621,8 @@
 	}
 }
 
+
+
 //body
 .k-grid {
 	tr {
@@ -602,6 +635,14 @@
 		&:hover {
 			background-color: $tableBG1;
 		}
+	}
+	th .h-checkbox {
+		min-width: 20px;
+		width: 20px;
+		height: 20px;
+		padding-left: 0;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	td {
 		@include font-size-sm;

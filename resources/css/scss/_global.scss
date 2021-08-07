@@ -215,6 +215,16 @@ button {
             @include font-size-sm;
         }
 	}
+	&.xs {
+		min-height: 20px;
+		margin: 6px 0 8px;
+        .sub-title {
+            @include font-size-sm;
+        }
+        .noti {
+            @include font-size-sm;
+        }
+	}
     .noti {
 		&.sm {
 			@include font-size-sm;

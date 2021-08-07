@@ -156,7 +156,7 @@
     overflow: hidden;
     
     .k-dialog-titlebar {
-        @include font-size-sm;
+        @include font-size-lg;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -167,7 +167,7 @@
         padding: 0 30px;
         border-bottom: 1px solid $gray-d;
         color: $gray-2;
-        font-weight: bold;
+        font-weight: 500;
         .k-button {
             padding: 0; 
         }

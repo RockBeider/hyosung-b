@@ -736,6 +736,20 @@ button {
   line-height: 26px;
   letter-spacing: -0.7px;
 }
+.title-box.xs {
+  min-height: 20px;
+  margin: 6px 0 8px;
+}
+.title-box.xs .sub-title {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
+.title-box.xs .noti {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
 .title-box .noti.sm {
   font-size: 14px;
   line-height: 26px;
@@ -1305,9 +1319,9 @@ button {
   overflow: hidden;
 }
 .k-window.k-dialog .k-dialog-titlebar {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 26px;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1318,7 +1332,7 @@ button {
   padding: 0 30px;
   border-bottom: 1px solid #ddd;
   color: #222;
-  font-weight: bold;
+  font-weight: 500;
 }
 .k-window.k-dialog .k-dialog-titlebar .k-button {
   padding: 0;
@@ -1838,6 +1852,9 @@ td .form-box, th .form-box {
 */
 .h-checkbox {
   display: block;
+  display: flex;
+  align-items: center;
+  height: 20px;
 }
 
 .h-checkbox input[type=checkbox],
@@ -1939,6 +1956,8 @@ td .form-box, th .form-box {
   width: 20px;
   height: 20px;
   padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .h-checkbox input[type=radio] + label::before,
 .h-checkbox input[type=checkbox] + label::before {
@@ -3094,6 +3113,9 @@ th .required {
   border: none;
   border-bottom: 1px solid #aaa;
 }
+.k-grid table {
+  table-layout: fixed;
+}
 .k-grid thead th {
   text-align: center;
 }
@@ -3103,11 +3125,23 @@ th .required {
 }
 .k-grid td {
   transition: background 0.3s ease;
+  overflow: hidden;
 }
 .k-grid thead th, .k-grid thead td {
   background: #eee;
   text-align: left;
   color: #555;
+}
+.k-grid .k-filter-row th {
+  height: 30px;
+  padding-bottom: 4px;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+}
+.k-grid .k-filter-row th .k-dropdown-operator,
+.k-grid .k-filter-row th .k-clear-value,
+.k-grid .k-filter-row th .k-button {
+  display: none;
 }
 .k-grid tbody th, .k-grid tbody td {
   background: #fff;
@@ -3121,6 +3155,21 @@ th .required {
 }
 .k-grid tr:hover td {
   background-color: #eff2f7;
+}
+.k-grid .k-edit-cell .k-textbox {
+  width: 100%;
+  height: 28px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+.k-grid .k-dropdown-operator {
+  display: none;
+}
+
+.k-grid .k-grid-header .k-grid-header-wrap th.k-header {
+  line-height: unset;
 }
 
 .k-grid-header {
@@ -3139,15 +3188,15 @@ th .required {
   position: relative;
   height: 36px;
   margin: 0;
-  padding: 0;
   border-left: 1px solid #e4e4e4;
   line-height: 36px;
+  text-align: center;
 }
 .k-grid .k-grouping-header th.k-header .k-link,
 .k-grid-header th.k-header .k-link {
   display: block;
   margin: 0;
-  padding: 0 18px 0 10px;
+  padding-right: 8px;
   line-height: unset;
 }
 .k-grid .k-grouping-header th.k-header .k-link::before,
@@ -3203,6 +3252,14 @@ th .required {
 }
 .k-grid tr:hover {
   background-color: #eff2f7;
+}
+.k-grid th .h-checkbox {
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .k-grid td {
   font-size: 14px;
