@@ -4,7 +4,7 @@
  * ------------------------------
  */
 .h-btn, .k-button {
-    @include bc-font-size-sm;
+    @include bc-font-size-xsm;
 
     height: 26px;
     padding: 0 16px;
@@ -163,7 +163,7 @@
 * ------------------------------
 */
 .btn-box {
-    &.md {
+    &.bottom {
         .k-button {
             height: 30px;
             padding: 0 20px;

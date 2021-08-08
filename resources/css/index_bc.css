@@ -670,6 +670,33 @@ button {
   text-align: center !important;
 }
 
+.text-center > * {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/*
+* ------------------------------
+* table divide
+* ------------------------------
+*/
+.divide {
+  padding: 10px 0;
+}
+.divide .list + .list {
+  margin-top: 10px;
+}
+.divide:first-child {
+  margin-top: -6px;
+}
+.divide:last-child {
+  margin-bottom: -6px;
+}
+.divide + .divide {
+  border-top: 1px solid #e4e4e4;
+}
+
 /*
 * ------------------------------
 * Title
@@ -1579,6 +1606,10 @@ td .form-box, th .form-box {
   margin: 0 -1px;
   table-layout: fixed;
 }
+.table thead th .h-checkbox {
+  margin-left: auto;
+  margin-right: auto;
+}
 .table tbody th, .table tbody td {
   text-align: left;
 }
@@ -1664,6 +1695,9 @@ td .form-box, th .form-box {
 * 
 * ------------------------------
 */
+.table tbody th {
+  text-align: center;
+}
 .table th {
   font-size: 13px;
   line-height: 24px;
@@ -1723,6 +1757,9 @@ td .form-box, th .form-box {
 }
 .form-set > *:not(.bar) + *:not(.bar) {
   margin-left: 8px;
+}
+.form-set .h-checkbox.no-label {
+  margin: 0;
 }
 .form-set .form-label {
   font-size: 14px;
@@ -1877,6 +1914,10 @@ td .form-box, th .form-box {
   color: #aaa;
 }
 
+.h-input.xs, .k-input.xs {
+  max-width: 72px;
+  min-width: 72px;
+}
 .h-input.sm, .k-input.sm {
   max-width: 110px;
   min-width: 110px;
@@ -1957,7 +1998,6 @@ td .form-box, th .form-box {
 .input-set.search .h-input, .input-set.search .k-input {
   height: 28px;
   border-radius: 3px 0px 0px 3px;
-  padding-left: 10px;
   text-align: left;
 }
 .input-set.search .k-button {
@@ -1984,7 +2024,7 @@ td .form-box, th .form-box {
 * input - common
 * ------------------------------
 */
-.bc .h-input, .bc .k-input {
+.h-input, .k-input {
   font-size: 13px;
   line-height: 24px;
   letter-spacing: -0.65px;
@@ -1992,7 +2032,7 @@ td .form-box, th .form-box {
   flex-shrink: 1;
   flex-basis: auto;
   width: 100%;
-  height: 28px;
+  height: 26px;
   padding: 0 10px;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -2000,32 +2040,32 @@ td .form-box, th .form-box {
   color: #555;
   transition: 0.3s ease-in-out;
 }
-.bc .h-input:focus, .bc .k-input:focus {
+.h-input:focus, .k-input:focus {
   border: 1px solid #222;
   color: #222;
 }
-.bc .h-input:disabled, .bc .h-input:disabled:focus, .bc .k-input:disabled, .bc .k-input:disabled:focus {
+.h-input:disabled, .h-input:disabled:focus, .k-input:disabled, .k-input:disabled:focus {
   border: 1px solid #ccc;
   background-color: #f5f5f5;
   color: #aaa;
 }
-.bc .h-input::-moz-placeholder, .bc .k-input::-moz-placeholder {
+.h-input::-moz-placeholder, .k-input::-moz-placeholder {
   font-size: 14px;
   letter-spacing: -0.75px;
   color: #aaa;
 }
-.bc .h-input:-ms-input-placeholder, .bc .k-input:-ms-input-placeholder {
+.h-input:-ms-input-placeholder, .k-input:-ms-input-placeholder {
   font-size: 14px;
   letter-spacing: -0.75px;
   color: #aaa;
 }
-.bc .h-input::placeholder, .bc .k-input::placeholder {
+.h-input::placeholder, .k-input::placeholder {
   font-size: 14px;
   letter-spacing: -0.75px;
   color: #aaa;
 }
 
-.bc .h-input.md, .bc .k-input.md {
+.h-input.md, .k-input.md {
   max-width: 140px;
   min-width: 140px;
 }
@@ -2209,9 +2249,9 @@ td .form-box, th .form-box {
 */
 .h-checkbox input[type=radio] + label span,
 .h-checkbox input[type=checkbox] + label span {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 24px;
-  letter-spacing: -0.75px;
+  letter-spacing: -0.65px;
 }
 
 /*
@@ -2408,6 +2448,9 @@ td .form-box, th .form-box {
   display: flex;
   justify-content: center;
 }
+.btn-box.bottom .k-button, .btn-box.bottom .h-btn {
+  height: 32px;
+}
 .btn-box .k-button {
   flex: 0 1 auto;
 }
@@ -2492,9 +2535,9 @@ td .form-box, th .form-box {
  * ------------------------------
  */
 .h-btn, .k-button {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 24px;
-  letter-spacing: -0.75px;
+  letter-spacing: -0.65px;
   height: 26px;
   padding: 0 16px;
   border-radius: 3px;
@@ -2627,7 +2670,7 @@ td .form-box, th .form-box {
 * 버튼 그룹
 * ------------------------------
 */
-.btn-box.md .k-button {
+.btn-box.bottom .k-button {
   height: 30px;
   padding: 0 20px;
 }
@@ -3032,113 +3075,6 @@ th .required {
   background-size: contain;
 }
 
-/*
-* ------------------------------
-* dropdown
-* ------------------------------
-*/
-.k-dropdown {
-  min-width: 110px !important;
-  height: 28px;
-}
-.k-dropdown .k-dropdown-wrap.k-state-disabled, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover {
-  background-color: #f5f5f5;
-  color: #aaa;
-}
-.k-dropdown .k-dropdown-wrap.k-state-disabled .k-i-arrow-60-down:before, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover .k-i-arrow-60-down:before {
-  background-image: url("../images_bc/icon/icon_arrow_down_diabled.svg");
-}
-.k-dropdown .k-dropdown-wrap.k-state-hover, .k-dropdown .k-dropdown-wrap:hover {
-  background-color: #fff;
-}
-.k-dropdown .k-dropdown-wrap.k-state-focused {
-  border: 1px solid #222;
-  color: #222;
-}
-.k-dropdown .k-dropdown-wrap .k-input {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-  text-indent: 10px;
-}
-
-/*
-* ------------------------------
-* 인풋 (date range)
-* ------------------------------
-*/
-.k-dateinput .k-textbox {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-
-/*
-* ------------------------------
-* Grid
-* ------------------------------
-*/
-.k-grid .k-grouping-header th.k-header,
-.k-grid-header th.k-header {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-
-.k-grid td {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-
-/*
-* ------------------------------
-* breadcrumb
-* ------------------------------
-*/
-.k-breadcrumb .k-breadcrumb-item {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-
-/*
-* ------------------------------
-* editor
-* ------------------------------
-*/
-.send-form-set .label {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-
-/*
-* ------------------------------
-* textarea
-* ------------------------------
-*/
-.k-textarea {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-.k-textarea ::-moz-placeholder {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-.k-textarea :-ms-input-placeholder {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-.k-textarea ::placeholder {
-  font-size: 15px;
-  line-height: 24px;
-  letter-spacing: -0.75px;
-}
-
 .k-checkbox-label,
 .k-radio-label {
   position: initial;
@@ -3265,8 +3201,10 @@ th .required {
   padding: 0 10px 0 4px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  overflow: hidden;
 }
 .k-datepicker .k-picker-wrap .k-input {
+  min-width: 0;
   padding: 0 0 0 2px;
   height: 26px;
   border: none;
@@ -3492,6 +3430,10 @@ th .required {
   box-sizing: border-box;
 }
 .k-dropdown .k-dropdown-wrap.k-state-disabled, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover {
+  background-color: #f5f5f5;
+  color: #aaa;
+}
+.k-dropdown .k-dropdown-wrap.k-state-disabled .k-input, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover .k-input {
   background-color: #f5f5f5;
   color: #aaa;
 }
@@ -8008,6 +7950,112 @@ th .required {
 
 .k-i-chart-choropleth::before {
   content: "";
+}
+
+/*
+* ------------------------------
+* dropdown
+* ------------------------------
+*/
+.k-dropdown {
+  min-width: 110px !important;
+  height: 26px;
+}
+.k-dropdown .k-dropdown-wrap.k-state-disabled, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover {
+  background-color: #f5f5f5;
+  color: #aaa;
+}
+.k-dropdown .k-dropdown-wrap.k-state-disabled .k-i-arrow-60-down:before, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover .k-i-arrow-60-down:before {
+  background-image: url("../images_bc/icon/icon_arrow_down_diabled.svg");
+}
+.k-dropdown .k-dropdown-wrap.k-state-hover, .k-dropdown .k-dropdown-wrap:hover {
+  background-color: #fff;
+}
+.k-dropdown .k-dropdown-wrap.k-state-focused {
+  border: 1px solid #222;
+  color: #222;
+}
+.k-dropdown .k-dropdown-wrap .k-input {
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: -0.65px;
+}
+
+/*
+* ------------------------------
+* 인풋 (date range)
+* ------------------------------
+*/
+.k-dateinput .k-textbox {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+
+/*
+* ------------------------------
+* Grid
+* ------------------------------
+*/
+.k-grid .k-grouping-header th.k-header,
+.k-grid-header th.k-header {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+
+.k-grid td {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+
+/*
+* ------------------------------
+* breadcrumb
+* ------------------------------
+*/
+.k-breadcrumb .k-breadcrumb-item {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+
+/*
+* ------------------------------
+* editor
+* ------------------------------
+*/
+.send-form-set .label {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+
+/*
+* ------------------------------
+* textarea
+* ------------------------------
+*/
+.k-textarea {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+.k-textarea ::-moz-placeholder {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+.k-textarea :-ms-input-placeholder {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
+}
+.k-textarea ::placeholder {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.75px;
 }
 
 /*

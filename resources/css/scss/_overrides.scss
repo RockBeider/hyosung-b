@@ -117,7 +117,9 @@
 		padding: 0 10px 0 4px;
 		border: 1px solid $gray-c;
 		border-radius: 3px;
+		overflow: hidden;
 		.k-input {
+			min-width: 0;
 			padding: 0 0 0 2px;
 			height: 26px;
 			border: none;
@@ -383,6 +385,10 @@
 		&.k-state-disabled:hover {
 			background-color: $gray-f5;
 			color: $gray-a;
+			.k-input {
+				background-color: $gray-f5;
+				color: $gray-a;
+			}
 			.k-i-arrow-60-down:before {
 				background-image: url($imgPathIcon+'/icon_arrow_down_diabled.svg');
 			}

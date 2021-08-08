@@ -635,6 +635,33 @@ button {
   text-align: center !important;
 }
 
+.text-center > * {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/*
+* ------------------------------
+* table divide
+* ------------------------------
+*/
+.divide {
+  padding: 10px 0;
+}
+.divide .list + .list {
+  margin-top: 10px;
+}
+.divide:first-child {
+  margin-top: -6px;
+}
+.divide:last-child {
+  margin-bottom: -6px;
+}
+.divide + .divide {
+  border-top: 1px solid #e4e4e4;
+}
+
 /*
 * ------------------------------
 * Title
@@ -1483,6 +1510,10 @@ td .form-box, th .form-box {
   margin: 0 -1px;
   table-layout: fixed;
 }
+.table thead th .h-checkbox {
+  margin-left: auto;
+  margin-right: auto;
+}
 .table tbody th, .table tbody td {
   text-align: left;
 }
@@ -1605,6 +1636,9 @@ td .form-box, th .form-box {
 }
 .form-set > *:not(.bar) + *:not(.bar) {
   margin-left: 8px;
+}
+.form-set .h-checkbox.no-label {
+  margin: 0;
 }
 .form-set .form-label {
   font-size: 14px;
@@ -1743,6 +1777,10 @@ td .form-box, th .form-box {
   color: #aaa;
 }
 
+.h-input.xs, .k-input.xs {
+  max-width: 72px;
+  min-width: 72px;
+}
 .h-input.sm, .k-input.sm {
   max-width: 110px;
   min-width: 110px;
@@ -1823,7 +1861,6 @@ td .form-box, th .form-box {
 .input-set.search .h-input, .input-set.search .k-input {
   height: 28px;
   border-radius: 3px 0px 0px 3px;
-  padding-left: 10px;
   text-align: left;
 }
 .input-set.search .k-button {
@@ -2164,6 +2201,9 @@ td .form-box, th .form-box {
 .btn-box {
   display: flex;
   justify-content: center;
+}
+.btn-box.bottom .k-button, .btn-box.bottom .h-btn {
+  height: 32px;
 }
 .btn-box .k-button {
   flex: 0 1 auto;
@@ -2638,9 +2678,17 @@ th .required {
 * dropdown
 * ------------------------------
 */
+.k-dropdown.xs {
+  max-width: 70px;
+  min-width: 70px;
+}
 .k-dropdown.sm {
   max-width: 110px;
   min-width: 110px;
+}
+.k-dropdown.xsm {
+  max-width: 120px;
+  min-width: 120px;
 }
 .k-dropdown.md {
   max-width: 140px;
@@ -2777,8 +2825,10 @@ th .required {
   padding: 0 10px 0 4px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  overflow: hidden;
 }
 .k-datepicker .k-picker-wrap .k-input {
+  min-width: 0;
   padding: 0 0 0 2px;
   height: 26px;
   border: none;
@@ -3004,6 +3054,10 @@ th .required {
   box-sizing: border-box;
 }
 .k-dropdown .k-dropdown-wrap.k-state-disabled, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover {
+  background-color: #f5f5f5;
+  color: #aaa;
+}
+.k-dropdown .k-dropdown-wrap.k-state-disabled .k-input, .k-dropdown .k-dropdown-wrap.k-state-disabled:hover .k-input {
   background-color: #f5f5f5;
   color: #aaa;
 }

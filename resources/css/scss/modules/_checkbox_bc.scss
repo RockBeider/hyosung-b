@@ -37,6 +37,6 @@
 .h-checkbox {
     input[type="radio"] + label  span,
     input[type="checkbox"] + label span {
-        @include bc-font-size-sm;
+        @include bc-font-size-xsm;
     }
 }

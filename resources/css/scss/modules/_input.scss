@@ -45,6 +45,10 @@
 	}
 }
 .h-input,.k-input { //사이즈
+	&.xs {
+		max-width: 72px;
+		min-width: 72px;
+	}
 	&.sm {
 		max-width: 110px;
 		min-width: 110px;
@@ -123,7 +127,7 @@
 		.h-input, .k-input {
 			height: 28px;
 			border-radius: 3px 0px 0px 3px;
-			padding-left: 10px;
+			// padding-left: 10px;
 			text-align: left;
 		}
 		.k-button {

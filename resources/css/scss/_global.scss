@@ -130,6 +130,28 @@ button {
 .ml-20 { margin-left: 20px !important; }
 .text-left { text-align: left !important; }
 .text-center { text-align: center !important; }
+.text-center > * { justify-content: center !important; margin-left: auto !important; margin-right: auto !important; }
+/*
+* ------------------------------
+* table divide
+* ------------------------------
+*/
+
+.divide {
+	padding: 10px 0;
+	.list + .list {
+		margin-top: 10px;
+	}
+	&:first-child {
+		margin-top: -6px;
+	}
+	&:last-child {
+		margin-bottom: -6px;
+	}
+	+ .divide {
+		border-top: 1px solid $gray-e4;
+	}
+}
 /*
 * ------------------------------
 * Title

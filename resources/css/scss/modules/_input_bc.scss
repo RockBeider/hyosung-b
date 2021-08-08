@@ -3,14 +3,13 @@
 * input - common
 * ------------------------------
 */
-.bc {
 	.h-input,.k-input { //상태
 		@include bc-font-size-xsm;
 		flex-grow: 1;
 		flex-shrink: 1;
 		flex-basis: auto;
 		width: 100%;
-		height: 28px;
+		height: 26px;
 		padding: 0 10px;
 		background-color: $white;
 		border:  1px solid $gray-c;
@@ -41,8 +40,6 @@
 			color: $gray-a;
 		}
 	}
-}
-.bc {
 	.h-input,.k-input { //사이즈
 		// &.sm {
 		// 	max-width: 106px;
@@ -61,7 +58,6 @@
 		// 	min-width: 400px;
 		// }
 	}
-}
 
 
 /*

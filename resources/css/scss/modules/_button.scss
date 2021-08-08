@@ -226,6 +226,9 @@
  */
 
 .btn-box {
+    &.bottom .k-button, &.bottom .h-btn {
+        height: 32px;
+    }
     display: flex;
     justify-content: center;
     .k-button {

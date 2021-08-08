@@ -52,6 +52,12 @@ td .form-box, th .form-box {
         margin: 0 -1px;
         table-layout: fixed;
     }
+    thead th {
+        .h-checkbox {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
     tbody {
         th, td { text-align: left; }
     }

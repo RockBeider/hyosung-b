@@ -39,6 +39,9 @@
     > *:not(.bar) + *:not(.bar) {
         margin-left: 8px;
     }
+    .h-checkbox.no-label {
+        margin: 0;
+    }
     .form-label {
         @include font-size-sm;
         color: $gray-5;

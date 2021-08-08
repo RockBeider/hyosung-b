@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_counsel_regi" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-3{fill:none;stroke-miterlimit:10;stroke:#fff;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Path_6" fill="none" stroke="none" stroke-miterlimit="10">
+        <path d="M203 268h-18v13.5h9.621l1.64 3.313a.853.853 0 0 0 1.608-.049l1.436-3.264H203z" transform="translate(-184 -266)"/>
+        <path fill="#fff" d="M186.5 269.5V280h9.052l1.47 2.967 1.305-2.967h3.173v-10.5h-15M185 268h18v13.5h-3.694l-1.436 3.264c-.338.768-1.239.796-1.608.05l-1.64-3.314H185V268z" transform="translate(-184 -266)"/>
+    </g>
+    <path id="Line_20" d="M0 0L10.476 0" class="cls-3" transform="translate(4.926 6.982)"/>
+    <path id="Line_21" d="M0 0L10.476 0" class="cls-3" transform="translate(4.926 10.518)"/>
+</svg>
