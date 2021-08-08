@@ -60,7 +60,7 @@
                             <!-- 첫번째 탭 -->
                             <div class="tabpanel">
                                 <div class="table-set">
-                                    <script type="text/x-kendo-template" id="toolbarTemplate1">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate">
                                         <div class="title-box sm mt-20">
                                             <div class="left-group">
                                                 <span class="amount-set">
@@ -76,7 +76,7 @@
                                             </div>
                                         </div>
                                     </script>
-                                    <script type="text/x-kendo-template" id="checkboxTemplate1">
+                                    <script type="text/x-kendo-template" class="checkboxTemplate">
                                         <div class="h-checkbox no-label">
                                             <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
                                             <label for="checkbox-nolabel"></label> 
@@ -104,18 +104,6 @@
                                             data-toolbar="#=toolbarTemplate()#"
                                             data-filterable="{mode:'row'}">
                                         </div>
-                                        <script>
-                                        function toolbarTemplate() {
-                                            var template = kendo.template($('#toolbarTemplate1').html());
-                                            var result = template({});
-                                            return result
-                                        }
-                                        function checkboxTemplate() {
-                                            var template = kendo.template($('#checkboxTemplate1').html());
-                                            var result = template({});
-                                            return result
-                                        }
-                                        </script>
                                         <div class="table-bottom">
                                             <button data-role="button" class="gray-border">삭제</button>
                                         </div>
@@ -126,7 +114,7 @@
                             <!-- 두번째 탭 -->
                             <div class="tabpanel">
                                 <div class="table-set">
-                                    <script type="text/x-kendo-template" id="toolbarTemplate2">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate">
                                         <div class="title-box sm mt-20">
                                             <div class="left-group">
                                                 <span class="amount-set">
@@ -142,7 +130,7 @@
                                             </div>
                                         </div>
                                     </script>
-                                    <script type="text/x-kendo-template" id="checkboxTemplate2">
+                                    <script type="text/x-kendo-template" class="checkboxTemplate">
                                         <div class="h-checkbox no-label">
                                             <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
                                             <label for="checkbox-nolabel"></label> 
@@ -170,18 +158,6 @@
                                             data-toolbar="#=toolbarTemplate()#"
                                             data-filterable="{mode:'row'}">
                                         </div>
-                                        <script>
-                                        function toolbarTemplate() {
-                                            var template = kendo.template($('#toolbarTemplate2').html());
-                                            var result = template({});
-                                            return result
-                                        }
-                                        function checkboxTemplate() {
-                                            var template = kendo.template($('#checkboxTemplate2').html());
-                                            var result = template({});
-                                            return result
-                                        }
-                                        </script>
                                         <div class="table-bottom">
                                             <button data-role="button" class="gray-border">삭제</button>
                                         </div>
@@ -192,7 +168,7 @@
                             <!-- 세번째 탭 -->
                             <div class="tabpanel">
                                 <div class="table-set">
-                                    <script type="text/x-kendo-template" id="toolbarTemplate3">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate">
                                         <div class="title-box sm mt-20">
                                             <div class="left-group">
                                                 <span class="amount-set">
@@ -208,7 +184,7 @@
                                             </div>
                                         </div>
                                     </script>
-                                    <script type="text/x-kendo-template" id="checkboxTemplate3">
+                                    <script type="text/x-kendo-template" class="checkboxTemplate">
                                         <div class="h-checkbox no-label">
                                             <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
                                             <label for="checkbox-nolabel"></label> 
@@ -235,18 +211,6 @@
                                             data-toolbar="#=toolbarTemplate()#"
                                             data-filterable="{mode:'row'}">
                                         </div>
-                                        <script>
-                                        function toolbarTemplate() {
-                                            var template = kendo.template($('#toolbarTemplate3').html());
-                                            var result = template({});
-                                            return result
-                                        }
-                                        function checkboxTemplate() {
-                                            var template = kendo.template($('#checkboxTemplate3').html());
-                                            var result = template({});
-                                            return result
-                                        }
-                                        </script>
                                         <div class="table-bottom">
                                             <button data-role="button" class="gray-border">삭제</button>
                                         </div>
@@ -279,18 +243,28 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-            var viewModel = kendo.observable({
-                gridSource: [
-                    { "N":"ch", "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "N":"ch", "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "N":"ch", "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
-                ],
-                displayGridSource: function() {
-                    return stringify(this.get("gridSource").toJSON());
-                },
-            });
-            kendo.bind($(".wrap"), viewModel);
+        var viewModel = kendo.observable({
+            gridSource: [
+                {  "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                {  "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                {  "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($(".wrap"), viewModel);
 
+        function toolbarTemplate() {
+            var template = kendo.template($('.toolbarTemplate').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
     </script>
     
     <script>
@@ -302,6 +276,7 @@
             }
         });
         kendo.bind($(".tab-control"), viewModel_tab);
+        
     </script>
 </body>
 

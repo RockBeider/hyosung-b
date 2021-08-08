@@ -272,22 +272,36 @@
 .optional-box {	
 	display: flex;
 	position: relative;
-	border-top: 1px solid $gray-2;
+	// border-top: 1px solid $gray-2;
 }
 .k-listbox {
-	display: block;
+	display: flex;
 	width: 50%;
-	height: 190px;
-	padding: 10px;
-	background-color: $gray-f5;
-	border: 1px solid $gray-c;
-	overflow: auto;
-	.k-list-scroller { //우측 이동박스
-
+	.k-list-scroller { //박스
+		height: 190px;
+		padding: 10px;
+		background-color: #f5f5f5;
+		border: 1px solid #ccc;
+		overflow: auto;
+		align-self: flex-end;
+	}
+	.k-listbox-toolbar ul {
+		display: flex;
+		flex-direction: column;
 	}
 	&.k-listbox-toolbar-right {
 		background-color: $white;
 		border-right: 0;
+	}
+	&.k-listbox-toolbar-bottom, 
+	&.k-listbox-toolbar-top {
+		flex-direction: column;
+	}
+	&.k-listbox-toolbar-top .k-listbox-toolbar {
+		margin-bottom: 8px;
+		ul {
+			flex-direction: row;
+		}
 	}
 }
 .k-list {
@@ -308,9 +322,6 @@
 
 }
 .k-listbox-toolbar { //toolbar
-	position: absolute;
-	top: 0;
-	// display: none;
 	.k-button {
 		background: $white;
 		color: $gray-2;

@@ -3995,21 +3995,36 @@ th .required {
 .optional-box {
   display: flex;
   position: relative;
-  border-top: 1px solid #222;
 }
 
 .k-listbox {
-  display: block;
+  display: flex;
   width: 50%;
+}
+.k-listbox .k-list-scroller {
   height: 190px;
   padding: 10px;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   overflow: auto;
+  align-self: flex-end;
+}
+.k-listbox .k-listbox-toolbar ul {
+  display: flex;
+  flex-direction: column;
 }
 .k-listbox.k-listbox-toolbar-right {
   background-color: #fff;
   border-right: 0;
+}
+.k-listbox.k-listbox-toolbar-bottom, .k-listbox.k-listbox-toolbar-top {
+  flex-direction: column;
+}
+.k-listbox.k-listbox-toolbar-top .k-listbox-toolbar {
+  margin-bottom: 8px;
+}
+.k-listbox.k-listbox-toolbar-top .k-listbox-toolbar ul {
+  flex-direction: row;
 }
 
 .k-list {
@@ -4026,10 +4041,6 @@ th .required {
   background-color: #efefef;
 }
 
-.k-listbox-toolbar {
-  position: absolute;
-  top: 0;
-}
 .k-listbox-toolbar .k-button {
   background: #fff;
   color: #222;

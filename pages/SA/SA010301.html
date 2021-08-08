@@ -64,7 +64,7 @@
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                         </div>
                         <div class="table-set">
-                            <script type="text/x-kendo-template" id="toolbarTemplate">
+                            <script type="text/x-kendo-template" class="toolbarTemplate">
                                 <div class="title-box sm">
                                     <div class="left-group">
                                         <span class="amount-set">
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                             </script>
-                            <script type="text/x-kendo-template" id="checkboxTemplate">
+                            <script type="text/x-kendo-template" class="checkboxTemplate">
                                 <div class="h-checkbox no-label">
                                     <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
                                     <label for="checkbox-nolabel"></label> 
@@ -87,29 +87,17 @@
                             </script>
                             <div class="table-content grid">
                                 <div data-role="grid" 
-                                data-sortable="true" 
-                                data-editable="true" 
-                                data-columns='[
-                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
-                                { "title": "NO.", "width": 50 },
-                                { "field": "상품코드", "width": 90 },
-                                { "field": ""  }
-                                ]' 
-                                data-bind="source: gridSource"
-                                data-toolbar="#=toolbarTemplate()#">
-                            </div>
-                            <script>
-                            function toolbarTemplate() {
-                                var template = kendo.template($('#toolbarTemplate').html());
-                                var result = template({});
-                                return result
-                            }
-                            function checkboxTemplate() {
-                                var template = kendo.template($('#checkboxTemplate').html());
-                                var result = template({});
-                                return result
-                            }
-                            </script>
+                                    data-sortable="true" 
+                                    data-editable="true" 
+                                    data-columns='[
+                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                    { "title": "NO.", "width": 50 },
+                                    { "field": "상품코드", "width": 90 },
+                                    { "field": ""  }
+                                    ]' 
+                                    data-bind="source: gridSource"
+                                    data-toolbar="#=toolbarTemplate()#">
+                                </div>
                                 <div class="table-bottom">
                                     <button data-role="button" class="gray-border">삭제</button>
                                 </div>
@@ -138,8 +126,17 @@
                     return stringify(this.get("gridSource").toJSON());
                 },
             });
-            kendo.bind($(".table-content.grid"), viewModel);
             kendo.bind($(".wrap"), viewModel);
+            function toolbarTemplate() {
+                var template = kendo.template($('.toolbarTemplate').html());
+                var result = template({});
+                return result
+            }
+            function checkboxTemplate() {
+                var template = kendo.template($('.checkboxTemplate').html());
+                var result = template({});
+                return result
+            }
     </script>
 </body>
 
