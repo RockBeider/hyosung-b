@@ -8284,7 +8284,7 @@ th .required {
 }
 
 .contents-body {
-  height: 100%;
+  flex: 1;
 }
 
 .table-group {
@@ -8306,6 +8306,10 @@ th .required {
 .k-toolbar.k-grid-toolbar {
   background-color: #f5f5f5;
   overflow: hidden;
+}
+
+.table-group.divide-thick {
+  height: unset;
 }
 
 .table-content.grid {

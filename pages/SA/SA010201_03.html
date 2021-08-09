@@ -51,16 +51,16 @@
                             data-bind="events: { select: onSelect },
                             visible: isVisible">
                             <ul>
-                                <li class="k-state-active">은행</li>
+                                <li >은행</li>
                                 <li>카드사</li>
-                                <li>통신사</li>
+                                <li class="k-state-active">통신사</li>
                                 <li>기타</li>
                                 <li>간편결제사</li>
                             </ul>
                             <!-- 첫번째 탭 -->
                             <div class="tabpanel">
                                 <div class="table-set">
-                                    <script type="text/x-kendo-template" class="toolbarTemplate">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate1">
                                         <div class="title-box sm mt-20">
                                             <div class="left-group">
                                                 <span class="amount-set">
@@ -98,14 +98,13 @@
                                             { "field": "승인상태", "width": 140 },
                                             { "field": "사용가능업종", "width": 140 },
                                             { "field": "등록일", "width": 120 },
-                                            { "field": "종료일", "width": 120 }
+                                            { "field": "종료일", "width": 120 },
+                                            { "field": "비고", "width": 120 }
                                             ]' 
+                                            data-bound="trAddClass"
                                             data-bind="source: gridSource"
-                                            data-toolbar="#=toolbarTemplate()#"
+                                            data-toolbar="#=toolbarTemplate1()#"
                                             data-filterable="{mode:'row'}">
-                                        </div>
-                                        <div class="table-bottom">
-                                            <button data-role="button" class="gray-border">삭제</button>
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +113,7 @@
                             <!-- 두번째 탭 -->
                             <div class="tabpanel">
                                 <div class="table-set">
-                                    <script type="text/x-kendo-template" class="toolbarTemplate">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate2">
                                         <div class="title-box sm mt-20">
                                             <div class="left-group">
                                                 <span class="amount-set">
@@ -124,7 +123,7 @@
                                             </div>
                                             <div class="right-group">
                                                 <div class="btn-box">
-                                                    <button role="button" class="k-button">수정</button>
+                                                    <button role="button" class="k-button">저장</button>
                                                     <button role="button" class="k-button k-grid-add">등록</button>
                                                 </div>
                                             </div>
@@ -155,11 +154,8 @@
                                             { "field": "종료일", "width": 120 }
                                             ]' 
                                             data-bind="source: gridSource"
-                                            data-toolbar="#=toolbarTemplate()#"
+                                            data-toolbar="#=toolbarTemplate2()#"
                                             data-filterable="{mode:'row'}">
-                                        </div>
-                                        <div class="table-bottom">
-                                            <button data-role="button" class="gray-border">삭제</button>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +164,7 @@
                             <!-- 세번째 탭 -->
                             <div class="tabpanel">
                                 <div class="table-set">
-                                    <script type="text/x-kendo-template" class="toolbarTemplate">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate3">
                                         <div class="title-box sm mt-20">
                                             <div class="left-group">
                                                 <span class="amount-set">
@@ -178,10 +174,10 @@
                                             </div>
                                             <div class="right-group">
                                                 <div class="btn-box">
-                                                    <button role="button" class="k-button">수정</button>
-                                                    <button role="button" class="k-button k-grid-add">등록</button>
+                                                    <button role="button" class="k-button" disabled="disabled">수정</button>
+                                                    <button role="button" class="k-button k-grid-add" disabled="disabled">등록</button>
                                                 </div>
-                                            </div>
+                                            </div> 
                                         </div>
                                     </script>
                                     <script type="text/x-kendo-template" class="checkboxTemplate">
@@ -205,14 +201,19 @@
                                             { "field": "승인상태", "width": 140 },
                                             { "field": "사용가능업종", "width": 140 },
                                             { "field": "등록일", "width": 120 },
-                                            { "field": "종료일", "width": 120 }
+                                            { "field": "종료일", "width": 120 },
+                                            { "field": "비고", "width": 120 }
                                             ]' 
+                                            data-bound="trAddClass"
                                             data-bind="source: gridSource"
-                                            data-toolbar="#=toolbarTemplate()#"
+                                            data-toolbar="#=toolbarTemplate3()#"
                                             data-filterable="{mode:'row'}">
                                         </div>
                                         <div class="table-bottom">
-                                            <button data-role="button" class="gray-border">삭제</button>
+                                            <div class="btn-box">
+                                                <button data-role="button" class="blue-border">승인</button>
+                                                <button data-role="button" class="light-blue">반려</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -244,29 +245,50 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-            var viewModel = kendo.observable({
-                gridSource: [
-                    {  "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    {  "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    {  "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
-                ],
-                displayGridSource: function() {
-                    return stringify(this.get("gridSource").toJSON());
-                },
-            });
-            kendo.bind($(".wrap"), viewModel);
-
-            function toolbarTemplate() {
-                var template = kendo.template($('.toolbarTemplate').html());
-                var result = template({});
-                return result
+        var viewModel = kendo.observable({
+            gridSource: [
+                {  "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31", "비고": "" },
+                {  "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31", "비고": "반려" },
+                {  "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31", "비고": "대기" }
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($(".wrap"), viewModel);
+        function trAddClass(e) {
+            var dataItems = e.sender.dataSource.view();
+            for (var j = 0; j < dataItems.length; j++) {
+                var distinct = dataItems[j].get("비고");
+                var row = e.sender.tbody.find("[data-uid='" + dataItems[j].uid + "']");
+                if (distinct == "반려") {
+                    row.addClass("status-reject");
+                } else if (distinct == "대기") {
+                    row.addClass("status-wait");
+                }
             }
-            function checkboxTemplate() {
-                var template = kendo.template($('.checkboxTemplate').html());
-                var result = template({});
-                return result
-            }
-        </script>
+        };
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+        function toolbarTemplate1() {
+            var template = kendo.template($('.toolbarTemplate1').html());
+            var result = template({});
+            return result
+        }
+        function toolbarTemplate2() {
+            var template = kendo.template($('.toolbarTemplate2').html());
+            var result = template({});
+            return result
+        }
+        function toolbarTemplate3() {
+            var template = kendo.template($('.toolbarTemplate3').html());
+            var result = template({});
+            return result
+        }
+    </script>
     
     <script>
         var viewModel_tab = kendo.observable({
