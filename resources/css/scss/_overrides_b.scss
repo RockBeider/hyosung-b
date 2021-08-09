@@ -1,0 +1,30 @@
+
+
+/*
+* ------------------------------
+* dropdown
+* ------------------------------
+*/
+
+.k-dropdown {
+	&.xs {
+		max-width: 70px;
+        min-width: 70px;
+	}
+	&.sm {
+		max-width: 110px;
+        min-width: 110px;
+	}
+	&.xsm {
+		max-width: 120px;
+        min-width: 120px;
+	}
+	&.md {
+        max-width: 140px;
+        min-width: 140px;
+	}
+	&.lg {
+        max-width: 220px;
+        min-width: 220px;
+	}
+}

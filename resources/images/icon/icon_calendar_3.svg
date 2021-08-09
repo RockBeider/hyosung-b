@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_calendar" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <style>
+            .cls-2{fill:#555}
+        </style>
+    </defs>
+    <path id="Rectangle_1224" fill="rgba(255,255,255,0)" d="M0 0H18V18H0z"/>
+    <g id="Group_518" transform="translate(0.277 0.268)">
+        <path id="Path_18" d="M287.081 185.872V185h-1.453v.872h-6.977V185H277.2v.872H274V200.7h16.279v-14.828zm-9.883 1.453v.872h1.453v-.872h6.977v.872h1.453v-.872h1.744v2.035h-13.371v-2.035zm-1.744 11.918v-8.43h13.372v8.43z" class="cls-2" transform="translate(-273.417 -184.116)"/>
+        <path id="Rectangle_977" d="M0 0H1.57V1.57H0z" class="cls-2" transform="translate(4.299 8.312)"/>
+        <path id="Rectangle_978" d="M0 0H1.57V1.57H0z" class="cls-2" transform="translate(8.014 8.312)"/>
+        <path id="Rectangle_979" d="M0 0H1.57V1.57H0z" class="cls-2" transform="translate(11.73 8.312)"/>
+        <path id="Rectangle_980" d="M0 0H1.57V1.57H0z" class="cls-2" transform="translate(4.299 12.026)"/>
+        <path id="Rectangle_981" d="M0 0H1.57V1.57H0z" class="cls-2" transform="translate(8.014 12.026)"/>
+        <path id="Rectangle_982" d="M0 0H1.57V1.57H0z" class="cls-2" transform="translate(11.73 12.026)"/>
+    </g>
+</svg>

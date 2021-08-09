@@ -3,250 +3,215 @@
  * 버튼
  * ------------------------------
  */
- .bp {
-    .h-btn , .k-button {
-        &.hidden {
-            @include hide-text;
-            min-width: 0 !important;
-            padding: 0 !important;
-            background-color: transparent !important;
-            border: 0 !important;
+.h-btn, .k-button {
+    @include bp-font-size-sm;
+    // min-width: 80px;
+    height: 30px;
+    padding: 0 16px;
+
+    background: $layer-blue;
+    border: 1px solid $layer-blue;
+    color: $white;
+    font-weight: bold;
+    
+    &:hover, &:focus {
+        background-color: $layer-blue-hover;
+        border: 1px solid $layer-blue;
+    }
+    &.k-state-focused {
+        background-color: $layer-blue-hover;
+        border: 1px solid $layer-blue-hover;
+    }
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus,
+    &:disabled:active { //disabled 상태
+        cursor: default;
+        background: $gray-f5 !important;
+        border: 1px solid $gray-c !important;
+        color: $gray-a !important;
+        opacity: 0.7;
+    }
+    &.text {
+        background: transparent;
+        height: auto;
+        padding: 0; 
+        text-decoration: underline;
+    }
+    .k-icon {
+        width: 16px;
+        height: 16px;
+    }
+    &:not(.col)> * + * {
+        // 아이콘 같이 있는 경우
+        margin-left: 6px;
+    }
+    &.k-button-icontext { //아이콘 + 텍스트 버튼
+        padding: 0 12px;
+        font-weight: 400;
+        > * + * {
+            margin-left: 4px;
+        }
+        &.md > * + * { 
+            margin-left: 8px; 
+        } 
+    }
+    &.md { //사이즈
+        @include bp-font-size-md;
+        height: 40px;
+        padding: 0 30px;
+        .k-icon {
+            width: 24px;
+            height: 24px;
         }
     }
-    .h-btn, .k-button {
-        @include bp-font-size-sm;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        flex: 0 0 auto;
-        min-width: 80px;
-        height: 30px;
-        padding: 0 16px;
-        border-radius: 3px;
-        white-space: nowrap;
-        transition: background 0.2s ease-in;
+    &.refresh {
+        min-width: unset;
+        padding: 0 4px;
+        background-color: transparent;
+        border: none;
+        color: $gray-5;
+        &:hover, &:focus {
+            // background-color: $bp-yellow;
+            // border: 1px solid $bp-yellow;
+        }
+        &.k-state-active {
 
+        }
+        &.k-state-focused {
+            // background-color: $bp-yellow;
+        }
+    }
+}
+.h-btn, .k-button { //color
+    &.blue {
         background: $layer-blue;
         border: 1px solid $layer-blue;
         color: $white;
-        
         &:hover, &:focus {
             background-color: $layer-blue-hover;
             border: 1px solid $layer-blue;
+        }
+        &.k-state-active {
+
         }
         &.k-state-focused {
             background-color: $layer-blue-hover;
             border: 1px solid $layer-blue-hover;
         }
-        &:disabled,
-        &:disabled:hover,
-        &:disabled:focus,
-        &:disabled:active { //disabled 상태
-            cursor: default;
-            background: $gray-f5 !important;
-            border: 1px solid $gray-c !important;
-            color: $gray-a !important;
-            opacity: 0.7;
+    }
+    &.blue-border {
+        background: $white;
+        border: 1px solid $layer-blue;
+        color: $layer-blue;
+        &:hover, &:focus {
+            background-color: $bp-light-blue-hover;
         }
-        &.text {
-            background: transparent;
-            height: auto;
-            padding: 0; 
-            text-decoration: underline;
+        &.k-state-active {
+
         }
-        .k-icon {
-            width: 16px;
-            height: 16px;
+        &.k-state-focused {
+            background-color: $bp-light-blue-hover;
         }
-        &:not(.col)> * + * {
-            // 아이콘 같이 있는 경우
-            margin-left: 6px;
+    }
+    &.gray-border {
+        background: $white;
+        border: 1px solid $gray-9;
+        color: $gray-2;
+        &:hover, &:focus {
+            background: $bp-gray-hover;
+            border: 1px solid $gray-5;
         }
-        &.k-button-icontext { //아이콘 + 텍스트 버튼
-            padding: 0 12px;
-            > * + * {
-                margin-left: 4px;
-            }
-            &.md > * + * { 
-                margin-left: 8px; 
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background: $bp-gray-hover;
+            border: 1px solid $gray-5;
+        }
+    }
+    &.yellow {
+        background-color: $bp-yellow;
+        border: 1px solid $bp-yellow;
+        color: $white;
+        &:hover, &:focus {
+            background-color: $bp-yellow-hover;
+            border: 1px solid $bp-yellow-hover;
+        }
+        &.k-state-active {
+
+        }
+        &.k-state-focused {
+            background-color: $bp-yellow-hover;
+            border: 1px solid $bp-yellow-hover;
+        }
+    }
+}
+/*
+* ------------------------------
+* 버튼 그룹
+* ------------------------------
+*/
+.btn-box {
+    &.half { 
+        flex-wrap: wrap;
+        max-width: 250px;  
+        margin-top: 0;
+        padding: 7px;
+        
+        .list {
+            width: 50%;
+            padding: 3px;
+        }
+        .k-button { 
+            display: flex;
+            width: 100%;
+            height: 40px;
+            background: $white;
+            border: 1px solid $gray-c;
+            color: $gray-2;
+            font-weight: 400;
+            &.k-state-active, &.k-state-focused {
+                background: $bp-light-blue-hover;
+                border: 1px solid $layer-blue;
+                color: $layer-blue;
+                font-weight: bold;
             } 
         }
-        &.md { //사이즈
-            @include bp-font-size-md;
-            height: 40px;
-            padding: 0 30px;
-            .k-icon {
-                width: 24px;
-                height: 24px;
-            }
-        }
-        &.refresh {
-            min-width: unset;
-            padding: 0 4px;
-            background-color: transparent;
-            border: none;
-            color: $gray-5;
-            &:hover, &:focus {
-                // background-color: $bp-yellow;
-                // border: 1px solid $bp-yellow;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                // background-color: $bp-yellow;
-            }
-        }
-        /*
-        * ------------------------------
-        * 헤더버튼
-        * ------------------------------
-        */
-        &.logout { //로그아웃
-            margin-left: 6px;
-            border: 1px solid $btn-light-border;
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                border: 1px solid $btn-light-border;
-            }
-        }
     }
-    .h-btn, .k-button { //color
-        &.blue {
-            background: $layer-blue;
-            border: 1px solid $layer-blue;
-            color: $white;
-            &:hover, &:focus {
-                background-color: $layer-blue-hover;
-                border: 1px solid $layer-blue;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $layer-blue-hover;
-                border: 1px solid $layer-blue-hover;
-            }
-        }
-        &.blue-border {
-            background: $white;
-            border: 1px solid $layer-blue;
-            color: $layer-blue;
-            &:hover, &:focus {
-                background-color: $bp-light-blue-hover;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $bp-light-blue-hover;
-            }
-        }
-        &.gray-border {
-            background: $white;
-            border: 1px solid $gray-9;
-            color: $gray-2;
-            &:hover, &:focus {
-                background: $bp-gray-hover;
-                border: 1px solid $gray-5;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background: $bp-gray-hover;
-                border: 1px solid $gray-5;
-            }
-        }
-        &.yellow {
-            background-color: $bp-yellow;
-            border: 1px solid $bp-yellow;
-            color: $white;
-            &:hover, &:focus {
-                background-color: $bp-yellow-hover;
-                border: 1px solid $bp-yellow-hover;
-            }
-            &.k-state-active {
-
-            }
-            &.k-state-focused {
-                background-color: $bp-yellow-hover;
-                border: 1px solid $bp-yellow-hover;
-            }
-        }
-    }
-    /*
-    * ------------------------------
-    * 버튼 그룹
-    * ------------------------------
-    */
-    .btn-box {
+    &.square {
         display: flex;
-        justify-content: center;
-        .k-button {
-            flex: 0 1 auto;
-        }
-        .k-button + .k-button {
-            margin-left: 6px;
-        }
-        &.half { 
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 250px; 
-            padding: 7px;
-            
-            .list {
-                width: 50%;
-                padding: 3px;
-            }
-            .k-button { 
-                display: flex;
-                width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 770px;
+        min-width: 770px;
+        margin: -3px;
+        
+        .list {
+            padding: 3px;
+            .h-ico {
+                width: 40px;
                 height: 40px;
+                margin-bottom: 7px;
+            }
+            .k-button {
+                width: 104px;
+                height: 90px;
+                padding: 14px 3px 8px;
                 background: $white;
                 border: 1px solid $gray-c;
+                border-radius: 3px;
                 color: $gray-2;
-                &.k-state-active, &.k-state-focused {
-                    background: $bp-light-blue-hover;
+                font-weight: 400;
+                &.k-state-active, &.k-state-focused, &:hover {
                     border: 1px solid $layer-blue;
                     color: $layer-blue;
-                } 
-            }
-        }
-        &.square {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            width: 770px;
-            min-width: 770px;
-            margin: -3px;
-            .list {
-                padding: 3px;
-                .h-ico {
-                    width: 40px;
-                    height: 40px;
-                    margin-bottom: 3px;
+                    font-weight: bold;
                 }
-                .k-button {
-                    width: 104px;
-                    height: 90px;
-                    padding: 14px 3px 3px;
-                    background: $white;
-                    border: 1px solid $gray-c;
-                    border-radius: 3px;
-                    color: $gray-2;
-                    &.k-state-active, &.k-state-focused, &:hover {
-                        border: 1px solid $layer-blue;
-                        color: $layer-blue;
-                    }
-                    &.col {
-                        flex-direction: column;
-                    }
+                &.col {
+                    flex-direction: column;
                 }
             }
         }
     }
- }
+}

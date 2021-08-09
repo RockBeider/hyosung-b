@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_profile" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <clipPath id="clip-path">
+            <circle id="Ellipse_8" cx="10" cy="10" r="10" class="cls-1" transform="translate(275 17)"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:#214997}
+        </style>
+    </defs>
+    <circle id="Ellipse_7" cx="10" cy="10" r="10" class="cls-1"/>
+    <g id="Mask_Group_4" clip-path="url(#clip-path)" transform="translate(-275 -17)">
+        <text id="_" fill="#c8d5f0" font-family="xeicon" font-size="22px" letter-spacing="-0.05em" transform="translate(274 39)">
+            <tspan x="0" y="0"></tspan>
+        </text>
+    </g>
+</svg>

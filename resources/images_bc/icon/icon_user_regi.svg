@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_user_regi" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Ellipse_9" class="cls-2" transform="translate(9.052 2)">
+        <circle cx="3.289" cy="3.289" r="3.289"/>
+        <circle cx="3.289" cy="3.289" r="2.539" fill="none"/>
+    </g>
+    <path id="Path_8" d="M373.95 301.4v-1.67a5.845 5.845 0 0 0-6.212-5.9 5.726 5.726 0 0 0-5.238 5.7v1.87" class="cls-2" transform="translate(-355.95 -284.071)"/>
+    <path id="Line_22" d="M0 0L6.87 0" class="cls-2" transform="translate(0 9.054)"/>
+    <path id="Line_23" d="M0 0L0 6.87" class="cls-2" transform="translate(3.435 5.623)"/>
+</svg>

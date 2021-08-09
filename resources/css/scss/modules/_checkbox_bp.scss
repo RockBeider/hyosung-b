@@ -3,128 +3,59 @@
 * checkbox, radiobox
 * ------------------------------
 */
-.bp {
+.h-checkbox {
+    padding-left: 20px + 6px;
+}
+.table th .h-checkbox input[type="checkbox"] + label,
+.table th .h-checkbox input[type="radio"] + label {
+    /*체크해제 상태*/
+    color: $gray-2;
+}
+.table th .h-checkbox.gray input[type="checkbox"] + label,
+.table th .h-checkbox.gray input[type="radio"] + label {
+    /*체크해제 상태*/
+    color: $gray-5;
+    font-weight: 400;
+}
 
-    .h-checkbox {
-        display: block;
-    }
-    .h-checkbox input[type="checkbox"],
-    .h-checkbox input[type="radio"] {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: 0px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 0px;
-    }
-    .h-checkbox input[type="checkbox"] + label,
-    .h-checkbox input[type="radio"] + label {
-        /*체크해제 상태*/
-        color: $gray-5;
-        display: block;
-    }
-    .bp .table th .h-checkbox input[type="checkbox"] + label,
-    .bp .table th .h-checkbox input[type="radio"] + label {
-        /*체크해제 상태*/
-        color: $gray-2;
-    }
-    .bp .table th .h-checkbox.gray input[type="checkbox"] + label,
-    .bp .table th .h-checkbox.gray input[type="radio"] + label {
-        /*체크해제 상태*/
-        color: $gray-5;
-        font-weight: 400;
-    }
-    .h-checkbox input[type="checkbox"] + label span,
-    .h-checkbox input[type="radio"] + label span {
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-    }
-    .h-checkbox input[type="checkbox"] + label::before,
-    .h-checkbox input[type="radio"] + label::before {
-        /*체크해제 상태*/
-        position: absolute;
-        left: 0;
-        //  top: 0;
-        top: 50%;
-        margin-top: -10px;
-        content: "";
-        display: inline-block;
-        background-size: contain;
-        background-repeat: no-repeat;
-        vertical-align: middle;
-    }
-    .h-checkbox input[type="checkbox"]:checked + label span {
-        display: inline-block;
-        // vertical-align: middle;
-    }
-    // .h-checkbox input[type="checkbox"] + label::before { //20px(md)
-    //     @include iconSvg($width: 20px, $height: 20px, $name: 'checkbox_default', $size: contain );
-    // }
-    // .h-checkbox input[type="radio"] + label::before { //20px(md)
-    //     @include iconSvg($width: 20px, $height: 20px, $name: 'radio_default', $size: contain );
-    // } 
-    // .h-checkbox input[type="checkbox"]:checked + label::before {
-    //     @include iconSvg($width: 20px, $height: 20px, $name: 'checkbox_checked', $size: contain );
-    // }
-    // .h-checkbox input[type="radio"]:checked + label::before {
-    //     @include iconSvg($width: 20px, $height: 20px, $name: 'radio_checked', $size: contain );
-    // }
-    .h-checkbox input[type="checkbox"] + label::before { //20px(md)
-        background-image: url($imgPathIcon+'/checkbox_default.svg');
-        transition: background 0.3s ease;
-    }
-    .h-checkbox input[type="radio"] + label::before { //20px(md)
-        background-image: url($imgPathIcon+'/radio_default.svg');
-        transition: background 0.3s ease;
-    } 
+.h-checkbox input[type="checkbox"]:checked + label span {
+    display: inline-block;
+    // vertical-align: middle;
+}
+
+.h-checkbox input[type="checkbox"] + label::before { //20px(md)
+    background-image: url($imgPathIcon+'/checkbox_default.svg');
+    transition: background 0.3s ease;
+}
+.h-checkbox input[type="radio"] + label::before { //20px(md)
+    background-image: url($imgPathIcon+'/radio_default.svg');
+    transition: background 0.3s ease;
+} 
+
+.h-checkbox input[type="checkbox"]:checked + label::before {
+    background-image: url($imgPathIcon+'/checkbox_checked.svg');
+}
+.h-checkbox input[type="radio"]:checked + label::before {
+    background-image: url($imgPathIcon+'/radio_checked.svg');
+}
+
+.h-checkbox input[type="checkbox"]:disabled + label::before {
+//  background-image: url($imgPathIcon+'/');
+}
+.h-checkbox input[type="radio"]:disabled + label::before {
+//  background-image: url('');
+}
+/*
+* ------------------------------
+* 
+* ------------------------------
+*/
+
     
-    .h-checkbox input[type="checkbox"]:checked + label::before {
-        background-image: url($imgPathIcon+'/checkbox_checked.svg');
-    }
-    .h-checkbox input[type="radio"]:checked + label::before {
-        background-image: url($imgPathIcon+'/radio_checked.svg');
-    }
-    .h-checkbox {
-        padding-left: 20px + 6px;
-    }
-    .h-checkbox input[type="checkbox"]:disabled + label::before {
-    //  background-image: url($imgPathIcon+'/');
-    }
-    .h-checkbox input[type="radio"]:disabled + label::before {
-    //  background-image: url('');
-    }
-    /*
-    * ------------------------------
-    * 
-    * ------------------------------
-    */
-    .check-group {
-        display: flex;
-        .h-checkbox {
-            margin-right: 12px;
-        }
-    } 
-    .h-checkbox {
-        position: relative;
-        padding-left: 20px + 8px;
-        white-space: nowrap;
-        &.no-label {
-            width: 20px;
-            height: 20px;
-            padding-left: 0;
-            // margin-left: auto;
-            // margin-right: auto;
-        }
-        input[type="radio"] + label::before,
-        input[type="checkbox"] + label::before {
-            width: 20px;
-            height: 20px;
-        }
-        input[type="radio"] + label  span,
-        input[type="checkbox"] + label span {
-            @include bp-font-size-sm;
-        }
+.h-checkbox {
+    
+    input[type="radio"] + label  span,
+    input[type="checkbox"] + label span {
+        @include bp-font-size-sm;
     }
 }

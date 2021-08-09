@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+            <!-- Contents -->
+            <main class="contents-wrap">
+                <span id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</span>
+            </main>
+        </div>
+        <div data-role="dialog"
+             data-title="사용자 등록"
+             data-width="720"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}">
+            <div class="content-group">
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col width="90px">
+                            <col width="*">
+                            <col width="90px">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">구분<span class="required">*</span></th>
+                                <td>
+                                    <select data-role="dropdownlist" data-value="결제사" data-option-label="결제사">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </td>
+                                <th scope="row">상세구분<span class="required">*</span></th>
+                                <td>
+                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="title-box xsm">
+                    <h4 class="sub-title">기본 정보</h4>
+                </div>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col width="90px" />
+                            <col width="*" />
+                            <col width="90px" />
+                            <col width="*" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">거래처ID<span class="required">*</span></th>
+                                <td>
+                                    <div class="form-set">
+                                        <input type="text" class="h-input" placeholder="" />
+                                        <!-- [D] 체크 됐을 때 .is-checked 추가 -->
+                                        <button type="button" data-role="button" data-icon="input-check" class="text"><span>ID체크</span></button>
+                                    </div>
+                                </td>
+                                <th scope="row">거래처코드<span class="required">*</span></th>
+                                <td>
+                                    <input type="text" class="h-input" value="자동생성" disabled="disabled" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사업자구분<span class="required">*</span></th>
+                                <td>
+                                    <div class="check-group">
+                                        <div class="h-checkbox">
+                                            <input type="radio" id="radio1-1" name="radio" checked="checked" />
+                                            <label for="radio1-1"><span>법인</span></label>
+                                        </div>
+                                        <div class="h-checkbox">
+                                            <input type="radio" id="radio1-2" name="radio" />
+                                            <label for="radio1-2"><span>개인</span></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row">사업자번호<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" placeholder="10자 입력"/></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">거래처명<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" value="국민은행"/></td>
+                                <th scope="row">계약일</th>
+                                <td><input data-role="datepicker" placeholder="yyyymmdd"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">대표자명<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                                <th scope="row">대표자<br/>주민번호<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">업태<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                                <th scope="row">업종</th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" >사업장주소<span class="required">*</span></th>
+                                <td colspan="3">
+                                    <div class="form-group col">
+                                        <div class="form-set">
+                                            <input type="text" class="h-input xsm" placeholder="검색해주세요." disabled="disabled">
+                                            <input type="text" class="h-input" placeholder="기본 주소" disabled="disabled">
+                                            <button data-role="button" class="gray-border">주소찾기</button>
+                                        </div>
+                                        <input type="text" class="h-input" placeholder="상세주소">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">결제사코드1<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                                <th scope="row">결제사코드2</th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="title-box xsm">
+                    <div class="left-group">
+                        <h4 class="sub-title">기본 정보</h4>
+                    </div>
+                    <div class="right-group">
+                        <button type="button" data-role="button" data-icon="plus" class="blue-border"><span>관리자 추가</span></button>
+                    </div>
+                </div>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col width="90px" />
+                            <col width="*" />
+                            <col width="90px" />
+                            <col width="*" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">관리자구분<span class="required">*</span></th>
+                                <td>
+                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </td>
+                                <th scope="row">성명<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">부서명<span class="required">*</span></th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                                <th scope="row">전화번호</th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">휴대전화</th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                                <th scope="row">팩스번호</th>
+                                <td><input type="text" class="h-input" value="" placeholder=""/></td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일</th>
+                                <td colspan="3">
+                                    <div class="form-set">
+                                        <input type="text" class="h-input md" placeholder="이메일 계정 입력">
+                                        <span class="bar">@</span>
+                                        <input type="text" class="h-input md" placeholder="직접입력">
+                                        <select data-role="dropdownlist" data-value="메일주소" data-option-label="메일주소" class="md">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </div>
+                                </td> 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                            
+                <!-- <ul class="pop-guide">
+                    <li class="list">* 사용자정보 수정시 비밀번호가 공란이면 기존 비밀번호를 유지합니다.</li>
+                    <li class="list">* 비밀번호는 8~12자 영문, 숫자, 특수문자를 포함해서 작성해야 합니다.</li>
+                    <li class="list">* 특수문자는 [!@#$^*_-]만 사용가능 합니다.</li>
+                </ul> -->
+                <div class="btn-box bottom justify-content-end">
+                    <button data-role="button" class="">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+
+       
+    </script>
+</body>
+
+</html>

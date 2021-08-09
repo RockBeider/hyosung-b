@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_time" width="15" height="15" viewBox="0 0 15 15">
+    <defs>
+        <style>
+            .cls-2{fill:#ffe282}
+        </style>
+    </defs>
+    <path id="Path_360" d="M438.5 188.339a6.161 6.161 0 1 1-6.161 6.161 6.168 6.168 0 0 1 6.161-6.161m0-1.339a7.5 7.5 0 1 0 7.5 7.5 7.5 7.5 0 0 0-7.5-7.5z" class="cls-2" transform="translate(-431 -187)"/>
+    <path id="Path_361" d="M449.546 204.349H445v-1.337h3.209V199h1.337z" class="cls-2" transform="translate(-441.248 -195.783)"/>
+</svg>

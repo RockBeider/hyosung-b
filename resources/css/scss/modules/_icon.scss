@@ -61,6 +61,18 @@ th .required {
     &.time {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_time', $size: contain );
     }
+    &.input-check {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_check_default', $size: contain );
+    }
+    &.is-checked .input-check {
+        background-image: url($imgPathIcon+'/icon_check_blue.svg');
+    }
+    &.is-important .input-check {
+        background-image: url($imgPathIcon+'/icon_check_active.svg');
+    }
+    &.plus {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_plus', $size: contain );
+    }
     //xsm 16*16
     &.mail {
         @include iconSvg($width: 16px, $height: 16px, $name: 'icon_mystorage', $size: contain );
@@ -81,8 +93,8 @@ th .required {
             background-image: url($imgPathIcon+'/btn_bookmark_active.svg');
         }
     }
-    &.search {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
+    &.search { //공통
+        @include iconSvg($width: 30px, $height: 100%, $name: 'icon_search', $size: 18px 18px );
         &:disabled {
             background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
@@ -91,28 +103,28 @@ th .required {
         @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search_btn', $size: contain );
     }
     &.menu1 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_profile', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_standard_default', $size: contain );
     }
     &.menu2 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_4', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_contract_default', $size: contain );
     }
     &.menu3 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_1', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_calculate_default', $size: contain );
     }
     &.menu4 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_3', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_charge_default', $size: contain );
     }
     &.menu5 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_profile', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_distribution_default', $size: contain );
     }
     &.menu6 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_4', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_accounting_default', $size: contain );
     }
     &.menu7 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_3', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_service_default', $size: contain );
     }
     &.menu8 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_2', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_athorize_default', $size: contain );
     }
     // 20*20
     &.profile {
@@ -124,18 +136,43 @@ th .required {
     // 26*26
     &.tip {
         @include iconSvg($width: 26px, $height: 26px, $name: 'btn_tip_default', $size: contain );
-        &:hover {
+        &.k-state-border-down {
             background-image: url($imgPathIcon+'/btn_tip_hover.svg');
         }
     }
-    // 40*40
-    @for $i from 1 through 14 {
-        &.sector#{$i} {
-            @include iconSvg($width: 40px, $height: 40px, $name: 'sector#{$i}', $size: contain );
-        }
+}
+.active .h-ico {
+    &.menu1 {
+        background-image: url($imgPathIcon+'/icon_standard_selected.svg');
+    }
+    &.menu2 {
+        background-image: url($imgPathIcon+'/icon_contract_selected.svg');
+    }
+    &.menu3 {
+        background-image: url($imgPathIcon+'/icon_calculate_selected.svg');
+    }
+    &.menu4 {
+        background-image: url($imgPathIcon+'/icon_charge_selected.svg');
+    }
+    &.menu5 {
+        background-image: url($imgPathIcon+'/icon_distribution_selected.svg');
+    }
+    &.menu6 {
+        background-image: url($imgPathIcon+'/icon_accounting_selected.svg');
+    }
+    &.menu7 {
+        background-image: url($imgPathIcon+'/icon_service_selected.svg');
+    }
+    &.menu8 {
+        background-image: url($imgPathIcon+'/icon_athorize_selected.svg');
     }
 }
-
+.is-checked .k-i-input-check {
+    background-image: url($imgPathIcon+'/icon_check_blue.svg');
+}
+.is-important .k-i-input-check {
+    background-image: url($imgPathIcon+'/icon_check_active.svg');
+}
 .k-i- {
     &example {
      background: gray;
@@ -144,10 +181,6 @@ th .required {
         @include iconSvg($width: 28px, $height: 28px, $name: 'btn_filter_default', $size: 8px 15px );
         margin-right: -10px;
     }
-    &bp-search {
-        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_search_btn', $size: contain);
-    }
-    
     //xs 15*15
     &up {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_arrow_up', $size: contain );
@@ -158,6 +191,13 @@ th .required {
     &time {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_time', $size: contain );
     }
+    &input-check {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_check_default', $size: contain );
+    }
+    &plus {
+        @include iconSvg($width: 15px, $height: 15px, $name: 'icon_plus', $size: contain );
+    }
+   
     //xsm 16*16
     &mail {
         @include iconSvg($width: 16px, $height: 16px, $name: 'icon_mystorage', $size: contain );
@@ -173,19 +213,22 @@ th .required {
     }
    
     //sm 18*18
+    &calendar {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_calendar', $size: contain );
+    }
     &bookmark {
         @include iconSvg($width: 18px, $height: 18px, $name: 'btn_bookmark_default', $size: contain );
         &active {
             background-image: url($imgPathIcon+'/btn_bookmark_active.svg');
         }
     }
-    &search {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search', $size: contain );
+    &search { //공통
+        @include iconSvg($width: 30px, $height: 100%, $name: 'icon_search', $size: 18px 18px );
         &:disabled {
             background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
     }
-    &search-blue {
+    &search-blue { //공통
         @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search_btn', $size: contain );
     }
     &menu1 {

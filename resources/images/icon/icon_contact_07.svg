@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_contact_07" width="52" height="52" viewBox="0 0 52 52">
+    <defs>
+        <style>
+            .cls-3{fill:#666}
+        </style>
+    </defs>
+    <circle id="Ellipse_35" cx="26" cy="26" r="26" fill="#efefef"/>
+    <g id="Group_646" transform="translate(14.062 13.344)">
+        <g id="Group_658" transform="translate(1.18 0)">
+            <path id="Rectangle_1468" d="M0 0H28.663V2.073H0z" class="cls-3" transform="matrix(0.514, -0.858, 0.858, 0.514, 0, 24.591)"/>
+            <g id="Group_658-2" transform="translate(9.496 10.339)">
+                <path id="Path_452" d="M622.512 541.074h3.935V539h-2.694z" class="cls-3" transform="translate(-619.811 -539)"/>
+                <path id="Path_453" d="M616 552.074h6.636V550h-5.425L616 552.023z" class="cls-3" transform="translate(-616 -545.438)"/>
+            </g>
+            <g id="Group_660" transform="translate(2.031 2.459)">
+                <path id="Path_454" d="M618.722 520l-1.262 2.074h1.545v16.591h-11.491l-1.261 2.074h14.827V520z" class="cls-3" transform="translate(-602.829 -520)"/>
+                <g id="Group_659">
+                    <path id="Path_455" d="M610.028 520H598v21.568l2.074-3.136v-16.358h9.954z" class="cls-3" transform="translate(-598 -520)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

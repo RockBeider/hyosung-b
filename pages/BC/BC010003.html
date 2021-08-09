@@ -14,7 +14,7 @@
 
         <div id="container">
         </div>
-        <div class="layer-wrap bp">
+        <div class="layer-wrap">
             <div data-role="dialog"
                  data-title="비밀번호 변경"
                  data-width="450"
@@ -32,7 +32,7 @@
                         <button data-role="button" class="">비밀번호 변경</button>
                     </div>
                 </div>
-                <div class="check-group">
+                <div class="check-group bottom">
                     <div class="h-checkbox">
                         <input type="checkbox" id="chekNolonger" name="checkbox" />
                         <label for="chekNolonger"><span>2주간 표시 안함</span></label>
@@ -44,9 +44,12 @@
     </div>
     <!-- Default Script Include -->
     <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
-   
+    <script>
+        kendo.bind($(".wrap"), {});
+    </script>
 </body>
 
 </html>

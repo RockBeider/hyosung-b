@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_remote" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1,.cls-4{fill:none}.cls-1{stroke:#fff;stroke-miterlimit:10;stroke-width:1.5px}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="Rectangle_16" class="cls-1">
+        <path d="M0 0H18V13H0z" class="cls-3" transform="translate(1 2)"/>
+        <path d="M0.75 0.75H17.25V12.25H0.75z" class="cls-4" transform="translate(1 2)"/>
+    </g>
+    <g id="Rectangle_17" class="cls-1">
+        <path d="M0 0H8V4.604H0z" class="cls-3" transform="translate(6 13.5)"/>
+        <path d="M0.75 0.75H7.25V3.854H0.75z" class="cls-4" transform="translate(6 13.5)"/>
+    </g>
+    <path id="Line_24" d="M0 0L12 0" class="cls-1" transform="translate(4 17.447)"/>
+    <path id="Line_25" d="M0 0L16.684 0" class="cls-1" transform="translate(2.048 11.048)"/>
+</svg>

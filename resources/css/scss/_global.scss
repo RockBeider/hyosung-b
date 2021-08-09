@@ -113,16 +113,75 @@ button {
 .ml-8 {
 	margin-left: 8px !important;
 }
+.mt-4 {
+	margin-top: 4px !important;
+}
 .mt-10 {
 	margin-top: 10px !important;
 }
 .mt-20 {
 	margin-top: 20px !important;
 }
+.mt-30 {
+	margin-top: 30px !important;
+}
+.my-0 {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+.mx-0 {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
 .mt-0 { margin-top: 0px !important; }
 .mb-0 { margin-bottom: 0px !important; }
+.mb-10 { margin-bottom: 10px !important; }
 .ml-20 { margin-left: 20px !important; }
 .text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-center > * { justify-content: center !important; margin-left: auto !important; margin-right: auto !important; }
+/*
+* ------------------------------
+* table divide
+* ------------------------------
+*/
+
+.divide {
+	padding: 20px 0;
+	
+	+ .divide {
+		border-top: 1px solid $gray-e4;
+	}
+}
+.table-group.divide-thick {
+	position: relative;
+	+ .table-group.divide-thick {
+		margin-top: 20px;
+		&::before {
+			content: '';
+			display: block;
+			height: 8px;
+			margin: 0 -30px;
+			background: $gray-d;
+		}
+	}
+}
+
+td .divide {
+	padding: 10px 0;
+	.list + .list {
+		margin-top: 10px;
+	}
+	&:first-child {
+		margin-top: -6px;
+	}
+	&:last-child {
+		margin-bottom: -6px;
+	}
+	+ .divide {
+		border-top: 1px solid $gray-e4;
+	}
+}
 /*
 * ------------------------------
 * Title
@@ -138,6 +197,9 @@ button {
 	@include font-size-lg;
 	color: $gray-2;
 	font-weight: 500;
+	&.md {
+		@include font-size-lg;
+	}
 	&.dot {
 		position: relative;
 		padding-left: 8px;
@@ -168,20 +230,84 @@ button {
 		display: flex;
 		align-items: center;
 	}
+	.btn-box {
+		margin-top: 0;
+	}
 	&.lg {
 		height: 32px;
 		margin: 0 0 20px;
 	}
 	&.md {
 		min-height: 28px;
-		margin: 12px 0 4px;
+		margin: 20px 0 4px;
+        .sub-title {
+            @include font-size-lg;
+            min-height: 30px;
+            font-weight: 500;
+        }
+        .right-group, .btn-box {
+            margin-bottom: 6px;
+        }
+	}
+	&.xsm { //팝업일 경우
+		min-height: 28px;
+		margin: 12px 0 6px;
+		align-items: flex-end;
+        .sub-title {
+            @include font-size-menu;
+        }
+        .noti {
+            @include font-size-sm;
+        }
 	}
 	&.sm {
 		min-height: 28px;
 		margin: 12px 0 8px;
+        .sub-title {
+            @include font-size-sm;
+        }
+        .noti {
+            @include font-size-sm;
+        }
+	}
+	&.xs {
+		min-height: 20px;
+		margin: 6px 0 8px;
+        .sub-title {
+            @include font-size-sm;
+        }
+        .noti {
+            @include font-size-sm;
+        }
+	}
+    .noti {
+		&.sm {
+			@include font-size-sm;
+			// line-height: 18px;
+		}
+		&.red {
+			color: $error;
+		}
 	}
 }
 
+
+
+/*
+* ------------------------------
+*  리스트
+* ------------------------------
+*/
+.list-group {
+	display: flex;
+	align-items: center;
+	&.half {
+		> * { flex: 1; }
+		> * + * {
+			margin-left: 10px;
+		}
+	}
+}
 
 
 /*
@@ -249,32 +375,6 @@ button {
 	display: flex;
 }
 
-.adding-wrap {
-	
-}
-// .adding-box {
-// 	display: flex;
-// 	+ .adding-box {
-// 		margin-top: 12px;
-// 	}
-// 	.label {
-// 		@include bp-font-size-sm;
-// 		white-space: nowrap;
-// 		width: 73px;
-// 		line-height: 30px;
-// 	}
-// }
-.adding-set {
-	width: 100%;
-	.added {
-		display: flex;
-		flex-direction: column;
-		margin-top: 6px;
-		> * + * {
-			margin-top: 6px;
-		}
-	}
-}
 
 /*
 * ------------------------------
@@ -288,21 +388,15 @@ button {
 * File upload
 * ------------------------------
 */
-
-
 .filebox {
 	padding: 20px;
 	background-color: $gray-f5;
 	.label {
+		@include font-size-sm;
 		margin-right: 0;
+		white-space: nowrap;
 	}
-	.input-box {
-		.h-input { 
-			&:disabled, &:disabled:focus {
-				// background-color: $white;
-				// color: $gray-a;
-			}
-		}
+	.input-set {
 		.k-button {
 			position: absolute;
 			top: 0;
@@ -330,6 +424,29 @@ button {
 
 /*
 * ------------------------------
-* File upload BP type
+* tab control
 * ------------------------------
 */
+
+.tab-control {
+	display: flex;
+    flex-direction: column;
+	&.box {
+		.tabpanel {
+			flex: 1 1 100%;
+			margin-top: 10px;
+			padding: 4px 30px 0;
+			background: $white;
+		}
+	}
+}
+.tab-menu {
+	.btn-box {
+		position: absolute;
+		right: 0;
+		bottom: -1px;
+		margin-top: 0;
+		padding-left: 8px;
+		background: $gray-f5;
+	}
+}

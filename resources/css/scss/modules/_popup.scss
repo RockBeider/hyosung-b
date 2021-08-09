@@ -37,113 +37,36 @@
 * ------------------------------
 */
 /* 임시! */
-// .bp .k-window-content {
-//     padding: 0;
-//     overflow: hidden;
-// }
-// .k-window-actions .k-button {
-//     border: 1px solid #000;
-// }
-// .content-group {
-//     overflow: auto;
-//     height: calc(100% - 90px);
-//     padding: 10px
-// }
 
-// .window-footer {
-//     position: absolute;
-//     bottom: 0;
-//     display: block;
-//     width: 95%;
-//     margin-top: 150px;
-//     padding: 19px 0 20px;
-//     text-align: right;
-//     border-top: 1px solid #e5e5e5;
+.k-window { 
+    border-radius: 3px;
+    padding: 0;
+    background: $white;
+    outline: 0;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10002;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 // }
-
-    
-/*
-* ------------------------------
-* window
-* ------------------------------
-*/
-/* 임시! */
-.bp {
-    .k-window {
-        margin: 10px 0;
-        box-sizing: border-box;
-        margin: 0 10px;
-        max-height: calc(100% - 20px);
-        border-radius: 0;
-        overflow: hidden;
-        border: 1px solid $gray-c;
-        box-shadow: 1px 1px 7px 1px rgba(128,128,128,.3);
-    }
-    .k-window-titlebar { //head
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 60px;
-        min-height: 60px;
-        padding: 0 21px 0 30px;
-        background-color: $layer-blue;
-        white-space: nowrap;
-    
-        color: $white;
-        font-size: 20px;
-        font-weight: bold;
-        letter-spacing: -1.5px;
-    }
-    .k-window-content { //body
-        outline: 0;
-        position: relative;
-        flex: 1 1 auto;
-        background: $gray-f7;
-        overflow: hidden;
-        overflow: auto;
-    }
-    .select-industry-box {
-        display: flex;
-        .left-group {
-
-        }
-        .right-group {
-            margin-left: 10px;
-            background: $gray-f7;
-            border: 1px solid $gray-e;
-        }
-    }
-    .k-window-actions {
-        display: flex;
-        .k-button {
-            min-width: 0;
-            width: 40px;
-            height: 40px;
-            outline: none;
-            &:hover, &:focus {
-                background-color: transparent;
-                border: none;
-            }
-            &.k-state-focused {
-                background-color: transparent;
-                border: none;
-            }
-            // .k-i- {
-            //     &window-minimize {
-            //         @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_min', $size: contain );
-            //     }
-            //     &window-restore {
-            //         @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_minimized', $size: contain );
-            //     }
-            //     &close {
-            //         @include iconPng($width: 22px, $height: 22px, $name: 'bp_btn_pop_closed', $size: contain );
-            //     }
-            // }
-        }
-    }
+// /* 임시! */
+// .k-window {
+    margin: 10px 0;
+    box-sizing: border-box;
+    margin: 0 10px;
+    max-height: calc(100% - 20px);
+    border-radius: 0;
+    overflow: hidden;
+    border: 1px solid $gray-c;
+    box-shadow: 1px 1px 7px 1px rgba(128,128,128,.3);
     .content-group {
+        
         overflow: auto;
         height: calc(100% - 90px);
+        background-color: $gray-f7;
         padding: 30px;
         border-top: 0;
         border-bottom: 0;
@@ -153,97 +76,184 @@
             margin-top: 30px;
         }
     }
-    .window-footer {
-        display: block;
-        padding: 20px 30px;
-        border-top: 1px solid #e5e5e5;
-        text-align: right;
+}
+.k-window-titlebar { //head
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    min-height: 60px;
+    padding: 0 21px 0 30px;
+    background-color: $layer-blue;
+    white-space: nowrap;
+
+    color: $white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -1.5px;
+}
+.k-window-content { //body
+    outline: 0;
+    position: relative;
+    flex: 1 1 auto;
+    background: $gray-f7;
+    // overflow: hidden;
+    overflow: auto;
+}
+.k-window-actions {
+    display: flex;
+    .k-button {
+        min-width: 0;
+        width: 40px;
+        height: 40px;
+        outline: none;
+        &:hover, &:focus {
+            background-color: transparent;
+            border: none;
+        }
+        &.k-state-focused {
+            background-color: transparent;
+            border: none;
+        }
+        .k-i- {
+            &window-minimize {
+                @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_min', $size: contain );
+            }
+            &window-restore {
+                @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_minimized', $size: contain );
+            }
+            &close {
+                @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_closed', $size: contain );
+            }
+        }
     }
 }
+
+.window-footer {
+    display: block;
+    padding: 20px 30px;
+    border-top: 1px solid #e5e5e5;
+    text-align: right;
+}
+
 /*
 * ------------------------------
 * dialog
 * ------------------------------
 */
-.bp {
-    .k-dialog {
-        padding: 30px;
-        box-sizing: border-box;
-        margin: 0 10px;
-        max-height: calc(100% - 20px);
-        border-radius: 6px;
-        overflow: hidden;
-    }
-    .k-dialog-buttongroup { //foot
-        background-color: $gray-f7;
-        border-bottom-right-radius: 3px;
-        border-bottom-left-radius: 3px;
-        padding: 10px;
-        border-top: 1px solid $gray-c;
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-end;
-        align-items: center;
-        overflow: hidden;
-        height: 80px;
-    } 
+.k-window.k-dialog {
+    // height: 100%;
+    padding: 0;
+    background: $white;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10002;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    border: 1px solid $gray-5;
+    overflow: hidden;
     
-    .k-button.k-dialog-close {
-        @include iconSvg($width: 20px, $height: 20px, $name: 'bp_icon_close', $size: contain);
-        position: absolute;
-        right: 22px;
-        top: 14px;
-        min-width: 0 !important;
-        width: 30px;
-        height: 30px !important;
-        background-color: transparent; 
-        
-        &:hover, &:focus {
-            background-color: transparent;
-            border: 1px solid transparent;
-        }
-
-    }
-}
-.bc {
-    .k-dialog {
-        border: 1px solid $gray-5;
-    }
     .k-dialog-titlebar {
-        // @include bc-font-size-sm;
+        @include font-size-lg;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         height: 50px;
+        min-height: 50px;
+        background: $white;
         padding: 0 30px;
         border-bottom: 1px solid $gray-d;
-        font-weight: bold;
+        color: $gray-2;
+        font-weight: 500;
         .k-button {
             padding: 0; 
         }
     }
     .k-dialog-content {
-        // padding: 30px;
+        height: 100%;
+        height: calc(100% - 50px);
+    }
+    .k-button.k-dialog-close {
+        @include iconSvg($width: 18px, $height: 18px, $name: 'btn_X', $size: 18px 18px);
+        position: absolute;
+        right: 22px;
+        top: 10px;
+        min-width: 0 !important;
+        width: 30px;
+        height: 30px !important;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent; 
+        border: 1px solid transparent;
+        &:hover, &:focus {
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
     }
     .content-group {
-        padding: 30px;
+        height: 100%;
+        background: $white;
         &.has-check {
             padding-bottom: 30px + 40px;
         }
     }
-    .check-group {
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-        height: 40px;
-        background: $gray-f5;
-        padding: 0 10px;
+    .pop-guide {
+        .list {
+            @include font-size-xs; 
+        }
     }
 }
 
 
+.check-group.bottom {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 40px;
+    background: $gray-f5;
+    padding: 0 10px;
+}
+
+/*
+* ------------------------------
+* BC0002
+* ------------------------------
+*/
+
+.pop-timer-box {
+    // @include bc-font-size-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85px;
+    background: $gray-f5;
+    border: 1px solid $gray-e;
+    .time-label {
+        margin-left: 6px;
+        color: $gray-5;
+        font-weight: 500;
+    }
+    .time-set {
+        margin-left: 10px;
+        color: $error;
+        font-weight: bold;
+    }
+}
+.pop-guide {
+    margin-top: 10px;
+    .list {
+        // @include font-size-xs; 
+        color: $gray-7;
+        line-height: 18px;
+    }
+}
+.btn-box {
+    margin-top: 20px;
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_plus" width="15" height="15" viewBox="0 0 15 15">
+    <defs>
+        <style>
+            .cls-2{fill:#0e4194}
+        </style>
+    </defs>
+    <g id="Group_515" transform="translate(1 1)">
+        <path id="Rectangle_1313" d="M0 0H1.2V13H0z" class="cls-2" transform="translate(5.9 0.15)"/>
+        <path id="Rectangle_1314" d="M0 0H1.2V13H0z" class="cls-2" transform="translate(0 7.25) rotate(-90)"/>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_accounting_selected" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <style>
+            .cls-2{fill:#0e4194}
+        </style>
+    </defs>
+    <g id="Group_539" transform="translate(2.378 1.702)">
+        <path id="Rectangle_1369" d="M0 0H1.26V4.5H0z" class="cls-2" transform="translate(1.138 10.655)"/>
+        <path id="Rectangle_1370" d="M0 0H1.26V7.2H0z" class="cls-2" transform="translate(4.374 7.955)"/>
+        <path id="Rectangle_1371" d="M0 0H1.26V6.3H0z" class="cls-2" transform="translate(7.61 8.855)"/>
+        <path id="Rectangle_1372" d="M0 0H1.26V9.9H0z" class="cls-2" transform="translate(10.845 5.255)"/>
+        <path id="Path_384" d="M439.769 428.119l3.534 1.668 4.724-5.053-1.007-.941-4.038 4.319-3.476-1.64-4.723 4.458.946 1z" class="cls-2" transform="translate(-434.784 -423.792)"/>
+    </g>
+</svg>

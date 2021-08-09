@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <clipPath id="xn8pkya8fa">
+            <circle cx="10" cy="10" r="10" fill="#e0e5ec" transform="translate(275 17)"/>
+        </clipPath>
+    </defs>
+    <circle cx="10" cy="10" r="10" fill="#002a70"/>
+    <g clip-path="url(#xn8pkya8fa)" transform="translate(-275 -17)">
+        <text fill="#e0e5ec" font-family="xeicon" font-size="22px" letter-spacing="-0.05em" transform="translate(274 39)">
+            <tspan x="0" y="0"></tspan>
+        </text>
+    </g>
+</svg>

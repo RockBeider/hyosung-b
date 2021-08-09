@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_sms" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Rectangle_18" class="cls-2">
+        <path d="M0 0H18V14.211H0z" transform="translate(1 3)"/>
+        <path fill="none" d="M0.75 0.75H17.25V13.461H0.75z" transform="translate(1 3)"/>
+    </g>
+    <path id="Path_9" d="M46.52 117.5l-7.885 6.651-7.885-6.651" class="cls-2" transform="translate(-28.457 -112.705)"/>
+</svg>

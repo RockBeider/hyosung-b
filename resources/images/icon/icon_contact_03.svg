@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_contact_03" width="52" height="52" viewBox="0 0 52 52">
+    <defs>
+        <style>
+            .cls-3{fill:#0e4194}
+        </style>
+    </defs>
+    <circle id="Ellipse_31" cx="26" cy="26" r="26" fill="#cfdef5"/>
+    <g id="Group_649" transform="translate(13.217 13.344)">
+        <g id="Group_632" transform="translate(2.783 0.802)">
+            <g id="Group_631" transform="translate(0 0)">
+                <path id="Path_421" d="M295.223 524.283V516h-10.791L277 523.923v16.1h18.223v-6.627h-2.071v4.556h-14.081v-13.21l6.258-6.671h7.824v6.212z" class="cls-3" transform="translate(-277 -516)"/>
+                <path id="Path_422" d="M281 527.283h7.869V519H286.8v6.212H281z" class="cls-3" transform="translate(-279.343 -517.758)"/>
+            </g>
+            <path id="Path_423" d="M289.711 543.6l5.564 5.564 9.17-9.585-1.464-1.464-7.706 8.12-4.1-4.1z" class="cls-3" transform="translate(-284.447 -528.953)"/>
+        </g>
+    </g>
+</svg>
