@@ -52,9 +52,19 @@
         <div class="g-example-body flex-block">
             <input data-role="datepicker" placeholder="yyyymmdd" class="sm">
             <div class="form-set">
-                <input data-role="datepicker" placeholder="yyyymmdd" class="sm">
+                <input data-role="datepicker" 
+                    data-format="yyyy/MM/dd"
+                    placeholder="yyyymmdd" 
+                    data-culture="ko-KR"
+                    data-footer="false"
+                    class="datepicker sm" />
                 <span class="bar">~</span>
-                <input data-role="datepicker" placeholder="yyyymmdd" class="sm">
+                <input data-role="datepicker" 
+                    data-format="yyyy/MM/dd"
+                    placeholder="yyyymmdd" 
+                    data-culture="ko-KR"
+                    data-footer="false"
+                    class="datepicker sm" />
             </div>
         </div>
 
@@ -62,9 +72,19 @@
             <pre><code class="html">
 &lt;input data-role="datepicker" placeholder="yyyymmdd" class="sm">
 &lt;div class="form-set">
-    &lt;input data-role="datepicker" placeholder="yyyymmdd" class="sm">
+    &lt;input data-role="datepicker" 
+        data-format="yyyy/MM/dd"
+        placeholder="yyyymmdd" 
+        data-culture="ko-KR"
+        data-footer="false"
+        class="datepicker sm" />
     &lt;span class="bar">~&lt;/span>
-    &lt;input data-role="datepicker" placeholder="yyyymmdd" class="sm">
+    &lt;input data-role="datepicker" 
+        data-format="yyyy/MM/dd"
+        placeholder="yyyymmdd" 
+        data-culture="ko-KR"
+        data-footer="false"
+        class="datepicker sm" />
 &lt;/div>
             </code></pre>
         </div>
@@ -170,11 +190,12 @@
                 <div class="form-group">
                     <span class="label">검색항목</span>
                     <div class="form-set">
-                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="sm">
                             <option value="1">온라인</option>
                             <option value="2">오프라인</option>
                         </select>
                         <div class="input-set search lg">
+                            <i class="h-ico sm search">검색</i>
                             <input type="text" class="h-input" placeholder="입력해주세요">
                         </div>
                     </div>
@@ -182,7 +203,7 @@
                 <div class="form-group">
                     <span class="label">상담부서</span>
                     <div class="form-set">
-                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="sm">
                             <option value="1">온라인</option>
                             <option value="2">오프라인</option>
                         </select>
@@ -191,9 +212,19 @@
                 <div class="form-group">
                     <span class="label">검색기간</span>
                     <div class="form-set">
-                        <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+                        <input data-role="datepicker" 
+                            data-format="yyyy/MM/dd"
+                            placeholder="yyyymmdd" 
+                            data-culture="ko-KR"
+                            data-footer="false"
+                            class="datepicker sm" />
                         <span class="bar">~</span>
-                        <input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+                        <input data-role="datepicker" 
+                            data-format="yyyy/MM/dd"
+                            placeholder="yyyymmdd" 
+                            data-culture="ko-KR"
+                            data-footer="false"
+                            class="datepicker sm" />
                         <ul data-role="buttongroup" class="period"
                         data-index="0">
                             <li data-role="button"><span>오늘</span></li>
@@ -217,6 +248,7 @@
                 &lt;option value="2">오프라인&lt;/option>
             &lt;/select>
             &lt;div class="input-set search lg">
+                &lt;i class="h-ico sm search">검색&lt;/i>
                 &lt;input type="text" class="h-input" placeholder="입력해주세요">
             &lt;/div>
         &lt;/div>
@@ -233,9 +265,19 @@
     &lt;div class="form-group">
         &lt;span class="label">검색기간&lt;/span>
         &lt;div class="form-set">
-            &lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+            &lt;input data-role="datepicker" 
+                data-format="yyyy/MM/dd"
+                placeholder="yyyymmdd" 
+                data-culture="ko-KR"
+                data-footer="false"
+                class="datepicker sm" />
             &lt;span class="bar">~&lt;/span>
-            &lt;input data-role="dateinput" data-format="yyyy/MM/dd" data-value="2021/07/31"/> 
+            &lt;input data-role="datepicker" 
+                data-format="yyyy/MM/dd"
+                placeholder="yyyymmdd" 
+                data-culture="ko-KR"
+                data-footer="false"
+                class="datepicker sm" />
             &lt;ul data-role="buttongroup" class="period"
             data-index="0">
                 &lt;li data-role="button">&lt;span>오늘&lt;/span>&lt;/li>

@@ -125,8 +125,17 @@ button {
 .mt-30 {
 	margin-top: 30px !important;
 }
+.my-0 {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+.mx-0 {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
 .mt-0 { margin-top: 0px !important; }
 .mb-0 { margin-bottom: 0px !important; }
+.mb-10 { margin-bottom: 10px !important; }
 .ml-20 { margin-left: 20px !important; }
 .text-left { text-align: left !important; }
 .text-center { text-align: center !important; }
@@ -138,6 +147,27 @@ button {
 */
 
 .divide {
+	padding: 20px 0;
+	
+	+ .divide {
+		border-top: 1px solid $gray-e4;
+	}
+}
+.table-group.divide-thick {
+	position: relative;
+	+ .table-group.divide-thick {
+		margin-top: 20px;
+		&::before {
+			content: '';
+			display: block;
+			height: 8px;
+			margin: 0 -30px;
+			background: $gray-d;
+		}
+	}
+}
+
+td .divide {
 	padding: 10px 0;
 	.list + .list {
 		margin-top: 10px;
@@ -167,6 +197,9 @@ button {
 	@include font-size-lg;
 	color: $gray-2;
 	font-weight: 500;
+	&.md {
+		@include font-size-lg;
+	}
 	&.dot {
 		position: relative;
 		padding-left: 8px;
@@ -206,9 +239,9 @@ button {
 	}
 	&.md {
 		min-height: 28px;
-		margin: 12px 0 4px;
+		margin: 20px 0 4px;
         .sub-title {
-            @include font-size-menu;
+            @include font-size-lg;
             min-height: 30px;
             font-weight: 500;
         }
@@ -391,6 +424,29 @@ button {
 
 /*
 * ------------------------------
-* File upload BP type
+* tab control
 * ------------------------------
 */
+
+.tab-control {
+	display: flex;
+    flex-direction: column;
+	&.box {
+		.tabpanel {
+			flex: 1 1 100%;
+			margin-top: 10px;
+			padding: 4px 30px 0;
+			background: $white;
+		}
+	}
+}
+.tab-menu {
+	.btn-box {
+		position: absolute;
+		right: 0;
+		bottom: -1px;
+		margin-top: 0;
+		padding-left: 8px;
+		background: $gray-f5;
+	}
+}

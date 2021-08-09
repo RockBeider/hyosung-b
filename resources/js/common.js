@@ -33,33 +33,53 @@ $(window).load(function () {
  * side submenu accordion
  * =====================================
  */
-$(".sidebar-wrap .has-submenu:first-child").addClass("active"); //첫번째 메뉴는 열림
-$(document).on("click", ".sidebar-wrap .has-submenu > .sidebar-1depth", function () {
-	$(".sidebar-wrap .sidebar-2depth.has-submenu:first-of-type").addClass("active"); //첫번째 메뉴는 열림
-	if ($(this).parent().hasClass("active")) {
-		$(this).next(".sidebar-wrap .sidebar-2depth").slideUp(200);
-		$(this).parent().removeClass("active");
-	} else {
-		$(this).next(".sidebar-wrap .sidebar-2depth").slideDown(200);
+
+// $(".sidebar-body .has-submenu:first-child").addClass("active"); //첫번째 메뉴는 열림
+// $(".sidebar-body .has-submenu:first-child .sidebar-2depth").slideDown(200);
+$(document).on("click", ".sidebar-body .has-submenu > .sidebar-1depth", function () {
+	// $(".sidebar-wrap .sidebar-2depth.has-submenu:first-of-type").addClass("active"); //첫번째 메뉴는 열림
+	if (!($(this).parent().hasClass("active"))) {
+		// $(".sidebar-wrap .has-submenu").removeClass('active');
+		// $(this).next(".sidebar-wrap .sidebar-2depth").slideUp(200);
+		// $(this).parent().removeClass("active");
+	// } else {
+		$(".sidebar-wrap .sidebar-2depth").slideUp(200);
+		$(".sidebar-wrap .has-submenu").removeClass('active');
+		$(this).next(".sidebar-2depth").slideDown(200);
+		$(this).parent().addClass("active");
 		setTimeout(function () {
 			$(".sidebar-wrap .sidebar-2depth").css({ overflow: "visible" });
 		}, 200);
-		$(this).parent().addClass("active");
 	}
 });
 
-$(document).on("click", ".sidebar-wrap .sidebar-2depth.has-submenu > a", function () {
-	if ($(this).parent(".sidebar-2depth").hasClass("active")) {
-		$(this).next(".sidebar-wrap .sidebar-3depth").slideUp(200);
-		$(this).parent(".sidebar-2depth").removeClass("active");
-	} else {
-		$(this).next(".sidebar-wrap .sidebar-3depth").slideDown(200);
-		setTimeout(function () {
-			$(".sidebar-wrap .sidebar-3depth").css({ overflow: "visible" });
-		}, 200);
-		$(this).parent(".sidebar-2depth").addClass("active");
+// $(document).on("click", ".sidebar-wrap .sidebar-2depth.has-submenu > a", function () {
+// 	if ($(this).parent(".sidebar-2depth").hasClass("active")) {
+// 		$(this).next(".sidebar-wrap .sidebar-3depth").slideUp(200);
+// 		$(this).parent(".sidebar-2depth").removeClass("active");
+// 	} else {
+// 		$(this).next(".sidebar-wrap .sidebar-3depth").slideDown(200);
+// 		setTimeout(function () {
+// 			$(".sidebar-wrap .sidebar-3depth").css({ overflow: "visible" });
+// 		}, 200);
+// 		$(this).parent(".sidebar-2depth").addClass("active");
+// 	}
+// });
+$(document).on('click', '#sidebarFold', function() {
+	if($('.sidebar-wrap').hasClass('fold')) { //접힌상태
+		console.log('닫힌상태')
+		$(".sidebar-wrap .sidebar-2depth").slideUp(200);
+		$('.sidebar-wrap').removeClass('fold');
+	}else {
+		console.log('열린상태')
+		$(".sidebar-wrap .sidebar-2depth").slideUp(200);
+		$('.sidebar-wrap').addClass('fold');
 	}
-});
+})
+$(document).on('click', '.sidebar-wrap.fold .sidebar-head, .sidebar-wrap.fold .sidebar-1depth', function() {
+	$('.sidebar-wrap').removeClass('fold');
+})
+
 
 /* =====================================
  * 타이틀 영역 토글버튼 SA0101.html

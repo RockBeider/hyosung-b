@@ -73,6 +73,8 @@ body {
 	overflow: hidden;
 }
 .contents-wrap {
+	display: flex;
+	flex-direction: column;
 	flex: 1 0;
 	padding: 20px 30px 30px;
 	overflow: auto;
@@ -137,8 +139,20 @@ body {
 	padding: 0 10px 0 12px;
 	background-color: $blue;
 	border-radius: 3px;
-	.btn-text {
+	// .btn-text {
+	// 	@include font-size-sm;
+	// 	text-decoration: underline;
+	// }
+	.time-add {
 		@include font-size-sm;
+		height: auto;
+		padding: 0;
+		border-radius: 0;
+		border: none;
+		background-color: transparent; 
+		
+		color: $white;
+		font-weight: 400;
 		text-decoration: underline;
 	}
 	> * + * {
@@ -157,17 +171,67 @@ body {
 
 /*
 * ------------------------------
+* container
+* ------------------------------
+*/
+// .contents-body {
+// 	flex: 1;
+// 	> * {
+// 		height: 100%;
+// 	}
+// }
+
+/*
+* ------------------------------
 * Sidebar
 * ------------------------------
 */
 .sidebar-wrap {
+	&.fold {
+		max-width: 60px;
+		transition: all 0.1s ease;
+		.sidebar-head .main-menu span,
+		.sidebar-head .sub-menu,
+		.sidebar-1depth span,
+		.sidebar-2depth,
+		.sidebar-foot button span,
+		.sidebar-1depth::after {
+			display: none !important;
+		}
+		.sidebar-head {
+			padding: 22px 0 22px;
+		}
+		.sidebar-foot .btn-box {
+			display: flex;
+			flex-direction: column;
+		}
+		.sidebar-foot {
+			button {
+				width: 40px;
+				height: 40px;
+				margin: 0;
+				padding: 0;
+			}
+			button:first-child {
+				order: 2;
+			}
+			button:last-child {
+				order: 1;
+				margin-bottom: 8px;
+			}
+			.h-ico.lnb-close {
+				transform: rotate(180deg);
+				transition: all 0.3s ease;
+			}
+		}
+	}
 	display: flex;
 	flex-direction: column;
 	flex: 0 0 220px;
 	max-width: 220px;
 	background-color: #fff;
 	border-right: 1px solid #ddd;
-	transition: margin 0.2s;
+	transition: max-width, margin 0.2s ease;
 	.sidebar-head {
 		position: relative;
 		padding: 12px 0 19px;

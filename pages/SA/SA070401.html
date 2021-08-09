@@ -55,6 +55,7 @@
                                         <option value="2">오프라인</option>
                                     </select>
                                     <div class="input-set search lg">
+                                        <i class="h-ico sm search">검색</i>
                                         <input type="text" class="h-input" placeholder="입력해주세요">
                                     </div>
                                 </div>
@@ -62,38 +63,42 @@
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                         </div>
                         <div class="table-set">
-                            <div class="title-box sm">
-                                <div class="left-group">
-                                    <span class="amount-set">
-                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                        <span class="amount">26</span><span class="unit">건</span>
-                                    </span>
-                                </div>
-                                <div class="right-group">
-                                    <div class="btn-box">
-                                        <button data-role="button">공지안내발송</button>
-                                        <button data-role="button">등록</button>
-                                        <button data-role="button" class="green">엑셀</button>
+                            <div class="table-content grid" id="viewModel_grid_sort">
+                                <!-- toolbar template -->
+                                <script type="text/x-kendo-template" class="toolbarTemplate">
+                                    <div class="title-box sm">
+                                        <div class="left-group">
+                                            <span class="amount-set">
+                                                <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                <span class="amount">26</span><span class="unit">건</span>
+                                            </span>
+                                        </div>
+                                        <div class="right-group">
+                                            <div class="btn-box">
+                                                <button role="button" class="k-button"><span>공지안내발송</span></button>
+                                                <button role="button" class="k-button"><span>등록</span></button>
+                                                <button role="button" class="k-button green"><span>엑셀</span></button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="table-content grid">
-                                <div data-role="grid" data-sortable="true" data-editable="false" data-columns='[
-                                    { "field": "N", "width": 50 },
-                                    { "field": "NO", "width": 50 },
-                                    { "field": "상품코드", "width": 90 },
-                                    { "field": "상품명", "width": 170 },
-                                    { "field": "어플리케이션", "width": 146 },
-                                    { "field": "표준가격", "width": 140 },
-                                    { "field": "최소가격", "width": 146 },
-                                    { "field": "승인상태", "width": 140 },
-                                    { "field": "사용가능업종", "width": 140 },
-                                    { "field": "등록일", "width": 120 },
-                                    { "field": "종료일", "width": 120 }
+                                </script>
+                                <!-- checkbox template -->
+                                <script type="text/x-kendo-template" class="checkboxTemplate">
+                                    <div class="h-checkbox no-label">
+                                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                        <label for="checkbox-nolabel"></label> 
+                                    </div>
+                                </script>
+                                <div data-role="grid" 
+                                    data-sortable="true" 
+                                    data-editable="true" 
+                                    data-toolbar="#=toolbarTemplate()#"
+                                    data-columns='[
+                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                    { "title": "NO.", "width": 50 },
+                                   
+                                    { "field": "기타"}
                                 ]' data-bind="source: gridSource">
-                                </div>
-                                <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
                                 </div>
                             </div>
                         </div>
@@ -107,20 +112,33 @@
 
     <!-- Default Script Include -->
     <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-            var viewModel = kendo.observable({
-                gridSource: [
-                    { "N":"ch", "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "N":"ch", "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "N":"ch", "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
-                ],
-                displayGridSource: function() {
-                    return stringify(this.get("gridSource").toJSON());
-                },
-            });
-            kendo.bind($(".wrap"), viewModel);
+      
+        var viewModel_grid_sort = kendo.observable({
+            gridSource: [
+                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
+                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
+                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
+        kendo.bind($(".wrap"), {});
+        function toolbarTemplate() {
+            var template = kendo.template($('.toolbarTemplate').html()); 
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
     </script>
 </body>
 

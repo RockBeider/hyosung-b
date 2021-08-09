@@ -103,28 +103,28 @@ th .required {
         @include iconSvg($width: 18px, $height: 18px, $name: 'icon_search_btn', $size: contain );
     }
     &.menu1 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_profile', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_standard_default', $size: contain );
     }
     &.menu2 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_4', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_contract_default', $size: contain );
     }
     &.menu3 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_1', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_calculate_default', $size: contain );
     }
     &.menu4 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_3', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_charge_default', $size: contain );
     }
     &.menu5 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_profile', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_distribution_default', $size: contain );
     }
     &.menu6 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_4', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_accounting_default', $size: contain );
     }
     &.menu7 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_3', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_service_default', $size: contain );
     }
     &.menu8 {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_2', $size: contain );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'icon_athorize_default', $size: contain );
     }
     // 20*20
     &.profile {
@@ -141,7 +141,32 @@ th .required {
         }
     }
 }
-
+.active .h-ico {
+    &.menu1 {
+        background-image: url($imgPathIcon+'/icon_standard_selected.svg');
+    }
+    &.menu2 {
+        background-image: url($imgPathIcon+'/icon_contract_selected.svg');
+    }
+    &.menu3 {
+        background-image: url($imgPathIcon+'/icon_calculate_selected.svg');
+    }
+    &.menu4 {
+        background-image: url($imgPathIcon+'/icon_charge_selected.svg');
+    }
+    &.menu5 {
+        background-image: url($imgPathIcon+'/icon_distribution_selected.svg');
+    }
+    &.menu6 {
+        background-image: url($imgPathIcon+'/icon_accounting_selected.svg');
+    }
+    &.menu7 {
+        background-image: url($imgPathIcon+'/icon_service_selected.svg');
+    }
+    &.menu8 {
+        background-image: url($imgPathIcon+'/icon_athorize_selected.svg');
+    }
+}
 .is-checked .k-i-input-check {
     background-image: url($imgPathIcon+'/icon_check_blue.svg');
 }

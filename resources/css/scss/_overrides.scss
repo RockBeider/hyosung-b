@@ -110,7 +110,9 @@
     -webkit-tap-highlight-color: transparent;
 	&.sm {
 		max-width: 120px;
+		min-width: 120px;
 	}
+
 	.k-picker-wrap {
 		display: flex;
 		width: 100%;
@@ -154,6 +156,11 @@
 	border: 1px solid $gray-2;
 	background-color: $white;
 	overflow: hidden;
+	&.only-year {
+		.k-calendar-view {
+			display: none;
+		}
+	}
 	.k-header {
 		@include font-size-sm;
 		display: flex;
@@ -209,6 +216,7 @@
 			position: relative;
 			z-index: 1;
 		}
+		
 	}
 	.k-calendar-view {
 		height: 201px;
@@ -222,9 +230,47 @@
 		font-weight: 500;
 	}
 	.k-content { //일자
-		.k-other-month .k-link {
-			color: $gray-a;
+		.k-other-month {
+			&.k-state-hover .k-link , 
+			&.k-state-active .k-link , 
+			&.k-state-focused .k-link  {	
+				border: 1px solid transparent;
+			}
+			.k-link {
+				margin: 0;
+				color: $gray-a;
+				border: 1px solid transparent;
+			}
 		}
+		&.k-year {
+			height: 100%;
+			&.k-state-hover .k-link  , 
+			&.k-state-active .k-link  , 
+			&.k-state-focused .k-link  {	
+				border: 1px solid transparent;
+			}
+			.k-link {
+				margin-left: auto;
+				margin-right: auto;
+				border: 1px solid transparent;
+			}
+		}
+		&.k-decade, &.k-century {
+			height: 100%;
+			.k-state-active , 
+			.k-state-focused  {	
+				border: 1px solid transparent;
+			}
+			.k-link {
+				width: 100%;
+				height: auto;
+				margin: 0;
+				border: 1px solid transparent;
+				border-radius: 0;
+				text-align: center;
+			}
+		}
+		
 		.k-link {
 			display: flex;
 			align-items: center;
@@ -253,16 +299,9 @@
 			color: $main;
 		}
 	}
-	.k-footer {
-		display: none !important;
-	}
-	// .k-calendar .k-calendar-content .k-calendar-th, 
-	// .k-calendar .k-calendar-content th, 
-	// .k-calendar .k-calendar-view .k-calendar-th .k-meta-header, 
-	// .k-calendar .k-calendar-view th, 
-	// .k-calendar .k-content .k-calendar-th, 
-	// .k-calendar .k-content th, 
-	// .k-calendar .k-month-header
+	// .k-footer {
+	// 	display: none !important;
+	// }
 }
 
 
@@ -830,6 +869,15 @@
 	
 }
 
+/*
+* ------------------------------
+* tab
+* ------------------------------
+*/
+.k-tabstrip-wrapper {
+	display: flex;
+	flex: 1;
+}
 /*
 * ------------------------------
 * textarea

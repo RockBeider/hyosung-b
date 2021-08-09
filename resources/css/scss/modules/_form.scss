@@ -100,9 +100,13 @@
         width: 89px; 
         height: 100%;
         background-color: transparent;
-        border: 0;
+        border: 1px solid $white;
+        border-radius: 0;
         border-left: 1px solid $gray-e;
         color: $main;
+        &.k-state-focused {
+            border: 1px solid $main;
+        }
     }
     .label {
         @include font-size-sm;

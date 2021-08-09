@@ -10,8 +10,22 @@ table {
 .table-group + .table-group {
     margin-top: 30px;
 }
+.table-group {
+    display: flex;
+    flex-direction: column;
+    &.half {
+        flex-direction: row;
+        > * {
+            width: 50%;
+            + * {
+                margin-left: 20px;
+            }
+        }
+    }
+}
 .table-set {
-    margin-top: 12px;
+    flex: 1;
+    // margin-top: 12px;
 }
 .table-content {
     table {
@@ -36,7 +50,15 @@ td .form-box, th .form-box {
     justify-content: space-between;
 }
 
-
+.table-guide {
+    .list {
+        margin-top: 8px;
+        color: $gray-7;
+        font-size: 13px;
+        line-height: 22px;
+        letter-spacing: -0.65px;
+    }
+}
 /*
 * ------------------------------
 * 
