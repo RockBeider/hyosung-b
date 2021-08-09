@@ -2110,6 +2110,11 @@ td .form-box, th .form-box {
   white-space: nowrap;
 }
 
+td .form-group.col > * + * {
+  margin-left: 0;
+  margin-top: 6px;
+}
+
 .form-set {
   display: flex;
   align-items: center;
@@ -2147,6 +2152,7 @@ td .form-box, th .form-box {
   background: #fff;
   border: 1px solid #eee;
   overflow: hidden;
+  flex: 0 0 auto;
 }
 .search-control .label {
   font-size: 14px;
@@ -3411,12 +3417,17 @@ th .required {
   background-image: url("../images_bp/icon/icon_athorize_selected.svg");
 }
 
-.is-checked .k-i-input-check {
-  background-image: url("../images_bp/icon/icon_check_blue.svg");
+.input-check.k-state-focused, .input-check.k-state-active {
+  color: #0e4194;
 }
-
-.is-important .k-i-input-check {
+.input-check.k-state-focused.is-important, .input-check.k-state-active.is-important {
+  color: #f14747;
+}
+.input-check.k-state-focused.is-important .k-i-input-check, .input-check.k-state-active.is-important .k-i-input-check {
   background-image: url("../images_bp/icon/icon_check_active.svg");
+}
+.input-check.k-state-focused .k-i-input-check, .input-check.k-state-active .k-i-input-check {
+  background-image: url("../images_bp/icon/icon_check_blue.svg");
 }
 
 .k-i-example {
@@ -4384,9 +4395,13 @@ th .required {
 * Grid
 * ------------------------------
 */
+.table-content.grid {
+  background: #fff;
+  border-bottom: 1px solid #aaa;
+}
+
 .k-grid {
   border: none;
-  border-bottom: 1px solid #aaa;
 }
 .k-grid table {
   table-layout: fixed;
@@ -4403,9 +4418,10 @@ th .required {
   overflow: hidden;
 }
 .k-grid thead th, .k-grid thead td {
-  background: #eee;
+  background: #f2f4f7;
   text-align: left;
   color: #555;
+  font-weight: 500;
 }
 .k-grid .k-filter-row th {
   height: 30px;
@@ -4542,9 +4558,8 @@ th .required {
   letter-spacing: -0.7px;
   height: 36px;
   padding: 0 10px;
-  border-left: 1px solid #e4e4e4;
-  border-top: 1px solid #e4e4e4;
-  border-color: #e4e4e4;
+  border: 1px solid #e4e4e4;
+  border-top: 0;
 }
 
 /*

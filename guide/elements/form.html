@@ -50,7 +50,12 @@
             <p class="title">DatePicker</p>
         </div>
         <div class="g-example-body flex-block">
-            <input data-role="datepicker" placeholder="yyyymmdd" class="sm">
+            <input data-role="datepicker" 
+                data-format="yyyy/MM/dd"
+                placeholder="yyyymmdd" 
+                data-culture="ko-KR"
+                data-footer="false"
+                class="datepicker sm" />
             <div class="form-set">
                 <input data-role="datepicker" 
                     data-format="yyyy/MM/dd"
@@ -70,7 +75,12 @@
 
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;input data-role="datepicker" placeholder="yyyymmdd" class="sm">
+&lt;input data-role="datepicker" 
+    data-format="yyyy/MM/dd"
+    placeholder="yyyymmdd" 
+    data-culture="ko-KR"
+    data-footer="false"
+    class="datepicker sm" /> 
 &lt;div class="form-set">
     &lt;input data-role="datepicker" 
         data-format="yyyy/MM/dd"
@@ -132,24 +142,34 @@
         <div class="g-example-body flex-block">
             <div class="form-set">
                 <input type="text" class="h-input" placeholder="" />
-                <button type="button" data-role="button" data-icon="input-check" class="text"><span>ID체크</span></button>
+                <button type="button" data-role="button" data-icon="input-check" class="text input-check"><span>ID체크</span></button>
             </div>
             <div class="form-set">
                 <input type="text" class="h-input" placeholder="" />
                 <!-- [D] 체크 됐을 때 .is-checked 추가 -->
-                <button type="button" data-role="button" data-icon="input-check" class="text is-checked"><span>ID체크</span></button>
+                <button type="button" data-role="button" data-icon="input-check" class="text input-check is-checked"><span>ID체크</span></button>
             </div>
             <div class="form-set">
                 <input type="text" class="h-input" placeholder="" />
                 <!-- [D] 강조일경우 .is-important 추가 -->
-                <button type="button" data-role="button" data-icon="input-check" class="text is-important"><span>ID체크</span></button>
+                <button type="button" data-role="button" data-icon="input-check" class="text input-check is-important"><span>ID체크</span></button>
             </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
 &lt;div class="form-set">
     &lt;input type="text" class="h-input" placeholder="" />
-    &lt;button type="button" data-role="button" data-icon="input-check" class="text">&lt;span>ID체크&lt;/span>&lt;/button>
+    &lt;button type="button" data-role="button" data-icon="input-check" class="text input-check">&lt;span>ID체크&lt;/span>&lt;/button>
+&lt;/div>
+&lt;div class="form-set">
+    &lt;input type="text" class="h-input" placeholder="" />
+    &lt;!-- [D] 체크 됐을 때 .is-checked 추가 -->
+    &lt;button type="button" data-role="button" data-icon="input-check" class="text input-check is-checked">&lt;span>ID체크&lt;/span>&lt;/button>
+&lt;/div>
+&lt;div class="form-set">
+    &lt;input type="text" class="h-input" placeholder="" />
+    &lt;!-- [D] 강조일경우 .is-important 추가 -->
+    &lt;button type="button" data-role="button" data-icon="input-check" class="text input-check is-important">&lt;span>ID체크&lt;/span>&lt;/button>
 &lt;/div>
             </code></pre>
         </div>

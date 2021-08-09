@@ -167,11 +167,26 @@ th .required {
         background-image: url($imgPathIcon+'/icon_athorize_selected.svg');
     }
 }
-.is-checked .k-i-input-check {
-    background-image: url($imgPathIcon+'/icon_check_blue.svg');
-}
-.is-important .k-i-input-check {
-    background-image: url($imgPathIcon+'/icon_check_active.svg');
+// .is-checked .k-i-input-check {
+//     background-image: url($imgPathIcon+'/icon_check_blue.svg');
+// }
+// .is-important .k-i-input-check {
+//     background-image: url($imgPathIcon+'/icon_check_active.svg');
+// }
+.input-check {
+    &.k-state-focused, 
+    &.k-state-active {
+        color: $main;
+        &.is-important {
+            color: $error;
+            .k-i-input-check {
+                background-image: url($imgPathIcon+'/icon_check_active.svg');
+            }
+        }
+        .k-i-input-check {
+            background-image: url($imgPathIcon+'/icon_check_blue.svg');
+        }
+    }
 }
 .k-i- {
     &example {

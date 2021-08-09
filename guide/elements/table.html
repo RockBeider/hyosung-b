@@ -136,8 +136,10 @@
                     { "field": "년월", "title": "년/월", "width": 150, "attributes" : {"class": "text-center"} },
                     { "field": "협력사명", "width": 250 },
                     { "field": "협력사ID", "width": 250 },
-                    { "field": "목표점수"}
+                    { "field": "목표점수", "width": 120},
+                    { "field": "비고" }
                     ]' 
+                    data-bound="trAddClass"
                     data-bind="source: gridSource">
                 </div>
                 <div class="table-bottom">
@@ -148,15 +150,28 @@
                 //grid
                 var viewModel_grid = kendo.observable({
                     gridSource: [
-                        { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" },
-                        { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" },
-                        { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" }
+                        { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": ""  },
+                        { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": "대기"  },
+                        { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": "반려"  },
+                        { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": ""  }
                     ],
                     displayGridSource: function() {
                         return stringify(this.get("gridSource").toJSON());
                     },
                 });
                 kendo.bind($("#viewModel_grid"), viewModel_grid);
+                function trAddClass(e) {
+                    var dataItems = e.sender.dataSource.view();
+                    for (var j = 0; j < dataItems.length; j++) {
+                        var distinct = dataItems[j].get("비고");
+                        var row = e.sender.tbody.find("[data-uid='" + dataItems[j].uid + "']");
+                        if (distinct == "반려") {
+                            row.addClass("status-reject");
+                        } else if (distinct == "대기") {
+                            row.addClass("status-wait");
+                        }
+                    }
+                };
                 function toolbarTemplate() {
                     var template = kendo.template($('.toolbarTemplate').html()); 
                     var result = template({});
@@ -203,8 +218,10 @@
         { "field": "년월", "title": "년/월", "width": 150, "attributes" : {"class": "text-center"} },
         { "field": "협력사명", "width": 250 },
         { "field": "협력사ID", "width": 250 },
-        { "field": "목표점수"}
+        { "field": "목표점수", "width": 120},
+        { "field": "비고" }
         ]' 
+        data-bound="trAddClass"
         data-bind="source: gridSource">
     &lt;/div>
     &lt;div class="table-bottom">
@@ -215,15 +232,28 @@
     //grid
     var viewModel_grid = kendo.observable({
         gridSource: [
-            { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" },
-            { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" },
-            { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" }
+            { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": ""  },
+            { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": "대기"  },
+            { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": "반려"  },
+            { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS", "비고": ""  }
         ],
         displayGridSource: function() {
             return stringify(this.get("gridSource").toJSON());
         },
     });
     kendo.bind($("#viewModel_grid"), viewModel_grid);
+    function trAddClass(e) {
+        var dataItems = e.sender.dataSource.view();
+        for (var j = 0; j &lt; dataItems.length; j++) {
+            var distinct = dataItems[j].get("비고");
+            var row = e.sender.tbody.find("[data-uid='" + dataItems[j].uid + "']");
+            if (distinct == "반려") {
+                row.addClass("status-reject");
+            } else if (distinct == "대기") {
+                row.addClass("status-wait");
+            }
+        }
+    };
     function toolbarTemplate() {
         var template = kendo.template($('.toolbarTemplate').html()); 
         var result = template({});
