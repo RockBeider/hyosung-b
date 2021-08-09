@@ -546,11 +546,15 @@
 * Grid
 * ------------------------------
 */
+.table-content.grid {
+	background: $white;
+	border-bottom: 1px solid $gray-a;
+}
 //껍데기
 .k-grid {
 	border: none;
 	
-	border-bottom: 1px solid $gray-a;
+	// border-bottom: 1px solid $gray-a;
 	table {
 		table-layout: fixed;
 	}
@@ -566,9 +570,10 @@
 		overflow: hidden;
 	}
     thead th, thead td {
-        background: $searchLine;
+        background: $table-th;
         text-align: left;
         color: $gray-5;
+		font-weight: 500;
     }
 	.k-filter-row th {
 		height: 30px;
@@ -704,9 +709,10 @@
 		@include font-size-sm;
 		height: 36px;
 		padding: 0 10px;
-		border-left: 1px solid $gray-e4;
-		border-top: 1px solid $gray-e4;
-		border-color: $gray-e4;
+		// border-left: 1px solid $gray-e4;
+		// border-top: 1px solid $gray-e4;
+		border: 1px solid $gray-e4;
+		border-top: 0;
 	}
 }
 

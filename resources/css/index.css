@@ -1712,6 +1712,11 @@ td .form-box, th .form-box {
   white-space: nowrap;
 }
 
+td .form-group.col > * + * {
+  margin-left: 0;
+  margin-top: 6px;
+}
+
 .form-set {
   display: flex;
   align-items: center;
@@ -1749,6 +1754,7 @@ td .form-box, th .form-box {
   background: #fff;
   border: 1px solid #eee;
   overflow: hidden;
+  flex: 0 0 auto;
 }
 .search-control .label {
   font-size: 14px;
@@ -2610,12 +2616,17 @@ th .required {
   background-image: url("../images/icon/icon_athorize_selected.svg");
 }
 
-.is-checked .k-i-input-check {
-  background-image: url("../images/icon/icon_check_blue.svg");
+.input-check.k-state-focused, .input-check.k-state-active {
+  color: #0e4194;
 }
-
-.is-important .k-i-input-check {
+.input-check.k-state-focused.is-important, .input-check.k-state-active.is-important {
+  color: #f14747;
+}
+.input-check.k-state-focused.is-important .k-i-input-check, .input-check.k-state-active.is-important .k-i-input-check {
   background-image: url("../images/icon/icon_check_active.svg");
+}
+.input-check.k-state-focused .k-i-input-check, .input-check.k-state-active .k-i-input-check {
+  background-image: url("../images/icon/icon_check_blue.svg");
 }
 
 .k-i-example {
@@ -3318,9 +3329,13 @@ th .required {
 * Grid
 * ------------------------------
 */
+.table-content.grid {
+  background: #fff;
+  border-bottom: 1px solid #aaa;
+}
+
 .k-grid {
   border: none;
-  border-bottom: 1px solid #aaa;
 }
 .k-grid table {
   table-layout: fixed;
@@ -3337,9 +3352,10 @@ th .required {
   overflow: hidden;
 }
 .k-grid thead th, .k-grid thead td {
-  background: #eee;
+  background: #f2f4f7;
   text-align: left;
   color: #555;
+  font-weight: 500;
 }
 .k-grid .k-filter-row th {
   height: 30px;
@@ -3476,9 +3492,8 @@ th .required {
   letter-spacing: -0.7px;
   height: 36px;
   padding: 0 10px;
-  border-left: 1px solid #e4e4e4;
-  border-top: 1px solid #e4e4e4;
-  border-color: #e4e4e4;
+  border: 1px solid #e4e4e4;
+  border-top: 0;
 }
 
 /*
@@ -8266,4 +8281,73 @@ th .required {
   width: 100%;
   height: 36px;
   margin-top: 10px;
+}
+
+.contents-body {
+  height: 100%;
+}
+
+.table-group {
+  display: flex;
+  height: 100%;
+}
+
+.k-tabstrip-wrapper > .k-tabstrip {
+  flex: 1 1 auto;
+}
+
+.tabpanel {
+  flex: 1;
+}
+.tabpanel .table-set {
+  height: 100%;
+}
+
+.k-toolbar.k-grid-toolbar {
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.table-content.grid {
+  position: relative;
+  height: 100%;
+}
+.table-content.grid .k-grid {
+  flex: 1;
+}
+
+.k-grid-header {
+  border-bottom: 1px solid #aaa;
+}
+
+.k-grid-content {
+  min-height: 150px;
+  max-height: 200px;
+  padding-bottom: 58px;
+  overflow: auto;
+}
+
+.k-tabstrip-wrapper {
+  flex: 1;
+}
+
+.table-bottom {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 0;
+  border-top: 1px solid #aaa;
+  box-shadow: none;
+}
+.table-bottom .btn-box {
+  margin-top: 0;
+}
+
+.status-reject td {
+  background: #feecec !important;
+}
+
+.status-wait td {
+  background: #fff4cf !important;
 }

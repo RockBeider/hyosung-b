@@ -33,6 +33,14 @@
         white-space: nowrap;
     }
 }
+td .form-group {
+    &.col {
+        > * + * {
+            margin-left: 0;
+            margin-top: 6px;
+        }
+    }
+}
 .form-set {
     display: flex;
     align-items: center;
@@ -68,6 +76,7 @@
     background: #fff;
     border: 1px solid $searchLine;
     overflow: hidden;
+    flex: 0 0 auto;
     .label {
         @include font-size-sm;
         margin-right: 12px;

@@ -73,7 +73,7 @@
                                     <div class="form-set">
                                         <input type="text" class="h-input" placeholder="" />
                                         <!-- [D] 체크 됐을 때 .is-checked 추가 -->
-                                        <button type="button" data-role="button" data-icon="input-check" class="text"><span>ID체크</span></button>
+                                        <button type="button" data-role="button" data-icon="input-check" class="text input-check"><span>ID체크</span></button>
                                     </div>
                                 </td>
                                 <th scope="row">거래처코드<span class="required">*</span></th>
@@ -102,18 +102,25 @@
                                 <th scope="row">거래처명<span class="required">*</span></th>
                                 <td><input type="text" class="h-input" value="국민은행"/></td>
                                 <th scope="row">계약일</th>
-                                <td><input data-role="datepicker" placeholder="yyyymmdd"></td>
+                                <td>
+                                    <input data-role="datepicker" 
+                                    data-format="yyyy/MM/dd"
+                                    placeholder="yyyymmdd" 
+                                    data-culture="ko-KR"
+                                    data-footer="false"
+                                    class="datepicker" /> 
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">대표자명<span class="required">*</span></th>
                                 <td><input type="text" class="h-input" value="" placeholder=""/></td>
-                                <th scope="row">대표자<br/>주민번호<span class="required">*</span></th>
+                                <th scope="row">대표자<br/>주민번호</th>
                                 <td><input type="text" class="h-input" value="" placeholder=""/></td>
                             </tr>
                             <tr>
                                 <th scope="row">업태<span class="required">*</span></th>
                                 <td><input type="text" class="h-input" value="" placeholder=""/></td>
-                                <th scope="row">업종</th>
+                                <th scope="row">업종<span class="required">*</span></th>
                                 <td><input type="text" class="h-input" value="" placeholder=""/></td>
                             </tr>
                             <tr>
