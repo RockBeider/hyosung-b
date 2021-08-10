@@ -101,6 +101,13 @@ button {
 
 }
 
+.bg-white {
+	.k-grid-toolbar {
+		background-color: $white !important;
+	}
+	background-color: $white !important;
+}
+
 
 /*
 * ------------------------------
@@ -448,5 +455,28 @@ td .divide {
 		margin-top: 0;
 		padding-left: 8px;
 		background: $gray-f5;
+	}
+}
+
+
+/*
+* ------------------------------
+* yearmonth box
+* ------------------------------
+*/
+.yearmonth-box {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+	min-height: 28px;
+	margin: 0 0 8px 0;
+}
+.year-box {
+	display: flex;
+	.k-button.year {
+		@include font-size-lg;
+		padding: 0 3px;
+		color: $gray-2;
+		font-weight: 500;
 	}
 }

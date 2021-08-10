@@ -3,14 +3,188 @@
 
     <div class="g-example-wrap">
         <div class="g-example-head">
-            <p class="title"></p>
+            <p class="title">List box</p>
         </div>
         <div class="g-example-body ">
-          
+            <div class="title-box xsm">
+                <h4 class="sub-title">부가서비스 상품</h4>
+            </div>
+            <div class="title-box xs">
+                <div class="left-group">
+                    <div class="h-checkbox" id="listTransferAllTo">
+                        <input type="checkbox" id="checkbox1-1" name="checkbox" />
+                        <label for="checkbox1-1"><span>모두선택</span></label>
+                    </div>
+                </div>
+                <div class="right-group">
+                    <span class="amount-set">
+                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                        <span class="amount">26</span><span class="unit">건</span>
+                    </span>
+                </div>
+            </div>
+            <div class="optional-box" id="viewModel_listbox">
+                <script type="text/x-kendo-template" id="leftboxTemplate">
+                    <div class="list-box listTransferTo">
+                        <h3 class="title">#: ProductName #</h3>
+                    </div>
+                </script>
+                <script type="text/x-kendo-template" id="rightboxTemplate">
+                    <div class="list-box listTransferFrom">
+                        <h3 class="title">#: ProductName #</h3>
+                        <i class="h-ico close"></i>
+                    </div>
+                </script> 
+                <select id="listbox1" 
+                    data-role="listbox"
+                    data-text-field="ProductName"
+                    data-value-field="ProductID"
+                    data-connect-with="listbox2"
+                    data-template="leftboxTemplate"
+                    data-toolbar='{
+                        tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
+                    }'
+                    data-bind="source: products">
+                </select>
+                <select id="listbox2" 
+                    data-role="listbox"
+                    data-text-field="ProductName"
+                    data-value-field="ProductID"
+                    data-connect-with="listbox1"
+                    data-template="rightboxTemplate"
+                    >
+                </select>
+                <script>
+                    //listbox
+                    var viewModel_listbox = kendo.observable({
+                        products: new kendo.data.DataSource({
+                            schema: {
+                                model: {
+                                    id: "ProductID",
+                                    fields: {
+                                        ProductName: { type: "string" },
+                                        UnitPrice: { type: "number" }
+                                    }
+                                }
+                            },
+                            batch: true,
+                            pageSize: 15,
+                            transport: {
+                                read: {
+                                    url: "https://demos.telerik.com/kendo-ui/service/products",
+                                    dataType: "jsonp"
+                                }
+                            }
+                        })
+                    });
+                    kendo.bind($("#viewModel_listbox"), viewModel_listbox);
+                    $(document).on('change', '#listTransferAllTo input', function(e) {  // 오른쪽으로 전체 옮기기  
+                        if($('#listTransferAllTo input').is(":checked") == true ) {
+                            console.log('checked')
+                            $("#viewModel_listbox .k-listbox-toolbar [data-command='transferAllTo']").trigger('click');
+                        } else {
+                            $("#viewModel_listbox .k-listbox-toolbar [data-command='transferAllFrom']").trigger('click');
+                        }
+                    });
+                    $(document).on('click', '#viewModel_listbox .listTransferTo', function(e) {  //오른쪽으로 옮기기
+                        $("#viewModel_listbox .k-listbox-toolbar [data-command='transferTo']").trigger('click');
+                    });
+                    $(document).on('click', '#viewModel_listbox .listTransferFrom', function(e) { //왼쪽으로 옮기기
+                        $("#viewModel_listbox .k-listbox-toolbar [data-command='transferFrom']").trigger('click');
+                    });
+                </script>
+            </div>
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-                
+&lt;div class="title-box xsm">
+    &lt;h4 class="sub-title">부가서비스 상품&lt;/h4>
+&lt;/div>
+&lt;div class="title-box xs">
+    &lt;div class="left-group">
+        &lt;div class="h-checkbox" id="listTransferAllTo">
+            &lt;input type="checkbox" id="checkbox1-1" name="checkbox" />
+            &lt;label for="checkbox1-1">&lt;span>모두선택&lt;/span>&lt;/label>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="right-group">
+        &lt;span class="amount-set">
+            &lt;span class="amount current">1&lt;/span>&lt;span class="unit">건&lt;/span>&lt;span class="dash">/&lt;/span>
+            &lt;span class="amount">26&lt;/span>&lt;span class="unit">건&lt;/span>
+        &lt;/span>
+    &lt;/div>
+&lt;/div>
+&lt;div class="optional-box" id="viewModel_listbox">
+    &lt;script type="text/x-kendo-template" id="leftboxTemplate">
+        &lt;div class="list-box listTransferTo">
+            &lt;h3 class="title">#: ProductName #&lt;/h3>
+        &lt;/div>
+    &lt;/script>
+    &lt;script type="text/x-kendo-template" id="rightboxTemplate">
+        &lt;div class="list-box listTransferFrom">
+            &lt;h3 class="title">#: ProductName #&lt;/h3>
+            &lt;i class="h-ico close">&lt;/i>
+        &lt;/div>
+    &lt;/script> 
+    &lt;select id="listbox1" 
+        data-role="listbox"
+        data-text-field="ProductName"
+        data-value-field="ProductID"
+        data-connect-with="listbox2"
+        data-template="leftboxTemplate"
+        data-toolbar='{
+            tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
+        }'
+        data-bind="source: products">
+    &lt;/select>
+    &lt;select id="listbox2" 
+        data-role="listbox"
+        data-text-field="ProductName"
+        data-value-field="ProductID"
+        data-connect-with="listbox1"
+        data-template="rightboxTemplate"
+        >
+    &lt;/select>
+    &lt;script>
+        //listbox
+        var viewModel_listbox = kendo.observable({
+            products: new kendo.data.DataSource({
+                schema: {
+                    model: {
+                        id: "ProductID",
+                        fields: {
+                            ProductName: { type: "string" },
+                            UnitPrice: { type: "number" }
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 15,
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/products",
+                        dataType: "jsonp"
+                    }
+                }
+            })
+        });
+        kendo.bind($("#viewModel_listbox"), viewModel_listbox);
+        $(document).on('change', '#listTransferAllTo input', function(e) {  // 오른쪽으로 전체 옮기기  
+            if($('#listTransferAllTo input').is(":checked") == true ) {
+                console.log('checked')
+                $("#viewModel_listbox .k-listbox-toolbar [data-command='transferAllTo']").trigger('click');
+            } else {
+                $("#viewModel_listbox .k-listbox-toolbar [data-command='transferAllFrom']").trigger('click');
+            }
+        });
+        $(document).on('click', '#viewModel_listbox .listTransferTo', function(e) {  //오른쪽으로 옮기기
+            $("#viewModel_listbox .k-listbox-toolbar [data-command='transferTo']").trigger('click');
+        });
+        $(document).on('click', '#viewModel_listbox .listTransferFrom', function(e) { //왼쪽으로 옮기기
+            $("#viewModel_listbox .k-listbox-toolbar [data-command='transferFrom']").trigger('click');
+        });
+    &lt;/script>
+&lt;/div>
             </code></pre>
         </div>
     </div>

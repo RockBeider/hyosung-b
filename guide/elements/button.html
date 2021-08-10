@@ -135,6 +135,70 @@ data-index="0">
         });
     </script>
 
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Button group(multiple)</p>
+        </div>
+        <div class="g-example-body">
+           <div class="yearmonth-box">
+                <div class="year-box">
+                    <button type="button" class="h-ico prev">이전</button>
+                    <button type="button" class="k-button text year"><span>2021</span>년</button>
+                    <button type="button" class="h-ico next">다음</button>
+                </div>
+                <div data-role="buttongroup" class="period"
+                    data-index="0">
+                    <button data-role="button"><span>1월</span></button>
+                    <button data-role="button"><span>2월</span></button>
+                    <button data-role="button"><span>3월</span></button>
+                    <button data-role="button"><span>4월</span></button>
+                    <button data-role="button"><span>5월</span></button>
+                    <button data-role="button"><span>6월</span></button>
+                    <button data-role="button"><span>7월</span></button>
+                    <button data-role="button"><span>8월</span></button>
+                    <button data-role="button"><span>9월</span></button>
+                    <button data-role="button"><span>10월</span></button>
+                    <button data-role="button"><span>11월</span></button>
+                    <button data-role="button"><span>12월</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="yearmonth-box">
+    &lt;div class="year-box">
+        &lt;button type="button" class="h-ico prev">이전&lt;/button>
+        &lt;button type="button" class="k-button text year">&lt;span>2021&lt;/span>년&lt;/button>
+        &lt;button type="button" class="h-ico next">다음&lt;/button>
+    &lt;/div>
+    &lt;div data-role="buttongroup" class="period"
+        data-index="0">
+        &lt;button data-role="button">&lt;span>1월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>2월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>3월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>4월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>5월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>6월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>7월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>8월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>9월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>10월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>11월&lt;/span>&lt;/button>
+        &lt;button data-role="button">&lt;span>12월&lt;/span>&lt;/button>
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#inlineFormating").kendoButtonGroup({
+                selection: "multiple"
+            });
+        });
+    </script>
+
     <div class="g-example-wrap">
         <div class="g-example-head">
             <p class="title">Tab line</p>
@@ -149,27 +213,27 @@ data-index="0">
                     <li>메뉴5</li>
                 </ul>
                 <!-- 첫번째 탭 -->
-                <div>
+                <div class="tabpanel">
                     첫번째 내용
                 </div>
                 <!-- //첫번째 탭 -->
                 <!-- 두번째 탭 -->
-                <div>
+                <div class="tabpanel">
                     두번째 내용
                 </div>
                 <!-- //두번째 탭 -->
                 <!-- 세번째 탭 -->
-                <div>
+                <div class="tabpanel">
                     세번째 내용
                 </div>
                 <!-- //세번째 탭 -->
                 <!-- 네번째 탭 -->
-                <div>
+                <div class="tabpanel">
                     네번째 내용
                 </div>
                 <!-- //네번째 탭 -->
                 <!-- 다섯번째 탭 -->
-                <div>
+                <div class="tabpanel">
                     다섯번째 내용
                 </div>
             </div>
@@ -185,35 +249,118 @@ data-index="0">
         &lt;li>메뉴5&lt;/li>
     &lt;/ul>
     &lt;!-- 첫번째 탭 -->
-    &lt;div>
+    &lt;div class="tabpanel">
         첫번째 내용
     &lt;/div>
     &lt;!-- //첫번째 탭 -->
     &lt;!-- 두번째 탭 -->
-    &lt;div>
+    &lt;div class="tabpanel">
         두번째 내용
     &lt;/div>
     &lt;!-- //두번째 탭 -->
     &lt;!-- 세번째 탭 -->
-    &lt;div>
+    &lt;div class="tabpanel">
         세번째 내용
     &lt;/div>
     &lt;!-- //세번째 탭 -->
     &lt;!-- 네번째 탭 -->
-    &lt;div>
+    &lt;div class="tabpanel">
         네번째 내용
     &lt;/div>
     &lt;!-- //네번째 탭 -->
     &lt;!-- 다섯번째 탭 -->
-    &lt;div>
+    &lt;div class="tabpanel">
         다섯번째 내용
     &lt;/div>
 &lt;/div>
             </code></pre>
         </div>
     </div>
-    <script>
-        
-    </script>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Tab line(with Button)</p>
+        </div>
+        <div class="g-example-body">
+            <div data-role="tabstrip" class="tab-control box">
+                <ul class="tab-menu">
+                    <li class="k-state-active">메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                    <li>메뉴4</li>
+                    <li>메뉴5</li>
+                    <div class="btn-box">
+                        <button data-role="button" class=""><span>버튼1</span></button>
+                        <button data-role="button" class=""><span>버튼2</span></button>
+                    </div>
+                </ul>
+                <!-- 첫번째 탭 -->
+                <div class="tabpanel">
+                    첫번째 내용
+                </div>
+                <!-- //첫번째 탭 -->
+                <!-- 두번째 탭 -->
+                <div class="tabpanel">
+                    두번째 내용
+                </div>
+                <!-- //두번째 탭 -->
+                <!-- 세번째 탭 -->
+                <div class="tabpanel">
+                    세번째 내용
+                </div>
+                <!-- //세번째 탭 -->
+                <!-- 네번째 탭 -->
+                <div class="tabpanel">
+                    네번째 내용
+                </div>
+                <!-- //네번째 탭 -->
+                <!-- 다섯번째 탭 -->
+                <div class="tabpanel">
+                    다섯번째 내용
+                </div>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div data-role="tabstrip" class="tab-control box">
+    &lt;ul class="tab-menu">
+        &lt;li class="k-state-active">메뉴1&lt;/li>
+        &lt;li>메뉴2&lt;/li>
+        &lt;li>메뉴3&lt;/li>
+        &lt;li>메뉴4&lt;/li>
+        &lt;li>메뉴5&lt;/li>
+        &lt;div class="btn-box">
+            &lt;button data-role="button" class="">&lt;span>버튼1&lt;/span>&lt;/button>
+            &lt;button data-role="button" class="">&lt;span>버튼2&lt;/span>&lt;/button>
+        &lt;/div>
+    &lt;/ul>
+    &lt;!-- 첫번째 탭 -->
+    &lt;div class="tabpanel">
+        첫번째 내용
+    &lt;/div>
+    &lt;!-- //첫번째 탭 -->
+    &lt;!-- 두번째 탭 -->
+    &lt;div class="tabpanel">
+        두번째 내용
+    &lt;/div>
+    &lt;!-- //두번째 탭 -->
+    &lt;!-- 세번째 탭 -->
+    &lt;div class="tabpanel">
+        세번째 내용
+    &lt;/div>
+    &lt;!-- //세번째 탭 -->
+    &lt;!-- 네번째 탭 -->
+    &lt;div class="tabpanel">
+        네번째 내용
+    &lt;/div>
+    &lt;!-- //네번째 탭 -->
+    &lt;!-- 다섯번째 탭 -->
+    &lt;div class="tabpanel">
+        다섯번째 내용
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
 
 </div>

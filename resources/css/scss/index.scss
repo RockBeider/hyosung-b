@@ -19,7 +19,8 @@
 @import "layout"; //공통   
      
 .contents-body {
-    height: 100%;
+    // height: 100%;
+    flex: 1;
 }
 .table-group {
     display: flex;
@@ -36,11 +37,17 @@
        height: 100%;
     // flex: 1;
     }
-    
+
 }
 .k-toolbar.k-grid-toolbar {
     background-color: $bg;;
     overflow: hidden;
+}
+.table-group.divide-thick  {
+    // &:last-child {
+    //     padding-bottom: 20px;
+    // }
+    height: unset;
 }
 .table-content.grid { 
     position: relative;
