@@ -586,6 +586,13 @@ button {
   font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif !important;
 }
 
+.bg-white {
+  background-color: #fff !important;
+}
+.bg-white .k-grid-toolbar {
+  background-color: #fff !important;
+}
+
 /*
 * ------------------------------
 * 여백
@@ -973,6 +980,31 @@ td .divide + .divide {
   margin-top: 0;
   padding-left: 8px;
   background: #f5f5f5;
+}
+
+/*
+* ------------------------------
+* yearmonth box
+* ------------------------------
+*/
+.yearmonth-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28px;
+  margin: 0 0 8px 0;
+}
+
+.year-box {
+  display: flex;
+}
+.year-box .k-button.year {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  padding: 0 3px;
+  color: #222;
+  font-weight: 500;
 }
 
 /* Flexbox Class */
@@ -2435,6 +2467,12 @@ th .required {
   background-size: 8px 15px;
   margin-right: -10px;
 }
+.h-ico.close {
+  width: 26px;
+  height: 26px;
+  background-image: url("../images/icon/btn_X.svg");
+  background-size: 12px 12px;
+}
 .h-ico.up {
   width: 15px;
   height: 15px;
@@ -2470,6 +2508,18 @@ th .required {
   height: 15px;
   background-image: url("../images/icon/icon_plus.svg");
   background-size: contain;
+}
+.h-ico.prev {
+  width: 28px;
+  height: 28px;
+  background-image: url("../images/icon/icon_arrow_left.svg");
+  background-size: 16px 16px;
+}
+.h-ico.next {
+  width: 28px;
+  height: 28px;
+  background-image: url("../images/icon/icon_arrow_right.svg");
+  background-size: 16px 16px;
 }
 .h-ico.mail {
   width: 16px;
@@ -2619,14 +2669,26 @@ th .required {
 .input-check.k-state-focused, .input-check.k-state-active {
   color: #0e4194;
 }
-.input-check.k-state-focused.is-important, .input-check.k-state-active.is-important {
-  color: #f14747;
-}
-.input-check.k-state-focused.is-important .k-i-input-check, .input-check.k-state-active.is-important .k-i-input-check {
-  background-image: url("../images/icon/icon_check_active.svg");
-}
 .input-check.k-state-focused .k-i-input-check, .input-check.k-state-active .k-i-input-check {
   background-image: url("../images/icon/icon_check_blue.svg");
+}
+.input-check.is-checked {
+  color: #0e4194;
+}
+.input-check.is-checked.k-state-focused, .input-check.is-checked.k-state-active {
+  color: #0e4194;
+}
+.input-check.is-checked .k-i-input-check {
+  background-image: url("../images/icon/icon_check_blue.svg");
+}
+.input-check.is-important {
+  color: #f14747;
+}
+.input-check.is-important.k-state-focused, .input-check.is-important.k-state-active {
+  color: #f14747;
+}
+.input-check.is-important .k-i-input-check {
+  background-image: url("../images/icon/icon_check_active.svg");
 }
 
 .k-i-example {
@@ -2638,6 +2700,12 @@ th .required {
   background-image: url("../images/icon/btn_filter_default.svg");
   background-size: 8px 15px;
   margin-right: -10px;
+}
+.k-i-close {
+  width: 12px;
+  height: 12px;
+  background-image: url("../images/icon/btn_X.svg");
+  background-size: 12px 12px;
 }
 .k-i-up {
   width: 15px;
@@ -3135,10 +3203,53 @@ th .required {
 .k-listbox .k-list-scroller {
   height: 190px;
   padding: 10px;
-  background-color: #f5f5f5;
   border: 1px solid #ccc;
   overflow: auto;
   align-self: flex-end;
+}
+.k-listbox .k-list-scroller .k-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+}
+.k-listbox .k-list-scroller .k-item .title {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  color: #222;
+  font-weight: 400;
+}
+.k-listbox .k-list-scroller .list-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.k-listbox + .k-listbox .k-list-scroller {
+  background: #f5f5f5;
+  border-left: 0;
+}
+.k-listbox + .k-listbox .k-list-scroller .k-item {
+  height: 32px;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 3px;
+}
+.k-listbox + .k-listbox .k-list-scroller .k-item .title {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  color: #0e4194;
+  font-weight: 400;
+}
+.k-listbox + .k-listbox .k-list-scroller .k-item + .k-item {
+  margin-top: 4px;
+}
+.k-listbox .k-listbox-toolbar {
+  display: none;
 }
 .k-listbox .k-listbox-toolbar ul {
   display: flex;
@@ -3168,7 +3279,7 @@ th .required {
   width: 100%;
   padding: 0 10px;
 }
-.k-list .k-item:hover, .k-list .k-item.k-state-focused, .k-list .k-item.k-state-selected {
+.k-list .k-item:hover, .k-list .k-item.k-state-focused {
   background-color: #efefef;
 }
 
