@@ -67,6 +67,23 @@ td .form-group {
         white-space: nowrap;
     }
 }
+.k-dialog {
+    .search-control {
+        border: 0;
+        padding: 0;
+        .form-group, .form-set {
+            width: 100%;
+        }
+        .label, .form-set {
+            padding: 0;
+            margin-right: 8px;
+        }
+        + .table-content {
+            margin-top: 20px;
+        }
+    }
+
+}
 
 .search-control {
     display: flex;

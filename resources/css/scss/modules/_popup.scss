@@ -141,6 +141,17 @@
 * dialog
 * ------------------------------
 */
+.k-dialog .k-dialog-content {
+    &.sm {
+        width: 480px;
+    }
+    &.md {
+        width: 720px;
+    }
+    &.lg {
+        width: 960px;
+    }
+}
 .k-window.k-dialog {
     // height: 100%;
     padding: 0;

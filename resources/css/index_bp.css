@@ -806,6 +806,7 @@ template {
 .badge {
   display: flex;
   align-items: center;
+  width: auto;
   height: 22px;
   padding: 0 8px;
   border-radius: 11px;
@@ -1046,6 +1047,47 @@ button {
 
 /*
 * ------------------------------
+* badge
+* ------------------------------
+*/
+.k-listbox .badge {
+  width: 62px;
+  height: 20px;
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 13px;
+  line-height: 26px;
+  letter-spacing: -0.65px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 11px;
+}
+.badge.pink {
+  background-color: #feecec;
+  border: 1px solid #fddbdb;
+  color: #f14747;
+}
+.badge.blue {
+  background-color: #e8f0ff;
+  border: 1px solid #dbe7ff;
+  color: #3b6ac5;
+}
+.badge.green {
+  background-color: #e0f6ea;
+  border: 1px solid #bae3ce;
+  color: #1e6c42;
+}
+.badge.yellow {
+  background-color: #fff6d9;
+  border: 1px solid #ffe79b;
+  color: #d89000;
+}
+
+/*
+* ------------------------------
 * table divide
 * ------------------------------
 */
@@ -1054,6 +1096,12 @@ button {
 }
 .divide + .divide {
   border-top: 1px solid #e4e4e4;
+}
+.divide .title-box.md {
+  margin-bottom: 10px;
+}
+.divide + .btn-box.bottom {
+  margin-top: -10px;
 }
 
 .table-group.divide-thick {
@@ -1103,6 +1151,8 @@ td .divide + .divide {
   font-size: 17px;
   line-height: 26px;
   letter-spacing: -0.85px;
+  display: flex;
+  align-items: center;
   color: #222;
   font-weight: 500;
 }
@@ -1164,7 +1214,6 @@ td .divide + .divide {
   margin-bottom: 6px;
 }
 .title-box.xsm {
-  min-height: 28px;
   margin: 12px 0 6px;
   align-items: flex-end;
 }
@@ -1172,6 +1221,7 @@ td .divide + .divide {
   font-size: 15px;
   line-height: 26px;
   letter-spacing: -0.75px;
+  line-height: 21px;
 }
 .title-box.xsm .noti {
   font-size: 14px;
@@ -1351,7 +1401,7 @@ td .divide + .divide {
 .tab-control.box .tabpanel {
   flex: 1 1 100%;
   margin-top: 10px;
-  padding: 4px 30px 0;
+  padding: 4px 30px 30px;
   background: #fff;
 }
 
@@ -1379,6 +1429,7 @@ td .divide + .divide {
 
 .year-box {
   display: flex;
+  margin-left: -6px;
 }
 .year-box .k-button.year {
   font-size: 17px;
@@ -1806,6 +1857,16 @@ td .divide + .divide {
 * dialog
 * ------------------------------
 */
+.k-dialog .k-dialog-content.sm {
+  width: 480px;
+}
+.k-dialog .k-dialog-content.md {
+  width: 720px;
+}
+.k-dialog .k-dialog-content.lg {
+  width: 960px;
+}
+
 .k-window.k-dialog {
   padding: 0;
   background: #fff;
@@ -2048,7 +2109,7 @@ td .form-box, th .form-box {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
-  padding: 0 10px;
+  padding: 0 5px;
   white-space: nowrap;
 }
 .table td {
@@ -2174,6 +2235,21 @@ td .form-group.col > * + * {
 .form-set .h-checkbox input[type=radio] + label,
 .form-set .h-checkbox input[type=checkbox] + label {
   white-space: nowrap;
+}
+
+.k-dialog .search-control {
+  border: 0;
+  padding: 0;
+}
+.k-dialog .search-control .form-group, .k-dialog .search-control .form-set {
+  width: 100%;
+}
+.k-dialog .search-control .label, .k-dialog .search-control .form-set {
+  padding: 0;
+  margin-right: 8px;
+}
+.k-dialog .search-control + .table-content {
+  margin-top: 20px;
 }
 
 .search-control {
@@ -4270,6 +4346,7 @@ th .required {
   height: 190px;
   padding: 10px;
   border: 1px solid #ccc;
+  border-top: 1px solid #222;
   overflow: auto;
   align-self: flex-end;
 }

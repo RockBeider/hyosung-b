@@ -190,6 +190,204 @@
     </div>
 
 
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Button group(multiple)</p>
+        </div>
+        <div class="g-example-body">
+            <div class="title-box md mt-0">
+                <h2 class="sub-title dot">업종</h2>
+            </div>
+            <div class="title-box xs">
+                <div class="left-group">
+                    <div class="h-checkbox" id="listTransferAllTo1">
+                        <input type="checkbox" id="checkbox_list1" name="checkbox" />
+                        <label for="checkbox_list1"><span>모두선택</span></label>
+                    </div>
+                </div>
+                <div class="right-group">
+                    <span class="amount-set">
+                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                        <span class="amount">26</span><span class="unit">건</span>
+                    </span>
+                </div>
+            </div>
+            <div class="optional-box" id="viewModel_listbox1">
+                <script type="text/x-kendo-template" id="leftboxTemplate1">
+                    <div class="list-box listTransferTo1">
+                        <h3 class="title">#: ProductName #</h3>
+                        <span class="#: ProductClass #">#: ProductID #</span>
+                    </div>
+                </script>
+                <script type="text/x-kendo-template" id="rightboxTemplate1">
+                    <div class="list-box listTransferFrom1">
+                        <h3 class="title">#: ProductName #</h3>
+                        <i class="h-ico close"></i>
+                    </div>
+                </script> 
+                <select id="listbox1_1" 
+                    data-role="listbox"
+                    data-text-field="ProductName"
+                    data-value-field="ProductID"
+                    data-connect-with="listbox1_2"
+                    data-template="leftboxTemplate1"
+                    data-toolbar='{
+                        tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
+                    }'
+                    data-bind="source: sectors">
+                </select>
+                <select id="listbox1_2" 
+                    data-role="listbox"
+                    data-text-field="ProductName"
+                    data-value-field="ProductID"
+                    data-connect-with="listbox1_1"
+                    data-template="rightboxTemplate1"
+                    >
+                </select>
+            </div>
+            <script>
+                //listbox(업종)
+                var sectors = [
+                    { Id: 1, ProductName: '학원', ProductID: "표준업종", ProductClass: "badge blue" },
+                    { Id: 2, ProductName: '장기요양', ProductID: "불가업종", ProductClass: "badge pink" },
+                    { Id: 3, ProductName: '방문학습', ProductID: "안전업종", ProductClass: "badge green" },
+                    { Id: 4, ProductName: '태권도', ProductID: "안전업종", ProductClass: "badge green" },
+                    { Id: 5, ProductName: '세무사', ProductID: "정밀업종", ProductClass: "badge yellow" },
+                    { Id: 6, ProductName: '렌탈', ProductID: "표준업종", ProductClass: "badge blue" },
+                    { Id: 6, ProductName: '대행용역', ProductID: "표준업종", ProductClass: "badge blue" }
+                ];
+                var viewModel_listbox1 = kendo.observable({
+                    sectors: new kendo.data.DataSource({
+                        schema: {
+                            model: {
+                                id: "ProductID",
+                                fields: {
+                                    ProductName: { type: "string" },
+                                    ProductID: { type: "string" }
+                                }
+                            }
+                        },
+                        data: sectors,
+                        batch: true,
+                        pageSize: 15,
+                    })
+                });
+                kendo.bind($("#viewModel_listbox1"), viewModel_listbox1);
+                $(document).on('change', '#listTransferAllTo1 input', function(e) {  // 오른쪽으로 전체 옮기기  
+                    if($('#listTransferAllTo1 input').is(":checked") == true ) {
+                        $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllTo']").trigger('click');
+                    } else {
+                        $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllFrom']").trigger('click');
+
+                    }
+                });
+                $(document).on('click', '.listTransferTo1', function(e) {  //오른쪽으로 옮기기
+                    $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferTo']").trigger('click');
+                });
+                $(document).on('click', '.listTransferFrom1', function(e) { //왼쪽으로 옮기기
+                    $("#viewModel_listbox1  .k-listbox-toolbar [data-command='transferFrom']").trigger('click');
+                });
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="title-box md mt-0">
+    &lt;h2 class="sub-title dot">업종&lt;/h2>
+&lt;/div>
+&lt;div class="title-box xs">
+    &lt;div class="left-group">
+        &lt;div class="h-checkbox" id="listTransferAllTo1">
+            &lt;input type="checkbox" id="checkbox_list1" name="checkbox" />
+            &lt;label for="checkbox_list1">&lt;span>모두선택&lt;/span>&lt;/label>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="right-group">
+        &lt;span class="amount-set">
+            &lt;span class="amount current">1&lt;/span>&lt;span class="unit">건&lt;/span>&lt;span class="dash">/&lt;/span>
+            &lt;span class="amount">26&lt;/span>&lt;span class="unit">건&lt;/span>
+        &lt;/span>
+    &lt;/div>
+&lt;/div>
+&lt;div class="optional-box" id="viewModel_listbox1">
+    &lt;script type="text/x-kendo-template" id="leftboxTemplate1">
+        &lt;div class="list-box listTransferTo1">
+            &lt;h3 class="title">#: ProductName #&lt;/h3>
+            &lt;span class="#: ProductClass #">#: ProductID #&lt;/span>
+        &lt;/div>
+    &lt;/script>
+    &lt;script type="text/x-kendo-template" id="rightboxTemplate1">
+        &lt;div class="list-box listTransferFrom1">
+            &lt;h3 class="title">#: ProductName #&lt;/h3>
+            &lt;i class="h-ico close">&lt;/i>
+        &lt;/div>
+    &lt;/script> 
+    &lt;select id="listbox1_1" 
+        data-role="listbox"
+        data-text-field="ProductName"
+        data-value-field="ProductID"
+        data-connect-with="listbox1_2"
+        data-template="leftboxTemplate1"
+        data-toolbar='{
+            tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
+        }'
+        data-bind="source: sectors">
+    &lt;/select>
+    &lt;select id="listbox1_2" 
+        data-role="listbox"
+        data-text-field="ProductName"
+        data-value-field="ProductID"
+        data-connect-with="listbox1_1"
+        data-template="rightboxTemplate1"
+        >
+    &lt;/select>
+&lt;/div>
+&lt;script>
+    //listbox(업종)
+    var sectors = [
+        { Id: 1, ProductName: '학원', ProductID: "표준업종", ProductClass: "badge blue" },
+        { Id: 2, ProductName: '장기요양', ProductID: "불가업종", ProductClass: "badge pink" },
+        { Id: 3, ProductName: '방문학습', ProductID: "안전업종", ProductClass: "badge green" },
+        { Id: 4, ProductName: '태권도', ProductID: "안전업종", ProductClass: "badge green" },
+        { Id: 5, ProductName: '세무사', ProductID: "정밀업종", ProductClass: "badge yellow" },
+        { Id: 6, ProductName: '렌탈', ProductID: "표준업종", ProductClass: "badge blue" },
+        { Id: 6, ProductName: '대행용역', ProductID: "표준업종", ProductClass: "badge blue" }
+    ];
+    var viewModel_listbox1 = kendo.observable({
+        sectors: new kendo.data.DataSource({
+            schema: {
+                model: {
+                    id: "ProductID",
+                    fields: {
+                        ProductName: { type: "string" },
+                        ProductID: { type: "string" }
+                    }
+                }
+            },
+            data: sectors,
+            batch: true,
+            pageSize: 15,
+        })
+    });
+    kendo.bind($("#viewModel_listbox1"), viewModel_listbox1);
+    $(document).on('change', '#listTransferAllTo1 input', function(e) {  // 오른쪽으로 전체 옮기기  
+        if($('#listTransferAllTo1 input').is(":checked") == true ) {
+            $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllTo']").trigger('click');
+        } else {
+            $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllFrom']").trigger('click');
+
+        }
+    });
+    $(document).on('click', '.listTransferTo1', function(e) {  //오른쪽으로 옮기기
+        $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferTo']").trigger('click');
+    });
+    $(document).on('click', '.listTransferFrom1', function(e) { //왼쪽으로 옮기기
+        $("#viewModel_listbox1  .k-listbox-toolbar [data-command='transferFrom']").trigger('click');
+    });
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
     
 
 
