@@ -51,9 +51,13 @@
 * ------------------------------
 */
 
-    
-.h-checkbox {
-    
+.check-group {
+    .h-checkbox + .h-checkbox,
+    .h-checkbox + .form-set {
+        margin-left: 12px;
+    }
+} 
+.h-checkbox { 
     input[type="radio"] + label  span,
     input[type="checkbox"] + label span {
         @include bp-font-size-sm;

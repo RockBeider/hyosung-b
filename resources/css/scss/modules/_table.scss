@@ -1,11 +1,6 @@
 
 
-table {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
+
 
 .table-group + .table-group {
     margin-top: 30px;
@@ -27,13 +22,6 @@ table {
     flex: 1;
     // margin-top: 12px;
 }
-.table-content {
-    table {
-		// table-layout: fixed;
-	}
-    
-}
-
 .text-center th,
 .text-center td {
 	text-align: center !important;
@@ -44,11 +32,7 @@ table {
 		text-align: left !important;
 	}
 }
-td .form-box, th .form-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+
 
 .table-guide {
     .list {
@@ -64,15 +48,24 @@ td .form-box, th .form-box {
 * 
 * ------------------------------
 */
-
-
+table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+td .form-box, th .form-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .table {
     width: 100%; 
     overflow: hidden;
     table {
         width: calc(100% + 2px);
         margin: 0 -1px;
-        table-layout: fixed;
     }
     thead th {
         .h-checkbox {
@@ -85,16 +78,18 @@ td .form-box, th .form-box {
     }
     th, td {
         border: 1px solid $gray-e4;
+        @include font-size-sm;
     }
     th {
-        @include font-size-sm;
         padding: 0 5px;
         white-space: nowrap;
     }
-    td {
-        @include font-size-sm;
+    &.border-none {
+        td {
+            border-left: none;
+            border-right: none;
+        }
     }
-    
 }
 
 .table-bottom {
@@ -104,7 +99,6 @@ td .form-box, th .form-box {
     border-bottom: 1px solid $inputDefault;
     box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
 }
-
 
 .table-box {
     > [class^="table"]+ [class^="table"] {
