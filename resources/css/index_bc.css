@@ -865,6 +865,9 @@ td .divide + .divide {
 .title-box.md .right-group, .title-box.md .btn-box {
   margin-bottom: 6px;
 }
+.title-box.md + .title-box.xsm {
+  margin-top: 8px;
+}
 .title-box.xsm {
   margin: 12px 0 6px;
   align-items: flex-end;
@@ -1055,6 +1058,7 @@ td .divide + .divide {
   margin-top: 10px;
   padding: 4px 30px 30px;
   background: #fff;
+  border: 1px solid #e4e4e4;
 }
 
 .tab-menu .btn-box {
@@ -1090,6 +1094,30 @@ td .divide + .divide {
   padding: 0 3px;
   color: #222;
   font-weight: 500;
+}
+
+/*
+* ------------------------------
+* box style
+* ------------------------------
+*/
+.border-box {
+  padding: 4px 30px 30px;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+}
+
+.list-info {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  color: #555;
+}
+.list-info .h-input {
+  display: inline-block;
+}
+.list-info > * {
+  margin-right: 8px;
 }
 
 /* Flexbox Class */
@@ -1710,13 +1738,6 @@ td .divide + .divide {
  * BC0004
  * ------------------------------
  */
-table {
-  display: table;
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 .table-group + .table-group {
   margin-top: 30px;
 }
@@ -1752,12 +1773,6 @@ table {
   text-align: left !important;
 }
 
-td .form-box, th .form-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .table-guide .list {
   margin-top: 8px;
   color: #777;
@@ -1771,6 +1786,20 @@ td .form-box, th .form-box {
 * 
 * ------------------------------
 */
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+td .form-box, th .form-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .table {
   width: 100%;
   overflow: hidden;
@@ -1778,7 +1807,6 @@ td .form-box, th .form-box {
 .table table {
   width: calc(100% + 2px);
   margin: 0 -1px;
-  table-layout: fixed;
 }
 .table thead th .h-checkbox {
   margin-left: auto;
@@ -1789,18 +1817,17 @@ td .form-box, th .form-box {
 }
 .table th, .table td {
   border: 1px solid #e4e4e4;
-}
-.table th {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
+}
+.table th {
   padding: 0 5px;
   white-space: nowrap;
 }
-.table td {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
+.table.border-none td {
+  border-left: none;
+  border-right: none;
 }
 
 .table-bottom {
@@ -2384,9 +2411,11 @@ td .form-group.col > * + * {
 */
 .check-group {
   display: flex;
+  align-items: center;
 }
-.check-group .h-checkbox {
-  margin-right: 12px;
+.check-group .h-checkbox + .h-checkbox,
+.check-group .h-checkbox + .form-set {
+  margin-left: 20px;
 }
 
 .h-checkbox {
@@ -2446,6 +2475,11 @@ td .form-group.col > * + * {
 * 
 * ------------------------------
 */
+.check-group .h-checkbox + .h-checkbox,
+.check-group .h-checkbox + .form-set {
+  margin-left: 12px;
+}
+
 .h-checkbox input[type=radio] + label span,
 .h-checkbox input[type=checkbox] + label span {
   font-size: 13px;

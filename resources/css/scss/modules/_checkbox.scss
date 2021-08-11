@@ -87,8 +87,10 @@
 */
 .check-group {
     display: flex;
-    .h-checkbox {
-        margin-right: 12px;
+    align-items: center;
+    .h-checkbox + .h-checkbox,
+    .h-checkbox + .form-set {
+        margin-left: 20px;
     }
 } 
 .h-checkbox {

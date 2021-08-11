@@ -302,6 +302,9 @@ td .divide {
         .right-group, .btn-box {
             margin-bottom: 6px;
         }
+		+ .title-box.xsm { //팝업
+			margin-top: 8px;
+		}
 	}
 	&.xsm { //팝업일 경우
 		margin: 12px 0 6px;
@@ -491,6 +494,7 @@ td .divide {
 			margin-top: 10px;
 			padding: 4px 30px 30px;
 			background: $white;
+			border: 1px solid $gray-e4;
 		}
 	}
 }
@@ -526,5 +530,29 @@ td .divide {
 		padding: 0 3px;
 		color: $gray-2;
 		font-weight: 500;
+	}
+}
+
+
+/*
+* ------------------------------
+* box style
+* ------------------------------
+*/
+.border-box {
+	padding: 4px 30px 30px;
+	background: $white;
+	border: 1px solid $gray-e4;
+}
+
+
+.list-info {
+	@include font-size-sm;
+	color: $gray-5;
+	.h-input {
+		display: inline-block;
+	}
+	> * {
+		margin-right: 8px;
 	}
 }
