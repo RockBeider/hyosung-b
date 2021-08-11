@@ -23,10 +23,10 @@
 
         <div data-role="dialog"
              data-title="상품 등록"
-             data-width="720"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
-                            events: { close: onClose}">
+                            events: { close: onClose}"
+            class="md">
             <div class="content-group">
                 <div class="table">
                     <table>
@@ -65,7 +65,7 @@
                                     <div class="divide">
                                         <div class="list">
                                             <div class="form-set">
-                                                <div class="h-checkbox">
+                                                <div class="h-checkbox no-label">
                                                     <input type="checkbox" id="checkbox-fee1" name="checkbox" />
                                                     <label for="checkbox-fee1"></label> 
                                                 </div>
@@ -123,14 +123,15 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- 결제상품 -->
                 <div class="title-box xsm">
                     <h4 class="sub-title">결제 상품</h4>
                 </div>
                 <div class="title-box xs">
                     <div class="left-group">
-                        <div class="h-checkbox">
-                            <input type="checkbox" id="checkbox1-1" name="checkbox" />
-                            <label for="checkbox1-1"><span>모두선택</span></label>
+                        <div class="h-checkbox" id="listTransferAllTo1">
+                            <input type="checkbox" id="checkbox_list1" name="checkbox" />
+                            <label for="checkbox_list1"><span>모두선택</span></label>
                         </div>
                     </div>
                     <div class="right-group">
@@ -140,58 +141,39 @@
                         </span>
                     </div>
                 </div>
-                
-                <div class="optional-box">
-                    <!-- <script type="text/x-kendo-template" id="listboxTemplate">
-                        <div class="title-box xs">
-                            <div class="left-group">
-                                <div class="h-checkbox k-button" data-command="transferAllTo">
-                                    <input type="checkbox" id="checkbox1-1" name="checkbox" />
-                                    <label for="checkbox1-1"><span>모두선택</span></label>
-                                </div>
-                            </div>
-                            <div class="right-group">
-                                <span class="amount-set">
-                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                    <span class="amount">26</span><span class="unit">건</span>
-                                </span>
-                            </div>
+                <div class="optional-box" id="viewModel_listbox1">
+                    <script type="text/x-kendo-template" id="leftboxTemplate1">
+                        <div class="list-box listTransferTo1">
+                            <h3 class="title">#: ProductName #</h3>
                         </div>
-                    </script> -->
-                    <!-- <script type="text/x-kendo-template" id="row-template">
-                        <span class="k-state-default"><h3 data-bind="text: ProductName"></h3><p  data-bind="text: ProductID"></p></span>
-                    </script> -->
-                    <select id="listbox1" 
+                    </script>
+                    <script type="text/x-kendo-template" id="rightboxTemplate1">
+                        <div class="list-box listTransferFrom1">
+                            <h3 class="title">#: ProductName #</h3>
+                            <i class="h-ico close"></i>
+                        </div>
+                    </script> 
+                    <select id="listbox1_1" 
                         data-role="listbox"
                         data-text-field="ProductName"
                         data-value-field="ProductID"
-                        data-connect-with="listbox2"
+                        data-connect-with="listbox1_2"
+                        data-template="leftboxTemplate1"
                         data-toolbar='{
-                            position: "top",
-                            tools: [ "moveDown", "transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
+                            tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
                         }'
-                        data-bind="source: products,
-                            events: {
-                                change: change,
-                                dataBound: dataBound,
-                                reorder: reorder,
-                                remove: remove
-                            }">
+                        data-bind="source: products">
                     </select>
-                    <select id="listbox2" 
+                    <select id="listbox1_2" 
                         data-role="listbox"
-                        data-connect-with="listbox1"
                         data-text-field="ProductName"
-                        data-value-field="ProductID">
+                        data-value-field="ProductID"
+                        data-connect-with="listbox1_1"
+                        data-template="rightboxTemplate1"
+                        >
                     </select>
-                    <script>
-                        function listboxTemplate() {
-                            var template = kendo.template($('#listboxTemplate').html());
-                            var result = template({});
-                            return result
-                        }
-                    </script>
                 </div>
+                <!-- //결제상품 -->
 
                 <div class="btn-box bottom justify-content-end">
                     <button data-role="button" class="">등록</button>
@@ -220,7 +202,7 @@
                 if (value) {
                     dialog.open();
                     console.log('open');
-                    if($('.k-dialog .k-window-content').height() + 60 > $(window).height()) {
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
                         $('.k-dialog').css({"height":"100%"});
                     }
                 } else {
@@ -241,22 +223,49 @@
                 this.set("isVisible", true);
                 this.set("isEnabled", false);
             },
-
         });
         kendo.bind($(".wrap"), viewModel);
-    </script>
-    <script>
-        $(document).ready(function () {
-            $("#optional").kendoListBox({
-                connectWith: "selected",
-                toolbar: {
-                    tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
-                }
-            });
 
-            $("#selected").kendoListBox();
+        //결제상품
+        //listbox
+        var viewModel_listbox1 = kendo.observable({
+            products: new kendo.data.DataSource({
+                schema: {
+                    model: {
+                        id: "ProductID",
+                        fields: {
+                            ProductName: { type: "string" },
+                            UnitPrice: { type: "number" }
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 15,
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/products",
+                        dataType: "jsonp"
+                    }
+                }
+            })
         });
+        kendo.bind($("#viewModel_listbox1"), viewModel_listbox1);
+        $(document).on('change', '#listTransferAllTo1 input', function(e) {  // 오른쪽으로 전체 옮기기  
+            if($('#listTransferAllTo1 input').is(":checked") == true ) {
+                $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllTo']").trigger('click');
+            } else {
+                $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllFrom']").trigger('click');
+            }
+        });
+        $(document).on('click', '.listTransferTo1', function(e) {  //오른쪽으로 옮기기
+            $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferTo']").trigger('click');
+        });
+        $(document).on('click', '.listTransferFrom1', function(e) { //왼쪽으로 옮기기
+            $("#viewModel_listbox1  .k-listbox-toolbar [data-command='transferFrom']").trigger('click');
+        });
+
     </script>
+    
 </body>
 
 </html>

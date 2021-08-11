@@ -306,12 +306,13 @@
 .badge {
 	display: flex;
 	align-items: center;
+    width: auto;
 	height: 22px;
 	padding: 0 8px;
 	border-radius: 11px;
 	&.pink {
-		background-color: $badge-pink;
-		color: $error;
+		background-color: $bp-badge-pink-bg;
+		color: $bp-badge-pink;
 	}
 	&.blue {
 		

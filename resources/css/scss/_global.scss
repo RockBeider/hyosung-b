@@ -147,6 +147,46 @@ button {
 .text-left { text-align: left !important; }
 .text-center { text-align: center !important; }
 .text-center > * { justify-content: center !important; margin-left: auto !important; margin-right: auto !important; }
+
+/*
+* ------------------------------
+* badge
+* ------------------------------
+*/
+.k-listbox .badge {
+	width: 62px;
+	height: 20px;
+	white-space: nowrap
+}
+.badge {
+	@include font-size-badge;
+	display: flex;
+	align-items: center;
+	padding: 0 8px;
+	border-radius: 11px;
+	&.pink {
+		background-color: $badge-pink-bg;
+		border: 1px solid $badge-pink-border;
+		color: $badge-pink;
+	}
+	&.blue {
+		background-color: $badge-blue-bg;
+		border: 1px solid $badge-blue-border;
+		color: $badge-blue;
+	}
+	&.green {
+		background-color: $badge-green-bg;
+		border: 1px solid $badge-green-border;
+		color: $badge-green;
+	}
+	&.yellow {
+		background-color: $badge-yellow-bg;
+		border: 1px solid $badge-yellow-border;
+		color: $badge-yellow;
+	}
+}
+
+
 /*
 * ------------------------------
 * table divide
@@ -155,9 +195,14 @@ button {
 
 .divide {
 	padding: 20px 0;
-	
 	+ .divide {
 		border-top: 1px solid $gray-e4;
+	}
+	.title-box.md {
+		margin-bottom: 10px;
+	}
+	+ .btn-box.bottom {
+		margin-top: -10px;
 	}
 }
 .table-group.divide-thick {
@@ -202,6 +247,8 @@ td .divide {
 }
 .sub-title {
 	@include font-size-lg;
+	display: flex;
+	align-items: center;
 	color: $gray-2;
 	font-weight: 500;
 	&.md {
@@ -257,11 +304,11 @@ td .divide {
         }
 	}
 	&.xsm { //팝업일 경우
-		min-height: 28px;
 		margin: 12px 0 6px;
 		align-items: flex-end;
         .sub-title {
             @include font-size-menu;
+			line-height: 21px;
         }
         .noti {
             @include font-size-sm;
@@ -442,7 +489,7 @@ td .divide {
 		.tabpanel {
 			flex: 1 1 100%;
 			margin-top: 10px;
-			padding: 4px 30px 0;
+			padding: 4px 30px 30px;
 			background: $white;
 		}
 	}
@@ -473,6 +520,7 @@ td .divide {
 }
 .year-box {
 	display: flex;
+	margin-left: -6px;
 	.k-button.year {
 		@include font-size-lg;
 		padding: 0 3px;

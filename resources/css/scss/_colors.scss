@@ -52,6 +52,22 @@ $bg: #f5f5f5;
 // Background
 $table-th: #f2f4f7;
 
+$badge-blue: #3b6ac5;
+$badge-blue-bg: #e8f0ff;
+$badge-blue-border: #dbe7ff;
+
+$badge-pink: $error;
+$badge-pink-bg: #feecec;
+$badge-pink-border: #fddbdb;
+
+$badge-green: #1e6c42;
+$badge-green-bg: #e0f6ea;
+$badge-green-border: #bae3ce;
+
+$badge-yellow: #d89000;
+$badge-yellow-bg: #fff6d9;
+$badge-yellow-border: #ffe79b;
+
 
 $reject: #feecec;
 $wait: #fff4cf;
@@ -98,7 +114,8 @@ $bp-gray-hover: #eff0f2;
 $bp-yellow: #faab00;
 $bp-yellow-hover: #de9800;
 
-$badge-pink: #fde3e3;
+$bp-badge-pink-bg: #fde3e3;
+$bp-badge-pink: $error;
 
 .discount, .error {
     color: $error !important;

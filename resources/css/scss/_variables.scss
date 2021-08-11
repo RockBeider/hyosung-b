@@ -81,3 +81,10 @@
     line-height: 26px;
     letter-spacing: -1.1px;
 }
+@mixin font-size-badge {
+    //뱃지
+    font-size: 13px;
+    line-height: 26px;
+    letter-spacing: -0.65px;
+}
+
