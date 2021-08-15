@@ -19,13 +19,10 @@
 @import "layout"; //공통   
      
 .contents-body {
-    // height: 100%;
     flex: 1;
 }
 .table-group {
     display: flex;
-    // justify-content: flex-start;
-    // flex-direction: column;
     height: 100%;
 }
 .k-tabstrip-wrapper > .k-tabstrip {
@@ -35,36 +32,36 @@
     flex: 1;
     .table-set {
        height: 100%;
-    // flex: 1;
     }
 
 }
 .k-toolbar.k-grid-toolbar {
-    background-color: $bg;;
+    background-color: $white;
     overflow: hidden;
 }
+.contents-wrap {
+    .k-toolbar.k-grid-toolbar {
+        background-color: $gray-f5;
+    }  
+}
 .table-group.divide-thick  {
-    // &:last-child {
-    //     padding-bottom: 20px;
-    // }
     height: unset;
 }
 .table-content.grid { 
-    position: relative;
+    position: relative; 
     height: 100%;
-    // flex: 1;
     .k-grid {
-        // height: 100%;
     flex: 1;
+    min-height: 150px;
     }
 }
 .k-grid-header {
-    border-bottom: 1px solid $gray-a;
+    border-bottom: 1px solid $gray-e4;
 }
 .k-grid-content {
-    min-height: 150px;
-    max-height: 200px;
-    padding-bottom: 58px;
+    // min-height: 150px;
+    // max-height: 200px;
+    // padding-bottom: 58px;
     overflow: auto;
 }
 .k-tabstrip-wrapper {
@@ -72,9 +69,11 @@
 }
 .table-bottom {
     display: flex;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    // position: absolute;
+    // bottom: 0;
     width: 100%;
+    margin-top: -1px;
     border-bottom: 0;
     border-top: 1px solid $gray-a;
     box-shadow: none;

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 * {
-	font-family: "Noto Sans KR", sans-serif;
+	/* font-family: "Noto Sans KR", sans-serif; */
 	/* color: inherit; */
 	box-sizing: border-box;
 }
@@ -23,7 +23,7 @@ body {
 	display: block !important;
 }
 .roboto {
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto", "Noto Sans KR", sans-serif;
 }
 .g_article {
 	margin-top: 3rem;

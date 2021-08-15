@@ -621,13 +621,6 @@ button {
   font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif !important;
 }
 
-.bg-white {
-  background-color: #fff !important;
-}
-.bg-white .k-grid-toolbar {
-  background-color: #fff !important;
-}
-
 /*
 * ------------------------------
 * 여백
@@ -697,7 +690,11 @@ button {
   margin-right: auto !important;
 }
 
-/*
+.w100 {
+  width: 100% !important;
+}
+
+/* 
 * ------------------------------
 * badge
 * ------------------------------
@@ -736,6 +733,11 @@ button {
   background-color: #fff6d9;
   border: 1px solid #ffe79b;
   color: #d89000;
+}
+.badge.gray {
+  background-color: #ebebeb;
+  border: 1px solid #d5d5d5;
+  color: #777;
 }
 
 /*
@@ -1118,6 +1120,82 @@ td .divide + .divide {
 }
 .list-info > * {
   margin-right: 8px;
+}
+
+/*
+* ------------------------------
+* banner
+* ------------------------------
+*/
+.status-banner {
+  display: flex;
+}
+.status-banner.contract {
+  margin-bottom: 8px;
+}
+.status-banner.contract .list {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+}
+.status-banner.contract .list + .list {
+  margin-left: 8px;
+}
+.status-banner.contract .tit {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  line-height: 20px;
+  order: 2;
+  font-weight: 400;
+  color: #666;
+}
+.status-banner.contract .count {
+  font-size: 30px;
+  line-height: 26px;
+  letter-spacing: -1.5px;
+  line-height: 36px;
+  order: 1;
+  color: #222;
+  font-weight: bold;
+}
+
+.info-banner {
+  display: flex;
+  position: relative;
+}
+.info-banner.company {
+  flex-direction: column;
+  margin-bottom: 4px;
+  padding: 20px;
+  background: #002a70;
+}
+.info-banner.company .tit {
+  font-size: 13px;
+  line-height: 26px;
+  letter-spacing: -0.65px;
+  color: #48c3e6;
+  font-weight: 500;
+}
+.info-banner.company .desc {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  margin-top: 4px;
+  color: #fff;
+  line-height: 19px;
+  font-weight: 500;
+}
+.info-banner.company .badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 20px;
 }
 
 /* Flexbox Class */
@@ -1611,11 +1689,6 @@ td .divide + .divide {
 .k-window.k-dialog .content-group.has-check {
   padding-bottom: 70px;
 }
-.k-window.k-dialog .pop-guide .list {
-  font-size: 12px;
-  line-height: 26px;
-  letter-spacing: -0.6px;
-}
 
 .check-group.bottom {
   position: absolute;
@@ -1657,8 +1730,11 @@ td .divide + .divide {
   margin-top: 10px;
 }
 .pop-guide .list {
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: -0.65px;
   color: #777;
-  line-height: 18px;
+  line-height: 22px;
 }
 
 .btn-box {
@@ -1700,10 +1776,13 @@ td .divide + .divide {
 .k-window.k-dialog .btn-box.justify-content-end {
   margin-top: 10px;
 }
-.k-window.k-dialog .pop-guide .list {
+
+.pop-guide .list {
   font-size: 12px;
   line-height: 20px;
   letter-spacing: -0.6px;
+  color: #777;
+  line-height: 18px;
 }
 
 /*
@@ -1822,7 +1901,7 @@ td .form-box, th .form-box {
   letter-spacing: -0.7px;
 }
 .table th {
-  padding: 0 5px;
+  padding: 0 3px;
   white-space: nowrap;
 }
 .table.border-none td {
@@ -1855,6 +1934,15 @@ td .form-box, th .form-box {
 }
 .table-box.has-bar .sub-title {
   color: #2476dd;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.table-footer .btn-box.bottom {
+  margin-top: 10px;
 }
 
 table {
@@ -1990,7 +2078,7 @@ td .form-group.col > * + * {
   border: 0;
   padding: 0;
 }
-.k-dialog .search-control .form-group, .k-dialog .search-control .form-set {
+.k-dialog .search-control .form-group {
   width: 100%;
 }
 .k-dialog .search-control .label, .k-dialog .search-control .form-set {
@@ -2007,7 +2095,7 @@ td .form-group.col > * + * {
   position: relative;
   padding: 24px 20px;
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #e4e4e4;
   overflow: hidden;
   flex: 0 0 auto;
 }
@@ -2047,7 +2135,7 @@ td .form-group.col > * + * {
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 0;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #e4e4e4;
   color: #0e4194;
 }
 .search-control .k-button.search.k-state-focused {
@@ -2677,6 +2765,11 @@ td .form-group.col > * + * {
  * 버튼 그룹
  * ------------------------------
  */
+.k-dialog .btn-box.bottom {
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
 .btn-box {
   display: flex;
   justify-content: center;
@@ -3143,6 +3236,33 @@ th .required {
 }
 .h-ico.tip.k-state-border-down {
   background-image: url("../images_bc/icon/btn_tip_hover.svg");
+}
+
+.status-banner.contract .list {
+  background-position: 20px 10px;
+  background-size: 52px 52px;
+  background-repeat: no-repeat;
+}
+.status-banner.contract .list.list1 {
+  background-image: url("../images_bc/icon/icon_contact_01.svg");
+}
+.status-banner.contract .list.list2 {
+  background-image: url("../images_bc/icon/icon_contact_02.svg");
+}
+.status-banner.contract .list.list3 {
+  background-image: url("../images_bc/icon/icon_contact_03.svg");
+}
+.status-banner.contract .list.list4 {
+  background-image: url("../images_bc/icon/icon_contact_04.svg");
+}
+.status-banner.contract .list.list5 {
+  background-image: url("../images_bc/icon/icon_contact_05.svg");
+}
+.status-banner.contract .list.list6 {
+  background-image: url("../images_bc/icon/icon_contact_06.svg");
+}
+.status-banner.contract .list.list7 {
+  background-image: url("../images_bc/icon/icon_contact_07.svg");
 }
 
 .active .h-ico.menu1 {

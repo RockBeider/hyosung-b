@@ -38,12 +38,15 @@
     .btn-box.justify-content-end {
         margin-top: 10px;
     }
-    .pop-guide {
-        .list {
-            @include bc-font-size-xs; 
-        }
+}
+.pop-guide {
+    .list {
+        @include bc-font-size-xs; 
+        color: $gray-7;
+        line-height: 18px;
     }
 }
+
 /*
  * ------------------------------
  * BC0003

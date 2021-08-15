@@ -88,3 +88,13 @@
     letter-spacing: -0.65px;
 }
 
+@mixin font-size-count {
+    font-size: 30px;
+    line-height: 26px;
+    letter-spacing: -1.5px;
+}
+@mixin font-size-guide {
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: -0.65px;
+}

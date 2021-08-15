@@ -212,11 +212,6 @@
             padding-bottom: 30px + 40px;
         }
     }
-    .pop-guide {
-        .list {
-            @include font-size-xs; 
-        }
-    }
 }
 
 
@@ -260,9 +255,9 @@
 .pop-guide {
     margin-top: 10px;
     .list {
-        // @include font-size-xs; 
+        @include font-size-guide; 
         color: $gray-7;
-        line-height: 18px;
+        line-height: 22px;
     }
 }
 .btn-box {

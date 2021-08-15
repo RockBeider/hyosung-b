@@ -224,7 +224,12 @@
  * 버튼 그룹
  * ------------------------------
  */
-
+.k-dialog {
+    .btn-box.bottom {
+        margin-top: 10px;
+        justify-content: flex-end;
+    }
+}
 .btn-box {
     &.bottom .k-button, &.bottom .h-btn {
         height: 32px;

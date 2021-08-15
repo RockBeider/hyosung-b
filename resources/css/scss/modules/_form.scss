@@ -71,7 +71,10 @@ td .form-group {
     .search-control {
         border: 0;
         padding: 0;
-        .form-group, .form-set {
+        // .form-group, .form-set {
+        //     width: 100%;
+        // }
+        .form-group {
             width: 100%;
         }
         .label, .form-set {
@@ -91,7 +94,7 @@ td .form-group {
     position: relative;
     padding: 24px 20px;
     background: #fff;
-    border: 1px solid $searchLine;
+    border: 1px solid $gray-e4;
     overflow: hidden;
     flex: 0 0 auto;
     .label {
@@ -128,7 +131,7 @@ td .form-group {
         background-color: transparent;
         border: 1px solid $white;
         border-radius: 0;
-        border-left: 1px solid $gray-e;
+        border-left: 1px solid $gray-e4;
         color: $main;
         &.k-state-focused {
             border: 1px solid $main;
