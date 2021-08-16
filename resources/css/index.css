@@ -490,6 +490,89 @@ template {
   * Example of useage:
   * @include background-opacity(#000, 0.3);
   */
+/*
+* ------------------------------
+* List 
+* ------------------------------
+*/
+.list-wrap {
+  padding: 20px;
+  background: #efefef;
+  border-top: 1px solid #222;
+}
+
+.list-box {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+.list-box.gray-box {
+  padding: 20px;
+  background: #f5f5f5;
+  border: 1px solid #e4e4e4;
+}
+.list-box.gray-box .label {
+  color: #777;
+}
+.list-box.gray-box .desc {
+  color: #222;
+}
+.list-box.half > * {
+  width: 50%;
+}
+.list-box.history {
+  flex-direction: column;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 3px;
+}
+.list-box.history .label {
+  color: #777;
+}
+.list-box.history .desc {
+  color: #222;
+}
+.list-box.history .badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 20px;
+}
+.list-box.history + .list-box {
+  margin-top: 8px;
+}
+.list-box .list {
+  display: flex;
+}
+.list-box .label {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  margin-right: 8px;
+  padding-right: 8px;
+  font-weight: 500;
+}
+.list-box .label.has-bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 14px;
+  margin-top: -7px;
+  background: #ddd;
+}
+.list-box .desc {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -586,13 +669,6 @@ button {
   font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif !important;
 }
 
-.bg-white {
-  background-color: #fff !important;
-}
-.bg-white .k-grid-toolbar {
-  background-color: #fff !important;
-}
-
 /*
 * ------------------------------
 * 여백
@@ -662,7 +738,11 @@ button {
   margin-right: auto !important;
 }
 
-/*
+.w100 {
+  width: 100% !important;
+}
+
+/* 
 * ------------------------------
 * badge
 * ------------------------------
@@ -701,6 +781,11 @@ button {
   background-color: #fff6d9;
   border: 1px solid #ffe79b;
   color: #d89000;
+}
+.badge.gray {
+  background-color: #ebebeb;
+  border: 1px solid #d5d5d5;
+  color: #777;
 }
 
 /*
@@ -1083,6 +1168,82 @@ td .divide + .divide {
 }
 .list-info > * {
   margin-right: 8px;
+}
+
+/*
+* ------------------------------
+* banner
+* ------------------------------
+*/
+.status-banner {
+  display: flex;
+}
+.status-banner.contract {
+  margin-bottom: 8px;
+}
+.status-banner.contract .list {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+}
+.status-banner.contract .list + .list {
+  margin-left: 8px;
+}
+.status-banner.contract .tit {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  line-height: 20px;
+  order: 2;
+  font-weight: 400;
+  color: #666;
+}
+.status-banner.contract .count {
+  font-size: 30px;
+  line-height: 26px;
+  letter-spacing: -1.5px;
+  line-height: 36px;
+  order: 1;
+  color: #222;
+  font-weight: bold;
+}
+
+.info-banner {
+  display: flex;
+  position: relative;
+}
+.info-banner.company {
+  flex-direction: column;
+  margin-bottom: 4px;
+  padding: 20px;
+  background: #002a70;
+}
+.info-banner.company .tit {
+  font-size: 13px;
+  line-height: 26px;
+  letter-spacing: -0.65px;
+  color: #48c3e6;
+  font-weight: 500;
+}
+.info-banner.company .desc {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  margin-top: 4px;
+  color: #fff;
+  line-height: 19px;
+  font-weight: 500;
+}
+.info-banner.company .badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 20px;
 }
 
 /* Flexbox Class */
@@ -1576,11 +1737,6 @@ td .divide + .divide {
 .k-window.k-dialog .content-group.has-check {
   padding-bottom: 70px;
 }
-.k-window.k-dialog .pop-guide .list {
-  font-size: 12px;
-  line-height: 26px;
-  letter-spacing: -0.6px;
-}
 
 .check-group.bottom {
   position: absolute;
@@ -1622,8 +1778,11 @@ td .divide + .divide {
   margin-top: 10px;
 }
 .pop-guide .list {
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: -0.65px;
   color: #777;
-  line-height: 18px;
+  line-height: 22px;
 }
 
 .btn-box {
@@ -1726,7 +1885,7 @@ td .form-box, th .form-box {
   letter-spacing: -0.7px;
 }
 .table th {
-  padding: 0 5px;
+  padding: 0 3px;
   white-space: nowrap;
 }
 .table.border-none td {
@@ -1759,6 +1918,15 @@ td .form-box, th .form-box {
 }
 .table-box.has-bar .sub-title {
   color: #2476dd;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.table-footer .btn-box.bottom {
+  margin-top: 10px;
 }
 
 /*
@@ -1869,7 +2037,7 @@ td .form-group.col > * + * {
   border: 0;
   padding: 0;
 }
-.k-dialog .search-control .form-group, .k-dialog .search-control .form-set {
+.k-dialog .search-control .form-group {
   width: 100%;
 }
 .k-dialog .search-control .label, .k-dialog .search-control .form-set {
@@ -1886,7 +2054,7 @@ td .form-group.col > * + * {
   position: relative;
   padding: 24px 20px;
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #e4e4e4;
   overflow: hidden;
   flex: 0 0 auto;
 }
@@ -1926,7 +2094,7 @@ td .form-group.col > * + * {
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 0;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #e4e4e4;
   color: #0e4194;
 }
 .search-control .k-button.search.k-state-focused {
@@ -2426,6 +2594,11 @@ td .form-group.col > * + * {
  * 버튼 그룹
  * ------------------------------
  */
+.k-dialog .btn-box.bottom {
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
 .btn-box {
   display: flex;
   justify-content: center;
@@ -2743,6 +2916,33 @@ th .required {
 }
 .h-ico.tip.k-state-border-down {
   background-image: url("../images/icon/btn_tip_hover.svg");
+}
+
+.status-banner.contract .list {
+  background-position: 20px 10px;
+  background-size: 52px 52px;
+  background-repeat: no-repeat;
+}
+.status-banner.contract .list.list1 {
+  background-image: url("../images/icon/icon_contact_01.svg");
+}
+.status-banner.contract .list.list2 {
+  background-image: url("../images/icon/icon_contact_02.svg");
+}
+.status-banner.contract .list.list3 {
+  background-image: url("../images/icon/icon_contact_03.svg");
+}
+.status-banner.contract .list.list4 {
+  background-image: url("../images/icon/icon_contact_04.svg");
+}
+.status-banner.contract .list.list5 {
+  background-image: url("../images/icon/icon_contact_05.svg");
+}
+.status-banner.contract .list.list6 {
+  background-image: url("../images/icon/icon_contact_06.svg");
+}
+.status-banner.contract .list.list7 {
+  background-image: url("../images/icon/icon_contact_07.svg");
 }
 
 .active .h-ico.menu1 {
@@ -8520,8 +8720,12 @@ th .required {
 }
 
 .k-toolbar.k-grid-toolbar {
-  background-color: #f5f5f5;
+  background-color: #fff;
   overflow: hidden;
+}
+
+.contents-wrap .k-toolbar.k-grid-toolbar {
+  background-color: #f5f5f5;
 }
 
 .table-group.divide-thick {
@@ -8534,16 +8738,14 @@ th .required {
 }
 .table-content.grid .k-grid {
   flex: 1;
+  min-height: 150px;
 }
 
 .k-grid-header {
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .k-grid-content {
-  min-height: 150px;
-  max-height: 200px;
-  padding-bottom: 58px;
   overflow: auto;
 }
 
@@ -8553,9 +8755,9 @@ th .required {
 
 .table-bottom {
   display: flex;
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
+  margin-top: -1px;
   border-bottom: 0;
   border-top: 1px solid #aaa;
   box-shadow: none;

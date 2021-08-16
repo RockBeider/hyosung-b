@@ -81,7 +81,7 @@ td .form-box, th .form-box {
         @include font-size-sm;
     }
     th {
-        padding: 0 5px;
+        padding: 0 3px;
         white-space: nowrap;
     }
     &.border-none {
@@ -120,5 +120,14 @@ td .form-box, th .form-box {
            
        }
    }
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .btn-box.bottom {
+        margin-top: 10px;
+    }
 }
 

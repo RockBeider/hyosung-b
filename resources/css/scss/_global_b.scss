@@ -1,0 +1,78 @@
+
+/*
+* ------------------------------
+* List 
+* ------------------------------
+*/
+.list-wrap {
+	padding: 20px;
+	background: $gray-ef;
+	border-top: 1px solid $gray-2;
+}
+.list-box {
+	position: relative;
+    display: flex;
+    align-items: flex-start;
+    white-space: nowrap;
+    &.gray-box {
+        padding: 20px;
+        background: $gray-f5;
+        border: 1px solid $gray-e4;
+        .label {
+			color: $gray-7;
+		}
+        .desc {
+			color: $gray-2;
+		}
+    }
+    &.half {
+        > * {
+            width: 50%;
+        }
+    }
+	&.history {
+		flex-direction: column;
+		padding: 16px 20px;
+		background: $white;
+        border-radius: 3px;
+		.label {
+			color: $gray-7;
+		}
+		.desc {
+			color: $gray-2;
+		}
+		.badge {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			height: 20px;
+		}
+		+ .list-box {
+			margin-top: 8px;
+		}
+	}
+    .list { display: flex; }
+    .label {
+        @include font-size-sm;
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+		margin-right: 8px;
+		padding-right: 8px;
+        font-weight: 500;
+        &.has-bar::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 1px;
+			height: 14px;
+			margin-top: -7px;
+			background: $gray-d;
+        }
+    }
+    .desc {
+        @include font-size-sm;
+    }
+}

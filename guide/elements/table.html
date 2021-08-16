@@ -1,109 +1,11 @@
 <div class="content-wrap">
-    <div class="g-example-wrap">
-        <div class="g-example-head">
-            <p class="title">Grid Sort</p>
-        </div>
-        <div class="g-example-body flex-inline">
-            <div class="table-content grid" id="viewModel_grid_sort">
-                <!-- checkbox template -->
-                <script type="text/x-kendo-template" class="checkboxTemplate">
-                    <div class="h-checkbox no-label">
-                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                        <label for="checkbox-nolabel"></label> 
-                    </div>
-                </script>
-                <div data-role="grid" 
-                    data-sortable="true" 
-                    data-editable="false" 
-                    data-columns='[
-                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
-                    { "title": "NO.", "width": 50 },
-                    { "field": "상품코드", "width": 90 },
-                    { "field": "상품명", "width": 170 },
-                    { "field": "어플리케이션", "width": 146 },
-                    { "field": "표준가격", "width": 140 },
-                    { "field": "최소가격", "width": 146 },
-                    { "field": "기타"}
-                ]' data-bind="source: gridSource">
-                </div>
-                <div class="table-bottom">
-                    <button data-role="button" class="gray-border">삭제</button>
-                </div>
-            </div>
-            <script>
-                var viewModel_grid_sort = kendo.observable({
-                    gridSource: [
-                        { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
-                        { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
-                        { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
-                    ],
-                    displayGridSource: function() {
-                        return stringify(this.get("gridSource").toJSON());
-                    },
-                });
-                kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
-                function checkboxTemplate() {
-                    var template = kendo.template($('.checkboxTemplate').html());
-                    var result = template({});
-                    return result
-                }
-            </script>
-        </div>
-        <div class="g-example-foot">
-            <pre><code class="html">
-&lt;div class="table-content grid" id="viewModel_grid_sort">
-    &lt;!-- checkbox template -->
-    &lt;script type="text/x-kendo-template" class="checkboxTemplate">
-        &lt;div class="h-checkbox no-label">
-            &lt;input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-            &lt;label for="checkbox-nolabel">&lt;/label> 
-        &lt;/div>
-    &lt;/script>
-    &lt;div data-role="grid" 
-        data-sortable="true" 
-        data-editable="false" 
-        data-columns='[
-        { "title": "&lt;div class=h-checkbox>&lt;input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox />&lt;label for=checkbox-nolabel>&lt;/label>&lt;/div>", "width": 50, "template": "#=checkboxTemplate()#" },
-        { "title": "NO.", "width": 50 },
-        { "field": "상품코드", "width": 90 },
-        { "field": "상품명", "width": 170 },
-        { "field": "어플리케이션", "width": 146 },
-        { "field": "표준가격", "width": 140 },
-        { "field": "최소가격", "width": 146 },
-        { "field": "기타"}
-    ]' data-bind="source: gridSource">
-    &lt;/div>
-    &lt;div class="table-bottom">
-        &lt;button data-role="button" class="gray-border">삭제&lt;/button>
-    &lt;/div>
-&lt;/div>
-&lt;script>
-    var viewModel_grid_sort = kendo.observable({
-        gridSource: [
-            { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
-            { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
-            { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
-        ],
-        displayGridSource: function() {
-            return stringify(this.get("gridSource").toJSON());
-        },
-    });
-    kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
-    function checkboxTemplate() {
-        var template = kendo.template($('.checkboxTemplate').html());
-        var result = template({});
-        return result
-    }
-&lt;/script>
-            </code></pre>
-        </div>
-    </div>
+    
 
     <div class="g-example-wrap">
         <div class="g-example-head">
             <p class="title">Grid Default</p>
         </div>
-        <div class="g-example-body flex-inline">
+        <div class="g-example-body">
             <div class="table-content grid" id="viewModel_grid">
                 <!-- toolbar template -->
                 <script type="text/x-kendo-template" class="toolbarTemplate">
@@ -144,6 +46,17 @@
                 </div>
                 <div class="table-bottom">
                     <button data-role="button" class="gray-border">삭제</button>
+                </div>
+            </div>
+            <div class="table-footer">
+                <ul class="pop-guide">
+                    <li class="list">- 승인서는 오픈 시 기본으로 1회 발송이 되며, 재발송을 위한 수동발송 기능이다.</li>
+                    <li class="list">- 승인서생성이 된 고객만 승인서발송이 가능하다.</li>
+                    <li class="list">- 발송수단을 '수단일괄변경'으로 전체 일괄 변경 가능하다.</li>
+                    <li class="list">- 발송수단 변경 시 해당 발송수단 정보가 없는 경우 발송할 수 없다.</li>
+                </ul>
+                <div class="btn-box bottom">
+                    <button data-role="button">발송</button>
                 </div>
             </div>
             <script>
@@ -259,6 +172,106 @@
         var result = template({});
         return result
     }
+    function checkboxTemplate() {
+        var template = kendo.template($('.checkboxTemplate').html());
+        var result = template({});
+        return result
+    }
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Grid Sort</p>
+        </div>
+        <div class="g-example-body flex-inline">
+            <div class="table-content grid" id="viewModel_grid_sort">
+                <!-- checkbox template -->
+                <script type="text/x-kendo-template" class="checkboxTemplate">
+                    <div class="h-checkbox no-label">
+                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                        <label for="checkbox-nolabel"></label> 
+                    </div>
+                </script>
+                <div data-role="grid" 
+                    data-sortable="true" 
+                    data-editable="false" 
+                    data-columns='[
+                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                    { "title": "NO.", "width": 50 },
+                    { "field": "상품코드", "width": 90 },
+                    { "field": "상품명", "width": 170 },
+                    { "field": "어플리케이션", "width": 146 },
+                    { "field": "표준가격", "width": 140 },
+                    { "field": "최소가격", "width": 146 },
+                    { "field": "기타"}
+                ]' data-bind="source: gridSource">
+                </div>
+                <div class="table-bottom">
+                    <button data-role="button" class="gray-border">삭제</button>
+                </div>
+            </div>
+            <script>
+                var viewModel_grid_sort = kendo.observable({
+                    gridSource: [
+                        { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
+                        { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
+                        { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
+                    ],
+                    displayGridSource: function() {
+                        return stringify(this.get("gridSource").toJSON());
+                    },
+                });
+                kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
+                function checkboxTemplate() {
+                    var template = kendo.template($('.checkboxTemplate').html());
+                    var result = template({});
+                    return result
+                }
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="table-content grid" id="viewModel_grid_sort">
+    &lt;!-- checkbox template -->
+    &lt;script type="text/x-kendo-template" class="checkboxTemplate">
+        &lt;div class="h-checkbox no-label">
+            &lt;input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+            &lt;label for="checkbox-nolabel">&lt;/label> 
+        &lt;/div>
+    &lt;/script>
+    &lt;div data-role="grid" 
+        data-sortable="true" 
+        data-editable="false" 
+        data-columns='[
+        { "title": "&lt;div class=h-checkbox>&lt;input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox />&lt;label for=checkbox-nolabel>&lt;/label>&lt;/div>", "width": 50, "template": "#=checkboxTemplate()#" },
+        { "title": "NO.", "width": 50 },
+        { "field": "상품코드", "width": 90 },
+        { "field": "상품명", "width": 170 },
+        { "field": "어플리케이션", "width": 146 },
+        { "field": "표준가격", "width": 140 },
+        { "field": "최소가격", "width": 146 },
+        { "field": "기타"}
+    ]' data-bind="source: gridSource">
+    &lt;/div>
+    &lt;div class="table-bottom">
+        &lt;button data-role="button" class="gray-border">삭제&lt;/button>
+    &lt;/div>
+&lt;/div>
+&lt;script>
+    var viewModel_grid_sort = kendo.observable({
+        gridSource: [
+            { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
+            { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
+            { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
+        ],
+        displayGridSource: function() {
+            return stringify(this.get("gridSource").toJSON());
+        },
+    });
+    kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
     function checkboxTemplate() {
         var template = kendo.template($('.checkboxTemplate').html());
         var result = template({});
@@ -430,6 +443,7 @@
 
 
 
+
     <div class="g-example-wrap">
         <div class="g-example-head">
             <p class="title">Grid toolbar Template</p>
@@ -550,7 +564,7 @@
         &lt;button data-role="button" class="gray-border">삭제&lt;/button>
     &lt;/div>
 &lt;/div>
-<script>
+&lt;script>
     var viewModel_template = kendo.observable({
         gridSource: [
             { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
@@ -575,14 +589,91 @@
         var result = template({});
         return result
     }
-</script>
+&lt;/script>
             </code></pre>
         </div>
     </div>
 
 
 
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Grid only Number</p>
+        </div>
+        <div class="g-example-body">
+            <div class="table-content grid" id="viewModel_number">
+                <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                    <div class="title-box sm mt-0">
+                        <span class="amount-set">
+                            <span class="amount current">1</span><span class="unit">건</span>
+                        </span>
+                    </div>
+                </script>
+                <div data-role="grid" 
+                    data-sortable="false" 
+                    data-editable="true" 
+                    data-columns='[
+                    { "title": "NO.", "field":"NO", "width": 50, "attributes" : {"class": "text-center"} },
+                    { "field": ""  }
+                    ]' 
+                    data-bind="source: gridSource"
+                    data-toolbar="#=toolbarTemplate_count()#">
+                </div>
+            </div>
+            <script>
+                var viewModel_number = kendo.observable({
+                    gridSource: [
+                        { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                    ],
+                    displayGridSource: function() {
+                        return stringify(this.get("gridSource").toJSON());
+                    },
+                });
+                kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+                function toolbarTemplate_count() {
+                    var template = kendo.template($('#toolbarTemplate_count').html());
+                    var result = template({});
+                    return result
+                }
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="title-box sm">
+    &lt;h4 class="sub-title">SM 타이틀&lt;/h4>
+    &lt;span class="noti red">*정보가 들어갑니다.&lt;/span>
+&lt;/div>
+&lt;div class="table">
+    &lt;table>
+        &lt;colgroup>
+            &lt;col width="130px">
+            &lt;col width="*">
+            &lt;col width="130px">
+            &lt;col width="*">
+        &lt;/colgroup>
+        &lt;tbody>
+            &lt;tr>
+                &lt;th scope="row">필수정보&lt;span class="required">*&lt;/span>&lt;/th>
+                &lt;td>&lt;/td>
+                &lt;th scope="row">일반정보&lt;/th>
+                &lt;td>&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th scope="row">필수정보&lt;span class="required">*&lt;/span>&lt;/th>
+                &lt;td>&lt;/td>
+                &lt;th scope="row">필수정보&lt;span class="required">*&lt;/span>&lt;/th>
+                &lt;td>&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
     
+
 
     <div class="g-example-wrap">
         <div class="g-example-head">
@@ -647,6 +738,129 @@
             &lt;/tr>
         &lt;/tbody>
     &lt;/table>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Table</p>
+        </div>
+        <div class="g-example-body">
+            <div class="title-box md mt-0">
+                <h2 class="sub-title dot">MD 타이틀</h2>
+            </div>
+            <div class="table-group half">
+                <div class="table-set mt-0">
+                    <div class="title-box xsm mt-0">
+                        <h2 class="sub-title">XSM 타이틀</h2>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="*">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">타이틀</th>
+                                    <th scope="col">타이틀</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-set mt-0">
+                    <div class="title-box xsm mt-0">
+                        <h2 class="sub-title">XSM 타이틀</h2>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="*">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">타이틀</th>
+                                    <th scope="col">타이틀</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="title-box md mt-0">
+    &lt;h2 class="sub-title dot">MD 타이틀&lt;/h2>
+&lt;/div>
+&lt;div class="table-group half">
+    &lt;div class="table-set mt-0">
+        &lt;div class="title-box xsm mt-0">
+            &lt;h2 class="sub-title">XSM 타이틀&lt;/h2>
+        &lt;/div>
+        &lt;div class="table">
+            &lt;table>
+                &lt;colgroup>
+                    &lt;col width="*">
+                    &lt;col width="*">
+                &lt;/colgroup>
+                &lt;thead>
+                    &lt;tr>
+                        &lt;th scope="col">타이틀&lt;/th>
+                        &lt;th scope="col">타이틀&lt;/th>
+                    &lt;/tr>
+                &lt;/thead>
+                &lt;tbody>
+                    &lt;tr>
+                        &lt;td>&lt;/td>
+                        &lt;td>&lt;/td>
+                    &lt;/tr>
+                &lt;/tbody>
+            &lt;/table>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="table-set mt-0">
+        &lt;div class="title-box xsm mt-0">
+            &lt;h2 class="sub-title">XSM 타이틀&lt;/h2>
+        &lt;/div>
+        &lt;div class="table">
+            &lt;table>
+                &lt;colgroup>
+                    &lt;col width="*">
+                    &lt;col width="*">
+                &lt;/colgroup>
+                &lt;thead>
+                    &lt;tr>
+                        &lt;th scope="col">타이틀&lt;/th>
+                        &lt;th scope="col">타이틀&lt;/th>
+                    &lt;/tr>
+                &lt;/thead>
+                &lt;tbody>
+                    &lt;tr>
+                        &lt;td>&lt;/td>
+                        &lt;td>&lt;/td>
+                    &lt;/tr>
+                &lt;/tbody>
+            &lt;/table>
+        &lt;/div>
+    &lt;/div>
 &lt;/div>
             </code></pre>
         </div>

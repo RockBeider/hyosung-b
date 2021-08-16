@@ -101,13 +101,6 @@ button {
 
 }
 
-.bg-white {
-	.k-grid-toolbar {
-		background-color: $white !important;
-	}
-	background-color: $white !important;
-}
-
 
 /*
 * ------------------------------
@@ -148,7 +141,11 @@ button {
 .text-center { text-align: center !important; }
 .text-center > * { justify-content: center !important; margin-left: auto !important; margin-right: auto !important; }
 
-/*
+
+.w100 {
+	width: 100% !important;
+}
+/* 
 * ------------------------------
 * badge
 * ------------------------------
@@ -183,6 +180,11 @@ button {
 		background-color: $badge-yellow-bg;
 		border: 1px solid $badge-yellow-border;
 		color: $badge-yellow;
+	}
+	&.gray {
+		background-color: $gray-eb;
+		border: 1px solid $gray-d5;
+		color: $gray-7;
 	}
 }
 
@@ -556,3 +558,73 @@ td .divide {
 		margin-right: 8px;
 	}
 }
+
+/*
+* ------------------------------
+* banner
+* ------------------------------
+*/
+
+.status-banner {
+	display: flex;
+	&.contract {
+		margin-bottom: 8px;
+		.list {
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			flex-direction: column;
+			flex: 1;
+			padding: 10px 20px;
+			background: $white;
+			border: 1px solid $gray-e4;
+			+ .list {
+				margin-left: 8px;
+			}
+		}
+		.tit {
+			@include font-size-sm;
+			line-height: 20px;
+			order: 2;
+			font-weight: 400;
+			color: $gray-6;
+		}
+		.count {
+			@include font-size-count;
+			line-height: 36px;
+			order: 1;
+			color: $gray-2; 
+			font-weight: bold;
+		}
+	}
+}
+
+.info-banner {
+	display: flex;
+	position: relative;
+	&.company {
+		flex-direction: column;
+		margin-bottom: 4px;
+		padding: 20px;
+		background: $main_sub;
+		.tit {
+			@include font-size-badge;
+			color: $accent;
+			font-weight: 500;
+		}
+		.desc {
+			@include font-size-lg;
+			margin-top: 4px;
+			color: $white;
+			line-height: 19px;
+			font-weight: 500;
+		}
+		.badge {
+			position: absolute;
+			top: 20px; 
+			right: 20px;
+			height: 20px;
+		}
+	}
+}
+
