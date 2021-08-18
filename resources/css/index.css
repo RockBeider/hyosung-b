@@ -708,6 +708,10 @@ button {
   margin-right: 0px !important;
 }
 
+.pt-0 {
+  padding-top: 0px !important;
+}
+
 .mt-0 {
   margin-top: 0px !important;
 }
@@ -730,6 +734,10 @@ button {
 
 .text-center {
   text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
 }
 
 .text-center > * {
@@ -919,7 +927,7 @@ td .divide + .divide {
   margin-top: 8px;
 }
 .title-box.xsm {
-  margin: 12px 0 6px;
+  margin: 20px 0 6px;
   align-items: flex-end;
 }
 .title-box.xsm .sub-title {
@@ -1109,6 +1117,9 @@ td .divide + .divide {
   padding: 4px 30px 30px;
   background: #fff;
   border: 1px solid #e4e4e4;
+}
+.tab-control.border .tabpanel {
+  padding-top: 20px;
 }
 
 .tab-menu .btn-box {
@@ -1657,12 +1668,44 @@ td .divide + .divide {
   border-top: 1px solid #e5e5e5;
   text-align: right;
 }
+.window-footer .btn-box {
+  margin-top: 0;
+}
 
 /*
 * ------------------------------
 * dialog
 * ------------------------------
 */
+.k-dialog .k-dialog-content.alert {
+  width: 320px;
+  text-align: center;
+}
+.k-dialog .k-dialog-content.alert .content-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px 30px;
+}
+.k-dialog .k-dialog-content.alert .btn-box {
+  margin-top: 30px;
+}
+.k-dialog .k-dialog-content.alert .btn-box .k-button {
+  height: 32px;
+}
+.k-dialog .k-dialog-content.alert .main-text {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  line-height: 23px;
+}
+.k-dialog .k-dialog-content.alert .point {
+  color: #0e4194;
+  font-weight: bold;
+}
+.k-dialog .k-dialog-content.xs {
+  width: 320px;
+}
 .k-dialog .k-dialog-content.sm {
   width: 480px;
 }
@@ -1685,6 +1728,11 @@ td .divide + .divide {
   -webkit-tap-highlight-color: transparent;
   border: 1px solid #555;
   overflow: hidden;
+}
+.k-window.k-dialog .divide.full {
+  margin: 0 -30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .k-window.k-dialog .k-dialog-titlebar {
   font-size: 17px;
@@ -1893,11 +1941,12 @@ td .form-box, th .form-box {
   border-right: none;
 }
 
-.table-bottom {
-  padding: 15px 20px;
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-  box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
+.inner-column .table {
+  border-top: 0;
+}
+.inner-column .table tr:last-child th,
+.inner-column .table tr:last-child td {
+  border-bottom: 0;
 }
 
 .table-box {
@@ -1905,11 +1954,7 @@ td .form-box, th .form-box {
   flex-direction: column;
   padding: 20px;
   background: #fff;
-  border: 1px solid #eee;
-  border-top: 2px solid #2476dd;
-}
-.table-box > [class^=table] + [class^=table] {
-  margin-top: 10px;
+  border: 1px solid #e4e4e4;
 }
 .table-box.has-bar {
   padding: 20px;
@@ -1918,6 +1963,12 @@ td .form-box, th .form-box {
 }
 .table-box.has-bar .sub-title {
   color: #2476dd;
+}
+.table-box .btn-box.bottom:only-child {
+  margin-top: -10px;
+}
+.table-box + .table-box {
+  border-top: 0;
 }
 
 .table-footer {
@@ -1973,6 +2024,9 @@ td .form-box, th .form-box {
   display: flex;
   align-items: center;
 }
+.form-group > * + * {
+  margin-left: 8px;
+}
 .form-group.col {
   flex-direction: column;
   flex-wrap: wrap;
@@ -1997,6 +2051,7 @@ td .form-box, th .form-box {
   letter-spacing: -0.7px;
   color: #555;
   white-space: nowrap;
+  font-weight: 400;
 }
 
 td .form-group.col > * + * {
@@ -2011,6 +2066,9 @@ td .form-group.col > * + * {
 .form-set > *:not(.bar) + *:not(.bar) {
   margin-left: 8px;
 }
+.form-set.xl {
+  width: 830px;
+}
 .form-set .h-checkbox.no-label {
   margin: 0;
 }
@@ -2020,6 +2078,7 @@ td .form-group.col > * + * {
   letter-spacing: -0.7px;
   color: #555;
   white-space: nowrap;
+  font-weight: 400;
 }
 .form-set .bar {
   margin: 0 2px;
@@ -2190,6 +2249,10 @@ td .form-group.col > * + * {
 .h-input.lg, .k-input.lg {
   max-width: 230px;
   min-width: 230px;
+}
+.h-input.lg-2, .k-input.lg-2 {
+  max-width: 255px;
+  min-width: 255px;
 }
 .h-input.xl, .k-input.xl {
   max-width: 400px;
@@ -2602,6 +2665,10 @@ td .form-group.col > * + * {
 .btn-box {
   display: flex;
   justify-content: center;
+}
+.btn-box.bottom {
+  justify-content: flex-end;
+  margin-top: 10px;
 }
 .btn-box.bottom .k-button, .btn-box.bottom .h-btn {
   height: 32px;
@@ -3205,6 +3272,70 @@ th .required {
 
 /*
 * ------------------------------
+* file upload
+* ------------------------------
+*/
+.k-upload {
+  display: flex;
+  height: 28px;
+  background: #fff;
+}
+.k-upload .k-dropzone {
+  order: 1;
+}
+.k-upload .k-upload-files {
+  display: flex;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.k-upload .k-upload-files .k-file-name-size-wrapper {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+}
+.k-upload .k-upload-button {
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  color: #222;
+  width: auto;
+}
+.k-upload .k-upload-button input {
+  font: 170px monospace !important;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.k-upload .k-upload-files .k-file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+.k-upload .k-upload-files .k-upload-action {
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.k-upload .k-upload-files .k-upload-action .k-i-close {
+  width: 12px;
+  height: 12px;
+  background-image: url("../images/icon/btn_X.svg");
+  background-size: 12px 12px;
+}
+.k-upload .k-file-validation-message, .k-upload .k-file-group-wrapper {
+  display: none;
+}
+
+/*
+* ------------------------------
 * tab
 * ------------------------------
 */
@@ -3265,6 +3396,45 @@ th .required {
   font-weight: bold;
 }
 
+.tab-control.border .k-tabstrip-items {
+  height: 40px;
+  border: none;
+  color: #555;
+}
+.tab-control.border .k-tabstrip-items .k-item {
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 0;
+  border: 1px solid #ccc;
+  border-right: 0;
+}
+.tab-control.border .k-tabstrip-items .k-item:last-child {
+  border-right: 1px solid #ccc;
+}
+.tab-control.border .k-tabstrip-items .k-link {
+  padding-bottom: 0;
+  font-weight: 400;
+}
+.tab-control.border .k-tabstrip-items .k-item.k-state-active,
+.tab-control.border .k-tabstrip-items .k-item.k-state-selected {
+  border-color: #0e4194;
+  color: #0e4194;
+  font-weight: bold;
+}
+.tab-control.border .k-tabstrip-items .k-item.k-state-active + .k-item,
+.tab-control.border .k-tabstrip-items .k-item.k-state-selected + .k-item {
+  border-left: 1px solid #0e4194;
+}
+.tab-control.border .k-tabstrip-items .k-item.k-state-disabled {
+  background: #f5f5f5;
+}
+
 /*
 * ------------------------------
 * tooltip
@@ -3313,6 +3483,10 @@ th .required {
 .k-datepicker.sm {
   max-width: 120px;
   min-width: 120px;
+}
+.k-datepicker.md {
+  max-width: 166px;
+  min-width: 166px;
 }
 .k-datepicker .k-picker-wrap {
   display: flex;
@@ -3746,8 +3920,20 @@ th .required {
 * ------------------------------
 */
 .table-content.grid {
+  position: relative;
+  height: 100%;
   background: #fff;
   border-bottom: 1px solid #aaa;
+}
+.table-content.grid.has-bottom {
+  padding-bottom: 58px;
+}
+
+.table-bottom {
+  padding: 15px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
 .k-grid {
@@ -4109,11 +4295,13 @@ th .required {
   border: 0;
   padding: 0;
   height: 100%;
+  line-height: 20px;
 }
 .k-textarea ::-moz-placeholder {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
+  line-height: 20px;
   color: #aaa;
   font-weight: 400;
 }
@@ -4121,6 +4309,7 @@ th .required {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
+  line-height: 20px;
   color: #aaa;
   font-weight: 400;
 }
@@ -4128,6 +4317,7 @@ th .required {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
+  line-height: 20px;
   color: #aaa;
   font-weight: 400;
 }
@@ -8707,6 +8897,9 @@ th .required {
   display: flex;
   height: 100%;
 }
+.table-group:not(:only-child) {
+  height: auto;
+}
 
 .k-tabstrip-wrapper > .k-tabstrip {
   flex: 1 1 auto;
@@ -8732,10 +8925,6 @@ th .required {
   height: unset;
 }
 
-.table-content.grid {
-  position: relative;
-  height: 100%;
-}
 .table-content.grid .k-grid {
   flex: 1;
   min-height: 150px;
@@ -8755,7 +8944,9 @@ th .required {
 
 .table-bottom {
   display: flex;
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
   margin-top: -1px;
   border-bottom: 0;

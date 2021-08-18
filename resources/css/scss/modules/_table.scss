@@ -91,27 +91,27 @@ td .form-box, th .form-box {
         }
     }
 }
-
-.table-bottom {
-    padding: 15px 20px;
-    background: $white;
-    // border-top: 1px solid $inputDefault;
-    border-bottom: 1px solid $inputDefault;
-    box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
+.inner-column .table {
+    border-top: 0;
+    tr:last-child th, 
+    tr:last-child td {
+        border-bottom: 0;
+    } 
 }
 
+
+
+
 .table-box {
-    > [class^="table"]+ [class^="table"] {
-        margin-top: 10px;
-    }
+    // > [class^="table"]+ [class^="table"] {
+    //     margin-top: 10px;
+    // }
     display: flex;
     flex-direction: column;
     padding: 20px;
     background: $white;
-    border: 1px solid $gray-e;
-    border-top: 2px solid $layer-blue;
+    border: 1px solid $gray-e4;
    &.has-bar {
-    //    margin-top: 10px;
        padding: 20px;
        border: 1px solid $gray-c;
        border-left: 1px solid $gray-3;
@@ -119,6 +119,12 @@ td .form-box, th .form-box {
            color: $layer-blue;
            
        }
+   }
+   .btn-box.bottom:only-child {
+       margin-top: -10px;
+   }
+   + .table-box {
+       border-top: 0;
    }
 }
 

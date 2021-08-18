@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <span id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</span>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="목표 등록"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            id="viewModel_dialog"
+            class="lg">
+            <div class="content-group">
+                <div class="yearmonth-box">
+                    <div class="year-box">
+                        <button type="button" class="h-ico prev">이전</button>
+                        <button type="button" class="k-button text year"><span>2021</span>년</button>
+                        <button type="button" class="h-ico next">다음</button>
+                    </div>
+                    <div data-role="buttongroup" class="period"
+                        data-index="0">
+                        <button data-role="button"><span>1월</span></button>
+                        <button data-role="button"><span>2월</span></button>
+                        <button data-role="button"><span>3월</span></button>
+                        <button data-role="button"><span>4월</span></button>
+                        <button data-role="button"><span>5월</span></button>
+                        <button data-role="button"><span>6월</span></button>
+                        <button data-role="button"><span>7월</span></button>
+                        <button data-role="button"><span>8월</span></button>
+                        <button data-role="button"><span>9월</span></button>
+                        <button data-role="button"><span>10월</span></button>
+                        <button data-role="button"><span>11월</span></button>
+                        <button data-role="button"><span>12월</span></button>
+                    </div>
+                </div>
+                <div class="table-set">
+                    <script type="text/x-kendo-template" class="toolbarTemplate">
+                        <div class="title-box sm">
+                            <div class="left-group">
+                                <span class="amount-set">
+                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                    <span class="amount">26</span><span class="unit">건</span>
+                                </span>
+                            </div>
+                            <div class="right-group">
+                                <div class="btn-box">
+                                    <button role="button" class="k-button">수정</button>
+                                    <button role="button" class="k-button k-grid-add"><span>등록</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <script type="text/x-kendo-template" class="checkboxTemplate">
+                        <div class="h-checkbox no-label">
+                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                            <label for="checkbox-nolabel"></label> 
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_grid">
+                        <div data-role="grid" 
+                            data-editable="true" 
+                            data-toolbar="#=toolbarTemplate()#"
+                            data-columns='[
+                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
+                            { "field": "년월", "title": "년/월", "width": 150, "attributes" : {"class": "text-center"} },
+                            { "field": "협력사명", "width": 250 },
+                            { "field": "협력사ID", "width": 250 },
+                            { "field": "목표점수"}
+                            ]' 
+                            data-bind="source: gridSource">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        //dialog
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+        var viewModel_dialog = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+        });
+        kendo.bind($("#viewModel_dialog, .wrap"), viewModel_dialog);
+    
+        //grid
+        var viewModel_grid = kendo.observable({
+            gridSource: [
+                { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" },
+                { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" },
+                { "년월":"2021/05", "협력사명":"testagency", "협력사ID":"testagency", "목표점수":"CMS" }
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_grid"), viewModel_grid);
+        function toolbarTemplate() {
+            var template = kendo.template($('.toolbarTemplate').html()); 
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

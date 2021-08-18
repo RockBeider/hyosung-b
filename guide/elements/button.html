@@ -105,7 +105,7 @@ data-index="0">
             <p class="title">Button group(multiple)</p>
         </div>
         <div class="g-example-body flex-inline">
-            <div id="inlineFormating" class="multi">
+            <div data-selection="multiple" data-role="buttongroup" class="multi">
                 <button><span>Button</span></button>
                 <button><span>Button</span></button>
                 <button><span>Button</span></button>
@@ -116,7 +116,7 @@ data-index="0">
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;div id="inlineFormating" class="multi">
+&lt;div data-selection="multiple" data-role="buttongroup" class="multi">>
     &lt;button>&lt;span>Button&lt;/span>&lt;/button>
     &lt;button>&lt;span>Button&lt;/span>&lt;/button>
     &lt;button>&lt;span>Button&lt;/span>&lt;/button>
@@ -127,13 +127,6 @@ data-index="0">
             </code></pre>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $("#inlineFormating").kendoButtonGroup({
-                selection: "multiple"
-            });
-        });
-    </script>
 
 
     <div class="g-example-wrap">
@@ -191,13 +184,7 @@ data-index="0">
             </code></pre>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $("#inlineFormating").kendoButtonGroup({
-                selection: "multiple"
-            });
-        });
-    </script>
+
 
     <div class="g-example-wrap">
         <div class="g-example-head">
@@ -244,6 +231,85 @@ data-index="0">
     &lt;ul>
         &lt;li class="k-state-active">메뉴1&lt;/li>
         &lt;li>메뉴2&lt;/li>
+        &lt;li>메뉴3&lt;/li>
+        &lt;li>메뉴4&lt;/li>
+        &lt;li>메뉴5&lt;/li>
+    &lt;/ul>
+    &lt;!-- 첫번째 탭 -->
+    &lt;div class="tabpanel">
+        첫번째 내용
+    &lt;/div>
+    &lt;!-- //첫번째 탭 -->
+    &lt;!-- 두번째 탭 -->
+    &lt;div class="tabpanel">
+        두번째 내용
+    &lt;/div>
+    &lt;!-- //두번째 탭 -->
+    &lt;!-- 세번째 탭 -->
+    &lt;div class="tabpanel">
+        세번째 내용
+    &lt;/div>
+    &lt;!-- //세번째 탭 -->
+    &lt;!-- 네번째 탭 -->
+    &lt;div class="tabpanel">
+        네번째 내용
+    &lt;/div>
+    &lt;!-- //네번째 탭 -->
+    &lt;!-- 다섯번째 탭 -->
+    &lt;div class="tabpanel">
+        다섯번째 내용
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Tab line(border)</p>
+        </div>
+        <div class="g-example-body">
+            <div data-role="tabstrip" class="tab-control border">
+                <ul>
+                    <li class="k-state-active">메뉴1</li>
+                    <li disabled>메뉴2</li>
+                    <li>메뉴3</li>
+                    <li>메뉴4</li>
+                    <li>메뉴5</li>
+                </ul>
+                <!-- 첫번째 탭 -->
+                <div class="tabpanel">
+                    첫번째 내용
+                </div>
+                <!-- //첫번째 탭 -->
+                <!-- 두번째 탭 -->
+                <div class="tabpanel">
+                    두번째 내용
+                </div>
+                <!-- //두번째 탭 -->
+                <!-- 세번째 탭 -->
+                <div class="tabpanel">
+                    세번째 내용
+                </div>
+                <!-- //세번째 탭 -->
+                <!-- 네번째 탭 -->
+                <div class="tabpanel">
+                    네번째 내용
+                </div>
+                <!-- //네번째 탭 -->
+                <!-- 다섯번째 탭 -->
+                <div class="tabpanel">
+                    다섯번째 내용
+                </div>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div data-role="tabstrip" class="tab-control border">
+    &lt;ul>
+        &lt;li class="k-state-active">메뉴1&lt;/li>
+        &lt;li disabled>메뉴2&lt;/li>
         &lt;li>메뉴3&lt;/li>
         &lt;li>메뉴4&lt;/li>
         &lt;li>메뉴5&lt;/li>

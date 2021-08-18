@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">거래처정보</h2>
+                            <h2 class="main-title">협력사실적관리</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -37,7 +37,7 @@
                                 data-navigational=true,
                                 data-items='[
                             { type:"rootitem", href: "", text: "기준정보", showText: true },
-                            { type:"item", href: "", text: "거래처정보", showText: true}
+                            { type:"item", href: "", text: "협력사실적관리", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -48,16 +48,21 @@
                     <div class="table-group">
                         <div class="search-control">
                             <div class="form-group">
-                                <span class="label">검색항목</span>
+                                <span class="label">기간</span>
                                 <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                    <div class="input-set search lg">
-                                        <i class="h-ico search"></i>
-                                        <input type="text" class="h-input" placeholder="입력해주세요">
-                                    </div>
+                                    <input data-role="datepicker" 
+                                        data-format="yyyy/MM/dd"
+                                        placeholder="yyyymmdd" 
+                                        data-culture="ko-KR"
+                                        data-footer="false"
+                                        class="datepicker sm">
+                                    <span class="bar">~</span>
+                                    <input data-role="datepicker" 
+                                        data-format="yyyy/MM/dd"
+                                        placeholder="yyyymmdd" 
+                                        data-culture="ko-KR"
+                                        data-footer="false"
+                                        class="datepicker sm">
                                 </div>
                             </div>
                             
@@ -74,8 +79,8 @@
                                     </div>
                                     <div class="right-group">
                                         <div class="btn-box">
-                                            <button role="button" class="k-button k-grid-add"><span>등록</span></button>
-                                            <button role="button" class="k-button green"><span>엑셀</span></button>
+                                            <button role="button" class="k-button light-blue"><span>실적대상설정</span></button>
+                                            <button role="button" class="k-button k-grid-add"><span>목표등록</span></button>
                                         </div>
                                     </div>
                                 </div>
@@ -88,23 +93,14 @@
                             </script>
                             <div class="table-content grid has-bottom">
                                 <div data-role="grid" 
-                                data-sortable="true" 
-                                data-editable="true" 
-                                data-bind="source: gridSource"
-                                data-toolbar="#=toolbarTemplate()#"
-                                data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
+                                    data-sortable="true" 
+                                    data-editable="true" 
+                                    data-columns='[
                                     { "title": "NO.", "width": 50 },
-                                    { "field": "상품코드", "width": 90 },
-                                    { "field": "상품명", "width": 170 },
-                                    { "field": "어플리케이션", "width": 146 },
-                                    { "field": "표준가격", "width": 140 },
-                                    { "field": "최소가격", "width": 146 },
-                                    { "field": "승인상태", "width": 140 },
-                                    { "field": "사용가능업종", "width": 140 },
-                                    { "field": "등록일", "width": 120 },
-                                    { "field": "종료일", "width": 120 }
-                                ]'>
+                                    { "field": ""  }
+                                    ]' 
+                                    data-bind="source: gridSource"
+                                    data-toolbar="#=toolbarTemplate()#">
                                 </div>
                                 <div class="table-bottom">
                                     <button data-role="button" class="gray-border">삭제</button>
@@ -125,28 +121,29 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-        var viewModel = kendo.observable({
-            gridSource: [
-                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
-            ],
-            displayGridSource: function() {
-                return stringify(this.get("gridSource").toJSON());
-            },
-        });
-        kendo.bind($(".wrap"), viewModel);
-        function toolbarTemplate() {
-            var template = kendo.template($('.toolbarTemplate').html());
-            var result = template({});
-            return result
-        }
-        function checkboxTemplate() {
-            var template = kendo.template($('.checkboxTemplate').html());
-            var result = template({});
-            return result
-        }
-</script>
+            var viewModel = kendo.observable({
+                gridSource: [
+                    { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+            });
+            kendo.bind($(".wrap"), viewModel);
+            
+            function toolbarTemplate() {
+                var template = kendo.template($('.toolbarTemplate').html());
+                var result = template({});
+                return result
+            }
+            function checkboxTemplate() {
+                var template = kendo.template($('.checkboxTemplate').html());
+                var result = template({});
+                return result
+            }
+    </script>
 </body>
 
 </html>
