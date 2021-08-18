@@ -231,11 +231,15 @@
     }
 }
 .btn-box {
-    &.bottom .k-button, &.bottom .h-btn {
-        height: 32px;
-    }
     display: flex;
     justify-content: center;
+    &.bottom {
+        justify-content: flex-end;
+        margin-top: 10px;
+        .k-button, .h-btn {
+            height: 32px;
+        }
+    }
     .k-button {
         flex: 0 1 auto;
     }

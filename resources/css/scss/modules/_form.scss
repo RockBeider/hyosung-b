@@ -7,9 +7,9 @@
 .form-group {
     display: flex;
     align-items: center;
-    // > * + * {
-    //     margin-left: 6px;
-    // }
+    > * + * {
+        margin-left: 8px;
+    }
     &.col {
         //세로 정렬일 경우
         flex-direction: column;
@@ -31,6 +31,7 @@
         @include font-size-sm;
         color: $gray-5;
         white-space: nowrap;
+        font-weight: 400;
     }
 }
 td .form-group {
@@ -47,6 +48,9 @@ td .form-group {
     > *:not(.bar) + *:not(.bar) {
         margin-left: 8px;
     }
+    &.xl {
+        width: 830px;
+    }
     .h-checkbox.no-label {
         margin: 0;
     }
@@ -54,6 +58,7 @@ td .form-group {
         @include font-size-sm;
         color: $gray-5;
         white-space: nowrap;
+        font-weight: 400;
     }
     .bar {
         margin: 0 2px;

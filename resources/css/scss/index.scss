@@ -24,6 +24,9 @@
 .table-group {
     display: flex;
     height: 100%;
+    &:not(:only-child) {
+        height: auto;
+    }
 }
 .k-tabstrip-wrapper > .k-tabstrip {
     flex: 1 1 auto;
@@ -48,8 +51,6 @@
     height: unset;
 }
 .table-content.grid { 
-    position: relative; 
-    height: 100%;
     .k-grid {
     flex: 1;
     min-height: 150px;
@@ -59,19 +60,16 @@
     border-bottom: 1px solid $gray-e4;
 }
 .k-grid-content {
-    // min-height: 150px;
-    // max-height: 200px;
-    // padding-bottom: 58px;
     overflow: auto;
 }
 .k-tabstrip-wrapper {
-    flex: 1;
+    flex: 1; 
 }
 .table-bottom {
     display: flex;
-    position: relative;
-    // position: absolute;
-    // bottom: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
     margin-top: -1px;
     border-bottom: 0;

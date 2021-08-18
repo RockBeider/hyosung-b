@@ -6,7 +6,7 @@
             <p class="title">Grid Default</p>
         </div>
         <div class="g-example-body">
-            <div class="table-content grid" id="viewModel_grid">
+            <div class="table-content grid has-bottom" id="viewModel_grid">
                 <!-- toolbar template -->
                 <script type="text/x-kendo-template" class="toolbarTemplate">
                     <div class="title-box sm mt-20">
@@ -99,7 +99,7 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;div class="table-content grid" id="viewModel_grid">
+&lt;div class="table-content grid has-bottom" id="viewModel_grid">
     &lt;!-- toolbar template -->
     &lt;script type="text/x-kendo-template" class="toolbarTemplate">
         &lt;div class="title-box sm mt-20">
@@ -186,8 +186,8 @@
         <div class="g-example-head">
             <p class="title">Grid Sort</p>
         </div>
-        <div class="g-example-body flex-inline">
-            <div class="table-content grid" id="viewModel_grid_sort">
+        <div class="g-example-body">
+            <div class="table-content grid has-bottom" id="viewModel_grid_sort">
                 <!-- checkbox template -->
                 <script type="text/x-kendo-template" class="checkboxTemplate">
                     <div class="h-checkbox no-label">
@@ -234,7 +234,7 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;div class="table-content grid" id="viewModel_grid_sort">
+&lt;div class="table-content grid has-bottom" id="viewModel_grid_sort">
     &lt;!-- checkbox template -->
     &lt;script type="text/x-kendo-template" class="checkboxTemplate">
         &lt;div class="h-checkbox no-label">
@@ -287,8 +287,8 @@
         <div class="g-example-head">
             <p class="title">Grid Filter</p>
         </div>
-        <div class="g-example-body flex-inline">
-            <div class="table-content grid" id="viewModel_grid_filter">
+        <div class="g-example-body">
+            <div class="table-content grid has-bottom" id="viewModel_grid_filter">
                 <!-- toolbar template -->
                 <script type="text/x-kendo-template" class="toolbarTemplate">
                     <div class="title-box sm mt-20">
@@ -364,7 +364,7 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;div class="table-content grid" id="viewModel_grid_filter">
+&lt;div class="table-content grid has-bottom" id="viewModel_grid_filter">
     &lt;!-- toolbar template -->
     &lt;script type="text/x-kendo-template" class="toolbarTemplate">
         &lt;div class="title-box sm mt-20">
@@ -449,7 +449,7 @@
             <p class="title">Grid toolbar Template</p>
         </div>
         <div class="g-example-body flex-inline">
-            <div class="table-content grid" id="viewModel_template">
+            <div class="table-content grid has-bottom" id="viewModel_template">
                 <script type="text/x-kendo-template" id="toolbarTemplate_dropdown">
                     <div class="title-box sm">
                         <div class="left-group">
@@ -521,7 +521,7 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;div class="table-content grid" id="viewModel_template">
+&lt;div class="table-content grid has-bottom" id="viewModel_template">
     &lt;script type="text/x-kendo-template" id="toolbarTemplate_dropdown">
         &lt;div class="title-box sm">
             &lt;div class="left-group">
@@ -861,6 +861,151 @@
             &lt;/table>
         &lt;/div>
     &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Table (border none)</p>
+        </div>
+        <div class="g-example-body">
+            <div class="table border-none">
+                <table>
+                    <colgroup>
+                        <col width="150px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td scope="row">
+                                <div class="h-checkbox">
+                                    <input type="checkbox" id="extraChannel1" name="checkbox" checked="checked">
+                                    <label for="extraChannel1"><span>계좌조회</span></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="check-group">
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel1-1" name="extraChannel1">
+                                        <label for="extraChannel1-1"><span>SDSI</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel1-2" name="extraChannel1" checked="checked">
+                                        <label for="extraChannel1-2"><span>API</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel1-3" name="extraChannel1">
+                                        <label for="extraChannel1-3"><span>PG창</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel1-4" name="extraChannel1">
+                                        <label for="extraChannel1-4"><span>웹뷰</span></label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                <div class="h-checkbox">
+                                    <input type="checkbox" id="extraChannel2" name="checkbox">
+                                    <label for="extraChannel2"><span>전자동의</span></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="check-group">
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel2-1" name="extraChannel2">
+                                        <label for="extraChannel2-1"><span>SDSI</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel2-2" name="extraChannel2">
+                                        <label for="extraChannel2-2"><span>API</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel2-3" name="extraChannel2">
+                                        <label for="extraChannel2-3"><span>PG창</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="extraChannel2-4" name="extraChannel2">
+                                        <label for="extraChannel2-4"><span>웹뷰</span></label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="table border-none">
+    &lt;table>
+        &lt;colgroup>
+            &lt;col width="150px">
+            &lt;col width="*">
+        &lt;/colgroup>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td scope="row">
+                    &lt;div class="h-checkbox">
+                        &lt;input type="checkbox" id="extraChannel1" name="checkbox" checked="checked">
+                        &lt;label for="extraChannel1">&lt;span>계좌조회&lt;/span>&lt;/label>
+                    &lt;/div>
+                &lt;/td>
+                &lt;td>
+                    &lt;div class="check-group">
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel1-1" name="extraChannel1">
+                            &lt;label for="extraChannel1-1">&lt;span>SDSI&lt;/span>&lt;/label>
+                        &lt;/div>
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel1-2" name="extraChannel1" checked="checked">
+                            &lt;label for="extraChannel1-2">&lt;span>API&lt;/span>&lt;/label>
+                        &lt;/div>
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel1-3" name="extraChannel1">
+                            &lt;label for="extraChannel1-3">&lt;span>PG창&lt;/span>&lt;/label>
+                        &lt;/div>
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel1-4" name="extraChannel1">
+                            &lt;label for="extraChannel1-4">&lt;span>웹뷰&lt;/span>&lt;/label>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td scope="row">
+                    &lt;div class="h-checkbox">
+                        &lt;input type="checkbox" id="extraChannel2" name="checkbox">
+                        &lt;label for="extraChannel2">&lt;span>전자동의&lt;/span>&lt;/label>
+                    &lt;/div>
+                &lt;/td>
+                &lt;td>
+                    &lt;div class="check-group">
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel2-1" name="extraChannel2">
+                            &lt;label for="extraChannel2-1">&lt;span>SDSI&lt;/span>&lt;/label>
+                        &lt;/div>
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel2-2" name="extraChannel2">
+                            &lt;label for="extraChannel2-2">&lt;span>API&lt;/span>&lt;/label>
+                        &lt;/div>
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel2-3" name="extraChannel2">
+                            &lt;label for="extraChannel2-3">&lt;span>PG창&lt;/span>&lt;/label>
+                        &lt;/div>
+                        &lt;div class="h-checkbox">
+                            &lt;input type="radio" id="extraChannel2-4" name="extraChannel2">
+                            &lt;label for="extraChannel2-4">&lt;span>웹뷰&lt;/span>&lt;/label>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
 &lt;/div>
             </code></pre>
         </div>

@@ -133,12 +133,14 @@ button {
 	margin-left: 0px !important;
 	margin-right: 0px !important;
 }
+.pt-0 { padding-top: 0px !important; }
 .mt-0 { margin-top: 0px !important; }
 .mb-0 { margin-bottom: 0px !important; }
 .mb-10 { margin-bottom: 10px !important; }
 .ml-20 { margin-left: 20px !important; }
 .text-left { text-align: left !important; }
 .text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
 .text-center > * { justify-content: center !important; margin-left: auto !important; margin-right: auto !important; }
 
 
@@ -309,7 +311,7 @@ td .divide {
 		}
 	}
 	&.xsm { //팝업일 경우
-		margin: 12px 0 6px;
+		margin: 20px 0 6px;
 		align-items: flex-end;
         .sub-title {
             @include font-size-menu;
@@ -498,6 +500,9 @@ td .divide {
 			background: $white;
 			border: 1px solid $gray-e4;
 		}
+	}
+	&.border {
+		.tabpanel { padding-top: 20px;}
 	}
 }
 .tab-menu {

@@ -21,6 +21,10 @@
 	}
 }
 .h-input, .k-input { //사이즈
+	&.xs {
+		max-width: 50px;
+		min-width: 50px;
+	}
 	&.sm {
 		max-width: 106px;
 		min-width: 106px;
@@ -50,7 +54,12 @@
 	// 	min-width: 230px;
 	// }
 }
-
+.form-set {
+	.form-label {
+		@include bp-font-size-sm;
+		font-weight: bold;
+	}
+}
 .input-set {
 	&.col {
 		align-items: flex-start;

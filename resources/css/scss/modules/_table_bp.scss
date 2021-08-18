@@ -8,6 +8,7 @@
 .table {
     th, td {
         color: $gray-2;
+        padding: 6px 10px;
     }
     th {
         @include bp-font-size-sm;
@@ -17,8 +18,24 @@
     td {
         @include bp-font-size-sm;
         height: 42px;
-        padding: 6px 10px;
+        // padding: 6px 10px;
     }
 }
 
 
+.table-box {
+    > [class^="table"]+ [class^="table"] {
+        margin-top: 10px;
+    }
+    border: 1px solid $gray-e;
+    border-top: 2px solid $layer-blue;
+   &.has-bar {
+       padding: 20px;
+       border: 1px solid $gray-c;
+       border-left: 1px solid $gray-3;
+       .sub-title {
+           color: $layer-blue;
+           
+       }
+   }
+}
