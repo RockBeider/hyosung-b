@@ -320,6 +320,9 @@ td .divide {
         .noti {
             @include font-size-sm;
         }
+		+ .title-box.sm {
+			margin-top: 0;
+		}
 	}
 	&.sm {
 		min-height: 28px;

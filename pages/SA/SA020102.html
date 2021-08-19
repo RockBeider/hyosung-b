@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <span id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</span>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="계약문의상세"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="md">
+            <div class="content-group">
+                <div class="table-group divide full pt-0">
+                    <!-- 일반사항 -->
+                    <div class="table-set">
+                        <div class="title-box xsm mt-0">
+                            <div class="left-group">
+                                <h2 class="sub-title">일반사항</h2>
+                            </div>
+                        </div>    
+                        <div class="info-banner company">
+                            <div class="list">
+                                <h4 class="tit">회사명</h4>
+                                <span class="desc">나래재가복지센터 (02-1234-5678)</span>
+                                <span class="badge yellow">수납환경진단</span>
+                            </div>
+                        </div>
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col width="110px">
+                                    <col width="*">
+                                    <col width="110px">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">문의자명</th>
+                                        <td>홍길동</td>
+                                        <th scope="row">상담가능시간</th>
+                                        <td>10:00~18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">문의내용</th>
+                                        <td colspan="3">계약 문의 내용 입니다. <br/>
+                                            계약 문의 내용 입니다. 상담가능 시간대에 연락주세요.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- //일반사항 -->
+                    <!-- 사업정보 -->
+                    <div class="table-set">
+                        <div class="title-box xsm">
+                            <div class="left-group">
+                                <h2 class="sub-title">사업정보</h2>
+                            </div>
+                        </div>    
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col width="110px">
+                                    <col width="*">
+                                    <col width="110px">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">종사업종</th>
+                                        <td>장기요양-재가</td>
+                                        <th scope="row">사업운영형태</th>
+                                        <td>본사</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">신규사업자</th>
+                                        <td colspan="3">O</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">취급 상품종류</th>
+                                        <td>업종특화</td>
+                                        <th scope="row">상품계약 형태</th>
+                                        <td>대면, 비대면-온라인계약</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">관심 분야</th>
+                                        <td colspan="3">수납률 향상, 미수금관리, 수수료절감</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- //사업정보 -->
+                    <!-- 수납관련 정보 -->
+                    <div class="table-set">
+                        <div class="title-box xsm">
+                            <div class="left-group">
+                                <h2 class="sub-title">수납관련 정보</h2>
+                            </div>
+                        </div>    
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col width="110px">
+                                    <col width="*">
+                                    <col width="110px">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">요금청구방식</th>
+                                        <td>온라인-이메일, 온라인-SMS</td>
+                                        <th scope="row">이용중 결제서비스</th>
+                                        <td>카드결제,가상계좌, 휴대폰결제, <br/>
+                                            CMS결제, 실시간CMS 결제</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">월 수납고객규모</th>
+                                        <td>50~100명</td>
+                                        <th scope="row">평균 수납기간</th>
+                                        <td>50~100명</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">건당 평균 결제금액</th>
+                                        <td colspan="3">1만원~5만원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- //수납관련 정보 -->
+                    <!-- 시스템 일반 -->
+                    <div class="table-set">
+                        <div class="title-box xsm">
+                            <div class="left-group">
+                                <h2 class="sub-title">시스템 일반</h2>
+                            </div>
+                        </div>    
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col width="110px">
+                                    <col width="*">
+                                    <col width="110px">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">경영관리시스템</th>
+                                        <td>보유-연동 미희망</td>
+                                        <th scope="row">기술담당자</th>
+                                        <td>O</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //시스템 일반 -->
+                <!-- 할당협력사 -->
+                <div class="table-set divide full">
+                    <div class="title-box xsm mt-0">
+                        <div class="left-group">
+                            <h2 class="sub-title">할당협력사</h2>
+                        </div>
+                    </div>    
+                    <ul class="list-box gray-box half">
+                        <li class="list">
+                            <span class="label has-bar">협력사명</span>
+                            <span class="desc">효성에프엠에스협력사</span>
+                        </li>
+                        <li class="list">
+                            <span class="label has-bar">협력사ID</span>
+                            <span class="desc">hyosungfms001</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //할당협력사 -->
+                <!-- 상담이력 -->
+                <div class="table-set divide full">
+                    <div class="title-box xsm mt-0">
+                        <div class="left-group">
+                            <h2 class="sub-title">상담이력</h2>
+                        </div>
+                    </div>    
+                    <div class="list-wrap">
+                        <div class="list-box history">
+                            <span class="badge green">가입</span>
+                            <div class="list">
+                                <span class="label has-bar">협력사담당자</span>
+                                <span class="desc">홍길동</span>
+                            </div>
+                            <div class="list">
+                                <span class="label has-bar">상담일시</span>
+                                <span class="desc">2021/05/20 14:29:57</span>
+                            </div>
+                            <div class="list">
+                                <span class="label has-bar">상담내용</span>
+                                <span class="desc">효성에프엠에스 요청사항입니다.</span>
+                            </div>
+                        </div>
+                        <div class="list-box history">
+                            <span class="badge gray">진행안함</span>
+                            <div class="list">
+                                <span class="label has-bar">협력사담당자</span>
+                                <span class="desc">홍길동</span>
+                            </div>
+                            <div class="list">
+                                <span class="label has-bar">상담일시</span>
+                                <span class="desc">2021/05/20 14:29:57</span>
+                            </div>
+                            <div class="list">
+                                <span class="label has-bar">상담내용</span>
+                                <span class="desc">효성에프엠에스 요청사항입니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //상담이력 -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+
+        //할인적용상품
+        //listbox
+        var viewModel_listbox1 = kendo.observable({
+            products: new kendo.data.DataSource({
+                schema: {
+                    model: {
+                        id: "ProductID",
+                        fields: {
+                            ProductName: { type: "string" },
+                            UnitPrice: { type: "number" }
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 15,
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/products",
+                        dataType: "jsonp"
+                    }
+                }
+            })
+        });
+        kendo.bind($("#viewModel_listbox1"), viewModel_listbox1);
+        $(document).on('change', '#listTransferAllTo1 input', function(e) {  // 오른쪽으로 전체 옮기기  
+            if($('#listTransferAllTo1 input').is(":checked") == true ) {
+                $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllTo']").trigger('click');
+            } else {
+                $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferAllFrom']").trigger('click');
+            }
+        });
+        $(document).on('click', '.listTransferTo1', function(e) {  //오른쪽으로 옮기기
+            $("#viewModel_listbox1 .k-listbox-toolbar [data-command='transferTo']").trigger('click');
+        });
+        $(document).on('click', '.listTransferFrom1', function(e) { //왼쪽으로 옮기기
+            $("#viewModel_listbox1  .k-listbox-toolbar [data-command='transferFrom']").trigger('click');
+        });
+
+        //할인적용업종
+        //listbox
+        var viewModel_listbox2 = kendo.observable({
+            products: new kendo.data.DataSource({
+                schema: {
+                    model: {
+                        id: "ProductID",
+                        fields: {
+                            ProductName: { type: "string" },
+                            UnitPrice: { type: "number" }
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 15,
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/products",
+                        dataType: "jsonp"
+                    }
+                }
+            })
+        });
+        kendo.bind($("#viewModel_listbox2"), viewModel_listbox2);
+        $(document).on('change', '#listTransferAllTo2 input', function(e) {  // 오른쪽으로 전체 옮기기  
+            if($('#listTransferAllTo2 input').is(":checked") == true ) {
+                $("#viewModel_listbox2 .k-listbox-toolbar [data-command='transferAllTo']").trigger('click');
+            } else {
+                $("#viewModel_listbox2 .k-listbox-toolbar [data-command='transferAllFrom']").trigger('click');
+            }
+        });
+        $(document).on('click', '.listTransferTo2', function(e) {  //오른쪽으로 옮기기
+            $("#viewModel_listbox2 .k-listbox-toolbar [data-command='transferTo']").trigger('click');
+        });
+        $(document).on('click', '.listTransferFrom2', function(e) { //왼쪽으로 옮기기
+            $("#viewModel_listbox2  .k-listbox-toolbar [data-command='transferFrom']").trigger('click');
+        });
+        
+    </script>
+</body>
+
+</html>

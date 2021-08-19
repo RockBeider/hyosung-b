@@ -80,6 +80,13 @@ td .form-box, th .form-box {
         border: 1px solid $gray-e4;
         @include font-size-sm;
     }
+    td {
+        .form-group.col { 
+            padding: 0;
+            background: none;
+            align-items: flex-start;
+        }
+    }
     th {
         padding: 0 3px;
         white-space: nowrap;

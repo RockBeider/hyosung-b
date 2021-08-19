@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <span id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</span>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="구비서류확인"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}" class="lg">
+            <div class="content-group">
+                <div class="search-control">
+                    <div class="form-group">
+                        <span class="label">검색항목</span>
+                        <div class="form-set">
+                            <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                <option value="1">온라인</option>
+                                <option value="2">오프라인</option>
+                            </select>
+                            <div class="input-set search lg">
+                                <i class="h-ico sm search">검색</i>
+                                <input type="text" class="h-input" placeholder="입력해주세요">
+                            </div>
+                            <div class="h-checkbox ml-20">
+                                <input type="checkbox" id="checkbox1-1" name="checkbox" />
+                                <label for="checkbox1-1"><span>구비서류미완료만조회</span></label>
+                            </div>
+                        </div>
+                        <button data-role="button" class="blue-border">검색</button>
+                    </div>
+                </div>
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                        <div class="title-box sm mt-0">
+                            <span class="amount-set">
+                                <span class="amount current">1</span><span class="unit">건</span>
+                            </span>
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_number">
+                        <div data-role="grid" 
+                            data-sortable="false" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "NO.", "field":"NO", "width": 50, "attributes" : {"class": "text-center"} },
+                            { "field": ""  }
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-toolbar="#=toolbarTemplate_count()#"
+                            style="height: 420px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box bottom">
+                    <button data-role="button" class="gray-border">기존현황삭제</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+       
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"4",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"5",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"6",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"7",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"8",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"9",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"10",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

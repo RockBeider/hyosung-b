@@ -93,7 +93,7 @@
                                 <th scope="row">연동 API 키</th>
                                 <td colspan="3">
                                     <div class="form-set">
-                                        <input type="text" class="h-input lg" value="" />
+                                        <input type="text" class="h-input lg" value="P192ufkwlmfnvj(자동생성)" disabled="disabled"/>
                                         <button data-role="button" class="gray-border"><span>재발급</span></button>
                                     </div>
                                 </td>
@@ -111,7 +111,7 @@
                     </div>
                     <!-- 결제서비스 채널 -->
                     <div class="table-set">
-                        <div class="title-box xs">
+                        <div class="title-box xsm mt-0">
                             <h3 class="sub-title">결제서비스 채널</h3>
                         </div>
                         <div class="table border-none">
@@ -123,13 +123,13 @@
                                 <tbody>
                                     <tr>
                                         <td scope="row">
-                                            <div class="h-checkbox">
+                                            <div class="h-checkbox" id="mainCheckGroup">
                                                 <input type="checkbox" id="payChannel1" name="checkbox" checked="checked" />
                                                 <label for="payChannel1"><span>배치CMS</span></label>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="check-group">
+                                            <div class="check-group" id="subCheckGroup">
                                                 <div class="h-checkbox">
                                                     <input type="radio" id="payChannel1-1" name="payChannel1" />
                                                     <label for="payChannel1-1"><span>SDSI</span></label>
@@ -380,8 +380,8 @@
                     <!-- 결제서비스 채널 -->
                     <!-- 부가서비스 채널 -->
                     <div class="table-set">
-                        <div class="title-box xs mt-20">
-                            <h3 class="sub-title">부가 채널</h3>
+                        <div class="title-box xsm">
+                            <h3 class="sub-title">부가서비스 채널</h3>
                         </div>
                         <div class="table border-none">
                             <table>

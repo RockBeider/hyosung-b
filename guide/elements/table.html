@@ -601,7 +601,7 @@
             <p class="title">Grid only Number</p>
         </div>
         <div class="g-example-body">
-            <div class="table-content grid" id="viewModel_number">
+            <div class="table-set">
                 <script type="text/x-kendo-template" id="toolbarTemplate_count">
                     <div class="title-box sm mt-0">
                         <span class="amount-set">
@@ -609,15 +609,28 @@
                         </span>
                     </div>
                 </script>
-                <div data-role="grid" 
-                    data-sortable="false" 
-                    data-editable="true" 
-                    data-columns='[
-                    { "title": "NO.", "field":"NO", "width": 50, "attributes" : {"class": "text-center"} },
-                    { "field": ""  }
-                    ]' 
-                    data-bind="source: gridSource"
-                    data-toolbar="#=toolbarTemplate_count()#">
+                <div class="table-content grid" id="viewModel_number">
+                    <div data-role="grid" 
+                        data-sortable="false" 
+                        data-editable="true" 
+                        data-columns='[
+                        { "title": "NO.", "field":"NO", "width": 50, "attributes" : {"class": "text-center"} },
+                        { "field": ""  }
+                        ]' 
+                        data-bind="source: gridSource"
+                        data-toolbar="#=toolbarTemplate_count()#">
+                    </div>
+                </div>
+                <div class="table-footer">
+                    <ul class="pop-guide">
+                        <li class="list">- 승인서는 오픈 시 기본으로 1회 발송이 되며, 재발송을 위한 수동발송 기능이다.</li>
+                        <li class="list">- 승인서생성이 된 고객만 승인서발송이 가능하다.</li>
+                        <li class="list">- 발송수단을 '수단일괄변경'으로 전체 일괄 변경 가능하다.</li>
+                        <li class="list">- 발송수단 변경 시 해당 발송수단 정보가 없는 경우 발송할 수 없다.</li>
+                    </ul>
+                    <div class="btn-box bottom">
+                        <button data-role="button">발송</button>
+                    </div>
                 </div>
             </div>
             <script>
@@ -641,34 +654,56 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;div class="title-box sm">
-    &lt;h4 class="sub-title">SM 타이틀&lt;/h4>
-    &lt;span class="noti red">*정보가 들어갑니다.&lt;/span>
+&lt;div class="table-set">
+    &lt;script type="text/x-kendo-template" id="toolbarTemplate_count">
+        &lt;div class="title-box sm mt-0">
+            &lt;span class="amount-set">
+                &lt;span class="amount current">1&lt;/span>&lt;span class="unit">건&lt;/span>
+            &lt;/span>
+        &lt;/div>
+    &lt;/script>
+    &lt;div class="table-content grid" id="viewModel_number">
+        &lt;div data-role="grid" 
+            data-sortable="false" 
+            data-editable="true" 
+            data-columns='[
+            { "title": "NO.", "field":"NO", "width": 50, "attributes" : {"class": "text-center"} },
+            { "field": ""  }
+            ]' 
+            data-bind="source: gridSource"
+            data-toolbar="#=toolbarTemplate_count()#">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="table-footer">
+        &lt;ul class="pop-guide">
+            &lt;li class="list">- 승인서는 오픈 시 기본으로 1회 발송이 되며, 재발송을 위한 수동발송 기능이다.&lt;/li>
+            &lt;li class="list">- 승인서생성이 된 고객만 승인서발송이 가능하다.&lt;/li>
+            &lt;li class="list">- 발송수단을 '수단일괄변경'으로 전체 일괄 변경 가능하다.&lt;/li>
+            &lt;li class="list">- 발송수단 변경 시 해당 발송수단 정보가 없는 경우 발송할 수 없다.&lt;/li>
+        &lt;/ul>
+        &lt;div class="btn-box bottom">
+            &lt;button data-role="button">발송&lt;/button>
+        &lt;/div>
+    &lt;/div>
 &lt;/div>
-&lt;div class="table">
-    &lt;table>
-        &lt;colgroup>
-            &lt;col width="130px">
-            &lt;col width="*">
-            &lt;col width="130px">
-            &lt;col width="*">
-        &lt;/colgroup>
-        &lt;tbody>
-            &lt;tr>
-                &lt;th scope="row">필수정보&lt;span class="required">*&lt;/span>&lt;/th>
-                &lt;td>&lt;/td>
-                &lt;th scope="row">일반정보&lt;/th>
-                &lt;td>&lt;/td>
-            &lt;/tr>
-            &lt;tr>
-                &lt;th scope="row">필수정보&lt;span class="required">*&lt;/span>&lt;/th>
-                &lt;td>&lt;/td>
-                &lt;th scope="row">필수정보&lt;span class="required">*&lt;/span>&lt;/th>
-                &lt;td>&lt;/td>
-            &lt;/tr>
-        &lt;/tbody>
-    &lt;/table>
-&lt;/div>
+&lt;script>
+    var viewModel_number = kendo.observable({
+        gridSource: [
+            { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+        ],
+        displayGridSource: function() {
+            return stringify(this.get("gridSource").toJSON());
+        },
+    });
+    kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+    function toolbarTemplate_count() {
+        var template = kendo.template($('#toolbarTemplate_count').html());
+        var result = template({});
+        return result
+    }
+&lt;/script>
             </code></pre>
         </div>
     </div>
