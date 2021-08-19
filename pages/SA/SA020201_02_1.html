@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <span id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</span>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="승인서발송"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}" class="lg">
+            <div class="content-group">
+                <div class="table-set">
+                    <!-- toolbar template -->
+                    <script type="text/x-kendo-template" class="toolbarTemplate">
+                        <div class="title-box xsm mt-0">
+                            <h3 class="sub-title">발송 선택 대상</h3>
+                        </div>
+                        <div class="title-box sm">
+                            <div class="left-group">
+                                <span class="amount-set">
+                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                    <span class="amount">26</span><span class="unit">건</span>
+                                </span>
+                            </div>
+                            <div class="right-group">
+                                <div class="form-set">
+                                    <select id="dropdownlist" data-role="dropdownlist" data-value="이메일" class="sm">
+                                        <option value="1">이메일</option>
+                                        <option value="2">이메일</option>
+                                    </select>
+                                    <button role="button" class="k-button gray-border">수단일괄별경</button>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <!-- checkbox template -->
+                    <script type="text/x-kendo-template" class="checkboxTemplate">
+                        <div class="h-checkbox no-label">
+                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                            <label for="checkbox-nolabel"></label> 
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_grid_sort">
+                        <div data-role="grid" 
+                            data-sortable="true" 
+                            data-editable="false" 
+                            data-toolbar="#=toolbarTemplate()#"
+                            data-columns='[
+                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 40, "template": "#=checkboxTemplate()#" },
+                            { "title": "NO.", "width": 40, "attributes" : {"class": "text-center"} },
+                            { "field": "고객ID", "width": 90, "attributes" : {"class": "text-center"} },
+                            { "field": "고객사명", "width": 140 },
+                            { "field": "이메일"},
+                            { "field": "휴대전화", "width": 140 },
+                            { "field": "승인서생성", "width": 140, "attributes" : {"class": "text-center"} },
+                            { "field": "발송수단", "width": 130, "template":viewModel.columnTemplateFunction, editable: viewModel.notEditable }
+                            ]' 
+                            data-bind="source: gridSource"
+                            style="height: 400px;">
+                        </div>
+                    </div>
+                    <div class="table-footer">
+                        <ul class="pop-guide">
+                            <li class="list">- 승인서는 오픈 시 기본으로 1회 발송이 되며, 재발송을 위한 수동발송 기능이다.</li>
+                            <li class="list">- 승인서생성이 된 고객만 승인서발송이 가능하다.</li>
+                            <li class="list">- 발송수단을 '수단일괄변경'으로 전체 일괄 변경 가능하다.</li>
+                            <li class="list">- 발송수단 변경 시 해당 발송수단 정보가 없는 경우 발송할 수 없다.</li>
+                        </ul>
+                        <div class="btn-box bottom">
+                            <button data-role="button">발송</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+            columnTemplateFunction:  function (dataItem) {
+              var input =
+                  `<select class="dropDown"
+                    data-role="dropdownlist"
+                    data-bind=" source: ActionsCollection"
+                    ></select>`;
+              return input;
+            },
+            gridSource: [
+                { "NO":"1",  
+                    "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                { 
+                    "NO":"2",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"미생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"3",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"4",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"5",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"6",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"7",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"8",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"9",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                },
+                {
+                    "NO":"10",  "고객ID":"a5760838", "고객사명":"", "이메일":"", "휴대전화":"", "승인서생성":"생성", 
+                    "ActionsCollection":[
+                        "이메일","휴대전화"
+                    ]
+                }
+            ],
+            notEditable:function(){
+              return false;
+            },
+            getById: function(Id){
+              return viewModel.products.get(Id);
+            }
+        });
+        kendo.bind($(".wrap"), viewModel);
+        setTimeout(function(){
+            kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
+        }, 100)
+        function toolbarTemplate() {
+            var template = kendo.template($('.toolbarTemplate').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

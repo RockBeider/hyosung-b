@@ -11,61 +11,686 @@
 * file upload
 * ------------------------------
 */
-.k-upload {
-	display: flex;
-	height: 28px;
-	background: $white;
-	.k-dropzone {
-		order: 1;
-	}
-	.k-upload-files { //파일 박스
-		display: flex;
-		padding: 0 10px;
-		border: 1px solid $gray-c;
-		border-radius: 3px;
-		.k-file-name-size-wrapper {
-			@include font-size-sm
-		}
-	}
-	
-	.k-upload-button {
-		position: relative;
-		flex: 0 0 auto;
-		background-color: $white;
-		border: 1px solid $gray-a;
-		color: $gray-2;
-		width: auto;
-	}
-	.k-upload-button input { //기본스타일 삭제
-		font: 170px monospace!important;
-		margin: 0;
-		padding: 0;
-		opacity: 0;
-		cursor: pointer;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		z-index: 1;
-	}
-	.k-upload-files .k-file-name { // 파일명
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		position: relative;
-	}
-	.k-upload-files .k-upload-action {
-		padding: 0;
-		background-color: $white;
-		border: 1px solid transparent;
-		.k-i-close {
-			@include iconSvg($width: 12px, $height: 12px, $name: 'btn_X', $size: 12px 12px );
-		}
 
-	}
-	.k-file-validation-message, .k-file-group-wrapper {
-		display: none;
-	}
-}
+// .k-upload {
+//     border-width: 1px;
+//     border-style: solid;
+//     box-sizing: border-box;
+//     outline: 0;
+//     font-family: inherit;
+//     font-size: 14px;
+//     line-height: 1.4285714286;
+//     position: relative;
+//     display: block;
+//     -webkit-touch-callout: none;
+//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
+
+// .k-upload .k-upload-button {
+//     min-width: 7em;
+// }
+
+// .k-upload .k-dropzone {
+//     padding: 8px 8px;
+//     border-width: 0;
+//     text-align: right;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-align: center;
+//         align-items: center;
+//     -ms-flex-pack: justify;
+//         justify-content: space-between;
+//     position: relative;
+//     background-color: transparent;
+// }
+
+// .k-upload .k-dropzone .k-dropzone-hint {
+//     font-style: normal;
+//     font-weight: normal;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     position: relative;
+//     -ms-flex: 1;
+//         flex: 1;
+// }
+
+// .k-upload .k-dropzone .k-upload-status {
+//     font-weight: normal;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-align: center;
+//         align-items: center;
+//     position: relative;
+// }
+
+// .k-upload .k-dropzone .k-upload-status > .k-icon {
+//     margin-right: 4px;
+// }
+
+// .k-upload .k-dropzone .k-upload-status + .k-dropzone-hint {
+//     display: none;
+// }
+
+// .k-upload .k-dropzone-active .k-upload-status {
+//     display: none;
+// }
+
+// .k-upload .k-dropzone-active .k-upload-status + .k-dropzone-hint {
+//     display: block;
+// }
+
+// .k-upload .k-upload-files {
+//     max-height: 300px;
+//     overflow-y: auto;
+//     margin: 0;
+//     padding: 0;
+//     border-width: 1px 0 0;
+//     border-style: solid;
+//     border-color: inherit;
+//     list-style: none;
+// }
+
+// .k-upload .k-upload-files .k-file-multiple,
+// .k-upload .k-upload-files .k-file-single {
+//     width: 100%;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-pack: justify;
+//         justify-content: space-between;
+// }
+
+// .k-upload .k-upload-files .k-file-single {
+//     -ms-flex-align: center;
+//         align-items: center;
+// }
+
+// .k-upload .k-upload-files .k-file-multiple {
+//     -ms-flex-align: start;
+//         align-items: flex-start;
+// }
+
+// .k-upload .k-upload-files .k-file {
+//     padding: 8px 8px 10px;
+//     border-width: 0 0 1px;
+//     border-style: solid;
+//     outline: none;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-align: start;
+//         align-items: flex-start;
+//     position: relative;
+// }
+
+// .k-upload .k-upload-files .k-file:last-child {
+//     border-width: 0;
+// }
+
+// .k-upload .k-upload-files .k-filename {
+//     margin-left: 1em;
+//     -ms-flex: 1;
+//         flex: 1;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     position: relative;
+// }
+
+// .k-upload .k-upload-files .k-upload-status .k-icon {
+//     vertical-align: middle;
+// }
+
+// .k-upload .k-upload-files .k-upload-pct {
+//     margin: 0 4px;
+//     font-weight: normal;
+//     vertical-align: middle;
+// }
+
+// .k-upload .k-upload-files ~ .k-clear-selected,
+// .k-upload .k-upload-files ~ .k-upload-selected {
+//     margin-top: -4px;
+//     border-width: 0;
+// }
+
+// .k-upload .k-upload-files ~ .k-upload-selected {
+//     border-left-width: 1px;
+//     border-left-style: solid;
+//     margin-left: -1px;
+// }
+
+// .k-upload .k-upload-files .k-file-name,
+// .k-upload .k-upload-files .k-file-size,
+// .k-upload .k-upload-files .k-file-validation-message,
+// .k-upload .k-upload-files .k-file-information {
+//     display: block;
+// }
+
+// .k-upload .k-upload-files .k-file-name {
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     position: relative;
+// }
+
+// .k-upload .k-upload-files .k-file-size,
+// .k-upload .k-upload-files .k-file-information,
+// .k-upload .k-upload-files .k-file-validation-message {
+//     font-size: 11px;
+//     line-height: 1;
+// }
+
+// .k-upload .k-upload-files .k-file-extension-wrapper,
+// .k-upload .k-upload-files .k-multiple-files-extension-wrapper,
+// .k-upload .k-upload-files .k-file-invalid-extension-wrapper,
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper {
+//     margin: 0px 0;
+//     width: 24px;
+//     height: 34px;
+//     border-width: 2px;
+//     border-style: solid;
+//     font-size: 7.98px;
+//     text-transform: uppercase;
+//     box-sizing: content-box;
+//     position: absolute;
+//     top: 8px;
+// }
+
+// .k-upload .k-upload-files .k-file-group-wrapper .k-file-group,
+// .k-upload .k-upload-files .k-file-invalid-group-wrapper .k-file-group,
+// .k-upload .k-upload-files .k-multiple-files-group-wrapper .k-file-group,
+// .k-upload .k-upload-files .k-multiple-files-invalid-group-wrapper .k-file-group {
+//     font-size: 32px;
+// }
+
+// .k-upload .k-upload-files .k-file-group-wrapper .k-file-state,
+// .k-upload .k-upload-files .k-file-invalid-group-wrapper .k-file-state,
+// .k-upload .k-upload-files .k-multiple-files-group-wrapper .k-file-state,
+// .k-upload .k-upload-files .k-multiple-files-invalid-group-wrapper .k-file-state {
+//     position: absolute;
+// }
+
+// .k-upload .k-upload-files .k-file-invalid-extension-wrapper,
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper {
+//     font-size: 1.2em;
+// }
+
+// .k-upload .k-upload-files .k-multiple-files-extension-wrapper,
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper {
+//     margin-top: 4px;
+// }
+
+// .k-upload .k-upload-files .k-file-state {
+//     visibility: hidden;
+// }
+
+// .k-upload .k-upload-files .k-file-invalid-extension-wrapper + .k-file-name-size-wrapper,
+// .k-upload .k-upload-files .k-file-single > .k-file-extension-wrapper + .k-file-name-size-wrapper {
+//     margin-left: calc(24px + 1em);
+//     min-height: 38px;
+//     display: block;
+//     overflow: hidden;
+// }
+
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper + .k-file-name-size-wrapper,
+// .k-upload .k-upload-files .k-multiple-files-extension-wrapper + .k-file-name-size-wrapper {
+//     margin-left: calc(24px + 1em);
+// }
+
+// .k-upload .k-upload-files .k-file-extension-wrapper + .k-file-name-size-wrapper {
+//     margin-bottom: -2px;
+// }
+
+// .k-upload .k-upload-files .k-file-extension-wrapper + .k-file-name-size-wrapper .k-file-size,
+// .k-upload .k-upload-files .k-file-extension-wrapper + .k-file-name-size-wrapper .k-file-information,
+// .k-upload .k-upload-files .k-file-extension-wrapper + .k-file-name-size-wrapper .k-file-validation-message {
+//     font-size: 9.432px;
+// }
+
+// .k-upload .k-upload-files .k-file-extension-wrapper::before,
+// .k-upload .k-upload-files .k-multiple-files-extension-wrapper::before,
+// .k-upload .k-upload-files .k-multiple-files-extension-wrapper::after,
+// .k-upload .k-upload-files .k-file-invalid-extension-wrapper::before,
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper::before,
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper::after {
+//     content: "";
+//     border-style: solid;
+//     display: inline-block;
+//     position: absolute;
+// }
+
+// .k-upload .k-upload-files .k-file-extension-wrapper::before,
+// .k-upload .k-upload-files .k-multiple-files-extension-wrapper::before,
+// .k-upload .k-upload-files .k-file-invalid-extension-wrapper::before,
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper::before {
+//     top: -1px;
+//     right: -1px;
+//     width: 0;
+//     height: 0;
+//     border-width: 6px;
+//     margin-top: -1px;
+//     margin-right: -1px;
+// }
+
+// .k-upload .k-upload-files .k-multiple-files-extension-wrapper::after,
+// .k-upload .k-upload-files .k-multiple-files-invalid-extension-wrapper::after {
+//     top: -6px;
+//     left: -6px;
+//     width: 15px;
+//     height: 35px;
+//     border-width: 2px 0 0 2px;
+// }
+
+// .k-upload .k-upload-files .k-file-extension,
+// .k-upload .k-upload-files .k-file-invalid-icon {
+//     position: absolute;
+//     bottom: 0;
+//     line-height: normal;
+// }
+
+// .k-upload .k-upload-files .k-file-invalid-icon {
+//     margin-left: 4px;
+// }
+
+// .k-upload .k-upload-files .k-file-extension {
+//     margin-left: .2em;
+//     margin-bottom: .3em;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     max-width: 100%;
+//     left: 0;
+// }
+
+// .k-upload .k-upload-files .k-upload-action {
+//     border-width: 0;
+//     color: inherit;
+//     background: none;
+//     box-shadow: none;
+// }
+
+// .k-upload .k-upload-files .k-file-name-size-wrapper {
+//     margin-left: 0;
+//     margin-right: 0;
+//     min-height: 32px;
+//     display: block;
+//     overflow: hidden;
+//     -ms-flex: 1 0 0px;
+//         flex: 1 0 0;
+// }
+
+// .k-upload .k-file-multiple > .k-file-name-size-wrapper {
+//     margin-left: 8px;
+// }
+
+// .k-upload .k-multiple-files-wrapper,
+// .k-upload .k-file-single > .k-file-name-size-wrapper,
+// .k-upload .k-file > .k-file-name-size-wrapper {
+//     margin-left: 8px;
+//     margin-right: 0;
+//     min-height: 32px;
+//     display: block;
+//     overflow: hidden;
+//     -ms-flex: 1 0 0px;
+//         flex: 1 0 0;
+// }
+
+// .k-upload .k-multiple-files-wrapper .k-file-name-size-wrapper {
+//     margin-bottom: 12px;
+//     display: block;
+// }
+
+// .k-upload .k-multiple-files-wrapper .k-file-information {
+//     margin-top: -4px;
+// }
+
+// .k-upload .k-progress {
+//     height: 2px;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+// }
+
+// .k-upload .k-progressbar {
+//     height: 2px;
+//     position: absolute;
+//     bottom: 4px;
+//     width: calc(100% - 16px);
+// }
+
+// .k-upload .k-progressbar .k-progress {
+//     position: absolute;
+//     width: 100%;
+//     max-width: 100%;
+//     height: 100%;
+// }
+
+// .k-upload .k-file-invalid > .k-progress {
+//     width: 100%;
+// }
+
+// .k-upload .k-actions, .k-upload .k-action-buttons,
+// .k-upload .k-columnmenu-actions,
+// .k-upload .k-action-buttons {
+//     border-top-width: 1px;
+// }
+
+// .k-upload[dir="rtl"] .k-dropzone,
+// .k-rtl .k-upload .k-dropzone {
+//     text-align: left;
+// }
+
+// .k-upload[dir="rtl"] .k-dropzone .k-upload-status > .k-icon,
+// .k-rtl .k-upload .k-dropzone .k-upload-status > .k-icon {
+//     margin-left: 6px;
+//     margin-right: 0;
+// }
+
+// .k-upload[dir="rtl"] .k-multiple-files-wrapper,
+// .k-upload[dir="rtl"] .k-file-single > .k-file-name-size-wrapper,
+// .k-upload[dir="rtl"] .k-file-multiple > .k-file-name-size-wrapper,
+// .k-upload[dir="rtl"] .k-file > .k-file-name-size-wrapper,
+// .k-rtl .k-upload .k-multiple-files-wrapper,
+// .k-rtl .k-upload .k-file-single > .k-file-name-size-wrapper,
+// .k-rtl .k-upload .k-file-multiple > .k-file-name-size-wrapper,
+// .k-rtl .k-upload .k-file > .k-file-name-size-wrapper {
+//     margin-right: 8px;
+// }
+
+// .k-upload[dir="rtl"] .k-button + .k-button,
+// .k-rtl .k-upload .k-button + .k-button {
+//     border-right-width: 0;
+// }
+
+// .k-upload[dir="rtl"] .k-progress,
+// .k-rtl .k-upload .k-progress {
+//     left: auto;
+//     right: 0;
+// }
+
+// .k-upload-button {
+//     position: relative;
+//     overflow: hidden;
+//     direction: ltr;
+// }
+
+// .k-upload-button input {
+//     font: 170px monospace !important;
+//     margin: 0;
+//     padding: 0;
+//     opacity: 0;
+//     cursor: pointer;
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     z-index: 1;
+// }
+
+// .k-upload-button input[disabled],
+// .k-upload-button input.k-state-disabled {
+//     visibility: hidden;
+// }
+
+// .k-ie9 .k-upload-status-total {
+//     top: 1.5em;
+// }
+
+// .k-ie9 .k-upload-status-total > .k-icon {
+//     margin-top: -3px;
+// }
+
+// .k-no-flexbox .k-upload-files .k-file-multiple,
+// .k-no-flexbox .k-upload-files .k-file-single {
+//     display: block;
+//     width: 100%;
+// }
+
+// .k-no-flexbox .k-upload-files .k-upload-status {
+//     position: absolute;
+//     right: 8px;
+//     top: 8px;
+// }
+
+// .k-no-flexbox .k-upload-files .k-file-group-wrapper,
+// .k-no-flexbox .k-upload-files .k-file-invalid-group-wrapper,
+// .k-no-flexbox .k-upload-files .k-multiple-files-group-wrapper,
+// .k-no-flexbox .k-upload-files .k-multiple-files-invalid-group-wrapper {
+//     position: absolute;
+//     top: 8px;
+// }
+
+// .k-no-flexbox .k-upload-files .k-multiple-files-wrapper,
+// .k-no-flexbox .k-upload-files .k-file-single > .k-file-name-size-wrapper,
+// .k-no-flexbox .k-upload-files .k-file > .k-file-name-size-wrapper {
+//     margin-left: 40px;
+//     margin-right: calc(3.4285714286em + 26px);
+// }
+
+// .k-no-flexbox .k-dropzone {
+//     position: relative;
+//     text-align: left;
+// }
+
+// .k-no-flexbox .k-dropzone .k-upload-button {
+//     display: inline-block;
+// }
+
+// .k-no-flexbox .k-dropzone .k-dropzone-hint,
+// .k-no-flexbox .k-dropzone .k-upload-status-total {
+//     position: absolute;
+//     top: 50%;
+//     right: 8px;
+//     -webkit-transform: translateY(-50%);
+//         -ms-transform: translateY(-50%);
+//             transform: translateY(-50%);
+// }
+
+// .k-no-flexbox [dir="rtl"] .k-dropzone-hint,
+// .k-no-flexbox [dir="rtl"] .k-upload-status-total,
+// .k-no-flexbox [dir="rtl"] .k-upload-files .k-upload-status,
+// .k-no-flexbox .k-rtl .k-dropzone-hint,
+// .k-no-flexbox .k-rtl .k-upload-status-total,
+// .k-no-flexbox .k-rtl .k-upload-files .k-upload-status {
+//     right: auto;
+//     left: 8px;
+// }
+
+// .k-no-flexbox [dir="rtl"] .k-multiple-files-wrapper,
+// .k-no-flexbox [dir="rtl"] .k-file-single > .k-file-name-size-wrapper,
+// .k-no-flexbox [dir="rtl"] .k-file > .k-file-name-size-wrapper,
+// .k-no-flexbox .k-rtl .k-multiple-files-wrapper,
+// .k-no-flexbox .k-rtl .k-file-single > .k-file-name-size-wrapper,
+// .k-no-flexbox .k-rtl .k-file > .k-file-name-size-wrapper {
+//     margin-left: calc(3.4285714286em + 26px);
+//     margin-right: 40px;
+// }
+
+// .k-upload {
+//     border-color: rgba(0, 0, 0, 0.08);
+//     color: #424242;
+//     background-color: #ffffff;
+// }
+
+// .k-upload .k-dropzone {
+//     border-color: rgba(0, 0, 0, 0.08);
+//     color: #424242;
+//     background-color: #fafafa;
+// }
+
+// .k-upload .k-dropzone.k-dropzone-hover, .k-upload .k-dropzone.k-dropzone-hovered {
+//     background-color: #f0f0f0;
+// }
+
+// .k-upload .k-dropzone .k-dropzone-hint {
+//     color: #666666;
+// }
+
+// .k-upload .k-upload-files,
+// .k-upload .k-file {
+//     border-color: rgba(0, 0, 0, 0.08);
+// }
+
+// .k-upload .k-file.k-state-focused {
+//     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.13);
+// }
+
+// .k-upload .k-file .k-upload-action.k-state-focused {
+//     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.13);
+// }
+
+// .k-upload .k-upload-status {
+//     color: #666666;
+// }
+
+// .k-upload .k-file-progress .k-file-name {
+//     color: #424242;
+// }
+
+// .k-upload .k-file-progress .k-progress {
+//     background-color: #0058e9;
+// }
+
+// .k-upload .k-file-success .k-progress {
+//     background-color: #37b400;
+// }
+
+// .k-upload .k-file-error .k-file-validation-message,
+// .k-upload .k-file-invalid .k-file-validation-message {
+//     color: #f31700;
+// }
+
+// .k-upload .k-file-error .k-progress,
+// .k-upload .k-file-invalid .k-progress {
+//     background-color: #f31700;
+// }
+
+// .k-upload .k-file-extension-wrapper,
+// .k-upload .k-multiple-files-extension-wrapper,
+// .k-upload .k-file-group-wrapper,
+// .k-upload .k-multiple-files-group-wrapper,
+// .k-upload .k-file-invalid-extension-wrapper,
+// .k-upload .k-multiple-files-invalid-extension-wrapper,
+// .k-upload .k-file-invalid-group-wrapper,
+// .k-upload .k-multiple-files-invalid-group-wrapper {
+//     color: #666666;
+//     border-color: #666666;
+// }
+
+// .k-upload .k-file-invalid-extension-wrapper,
+// .k-upload .k-multiple-files-invalid-extension-wrapper,
+// .k-upload .k-file-error .k-file-extension-wrapper,
+// .k-upload .k-file-invalid-group-wrapper,
+// .k-upload .k-multiple-files-invalid-group-wrapper,
+// .k-upload .k-file-error .k-file-group-wrapper {
+//     border-color: #666666;
+// }
+
+// .k-upload .k-file-extension-wrapper::before,
+// .k-upload .k-multiple-files-extension-wrapper::before,
+// .k-upload .k-file-invalid-extension-wrapper::before,
+// .k-upload .k-multiple-files-invalid-extension-wrapper::before,
+// .k-upload .k-file-error .k-file-extension-wrapper::before {
+//     background-color: #ffffff;
+//     border-color: transparent transparent #666666 #666666;
+// }
+
+// .k-upload .k-multiple-files-extension-wrapper::after,
+// .k-upload .k-multiple-files-invalid-extension-wrapper::after {
+//     border-top-color: #666666;
+//     border-left-color: #666666;
+// }
+
+// .k-upload .k-file-size,
+// .k-upload .k-file-validation-message,
+// .k-upload .k-file-information {
+//     color: #666666;
+// }
+
+// .k-upload .k-multiple-files-wrapper .k-file-information {
+//     color: #424242;
+// }
+
+// .k-upload.k-state-invalid, .k-upload.ng-invalid.ng-touched, .k-upload.ng-invalid.ng-dirty {
+//     border-color: rgba(243, 23, 0, 0.5);
+// }
+
+
+//override
+// .upload_wrap{display:inline-block;width:100%;overflow:hidden;}
+// .k-upload{float:left; width:100%; height:28px;border-radius:0;border-color:#959595;background-color:#fff;}
+
+// .k-upload .k-upload-files{line-height:17px; padding:0;border:0;}
+// .k-upload .k-upload-files .k-file{padding:0;border:0;}
+// .k-upload .k-upload-files .k-file .k-file-invalid-extension-wrapper,
+// .k-upload .k-upload-files .k-file .k-file-extension-wrapper,
+// .k-upload .k-upload-files .k-file .k-file-validation-message,
+// .k-upload .k-upload-files .k-file .k-progress,
+// .k-upload .k-upload-files .k-file .k-file-size{display:none;background-color:#fff;}
+// .k-upload-files .k-upload-status{top:2px;display:none;}
+// .k-file-name-size-wrapper{vertical-align:top;width:100%;}
+// .k-file-name-size-wrapper .k-file-name{line-height:18px;color:#6d6d6d; margin-top:4px;max-width:96%;}
+// .k-file-name-size-wrapper .k-file-name.k-file-name-invalid{color:#ff0000;}
+// .k-upload .k-upload-button{position:absolute;top:-1px;right:-72px;min-width:67px;height:30px;line-height:28px; background-color:#5476a1; border-radius:0; border:0; box-shadow:none; background-image: none }
+// .k-upload .k-upload-button:hover{  background-color:#456287;}
+// .k-upload-sync .k-upload-button{margin:0;box-shadow:none;padding:0 5px;line-height:28px;font-size:12px; }
+// .k-upload-sync .k-upload-button span{font-size:12px; font-weight:600; color:#fff;letter-spacing:-1px;font-family:"맑은 고딕", "Malgun Gothic", "sans-serif" !important;}
+// .k-upload + button{margin-left:5px;}
+// .right{float:right;}
+
+
+// .k-upload {
+// 	display: flex;
+// 	height: 28px;
+// 	background: $white;
+// 	.k-dropzone {
+// 		order: 1;
+// 	}
+// 	.k-upload-files { //파일 박스
+// 		display: flex;
+// 		padding: 0 10px;
+// 		border: 1px solid $gray-c;
+// 		border-radius: 3px;
+// 		.k-file-name-size-wrapper {
+// 			@include font-size-sm
+// 		}
+// 	}
+	
+// 	.k-upload-button {
+// 		position: relative;
+// 		flex: 0 0 auto;
+// 		background-color: $white;
+// 		border: 1px solid $gray-a;
+// 		color: $gray-2;
+// 		width: auto;
+// 	}
+// 	.k-upload-button input { //기본스타일 삭제
+// 		font: 170px monospace!important;
+// 		margin: 0;
+// 		padding: 0;
+// 		opacity: 0;
+// 		cursor: pointer;
+// 		position: absolute;
+// 		bottom: 0;
+// 		right: 0;
+// 		z-index: 1;
+// 	}
+// 	.k-upload-files .k-file-name { // 파일명
+// 		overflow: hidden;
+// 		text-overflow: ellipsis;
+// 		white-space: nowrap;
+// 		position: relative;
+// 	}
+// 	.k-upload-files .k-upload-action {
+// 		padding: 0;
+// 		background-color: $white;
+// 		border: 1px solid transparent;
+// 		.k-i-close {
+// 			@include iconSvg($width: 12px, $height: 12px, $name: 'btn_X', $size: 12px 12px );
+// 		}
+
+// 	}
+// 	.k-file-validation-message, .k-file-group-wrapper {
+// 		display: none;
+// 	}
+// }
 /*
 * ------------------------------
 * tab
@@ -706,7 +1331,7 @@
 //껍데기
 .k-grid {
 	border: none;
-	
+	// border-bottom: 1px solid $gray-a;
 	// border-bottom: 1px solid $gray-a;
 	table {
 		table-layout: fixed;

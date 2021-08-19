@@ -893,6 +893,9 @@ td .divide + .divide {
   line-height: 26px;
   letter-spacing: -0.7px;
 }
+.title-box.xsm + .title-box.sm {
+  margin-top: 0;
+}
 .title-box.sm {
   min-height: 28px;
   margin: 12px 0 8px;
@@ -1947,6 +1950,11 @@ td .form-box, th .form-box {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
+}
+.table td .form-group.col {
+  padding: 0;
+  background: none;
+  align-items: flex-start;
 }
 .table th {
   padding: 0 3px;
@@ -3576,65 +3584,6 @@ th .required {
 * file upload
 * ------------------------------
 */
-.k-upload {
-  display: flex;
-  height: 28px;
-  background: #fff;
-}
-.k-upload .k-dropzone {
-  order: 1;
-}
-.k-upload .k-upload-files {
-  display: flex;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-.k-upload .k-upload-files .k-file-name-size-wrapper {
-  font-size: 14px;
-  line-height: 26px;
-  letter-spacing: -0.7px;
-}
-.k-upload .k-upload-button {
-  position: relative;
-  flex: 0 0 auto;
-  background-color: #fff;
-  border: 1px solid #aaa;
-  color: #222;
-  width: auto;
-}
-.k-upload .k-upload-button input {
-  font: 170px monospace !important;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-}
-.k-upload .k-upload-files .k-file-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  position: relative;
-}
-.k-upload .k-upload-files .k-upload-action {
-  padding: 0;
-  background-color: #fff;
-  border: 1px solid transparent;
-}
-.k-upload .k-upload-files .k-upload-action .k-i-close {
-  width: 12px;
-  height: 12px;
-  background-image: url("../images_bc/icon/btn_X.svg");
-  background-size: 12px 12px;
-}
-.k-upload .k-file-validation-message, .k-upload .k-file-group-wrapper {
-  display: none;
-}
-
 /*
 * ------------------------------
 * tab
