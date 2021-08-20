@@ -57,10 +57,10 @@
                     </script>
                     <div class="table-content grid" id="viewModel_number">
                         <div data-role="grid" 
-                            data-sortable="false" 
+                            data-sortable="true" 
                             data-editable="true" 
                             data-columns='[
-                            { "title": "NO.", "field":"NO", "width": 50, "attributes" : {"class": "text-center"} },
+                            { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
                             { "field": ""  }
                             ]' 
                             data-bind="source: gridSource"

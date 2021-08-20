@@ -22,35 +22,66 @@
         </div>
 
         <div data-role="dialog"
-             data-title="변경결과"
+             data-title="담보 상세"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
                             events: { close: onClose}" class="lg">
             <div class="content-group">
-                <div class="table-set">
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col width="90px"/>
+                            <col width="*"/>
+                            <col width="90px"/>
+                            <col width="*"/>
+                            <col width="90px"/>
+                            <col width="*"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">고객ID</th>
+                                <td>A00001</td>
+                                <th scope="row">고객사명</th>
+                                <td>테스트</td>
+                                <th scope="row">서비스일</th>
+                                <td>2021/06/03</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">담보구분</th>
+                                <td>현금담보</td>
+                                <th scope="row">담보율</th>
+                                <td>30%</td>
+                                <th scope="row">담보금액</th>
+                                <td>5,000,000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">반환일</th>
+                                <td>2021/06/03</td>
+                                <th scope="row">납입방법</th>
+                                <td>정산공제</td>
+                                <th scope="row">납입금액</th>
+                                <td>5,000,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-content grid" id="viewModel_number">
                     <script type="text/x-kendo-template" id="toolbarTemplate_count">
-                        <div class="title-box sm mt-0">
-                            <div class="left-group">
-                                <span class="amount-set">
-                                    <span class="amount current">10</span><span class="unit">건</span>
-                                </span>
-                            </div>
-                            <div class="right-group">
-                                <button class="k-button gray-border">동일사업자확인</button>
-                            </div>
+                        <div class="title-box sm">
+                            <span class="amount-set">
+                                <span class="amount current">1</span><span class="unit">건</span>
+                            </span>
                         </div>
                     </script>
-                    <div class="table-content grid" id="viewModel_number">
-                        <div data-role="grid" 
-                            data-sortable="true" 
-                            data-editable="true" 
-                            data-columns='[
-                            { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                            { "field": ""  }
-                            ]' 
-                            data-bind="source: gridSource"
-                            data-toolbar="#=toolbarTemplate_count()#">
-                        </div>
+                    <div data-role="grid" 
+                        data-sortable="true" 
+                        data-editable="true" 
+                        data-columns='[
+                        { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                        { "field": ""  }
+                        ]' 
+                        data-bind="source: gridSource"
+                        data-toolbar="#=toolbarTemplate_count()#" style ="height: 420px;">
                     </div>
                 </div>
             </div>
