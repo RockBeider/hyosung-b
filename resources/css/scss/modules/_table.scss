@@ -63,6 +63,80 @@ td .form-box, th .form-box {
 .table {
     width: 100%; 
     overflow: hidden;
+    &.table-bg-box {
+        // display: table; 
+        // table-layout: fixed;
+        
+        display: flex;
+        flex-direction: column;
+        border: none;
+        &.type1 {
+            .cell {
+                &:first-child {
+                    min-width: 36px;
+                    max-width: 36px;
+                }
+                &:nth-of-type(2) {
+                    
+                }
+                &:nth-of-type(3) {
+                    min-width: 448px;
+                    max-width: 448px;
+                }
+                &:nth-of-type(4) {
+                    min-width: 230px;
+                    max-width: 230px;
+                }
+                &:nth-of-type(5) {
+                    min-width: 200px;
+                    max-width: 200px;
+                }
+                &:nth-of-type(6) {
+                    min-width: 126px;
+                    max-width: 126px;
+                }
+            }
+        }
+        .head .cell {
+            @include font-size-sm;
+            height: 26px;
+            padding: 0px 10px;
+            padding-bottom: 6px;
+            background: $white;
+            justify-content: center;
+            color: $gray-5;
+            font-weight: 500;
+        }
+        .row {
+            display: flex;
+            + .row {
+                margin-top: 10px;
+            }
+        }
+        .cell {
+            flex: 1;
+            // display: table-cell;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            > * {
+                flex: 1;
+            }
+        }
+        .body {
+            .row {
+                padding: 10px 10px;
+                background-color: $gray-ef;
+            }
+       
+            .td {
+                border: none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
     table {
         width: calc(100% + 2px);
         margin: 0 -1px;

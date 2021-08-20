@@ -372,8 +372,8 @@
         </div>
         <div class="g-example-foot">
             <pre><code class="html">
-&lt;!-- toolbar template -->
-&lt;script type="text/x-kendo-template" class="toolbarTemplate">
+ &lt;!-- toolbar template -->
+ &lt;script type="text/x-kendo-template" class="toolbarTemplate">
     &lt;div class="title-box sm mt-20">
         &lt;div class="left-group">
             &lt;span class="amount-set">
@@ -400,10 +400,14 @@
     &lt;div data-role="grid" 
         data-sortable="true" 
         data-editable="true" 
+        data-resizable="true"
+        data-noRecords="true"
+        data-scrollable= "{ virtual: true }"
+        data-no-records="{ template : '&lt;p>검색을 이용해 주세요.&lt;/p>'}"
         data-columns='[
         { "title": "&lt;div class=h-checkbox>&lt;input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox />&lt;label for=checkbox-nolabel>&lt;/label>&lt;/div>", "width": 50, "template": "#=checkboxTemplate()#" },
         { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-        { "field": "상품코드", "width": 90 },
+        { "field": "상품코드", "width": 90, "locked": true },
         { "field": "상품명", "width": 170 },
         { "field": "어플리케이션", "width": 146 },
         { "field": "표준가격", "width": 140 },
@@ -415,7 +419,11 @@
         ]' 
         data-bind="source: gridSource"
         data-toolbar="#=toolbarTemplate()#"
-        data-filterable="{mode:'row'}">
+        data-filterable="{mode:'row', operators: {
+                string: { contains: 'contains' },
+                enums: { eq: 'eq' }
+            }
+        }" style="height: 420px">
     &lt;/div>
     &lt;div class="table-bottom">
         &lt;button data-role="button" class="gray-border">삭제&lt;/button>
