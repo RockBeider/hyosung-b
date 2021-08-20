@@ -94,7 +94,7 @@
                                 data-toolbar="#=toolbarTemplate()#"
                                 data-columns='[
                                     { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
-                                    { "title": "NO.", "width": 50 },
+                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
                                     { "field": "상품코드", "width": 90 },
                                     { "field": "상품명", "width": 170 },
                                     { "field": "어플리케이션", "width": 146 },

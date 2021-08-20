@@ -279,6 +279,9 @@ td .divide {
 * Title Group
 * ------------------------------
 */
+.contents-header {
+	margin-bottom: 20px;
+}
 .title-box {
 	display: flex;
 	align-items: center;
@@ -293,7 +296,7 @@ td .divide {
 	}
 	&.lg {
 		height: 32px;
-		margin: 0 0 20px;
+		// margin: 0 0 20px;
 	}
 	&.md {
 		min-height: 28px;

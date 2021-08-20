@@ -22,35 +22,43 @@
         </div>
 
         <div data-role="dialog"
-             data-title="변경결과"
+             data-title="월한도초과고객 확인"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
                             events: { close: onClose}" class="lg">
             <div class="content-group">
-                <div class="table-set">
+                <div class="search-control">
+                    <div class="form-group">
+                        <span class="label">출금월</span>
+                        <div class="form-set">
+                            <input data-role="datepicker" 
+                                data-format="yyyy/MM/dd"
+                                placeholder="yyyymmdd" 
+                                data-culture="ko-KR"
+                                data-footer="false"
+                                class="datepicker sm" /> 
+                        </div>
+                    </div>
+                </div>
+                <div class="table-content grid" id="viewModel_number">
                     <script type="text/x-kendo-template" id="toolbarTemplate_count">
                         <div class="title-box sm mt-0">
-                            <div class="left-group">
-                                <span class="amount-set">
-                                    <span class="amount current">10</span><span class="unit">건</span>
-                                </span>
-                            </div>
-                            <div class="right-group">
-                                <button class="k-button gray-border">동일사업자확인</button>
-                            </div>
+                            <span class="amount-set">
+                                <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                <span class="amount">26</span><span class="unit">건</span>
+                            </span>
                         </div>
                     </script>
-                    <div class="table-content grid" id="viewModel_number">
-                        <div data-role="grid" 
-                            data-sortable="true" 
-                            data-editable="true" 
-                            data-columns='[
-                            { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                            { "field": ""  }
-                            ]' 
-                            data-bind="source: gridSource"
-                            data-toolbar="#=toolbarTemplate_count()#">
-                        </div>
+                    <div data-role="grid" 
+                        data-sortable="true" 
+                        data-editable="true" 
+                        data-columns='[
+                        { "title": "NO.", "field": "NO", "width": 40, "attributes" : {"class": "text-center"}, "sortable": false  },
+                        { "field": "", "width": 40},
+                        { "field": ""}
+                        ]' 
+                        data-bind="source: gridSource"
+                        data-toolbar="#=toolbarTemplate_count()#" style="height: 420px">
                     </div>
                 </div>
             </div>

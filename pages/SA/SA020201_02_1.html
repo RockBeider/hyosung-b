@@ -65,7 +65,7 @@
                             data-toolbar="#=toolbarTemplate()#"
                             data-columns='[
                             { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 40, "template": "#=checkboxTemplate()#" },
-                            { "title": "NO.", "width": 40, "attributes" : {"class": "text-center"} },
+                            { "title": "NO.", "field": "NO", "width": 40, "attributes" : {"class": "text-center"}, "sortable": false },
                             { "field": "고객ID", "width": 90, "attributes" : {"class": "text-center"} },
                             { "field": "고객사명", "width": 140 },
                             { "field": "이메일"},
@@ -207,8 +207,8 @@
             notEditable:function(){
               return false;
             },
-            getById: function(Id){
-              return viewModel.products.get(Id);
+            getById: function(NO){
+              return viewModel.products.get(NO);
             }
         });
         kendo.bind($(".wrap"), viewModel);

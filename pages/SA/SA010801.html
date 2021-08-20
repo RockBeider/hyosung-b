@@ -91,7 +91,7 @@
                                     data-editable="true" 
                                     data-columns='[
                                     { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
-                                    { "title": "NO.", "width": 50 },
+                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
                                     { "field": ""  }
                                     ]' 
                                     data-bind="source: gridSource"
