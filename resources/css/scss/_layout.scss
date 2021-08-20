@@ -174,12 +174,63 @@ body {
 * container
 * ------------------------------
 */
-// .contents-body {
-// 	flex: 1;
-// 	> * {
-// 		height: 100%;
-// 	}
-// }
+.contents-body {
+	&.has-quickmenu {
+		display: flex;
+		padding-right: 160px;
+		// flex-direction: row;
+	} 
+}
+/*
+* ------------------------------
+* quick menu
+* ------------------------------
+*/
+.quick-menu {
+	position: absolute;
+    top: 166px;
+    left: 100%;
+	display: flex;
+	flex-direction: column;
+	min-width: 140px;
+	width: 140px;
+
+    margin-left: 173px;
+    z-index: 100;
+	.head {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 36px;
+		background: $accent;
+		color: $white;
+		font-weight: 500;
+	}
+	ul {
+		padding: 0 10px;
+		background: $white;
+		border: 1px solid $gray-e4;
+		border-top: none;
+		li {
+			@include font-size-sm;
+			display: flex;
+			align-items: center;
+			height: 40px;
+			border-bottom: 1px solid $gray-ef;
+			color: $gray-2;
+			white-space: nowrap;
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+	.foot {
+		margin-top: 8px;
+		.k-button {
+			height: 32px;
+		}
+	}
+}
 
 /*
 * ------------------------------
