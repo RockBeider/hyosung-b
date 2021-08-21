@@ -30,6 +30,36 @@
             width: 50%;
         }
     }
+    &.has-bar {
+        padding: 26px 20px;
+        > * { 
+            position: relative;
+            justify-content: center;
+            + *::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 1px;
+                height: 21px;
+                margin-top: -10px;
+                background: $gray-d;
+            }
+        }
+        .label {
+            @include font-size-menu;
+            color: $gray-2;
+            font-weight: 500;
+        }
+        .desc {
+            @include font-size-menu;
+        }
+        .unit {
+            margin-left: 2px;
+            color: $gray-7;
+        }
+    }
 	&.history {
 		flex-direction: column;
 		padding: 16px 20px;
@@ -50,6 +80,19 @@
 		+ .list-box {
 			margin-top: 8px;
 		}
+        &.row {
+            flex-direction: row;
+            .desc {
+                flex-direction: column;
+            }
+            .label.has-bar::after {
+                top: 6px;
+                margin-top: 0;
+            }
+            .list+.list {
+                margin-left: 30px;
+            }
+        }
 	}
     .list { display: flex; }
     .label {

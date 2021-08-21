@@ -1,0 +1,976 @@
+<div class="content-wrap">
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Popup(alert - no header)</p>
+        </div>
+        <div class="g-example-body ">
+            <button id="viewModel_AlertNohead_btn" data-role="button">Alert (No Heaer)</button>
+            <div data-role="dialog"
+                data-title=""
+                data-modal="false"
+                data-bind="dialogOpen: isEnabled,
+                            events: { close: onClose}" 
+                id="viewModel_AlertNohead"
+                class="alert">
+                <div class="content-group">
+                    <p class="main-text">
+                        삭제되었습니다.<br/>
+                        대기건 <span class="point">3</span>건의 가상계좌로<br/>
+                        전환되었습니다.</p>
+                    <div class="btn-box">
+                        <button data-role="button" class="">확인</button>
+                    </div>
+                </div>
+            </div>
+            <script> 
+                // Implement custom binder for the 'visible' configuration option
+                kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+                    init: function (widget, bindings, options) {
+                        kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+                        //헤더없을때
+                        $('.k-dialog').addClass('no-header'); 
+                        //높이
+                        if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                            $('.k-dialog').css({"height":"100%"});
+                        }
+                    },
+                    refresh: function () {
+                        var that = this;
+                        var value = that.bindings["dialogOpen"].get();
+                        var dialog = $(that.element).data("kendoDialog");
+                        if (value) {
+                            dialog.open();
+                        } else {
+                            dialog.close();
+                        }
+                        $('#viewModel_AlertNohead_btn').on('click', function() {
+                            dialog.open();
+                        })
+                    }
+                });
+
+                var viewModel_AlertNohead = kendo.observable({
+                    isVisible: true,
+                    isClosable: true,
+                    isEnabled: false,
+                    onClose: function (e) {
+                        this.set("isVisible", false);
+                        this.set("isEnabled", true);
+                    },
+                    show: function (e) {
+                        this.set("isVisible", true);
+                        this.set("isEnabled", false);
+                    },
+                });
+                kendo.bind($("#viewModel_AlertNohead"), viewModel_AlertNohead);
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;button id="viewModel_AlertNohead_btn" data-role="button">Alert (No Heaer)&lt;/button>
+&lt;div data-role="dialog"
+    data-title=""
+    data-modal="false"
+    data-bind="dialogOpen: isEnabled,
+                events: { close: onClose}" 
+    id="viewModel_AlertNohead"
+    class="alert">
+    &lt;div class="content-group">
+        &lt;p class="main-text">
+            삭제되었습니다.&lt;br/>
+            대기건 &lt;span class="point">3&lt;/span>건의 가상계좌로&lt;br/>
+            전환되었습니다.&lt;/p>
+        &lt;div class="btn-box">
+            &lt;button data-role="button" class="">확인&lt;/button>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;script> 
+    // Implement custom binder for the 'visible' configuration option
+    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            //헤더없을때
+            $('.k-dialog').addClass('no-header'); 
+            //높이
+            if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                $('.k-dialog').css({"height":"100%"});
+            }
+        },
+        refresh: function () {
+            var that = this;
+            var value = that.bindings["dialogOpen"].get();
+            var dialog = $(that.element).data("kendoDialog");
+            if (value) {
+                dialog.open();
+            } else {
+                dialog.close();
+            }
+            $('#viewModel_AlertNohead_btn').on('click', function() {
+                dialog.open();
+            })
+        }
+    });
+
+    var viewModel_AlertNohead = kendo.observable({
+        isVisible: true,
+        isClosable: true,
+        isEnabled: false,
+        onClose: function (e) {
+            this.set("isVisible", false);
+            this.set("isEnabled", true);
+        },
+        show: function (e) {
+            this.set("isVisible", true);
+            this.set("isEnabled", false);
+        },
+    });
+    kendo.bind($("#viewModel_AlertNohead"), viewModel_AlertNohead);
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Popup(alert - 320)</p>
+        </div>
+        <div class="g-example-body ">
+            <button id="viewModel_Alert_btn" data-role="button">Alert</button>
+            <div data-role="dialog"
+                data-title="일괄수정 확인"
+                data-modal="false"
+                data-bind="dialogOpen: isEnabled,
+                        events: { close: onClose}" 
+                id="viewModel_Alert"
+                class="alert">
+                <div class="content-group">
+                    <p class="main-text"><span class="point">N</span>건의 서비스상태를<br/>서비스중지로 수정하시겠습니까?</p>
+                    <div class="btn-box">
+                        <button data-role="button" class="">확인</button>
+                    </div>
+                </div>
+            </div>
+            <script> 
+                // Implement custom binder for the 'visible' configuration option
+                kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+                    init: function (widget, bindings, options) {
+                        kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+                        //높이
+                        if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                            $('.k-dialog').css({"height":"100%"});
+                        }
+                    },
+                    refresh: function () {
+                        var that = this;
+                        var value = that.bindings["dialogOpen"].get();
+                        var dialog = $(that.element).data("kendoDialog");
+                        if (value) {
+                            dialog.open();
+                        } else {
+                            dialog.close();
+                        }
+                        $('#viewModel_Alert_btn').on('click', function() {
+                            dialog.open();
+                        })
+                    }
+                });
+
+                var viewModel_Alert = kendo.observable({
+                    isVisible: true,
+                    isClosable: true,
+                    isEnabled: false,
+                    onClose: function (e) {
+                        this.set("isVisible", false);
+                        this.set("isEnabled", true);
+                    },
+                    show: function (e) {
+                        this.set("isVisible", true);
+                        this.set("isEnabled", false);
+                    },
+                });
+                kendo.bind($("#viewModel_Alert"), viewModel_Alert);
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;button id="viewModel_Alert_btn" data-role="button">Alert&lt;/button>
+&lt;div data-role="dialog"
+    data-title="일괄수정 확인"
+    data-modal="false"
+    data-bind="dialogOpen: isEnabled,
+            events: { close: onClose}" 
+    id="viewModel_Alert"
+    class="alert">
+    &lt;div class="content-group">
+        &lt;p class="main-text">&lt;span class="point">N&lt;/span>건의 서비스상태를&lt;br/>서비스중지로 수정하시겠습니까?&lt;/p>
+        &lt;div class="btn-box">
+            &lt;button data-role="button" class="">확인&lt;/button>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;script> 
+    // Implement custom binder for the 'visible' configuration option
+    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            //높이
+            if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                $('.k-dialog').css({"height":"100%"});
+            }
+        },
+        refresh: function () {
+            var that = this;
+            var value = that.bindings["dialogOpen"].get();
+            var dialog = $(that.element).data("kendoDialog");
+            if (value) {
+                dialog.open();
+            } else {
+                dialog.close();
+            }
+            $('#viewModel_Alert_btn').on('click', function() {
+                dialog.open();
+            })
+        }
+    });
+
+    var viewModel_Alert = kendo.observable({
+        isVisible: true,
+        isClosable: true,
+        isEnabled: false,
+        onClose: function (e) {
+            this.set("isVisible", false);
+            this.set("isEnabled", true);
+        },
+        show: function (e) {
+            this.set("isVisible", true);
+            this.set("isEnabled", false);
+        },
+    });
+    kendo.bind($("#viewModel_Alert"), viewModel_Alert);
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Popup(sm - 480)</p>
+        </div>
+        <div class="g-example-body ">
+            <button id="viewModel_popupSM_btn" data-role="button">SM Size</button>
+            <div data-role="dialog"
+                data-title="고객사 검색"
+                data-modal="false"
+                data-bind="dialogOpen: isEnabled,
+                    events: { close: onClose}" 
+                id="viewModel_popupSM"
+                class="sm">
+                <div class="content-group">
+                    <div class="search-control">
+                        <div class="form-set">
+                            <div class="h-checkbox">
+                                <input type="radio" id="radio1-1" name="radio" />
+                                <label for="radio1-1"><span>고객사명</span></label>
+                            </div>
+                            <div class="h-checkbox">
+                                <input type="radio" id="radio1-2" name="radio" checked="checked" />
+                                <label for="radio1-2"><span>고객사ID</span></label>
+                            </div>
+                        </div>
+                        <div class="form-set flex-1">
+                            <input type="text" class="h-input" value="녹즙">
+                        </div>
+                        <button data-role="button" class="blue-border">검색</button>
+                    </div>
+                    <div class="table-content grid" id="viewModel_grid">
+                        <div data-role="grid"
+                            data-columns='[
+                            { "field": "고객사명", "width": 250, "attributes" : {"class": "text-left"}},
+                            { "field": "고객사ID", "attributes" : {"class": "text-left"} }
+                            ]' 
+                            data-bind="source: gridSource"
+                            class="text-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script> 
+                // Implement custom binder for the 'visible' configuration option
+                kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+                    init: function (widget, bindings, options) {
+                        kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+                        //높이
+                        if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                            $('.k-dialog').css({"height":"100%"});
+                        }
+                    },
+                    refresh: function () {
+                        var that = this;
+                        var value = that.bindings["dialogOpen"].get();
+                        var dialog = $(that.element).data("kendoDialog");
+                        if (value) {
+                            dialog.open();
+                        } else {
+                            dialog.close();
+                        }
+                        $('#viewModel_popupSM_btn').on('click', function() {
+                            dialog.open();
+                        })
+                    }
+                });
+
+                var viewModel_popupLG = kendo.observable({
+                    isVisible: true,
+                    isClosable: true,
+                    isEnabled: false,
+                    onClose: function (e) {
+                        this.set("isVisible", false);
+                        this.set("isEnabled", true);
+                    },
+                    show: function (e) {
+                        this.set("isVisible", true);
+                        this.set("isEnabled", false);
+                    },
+                });
+                kendo.bind($("#viewModel_popupSM"), viewModel_popupLG);
+
+                //grid
+                var viewModel_grid = kendo.observable({
+                    gridSource: [
+                        { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+                        { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+                        { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+                        { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+                    ],
+                    displayGridSource: function() {
+                        return stringify(this.get("gridSource").toJSON());
+                    },
+                });
+                kendo.bind($("#viewModel_grid"), viewModel_grid);
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;button id="viewModel_popupSM_btn" data-role="button">SM Size&lt;/button>
+&lt;div data-role="dialog"
+    data-title="고객사 검색"
+    data-modal="false"
+    data-bind="dialogOpen: isEnabled,
+        events: { close: onClose}" 
+    id="viewModel_popupSM"
+    class="sm">
+    &lt;div class="content-group">
+        &lt;div class="search-control">
+            &lt;div class="form-set">
+                &lt;div class="h-checkbox">
+                    &lt;input type="radio" id="radio1-1" name="radio" />
+                    &lt;label for="radio1-1">&lt;span>고객사명&lt;/span>&lt;/label>
+                &lt;/div>
+                &lt;div class="h-checkbox">
+                    &lt;input type="radio" id="radio1-2" name="radio" checked="checked" />
+                    &lt;label for="radio1-2">&lt;span>고객사ID&lt;/span>&lt;/label>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="form-set flex-1">
+                &lt;input type="text" class="h-input" value="녹즙">
+            &lt;/div>
+            &lt;button data-role="button" class="blue-border">검색&lt;/button>
+        &lt;/div>
+        &lt;div class="table-content grid" id="viewModel_grid">
+            &lt;div data-role="grid"
+                data-columns='[
+                { "field": "고객사명", "width": 250, "attributes" : {"class": "text-left"}},
+                { "field": "고객사ID", "attributes" : {"class": "text-left"} }
+                ]' 
+                data-bind="source: gridSource"
+                class="text-center">
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;script> 
+    // Implement custom binder for the 'visible' configuration option
+    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            //높이
+            if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                $('.k-dialog').css({"height":"100%"});
+            }
+        },
+        refresh: function () {
+            var that = this;
+            var value = that.bindings["dialogOpen"].get();
+            var dialog = $(that.element).data("kendoDialog");
+            if (value) {
+                dialog.open();
+            } else {
+                dialog.close();
+            }
+            $('#viewModel_popupSM_btn').on('click', function() {
+                dialog.open();
+            })
+        }
+    });
+
+    var viewModel_popupLG = kendo.observable({
+        isVisible: true,
+        isClosable: true,
+        isEnabled: false,
+        onClose: function (e) {
+            this.set("isVisible", false);
+            this.set("isEnabled", true);
+        },
+        show: function (e) {
+            this.set("isVisible", true);
+            this.set("isEnabled", false);
+        },
+    });
+    kendo.bind($("#viewModel_popupSM"), viewModel_popupLG);
+
+    //grid
+    var viewModel_grid = kendo.observable({
+        gridSource: [
+            { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+            { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+            { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+            { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+        ],
+        displayGridSource: function() {
+            return stringify(this.get("gridSource").toJSON());
+        },
+    });
+    kendo.bind($("#viewModel_grid"), viewModel_grid);
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Popup(md - 720)</p>
+        </div>
+        <div class="g-example-body ">
+            <button id="viewModel_popupMD_btn" data-role="button">MD Size</button>
+            <div data-role="dialog"
+                data-title="회원정보 해지"
+                data-modal="false"
+                data-bind="dialogOpen: isEnabled,
+                            events: { close: onClose}"
+                id="viewModel_popupMD"
+                class="md">
+                <div class="content-group">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="80px">
+                                <col width="*">
+                                <col width="80px">
+                                <col width="*">
+                                <col width="80px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">사업자번호</th>
+                                    <td>123****5678</td>
+                                    <th scope="row">계좌번호</th>
+                                    <td>107****123445</td>
+                                    <th scope="row">은행명</th>
+                                    <td>산업은행</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-set">
+                        <div class="alert-title">해당 회원을 해지하시겠습니까?</div>
+                        <ul class="list-box gray-box half has-bar">
+                            <li class="list">
+                                <span class="label">출금 대기</span>
+                                <span class="desc"><span class="point">3</span><span class="unit">건</span></span>
+                            </li>
+                            <li class="list">
+                                <span class="label">출금중</span>
+                                <span class="desc"><span class="point">2</span><span class="unit">건</span></span>
+                            </li>
+                        </ul>     
+                        <ul class="pop-guide">
+                            <li class="list">* 해지와 동시에 출금대기건은 삭제되며 출금중인 건은 정상적으로 처리됩니다.</li>
+                        </ul>
+                    </div>
+                    <div class="btn-box bottom justify-content-between">
+                        <button data-role="button" class="gray-border">취소</button>
+                        <div class="btn-box mt-0">
+                            <button data-role="button" class="light-blue">해지</button>
+                            <button data-role="button" class="">고액출금 삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script> 
+                // Implement custom binder for the 'visible' configuration option
+                kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+                    init: function (widget, bindings, options) {
+                        kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+                        //높이
+                        if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                            $('.k-dialog').css({"height":"100%"});
+                        }
+                    },
+                    refresh: function () {
+                        var that = this;
+                        var value = that.bindings["dialogOpen"].get();
+                        var dialog = $(that.element).data("kendoDialog");
+                        if (value) {
+                            dialog.open();
+                        } else {
+                            dialog.close();
+                        }
+                        $('#viewModel_popupMD_btn').on('click', function() {
+                            dialog.open();
+                        })
+                    }
+                });
+
+                var viewModel_popupLG = kendo.observable({
+                    isVisible: true,
+                    isClosable: true,
+                    isEnabled: false,
+                    onClose: function (e) {
+                        this.set("isVisible", false);
+                        this.set("isEnabled", true);
+                    },
+                    show: function (e) {
+                        this.set("isVisible", true);
+                        this.set("isEnabled", false);
+                    },
+                });
+                kendo.bind($("#viewModel_popupMD"), viewModel_popupLG);
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;button id="viewModel_popupMD_btn" data-role="button">MD Size&lt;/button>
+&lt;div data-role="dialog"
+    data-title="회원정보 해지"
+    data-modal="false"
+    data-bind="dialogOpen: isEnabled,
+                events: { close: onClose}"
+    id="viewModel_popupMD"
+    class="md">
+    &lt;div class="content-group">
+        &lt;div class="table">
+            &lt;table>
+                &lt;colgroup>
+                    &lt;col width="80px">
+                    &lt;col width="*">
+                    &lt;col width="80px">
+                    &lt;col width="*">
+                    &lt;col width="80px">
+                    &lt;col width="*">
+                &lt;/colgroup>
+                &lt;tbody>
+                    &lt;tr>
+                        &lt;th scope="row">사업자번호&lt;/th>
+                        &lt;td>123****5678&lt;/td>
+                        &lt;th scope="row">계좌번호&lt;/th>
+                        &lt;td>107****123445&lt;/td>
+                        &lt;th scope="row">은행명&lt;/th>
+                        &lt;td>산업은행&lt;/td>
+                    &lt;/tr>
+                &lt;/tbody>
+            &lt;/table>
+        &lt;/div>
+        &lt;div class="table-set">
+            &lt;div class="alert-title">해당 회원을 해지하시겠습니까?&lt;/div>
+            &lt;ul class="list-box gray-box half has-bar">
+                &lt;li class="list">
+                    &lt;span class="label">출금 대기&lt;/span>
+                    &lt;span class="desc">&lt;span class="point">3&lt;/span>&lt;span class="unit">건&lt;/span>&lt;/span>
+                &lt;/li>
+                &lt;li class="list">
+                    &lt;span class="label">출금중&lt;/span>
+                    &lt;span class="desc">&lt;span class="point">2&lt;/span>&lt;span class="unit">건&lt;/span>&lt;/span>
+                &lt;/li>
+            &lt;/ul>     
+            &lt;ul class="pop-guide">
+                &lt;li class="list">* 해지와 동시에 출금대기건은 삭제되며 출금중인 건은 정상적으로 처리됩니다.&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+        &lt;div class="btn-box bottom justify-content-between">
+            &lt;button data-role="button" class="gray-border">취소&lt;/button>
+            &lt;div class="btn-box mt-0">
+                &lt;button data-role="button" class="light-blue">해지&lt;/button>
+                &lt;button data-role="button" class="">고액출금 삭제&lt;/button>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;script> 
+    // Implement custom binder for the 'visible' configuration option
+    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            //높이
+            if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                $('.k-dialog').css({"height":"100%"});
+            }
+        },
+        refresh: function () {
+            var that = this;
+            var value = that.bindings["dialogOpen"].get();
+            var dialog = $(that.element).data("kendoDialog");
+            if (value) {
+                dialog.open();
+            } else {
+                dialog.close();
+            }
+            $('#viewModel_popupMD_btn').on('click', function() {
+                dialog.open();
+            })
+        }
+    });
+
+    var viewModel_popupLG = kendo.observable({
+        isVisible: true,
+        isClosable: true,
+        isEnabled: false,
+        onClose: function (e) {
+            this.set("isVisible", false);
+            this.set("isEnabled", true);
+        },
+        show: function (e) {
+            this.set("isVisible", true);
+            this.set("isEnabled", false);
+        },
+    });
+    kendo.bind($("#viewModel_popupMD"), viewModel_popupLG);
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Popup(lg -960)</p>
+        </div>
+        <div class="g-example-body">
+            <button id="viewModel_popupLG_btn" data-role="button">LG Size</button>
+            <div data-role="dialog"
+                data-title="해지보류등록"
+                data-modal="false"
+                data-bind="dialogOpen: isEnabled,
+                events: { close: onClose}" 
+                id="viewModel_popupLG"
+                class="lg">
+                <div class="content-group">
+                    <div class="search-control">
+                        <div class="form-group">
+                            <span class="label">고객ID 검색</span>
+                            <div class="form-set">
+                                <div class="input-set search lg">
+                                    <i class="h-ico sm search">검색</i>
+                                    <input type="text" class="h-input" placeholder="입력해주세요">
+                                </div>
+                            </div>
+                            <button data-role="button" class="blue-border">검색</button>
+                        </div>
+                    </div>
+                    <div class="table-set">
+                        <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                            <div class="title-box sm">
+                                <div class="left-group">
+                                    <span class="amount-set">
+                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                        <span class="amount">26</span><span class="unit">건</span>
+                                    </span>
+                                </div>
+                                <div class="right-group">
+                                    <div class="form-group">
+                                        <div class="form-set">
+                                            <span class="form-label">요청월</span>
+                                            <input data-role="datepicker" 
+                                                data-format="yyyy/MM"
+                                                placeholder="yyyymm" 
+                                                data-culture="ko-KR"
+                                                data-footer="false"
+                                                class="datepicker sm" /> 
+                                            <button class="k-button gray-border">일괄적용</button>
+                                        </div>
+                                        <div class="form-set">
+                                            <select id="dropdownlist" data-role="dropdownlist" data-value="해지보류상세내용" data-option-label="해지보류상세내용" class="md">
+                                                <option value="1">온라인</option>
+                                                <option value="2">오프라인</option>
+                                            </select>
+                                            <input type="text" class="h-input" placeholder="" class="lg"/>
+                                            <button class="k-button gray-border">일괄입력</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </script>
+                        <script type="text/x-kendo-template" id="checkboxTemplate">
+                            <div class="h-checkbox no-label">
+                                <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                <label for="checkbox-nolabel"></label> 
+                            </div>
+                        </script>
+                        <div class="table-content grid" id="viewModel_number">
+                            <div data-role="grid" 
+                                data-sortable="true" 
+                                data-editable="true" 
+                                data-columns='[
+                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                { "field": ""  }
+                                ]' 
+                                data-bind="source: gridSource"
+                                data-toolbar="#=toolbarTemplate_count()#"
+                                style="height: 380px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-box bottom">
+                        <button data-role="button"><span>등록</span></button>
+                    </div>
+                </div>
+            </div>
+            <script> 
+                // Implement custom binder for the 'visible' configuration option
+                kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+                    init: function (widget, bindings, options) {
+                        kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+                        //높이
+                        if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                            $('.k-dialog').css({"height":"100%"});
+                        }
+                    },
+                    refresh: function () {
+                        var that = this;
+                        var value = that.bindings["dialogOpen"].get();
+                        var dialog = $(that.element).data("kendoDialog");
+                        if (value) {
+                            dialog.open();
+                        } else {
+                            dialog.close();
+                        }
+                        $('#viewModel_popupLG_btn').on('click', function() {
+                            dialog.open();
+                        })
+                    }
+                });
+
+                var viewModel_popupLG = kendo.observable({
+                    isVisible: true,
+                    isClosable: true,
+                    isEnabled: false,
+                    onClose: function (e) {
+                        this.set("isVisible", false);
+                        this.set("isEnabled", true);
+                    },
+                    show: function (e) {
+                        this.set("isVisible", true);
+                        this.set("isEnabled", false);
+                    },
+                });
+                kendo.bind($("#viewModel_popupLG"), viewModel_popupLG);
+                //grid
+                var viewModel_number = kendo.observable({
+                    gridSource: [
+                        { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"4",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"5",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"6",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"7",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"8",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                        { "NO":"9",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    ],
+                    displayGridSource: function() {
+                        return stringify(this.get("gridSource").toJSON());
+                    },
+                });
+                kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+                setTimeout(function(){
+                    kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
+                    kendo.bind($(".datepicker"), {}); //템플릿 안 드롭다운
+                }, 100)
+                function toolbarTemplate_count() {
+                    var template = kendo.template($('#toolbarTemplate_count').html());
+                    var result = template({});
+                    return result
+                }
+                function checkboxTemplate() {
+                    var template = kendo.template($('#checkboxTemplate').html());
+                    var result = template({});
+                    return result
+                }
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;button id="viewModel_popupLG_btn" data-role="button">LG Size&lt;/button>
+&lt;div data-role="dialog"
+    data-title="해지보류등록"
+    data-modal="false"
+    data-bind="dialogOpen: isEnabled,
+    events: { close: onClose}" 
+    id="viewModel_popupLG"
+    class="lg">
+    &lt;div class="content-group">
+        &lt;div class="search-control">
+            &lt;div class="form-group">
+                &lt;span class="label">고객ID 검색&lt;/span>
+                &lt;div class="form-set">
+                    &lt;div class="input-set search lg">
+                        &lt;i class="h-ico sm search">검색&lt;/i>
+                        &lt;input type="text" class="h-input" placeholder="입력해주세요">
+                    &lt;/div>
+                &lt;/div>
+                &lt;button data-role="button" class="blue-border">검색&lt;/button>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="table-set">
+            &lt;script type="text/x-kendo-template" id="toolbarTemplate_count">
+                &lt;div class="title-box sm">
+                    &lt;div class="left-group">
+                        &lt;span class="amount-set">
+                            &lt;span class="amount current">1&lt;/span>&lt;span class="unit">건&lt;/span>&lt;span class="dash">/&lt;/span>
+                            &lt;span class="amount">26&lt;/span>&lt;span class="unit">건&lt;/span>
+                        &lt;/span>
+                    &lt;/div>
+                    &lt;div class="right-group">
+                        &lt;div class="form-group">
+                            &lt;div class="form-set">
+                                &lt;span class="form-label">요청월&lt;/span>
+                                &lt;input data-role="datepicker" 
+                                    data-format="yyyy/MM"
+                                    placeholder="yyyymm" 
+                                    data-culture="ko-KR"
+                                    data-footer="false"
+                                    class="datepicker sm" /> 
+                                &lt;button class="k-button gray-border">일괄적용&lt;/button>
+                            &lt;/div>
+                            &lt;div class="form-set">
+                                &lt;select id="dropdownlist" data-role="dropdownlist" data-value="해지보류상세내용" data-option-label="해지보류상세내용" class="md">
+                                    &lt;option value="1">온라인&lt;/option>
+                                    &lt;option value="2">오프라인&lt;/option>
+                                &lt;/select>
+                                &lt;input type="text" class="h-input" placeholder="" class="lg"/>
+                                &lt;button class="k-button gray-border">일괄입력&lt;/button>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/script>
+            &lt;script type="text/x-kendo-template" id="checkboxTemplate">
+                &lt;div class="h-checkbox no-label">
+                    &lt;input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                    &lt;label for="checkbox-nolabel">&lt;/label> 
+                &lt;/div>
+            &lt;/script>
+            &lt;div class="table-content grid" id="viewModel_number">
+                &lt;div data-role="grid" 
+                    data-sortable="true" 
+                    data-editable="true" 
+                    data-columns='[
+                    { "title": "&lt;div class=h-checkbox>&lt;input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox />&lt;label for=checkbox-nolabel>&lt;/label>&lt;/div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                    { "field": ""  }
+                    ]' 
+                    data-bind="source: gridSource"
+                    data-toolbar="#=toolbarTemplate_count()#"
+                    style="height: 380px;">
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="btn-box bottom">
+            &lt;button data-role="button">&lt;span>등록&lt;/span>&lt;/button>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;script> 
+    // Implement custom binder for the 'visible' configuration option
+    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            //높이
+            if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                $('.k-dialog').css({"height":"100%"});
+            }
+        },
+        refresh: function () {
+            var that = this;
+            var value = that.bindings["dialogOpen"].get();
+            var dialog = $(that.element).data("kendoDialog");
+            if (value) {
+                dialog.open();
+            } else {
+                dialog.close();
+            }
+            $('#viewModel_popupLG_btn').on('click', function() {
+                dialog.open();
+            })
+        }
+    });
+
+    var viewModel_popupLG = kendo.observable({
+        isVisible: true,
+        isClosable: true,
+        isEnabled: false,
+        onClose: function (e) {
+            this.set("isVisible", false);
+            this.set("isEnabled", true);
+        },
+        show: function (e) {
+            this.set("isVisible", true);
+            this.set("isEnabled", false);
+        },
+    });
+    kendo.bind($("#viewModel_popupLG"), viewModel_popupLG);
+    //grid
+    var viewModel_number = kendo.observable({
+        gridSource: [
+            { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"4",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"5",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"6",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"7",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"8",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+            { "NO":"9",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+        ],
+        displayGridSource: function() {
+            return stringify(this.get("gridSource").toJSON());
+        },
+    });
+    kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+    setTimeout(function(){
+        kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
+        kendo.bind($(".datepicker"), {}); //템플릿 안 드롭다운
+    }, 100)
+    function toolbarTemplate_count() {
+        var template = kendo.template($('#toolbarTemplate_count').html());
+        var result = template({});
+        return result
+    }
+    function checkboxTemplate() {
+        var template = kendo.template($('#checkboxTemplate').html());
+        var result = template({});
+        return result
+    }
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+
+</div>

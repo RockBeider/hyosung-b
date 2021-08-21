@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">공지사항 관리</h2>
+                            <h2 class="main-title">이체관리</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -36,8 +36,8 @@
                                 data-editable=false,
                                 data-navigational=true,
                                 data-items='[
-                            { type:"rootitem", href: "", text: "서비스품질", showText: true },
-                            { type:"item", href: "", text: "공지사항 관리", showText: true}
+                            { type:"rootitem", href: "", text: "정산", showText: true },
+                            { type:"item", href: "", text: "이체관리", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -48,22 +48,19 @@
                     <div class="table-group">
                         <div class="search-control">
                             <div class="form-group">
-                                <span class="label">검색항목</span>
+                                <span class="label">지급일</span>
                                 <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="제목" data-option-label="제목">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                    <div class="input-set search lg">
-                                        <i class="h-ico sm search">검색</i>
-                                        <input type="text" class="h-input" placeholder="입력해주세요">
-                                    </div>
+                                    <input data-role="datepicker" 
+                                        data-format="yyyy/MM/dd"
+                                        placeholder="yyyymmdd" 
+                                        data-culture="ko-KR"
+                                        data-footer="false"
+                                        class="datepicker sm">
                                 </div>
                             </div>
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                         </div>
                         <div class="table-set">
-                            <!-- toolbar template -->
                             <script type="text/x-kendo-template" class="toolbarTemplate">
                                 <div class="title-box sm">
                                     <div class="left-group">
@@ -74,34 +71,32 @@
                                     </div>
                                     <div class="right-group">
                                         <div class="btn-box">
-                                            <button role="button" class="k-button"><span>공지안내발송</span></button>
-                                            <button role="button" class="k-button"><span>등록</span></button>
-                                            <button role="button" class="k-button green"><span>엑셀</span></button>
+                                            <button role="button" class="k-button"><span>이체등록</span></button>
+                                            <button role="button" class="k-button"><span>결제상신</span></button>
                                         </div>
                                     </div>
                                 </div>
                             </script>
-                            <!-- checkbox template -->
                             <script type="text/x-kendo-template" class="checkboxTemplate">
                                 <div class="h-checkbox no-label">
                                     <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
                                     <label for="checkbox-nolabel"></label> 
                                 </div>
                             </script>
-                            <div class="table-content grid" id="viewModel_grid_sort">
+                            <div class="table-content grid has-bottom">
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
-                                    data-toolbar="#=toolbarTemplate()#"
                                     data-columns='[
                                     { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
                                     { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                   
-                                    { "field": "기타"}
-                                ]' data-bind="source: gridSource">
+                                    { "field": ""  }
+                                    ]' 
+                                    data-bind="source: gridSource"
+                                    data-toolbar="#=toolbarTemplate()#">
                                 </div>
                                 <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
+                                    <button data-role="button" class="light-blue">이체취소</button>
                                 </div>
                             </div>
                         </div>
@@ -119,29 +114,28 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-      
-        var viewModel_grid_sort = kendo.observable({
-            gridSource: [
-                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
-                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
-                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
-            ],
-            displayGridSource: function() {
-                return stringify(this.get("gridSource").toJSON());
-            },
-        });
-        kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
-        kendo.bind($(".wrap"), {});
-        function toolbarTemplate() {
-            var template = kendo.template($('.toolbarTemplate').html()); 
-            var result = template({});
-            return result
-        }
-        function checkboxTemplate() {
-            var template = kendo.template($('.checkboxTemplate').html());
-            var result = template({});
-            return result
-        }
+            var viewModel = kendo.observable({
+                gridSource: [
+                    { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+            });
+            kendo.bind($(".wrap"), viewModel);
+            
+            function toolbarTemplate() {
+                var template = kendo.template($('.toolbarTemplate').html());
+                var result = template({});
+                return result
+            }
+            function checkboxTemplate() {
+                var template = kendo.template($('.checkboxTemplate').html());
+                var result = template({});
+                return result
+            }
     </script>
 </body>
 

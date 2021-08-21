@@ -22,26 +22,18 @@
         </div>
 
         <div data-role="dialog"
-             data-title="구비서류확인"
+             data-title="해지보류등록"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
                             events: { close: onClose}" class="lg">
             <div class="content-group">
                 <div class="search-control">
                     <div class="form-group">
-                        <span class="label">검색항목</span>
+                        <span class="label">고객ID 검색</span>
                         <div class="form-set">
-                            <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
-                                <option value="1">온라인</option>
-                                <option value="2">오프라인</option>
-                            </select>
                             <div class="input-set search lg">
                                 <i class="h-ico sm search">검색</i>
                                 <input type="text" class="h-input" placeholder="입력해주세요">
-                            </div>
-                            <div class="h-checkbox ml-20">
-                                <input type="checkbox" id="checkbox1-1" name="checkbox" />
-                                <label for="checkbox1-1"><span>구비서류미완료만조회</span></label>
                             </div>
                         </div>
                         <button data-role="button" class="blue-border">검색</button>
@@ -49,10 +41,41 @@
                 </div>
                 <div class="table-set">
                     <script type="text/x-kendo-template" id="toolbarTemplate_count">
-                        <div class="title-box sm mt-0">
-                            <span class="amount-set">
-                                <span class="amount current">1</span><span class="unit">건</span>
-                            </span>
+                        <div class="title-box sm">
+                            <div class="left-group">
+                                <span class="amount-set">
+                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                    <span class="amount">26</span><span class="unit">건</span>
+                                </span>
+                            </div>
+                            <div class="right-group">
+                                <div class="form-group">
+                                    <div class="form-set">
+                                        <span class="form-label">요청월</span>
+                                        <input data-role="datepicker" 
+                                            data-format="yyyy/MM"
+                                            placeholder="yyyymm" 
+                                            data-culture="ko-KR"
+                                            data-footer="false"
+                                            class="datepicker sm" /> 
+                                        <button class="k-button gray-border">일괄적용</button>
+                                    </div>
+                                    <div class="form-set">
+                                        <select id="dropdownlist" data-role="dropdownlist" data-value="해지보류상세내용" data-option-label="해지보류상세내용" class="md">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                        <input type="text" class="h-input" placeholder="" class="lg"/>
+                                        <button class="k-button gray-border">일괄입력</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <script type="text/x-kendo-template" id="checkboxTemplate">
+                        <div class="h-checkbox no-label">
+                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                            <label for="checkbox-nolabel"></label> 
                         </div>
                     </script>
                     <div class="table-content grid" id="viewModel_number">
@@ -60,17 +83,18 @@
                             data-sortable="true" 
                             data-editable="true" 
                             data-columns='[
+                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
                             { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
                             { "field": ""  }
                             ]' 
                             data-bind="source: gridSource"
                             data-toolbar="#=toolbarTemplate_count()#"
-                            style="height: 420px;">
+                            style="height: 380px;">
                         </div>
                     </div>
                 </div>
                 <div class="btn-box bottom">
-                    <button data-role="button" class="gray-border">기존현황삭제</button>
+                    <button data-role="button"><span>등록</span></button>
                 </div>
             </div>
         </div>
@@ -133,15 +157,23 @@
                 { "NO":"7",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
                 { "NO":"8",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
                 { "NO":"9",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                { "NO":"10",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
             ],
             displayGridSource: function() {
                 return stringify(this.get("gridSource").toJSON());
             },
         });
         kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        setTimeout(function(){
+            kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
+            kendo.bind($(".datepicker"), {}); //템플릿 안 드롭다운
+        }, 100)
         function toolbarTemplate_count() {
             var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('#checkboxTemplate').html());
             var result = template({});
             return result
         }

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-modal="false"
+             data-title="고객차단등록"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="lg">
+            <div class="content-group">
+
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col width="110px">
+                            <col width="*">
+                            <col width="110px">
+                            <col width="*">
+                            <col width="110px">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">고객사명</th>
+                                <td><input type="text" class="h-input" placeholder="" value="효성에프엠에스" /></td>
+                                <th scope="row">사업자번호</th>
+                                <td><input type="text" class="h-input" placeholder="" value="" /></td>
+                                <th scope="row">대표자명</th>
+                                <td><input type="text" class="h-input" placeholder="" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">전화번호</th>
+                                <td><input type="text" class="h-input" placeholder="" value="효성에프엠에스" /></td>
+                                <th scope="row">휴대전화</th>
+                                <td><input type="text" class="h-input" placeholder="" value="" /></td>
+                                <th scope="row">대표자 생년월일</th>
+                                <td><input type="text" class="h-input" placeholder="" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">관심 분야</th>
+                                <td colspan="5">
+                                    <div class="form-set">
+                                        <input type="text" class="h-input xsm" placeholder="검색해주세요" value="" disabled="disabled"/>
+                                        <input type="text" class="h-input" placeholder="기본주소" value="" disabled="disabled"/>
+                                        <input type="text" class="h-input" placeholder="상세주소" value="" />
+                                        <button data-role="button" class="gray-border">주소찾기</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사업장주소</th>
+                                <td>
+                                    <select data-role="dropdownlist" data-value="금융사고다발고객" data-option-label="금융사고다발고객">
+                                        <option value="1">금융사고다발고객</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </td>
+                                <th scope="row">차단여부</th>
+                                <td>
+                                    <select data-role="dropdownlist" data-value="오픈차단" data-option-label="오픈차단">
+                                        <option value="1">오픈차단</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </td>
+                                <th scope="row">공개여부</th>
+                                <td>
+                                    <select data-role="dropdownlist" data-value="비공개" data-option-label="비공개">
+                                        <option value="1">비공개</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사유</th>
+                                <td colspan="5">
+                                    <textarea data-role="textarea"
+                                        data-format="c"
+                                        data-min="0"
+                                        data-max="100"
+                                        data-rows="4"
+                                        data-placeholder="" class="sm"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 차단고객리스트 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <div class="left-group">
+                            <h2 class="sub-title">차단고객리스트</h2>
+                        </div>
+                    </div>    
+                    <div class="table text-center">
+                        <table>
+                            <colgroup>
+                                <col width="*">
+                                <col width="*">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">고객사명</th>
+                                    <th scope="col">고객ID</th>
+                                    <th scope="col">차단여부</th>
+                                    <th scope="col">오픈여부</th>
+                                    <th scope="col">등록일</th>
+                                    <th scope="col">수정일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>효성에프엠에스</td>
+                                    <td>hyosungfms</td>
+                                    <td>차단</td>
+                                    <td>오픈전</td>
+                                    <td>2021/04/02</td>
+                                    <td>2021/06/02</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //차단고객리스트 -->
+                
+                <!-- 상담이력 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <div class="left-group">
+                            <h2 class="sub-title">상담이력</h2>
+                        </div>
+                    </div>    
+                    <div class="list-wrap">
+                        <div class="list-box history row">
+                            <span class="badge pink">차단</span>
+                            <div class="list">
+                                <span class="label has-bar">등록일</span>
+                                <span class="desc">2021/05/20 14:29:57</span>
+                            </div>
+                            <div class="list">
+                                <span class="label has-bar">사유</span>
+                                <span class="desc">차단사유입니다.<br/>
+                                    차단사유입니다.<br/>
+                                    차단사유입니다.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list-box history row">
+                            <span class="badge blue">등록</span>
+                            <div class="list">
+                                <span class="label has-bar">등록일</span>
+                                <span class="desc">2021/05/20 14:29:57</span>
+                            </div>
+                            <div class="list">
+                                <span class="label has-bar">사유</span>
+                                <span class="desc">차단사유입니다.</span>
+                            </div>
+                        </div>
+                        <div class="list-box history row">
+                            <span class="badge blue">등록</span>
+                            <div class="list">
+                                <span class="label has-bar">등록일</span>
+                                <span class="desc">2021/05/20 14:29:57</span>
+                            </div>
+                            <div class="list">
+                                <span class="label has-bar">사유</span>
+                                <span class="desc">차단사유입니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //상담이력 -->
+                <div class="btn-box bottom">
+                    <button data-role="button">수정</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        $(".k-dialog-titlebar").append('<span class="badge square gray"><span>차단번호</span><span class="point">000213</span></span>')
+
+    </script>
+</body>
+
+</html>

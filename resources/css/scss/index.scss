@@ -62,7 +62,7 @@
 .k-grid-content {
     overflow: auto;
 }
-.k-tabstrip-wrapper {
+.k-tabstrip-wrapper:only-child {
     flex: 1; 
 }
 .table-bottom {

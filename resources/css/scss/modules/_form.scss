@@ -8,7 +8,8 @@
     display: flex;
     align-items: center;
     > * + * {
-        margin-left: 8px;
+        // margin-left: 8px;
+        margin-left: 20px;
     }
     &.col {
         //세로 정렬일 경우
@@ -86,6 +87,9 @@ td .form-group {
             padding: 0;
             margin-right: 8px;
         }
+        .form-set + .form-set {
+            margin-left: 12px;
+        }
         + .table-content {
             margin-top: 20px;
         }
@@ -102,6 +106,13 @@ td .form-group {
     border: 1px solid $gray-e4;
     overflow: hidden;
     flex: 0 0 auto;
+    flex-wrap: wrap;
+    .search-line {
+        display: flex;
+        + .search-line {
+            margin-top: 20px;
+        }
+    }
     .label {
         @include font-size-sm;
         margin-right: 12px;
@@ -150,6 +161,9 @@ td .form-group {
         white-space: nowrap;
         font-weight: 500;
     }
+    .h-checkbox + .h-checkbox {
+        margin-left: 20px;
+    }
     .h-checkbox input[type="radio"] + label {
         display: flex;
         align-items: center;
@@ -157,7 +171,7 @@ td .form-group {
     }
     .h-checkbox input[type="radio"] + label:before {
         top: 50%;
-        margin-top: 9px;
+        // margin-top: 9px;
     }
 }
 
