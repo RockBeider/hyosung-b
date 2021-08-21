@@ -19,7 +19,6 @@ function includePath() {
 			$(this).remove();
 			kendo.bind($(".sidebar-wrap"), {});
 			kendo.bind($("#header"), {});
-			// kendo.bind($(".wrap"), {});
 		});
 	});
 }

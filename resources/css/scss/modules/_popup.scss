@@ -164,14 +164,10 @@
             @include font-size-sm;
             line-height: 23px;
         }
-        .point {
-            color: $main;
-            font-weight: bold;
-        }
     }
-    &.xs {
-        width: 320px;
-    }
+    // &.xs {
+    //     width: 320px;
+    // }
     &.sm {
         width: 480px;
     }
@@ -189,12 +185,26 @@
     outline: 0;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     z-index: 10002;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
     border: 1px solid $gray-5;
     overflow: hidden;
+    &.no-header {
+        .k-dialog-content {
+            margin-top: -1px;
+        }
+        .content-group {
+            padding-top: 0;
+            .btn-box {
+                margin-top: 20px;
+            }
+        }  
+        .k-button.k-dialog-close {
+            right: 12px;
+        }
+    } 
     .divide.full {
         margin: 0 -30px;
         padding-left: 30px;
@@ -215,6 +225,9 @@
         font-weight: 500;
         .k-button {
             padding: 0; 
+        }
+        .badge {
+            margin-right: 35px;
         }
     }
     .k-dialog-content {

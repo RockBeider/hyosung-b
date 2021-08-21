@@ -321,8 +321,8 @@
                     data-scrollable= "{ virtual: true }"
                     data-no-records="{ template : '<p>검색을 이용해 주세요.</p>'}"
                     data-columns='[
-                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
-                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#", "locked": true },
+                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false, "locked": true },
                     { "field": "상품코드", "width": 90, "locked": true },
                     { "field": "상품명", "width": 170 },
                     { "field": "어플리케이션", "width": 146 },
@@ -405,8 +405,8 @@
         data-scrollable= "{ virtual: true }"
         data-no-records="{ template : '&lt;p>검색을 이용해 주세요.&lt;/p>'}"
         data-columns='[
-        { "title": "&lt;div class=h-checkbox>&lt;input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox />&lt;label for=checkbox-nolabel>&lt;/label>&lt;/div>", "width": 50, "template": "#=checkboxTemplate()#" },
-        { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+        { "title": "&lt;div class=h-checkbox>&lt;input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox />&lt;label for=checkbox-nolabel>&lt;/label>&lt;/div>", "width": 50, "template": "#=checkboxTemplate()#", "locked": true },
+        { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false, "locked": true  },
         { "field": "상품코드", "width": 90, "locked": true },
         { "field": "상품명", "width": 170 },
         { "field": "어플리케이션", "width": 146 },
@@ -1057,6 +1057,345 @@
             &lt;/tr>
         &lt;/tbody>
     &lt;/table>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+    
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Table (Div 태그 사용)</p>
+        </div>
+        <div class="g-example-body">
+            <div class="table-box">
+                <div class="table table-bg-box type1">
+                    <div class="head">
+                        <div class="row">
+                            <div class="cell">NO.</div>
+                            <div class="cell">항목명</div>
+                            <div class="cell">계좌</div>
+                            <div class="cell">예금주명</div>
+                            <div class="cell">생년월일</div>
+                            <div class="cell"></div>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <div class="row">
+                            <div class="cell text-center">1</div>
+                            <div class="cell"><input type="text" class="h-input" placeholder="항목명"/></div>
+                            <div class="cell">
+                                <div class="form-set">
+                                    <select data-role="dropdownlist" data-value="은행명" data-option-label="은행명" class="md">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                    <select data-role="dropdownlist" data-value="계좌번호" data-option-label="계좌번호">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cell"><input type="text" class="h-input" placeholder="김효성"/></div>
+                            <div class="cell">
+                                <input data-role="datepicker" 
+                                data-format="yyyy/MM/dd"
+                                placeholder="yyyymmdd" 
+                                data-culture="ko-KR"
+                                data-footer="false"
+                                class="datepicker" /> 
+                            </div>
+                            <div class="cell">
+                                <div class="form-set">
+                                    <button data-role="button" class="gray-border"><span>계좌 확인</span></button>
+                                    <button data-role="button" class="k-button hidden" data-icon="close"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell text-center">2</div>
+                            <div class="cell"><input type="text" class="h-input" placeholder="항목명"/></div>
+                            <div class="cell">
+                                <div class="form-set">
+                                    <select data-role="dropdownlist" data-value="은행명" data-option-label="은행명" class="md">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                    <select data-role="dropdownlist" data-value="계좌번호" data-option-label="계좌번호">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cell"><input type="text" class="h-input" placeholder="김효성"/></div>
+                            <div class="cell">
+                                <input data-role="datepicker" 
+                                data-format="yyyy/MM/dd"
+                                placeholder="yyyymmdd" 
+                                data-culture="ko-KR"
+                                data-footer="false"
+                                class="datepicker" /> 
+                            </div>
+                            <div class="cell">
+                                <div class="form-set">
+                                    <button data-role="button" class="gray-border"><span>계좌 확인</span></button>
+                                    <button data-role="button" class="k-button hidden" data-icon="close"><span>닫기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="table-box">
+    &lt;div class="table table-bg-box type1">
+        &lt;div class="head">
+            &lt;div class="row">
+                &lt;div class="cell">NO.&lt;/div>
+                &lt;div class="cell">항목명&lt;/div>
+                &lt;div class="cell">계좌&lt;/div>
+                &lt;div class="cell">예금주명&lt;/div>
+                &lt;div class="cell">생년월일&lt;/div>
+                &lt;div class="cell">&lt;/div>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="body">
+            &lt;div class="row">
+                &lt;div class="cell text-center">1&lt;/div>
+                &lt;div class="cell">&lt;input type="text" class="h-input" placeholder="항목명"/>&lt;/div>
+                &lt;div class="cell">
+                    &lt;div class="form-set">
+                        &lt;select data-role="dropdownlist" data-value="은행명" data-option-label="은행명" class="md">
+                            &lt;option value="1">온라인&lt;/option>
+                            &lt;option value="2">오프라인&lt;/option>
+                        &lt;/select>
+                        &lt;select data-role="dropdownlist" data-value="계좌번호" data-option-label="계좌번호">
+                            &lt;option value="1">온라인&lt;/option>
+                            &lt;option value="2">오프라인&lt;/option>
+                        &lt;/select>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="cell">&lt;input type="text" class="h-input" placeholder="김효성"/>&lt;/div>
+                &lt;div class="cell">
+                    &lt;input data-role="datepicker" 
+                    data-format="yyyy/MM/dd"
+                    placeholder="yyyymmdd" 
+                    data-culture="ko-KR"
+                    data-footer="false"
+                    class="datepicker" /> 
+                &lt;/div>
+                &lt;div class="cell">
+                    &lt;div class="form-set">
+                        &lt;button data-role="button" class="gray-border">&lt;span>계좌 확인&lt;/span>&lt;/button>
+                        &lt;button data-role="button" class="k-button hidden" data-icon="close">&lt;span>닫기&lt;/span>&lt;/button>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="row">
+                &lt;div class="cell text-center">2&lt;/div>
+                &lt;div class="cell">&lt;input type="text" class="h-input" placeholder="항목명"/>&lt;/div>
+                &lt;div class="cell">
+                    &lt;div class="form-set">
+                        &lt;select data-role="dropdownlist" data-value="은행명" data-option-label="은행명" class="md">
+                            &lt;option value="1">온라인&lt;/option>
+                            &lt;option value="2">오프라인&lt;/option>
+                        &lt;/select>
+                        &lt;select data-role="dropdownlist" data-value="계좌번호" data-option-label="계좌번호">
+                            &lt;option value="1">온라인&lt;/option>
+                            &lt;option value="2">오프라인&lt;/option>
+                        &lt;/select>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="cell">&lt;input type="text" class="h-input" placeholder="김효성"/>&lt;/div>
+                &lt;div class="cell">
+                    &lt;input data-role="datepicker" 
+                    data-format="yyyy/MM/dd"
+                    placeholder="yyyymmdd" 
+                    data-culture="ko-KR"
+                    data-footer="false"
+                    class="datepicker" /> 
+                &lt;/div>
+                &lt;div class="cell">
+                    &lt;div class="form-set">
+                        &lt;button data-role="button" class="gray-border">&lt;span>계좌 확인&lt;/span>&lt;/button>
+                        &lt;button data-role="button" class="k-button hidden" data-icon="close">&lt;span>닫기&lt;/span>&lt;/button>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+    
+    
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Table (Tab Style)</p>
+        </div>
+        <div class="g-example-body">
+            <div class="table-set">
+                <div class="title-box md">
+                    <h2 class="sub-title dot">MD 타이틀</h2>
+                </div>
+                <div data-role="tabstrip" class="tab-control border">
+                    <ul>
+                        <li class="k-state-active">탭메뉴</li>
+                        <li>탭메뉴</li>
+                        <li>탭메뉴</li>
+                        <li disabled>Disabled</li>
+                        <li>탭메뉴</li>
+                        <li disabled>Disabled</li>
+                    </ul>
+                    <!-- 탭 -->
+                    <div class="tabpanel">
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col width="110px"/>
+                                    <col width="*"/>
+                                    <col width="110px"/>
+                                    <col width="*"/>
+                                    <col width="110px"/>
+                                    <col width="*"/>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">타이틀</th>
+                                        <td></td>
+                                        <th scope="row">타이틀</th>
+                                        <td></td>
+                                        <th scope="row">타이틀</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">타이틀</th>
+                                        <td></td>
+                                        <th scope="row">타이틀</th>
+                                        <td></td>
+                                        <th scope="row">타이틀</th>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn-box bottom">
+                            <button data-role="button" class="light-blue">수정</button>
+                        </div>
+                    </div>
+                    <!-- 탭 -->
+                    <!-- 탭 -->
+                    <div class="tabpanel">
+                        탭내용2
+                    </div>
+                    <!-- 탭 -->
+                    <!-- 탭 -->
+                    <div class="tabpanel">
+                        탭내용3
+                    </div>
+                    <!-- 탭 -->
+                    <!-- 탭 -->
+                    <div class="tabpanel">
+                        탭내용4
+                    </div>
+                    <!-- 탭 -->
+                    <!-- 탭 -->
+                    <div class="tabpanel">
+                        탭내용5
+                    </div>
+                    <!-- 탭 -->
+                    <!-- 텝 -->
+                    <div class="tabpanel">
+                        탭내용6
+                    </div>
+                    <!-- 탭 -->
+                </div>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="table-set">
+    &lt;div class="title-box md">
+        &lt;h2 class="sub-title dot">MD 타이틀&lt;/h2>
+    &lt;/div>
+    &lt;div data-role="tabstrip" class="tab-control border">
+        &lt;ul>
+            &lt;li class="k-state-active">탭메뉴&lt;/li>
+            &lt;li>탭메뉴&lt;/li>
+            &lt;li>탭메뉴&lt;/li>
+            &lt;li disabled>Disabled&lt;/li>
+            &lt;li>탭메뉴&lt;/li>
+            &lt;li disabled>Disabled&lt;/li>
+        &lt;/ul>
+        &lt;!-- 탭 -->
+        &lt;div class="tabpanel">
+            &lt;div class="table">
+                &lt;table>
+                    &lt;colgroup>
+                        &lt;col width="110px"/>
+                        &lt;col width="*"/>
+                        &lt;col width="110px"/>
+                        &lt;col width="*"/>
+                        &lt;col width="110px"/>
+                        &lt;col width="*"/>
+                    &lt;/colgroup>
+                    &lt;tbody>
+                        &lt;tr>
+                            &lt;th scope="row">타이틀&lt;/th>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="row">타이틀&lt;/th>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="row">타이틀&lt;/th>
+                            &lt;td>&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">타이틀&lt;/th>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="row">타이틀&lt;/th>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="row">타이틀&lt;/th>
+                            &lt;td>&lt;/td>
+                        &lt;/tr>
+                    &lt;/tbody>
+                &lt;/table>
+            &lt;/div>
+            &lt;div class="btn-box bottom">
+                &lt;button data-role="button" class="light-blue">수정&lt;/button>
+            &lt;/div>
+        &lt;/div>
+        &lt;!-- 탭 -->
+        &lt;!-- 탭 -->
+        &lt;div class="tabpanel">
+            탭내용2
+        &lt;/div>
+        &lt;!-- 탭 -->
+        &lt;!-- 탭 -->
+        &lt;div class="tabpanel">
+            탭내용3
+        &lt;/div>
+        &lt;!-- 탭 -->
+        &lt;!-- 탭 -->
+        &lt;div class="tabpanel">
+            탭내용4
+        &lt;/div>
+        &lt;!-- 탭 -->
+        &lt;!-- 탭 -->
+        &lt;div class="tabpanel">
+            탭내용5
+        &lt;/div>
+        &lt;!-- 탭 -->
+        &lt;!-- 탭 -->
+        &lt;div class="tabpanel">
+            탭내용6
+        &lt;/div>
+        &lt;!-- 탭 -->
+    &lt;/div>
 &lt;/div>
             </code></pre>
         </div>

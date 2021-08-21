@@ -147,6 +147,16 @@ button {
 .w100 {
 	width: 100% !important;
 }
+.text-full {
+	flex: 1;
+}
+.text-blue {
+	color: $main;
+}
+.point {
+	color: $main;
+	font-weight: bold;
+} 
 /* 
 * ------------------------------
 * badge
@@ -187,6 +197,20 @@ button {
 		background-color: $gray-eb;
 		border: 1px solid $gray-d5;
 		color: $gray-7;
+	}
+	&.square {
+		@include font-size-menu;
+		height: 24px;
+		border-radius: 3px;
+		> * + * {
+			margin-left: 8px;
+		}
+		&.gray {
+			border: 1px solid $gray-ef;
+			background: $gray-ef;
+			color: $gray-5;
+			font-weight: 500;
+		}
 	}
 }
 
@@ -272,6 +296,20 @@ td .divide {
 			margin-top: -2px;
 			background: $gray-2;
 		}
+	}
+}
+.alert-title {
+	@include font-size-menu;
+	display: flex;
+	justify-content: center;
+	margin: 30px 0 10px;
+	line-height: 20px;
+	font-weight: 500;
+	&.sm {
+		@include font-size-sm;
+		margin: 0 0 10px;
+		font-weight: 400;
+		line-height: 20px;
 	}
 }
 /*
@@ -508,8 +546,26 @@ td .divide {
 		}
 	}
 	&.border {
-		.tabpanel { padding-top: 20px;}
+		.tabpanel { 
+			padding-top: 20px;
+			// &.search-control {
+			// 	padding: 24px 20px;
+			// 	&.k-content.k-state-active {
+			// 		display: flex !important;
+			// 	}
+			// }
+		}
+		&.search {
+			.tabpanel {
+				border: none;
+				padding: 0;
+				.search-control + .table-set {
+					max-height: calc(100% - 78px);
+				}
+			}
+		}
 	}
+
 }
 .tab-menu {
 	.btn-box {
@@ -599,6 +655,7 @@ td .divide {
 			order: 2;
 			font-weight: 400;
 			color: $gray-6;
+			white-space: nowrap;
 		}
 		.count {
 			@include font-size-count;

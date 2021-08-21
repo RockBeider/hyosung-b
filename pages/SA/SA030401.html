@@ -14,14 +14,14 @@
 
         <div id="container">
             <!-- Header Include -->
-            <div data-include-path="../layout/lnb.html"></div> 
+            <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
-            <main class="contents-wrap"> 
+            <main class="contents-wrap">
                 <!-- Contents Header -->
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">상담정보 관리</h2>
+                            <h2 class="main-title">정산특이</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -36,8 +36,8 @@
                                 data-editable=false,
                                 data-navigational=true,
                                 data-items='[
-                            { type:"rootitem", href: "", text: "서비스품질", showText: true },
-                            { type:"item", href: "", text: "상담정보 관리", showText: true}
+                            { type:"rootitem", href: "", text: "정산", showText: true },
+                            { type:"item", href: "", text: "정산특이", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <span class="label">상담부서</span>
+                                <span class="label">정산항목</span>
                                 <div class="form-set">
                                     <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
                                         <option value="1">온라인</option>
@@ -70,78 +70,77 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <span class="label">검색기간</span>
+                                <span class="label">일정검색</span>
                                 <div class="form-set">
+                                    <select data-role="dropdownlist" data-value="정산일" data-option-label="정산일" class="sm">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
                                     <input data-role="datepicker" 
                                         data-format="yyyy/MM/dd"
                                         placeholder="yyyymmdd" 
                                         data-culture="ko-KR"
                                         data-footer="false"
-                                        class="datepicker sm" />
+                                        class="datepicker sm">
                                     <span class="bar">~</span>
                                     <input data-role="datepicker" 
                                         data-format="yyyy/MM/dd"
                                         placeholder="yyyymmdd" 
                                         data-culture="ko-KR"
                                         data-footer="false"
-                                        class="datepicker sm" />
-                                    <ul data-role="buttongroup" class="period"
-                                    data-index="0">
-                                        <li data-role="button">오늘</li>
-                                        <li data-role="button">전일</li>
-                                        <li data-role="button">1주</li>
-                                        <li data-role="button">1개월</li>
-                                        <li data-role="button">3개월</li>
-                                    </ul>
+                                        class="datepicker sm">
+                                        <ul data-role="buttongroup" class="period"
+                                        data-index="0">
+                                            <li data-role="button"><span>어제</span></li>
+                                            <li data-role="button"><span>오늘</span></li>
+                                            <li data-role="button"><span>내일</span></li>
+                                        </ul>
                                 </div>
                             </div>
+                            
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                         </div>
                         <div class="table-set">
-                            <!-- toolbar template -->
-                            <script type="text/x-kendo-template" class="toolbarTemplate">
-                                <div class="title-box sm">
-                                    <div class="left-group">
-                                        <span class="amount-set">
-                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                            <span class="amount">26</span><span class="unit">건</span>
-                                        </span>
-                                    </div>
-                                    <div class="right-group">
-                                        <div class="btn-box">
-                                            <button role="button" class="k-button green">엑셀</button>
+                            <div class="table-content grid">
+                                <script type="text/x-kendo-template" class="toolbarTemplate">
+                                    <div class="title-box sm">
+                                        <div class="left-group">
+                                            <span class="amount-set">
+                                                <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                <span class="amount">26</span><span class="unit">건</span>
+                                            </span>
+                                        </div>
+                                        <div class="right-group">
+                                            <div class="btn-box">
+                                                <button role="button" class="k-button"><span>추가</span></button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </script>
-                            <!-- checkbox template -->
-                            <script type="text/x-kendo-template" class="checkboxTemplate">
-                                <div class="h-checkbox no-label">
-                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                    <label for="checkbox-nolabel"></label> 
-                                </div>
-                            </script>
-                            <div class="table-content grid" id="viewModel_grid_sort">
+                                </script>
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
-                                    data-toolbar="#=toolbarTemplate()#"
                                     data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
-                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "field": "상품코드", "width": 90 },
-                                    { "field": "상품명", "width": 170 },
-                                    { "field": "어플리케이션", "width": 146 },
-                                    { "field": "표준가격", "width": 140 },
-                                    { "field": "최소가격", "width": 146 },
-                                    { "field": "기타"}
-                                ]' data-bind="source: gridSource">
+                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false, "filterable": false  },
+                                    { "field": "고객ID", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "field": "고객사명", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "field": "특이유형", "width": 220, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "field": "설정일", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "field": "해제일", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "field": "비고", "sortable": false  },
+                                    { "title": "(+)공제금액","field": "pay","width": 180, "attributes" : {"class": "text-right"}, "sortable": false  }
+                                    ]' 
+                                    data-bind="source: gridSource"
+                                    data-filterable="{mode:'row', operators: {
+                                        string: { contains: 'contains' },
+                                        enums: { eq: 'eq' }}
+                                    }"
+                                    data-toolbar="#=toolbarTemplate()#">
                                 </div>
                                 <div class="table-bottom">
                                     <button data-role="button" class="gray-border">삭제</button>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -157,29 +156,23 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-      
-        var viewModel_grid_sort = kendo.observable({
-            gridSource: [
-                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
-                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
-                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
-            ],
-            displayGridSource: function() {
-                return stringify(this.get("gridSource").toJSON());
-            },
-        });
-        kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
-        kendo.bind($(".wrap"), viewModel_grid_sort);
-        function toolbarTemplate() {
-            var template = kendo.template($('.toolbarTemplate').html()); 
-            var result = template({});
-            return result
-        }
-        function checkboxTemplate() {
-            var template = kendo.template($('.checkboxTemplate').html());
-            var result = template({});
-            return result
-        }
+            var viewModel = kendo.observable({
+                gridSource: [
+                    { "NO":"1",  "고객ID":"hyosung001","고객사명":"수서복지재단", "특이유형":"보증보험만기","설정일":"2021/06/02","해제일":"2021/06/02","비고":"보증보험 갱신완료 확인","pay":"6,000원" },
+                    { "NO":"2",  "고객ID":"hyosung001","고객사명":"수서복지재단", "특이유형":"보증보험만기","설정일":"2021/06/02","해제일":"2021/06/02","비고":"보증보험 갱신완료 확인","pay":"6,000원" },
+                    { "NO":"3",  "고객ID":"hyosung001","고객사명":"수서복지재단", "특이유형":"보증보험만기","설정일":"2021/06/02","해제일":"2021/06/02","비고":"보증보험 갱신완료 확인","pay":"6,000원" },
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+            });
+            kendo.bind($(".wrap"), viewModel);
+            
+            function toolbarTemplate() {
+                var template = kendo.template($('.toolbarTemplate').html());
+                var result = template({});
+                return result
+            }
     </script>
 </body>
 

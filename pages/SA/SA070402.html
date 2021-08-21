@@ -15,61 +15,30 @@
         <div id="container">
             <!-- Header Include -->
             <div data-include-path="../layout/lnb.html"></div>
-            <!-- Contents -->
-            <main class="contents-wrap">
+             <!-- Contents -->
+             <main class="contents-wrap">
                 <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
             </main>
         </div>
+
         <div data-role="dialog"
-             data-title="본사 상세정보"
+             data-title="공지안내발송"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
-                            events: { close: onClose}"
-            class="md">
+                            events: { close: onClose}" class="xs">
             <div class="content-group">
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col width="90px">
-                            <col width="*">
-                            <col width="90px">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th scope="row">본사ID<span class="required">*</span></th>
-                                <td>hyosung001</td>
-                                <th scope="row">본사명<span class="required">*</span></th>
-                                <td>본사명</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">사업자번호<span class="required">*</span></th>
-                                <td>100-111-123456</td>
-                                <th scope="row">사용료ID</th>
-                                <td>hyosungid</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">부서명</th>
-                                <td>부서명</td>
-                                <th scope="row">담당자명</th>
-                                <td>홍길동</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">전화번호</th>
-                                <td>02-123-4567</td>
-                                <th scope="row">휴대전화<span class="required">*</span></th>
-                                <td>010-1234-5678</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-               
-                <div class="btn-box bottom">
-                    <button data-role="button" class="gray-border">암호초기화</button>
-                    <button data-role="button" class="">수정</button>
+                <div class="center-box">
+                    <h3 class="alert-title sm">공지안내 수단을 선택해 주세요.</h3>
+                    <div data-role="buttongroup" class="period"
+                        data-index="0">
+                        <button data-role="button"><span>알림톡</span></button>
+                        <button data-role="button"><span>SMS</span></button>
+                        <button data-role="button"><span>이메일</span></button>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- Default Script Include -->
@@ -90,6 +59,10 @@
 
                 if (value) {
                     dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
                 } else {
                     dialog.close();
                 }
@@ -111,7 +84,20 @@
 
         });
         kendo.bind($(".wrap"), viewModel);
-
+       
+        //grid
+        var viewModel_grid = kendo.observable({
+            gridSource: [
+                { "서류명":"심사서류명", "등록일":"2021/07/26" },
+                { "서류명":"심사서류명", "등록일":"2021/07/26" },
+                { "서류명":"심사서류명", "등록일":"2021/07/26" },
+                { "서류명":"심사서류명", "등록일":"2021/07/26" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_grid"), viewModel_grid);
        
     </script>
 </body>
