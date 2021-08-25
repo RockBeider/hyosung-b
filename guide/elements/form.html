@@ -179,6 +179,48 @@
 
     <div class="g-example-wrap">
         <div class="g-example-head">
+            <p class="title">Form set</p>
+        </div>
+        <div class="g-example-body flex-block">
+            <div class="textarea-count-set">
+                <textarea data-role="textarea"
+                    data-format="c"
+                    data-min="0"
+                    data-max="100"
+                    data-rows="4"
+                    data-placeholder="입력해주세요" class="sm"></textarea>
+                    <div class="k-counter-container"><span class="k-counter-value">0</span>/200 자</div>
+            </div>
+            <script>
+                $(".textarea-count-set").on('input', function (e) {
+                    $(this).find('.k-counter-container .k-counter-value').html($(e.target).val().length);
+                });
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="textarea-count-set">
+    &lt;textarea data-role="textarea"
+        data-format="c"
+        data-min="0"
+        data-max="100"
+        data-rows="4"
+        data-placeholder="입력해주세요" class="sm">&lt;/textarea>
+        &lt;div class="k-counter-container">&lt;span class="k-counter-value">0&lt;/span>/200 자&lt;/div>
+&lt;/div>
+&lt;script>
+    $(".textarea-count-set").on('input', function (e) {
+        $(this).find('.k-counter-container .k-counter-value').html($(e.target).val().length);
+    });
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+    
+   
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
             <p class="title">Tooltip</p>
         </div>
         <div class="g-example-body flex-block">
@@ -464,7 +506,7 @@
             </code></pre>
         </div>
     </div>
-
+<!-- 
 
     <div class="g-example-wrap">
         <div class="g-example-head">
@@ -488,6 +530,255 @@
     &lt;input type="file" id="ex_filename2" class="upload-hidden"> 
     &lt;button data-role="button" class="light-green">샘플파일다운로드&lt;/button>
 &lt;/div>
+            </code></pre>
+        </div>
+    </div>
+ -->
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">File Upload</p>
+        </div>
+        <div class="g-example-body flex-block" style="align-items: flex-start;">
+            <div class="form-group col" id="templateList">
+                <button id="add_fileList" data-role="button" data-icon="plus" class="blue-border"><span>첨부파일 추가</span></button>
+                
+                <script type="text/x-kendo-tmpl" id="template_upload">
+                    <div class="form-set">
+                        <select class="dropdownlistFunc" data-role="dropdownlist" data-value="구비서류 선택" data-option-label="구비서류 선택" class="md">
+                            <option value="1">온라인</option>
+                            <option value="2">오프라인</option>
+                        </select>
+                        <div class="upload lg">
+                            <input type="file"
+                            class="fileupload"
+                                name="files"
+                                type="file"
+                                data-role="upload"
+                                data-multiple="false"
+                                data-validation= "{
+                                    allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                                }"
+                                data-show-file-list= "true"
+                                data-localization="{select: '선택'}"
+                                data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                                data-bind="visible: isVisible,
+                                            enabled: isEnabled" 
+                            >
+                        </div>
+                    </div>
+                </script>
+            </div>
+            <script>
+                var viewModel_fileUpload = kendo.observable({
+                    isEnabled: true,
+                    isVisible: true,
+                });
+                kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+                var template_upload = kendo.template($("#template_upload").html());
+                $(document).on('click', '#add_fileList', function() {
+                    $('#templateList').append(template_upload);
+                    kendo.bind($(".fileupload"), viewModel_fileUpload); 
+                    kendo.bind($(".dropdownlistFunc"), {}); //드롭다운
+                }) 
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-group col" id="templateList">
+    &lt;button id="add_fileList" data-role="button" data-icon="plus" class="blue-border">&lt;span>첨부파일 추가&lt;/span>&lt;/button>
+    
+    &lt;script type="text/x-kendo-tmpl" id="template_upload">
+        &lt;div class="form-set">
+            &lt;select class="dropdownlistFunc" data-role="dropdownlist" data-value="구비서류 선택" data-option-label="구비서류 선택" class="md">
+                &lt;option value="1">온라인&lt;/option>
+                &lt;option value="2">오프라인&lt;/option>
+            &lt;/select>
+            &lt;div class="upload lg">
+                &lt;input type="file"
+                class="fileupload"
+                    name="files"
+                    type="file"
+                    data-role="upload"
+                    data-multiple="false"
+                    data-validation= "{
+                        allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                    }"
+                    data-show-file-list= "true"
+                    data-localization="{select: '선택'}"
+                    data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                    data-bind="visible: isVisible,
+                                enabled: isEnabled" 
+                >
+            &lt;/div>
+        &lt;/div>
+    &lt;/script>
+&lt;/div>
+&lt;script>
+    var viewModel_fileUpload = kendo.observable({
+        isEnabled: true,
+        isVisible: true,
+    });
+    kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+    var template_upload = kendo.template($("#template_upload").html());
+    $(document).on('click', '#add_fileList', function() {
+        $('#templateList').append(template_upload);
+        kendo.bind($(".fileupload"), viewModel_fileUpload); 
+        kendo.bind($(".dropdownlistFunc"), {}); //드롭다운
+    }) 
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">File Upload</p>
+        </div>
+        <div class="g-example-body flex-block" style="align-items: flex-start;">
+            <div class="upload">
+                <input type="file"
+                id="viewModel_fileUpload_default"
+                    name="files"
+                    type="file"
+                    data-role="upload"
+                    data-multiple="false"
+                    data-validation= "{
+                        allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                    }"
+                    data-show-file-list= "true"
+                    data-localization="{select: '선택'}"
+                    data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                    data-bind="visible: isVisible,
+                                enabled: isEnabled" 
+                >
+            </div> 
+            <script>
+                var viewModel_fileUpload_default = kendo.observable({
+                    isEnabled: true,
+                    isVisible: true,
+                });
+                kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+                setTimeout(function() {
+                    kendo.bind($("#viewModel_fileUpload_default"), viewModel_fileUpload_default); 
+                }, 100)
+                
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="upload">
+    &lt;input type="file"
+    id="viewModel_fileUpload_default"
+        name="files"
+        type="file"
+        data-role="upload"
+        data-multiple="false"
+        data-validation= "{
+            allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+        }"
+        data-show-file-list= "true"
+        data-localization="{select: '선택'}"
+        data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+        data-bind="visible: isVisible,
+                    enabled: isEnabled" 
+    >
+&lt;/div> 
+&lt;script>
+    var viewModel_fileUpload_default = kendo.observable({
+        isEnabled: true,
+        isVisible: true,
+    });
+    kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+    setTimeout(function() {
+        kendo.bind($("#viewModel_fileUpload_default"), viewModel_fileUpload_default); 
+    }, 100)
+    
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">File Upload</p>
+        </div>
+        <div class="g-example-body" >
+            <div class="form-set">
+                <select data-role="dropdownlist" data-value="구비서류 선택" data-option-label="구비서류 선택" class="md">
+                    <option value="1">온라인</option>
+                    <option value="2">오프라인</option>
+                </select>
+                <div class="upload">
+                    <input type="file"
+                    id="viewModel_fileUpload_select"
+                        name="files"
+                        type="file"
+                        data-role="upload"
+                        data-multiple="false"
+                        data-validation= "{
+                            allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                        }"
+                        data-show-file-list= "true"
+                        data-localization="{select: '선택'}"
+                        data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                        data-bind="visible: isVisible,
+                                    enabled: isEnabled" 
+                    >
+                </div> 
+            </div>
+            <script>
+                var viewModel_fileUpload_select = kendo.observable({
+                    isEnabled: true,
+                    isVisible: true,
+                });
+                kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+                setTimeout(function() {
+                    kendo.bind($("#viewModel_fileUpload_select"), viewModel_fileUpload_select); 
+                }, 100)
+                 
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="form-set">
+    &lt;select data-role="dropdownlist" data-value="구비서류 선택" data-option-label="구비서류 선택" class="md">
+        &lt;option value="1">온라인&lt;/option>
+        &lt;option value="2">오프라인&lt;/option>
+    &lt;/select>
+    &lt;div class="upload">
+        &lt;input type="file"
+        id="viewModel_fileUpload_select"
+            name="files"
+            type="file"
+            data-role="upload"
+            data-multiple="false"
+            data-validation= "{
+                allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+            }"
+            data-show-file-list= "true"
+            data-localization="{select: '선택'}"
+            data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+            data-bind="visible: isVisible,
+                        enabled: isEnabled" 
+        >
+    &lt;/div> 
+&lt;/div>
+&lt;script>
+    var viewModel_fileUpload_select = kendo.observable({
+        isEnabled: true,
+        isVisible: true,
+    });
+    kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+    setTimeout(function() {
+        kendo.bind($("#viewModel_fileUpload_select"), viewModel_fileUpload_select); 
+    }, 100)
+        
+&lt;/script>
             </code></pre>
         </div>
     </div>

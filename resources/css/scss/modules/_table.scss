@@ -63,16 +63,16 @@ td .form-box, th .form-box {
 .table {
     width: 100%; 
     overflow: hidden;
+    .table {
+        border-top: 1px solid $gray-e4;
+    }
     &.table-bg-box {
-        // display: table; 
-        // table-layout: fixed;
-        
         display: flex;
         flex-direction: column;
         border: none;
         &.type1 {
             .cell {
-                &:first-child {
+                &:nth-of-type(1){
                     min-width: 36px;
                     max-width: 36px;
                 }
@@ -99,7 +99,10 @@ td .form-box, th .form-box {
         }
         &.type2 {
             .cell {
-                &:first-child {
+                .bar {
+                    text-align: center;
+                }
+                &:nth-of-type(1) {
                     // min-width: ;
                     // max-width: ;
                 }
@@ -128,8 +131,8 @@ td .form-box, th .form-box {
                     max-width: 200px;
                 }
                 &:nth-of-type(8) {
-                    min-width: 126px;
-                    max-width: 126px;
+                    min-width: 170px;
+                    max-width: 170px;
                 }
             }
         }
@@ -247,6 +250,9 @@ td .form-box, th .form-box {
    }
    + .table-box {
        border-top: 0;
+   }
+   &.justify-content-between {
+       flex-direction: row;
    }
 }
 

@@ -11,10 +11,15 @@
         // margin-left: 8px;
         margin-left: 20px;
     }
+    > .bar {
+        margin-left: 10px;
+        margin-right: -10px;
+    }
     &.col {
         //세로 정렬일 경우
         flex-direction: column;
         flex-wrap: wrap;
+        align-items: flex-start;
         > * + * {
             margin-left: 0;
             margin-top: 10px;
@@ -27,12 +32,18 @@
         @include font-size-sm;
         color: $gray-2;
         white-space: nowrap;
+        + .form-set {
+            margin-left: 8px;
+        }
     }
     .form-label {
         @include font-size-sm;
         color: $gray-5;
         white-space: nowrap;
         font-weight: 400;
+        + .form-set {
+            margin-left: 8px;
+        }
     }
 }
 td .form-group {
@@ -113,14 +124,6 @@ td .form-group {
             margin-top: 20px;
         }
     }
-    .label {
-        @include font-size-sm;
-        margin-right: 12px;
-        height: 28px;
-        color: $gray-7;
-        white-space: nowrap;
-        font-weight: 500;
-    }
     .form-group {
         white-space: nowrap;
         > * + * {
@@ -153,9 +156,17 @@ td .form-group {
             border: 1px solid $main;
         }
     }
+    // .label {
+    //     @include font-size-sm;
+    //     margin-right: 12px;
+    //     height: 28px;
+    //     color: $gray-7;
+    //     white-space: nowrap;
+    //     font-weight: 500;
+    // }
     .label {
         @include font-size-sm;
-        margin-right: 8px;
+        // margin-right: 8px;
         height: 28px;
         color: $gray-7;
         white-space: nowrap;
@@ -175,13 +186,4 @@ td .form-group {
     }
 }
 
-// .form-set {
-// 	display: flex;
-// 	align-items: center;
-// 	color: $gray-5;
-// 	font-size: 14px;
 
-// 	// .btn-box.period {
-// 	// 	margin-left: 8px;
-// 	// }
-// }
