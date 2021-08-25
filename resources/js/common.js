@@ -107,14 +107,6 @@ $(document).ready(function () {
  * popup
  * =====================================
  */
-/* =====================================
- * input check
- * =====================================
- */
-// $(document).on('click', '.input-check', function() {
-// 	$(this).toggleClass('is-checked');
-// })
-
 
 /* =====================================
  * BP0110 고객등록 - 할인/프로모션 추가 삭제
@@ -198,3 +190,12 @@ $(document).on('change', '[data-function="checkbox-check6"] input[type="checkbox
 		$(this).parents('.form-group.box').removeClass('is-checked');
 	}
 }).trigger('change');
+
+/* =====================================
+ * SA070403 공지사항 등록/수정
+ * =====================================
+ */
+
+$(document).on('click', '.listDelete', function() {
+	$(this).parents('.item').remove();
+})

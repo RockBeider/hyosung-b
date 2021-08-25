@@ -9,6 +9,71 @@
 	background: $gray-ef;
 	border-top: 1px solid $gray-2;
 }
+.list-set {
+    display: flex;
+    + .list-set {
+        margin-top: 10px;
+    }
+    &.answer {
+        .list-title {
+            color: $gray-5;
+            margin-right: 10px;
+        }
+        .list-box {
+            &::before {
+                left: -6px;
+                width: 0px;
+                height: 0px;
+                border-top: 4px solid transparent;
+                border-right: 6px solid $white;
+                border-left: 4px solid none;
+                border-bottom: 4px solid transparent;
+            }
+        }
+        .badge.count {
+            background-color: $gray-5;
+            color: $white;
+        }
+    }
+    &.receipt {
+        .list-title {
+            color: $main;
+            order: 2;
+        }
+        .list-box {
+            margin-right: 10px;
+            order: 1;
+            &::before {
+                right: -6px;
+                width: 0px;
+                height: 0px;
+                border-top: 4px solid transparent;
+                border-left: 6px solid $white;
+                border-right: 4px solid none;
+                border-bottom: 4px solid transparent;
+            }
+        }
+        .badge.count {
+            background-color: $main;
+            color: $white;
+        }
+    }
+    .list-title {
+        @include font-size-sm;
+        color: $gray-7;
+        font-weight: 500;
+       
+    }
+    .list-box {
+        position: relative;
+        flex: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+        }
+    }
+}
 .list-box {
 	position: relative;
     display: flex;
@@ -30,6 +95,9 @@
             width: 50%;
         }
     }
+    .form-label {
+        color: $gray-5;
+    }
     &.has-bar {
         padding: 26px 20px;
         > * { 
@@ -47,7 +115,7 @@
                 background: $gray-d;
             }
         }
-        .label {
+        .label, .form-label {
             @include font-size-menu;
             color: $gray-2;
             font-weight: 500;
@@ -95,7 +163,7 @@
         }
 	}
     .list { display: flex; }
-    .label {
+    .label, .form-label {
         @include font-size-sm;
         position: relative;
         display: inline-flex;

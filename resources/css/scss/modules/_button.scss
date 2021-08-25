@@ -67,6 +67,9 @@
         &.md > * + * { 
             margin-left: 8px; 
         } 
+        &.hidden > * + * {
+            margin-left: 0;
+        }
     }
     /*
     * ------------------------------
@@ -288,7 +291,62 @@
             }
         }
     }
-    &.multi {
+    
+    &.multi, &.square { 
+        &.square-8 {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            .k-button {
+                &.blanked {
+                    background: #fff !important;
+                }
+                width: 12.5%;
+                height: 40px;
+                &:nth-of-type(n+9) {
+                    border-top: none;
+                    &.k-state-active, &.k-state-focused  {
+                        &::after {
+                            top: -1px;
+                        }
+                    }
+                }
+                &:nth-of-type(8n), &:last-child  {
+                    border-right: 1px solid $gray-c;
+                    &.k-state-active, &.k-state-focused  {
+                        span {
+                            margin-right: 0px;
+                        }
+                        &::after {
+                            right: 0px !important;
+                        }
+                    }
+                }
+                &.k-state-active, &.k-state-focused  {
+                    border: none !important;
+                    span {
+                        margin-right: -1px;
+                    }
+                    + .k-button {
+                        border-left: 1px solid $gray-c;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0; left: 0; bottom: 0;
+                        padding-left: 1px;
+                        border: 1px solid $main;
+                        right: -1px !important;
+                        z-index: 11; 
+                    }
+                    // background-color: $white;
+                    // border-right: 0;
+                    // color: $main;
+                    // + .k-button {
+                    //     border-left: 1px solid $main;
+                    // }
+                }
+            }
+        }
         .k-button {
             @include font-size-sm;
             flex: 0 1 auto;
@@ -326,6 +384,7 @@
             }
         }
     }
+
     
 }
 
@@ -333,3 +392,5 @@
     margin-top: 10px;
     padding: 20px 0;
 }
+
+

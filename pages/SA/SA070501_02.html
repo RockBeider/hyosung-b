@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+        <div data-role="dialog"
+             data-title="엑셀 업로드"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}" class="sm">
+            <div class="content-group">
+                <div class="title-box xsm mt-0">
+                    <span class="upload-title">
+                        * 1회 100건까지 등록 가능합니다
+                    </span>
+                    <button data-role="button" class="light-green"><span>샘플파일</span></button>
+                </div>
+                <div class="upload-box">
+                    <div class="upload">
+                        <input type="file"
+                        id="viewModel_fileUpload_default"
+                            name="files"
+                            type="file"
+                            data-role="upload"
+                            data-multiple="false"
+                            data-validation= "{
+                                allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                            }"
+                            data-show-file-list= "true"
+                            data-localization="{select: '파일 선택'}"
+                            data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                            data-bind="visible: isVisible,
+                                        enabled: isEnabled" 
+                        >
+                    </div> 
+                </div>
+                <div class="btn-box bottom">
+                    <button data-role="button"><span>등록</span></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+
+        var viewModel_fileUpload_default = kendo.observable({
+            isEnabled: true,
+            isVisible: true,
+        });
+        kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+        setTimeout(function() {
+            kendo.bind($("#viewModel_fileUpload_default"), viewModel_fileUpload_default); 
+        }, 100)
+       
+    </script> 
+</body>
+
+</html>
