@@ -12,6 +12,12 @@
         border: 0 !important;
     }
 }
+.k-button.link {
+    @include font-size-sm;
+    color: $main !important;
+    line-height: 20px;
+    text-decoration: underline !important;
+}
 .h-btn, .k-button {
     @include font-size-sm;
     display: flex;
@@ -236,6 +242,15 @@
 .btn-box {
     display: flex;
     justify-content: center;
+    &.col {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0;
+        .k-button + .k-button {
+            margin-top: 6px;
+            margin-left: 0;
+        }
+    }
     &.bottom {
         justify-content: flex-end;
         margin-top: 10px;
@@ -290,6 +305,32 @@
                 }
             }
         }
+    }
+    &.round {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-bottom: -3px;
+        .k-button {
+            margin: 3px 0;
+            padding: 0 5px;
+            height: 17px;
+            background-color: $white;
+            border: 1px solid $gray-c;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 17px;
+            letter-spacing: -0.6px;
+            color: $gray-7;
+            + .k-button {
+                margin-left: 6px;
+            }
+            &.k-state-active, &.k-state-focused  {
+                border: 1px solid $main;
+                color: $main;
+            }
+        }
+        
     }
     
     &.multi, &.square { 

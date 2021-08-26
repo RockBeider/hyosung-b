@@ -8,77 +8,82 @@
     display: flex;
     align-items: center;
     height: 20px;
-}
-.h-checkbox input[type="checkbox"],
-.h-checkbox input[type="radio"] {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 0px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 0px;
-}
-.h-checkbox input[type="checkbox"] + label,
-.h-checkbox input[type="radio"] + label {
-    /*체크해제 상태*/
-    color: $gray-5;
-    display: block;
-}
-.h-checkbox input[type="checkbox"] + label span,
-.h-checkbox input[type="radio"] + label span {
+    
     position: relative;
-    display: inline-block;
-    vertical-align: top;
-}
-.h-checkbox input[type="checkbox"] + label::before,
-.h-checkbox input[type="radio"] + label::before {
-    /*체크해제 상태*/
-    position: absolute;
-    left: 0;
-    //  top: 0;
-    top: 50%;
-    margin-top: -10px;
-    content: "";
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-}
-.h-checkbox input[type="checkbox"]:checked + label span {
-    display: inline-block;
-    // vertical-align: middle;
-}
-.h-checkbox input[type="checkbox"] + label::before { //20px(md)
-    background-image: url($imgPathIcon+'/btn_checkbox_off.svg');
-    transition: background 0.3s ease;
-}
-.h-checkbox input[type="radio"] + label::before { //20px(md)
-    background-image: url($imgPathIcon+'/btn_radio_default.svg');
-    transition: background 0.3s ease;
-} 
+    padding-left: 20px + 8px;
+    white-space: nowrap;
 
-.h-checkbox input[type="checkbox"]:checked + label::before {
-    background-image: url($imgPathIcon+'/btn_checkbox_checked.svg');
-}
-.h-checkbox input[type="radio"]:checked + label::before {
-    background-image: url($imgPathIcon+'/btn_radio_checked.svg');
-}
-
-//disabled
-
-.h-checkbox input[type="checkbox"]:checked:disabled + label::before {
- background-image: url($imgPathIcon+'/btn_checkbox_checked_disabled.svg');
-}
-.h-checkbox input[type="checkbox"]:disabled + label::before {
- background-image: url($imgPathIcon+'/btn_checkbox_default_disabled.svg');
-}
-
-.h-checkbox input[type="radio"]:checked:disabled + label::before {
-    background-image: url($imgPathIcon+'/btn_radio_checked_disabled.svg');
-}
-.h-checkbox input[type="radio"]:disabled + label::before {
-    background-image: url($imgPathIcon+'/btn_radio_default_disabled.svg');
+    input[type="checkbox"],
+    input[type="radio"] {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 0px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 0px;
+    }
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+        /*체크해제 상태*/
+        color: $gray-5;
+        display: block;
+    }
+    input[type="checkbox"] + label span,
+    input[type="radio"] + label span {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
+    input[type="checkbox"] + label::before,
+    input[type="radio"] + label::before {
+        /*체크해제 상태*/
+        position: absolute;
+        left: 0;
+        //  top: 0;
+        top: 50%;
+        margin-top: -10px;
+        content: "";
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    input[type="checkbox"]:checked + label span {
+        display: inline-block;
+        // vertical-align: middle;
+    }
+    input[type="checkbox"] + label::before { //20px(md)
+        background-image: url($imgPathIcon+'/btn_checkbox_off.svg');
+        transition: background 0.3s ease;
+    }
+    input[type="radio"] + label::before { //20px(md)
+        background-image: url($imgPathIcon+'/btn_radio_default.svg');
+        transition: background 0.3s ease;
+    } 
+    
+    input[type="checkbox"]:checked + label::before {
+        background-image: url($imgPathIcon+'/btn_checkbox_checked.svg');
+    }
+    input[type="radio"]:checked + label::before {
+        background-image: url($imgPathIcon+'/btn_radio_checked.svg');
+    }
+    
+    //disabled
+    
+    input[type="checkbox"]:checked:disabled + label::before {
+     background-image: url($imgPathIcon+'/btn_checkbox_checked_disabled.svg');
+    }
+    input[type="checkbox"]:disabled + label::before {
+     background-image: url($imgPathIcon+'/btn_checkbox_default_disabled.svg');
+    }
+    
+    input[type="radio"]:checked:disabled + label::before {
+        background-image: url($imgPathIcon+'/btn_radio_checked_disabled.svg');
+    }
+    input[type="radio"]:disabled + label::before {
+        background-image: url($imgPathIcon+'/btn_radio_default_disabled.svg');
+    }
 }
 /*
 * ------------------------------
@@ -94,9 +99,6 @@
     }
 } 
 .h-checkbox {
-    position: relative;
-    padding-left: 20px + 8px;
-    white-space: nowrap;
     &.no-label {
         min-width: 20px;
         width: 20px;
@@ -114,4 +116,78 @@
     input[type="checkbox"] + label span {
         @include font-size-sm;
     }
+}
+
+
+.radioTab {
+    input[type="radio"] {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 0px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 0px;
+    }
+    input[type="radio"] + label {
+        position: relative;
+        margin-right: 20px;
+        padding-left: 28px;
+        /*체크해제 상태*/
+        color: $gray-5;
+        display: inline-block;
+    }
+    input[type="radio"] + label span {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
+    input[type="radio"] + label::before {
+        /*체크해제 상태*/
+        position: absolute;
+        left: 0;
+        //  top: 0;
+        top: 50%;
+        margin-top: -10px;
+        content: "";
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    input[type="radio"] + label::before { //20px(md)
+        background-image: url($imgPathIcon+'/btn_radio_default.svg');
+        transition: background 0.3s ease;
+    } 
+    input[type="radio"]:checked + label::before {
+        background-image: url($imgPathIcon+'/btn_radio_checked.svg');
+    }
+    
+    //disabled
+    
+    input[type="radio"]:checked:disabled + label::before {
+        background-image: url($imgPathIcon+'/btn_radio_checked_disabled.svg');
+    }
+    input[type="radio"]:disabled + label::before {
+        background-image: url($imgPathIcon+'/btn_radio_default_disabled.svg');
+    }
+    input[type="radio"] + label::before {
+        width: 20px;
+        height: 20px;
+    }
+    input[type="radio"] + label  span {
+        @include font-size-sm;
+    }
+    .selected-box {
+        display: none;
+    }
+    input {
+        display: none;
+    }
+    #radioIdsetting1:checked ~ #content1,
+    #radioIdsetting2:checked ~ #content2,
+    #radioIdsetting3:checked ~ #content3 {
+        display: flex;
+    }
+
 }

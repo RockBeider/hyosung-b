@@ -199,3 +199,22 @@ $(document).on('change', '[data-function="checkbox-check6"] input[type="checkbox
 $(document).on('click', '.listDelete', function() {
 	$(this).parents('.item').remove();
 })
+
+/* =====================================
+ * checkbox
+ * =====================================
+ */
+$(".textarea-byte-set textarea").on('input', function (e) {
+	$(this).parents('.textarea-byte-set').find('.k-counter-container .k-counter-value').html($(e.target).val().length);
+});
+/* =====================================
+ * checkbox disabled SA070702.html
+ * =====================================
+ */
+if( $('.radioTab').hasClass('disabled') ) {
+	$('.radioTab.disabled').find('input').attr('disabled', true);
+}
+
+if( $('.check-group').hasClass('disabled') ) {
+	$('.check-group.disabled').find('input').attr('disabled', true);
+}

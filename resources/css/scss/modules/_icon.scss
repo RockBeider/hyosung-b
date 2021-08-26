@@ -142,6 +142,9 @@ th .required {
     &.profile-blue {
         @include iconPng($width: 20px, $height: 20px, $name: 'icon_profile_blue@3x', $size: contain );
     }
+    &.noti {
+        @include iconSvg($width: 20px, $height: 20px, $name: 'btn_tip_default', $size: contain );
+    }
     // 26*26
     &.tip {
         @include iconSvg($width: 26px, $height: 26px, $name: 'btn_tip_default', $size: contain );

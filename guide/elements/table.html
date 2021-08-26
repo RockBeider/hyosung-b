@@ -736,6 +736,123 @@
     </div>
     
 
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">Grid cell color</p>
+        </div>
+        <div class="g-example-body">
+            <div class="content-group">
+                <div class="table-content grid" id="viewModel_cellcolor">
+                    <div data-role="grid" 
+                        data-sortable="true" 
+                        data-editable="false" 
+                        data-columns='[
+                        { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false, "template": "#=SetColor(NO)#" },
+                        { "field": "제목", "width": 110, "attributes" : {"class": "text-center"} },
+                        { "field": "내용"},
+                        ]' 
+                        data-bind="source: gridSource"
+                        
+                        style="height: 240px;">
+                    </div>
+                </div>
+            </div>
+            <script>
+                //grid
+                var viewModel_cellcolor = kendo.observable({
+                    gridSource: [
+                        { "NO":"추천",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                        { "NO":"추천",  "제목":"공지사항", "내용":"안녕하세요 OOO학원입니다. OOO학원에 귀하의 자녀를 보내주..." },
+                        { "NO":"추천",  "제목":"납부안내", "내용":"{ 회 원 명 } 고객님의 가정에 건강과 평안을 기원합니다. O월O일..." },
+                        { "NO":"1",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                        { "NO":"2",  "제목":"청구안내", "내용":"안내" },
+                        { "NO":"3",  "제목":"가입인사", "내용":"{ 업 체 명 }입니다. { 회 원 명 }님의 청구 발송일은 {청구서발송..." },
+                        { "NO":"4",  "제목":"공지사항", "내용":"안내" },
+                        { "NO":"5",  "제목":"공지사항", "내용":"안내" },
+                        { "NO":"6",  "제목":"공지사항", "내용":"안내" },
+                    ],
+                    displayGridSource: function() {
+                        return stringify(this.get("gridSource").toJSON());
+                    },
+                });
+                kendo.bind($("#viewModel_cellcolor"), viewModel_cellcolor); //그리드 스타일
+                function toolbarTemplate_color() {
+                    var template = kendo.template($('#toolbarTemplate_color').html());
+                    var result = template({});
+                    return result
+                }
+                function checkboxTemplate_color() {
+                    var template = kendo.template($('.checkboxTemplate_color').html());
+                    var result = template({});
+                    return result
+                }
+                function SetColor(NO) {
+                    if(NO=="추천")
+                        return "<span class=\"notice-title\">"+NO+"</span>";
+                    else
+                        return NO;
+                }
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="content-group">
+    &lt;div class="table-content grid" id="viewModel_cellcolor">
+        &lt;div data-role="grid" 
+            data-sortable="true" 
+            data-editable="false" 
+            data-columns='[
+            { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false, "template": "#=SetColor(NO)#" },
+            { "field": "제목", "width": 110, "attributes" : {"class": "text-center"} },
+            { "field": "내용"},
+            ]' 
+            data-bind="source: gridSource"
+            
+            style="height: 240px;">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;script>
+    //grid
+    var viewModel_cellcolor = kendo.observable({
+        gridSource: [
+            { "NO":"추천",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+            { "NO":"추천",  "제목":"공지사항", "내용":"안녕하세요 OOO학원입니다. OOO학원에 귀하의 자녀를 보내주..." },
+            { "NO":"추천",  "제목":"납부안내", "내용":"{ 회 원 명 } 고객님의 가정에 건강과 평안을 기원합니다. O월O일..." },
+            { "NO":"1",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+            { "NO":"2",  "제목":"청구안내", "내용":"안내" },
+            { "NO":"3",  "제목":"가입인사", "내용":"{ 업 체 명 }입니다. { 회 원 명 }님의 청구 발송일은 {청구서발송..." },
+            { "NO":"4",  "제목":"공지사항", "내용":"안내" },
+            { "NO":"5",  "제목":"공지사항", "내용":"안내" },
+            { "NO":"6",  "제목":"공지사항", "내용":"안내" },
+        ],
+        displayGridSource: function() {
+            return stringify(this.get("gridSource").toJSON());
+        },
+    });
+    kendo.bind($("#viewModel_cellcolor"), viewModel_cellcolor); //그리드 스타일
+    function toolbarTemplate_color() {
+        var template = kendo.template($('#toolbarTemplate_color').html());
+        var result = template({});
+        return result
+    }
+    function checkboxTemplate_color() {
+        var template = kendo.template($('.checkboxTemplate_color').html());
+        var result = template({});
+        return result
+    }
+    function SetColor(NO) {
+        if(NO=="추천")
+            return "&lt;span class=\"notice-title\">"+NO+"&lt;/span>";
+        else
+            return NO;
+    }
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+    
+
 
     <div class="g-example-wrap">
         <div class="g-example-head">

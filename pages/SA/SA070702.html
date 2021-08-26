@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+            <!-- Contents -->
+            <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+        <div data-role="dialog"
+             data-title="서류양식 관리"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="md">
+            <div class="content-group">
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col width="80px" />
+                            <col width="*" />
+                            <col width="80px" />
+                            <col width="*" />
+                            <col width="80px" />
+                            <col width="*" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td colspan="5"><span class="important">[서류구분] 제목 강조인 경우</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">작성자</th>
+                                <td>홍길동</td>
+                                <th scope="row">작성일시</th>
+                                <td>2021/07/20 12:35:26</td>
+                                <th scope="row">조회수</th>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">내용</th>
+                                <td colspan="5">서류양식 상세 내용입니다.
+                                    서류양식 상세 내용입니다.
+                                    서류양식 상세 내용입니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">게시대상</th>
+                                <td colspan="5">
+                                    <div class="check-group disabled">
+                                        <div class="h-checkbox">
+                                            <input type="checkbox" id="checkbox1-1" name="checkbox" />
+                                            <label for="checkbox1-1"><span>전체</span></label>
+                                        </div>
+                                        <div class="h-checkbox">
+                                            <input type="checkbox" id="checkbox1-2" name="checkbox" checked="checked" />
+                                            <label for="checkbox1-2"><span>영업협력사</span></label>
+                                        </div>
+                                        <div class="h-checkbox">
+                                            <input type="checkbox" id="checkbox1-3" name="checkbox" />
+                                            <label for="checkbox1-3"><span>효성VAN</span></label>
+                                        </div>
+                                        <div class="h-checkbox">
+                                            <input type="checkbox" id="checkbox1-4" name="checkbox" />
+                                            <label for="checkbox1-4"><span>특화VAN</span></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">게시아이디</th>
+                                <td colspan="5">
+                                    <div class="radioTab disabled" id="radioTab">
+
+                                        <input type="radio" id="radioIdsetting1" name="radioIdsetting" />
+                                        <label for="radioIdsetting1"><span>설정안함</span></label>
+                                        
+                                        <input type="radio" id="radioIdsetting2" name="radioIdsetting" checked="checked" />
+                                        <label for="radioIdsetting2"><span>포함</span></label>
+                                    
+                                        <input type="radio" id="radioIdsetting3" name="radioIdsetting" />
+                                        <label for="radioIdsetting3"><span>제외</span></label>
+                                        
+                                        <div class="selected-box disabled" id="content1"></div>
+                                        <div class="selected-box disabled" id="content2"></div>
+                                        <div class="selected-box disabled" id="content3"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">게시기간</th>
+                                <td colspan="5">2021/04/23 ~ 2021/04/30</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" >첨부파일</th>
+                                <td colspan="5">
+                                    <div class="btn-box col">
+                                        <button data-role="button" class="text link">첨부파일명.jpg</button>
+                                        <button data-role="button" class="text link">서류양식상세첨부파일.pdf</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="btn-box bottom">
+                    <button data-role="button" class="">수정</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+
+        var viewModel_fileUpload = kendo.observable({
+            isEnabled: true,
+            isVisible: true,
+        });
+     
+       
+    </script>
+</body>
+
+</html>
