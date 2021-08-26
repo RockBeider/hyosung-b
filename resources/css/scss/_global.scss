@@ -116,6 +116,9 @@ button {
 .mt-4 {
 	margin-top: 4px !important;
 }
+.mt-8 {
+	margin-top: 8px !important;
+}
 .mt-10 {
 	margin-top: 10px !important;
 }
@@ -159,6 +162,10 @@ button {
 .point {
 	color: $main;
 	font-weight: bold;
+} 
+.important {
+	color: $error !important;
+	font-weight: 500 !important;
 } 
 .notice-title {
 	color: $main;
@@ -212,6 +219,7 @@ td .badge {
 	}
 	&.square {
 		@include font-size-menu;
+		display: inline-flex;
 		height: 24px;
 		border-radius: 3px;
 		> * + * {
@@ -222,6 +230,30 @@ td .badge {
 			background: $gray-ef;
 			color: $gray-5;
 			font-weight: 500;
+		}
+		.label {
+			position: relative;
+			padding-right: 8px;
+			color: $main;
+			&.has-bar {
+				&::after {
+					content: '';
+					width: 1px;
+					height: 12px;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					margin-top: -6px;
+					background: $gray-c;
+
+				}
+			}
+		}
+		.desc {
+			color: $gray-2;
+			+ .label {
+				margin-left: 20px;
+			}
 		}
 	}
 	&.count {
@@ -364,11 +396,15 @@ td .divide {
             min-height: 30px;
             font-weight: 500;
         }
-        .right-group, .btn-box {
-            margin-bottom: 6px;
-        }
+        // .right-group, .btn-box {
+        //     margin-bottom: 6px;
+        // }
+        
 		+ .title-box.xsm { //팝업
 			margin-top: 8px;
+		}
+		.badge.square {
+			height: 28px;
 		}
 	}
 	&.xsm { //팝업일 경우
@@ -566,14 +602,14 @@ td .divide {
 		}
 	}
 	&.border {
-		.tabpanel { 
-			padding-top: 20px;
-			// &.search-control {
-			// 	padding: 24px 20px;
-			// 	&.k-content.k-state-active {
-			// 		display: flex !important;
-			// 	}
-			// }
+		.tabpanel {
+			margin-top: -1px;
+			padding: 20px;
+			background-color: $white;
+			border: 1px solid $gray-e4;
+			&.no-line {
+				padding: 20px 0 0 0; border: none;
+			}
 		}
 		&.search {
 			.tabpanel {
@@ -958,7 +994,13 @@ td .divide {
 	padding: 20px 30px;
 	background-color: $gray-f5;
 	border: 1px solid $gray-ef;
-	.upload {
+	
+}
+.upload {
+    display: flex;
+	width: 100%;
+    padding-right: 73px;
+	&.type2 {
 		padding-right: 97px;
 		.k-upload {
 			.k-upload-button {
@@ -968,17 +1010,24 @@ td .divide {
 			}
 		}
 	}
-}
-.upload {
-    display: flex;
-	width: 100%;
-    padding-right: 73px;
-	&.lg {
-		.k-upload {
-			max-width: 329px;
-        	min-width: 329px;
-		}
+	&.md {
+		max-width: 330px;
+		min-width: 330px;
+		// .k-upload {
+		// }
 	}
+	&.lg {
+		max-width: 400px;
+		min-width: 400px;
+		// .k-upload {
+		// }
+	}
+	// &.lg {
+	// 	.k-upload {
+	// 		max-width: 329px;
+    //     	min-width: 329px;
+	// 	}
+	// }
     +  .btn {
         margin-left: 8px;
     } 
@@ -1159,3 +1208,159 @@ td .divide {
 	}
 }
 
+.mobile-group {
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	// padding: 20px 0;
+	> * + * {
+		max-width: calc(100% - 240px)
+	}
+}
+
+.mobile-wrap {
+	display: flex;
+	flex-direction: column;
+	min-width: 240px;
+	margin-right: 10px;
+	padding: 30px 20px 20px;
+	height: 464px;
+	background-image: url($imgPath+'/common/img_phone.svg');
+	.mobile-head {
+		
+	}
+	.mobile-body {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		.contents {
+			flex: 1;
+			&.textarea-byte-set {
+				position: relative;
+				.k-counter-container { 
+					
+					color: $gray-9;
+					font-size: 12px;
+					line-height: 17px;
+					letter-spacing: -0.6px;
+					text-align: right;
+				}
+				.k-counter-value {
+					color: $bc-blue;
+					font-weight: 500;
+				}
+			}
+			.h-input {
+				@include font-size-menu;
+				margin-top: 6px;
+				padding: 0 0 10px;
+				border: none;
+				border-radius: 0;
+				border-bottom: 1px solid $gray-7;
+				font-weight: 500;
+				&::placeholder {
+					@include font-size-menu;
+					font-weight: 500 !important;
+				}
+			}
+			.k-textarea .k-input {
+				height: calc(100% - 52px);
+				padding: 8px 0;
+				border: none;
+			}
+		}
+		.number-box {
+			padding: 6px 10px;
+			background-color: $gray-f5;
+		}
+		.btn-box.bottom {
+			margin-top: 8px;
+			.k-button {
+				flex: 1;
+			}
+		}
+
+	}
+	.mobile-foot {
+		padding-top: 10px;
+	}
+	.reserve-title {
+		@include font-size-menu;
+		margin-bottom: 3px;
+		line-height: 21px;
+		font-weight: 500;
+	}
+	// .reserve-list {
+	// 	display: flex;
+	// 	flex-wrap: wrap;
+	// 	margin-bottom: -3px;
+	// 	.k-button {
+	// 		margin: 3px 0;
+	// 		padding: 0 5px;
+	// 		height: 17px;
+	// 		border: 1px solid $gray-c;
+	// 		border-radius: 10px;
+	// 		font-size: 12px;
+	// 		line-height: 17px;
+	// 		letter-spacing: -0.6px;
+	// 		color: $gray-7;
+	// 		+ .k-button {
+	// 			margin-left: 6px;
+	// 		}
+	// 	}
+	// }
+}
+
+.tip-box {
+	display: flex;
+	margin-top: 20px;
+	padding: 20px 0;
+	border-top: 1px solid $gray-e4;
+	border-bottom: 1px solid $gray-e4;
+	.tip-title {
+		@include font-size-sm;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 252px;
+		color: $main;
+		font-weight: 500;
+		.h-ico {
+			margin-right: 6px;
+		}
+	}
+	.tip-desc {
+		.list {
+			@include font-size-sm;
+			color: $gray-2;
+		}
+	}
+}
+
+
+
+// slick slide
+ .slick-arrow {
+	z-index: 10;
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	text-indent: -1000px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.3);
+	&.slick-prev {
+		left: 0;
+		transform: rotate(-180deg);
+		@include iconSvg($width: 60px, $height: 60px, $name: 'icon_img_left', $size: contain );
+		background-size: 40px 40px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	&.slick-next {
+		right: 0;
+		@include iconSvg($width: 60px, $height: 60px, $name: 'icon_img_right', $size: contain );
+		background-size: 40px 40px;
+		background-position: center;
+		background-repeat: no-repeat
+	}
+ }

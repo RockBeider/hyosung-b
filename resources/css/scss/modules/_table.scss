@@ -16,6 +16,14 @@
                 margin-left: 20px;
             }
         }
+        .table-set {
+            display: flex;
+            flex-direction: column;
+        }
+        .table-box {
+            height: 100%;
+        }
+       
     }
 }
 .table-set {

@@ -711,6 +711,11 @@
 .k-tabstrip>.k-content.k-state-active {
 	display: block;
 }
+.k-tabstrip-content.no-line.k-state-active, 
+.k-tabstrip>.k-content.no-line.k-state-active {
+	display: flex;
+	flex-direction: column;
+}
 .k-tabstrip-content, 
 .k-tabstrip>.k-content {
 	display: none;
@@ -822,12 +827,7 @@
 			color: $gray-a;
 		}
 	}
-	.tabpanel {
-		margin-top: -1px;
-		padding: 20px;
-		background-color: $white;
-		border: 1px solid $gray-e4;
-	}
+	
 }
 
 /*
@@ -3645,6 +3645,9 @@ div.k-grid-norecords {
 	padding: 4px;
 	border: 1px solid $gray-c;
 	border-radius: 3px;
+	&.disabled {
+		background: $gray-f5;
+	}
 	.item {
 		@include font-size-sm;
 		display: flex;
