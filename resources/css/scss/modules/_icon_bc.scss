@@ -3,8 +3,23 @@
     &.pop-timer {
         @include iconSvg($width: 18px, $height: 18px, $name: 'icon_logout_time', $size: contain );
     }
+    &.search { //공통
+        @include iconSvg($width: 26px, $height: 100%, $name: 'icon_search', $size: 14px 14px );
+        &:disabled {
+            background-image: url($imgPathIcon+'/icon_search_disabled.svg');
+        }
+    }
         
 }
 
 .k-i- {
+    &search { //공통
+        @include iconSvg($width: 26px, $height: 100%, $name: 'icon_search', $size: 14px 14px );
+        &:disabled {
+            background-image: url($imgPathIcon+'/icon_search_disabled.svg');
+        }
+    }
+     &calendar {
+        @include iconSvg($width: 14px, $height: 14px, $name: 'icon_calendar', $size: contain );
+    }
 }

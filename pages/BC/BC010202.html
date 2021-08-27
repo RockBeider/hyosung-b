@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="문자메세지 관리"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}" class="lg">
+            <div class="content-group">
+
+
+                <div data-role="tabstrip" class="tab-control border">
+                    <ul>
+                        <li>발송</li>
+                        <li class="k-state-active">메세지 설정</li>
+                        <li>발송현황</li>
+                    </ul>
+                    <!-- 발송 탭 -->
+                    <div class="tabpanel no-line">
+                        <!-- 모바일 그룹 -->
+                        <div class="mobile-group">
+                            <!-- 모바일 -->
+                            <div class="mobile-wrap">
+                                <div class="mobile-body">
+                                    <div class="contents textarea-byte-set">
+                                        <div class="k-counter-container"><span class="k-counter-value">0</span>/2000 byte</div>
+                                        <input type="text" class="h-input" placeholder="제목을 입력해주세요."/>
+                                        <textarea 
+                                            data-role="textarea"
+                                            class=""
+                                            data-placeholder="내용을 입력해주세요."
+                                            >
+    
+                                        </textarea>
+                                    </div>
+                                    <div class="form-set number-box">
+                                        <span class="form-label">발신번호</span>
+                                        <input type="text" class="h-input" value="0261812970" />
+                                    </div>
+                                    <div class="btn-box bottom">
+                                        <button data-role="button" class="light-blue"><span>불러오기</span></button>
+                                        <button data-role="button" class=""><span>저장</span></button>
+                                    </div>
+                                </div>
+                                <div class="mobile-foot">
+                                    <h4 class="reserve-title">예약어선택</h4>
+                                    <div data-role="buttongroup" class="round">
+                                        <button><span>업체명</span></button>
+                                        <button><span>회원명</span></button>
+                                        <button><span>청구서발송일</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 테이블 -->
+                            <div class="table-group">
+                                <div class="table-set">
+                                    <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                                        <div class="title-box sm mt-0">
+                                            <div class="form-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                                <div class="form-set">
+                                                    <span class="form-label">검색항목</span>
+                                                    <select id="dropdownlist" data-role="dropdownlist" data-value="회원번호" data-option-label="회원번호" class="sm">
+                                                        <option value="1">온라인</option>
+                                                        <option value="2">오프라인</option>
+                                                    </select>
+                                                    <div class="input-set search">
+                                                        <i class="h-ico search"></i>
+                                                        <input type="text" class="h-input" placeholder="검색어를 입력해주세요.">
+                                                    </div>
+                                                    <button class="k-button blue-border">검색</button>
+                                                </div>
+                                            </div>
+                                            <div class="right-group">
+                                                <button data-role="button" class="k-button light-green"><span>엑셀업로드</span></button>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <script type="text/x-kendo-template" id="checkboxTemplate">
+                                        <div class="h-checkbox no-label">
+                                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                            <label for="checkbox-nolabel"></label> 
+                                        </div>
+                                    </script>
+                                    <div class="table-content grid" id="viewModel_number">
+                                        <div data-role="grid" 
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-columns='[
+                                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                            { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                            { "field": "회원번호", "width": 150, "attributes" : {"class": "text-center"} },
+                                            { "field": "회원명", "width": 150, "attributes" : {"class": "text-center"} },
+                                            { "field": "휴대전화번호", "width": 180, "attributes" : {"class": "text-center"} },
+                                            { "field": "청구발송일", "width": 150, "attributes" : {"class": "text-center"} },
+                                            { "field": "회원구분", "width": 150, "attributes" : {"class": "text-center"} },
+                                            { "field": ""  }
+                                            ]' 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate_count()#"
+                                            style="height: 404px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-set mt-20">
+                                    <div class="table">
+                                        <table>
+                                            <colgroup>
+                                                <col width="120px">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">발송구분</th>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <div class="h-checkbox">
+                                                                <input type="radio" id="radio1-1" name="radio" />
+                                                                <label for="radio1-1"><span>즉시</span></label>
+                                                            </div>
+                                                            <div class="form-set">
+                                                                <div class="h-checkbox">
+                                                                    <input type="radio" id="radio1-2" name="radio" checked="checked" />
+                                                                    <label for="radio1-2"><span>예약</span></label>
+                                                                </div>
+                                                                <input data-role="datepicker" 
+                                                                    data-format="yyyy/MM/dd"
+                                                                    placeholder="yyyymmdd" 
+                                                                    data-culture="ko-KR"
+                                                                    data-footer="false"
+                                                                    class="datepicker sm" /> 
+                                                                <select data-role="dropdownlist" data-value="15시" data-option-label="15시" class="xs">
+                                                                    <option value="1">온라인</option>
+                                                                    <option value="2">오프라인</option>
+                                                                </select>
+                                                                <select data-role="dropdownlist" data-value="30분" data-option-label="30분" class="xs">
+                                                                    <option value="1">온라인</option>
+                                                                    <option value="2">오프라인</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="btn-box bottom">
+                                    <button data-role="button"><span>발송하기</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tip-box"> 
+                            <p class="tip-title"><i class="h-ico noti"></i><span>사용 TIP</span></p>
+                            <ul class="tip-desc">
+                                <li class="list">1. 메시지 제목과 내용을 직접 입력하거나 저장된 메시지를 불러오기 할 수 있습니다.</li>
+                                <li class="list">2. 자주쓰는 메시지는 저장해 두면 편리하게 사용할 수 있습니다.</li>
+                                <li class="list">3. 단문(SMS) 16원/건, 장문(LMS) 40원/건이 부과됩니다. (부가세별도)</li>
+                                <li class="list">4. 내용은 2000byte까지 입력 가능하며 90byte 초과 시 장문(LMS)로 자동 전환됩니다.</li>
+                                <li class="list">5. 발신번호는 수정할 수 없습니다.</li>
+                                <li class="list">6. 비회원 발송은 [엑셀업로드]를 이용해주시기 바랍니다.</li>
+                                <li class="list">7. 예약 발송은 1개월 이내로 설정 가능합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //발송 탭 -->
+                    <!-- 메시지설정 탭 -->
+                    <div class="tabpanel no-line">
+                        <div class="mobile-group">
+                            <div class="mobile-wrap">
+                                <div class="mobile-body">
+                                    <div class="contents textarea-byte-set">
+                                        <div class="k-counter-container"><span class="k-counter-value">0</span>/2000 byte</div>
+                                        <input type="text" class="h-input" placeholder="제목을 입력해주세요." value="가입인사"/>
+                                        <textarea 
+                                            data-role="textarea"
+                                            class=""
+                                            
+                                            data-placeholder="내용을 입력해주세요."
+                                            >저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다.
+고객님의 납부에 불편을 덜어드리기 위해 모바일 청구결제가 가능한 알림뱅킹 서비스를 도입하게 되었습니다.
+카카오톡으로 전송되는 청구서를 통해 내역을 확인하시고 모바일로 간편하게 납부하실 수 있습니다.
+고객님의 많은 이용부탁드립니다.
+감사합니다.
+    
+                                        </textarea>
+                                    </div>
+                                    
+                                    <div class="btn-box bottom">
+                                        <button data-role="button" class=""><span>메시지저장</span></button>
+                                    </div>
+                                </div>
+                                <div class="mobile-foot">
+                                    <h4 class="reserve-title">예약어선택</h4>
+                                    <div data-role="buttongroup" class="round">
+                                        <button><span>업체명</span></button>
+                                        <button><span>회원명</span></button>
+                                        <button><span>청구서발송일</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-set">
+                                    <script type="text/x-kendo-template" id="toolbarTemplate_count2">
+                                        <div class="title-box sm mt-0">
+                                            <div class="form-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="right-group">
+                                                <button data-role="button" class="k-button light-blue"><span>삭제</span></button>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <div class="table-content grid" id="viewModel_number2">
+                                        <div data-role="grid" 
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-scrollable="{ virtual: true }"
+                                            data-columns='[
+                                            { "title": "NO.", "field": "NO", "width": 50, "sortable": false, "template": "#=SetColor(NO)#"  },
+                                            { "field": "제목", "width": 120 },
+                                            { "field": "내용" },
+                                            ]' 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate_count2()#"
+                                            style="height: 404px;">
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tip-box"> 
+                            <p class="tip-title"><i class="h-ico noti"></i><span>사용 TIP</span></p>
+                            <ul class="tip-desc">
+                                <li class="list">1. 자주쓰는 메시지 내용을 저장해 두면 편리하게 사용할 수 있습니다. (최대 20건)</li>
+                                <li class="list">2. 내용은 2000byte까지 입력 가능합니다.</li>
+                                <li class="list">3. 항목 더블클릭 시 상세 내용을 확인할 수 있습니다.</li>
+                                <li class="list">4. 추천메시지는 삭제할 수 없습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //메시지설정 탭 -->
+                    <!-- //발송현황 탭 -->
+                    <div class="tabpanel no-line">
+                        <!-- 테이블 -->
+                        <div class="search-control table-style">
+                            <div class="table-set">
+                                <div class="table">
+                                    <table>
+                                        <colgroup>
+                                            <col width="110px">
+                                            <col width="*">
+                                            <col width="110px">
+                                            <col width="*">
+                                            <col width="110px">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">조회기간</th>
+                                                <td colspan="5">
+                                                    <div class="form-set">
+                                                        <select data-role="dropdownlist" data-value="발송일" data-option-label="발송일" class="md">
+                                                            <option value="1">온라인</option>
+                                                            <option value="2">오프라인</option>
+                                                        </select>
+                                                        <input data-role="datepicker" 
+                                                            data-format="yyyy/MM/dd"
+                                                            placeholder="yyyymmdd" 
+                                                            data-culture="ko-KR"
+                                                            data-footer="false"
+                                                            class="datepicker sm" />
+                                                        <span class="bar">~</span>
+                                                        <input data-role="datepicker" 
+                                                            data-format="yyyy/MM/dd"
+                                                            placeholder="yyyymmdd" 
+                                                            data-culture="ko-KR"
+                                                            data-footer="false"
+                                                            class="datepicker sm" />
+                                                        <div data-role="buttongroup" class="period"
+                                                        data-index="0">
+                                                            <button data-role="button"><span>오늘</span></button>
+                                                            <button data-role="button"><span>이번달</span></button>
+                                                            <button data-role="button"><span>지난달</span></button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">회원번호</th>
+                                                <td><input type="text" class="h-input" /></td>
+                                                <th scope="row">회원명</th>
+                                                <td><input type="text" class="h-input" /></td>
+                                                <th scope="row">휴대전화번호</th>
+                                                <td><input type="text" class="h-input" /></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">회원구분</th>
+                                                <td>
+                                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                                                        <option value="1">온라인</option>
+                                                        <option value="2">오프라인</option>
+                                                    </select>
+                                                </td>
+                                                <th scope="row">발송상태</th>
+                                                <td colspan="3">
+                                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="md">
+                                                        <option value="1">온라인</option>
+                                                        <option value="2">오프라인</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+                        </div>
+                        <div class="table-set">
+                            <script type="text/x-kendo-template" id="toolbarTemplate_count3">
+                                <div class="title-box sm">
+                                    <div class="form-group">
+                                        <span class="amount-set">
+                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                            <span class="amount">26</span><span class="unit">건</span>
+                                        </span>
+                                    </div>
+                                    <div class="btn-box">
+                                        <button data-role="button" class="k-button light-blue"><span>재발송</span></button>
+                                        <button data-role="button" class="k-button gray-border"><span>발송취소</span></button>
+                                        <button data-role="button" class="k-button green"><span>엑셀</span></button>
+                                    </div>
+                                </div> 
+                            </script>
+                            <script type="text/x-kendo-template" id="checkboxTemplate3">
+                                <div class="h-checkbox no-label">
+                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                    <label for="checkbox-nolabel"></label> 
+                                </div>
+                            </script>
+                            <div class="table-content grid" id="viewModel_number3">
+                                <div data-role="grid" 
+                                    data-sortable="true" 
+                                    data-editable="true" 
+                                    data-columns='[
+                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate3()#" },
+                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "field": "발송일시", "width": 140, "attributes" : {"class": "text-center"} },
+                                    { "field": ""  }
+                                    ]' 
+                                    data-bind="source: gridSource"
+                                    data-toolbar="#=toolbarTemplate_count3()#"
+                                    style="height: 360px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tip-box"> 
+                            <p class="tip-title"><i class="h-ico noti"></i><span>사용 TIP</span></p>
+                            <ul class="tip-desc">
+                                <li class="list">1. 최근 1년 간 발송현황을 조회할 수 있습니다.</li>
+                                <li class="list">2. 발송상태가 전송대기일 경우에 한해서 발송취소가 가능합니다.</li>
+                                <li class="list">3. 재발송은 즉시발송으로 처리됩니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+       
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+            { "NO":"1",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"2",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"3",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"4",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"5",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"6",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"7",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"8",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"9",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+                { "NO":"10",  "회원번호":"MEM-0113","회원명":"홍길동", "휴대전화번호":"01012345678","청구서발송일":"01","회원구분":"미지정" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        setTimeout(function(){
+            kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
+            kendo.bind($(".datepicker"), {}); //템플릿 안 드롭다운
+        }, 100)
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('#checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+        //grid tab2
+        var viewModel_number2 = kendo.observable({
+            gridSource: [
+                { "NO":"추천", "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"추천", "제목":"공지사항", "내용":"안녕하세요 OOO학원입니다. OOO학원에 귀하의 자녀를 보내주..." },
+                { "NO":"추천", "제목":"납부안내", "내용":"{ 회 원 명 } 고객님의 가정에 건강과 평안을 기원합니다. O월O일..." },
+                { "NO":"1", "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"2", "제목":"공지사항", "내용":"안내" },
+                { "NO":"3", "제목":"납부안내", "내용":"{ 업 체 명 }입니다. { 회 원 명 }님의 청구 발송일은 {청구서발송..." },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number2"), viewModel_number2); //그리드 스타일
+        setTimeout(function(){
+            kendo.bind($(".datepicker"), {}); //템플릿 안 드롭다운
+        }, 100)
+        function toolbarTemplate_count2() {
+            var template = kendo.template($('#toolbarTemplate_count2').html());
+            var result = template({});
+            return result
+        }
+        function SetColor(NO) {
+            if(NO=="추천")
+                return "<span class=\"notice-title\">"+NO+"</span>";
+            else
+                return NO;
+        }
+        $("#viewModel_number2").kendoTooltip({
+            filter: "td:nth-child(3)",
+            position: "bottom",
+            width: 250,
+            content: function(e){
+                if(e.target.is("td")) {
+                return e.target.text();
+                }
+
+                var dataItem = $("#viewModel_number2").data("kendoGrid").dataItem(e.target.closest("tr"));
+                var content = dataItem.Text;
+                return content;
+            }
+        }).data("kendoTooltip");
+
+        //grid tab3
+        var viewModel_number3 = kendo.observable({
+            gridSource: [
+                { "NO":"1", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"2", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"3", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"4", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"5", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"6", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"7", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"8", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"9", "발송일시":"2020/07/20 12:31:25" },
+                { "NO":"10", "발송일시":"2020/07/20 12:31:25" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number3"), viewModel_number3); //그리드 스타일
+        setTimeout(function(){
+            kendo.bind($(".datepicker"), {}); //템플릿 안 드롭다운
+        }, 100)
+        function toolbarTemplate_count3() {
+            var template = kendo.template($('#toolbarTemplate_count3').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate3() {
+            var template = kendo.template($('#checkboxTemplate3').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

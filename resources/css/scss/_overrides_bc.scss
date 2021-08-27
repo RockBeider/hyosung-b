@@ -5,8 +5,28 @@
 * ------------------------------
 */
 .k-dropdown {
-	min-width: 110px !important;
+	// min-width: 110px !important;
 	height: 26px;
+	&.xs {
+		max-width: 70px;
+        min-width: 70px;
+	}
+	&.sm { 
+		max-width: 106px;
+        min-width: 106px;
+	}
+	&.xsm {
+		// max-width: 120px;
+        // min-width: 120px;
+	}
+	&.md {
+        max-width: 120px;
+        min-width: 120px;
+	}
+	&.lg {
+        // max-width: 220px;
+        // min-width: 220px;
+	}
 	.k-dropdown-wrap {
 		&.k-state-disabled,
 		&.k-state-disabled:hover {
@@ -27,6 +47,13 @@
 		.k-input {
 			@include bc-font-size-xsm;
 		}
+		.k-select {
+			height: 26px;
+		}
+		.k-i-arrow-60-down:before {
+			width: 14px;
+			height: 14px;
+		}
 	}
 }
 /*
@@ -35,7 +62,7 @@
 * ------------------------------
 */
 .k-dateinput {
-
+	height: 26px;
 	.k-textbox {
 		@include bc-font-size-sm;
 	
@@ -53,17 +80,26 @@
 .k-grid .k-grouping-header,
 .k-grid-header {
 	// background: $gray-e;
-	th.k-header {
-		@include bc-font-size-sm;
-		
+	background: $bc-table-th-bg;
+	th.k-header { 
+		@include bc-font-size-xsm;
+		height: 30px;
+		padding: 5px 9px;
+		line-height: 19px;
+		color: $bc-table-th;
+		text-align: left;
 	}
 	
-}
+} 
 
+.k-grid-content {
+	border-bottom: 1px solid $gray-c;
+}
 //body
 .k-grid {
 	td {
-		@include bc-font-size-sm;
+		@include bc-font-size-xsm;
+		height: 30px;
 	}
 }
 
@@ -98,9 +134,64 @@
 * ------------------------------
 */
 .k-textarea {
-	@include bc-font-size-sm;
+	@include bc-font-size-xsm;
 	
+	.k-input {
+		@include bc-font-size-xsm;
+	}
 	::placeholder {
-		@include bc-font-size-sm;
+		@include bc-font-size-xsm;
+	}
+}
+
+/*
+* ------------------------------
+* datepicker
+* ------------------------------
+*/
+.k-datepicker {
+    height: 26px;
+    &.sm {
+		max-width: 103px; 
+		min-width: 103px;
+	}
+	.k-select { 
+		width: 22px;
+	}
+}
+
+.k-calendar {
+    .k-header {
+		@include bc-font-size-xsm;
+    }
+}
+
+/*
+* ------------------------------
+* tab
+* ------------------------------
+*/
+.k-tabstrip-items {
+
+	.k-item {
+		@include bc-font-size-menu;
+		height: 100%;
+		line-height: 21px;
+		margin-right: 20px;
+	}
+	.k-item.k-state-active, 
+	.k-item.k-state-selected {
+		border-bottom: 2px solid $bc-blue;
+		color: $bc-blue;
+	}
+}
+
+.tab-control.border {
+	.k-tabstrip-items {
+		.k-item.k-state-active, 
+		.k-item.k-state-selected {
+			border-top: 1px solid $bc-blue;
+			color: $bc-blue;
+		}
 	}
 }

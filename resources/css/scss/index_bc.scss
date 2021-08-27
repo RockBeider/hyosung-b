@@ -2,19 +2,88 @@
 
 // Import Scss
 @import "reset";
-@import "colors_bc";
 @import "colors"; //공통
+@import "colors_bc";
+// @import "fonts"; //공통  
 @import "fonts_bc";  
-@import "fonts"; //공통  
-@import "variables_bc";
 @import "variables"; //공통
-@import "mixins_bc"; 
-@import "mixins"; //공통 
-@import "global_bc";
-@import "global"; //공통
+@import "variables_bc";
+// @import "mixins"; //공통 
+@import "mixins_bc";  
 @import "./modules/modules_bc";  
-@import 'overrides'; //공통
+@import "global"; //공통
+@import "global_bc";
+@import 'overrides'; //공통 
 @import 'overrides_bc';
-@import "layout_bc";   
 @import "layout"; //공통   
-    
+@import "layout_bc";   
+      
+
+.contents-body {
+    flex: 1;
+}
+.table-group {
+    display: flex;
+    height: 100%;
+    &:not(:only-child) {
+        height: auto;
+    }
+}
+.k-tabstrip-wrapper > .k-tabstrip {
+    flex: 1 1 auto;
+    width: 100%;
+}
+.tabpanel {
+    flex: 1;
+    .table-set {
+       height: 100%;
+    }
+
+}
+.k-toolbar.k-grid-toolbar {
+    background-color: $white;
+    overflow: hidden;
+}
+.contents-wrap {
+    .k-toolbar.k-grid-toolbar {
+        background-color: $gray-f5;
+    }  
+}
+.table-group.divide-thick  {
+    height: unset;
+}
+.table-content.grid { 
+    .k-grid {
+    flex: 1;
+    min-height: 150px;
+    }
+}
+.k-grid-header {
+    border-bottom: 1px solid $gray-e4;
+}
+.k-grid-content {
+    overflow: auto;
+}
+.k-tabstrip-wrapper:only-child {
+    flex: 1; 
+}
+.table-bottom {
+    // display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: -1px;
+    border-bottom: 0;
+    border-top: 1px solid $gray-a;
+    box-shadow: none;
+    .btn-box {
+        margin-top: 0;
+    }
+}
+.status-reject td {
+    background: $reject !important;
+}
+.status-wait td {
+    background: $wait !important;
+}

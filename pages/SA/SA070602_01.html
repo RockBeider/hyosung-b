@@ -44,17 +44,168 @@
                             <label class="label" for="ID-send-receiver">수신자</label>
                             <div class="form-group col">
                                 <div class="form-set">
-                                    <input id="ID-send-receiver" class="h-input" placeholder="수신자를 추가해주세요"/>
-                                    <button data-role="button" class="gray-border">수신자추가</button>
-                                    <button data-role="button" class="gray-border">대량수신자추가</button>
+                                    <!-- <input id="ID-send-receiver" class="h-input" placeholder="수신자를 추가해주세요"/> -->
+                                    <div class="selected-box xs mt-0 w100">
+                                        <span class="placeholder">수신자를 추가해주세요</span>
+                                        <p class="item"><span class="">hyosung1</span><button class="listDelete hidden" data-role="button" data-icon="close"><span>닫기</span></button></p>
+                                        <p class="item"><span class="">hyosung2</span><button class="listDelete hidden" data-role="button" data-icon="close"><span>닫기</span></button></p>
+                                    </div>
+                                    <button data-role="button" class="gray-border" id="addRecipient">수신자추가</button>
+                                    <button data-role="button" class="gray-border" id="addBulkRecipient">대량수신자추가</button>
                                 </div>
-                                <div class="pop-box">
-                                    <div class="form-set filebox">
-                                        <h4 class="label">대량입력</h4>
-                                        <input class="h-input xl" value="파일을 업로드해주세요" disabled="disabled">
-                                        <label for="ex_filename" class="h-btn">업로드</label> 
-                                        <input type="file" id="ex_filename" class="upload-hidden"> 
-                                        <button data-role="button" class="light-green">샘플파일다운로드</button>
+                                <div class="add-recipient-con mt-0">
+                                    <div id="addRecipientPop" class="add-recipient-pop">
+                                        
+                                        <div class="pop-wrap divide">
+                                            <div class="list-box row pop">
+                                                <div class="list-set sm">
+                                                    <div class="list">
+                                                        <span class="label sm">업종구분</span>
+                                                        <span class="desc">
+                                                            <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                                                                <option value="1">온라인</option>
+                                                                <option value="2">오프라인</option>
+                                                            </select>
+                                                        </span>
+                                                    </div> 
+                                                    <div class="list">
+                                                        <span class="label sm">고객ID</span>
+                                                        <span class="desc">
+                                                            <input type="text" class="h-input" placeholder="입력해주세요">
+                                                        </span>
+                                                    </div>
+                                                    <div class="list">
+                                                        <span class="label sm">고객명</span>
+                                                        <span class="desc">
+                                                            <input type="text" class="h-input" placeholder="입력해주세요">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="list-set">
+                                                    <div class="list">
+                                                        <span class="label md">서비스상품</span>
+                                                        <span class="desc">
+                                                            <div data-selection="multiple" data-role="buttongroup" class="multi">
+                                                                <button><span>전체</span></button>
+                                                                <button><span>아이빌</span></button>
+                                                                <button><span>A시스템</span></button>
+                                                            </div>
+                                                        </span>
+                                                    </div> 
+                                                    <div class="list">
+                                                        <span class="label md">연동구분</span>
+                                                        <span class="desc">
+                                                            <div data-selection="multiple" data-role="buttongroup" class="multi">
+                                                                <button><span>전체</span></button>
+                                                                <button><span>웹</span></button>
+                                                                <button><span>API</span></button>
+                                                                <button><span>SDSI</span></button>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list">
+                                                        <span class="label md">결제상품</span>
+                                                        <span class="desc">
+                                                            <div data-selection="multiple" data-role="buttongroup" class="multi">
+                                                                <button><span>전체</span></button>
+                                                                <button><span>CMS</span></button>
+                                                                <button><span>실시간</span></button>
+                                                                <button><span>신용카드</span></button>
+                                                                <button><span>휴대전화</span></button>
+                                                                <button><span>가상계좌</span></button>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list">
+                                                        <span class="label md">서비스상태</span>
+                                                        <span class="desc">
+                                                            <div data-selection="multiple" data-role="buttongroup" class="multi">
+                                                                <button><span>전체</span></button>
+                                                                <button><span>서비스중</span></button>
+                                                                <button><span>출금정지</span></button>
+                                                                <button><span>중지</span></button>
+                                                                <button><span>해지</span></button>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list">
+                                                        <span class="label md">담당자</span>
+                                                        <span class="desc">
+                                                            <div data-selection="multiple" data-role="buttongroup" class="multi">
+                                                                <button><span>전체</span></button>
+                                                                <button><span>대표자</span></button>
+                                                                <button><span>세금계산서담당</span></button>
+                                                                <button><span>민원담당</span></button>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <button data-role="button" class="bottom blue-border" data-icon="search-blue"><span>검색</span></button>
+                                            </div>
+                                            <div class="table-set">
+                                                <div class="table-content grid has-bottom" id="viewModel_template">
+                                                    <script type="text/x-kendo-template" id="toolbarTemplate_dropdown">
+                                                        <div class="title-box sm mt-0">
+                                                            <div class="left-group">
+                                                                <span class="amount-set">
+                                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="right-group">
+                                                                <button role="button" class="k-button gray-border">추가</button>
+                                                            </div>
+                                                        </div>
+                                                    </script>
+                                                    <script type="text/x-kendo-template" class="checkboxTemplate">
+                                                        <div class="h-checkbox no-label">
+                                                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                                            <label for="checkbox-nolabel"></label> 
+                                                        </div>
+                                                    </script>
+                                                    <div data-role="grid" 
+                                                        data-sortable="true" 
+                                                        data-editable="true" 
+                                                        data-columns='[
+                                                        { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                                        { "field": "id", "title": "고객/협력사ID", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                        { "title": "고객/협력사명", "field": "name", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                        { "field": "관리자구분", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                        { "field": "관리자명", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                        { "title": "E-mail", "field": "email", "width": 150, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                        { "field": "비고", "width": 150  }
+                                                        ]' 
+                                                        data-bind="source: gridSource"
+                                                        data-toolbar="#=toolbarTemplate_dropdown()#">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button data-function="close" data-role="button" class="close hidden" data-icon="close"><span>닫기</span></button>
+                                    </div>
+                                    <div id="addBulkRecipientPop" class="add-recipient-pop">
+                                        <div class="upload-box form-set">
+                                            <span class="label">대량입력</span>
+                                            <div class="upload type3 lg">
+                                                <input type="file"
+                                                id="viewModel_fileUpload_type3"
+                                                    name="files"
+                                                    type="file"
+                                                    data-role="upload"
+                                                    data-multiple="false"
+                                                    data-validation= "{
+                                                        allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                                                    }"
+                                                    data-show-file-list= "true"
+                                                    data-localization="{select: '업로드'}"
+                                                    data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                                                    data-bind="visible: isVisible,
+                                                                enabled: isEnabled" 
+                                                >
+                                            </div> 
+                                            <button data-role="button" class="light-green"><span>샘플파일다운로드</span></button>
+                                        </div>
+                                        <button data-function="close" data-role="button" class="close hidden" data-icon="close"><span>닫기</span></button>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +216,7 @@
                                 <input id="ID-send-title" class="h-input" placeholder="제목을 입력해주세요"/>
                             </div>
                         </div>
-                        <div class="list">
+                        <div class="list h100">
                             <label class="label">내용</label>
                             <div class="form-set editor-box">
                                 <textarea data-role="editor"
@@ -100,17 +251,37 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-            var viewModel = kendo.observable({
+            
+            var viewModel_fileUpload_type3 = kendo.observable({
+                isEnabled: true,
+                isVisible: true,
+            });
+            kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+            setTimeout(function() {
+                kendo.bind($("#viewModel_fileUpload_type3"), viewModel_fileUpload_type3); 
+            }, 100)
+            kendo.bind($(".wrap"), {}); 
+            var viewModel_template = kendo.observable({
                 gridSource: [
-                    { "N":"ch", "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "N":"ch", "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "N":"ch", "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                    { "id":"0000001",  "name":"야쿠르트","관리자구분":"전자세금계산서담당", "관리자명":"홍길동","email":"hyosung@hyosung.com","비고":"-" },
+                    { "id":"0000001",  "name":"야쿠르트","관리자구분":"전자세금계산서담당", "관리자명":"홍길동","email":"hyosung@hyosung.com","비고":"-" },
+                    { "id":"0000001",  "name":"야쿠르트","관리자구분":"전자세금계산서담당", "관리자명":"홍길동","email":"hyosung@hyosung.com","비고":"-" }
                 ],
                 displayGridSource: function() {
                     return stringify(this.get("gridSource").toJSON());
                 },
             });
-            kendo.bind($(".wrap"), viewModel);
+            kendo.bind($("#viewModel_template"), viewModel_template); //그리드 스타일
+            function toolbarTemplate_dropdown() {
+                var template = kendo.template($('#toolbarTemplate_dropdown').html());
+                var result = template({});
+                return result
+            }
+            function checkboxTemplate() {
+                var template = kendo.template($('.checkboxTemplate').html());
+                var result = template({});
+                return result
+            }
     </script>
 </body>
 

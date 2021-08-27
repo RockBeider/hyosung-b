@@ -1,0 +1,11 @@
+<svg id="img_phone" xmlns="http://www.w3.org/2000/svg" width="240" height="464">
+    <defs>
+        <style>
+            .cls-1{fill:#222}
+        </style>
+    </defs>
+    <rect id="Rectangle_984" data-name="Rectangle 984" class="cls-1" width="240" height="464" rx="24"/>
+    <rect id="Rectangle_987" data-name="Rectangle 987" width="224" height="448" rx="20" transform="translate(8 8)" style="fill:#fff"/>
+    <rect id="Rectangle_1502" data-name="Rectangle 1502" class="cls-1" width="133" height="20" rx="5" transform="translate(54)"/>
+    <rect id="Rectangle_1503" data-name="Rectangle 1503" width="39" height="5" rx="2.5" transform="translate(101 8)" style="fill:#555"/>
+</svg>

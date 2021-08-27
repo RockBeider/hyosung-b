@@ -34,6 +34,11 @@ $black: #000;
 $lavender: #cfdef5;
 $marine-blue: #002a70;
 
+// State
+$state: #ffe282;
+$accent: #48c3e6;
+$error: #f14747;
+
 
 //Button
 $btn-blue-disabled : #bbc2cf;
@@ -73,11 +78,6 @@ $badge-yellow-border: #ffe79b;
 
 $reject: #feecec;
 $wait: #fff4cf;
-
-// State
-$state: #ffe282;
-$accent: #48c3e6;
-$error: #f14747;
 
 // Main
 $main: #0e4194;
@@ -135,6 +135,7 @@ $bc-light-blue-hover: #bcccee;
 $bc-light-blue-disabled: #f4f8ff;
 
 
+
 $bc-green: #1e6c42;
 $bc-green-hover: #074d27;
 
@@ -143,3 +144,6 @@ $bc-light-green-hover: #98d2b3;
 
 $bc-table-th-bg: #f2f4f7;
 $bc-table-th: #5e6b85;
+
+
+$bc-accent: #5c92fc;

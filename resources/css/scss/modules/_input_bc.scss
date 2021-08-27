@@ -35,8 +35,8 @@
 		// }
 		&::placeholder {
 			// @include input_placeholder;
-			font-size: 14px;
-			letter-spacing: -0.75px;
+			font-size: 13px;
+			letter-spacing: -0.65px;
 			color: $gray-a;
 		}
 	}
@@ -66,13 +66,26 @@
 * ------------------------------
 */
 .input-set {
-	position: relative;
+	&.sm {
+		max-width: 106px;
+		min-width: 106px;
+	}
 	&.md {
 		max-width: 140px;
 		min-width: 140px;
 	}
 }
 .input-set {
+	height: 26px;
+	.input-label {
+		@include bc-font-size-xsm;
+	}
+	.h-input,.k-input {
+		height: 26px;
+	}
+	.unit {
+		@include bc-font-size-xsm;
+	}
 	&.error {
 		.note {
 			@include bc-font-size-xs;

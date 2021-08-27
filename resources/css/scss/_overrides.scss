@@ -713,7 +713,7 @@
 }
 .k-tabstrip-content.no-line.k-state-active, 
 .k-tabstrip>.k-content.no-line.k-state-active {
-	display: flex;
+	display: flex !important;
 	flex-direction: column;
 }
 .k-tabstrip-content, 
@@ -3638,6 +3638,9 @@ div.k-grid-norecords {
 .table table.k-editor {
 	margin: 0;
 }
+table.k-editor {
+	height: 100% !important;
+}
 .selected-box {
 	display: flex;
 	height: 82px;
@@ -3645,9 +3648,19 @@ div.k-grid-norecords {
 	padding: 4px;
 	border: 1px solid $gray-c;
 	border-radius: 3px;
+	&.xs {
+		height: 28px;
+		padding: 3px 10px;
+	}
 	&.disabled {
 		background: $gray-f5;
 	}
+	.placeholder {
+		@include font-size-sm;
+		align-items: center;
+		color: $gray-a;
+		display: none;
+	}	
 	.item {
 		@include font-size-sm;
 		display: flex;
@@ -3753,6 +3766,9 @@ div.k-grid-norecords {
 }
 
 .send-form-set {
+	display: flex;
+	flex-direction: column;
+	height: 100% !important;
 	padding: 24px 20px;
 	background-color: $white;
 	border: 1px solid $gray-c;

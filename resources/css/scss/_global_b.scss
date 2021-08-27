@@ -9,6 +9,7 @@
 	background: $gray-ef;
 	border-top: 1px solid $gray-2;
 }
+
 .list-set {
     display: flex;
     + .list-set {
@@ -74,11 +75,24 @@
         }
     }
 }
+.pop-wrap {
+    &.divide {
+        padding: 0 20px;
+        background: $gray-f5;
+        > * {
+            padding: 20px 0;
+        }
+        > * + * {
+            border-top: 1px solid $gray-c;
+        }
+    }
+}
 .list-box {
 	position: relative;
     display: flex;
     align-items: flex-start;
     white-space: nowrap;
+    
     &.gray-box {
         padding: 20px;
         background: $gray-f5;
@@ -90,6 +104,54 @@
 			color: $gray-2;
 		}
     }
+    &.pop {
+        &.row {
+            display: flex;
+            flex-direction: row;
+        }
+        // padding: 20px;
+        background: $gray-f5;
+		flex-direction: column;
+        border-radius: 3px;
+        .list-set {
+            display: flex;
+            flex-direction: column;
+            + .list-set {
+                margin-top: 0;
+                margin-left: 30px;
+            }
+            &.sm {
+                width: 258px;
+            }
+        }
+		.label {
+            justify-content: flex-start;
+			color: $gray-7;
+            &.sm {
+                min-width: 58px;
+            }
+            &.md {
+                min-width: 70px;
+            }
+		}
+		.desc {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+			color: $gray-2;
+		}
+		.badge {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			height: 20px;
+		}
+        .k-button.bottom {
+            position: absolute;
+            bottom: 20px; 
+            right: 0;
+        }
+	}
     &.half {
         > * {
             width: 50%;
@@ -162,6 +224,7 @@
             }
         }
 	}
+    
     .list { display: flex; }
     .label, .form-label {
         @include font-size-sm;

@@ -13,7 +13,7 @@
 * ------------------------------
 */
 body { 
-	// overflow: hidden;
+	overflow: hidden;
 }
 .wrap {
 	width: 100%;
@@ -187,15 +187,14 @@ body {
 * ------------------------------
 */
 .quick-menu {
-	position: absolute;
+	position: fixed;
     top: 166px;
-    left: 100%;
+    left: calc(100% - 170px);
 	display: flex;
 	flex-direction: column;
 	min-width: 140px;
 	width: 140px;
 
-    margin-left: 173px;
     z-index: 100;
 	.head {
 		display: flex;
@@ -229,6 +228,11 @@ body {
 		.k-button {
 			height: 32px;
 		}
+	}
+}
+@media (max-width: 1920px) {
+	.quick-menu {
+		left: 1750px;
 	}
 }
 

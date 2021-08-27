@@ -10,17 +10,58 @@
 <body>
     <div class="wrap">
         <!-- Header Include -->
-        <div data-include-path="../layout/header_bp.html"></div>
-
+        <div data-include-path="../layout/header_bc.html"></div>
+        
         <div id="container">
         </div>
-        
         <div data-role="dialog"
              data-title="사용자 등록"
              data-width="700"
              data-modal="false"
             >
             <div class="content-group">
+                 <!-- 테이블 -->
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                        <div class="title-box sm mt-0">
+                            <div class="form-set">
+                                <select id="dropdownlist" data-role="dropdownlist" data-value="회원번호" data-option-label="회원번호" class="sm">
+                                    <option value="1">온라인</option>
+                                    <option value="2">오프라인</option>
+                                </select>
+                                <input type="text" class="h-input" placeholder="" disabled="disabled">
+                                <div class="h-checkbox ml-20">
+                                    <input type="checkbox" id="checkbox1-2" name="checkbox" checked="checked" />
+                                    <label for="checkbox1-2"><span>미사용자 포함</span></label>
+                                </div>
+                                <button class="k-button blue-border">검색</button>
+                            </div>
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_number">
+                        <div data-role="grid" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "USER ID", "field": "ID", "width": 100,  "sortable": false  },
+                            { "field": "사용자명", "width": 90 },
+                            { "field": "부서", "width": 60 },
+                            { "field": "권한", "width": 70 },
+                            { "field": "핸드폰", "width": 100 },
+                            { "field": "사용유무", "width": 60 },
+                            { "field": "엑셀권한", "width": 70  }
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-toolbar="#=toolbarTemplate_count()#"
+                            style="height: 240px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="title-box sm">
+                    <div class="left-group">
+                        <h2 class="sub-title">사용자 상세</h2>
+                    </div>
+                    <button data-role="button" class="light-blue"><span>신규등록</span></button>
+                </div>
                 <div class="table">
                     <table>
                         <colgroup>
@@ -116,6 +157,34 @@
     <script src="../../resources/js/common.js"></script>
     <script>
         kendo.bind($(".wrap"), {});
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-" },
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            { "ID":"-",  "사용자명":"-","부서":"-", "권한":"-","핸드폰":"010-1234-5678","사용유무":"-", "엑셀권한":"-"},
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        setTimeout(function(){
+            kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
+            kendo.bind($(".datepicker"), {}); //템플릿 안 드롭다운
+        }, 100)
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
     </script>
 </body>
 

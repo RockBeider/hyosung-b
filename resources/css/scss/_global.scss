@@ -153,6 +153,9 @@ button {
 .w100 {
 	width: 100% !important;
 }
+.h100 {
+	height: 100% !important;
+}
 .text-full {
 	flex: 1;
 }
@@ -481,6 +484,7 @@ td .divide {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1;
+	letter-spacing: -0.75px;
 	.amount {
 		&.current {
 			color: $main;
@@ -991,10 +995,19 @@ td .divide {
 	letter-spacing: -0.7px;
 }
 .upload-box {
+	position: relative;
+	width: 100%;
 	padding: 20px 30px;
 	background-color: $gray-f5;
 	border: 1px solid $gray-ef;
-	
+	.close {
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		width: 18px;
+		height: 18px;
+		margin-top: -9px;
+	}
 }
 .upload {
     display: flex;
@@ -1007,6 +1020,18 @@ td .divide {
 				max-width: 89px;
 				min-width: 89px;
 				right: -97px;
+			}
+		}
+	}
+	&.type3 {
+		padding-right: 86px;
+		.k-upload {
+			.k-upload-button {
+				max-width: 78px;
+				min-width: 78px;
+				right: -86px;
+				border: 1px solid $main;
+				color: $main;
 			}
 		}
 	}
@@ -1207,6 +1232,29 @@ td .divide {
 		margin-top: -10px;
 	}
 }
+.add-recipient-con {
+	width: 100%;
+}
+.add-recipient-pop {
+	position: relative;
+	margin-top: 10px;
+	.close {
+		position: absolute;
+		top: 20px; 
+		right: 20px;
+	}
+}
+.add-recipient-pop:not(:first-child) {
+	display: none;
+}
+
+/*
+* ------------------------------
+* Mobile Group
+* ------------------------------
+*/
+
+
 
 .mobile-group {
 	flex-direction: row;
@@ -1214,7 +1262,7 @@ td .divide {
 	justify-content: space-between;
 	// padding: 20px 0;
 	> * + * {
-		max-width: calc(100% - 240px)
+		max-width: calc(100% - 250px)
 	}
 }
 
