@@ -3,14 +3,60 @@
  * 폼
  * ------------------------------
  */
-
-.search-control {
+ .form-group {
     .label {
-        @include bc-font-size-sm;
-       
+        @include bc-font-size-xsm;
+        + .form-set {
+            margin-left: 6px;
+        }
     }
-    
-    .label {
-        @include font-size-sm;
+    .form-label {
+        + .form-set {
+            margin-left: 6px;
+        }
     }
 }
+
+.form-set {
+    > *:not(.bar) + *:not(.bar) {
+        margin-left: 6px;
+    }
+    .form-label {
+        @include bc-font-size-xsm;
+    }
+}
+.k-dialog {
+    .search-control {
+        .label, .form-set {
+            margin-right: 6px;
+        }
+    }
+
+}
+.search-group {
+    .label {
+        @include bc-font-size-xsm;
+        height: 26px;
+    }
+}
+.search-control {
+    .h-btn.search {
+        border: 1px solid $bc-blue;
+        color: $bc-blue;
+    }
+    .k-button.search {
+        border-radius: 3px;
+        &.k-state-focused {
+            border: 1px solid $bc-blue;
+        }
+    }
+     .label {
+        @include bc-font-size-xsm;
+    }
+}
+
+/*
+* ------------------------------
+* listbox
+* ------------------------------
+*/

@@ -10,19 +10,83 @@
 
 // Common
 
+.text-blue {
+	color: $bc-blue;
+}
+.point {
+	color: $bc-blue;
+} 
+.notice-title {
+	color: $bc-blue;
+}
+/* 
+* ------------------------------
+* badge
+* ------------------------------
+*/
+.badge {
+	@include font-size-badge;
+    &.square {
+		@include font-size-menu;
+    }
+}
+
+
 /*
 * ------------------------------
 * Title
 * ------------------------------
 */
+.main-title {
+	// @include font-size-xl;
+}
+.sub-title {
+	// @include font-size-lg;
+    &.md {
+		// @include font-size-lg;
+	}
+}
 
+.alert-title {
+	// @include font-size-menu;
+    &.sm {
+		@include bc-font-size-xsm;
+    }
+}
 /*
 * ------------------------------
 * Title Group
 * ------------------------------
 */
-
-
+.title-box {
+    // &.sm {
+    //     min-height: 26px; 
+    //     margin: 20px 0 6px;
+    //     .sub-title {
+    //         @include bc-font-size-xsm;
+    //     }
+    //     .noti {
+    //         @include bc-font-size-xsm;
+    //     }
+    // }
+    &.sm {
+        min-height: 26px; 
+        margin: 20px 0 6px;
+        align-items: center;
+        .sub-title {
+            @include bc-font-size-xsm;
+        }
+        .noti {
+            @include bc-font-size-xsm;
+        }
+    }
+    .noti {
+		&.sm {
+			@include bc-font-size-xsm;
+			// line-height: 18px;
+		}
+	}
+}
 
 /*
 * ------------------------------
@@ -30,22 +94,19 @@
 * ------------------------------
 */
 
-/*
-* ------------------------------
-* BreadCrumb
-* ------------------------------
-*/
-/*
-* ------------------------------
-* List 
-* ------------------------------
-*/
-
-/*
-* ------------------------------
-* badge
-* ------------------------------
-*/
+.amount-set {
+	color: $gray-9;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: -0.65px;
+    .amount {
+		&.current {
+			color: $bc-blue;
+			font-weight: bold;
+		}
+	}
+}
 
 
 /*
@@ -53,10 +114,194 @@
 * File upload
 * ------------------------------
 */
-
+.filebox {
+    .label {
+		@include bc-font-size-xsm;
+    }
+}
 
 /*
 * ------------------------------
 * File upload BP type
 * ------------------------------
 */
+
+
+
+.upload-guide {
+	.list {
+		color: $gray-7;
+		font-size: 13px;
+		letter-spacing: -0.65px;
+	}
+}
+.upload-title {
+	font-size: 12px;
+	letter-spacing: -0.6px;
+    color: $gray-7;
+}
+.upload-box {
+	padding: 20px 40px;
+	
+}
+.upload {
+    padding-right: 73px;
+	&.type2 {
+		padding-right: 84px;
+		.k-upload {
+			.k-upload-button {
+				max-width: 78px;
+				min-width: 78px;
+				right: -84px;
+			}
+		}
+	}
+	&.md {
+		// max-width: 330px;
+		// min-width: 330px;
+	}
+	&.lg {
+		// max-width: 400px;
+		// min-width: 400px;
+	}
+    +  .btn {
+        margin-left: 6px;
+    } 
+    .k-upload {
+        height: 26px;
+       
+        .k-upload-files {
+            .k-file {
+                .k-file-name-size-wrapper{
+                    margin-left: 10px;
+                    .k-file-name{
+                        font-size: 13px;
+                    }
+                }
+				.k-upload-action,
+				.k-upload-action:hover,
+				.k-upload-action:focus {
+					min-width: 24px;
+				}
+            }
+        }
+        .k-upload-button {
+            max-width: 65px;
+            min-width: 65px;
+            right: -73px;
+            order: 2;
+            span {
+                margin: 0;
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+    }
+    
+}
+.upload-guide {
+    margin: 10px 0 0 0;
+    .list {
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+}
+
+.t-file {
+	position: relative;
+	background-color: $gray-ef;
+	border-radius: 3px;
+	+ .t-file {
+		margin-top: 8px;
+	}
+	.file-title {
+		@include font-size-sm; 
+		position: relative;
+		display: inline-block;
+		min-width: 160px;
+		padding: 0 10px;
+		color: $gray-2;
+		font-weight: 500;
+		text-align: center;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 50%; 
+			margin-top: -7px;
+			width: 1px; 
+			height: 14px;
+			background-color: $gray-d;
+		}
+	}
+	.file-desc {
+		padding: 0 10px;
+	}
+	.text-link {
+		@include font-size-sm;
+		margin-right: 10px;
+		color: $main;
+		text-decoration: underline;
+	}
+	.file-date {
+		color: $gray-9;
+		font-size: 13px;
+		letter-spacing: -0.65px;
+		font-weight: 400;
+	}
+	.k-button.close {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		width: 20px; 
+		height: 20px;
+		margin-top: -10px;
+	}
+}
+
+/*
+* ------------------------------
+* Mobile Group
+* ------------------------------
+*/
+.mobile-wrap {
+    .mobile-body {
+        .contents {
+            .h-input {
+				@include font-size-menu;
+                &::placeholder {
+					@include font-size-menu;
+					font-weight: 500 !important;
+				}
+            }
+        }
+    }
+    .reserve-title {
+		@include bc-font-size-xsm;
+        line-height: 19px;
+	}
+}
+
+.tip-box {
+	.tip-title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 240px;
+		color: $bc-blue;
+        font-size: 14px;
+        letter-spacing: -0.7px;
+		font-weight: 500;
+		.h-ico {
+			margin-right: 6px;
+		}
+	}
+	.tip-desc {
+		.list {
+			@include bc-font-size-xsm;
+			color: $gray-2;
+		}
+	}
+}

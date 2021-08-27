@@ -1186,6 +1186,10 @@ button {
   width: 100% !important;
 }
 
+.h100 {
+  height: 100% !important;
+}
+
 .text-full {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -1629,6 +1633,7 @@ td .divide + .divide {
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
+  letter-spacing: -0.75px;
 }
 
 .amount-set .amount.current {
@@ -2595,9 +2600,20 @@ td .divide + .divide {
 }
 
 .upload-box {
+  position: relative;
+  width: 100%;
   padding: 20px 30px;
   background-color: #f5f5f5;
   border: 1px solid #efefef;
+}
+
+.upload-box .close {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
 }
 
 .upload {
@@ -2616,6 +2632,18 @@ td .divide + .divide {
   max-width: 89px;
   min-width: 89px;
   right: -97px;
+}
+
+.upload.type3 {
+  padding-right: 86px;
+}
+
+.upload.type3 .k-upload .k-upload-button {
+  max-width: 78px;
+  min-width: 78px;
+  right: -86px;
+  border: 1px solid #0e4194;
+  color: #0e4194;
 }
 
 .upload.md {
@@ -2847,6 +2875,30 @@ td .divide + .divide {
   margin-top: -10px;
 }
 
+.add-recipient-con {
+  width: 100%;
+}
+
+.add-recipient-pop {
+  position: relative;
+  margin-top: 10px;
+}
+
+.add-recipient-pop .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.add-recipient-pop:not(:first-child) {
+  display: none;
+}
+
+/*
+* ------------------------------
+* Mobile Group
+* ------------------------------
+*/
 .mobile-group {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -2861,7 +2913,7 @@ td .divide + .divide {
 }
 
 .mobile-group > * + * {
-  max-width: calc(100% - 240px);
+  max-width: calc(100% - 250px);
 }
 
 .mobile-wrap {
@@ -6955,9 +7007,9 @@ th .required {
 
 .k-tabstrip-content.no-line.k-state-active,
 .k-tabstrip > .k-content.no-line.k-state-active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -10679,6 +10731,10 @@ table.k-editor .k-editable-area {
   margin: 0;
 }
 
+table.k-editor {
+  height: 100% !important;
+}
+
 .selected-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10690,8 +10746,24 @@ table.k-editor .k-editable-area {
   border-radius: 3px;
 }
 
+.selected-box.xs {
+  height: 28px;
+  padding: 3px 10px;
+}
+
 .selected-box.disabled {
   background: #f5f5f5;
+}
+
+.selected-box .placeholder {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #aaa;
+  display: none;
 }
 
 .selected-box .item {
@@ -10820,6 +10892,14 @@ table.k-editor .k-editable-area {
 }
 
 .send-form-set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100% !important;
   padding: 24px 20px;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -15044,6 +15124,10 @@ table.k-editor .k-editable-area {
 * Wrap
 * ------------------------------
 */
+body {
+  overflow: hidden;
+}
+
 .wrap {
   width: 100%;
   min-width: 1920px;
@@ -15288,9 +15372,9 @@ table.k-editor .k-editable-area {
 * ------------------------------
 */
 .quick-menu {
-  position: absolute;
+  position: fixed;
   top: 166px;
-  left: 100%;
+  left: calc(100% - 170px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15300,7 +15384,6 @@ table.k-editor .k-editable-area {
           flex-direction: column;
   min-width: 140px;
   width: 140px;
-  margin-left: 173px;
   z-index: 100;
 }
 
@@ -15353,6 +15436,12 @@ table.k-editor .k-editable-area {
 
 .quick-menu .foot .k-button {
   height: 32px;
+}
+
+@media (max-width: 1920px) {
+  .quick-menu {
+    left: 1750px;
+  }
 }
 
 /*

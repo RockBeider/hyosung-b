@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
-    <link rel="stylesheet" href="../../resources/css/index.css">
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
 </head>
 <body>
     <div class="wrap">
         <!-- Header Include -->
-        <div data-include-path="../layout/header.html"></div>
+        <div data-include-path="../layout/header_bc.html"></div>
 
         <div id="container">
             <!-- Header Include -->
@@ -20,13 +20,14 @@
                 <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
             </main>
         </div>
+
         <div data-role="dialog"
              data-title="엑셀 업로드"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
                             events: { close: onClose}" class="sm">
             <div class="content-group">
-                <div class="title-box xsm mt-0">
+                <div class="title-box sm mt-0">
                     <span class="upload-title">
                         * 1회 100건까지 등록 가능합니다
                     </span>

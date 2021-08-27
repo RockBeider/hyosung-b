@@ -939,6 +939,133 @@
     </div>
 
 
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">File Upload</p>
+        </div>
+        <div class="g-example-body" >
+            <div class="upload type3">
+                <input type="file"
+                id="viewModel_fileUpload_type3"
+                    name="files"
+                    type="file"
+                    data-role="upload"
+                    data-multiple="false"
+                    data-validation= "{
+                        allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                    }"
+                    data-show-file-list= "true"
+                    data-localization="{select: '업로드'}"
+                    data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                    data-bind="visible: isVisible,
+                                enabled: isEnabled" 
+                >
+            </div> 
+            <script>
+                 var viewModel_fileUpload_type3 = kendo.observable({
+                    isEnabled: true,
+                    isVisible: true,
+                });
+                kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+                setTimeout(function() {
+                    kendo.bind($("#viewModel_fileUpload_type3"), viewModel_fileUpload_type3); 
+                }, 100)
+                 
+            </script>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="upload type3">
+    &lt;input type="file"
+    id="viewModel_fileUpload_type3"
+        name="files"
+        type="file"
+        data-role="upload"
+        data-multiple="false"
+        data-validation= "{
+            allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+        }"
+        data-show-file-list= "true"
+        data-localization="{select: '파일 선택'}"
+        data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+        data-bind="visible: isVisible,
+                    enabled: isEnabled" 
+    >
+&lt;/div> 
+&lt;script>
+        var viewModel_fileUpload_type3 = kendo.observable({
+        isEnabled: true,
+        isVisible: true,
+    });
+    kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+    setTimeout(function() {
+        kendo.bind($("#viewModel_fileUpload_type3"), viewModel_fileUpload_type3); 
+    }, 100)
+        
+&lt;/script>
+            </code></pre>
+        </div>
+    </div>
+
+
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
+            <p class="title">File Uploaded list</p>
+        </div>
+        <div class="g-example-body" >
+            <div class="t-widget t-upload">
+                <ul class="t-upload-files t-reset">
+                    <li class="t-file">
+                        <span class="file-title">사업자등록증</span>
+                        <span class="file-desc">
+                            <span class="t-icon t-success"></span>
+                            <a href="#" class="text-link">Untitled.pdf</a>
+                            <span class="file-date">2021/03/11 16:40:58</span>
+                        </span>
+                        <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                    </li>
+                    <li class="t-file">
+                        <span class="file-title">보증보험</span>
+                        <span class="file-desc">
+                            <span class="t-icon t-success"></span>
+                            <a href="#" class="text-link">Untitled.pdf</a>
+                            <span class="file-date">2021/03/11 16:40:58</span>
+                        </span>
+                        <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="t-widget t-upload">
+    &lt;ul class="t-upload-files t-reset">
+        &lt;li class="t-file">
+            &lt;span class="file-title">사업자등록증&lt;/span>
+            &lt;span class="file-desc">
+                &lt;span class="t-icon t-success">&lt;/span>
+                &lt;a href="#" class="text-link">Untitled.pdf&lt;/a>
+                &lt;span class="file-date">2021/03/11 16:40:58&lt;/span>
+            &lt;/span>
+            &lt;button data-role="button" data-icon="close" class="close hidden">&lt;span>닫기&lt;/span>&lt;/button>
+        &lt;/li>
+        &lt;li class="t-file">
+            &lt;span class="file-title">보증보험&lt;/span>
+            &lt;span class="file-desc">
+                &lt;span class="t-icon t-success">&lt;/span>
+                &lt;a href="#" class="text-link">Untitled.pdf&lt;/a>
+                &lt;span class="file-date">2021/03/11 16:40:58&lt;/span>
+            &lt;/span>
+            &lt;button data-role="button" data-icon="close" class="close hidden">&lt;span>닫기&lt;/span>&lt;/button>
+        &lt;/li>
+    &lt;/ul>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+
 
 
     <div class="g-example-wrap">

@@ -131,6 +131,32 @@ $(document).on('click', '.list-box .close[data-function="close"]', function() {
 });
 
 /* =====================================
+ * SA020202
+ * =====================================
+ */
+$(document).on('click', '.table-bg-box .cell [data-function="close"]', function() {
+	$(this).parents('.row').remove();
+});
+/* =====================================
+ * SA070602_02
+ * =====================================
+ */
+$(document).on('click', '#addRecipient', function() {
+	$('.add-recipient-pop').hide();
+	$('#addRecipientPop').show();
+});
+$(document).on('click', '#addRecipientPop [data-function="close"]', function() {
+	$('#addRecipientPop').hide();
+});
+$(document).on('click', '#addBulkRecipient', function() {
+	$('.add-recipient-pop').hide();
+	$('#addBulkRecipientPop').show();
+});
+$(document).on('click', '#addBulkRecipientPop [data-function="close"]', function() {
+	$('#addBulkRecipientPop').hide();
+});
+
+/* =====================================
  * BP0110 고객등록 - 결제서비스 정보 서비스구분
  * =====================================
  */
@@ -192,12 +218,17 @@ $(document).on('change', '[data-function="checkbox-check6"] input[type="checkbox
 }).trigger('change');
 
 /* =====================================
- * SA070403 공지사항 등록/수정
+ * SA070602_02
  * =====================================
  */
-
+if($('.selected-box .item').length == 0 ) {
+	$('.selected-box').find('.placeholder').css({'display': 'flex'});
+}
 $(document).on('click', '.listDelete', function() {
 	$(this).parents('.item').remove();
+	if($('.selected-box .item').length == 0 ) {
+		$('.selected-box').find('.placeholder').css({'display': 'flex'});
+	}
 })
 
 /* =====================================

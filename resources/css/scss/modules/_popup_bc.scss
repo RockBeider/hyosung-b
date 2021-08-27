@@ -28,16 +28,28 @@
 * dialog
 * ------------------------------
 */
+.k-dialog .k-dialog-content {
+    &.sm {
+        width: 450px;
+    }
+    &.md {
+        width: 600px;
+    }
+    &.lg {
+        width: 900px;
+    }
+}
 .k-window.k-dialog {
     .k-dialog-titlebar {
         @include bc-font-size-sm;  
     }
     .content-group {
-        padding: 30px;
+        padding: 20px 30px;
     }
     .btn-box.justify-content-end {
         margin-top: 10px;
     }
+    
 }
 .pop-guide {
     .list {

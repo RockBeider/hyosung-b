@@ -125,35 +125,35 @@
         }
     }
     &.green {
-        background: $white;
-        border: 1px solid $gray-5;
-        color: $gray-2;
+        background-color: $bc-green;
+        border: 1px solid $bc-green;
+        color: $white;
         &:hover, &:focus {
-            background-color: $gray-e;
-            border: 1px solid $gray-9;
+            background-color: $bc-green-hover;
+            border: 1px solid $bc-green-hover;
         }
         &.k-state-active {
 
         }
         &.k-state-focused {
-            background-color: $gray-e;
-            border: 1px solid $gray-9;
+            background-color: $bc-green-hover;
+            border: 1px solid $bc-green-hover;
         }
     }
     &.light-green {
-        background: $white;
-        border: 1px solid $gray-5;
-        color: $gray-2;
+        background: $bc-light-green;
+        border: 1px solid $bc-light-green;
+        color: $green;
         &:hover, &:focus {
-            background-color: $gray-e;
-            border: 1px solid $gray-9;
+            background-color: $bc-light-green-hover;
+            border: 1px solid $bc-light-green-hover;
         }
         &.k-state-active {
 
         }
         &.k-state-focused {
-            background-color: $gray-e;
-            border: 1px solid $gray-9;
+            background-color: $bc-light-green-hover;
+            border: 1px solid $bc-light-green-hover;
         }
     }
 }
@@ -166,7 +166,7 @@
     &.bottom {
         .k-button {
             height: 30px;
-            padding: 0 20px;
+            padding: 0 20px; 
         }
     }
     .k-button + .k-button {
@@ -177,8 +177,43 @@
 .k-button-group {
     &.period {
         .k-button {
-            @include bc-font-size-sm;
-            
+            @include bc-font-size-xsm;
+            &.k-state-active, &.k-state-focused  {
+                background-color: $bc-accent;
+                border: 1px solid $bc-accent;
+                + .k-button {
+                    border-left: 1px solid $bc-accent;
+                }
+            }
+            &:last-child {
+                &.k-state-active, &.k-state-focused  {
+                    border-right: 1px solid $bc-accent;
+                }
+            }
+        }
+    }
+    &.round {
+        .k-button {
+            &.k-state-active, &.k-state-focused  {
+                border: 1px solid $bc-blue;
+                color: $bc-blue;
+            }
+        }
+    }
+    &.multi, &.square { 
+        .k-button {
+            &.k-state-active, &.k-state-focused  {
+                border: 1px solid $bc-blue;
+                color: $bc-blue;
+                + .k-button {
+                    border-left: 1px solid $bc-blue;
+                }
+            }
+            &:last-child {
+                &.k-state-active, &.k-state-focused  {
+                    border-right: 1px solid $bc-blue;
+                }
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ table {
     margin-top :30px;
 }
 .table-set {
-    margin-top: 12px;
+    // margin-top: 12px;
 }
 
 
@@ -52,7 +52,7 @@ td .form-box, th .form-box {
     }
     td {
         @include bc-font-size-xsm;
-        padding: 6px 10px;
+        padding: 5px 10px;
         height: 38px;
     }
 }
