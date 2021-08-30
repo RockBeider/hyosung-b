@@ -3388,9 +3388,13 @@ kendo-grid tr.k-state-hover .k-grid-content-sticky.k-state-selected {
 div.k-grid-norecords {
 	justify-content: center;
 }
+.k-grid-header-wrap {
+	thead tr + tr th {
+		border-top: 1px solid $gray-e4;
+	}
+}
 .table-content.grid {
 	position: relative; 
-    height: 100%;
 	background: $white;
 	border-bottom: 1px solid $gray-a;
 	&.has-bottom {
@@ -3399,7 +3403,14 @@ div.k-grid-norecords {
 			display: flex;
 		}
 	}
+	&:only-child {
+		height: 100%;
+	}
+	+ .table-content.grid {
+		margin-top: 10px;
+	}
 }
+
 
 .table-bottom {
 	display: none;
@@ -3847,7 +3858,7 @@ table.k-editor {
 		// border: 0;
 		// padding: 0;
 		height: 100%;
-		line-height: 20px;
+		// line-height: 20px;
 	}
 	::placeholder {
 		@include font-size-sm;

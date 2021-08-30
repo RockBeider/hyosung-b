@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">정산지급</h2>
+                            <h2 class="main-title">배분산정</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -36,8 +36,8 @@
                                 data-editable=false,
                                 data-navigational=true,
                                 data-items='[
-                            { type:"rootitem", href: "", text: "정산", showText: true },
-                            { type:"item", href: "", text: "정산지급", showText: true}
+                            { type:"rootitem", href: "", text: "배분", showText: true },
+                            { type:"item", href: "", text: "배분산정", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -47,24 +47,27 @@
                 <div class="contents-body">
                     <div class="table-group">
                         <div class="search-control">
-                            <div class="form-group">
-                                <span class="label">지급일</span>
-                                <div class="form-set">
-                                    <input data-role="datepicker" 
-                                        data-format="yyyy/MM/dd"
-                                        placeholder="yyyymmdd" 
-                                        data-culture="ko-KR"
-                                        data-footer="false"
-                                        class="datepicker sm">
-                                </div>
+                            <div class="search-line">
+                                <button data-role="button"><span>과금신청</span></button>
                             </div>
-                            <div class="form-group">
-                                <span class="label">결제상태</span>
-                                <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="1차결제" data-option-label="1차결제" class="sm">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
+                            <div class="search-line mt-6">
+                                <div class="form-group">
+                                    <span class="label">배분월</span>
+                                    <div class="form-set">
+                                        <input data-role="datepicker" 
+                                            data-format="yyyy/MM/dd"
+                                            placeholder="yyyymmdd" 
+                                            data-culture="ko-KR"
+                                            data-footer="false"
+                                            class="datepicker sm">
+                                        <span class="bar">~</span>
+                                        <input data-role="datepicker" 
+                                            data-format="yyyy/MM/dd"
+                                            placeholder="yyyymmdd" 
+                                            data-culture="ko-KR"
+                                            data-footer="false"
+                                            class="datepicker sm">
+                                    </div>
                                 </div>
                             </div>
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
@@ -72,49 +75,34 @@
                         <div class="table-set">
                             <script type="text/x-kendo-template" class="toolbarTemplate">
                                 <div class="title-box sm">
-                                    <div class="form-group">
+                                    <div class="left-group">
                                         <span class="amount-set">
                                             <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
                                             <span class="amount">26</span><span class="unit">건</span>
                                         </span>
-                                        <div class="list-box">
-                                            <div class="list">
-                                                <span class="label has-bar">총정산예정금액</span>
-                                                <span class="desc"><span>208,921,321</span><span class="unit">원</span></span>
-                                            </div>
-                                            <div class="list">
-                                                <span class="label has-bar">총환불예정금액</span>
-                                                <span class="desc"><span>5,000</span><span class="unit">원</span></span>
-                                            </div>
-                                            <div class="list blue">
-                                                <span class="label has-bar">지급이체계좌등록금액</span>
-                                                <span class="desc"><span>208,921,321</span><span class="unit">원</span></span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-set">
-                                            <button role="button" class="k-button gray-border"><span>지급이체계좌 잔액조회</span></button>
-                                            <button role="button" class="k-button gray-border"><span>정산보고서</span></button>
-                                        </div>
-                                        <div class="form-set">
-                                            <select id="dropdownlist" data-role="dropdownlist" data-value="1차정산" data-option-label="1차정산" class="sm">
-                                                <option value="1">온라인</option>
-                                                <option value="2">오프라인</option>
-                                            </select>
-                                            <button role="button" class="k-button"><span>결제상신</span></button>
+                                            <button role="button" class="k-button"><span>수정</span></button>
+                                            <button role="button" class="k-button"><span>추가</span></button>
                                         </div>
                                     </div>
                                 </div>
                             </script>
-                            
+                            <script type="text/x-kendo-template" class="checkboxTemplate">
+                                <div class="h-checkbox no-label">
+                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                    <label for="checkbox-nolabel"></label> 
+                                </div>
+                            </script>
+                            <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
                             <div class="table-content grid">
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
                                     data-columns='[
+                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
                                     { "title": "NO.", "field": "NO", "width": 60, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "field": "", "width": 60  },
                                     { "field": ""  }
                                     ]' 
                                     data-bind="source: gridSource"
@@ -150,9 +138,7 @@
                 },
             });
             kendo.bind($(".wrap"), viewModel);
-            setTimeout(function(){
-                kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
-            });
+            
             function toolbarTemplate() {
                 var template = kendo.template($('.toolbarTemplate').html());
                 var result = template({});

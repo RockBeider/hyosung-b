@@ -68,6 +68,13 @@ td .form-box, th .form-box {
     align-items: center;
     justify-content: space-between;
 }
+td.none {
+    background-color: $gray-f5 !important;
+}
+td.point, th.point {
+    color: $main !important;
+    font-weight: 500 !important;
+}
 .table {
     width: 100%; 
     overflow: hidden;
@@ -270,6 +277,11 @@ td .form-box, th .form-box {
     align-items: flex-start;
     .btn-box.bottom {
         margin-top: 10px;
+    }
+    .mark {
+        @include font-size-lg;
+        margin-top: 10px;
+        font-weight: 500;
     }
 }
 
