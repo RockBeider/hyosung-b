@@ -969,6 +969,10 @@ button {
   margin-top: 8px !important;
 }
 
+.mt-6 {
+  margin-top: 6px !important;
+}
+
 .mt-10 {
   margin-top: 10px !important;
 }
@@ -1453,6 +1457,22 @@ td .divide + .divide {
   color: #f14747;
 }
 
+.title-box .list-box .list .label {
+  color: #777;
+}
+
+.title-box .list-box .list .desc {
+  color: #222;
+}
+
+.title-box .list-box .list + .list {
+  margin-left: 20px;
+}
+
+.title-box .list-box .list.blue .label, .title-box .list-box .list.blue .desc {
+  color: #0e4194;
+}
+
 /*
 * ------------------------------
 *  리스트
@@ -1608,7 +1628,8 @@ td .divide + .divide {
   border: 0;
 }
 
-.filebox .h-input:disabled, .filebox .h-input:disabled:focus {
+.filebox .h-input:disabled, .filebox .h-input:disabled:focus,
+.filebox .k-input:disabled, .filebox .k-input:disabled:focus {
   background-color: #fff;
   color: #aaa;
 }
@@ -1787,7 +1808,7 @@ td .divide + .divide {
   color: #555;
 }
 
-.list-info .h-input {
+.list-info .h-input, .list-info .k-input {
   display: inline-block;
 }
 
@@ -1861,6 +1882,54 @@ td .divide + .divide {
   font-weight: bold;
 }
 
+.status-banner.settlement {
+  margin-bottom: 4px;
+}
+
+.status-banner.settlement .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 14px 20px;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+}
+
+.status-banner.settlement .list + .list {
+  margin-left: 8px;
+}
+
+.status-banner.settlement .tit {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  font-weight: 500;
+  color: #222;
+  white-space: nowrap;
+}
+
+.status-banner.settlement .time {
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.7px;
+  line-height: 19px;
+  color: #666;
+  font-weight: 400;
+}
+
 .info-banner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1906,6 +1975,10 @@ td .divide + .divide {
 /************************************************************
 **  file tree area
 ************************************************************/
+.table + .tree-box {
+  border-top: none;
+}
+
 .tree-box {
   height: 180px;
   border: 1px solid #ccc;
@@ -2819,7 +2892,7 @@ td .divide + .divide {
   font-weight: 500;
 }
 
-.mobile-wrap .mobile-body .contents .h-input {
+.mobile-wrap .mobile-body .contents .h-input, .mobile-wrap .mobile-body .contents .k-input {
   font-size: 15px;
   line-height: 26px;
   letter-spacing: -0.75px;
@@ -2831,28 +2904,28 @@ td .divide + .divide {
   font-weight: 500;
 }
 
-.mobile-wrap .mobile-body .contents .h-input::-webkit-input-placeholder {
+.mobile-wrap .mobile-body .contents .h-input::-webkit-input-placeholder, .mobile-wrap .mobile-body .contents .k-input::-webkit-input-placeholder {
   font-size: 15px;
   line-height: 26px;
   letter-spacing: -0.75px;
   font-weight: 500 !important;
 }
 
-.mobile-wrap .mobile-body .contents .h-input:-ms-input-placeholder {
+.mobile-wrap .mobile-body .contents .h-input:-ms-input-placeholder, .mobile-wrap .mobile-body .contents .k-input:-ms-input-placeholder {
   font-size: 15px;
   line-height: 26px;
   letter-spacing: -0.75px;
   font-weight: 500 !important;
 }
 
-.mobile-wrap .mobile-body .contents .h-input::-ms-input-placeholder {
+.mobile-wrap .mobile-body .contents .h-input::-ms-input-placeholder, .mobile-wrap .mobile-body .contents .k-input::-ms-input-placeholder {
   font-size: 15px;
   line-height: 26px;
   letter-spacing: -0.75px;
   font-weight: 500 !important;
 }
 
-.mobile-wrap .mobile-body .contents .h-input::placeholder {
+.mobile-wrap .mobile-body .contents .h-input::placeholder, .mobile-wrap .mobile-body .contents .k-input::placeholder {
   font-size: 15px;
   line-height: 26px;
   letter-spacing: -0.75px;
@@ -4356,10 +4429,15 @@ td .form-group.col > * + * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 28px;
 }
 
 .search-control .search-line + .search-line {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .search-control .form-group {
@@ -4429,6 +4507,90 @@ td .form-group.col > * + * {
 
 .search-control .h-checkbox input[type="radio"] + label:before {
   top: 50%;
+}
+
+/*
+* ------------------------------
+* autocomplete
+* ------------------------------
+*/
+.k-autocomplete {
+  border-radius: 2px;
+  background-clip: padding-box;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4285714286;
+  white-space: nowrap;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -ms-flex-flow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row nowrap;
+  -ms-flex-align: stretch;
+  -webkit-box-align: stretch;
+          align-items: stretch;
+  vertical-align: middle;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+  position: relative;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.k-autocomplete .k-ie11 {
+  background-clip: border-box;
+}
+
+.k-autocomplete .k-i-loading {
+  width: 24px;
+  height: 28px;
+}
+
+.k-autocomplete .k-clear-value {
+  visibility: hidden;
+}
+
+.k-autocomplete:hover .k-clear-value, .k-autocomplete.k-state-hover .k-clear-value, .k-autocomplete.k-state-focused .k-clear-value, .k-autocomplete.k-state-focus .k-clear-value {
+  visibility: visible;
+}
+
+.k-autocomplete:focus-within .k-clear-value {
+  visibility: visible;
+}
+
+.k-autocomplete.k-header,
+.k-autocomplete {
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #424242;
+  background-color: #ffffff;
+}
+
+.k-autocomplete.k-header:hover, .k-autocomplete.k-header.k-state-hover,
+.k-autocomplete:hover,
+.k-autocomplete.k-state-hover {
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+.k-autocomplete.k-header.k-state-open, .k-autocomplete.k-header.k-state-focused, .k-autocomplete.k-header.k-state-focus,
+.k-autocomplete.k-state-open,
+.k-autocomplete.k-state-focused,
+.k-autocomplete.k-state-focus {
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+.k-autocomplete.k-header:focus-within,
+.k-autocomplete:focus-within {
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+.k-list-scroller {
+  overflow: auto;
 }
 
 /*
@@ -5667,6 +5829,57 @@ th .required {
   background-image: url("../images/icon/icon_contact_07.svg");
 }
 
+.status-banner.settlement .list {
+  position: relative;
+  background-position: calc(100% - 24px) 14px;
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+}
+
+.status-banner.settlement .list::after {
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: -0.65px;
+  position: absolute;
+  right: 25px;
+  bottom: 13px;
+  display: block;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.status-banner.settlement .list.done {
+  background-image: url("../images/icon/icon_complete.svg");
+  border: 1px solid #1e6c42;
+  background-color: #d4eee0;
+}
+
+.status-banner.settlement .list.done::after {
+  content: '완료';
+  color: #1e6c42;
+}
+
+.status-banner.settlement .list.wait {
+  background-image: url("../images/icon/icon_waiting.svg");
+}
+
+.status-banner.settlement .list.wait::after {
+  content: '대기';
+  color: #666;
+}
+
+.status-banner.settlement .list.ing {
+  background-image: url("../images/icon/icon_proceeding.svg");
+  border: 1px solid #0e4194;
+  background-color: #cfdef5;
+}
+
+.status-banner.settlement .list.ing::after {
+  content: '진행중';
+  right: 20px;
+  color: #0e4194;
+}
+
 .active .h-ico.menu1 {
   background-image: url("../images/icon/icon_standard_selected.svg");
 }
@@ -5741,6 +5954,13 @@ th .required {
   background-image: url("../images/icon/btn_filter_default.svg");
   background-size: 8px 15px;
   margin-right: -10px;
+}
+
+.k-i-k-i-x {
+  width: 12px;
+  height: 12px;
+  background-image: url("../images/icon/btn_X.svg");
+  background-size: 12px 12px;
 }
 
 .k-i-close {

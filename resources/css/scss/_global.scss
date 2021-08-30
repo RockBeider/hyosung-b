@@ -119,6 +119,9 @@ button {
 .mt-8 {
 	margin-top: 8px !important;
 }
+.mt-6 {
+	margin-top: 6px !important;
+}
 .mt-10 {
 	margin-top: 10px !important;
 }
@@ -454,7 +457,24 @@ td .divide {
 		}
 	}
 }
-
+.title-box {
+	.list-box .list {
+		.label {
+			color: $gray-7;
+		}
+		.desc {
+			color: $gray-2;
+		}
+		+ .list {
+			margin-left: 20px;
+		}
+		&.blue {
+			.label, .desc {
+				color: $main;
+			}
+		}
+	}
+}
 
 
 /*
@@ -580,7 +600,8 @@ td .divide {
 		clip:rect(0,0,0,0);
 		border: 0;
 	}
-	.h-input:disabled, .h-input:disabled:focus {
+	.h-input:disabled, .h-input:disabled:focus,
+	.k-input:disabled, .k-input:disabled:focus {
 		background-color: $white;
 		color: $gray-a;
 	}
@@ -734,7 +755,7 @@ td .divide {
 .list-info {
 	@include font-size-sm;
 	color: $gray-5;
-	.h-input {
+	.h-input, .k-input {
 		display: inline-block;
 	}
 	> * {
@@ -781,6 +802,43 @@ td .divide {
 			font-weight: bold;
 		}
 	}
+	&.settlement {
+		margin-bottom: 4px;
+		.list {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			flex-direction: column;
+			flex: 1;
+			padding: 14px 20px;
+			background: $white;
+			border: 1px solid $gray-e4;
+			+ .list {
+				margin-left: 8px;
+			}
+			&.done {
+				
+			}
+			&.wait {
+
+			}
+			&.ing {
+
+			}
+		}
+		.tit {
+			@include font-size-lg;
+			font-weight: 500;
+			color: $gray-2;
+			white-space: nowrap;
+		}
+		.time {
+			@include font-size-sm;
+			line-height: 19px;
+			color: $gray-6; 
+			font-weight: 400;
+		}
+	}
 }
 
 .info-banner {
@@ -816,7 +874,9 @@ td .divide {
 /************************************************************
 **  file tree area
 ************************************************************/
-
+.table + .tree-box {
+	border-top: none;
+}
 .tree-box {
 	height: 180px;
 	border: 1px solid $gray-c;
@@ -1298,7 +1358,7 @@ td .divide {
 					font-weight: 500;
 				}
 			}
-			.h-input {
+			.h-input, .k-input {
 				@include font-size-menu;
 				margin-top: 6px;
 				padding: 0 0 10px;

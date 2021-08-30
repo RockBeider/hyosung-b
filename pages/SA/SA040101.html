@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">정산조회</h2>
+                            <h2 class="main-title">입금관리</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -36,8 +36,8 @@
                                 data-editable=false,
                                 data-navigational=true,
                                 data-items='[
-                            { type:"rootitem", href: "", text: "정산", showText: true },
-                            { type:"item", href: "", text: "정산조회", showText: true}
+                            { type:"rootitem", href: "", text: "과금", showText: true },
+                            { type:"item", href: "", text: "과금관리", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -48,6 +48,9 @@
                     <div class="table-group">
                         <div class="search-control">
                             <div class="search-line">
+                                <button data-role="button"><span>과금신청</span></button>
+                            </div>
+                            <div class="search-line mt-6">
                                 <div class="form-group">
                                     <span class="label">검색항목</span>
                                     <div class="form-set">
@@ -62,26 +65,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <span class="label">정산항목</span>
+                                    <span class="label">기간</span>
                                     <div class="form-set">
-                                        <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                        <select data-role="dropdownlist" data-value="사용월" data-option-label="사용월" class="sm">
                                             <option value="1">온라인</option>
                                             <option value="2">오프라인</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <span class="label">일정검색</span>
-                                    <div class="form-set">
-                                        <select data-role="dropdownlist" data-value="정산일" data-option-label="정산일" class="sm">
-                                            <option value="1">온라인</option>
-                                            <option value="2">오프라인</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <span class="label">입금일</span>
-                                    <div class="form-set">
                                         <input data-role="datepicker" 
                                             data-format="yyyy/MM/dd"
                                             placeholder="yyyymmdd" 
@@ -95,76 +84,50 @@
                                             data-culture="ko-KR"
                                             data-footer="false"
                                             class="datepicker sm">
-                                        <ul data-role="buttongroup" class="period"
-                                        data-index="0">
-                                            <li data-role="button"><span>어제</span></li>
-                                            <li data-role="button"><span>오늘</span></li>
-                                            <li data-role="button"><span>내일</span></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="search-line">
-                                <div class="form-group">
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-1" name="checkbox" />
-                                        <label for="csearch1-1"><span>전체</span></label>
-                                    </div>
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-2" name="checkbox" checked="checked" />
-                                        <label for="search1-2"><span>배치CMS</span></label>
-                                    </div>
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-3" name="checkbox" checked="checked" />
-                                        <label for="search1-3"><span>실시간CMS</span></label>
-                                    </div>
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-4" name="checkbox" checked="checked" />
-                                        <label for="search1-4"><span>가상계좌CMS</span></label>
-                                    </div>
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-5" name="checkbox" />
-                                        <label for="search1-5"><span>신용카드</span></label>
-                                    </div>
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-6" name="checkbox" />
-                                        <label for="search1-6"><span>휴대전화</span></label>
-                                    </div>
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-7" name="checkbox" />
-                                        <label for="search1-7"><span>유선전화</span></label>
-                                    </div>
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="search1-8" name="checkbox" />
-                                        <label for="search1-8"><span>간편결제</span></label>
-                                    </div>
-                                </div> 
-                            </div>
-                                
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                         </div>
                         <div class="table-set">
-                            <div class="table-content grid">
-                                <script type="text/x-kendo-template" class="toolbarTemplate">
-                                    <div class="title-box sm">
-                                        <div class="left-group">
-                                            <span class="amount-set">
-                                                <span class="amount current">1</span><span class="unit">건</span>
-                                            </span>
+                            <script type="text/x-kendo-template" class="toolbarTemplate">
+                                <div class="title-box sm">
+                                    <div class="left-group">
+                                        <span class="amount-set">
+                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                            <span class="amount">26</span><span class="unit">건</span>
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-set">
+                                            <button role="button" class="k-button gray-border"><span>담보공제</span></button>
+                                            <button role="button" class="k-button gray-border"><span>대손처리</span></button>
+                                        </div>
+                                        <div class="form-set">
+                                            <button role="button" class="k-button"><span>수정</span></button>
+                                            <button role="button" class="k-button"><span>대량수정</span></button>
+                                        </div>
+                                        <div class="form-set">
+                                            <button role="button" class="k-button light-green"><span>미납현황 엑셀</span></button>
+                                            <button role="button" class="k-button green"><span>엑셀</span></button>
                                         </div>
                                     </div>
-                                </script>
-                                <script type="text/x-kendo-template" class="checkboxTemplate">
-                                    <div class="h-checkbox no-label">
-                                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                        <label for="checkbox-nolabel"></label> 
-                                    </div>
-                                </script>
+                                </div>
+                            </script>
+                            <script type="text/x-kendo-template" class="checkboxTemplate">
+                                <div class="h-checkbox no-label">
+                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                    <label for="checkbox-nolabel"></label> 
+                                </div>
+                            </script>
+                            <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
+                            <div class="table-content grid">
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
                                     data-columns='[
-                                    { "title": "출금일", "field": "출금일", "width": 150, "attributes" : {"class": "text-center"}  },
+                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
+                                    { "title": "NO.", "field": "NO", "width": 60, "attributes" : {"class": "text-center"}, "sortable": false  },
                                     { "field": ""  }
                                     ]' 
                                     data-bind="source: gridSource"
@@ -191,9 +154,9 @@
     <script>
             var viewModel = kendo.observable({
                 gridSource: [
-                    { "NO":"1", "출금일":"2020/12/31" },
-                    { "NO":"2", "출금일":"2020/12/31" },
-                    { "NO":"3", "출금일":"2020/12/31" }
+                    { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
                 ],
                 displayGridSource: function() {
                     return stringify(this.get("gridSource").toJSON());

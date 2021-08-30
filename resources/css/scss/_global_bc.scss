@@ -69,6 +69,14 @@
     //         @include bc-font-size-xsm;
     //     }
     // }
+    .badge {
+        height: 18px;
+        margin-left: 6px;
+        padding: 0 6px;
+        font-size: 12px;
+        line-height: 17px;
+        font-weight: 400;
+    }
     &.sm {
         min-height: 26px; 
         margin: 20px 0 6px;
@@ -269,7 +277,7 @@
 .mobile-wrap {
     .mobile-body {
         .contents {
-            .h-input {
+            .h-input, .k-input {
 				@include font-size-menu;
                 &::placeholder {
 					@include font-size-menu;
@@ -304,4 +312,24 @@
 			color: $gray-2;
 		}
 	}
+}
+
+
+.tree-box {
+    border: 1px solid $gray-e4;
+}
+.detail-title {
+    @include bc-font-size-xsm;
+    height: 30px;
+    padding: 0 10px;
+    line-height: 30px;
+    text-align: left;
+}
+.detail-box {
+    height: 100px;
+    border: 1px solid $gray-e4;
+    .list {
+        @include bc-font-size-xsm;
+        padding: 4px 0;
+    }
 }

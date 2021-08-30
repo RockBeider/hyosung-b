@@ -30,13 +30,25 @@
 */
 .k-dialog .k-dialog-content {
     &.sm {
+        width: 410px;
+    }
+    &.xsm {
         width: 450px;
     }
     &.md {
         width: 600px;
     }
+    &.xmd {
+        width: 700px;
+    }
+    &.md2 {
+        width: 800px;
+    }
     &.lg {
         width: 900px;
+    }
+    &.xl {
+        width: 960px;
     }
 }
 .k-window.k-dialog {
