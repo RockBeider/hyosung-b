@@ -181,6 +181,50 @@ th .required {
         background-image: url($imgPathIcon+'/icon_contact_07.svg');
     }
 }
+.status-banner.settlement {
+    .list {
+        position: relative;
+        background-position: calc(100% - 24px) 14px;
+        background-size: 26px 26px;
+        background-repeat: no-repeat;
+        &::after {
+            @include font-size-guide;
+            position: absolute;
+            right: 25px;
+            bottom: 13px;
+            display: block;
+            font-weight: 500;
+            line-height: 19px;
+        }
+    }
+        
+    .list.done {
+        background-image: url($imgPathIcon+'/icon_complete.svg');
+        border: 1px solid $green;
+        background-color: $green-light;
+        &::after {
+            content: '완료';
+            color: $green;
+        }
+    }
+    .list.wait {
+        background-image: url($imgPathIcon+'/icon_waiting.svg');
+        &::after {
+            content: '대기';
+            color: $gray-6;
+        }
+    }
+    .list.ing {
+        background-image: url($imgPathIcon+'/icon_proceeding.svg');
+        border: 1px solid $main;
+        background-color: $lavender;
+        &::after {
+            content: '진행중';
+            right: 20px;
+            color: $main;
+        }
+    }
+}
 .active .h-ico {
     &.menu1 {
         background-image: url($imgPathIcon+'/icon_standard_selected.svg');
@@ -239,6 +283,9 @@ th .required {
     &filter {
         @include iconSvg($width: 28px, $height: 28px, $name: 'btn_filter_default', $size: 8px 15px );
         margin-right: -10px;
+    }
+    &k-i-x {
+        @include iconSvg($width: 12px, $height: 12px, $name: 'btn_X', $size: 12px 12px );
     }
     &close { //이미지 요청
         @include iconSvg($width: 12px, $height: 12px, $name: 'btn_X', $size: 12px 12px );

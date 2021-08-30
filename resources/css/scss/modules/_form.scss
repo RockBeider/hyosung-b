@@ -147,8 +147,11 @@ td .form-group {
     }
     .search-line {
         display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 28px;
         + .search-line {
-            margin-top: 20px;
+            margin-top: 16px;
         }
     }
     .form-group {

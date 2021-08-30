@@ -341,7 +341,7 @@
             }
         }
         .input-set {
-            .h-input {
+            .h-input, .k-input {
                 text-align: left;
             }
         }
@@ -352,7 +352,8 @@
         .k-button {
             font-weight: 400;
         }
-        .h-input:disabled, .h-input:disabled:focus {
+        .h-input:disabled, .h-input:disabled:focus, 
+        .k-input:disabled, .k-input:disabled:focus {
             background-color: $white;
             color: $gray-2;
             font-weight: 400;
@@ -362,7 +363,7 @@
         margin-right: 0;
     }
     .input-set {
-        .h-input { 
+        .h-input, .k-input { 
             &:disabled, &:disabled:focus {
                 // background-color: $white;
                 // color: $gray-a;
@@ -386,7 +387,8 @@
         clip:rect(0,0,0,0);
         border: 0;
     }
-    .h-input:disabled, .h-input:disabled:focus {
+    .h-input:disabled, .h-input:disabled:focus,
+    .k-input:disabled, .k-input:disabled:focus {
         background-color: $white;
         color: $gray-a;
     }
