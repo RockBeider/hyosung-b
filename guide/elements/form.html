@@ -457,6 +457,212 @@
 
     <div class="g-example-wrap">
         <div class="g-example-head">
+            <p class="title">검색부분-2줄</p>
+        </div>
+        <div class="g-example-body">
+            <div class="search-control">
+                <div class="search-line">
+                    <div class="form-group">
+                        <span class="label">검색항목</span>
+                        <div class="form-set">
+                            <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                <option value="1">온라인</option>
+                                <option value="2">오프라인</option>
+                            </select>
+                            <div class="input-set search lg">
+                                <i class="h-ico sm search">검색</i>
+                                <input type="text" class="h-input" placeholder="입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="label">정산항목</span>
+                        <div class="form-set">
+                            <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                <option value="1">온라인</option>
+                                <option value="2">오프라인</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="label">일정검색</span>
+                        <div class="form-set">
+                            <select data-role="dropdownlist" data-value="정산일" data-option-label="정산일" class="sm">
+                                <option value="1">온라인</option>
+                                <option value="2">오프라인</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="label">입금일</span>
+                        <div class="form-set">
+                            <input data-role="datepicker" 
+                                data-format="yyyy/MM/dd"
+                                placeholder="yyyymmdd" 
+                                data-culture="ko-KR"
+                                data-footer="false"
+                                class="datepicker sm">
+                            <span class="bar">~</span>
+                            <input data-role="datepicker" 
+                                data-format="yyyy/MM/dd"
+                                placeholder="yyyymmdd" 
+                                data-culture="ko-KR"
+                                data-footer="false"
+                                class="datepicker sm">
+                            <ul data-role="buttongroup" class="period"
+                            data-index="0">
+                                <li data-role="button"><span>어제</span></li>
+                                <li data-role="button"><span>오늘</span></li>
+                                <li data-role="button"><span>내일</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-line">
+                    <div class="form-group">
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-1" name="checkbox" />
+                            <label for="csearch1-1"><span>전체</span></label>
+                        </div>
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-2" name="checkbox" checked="checked" />
+                            <label for="search1-2"><span>배치CMS</span></label>
+                        </div>
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-3" name="checkbox" checked="checked" />
+                            <label for="search1-3"><span>실시간CMS</span></label>
+                        </div>
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-4" name="checkbox" checked="checked" />
+                            <label for="search1-4"><span>가상계좌CMS</span></label>
+                        </div>
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-5" name="checkbox" />
+                            <label for="search1-5"><span>신용카드</span></label>
+                        </div>
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-6" name="checkbox" />
+                            <label for="search1-6"><span>휴대전화</span></label>
+                        </div>
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-7" name="checkbox" />
+                            <label for="search1-7"><span>유선전화</span></label>
+                        </div>
+                        <div class="h-checkbox">
+                            <input type="checkbox" id="search1-8" name="checkbox" />
+                            <label for="search1-8"><span>간편결제</span></label>
+                        </div>
+                    </div> 
+                </div>
+                    
+                <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+            </div>
+        </div>
+        <div class="g-example-foot">
+            <pre><code class="html">
+&lt;div class="search-control">
+    &lt;div class="search-line">
+        &lt;div class="form-group">
+            &lt;span class="label">검색항목&lt;/span>
+            &lt;div class="form-set">
+                &lt;select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                    &lt;option value="1">온라인&lt;/option>
+                    &lt;option value="2">오프라인&lt;/option>
+                &lt;/select>
+                &lt;div class="input-set search lg">
+                    &lt;i class="h-ico sm search">검색&lt;/i>
+                    &lt;input type="text" class="h-input" placeholder="입력해주세요">
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="form-group">
+            &lt;span class="label">정산항목&lt;/span>
+            &lt;div class="form-set">
+                &lt;select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                    &lt;option value="1">온라인&lt;/option>
+                    &lt;option value="2">오프라인&lt;/option>
+                &lt;/select>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="form-group">
+            &lt;span class="label">일정검색&lt;/span>
+            &lt;div class="form-set">
+                &lt;select data-role="dropdownlist" data-value="정산일" data-option-label="정산일" class="sm">
+                    &lt;option value="1">온라인&lt;/option>
+                    &lt;option value="2">오프라인&lt;/option>
+                &lt;/select>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="form-group">
+            &lt;span class="label">입금일&lt;/span>
+            &lt;div class="form-set">
+                &lt;input data-role="datepicker" 
+                    data-format="yyyy/MM/dd"
+                    placeholder="yyyymmdd" 
+                    data-culture="ko-KR"
+                    data-footer="false"
+                    class="datepicker sm">
+                &lt;span class="bar">~&lt;/span>
+                &lt;input data-role="datepicker" 
+                    data-format="yyyy/MM/dd"
+                    placeholder="yyyymmdd" 
+                    data-culture="ko-KR"
+                    data-footer="false"
+                    class="datepicker sm">
+                &lt;ul data-role="buttongroup" class="period"
+                data-index="0">
+                    &lt;li data-role="button">&lt;span>어제&lt;/span>&lt;/li>
+                    &lt;li data-role="button">&lt;span>오늘&lt;/span>&lt;/li>
+                    &lt;li data-role="button">&lt;span>내일&lt;/span>&lt;/li>
+                &lt;/ul>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="search-line">
+        &lt;div class="form-group">
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-1" name="checkbox" />
+                &lt;label for="csearch1-1">&lt;span>전체&lt;/span>&lt;/label>
+            &lt;/div>
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-2" name="checkbox" checked="checked" />
+                &lt;label for="search1-2">&lt;span>배치CMS&lt;/span>&lt;/label>
+            &lt;/div>
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-3" name="checkbox" checked="checked" />
+                &lt;label for="search1-3">&lt;span>실시간CMS&lt;/span>&lt;/label>
+            &lt;/div>
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-4" name="checkbox" checked="checked" />
+                &lt;label for="search1-4">&lt;span>가상계좌CMS&lt;/span>&lt;/label>
+            &lt;/div>
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-5" name="checkbox" />
+                &lt;label for="search1-5">&lt;span>신용카드&lt;/span>&lt;/label>
+            &lt;/div>
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-6" name="checkbox" />
+                &lt;label for="search1-6">&lt;span>휴대전화&lt;/span>&lt;/label>
+            &lt;/div>
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-7" name="checkbox" />
+                &lt;label for="search1-7">&lt;span>유선전화&lt;/span>&lt;/label>
+            &lt;/div>
+            &lt;div class="h-checkbox">
+                &lt;input type="checkbox" id="search1-8" name="checkbox" />
+                &lt;label for="search1-8">&lt;span>간편결제&lt;/span>&lt;/label>
+            &lt;/div>
+        &lt;/div> 
+    &lt;/div>
+        
+    &lt;button type="submit" data-role="button" class="search" data-icon="search-blue">&lt;span>검색&lt;/span>&lt;/button>
+&lt;/div>
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="g-example-wrap">
+        <div class="g-example-head">
             <p class="title">검색부분(팝업)</p>
         </div>
         <div class="g-example-body">

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="상세현황"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}" class="lg">
+            <div class="content-group">
+                <div class="report-banner row">
+                    <div class="list">
+                        <h4 class="tit dot has-bar">일마감 현황</h4>
+                        <span class="date">2021/06/30</span>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate">
+                        <div class="title-box sm">
+                            <div class="list-box">
+                                <div class="list">
+                                    <span class="label has-bar">전마감일</span>
+                                    <span class="desc">2021/06/27</span>
+                                </div>
+                                <div class="list">
+                                    <span class="label has-bar">전일잔액</span>
+                                    <span class="desc"> 36,824,252,722</span>
+                                </div>
+                            </div>
+                            <div class="right-group">
+                                <button data-role="button" class="k-button green"><span>엑셀</span></button>
+                            </div>
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_grid">
+                        <div data-role="grid" 
+                            data-sortable="false" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "입금항목", "field": "입금항목", "width": 190},
+                            { "title": "금액", "field": "금액", "width": 190, "attributes" : {"class": "text-right"} },
+                            { "title": "내역상세", "field": "내역상세"},
+                            { "title": "비고", "field": "etc", "width": 190}
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-bound="ddbound"
+                            data-toolbar="#=toolbarTemplate()#">
+                        </div>
+                    </div>
+                </div> 
+                <!-- // -->  
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+       
+        //grid
+        var viewModel_grid = kendo.observable({
+            gridSource: [
+                { "입금항목":"CMS입금",  "금액":"381,838,997","내역상세":"CMS 결제를 통한 입금", "etc":"" },
+                { "입금항목":"CMS입금(별단)",  "금액":"19,045,890,328","내역상세":"CMS 결제를 통한 입금", "etc":"" },
+                { "입금항목":"실시간CMS입금",  "금액":"4,342,618,793","내역상세":"실시간CMS 결제를 통한 입금", "etc":"" },
+                { "입금항목":"실시간CMS입금(별단)",  "금액":"4,769,932,313","내역상세":"실시간CMS 결제를 통한 입금", "etc":"" },
+                { "입금항목":"가상계좌입금",  "금액":"4,769,932,313","내역상세":"가상계좌 결제를 통한 입금", "etc":"" },
+                { "입금항목":"휴대폰입금",  "금액":"4,342,618,793","내역상세":"휴대폰 결제를 통한 입금", "etc":"" },
+                { "입금항목":"유선전화입금",  "금액":"0","내역상세":"유선전화 결제를 통한 입금", "etc":"" },
+                { "입금항목":"카드입금",  "금액":"0","내역상세":"카드 결제를 통한 입금", "etc":"" },
+                { "입금항목":"이통사입금",  "금액":"381,838,997","내역상세":"휴대폰 결제를 통한 입금", "etc":"" },
+                { "입금항목":"지급대행입금",  "금액":"0","내역상세":"지급대행 입금액", "etc":"" },
+                { "입금항목":"예금-사용료",  "금액":"0","내역상세":"CMS를 통한 사용료", "etc":"당행이체" },
+                { "입금항목":"예금-사용료(별단)",  "금액":"381,838,997","내역상세":"CMS를 통한 사용료(별단)", "etc":"당행이체" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_grid"), viewModel_grid); //그리드 스타일
+        function toolbarTemplate() {
+            var template = kendo.template($('#toolbarTemplate').html());
+            var result = template({});
+            return result
+        }
+        function setColor(etc) {
+            if(etc=="")
+                return "none";
+            else
+                return etc;
+        }
+        function ddbound(e) {
+            var columns = e.sender.columns;
+            var columnIndex = this.wrapper.find(".k-grid-header [data-field=" + "etc" + "]").index();
+
+            var rows = e.sender.tbody.children();
+            
+            for (var j = 0; j < rows.length; j++) {
+                var row = $(rows[j]);
+                var dataItem = e.sender.dataItem(row);
+                var etc = dataItem.get("etc");
+                var cell = row.children().eq(columnIndex);
+                cell.addClass(setColor(etc));
+            }
+        }
+       
+    </script>
+</body>
+
+</html>

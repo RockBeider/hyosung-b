@@ -88,6 +88,10 @@ td .form-group {
     .search-control {
         border: 0;
         padding: 0;
+        &.has-border {
+            border: 1px solid $gray-e4;
+            padding: 20px;
+        }
         .label, .form-set {
             padding: 0;
             margin-right: 8px;

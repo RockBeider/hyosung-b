@@ -131,6 +131,12 @@ button {
 .mt-30 {
 	margin-top: 30px !important;
 }
+.mt-36 {
+	margin-top: 36px !important;
+}
+.mt-60 {
+	margin-top: 60px !important;
+}
 .my-0 {
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
@@ -177,6 +183,9 @@ button {
 	color: $main;
 	font-weight: 500;
 }
+// .td-none {
+// 	background-color: $gray-f5 !important;
+// }
 /* 
 * ------------------------------
 * badge
@@ -866,6 +875,76 @@ td .divide {
 			top: 20px; 
 			right: 20px;
 			height: 20px;
+		}
+	}
+}
+.report-banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	padding: 17px 20px 16px;
+	background-color: $gray-f5;
+	border: 1px solid $gray-e4;
+	text-align: center;
+	.tit {
+		@include font-size-lg;
+		position: relative;
+		color: $gray-2;
+		font-weight: 500;
+		&.has-bar {
+			margin-right: 20px;
+			padding-right: 20px; 
+			font-weight: 500;
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				width: 1px;
+				height: 21px;
+				margin-top: -10px;
+				background: $gray-c;
+			}
+		}
+		&.dot {
+			position: relative;
+			padding-left: 8px;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				margin-top: -2px;
+				background: $gray-2;
+			}
+		}
+	}
+	.date {
+		@include font-size-guide;
+		margin-top: 4px;
+		color: $gray-7;
+		line-height: 18px;
+		font-weight: 400;
+	}
+	&.row {
+		padding: 30px 20px 29px;
+		.list {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.date {
+			@include font-size-lg;
+			margin-top: 0;
+			color: $main;
+			font-weight: 500;
 		}
 	}
 }

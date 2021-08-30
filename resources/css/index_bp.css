@@ -1133,6 +1133,14 @@ button {
   margin-top: 30px !important;
 }
 
+.mt-36 {
+  margin-top: 36px !important;
+}
+
+.mt-60 {
+  margin-top: 60px !important;
+}
+
 .my-0 {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
@@ -2118,6 +2126,107 @@ td .divide + .divide {
   top: 20px;
   right: 20px;
   height: 20px;
+}
+
+.report-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 17px 20px 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #e4e4e4;
+  text-align: center;
+}
+
+.report-banner .tit {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  position: relative;
+  color: #222;
+  font-weight: 500;
+}
+
+.report-banner .tit.has-bar {
+  margin-right: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+}
+
+.report-banner .tit.has-bar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 21px;
+  margin-top: -10px;
+  background: #ccc;
+}
+
+.report-banner .tit.dot {
+  position: relative;
+  padding-left: 8px;
+}
+
+.report-banner .tit.dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin-top: -2px;
+  background: #222;
+}
+
+.report-banner .date {
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: -0.65px;
+  margin-top: 4px;
+  color: #777;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.report-banner.row {
+  padding: 30px 20px 29px;
+}
+
+.report-banner.row .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.report-banner.row .date {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  margin-top: 0;
+  color: #0e4194;
+  font-weight: 500;
 }
 
 /************************************************************
@@ -3902,12 +4011,45 @@ td .divide + .divide {
 }
 
 .k-window.k-dialog .content-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
   background: #fff;
 }
 
 .k-window.k-dialog .content-group.has-check {
   padding-bottom: 70px;
+}
+
+.k-window.k-dialog .content-group .content {
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.k-window.k-dialog .content-group .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: -10px;
+  margin-left: -30px;
+  margin-right: -30px;
+  padding: 20px 30px 0;
+  border-top: 1px solid #aaa;
+}
+
+.k-window.k-dialog .content-group .footer .btn-box {
+  margin-top: 0;
 }
 
 .check-group.bottom {
@@ -4119,6 +4261,15 @@ td .form-box, th .form-box {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+td.none {
+  background-color: #f5f5f5 !important;
+}
+
+td.point, th.point {
+  color: #0e4194 !important;
+  font-weight: 500 !important;
 }
 
 .table {
@@ -4370,6 +4521,14 @@ td .form-box, th .form-box {
   margin-top: 10px;
 }
 
+.table-footer .mark {
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: -0.85px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
 /*
 * ------------------------------
 * 
@@ -4537,6 +4696,11 @@ td .form-group.col > * + * {
 .k-dialog .search-control {
   border: 0;
   padding: 0;
+}
+
+.k-dialog .search-control.has-border {
+  border: 1px solid #e4e4e4;
+  padding: 20px;
 }
 
 .k-dialog .search-control .label, .k-dialog .search-control .form-set {
@@ -5012,6 +5176,7 @@ td .form-group.col > * + * {
   height: 28px;
   border-radius: 3px 0px 0px 3px;
   text-align: left;
+  font-weight: 400;
 }
 
 .input-set.search .k-button {
@@ -10131,9 +10296,12 @@ div.k-grid-norecords {
           justify-content: center;
 }
 
+.k-grid-header-wrap thead tr + tr th {
+  border-top: 1px solid #e4e4e4;
+}
+
 .table-content.grid {
   position: relative;
-  height: 100%;
   background: #fff;
   border-bottom: 1px solid #aaa;
 }
@@ -10146,6 +10314,14 @@ div.k-grid-norecords {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.table-content.grid:only-child {
+  height: 100%;
+}
+
+.table-content.grid + .table-content.grid {
+  margin-top: 10px;
 }
 
 .table-bottom {
@@ -11202,7 +11378,6 @@ table.k-editor {
   transition: all 0.3s ease;
   max-width: unset;
   height: 100%;
-  line-height: 20px;
 }
 
 .k-textarea ::-webkit-input-placeholder {

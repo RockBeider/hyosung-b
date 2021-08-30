@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="일마감등록"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}" class="lg">
+            <div class="content-group">
+                <div class="report-banner row">
+                    <div class="list">
+                        <h4 class="tit dot has-bar">일마감 등록</h4>
+                        <span class="date">2021/06/30</span>
+                    </div>
+                </div>
+                <div class="table-set">
+                    <div class="title-box sm">
+                        <div class="left-group"></div>
+                        <div class="right-group">
+                            <button data-role="button"><span>계좌 입출금액 연동</span></button>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>입금</th>
+                                    <th>출금</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>배치CMS</td>
+                                    <td class="text-right">381,838,997</td>
+                                    <td class="text-right">48,119,937,883</td>
+                                </tr>
+                                <tr>
+                                    <td>배치CMS(별단)</td>
+                                    <td class="text-right">19,045,890,328</td>
+                                    <td class="text-right none"></td>
+                                </tr>
+                                <tr>
+                                    <td>실시간CMS</td>
+                                    <td class="text-right">4,342,618,793</td>
+                                    <td class="text-right">48,119,937,883</td>
+                                </tr>
+                                <tr>
+                                    <td>실시간CMS(별단)</td>
+                                    <td class="text-right">4,769,932,313</td>
+                                    <td class="text-right none"></td>
+                                </tr>
+                                <tr>
+                                    <td>배치CMS-사용료</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right none"></td>
+                                </tr>
+                                <tr>
+                                    <td>배치CMS-사용료(별단)</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right none"></td>
+                                </tr>
+                                <tr>
+                                    <td>실시간CMS-사용료</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right none"></td>
+                                </tr>
+                                <tr>
+                                    <td>실시간CMS-사용료(별단)</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right none"></td>
+                                </tr>
+                                <tr>
+                                    <td>가상계좌</td>
+                                    <td class="text-right">381,838,997</td>
+                                    <td class="text-right">48,119,937,883</td>
+                                </tr>
+                                <tr>
+                                    <td>신용카드</td>
+                                    <td class="text-right">381,838,997</td>
+                                    <td class="text-right">48,119,937,883</td>
+                                </tr>
+                                <tr>
+                                    <td>간편결제</td>
+                                    <td class="text-right">381,838,997</td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                                <tr>
+                                    <td>휴대전화</td>
+                                    <td class="text-right">381,838,997</td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                                <tr>
+                                    <td>유선전화</td>
+                                    <td class="text-right">381,838,997</td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                                <tr>
+                                    <td>수기</td>
+                                    <td class="text-right">381,838,997</td>
+                                    <td class="text-right">48,119,937,883</td>
+                                </tr>
+                                <tr>
+                                    <td class="point">전체 입금 후 수수료 출금</td>
+                                    <td class="text-right none"></td>
+                                    <td class="text-right point">48,119,937,883</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 일자금 집계 현황 -->
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate">
+                        <div class="title-box xsm align-items-end">
+                            <div class="left-group">
+                                <h3 class="sub-title">일자금 집계 현황</h3>
+                            </div>
+                            <div class="right-group">
+                                <button data-role="button" class="k-button green"><span>엑셀</span></button>
+                            </div>
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_grid">
+                        <div data-role="grid" 
+                            data-sortable="false" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "구분", "field": "구분"},
+                            { "title": "시스템 금액", "field": "systemPrice", "attributes" : {"class": "text-right"} },
+                            { "title": "실계좌 금액", "field": "realPrice", "attributes" : {"class": "text-right"} },
+                            { "title": "일치여부", "field": "일치여부"}
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-bound="ddbound"
+                            data-toolbar="#=toolbarTemplate()#">
+                        </div>
+                    </div>
+                    <div class="table-content grid" id="viewModel_grid2">
+                        <div data-role="grid" 
+                            data-sortable="false" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "계좌변 상세", columns: [{"field": "계좌명"},{"field": "계좌번호"},{"field": "잔액"},{"field": "전일잔액"}]},
+                            { "title": "버튼", "field": "systemPrice", columns: [{"field": "입금액"}] },
+                            { "title": "버튼", "field": "realPrice", columns: [{"field": "출금액"}] }
+                            ]' 
+                            data-bind="source: gridSource">
+                        </div>
+                    </div>
+                </div> 
+                <!-- // 일자금 집계 현황 -->  
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+       
+        //grid
+        var viewModel_grid = kendo.observable({
+            gridSource: [
+                { "구분":"전일잔액",  "systemPrice":"381,838,997", "realPrice":"48,119,937,883", "일치여부":"" },
+                { "구분":"당일잔액",  "systemPrice":"19,045,890,328", "realPrice":"48,119,937,883", "일치여부":"" },
+                { "구분":"누적잔액",  "systemPrice":"4,342,618,793", "realPrice":"48,119,937,883", "일치여부":"" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_grid"), viewModel_grid); //그리드 스타일
+        function toolbarTemplate() {
+            var template = kendo.template($('#toolbarTemplate').html());
+            var result = template({});
+            return result
+        }
+        function setColor(etc) {
+            if(etc=="")
+                return "none";
+            else
+                return etc;
+        }
+        function ddbound(e) {
+            var columns = e.sender.columns;
+            var columnIndex = this.wrapper.find(".k-grid-header [data-field=" + "etc" + "]").index();
+
+            var rows = e.sender.tbody.children();
+            
+            for (var j = 0; j < rows.length; j++) {
+                var row = $(rows[j]);
+                var dataItem = e.sender.dataItem(row);
+                var etc = dataItem.get("etc");
+                var cell = row.children().eq(columnIndex);
+                cell.addClass(setColor(etc));
+            }
+        }
+
+        var viewModel_grid2 = kendo.observable({
+            gridSource: [
+                { "계좌명":"FMS경남-가상",  "계좌번호":"572070046412", "잔액":"93,142,346", "전일잔액":"102,944,755", "입금액":"9,802,429", "출금액":"0"  },
+                { "계좌명":"FMS경남-실시간",  "계좌번호":"572070046412", "잔액":"161,847,277", "전일잔액":"129,242,329", "입금액":"127,395,052", "출금액":"160,000,000"  },
+                { "계좌명":"FMS경남-이체",  "계좌번호":"572070046412", "잔액":"127,874,127", "전일잔액":"137,010,551", "입금액":"129,163,424", "출금액":"120,000,000" },
+                { "계좌명":"FMS경남-가상",  "계좌번호":"572070046412", "잔액":"93,142,346", "전일잔액":"102,944,755", "입금액":"9,802,429", "출금액":"0"  },
+                { "계좌명":"FMS광주-실시간",  "계좌번호":"572070046412", "잔액":"161,847,277", "전일잔액":"129,242,329", "입금액":"127,395,052", "출금액":"160,000,000"  },
+                { "계좌명":"FMS광주-이체(신)",  "계좌번호":"572070046412", "잔액":"127,874,127", "전일잔액":"137,010,551", "입금액":"129,163,424", "출금액":"120,000,000" },
+                { "계좌명":"FMS구외환-가상",  "계좌번호":"572070046412", "잔액":"93,142,346", "전일잔액":"102,944,755", "입금액":"9,802,429", "출금액":"0"  },
+                { "계좌명":"FMS구외환-입금이체",  "계좌번호":"572070046412", "잔액":"161,847,277", "전일잔액":"129,242,329", "입금액":"127,395,052", "출금액":"160,000,000"  },
+                { "계좌명":"FMS국민-가상계좌",  "계좌번호":"572070046412", "잔액":"127,874,127", "전일잔액":"137,010,551", "입금액":"129,163,424", "출금액":"120,000,000" },
+                { "계좌명":"FMS국민-가입비",  "계좌번호":"572070046412", "잔액":"93,142,346", "전일잔액":"102,944,755", "입금액":"9,802,429", "출금액":"0"  },
+                { "계좌명":"FMS국민-실시간(신)1",  "계좌번호":"400401011933335", "잔액":"161,847,277", "전일잔액":"129,242,329", "입금액":"127,395,052", "출금액":"160,000,000"  },
+                { "계좌명":"FMS국민-실시간(신)2",  "계좌번호":"400401011933335", "잔액":"127,874,127", "전일잔액":"137,010,551", "입금액":"129,163,424", "출금액":"120,000,000" },
+                { "계좌명":"FMS국민-실시간(신)3",  "계좌번호":"400401011933335", "잔액":"161,847,277", "전일잔액":"129,242,329", "입금액":"127,395,052", "출금액":"160,000,000"  },
+                { "계좌명":"FMS국민-이체",  "계좌번호":"400401011933335", "잔액":"127,874,127", "전일잔액":"137,010,551", "입금액":"129,163,424", "출금액":"120,000,000" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_grid2"), viewModel_grid2); //그리드 스타일
+       
+    </script>
+</body>
+
+</html>
+
+
