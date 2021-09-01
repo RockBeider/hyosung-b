@@ -1272,7 +1272,7 @@
 			width: 15px;
 			height: 15px;
 			background: url($imgPathIcon+'/icon_arrow_down.svg') no-repeat center / 15px 15px;
-			transition: all 0.3s ease;
+			transition: all 0.2s ease;
 		}
 		&.k-state-active {
 			.k-i-arrow-60-down:before {
@@ -3388,10 +3388,20 @@ kendo-grid tr.k-state-hover .k-grid-content-sticky.k-state-selected {
 div.k-grid-norecords {
 	justify-content: center;
 }
+div.k-grid-header {
+	overflow: hidden;
+}
 .k-grid-header-wrap {
 	thead tr + tr th {
 		border-top: 1px solid $gray-e4;
 	}
+}
+
+.k-grid-header .k-header:last-child {
+    border-right-width: 0;
+}
+.k-grid .k-filter-row th {
+	border-top: none;
 }
 // .k-grid-content {
 // 	height: 100%;
@@ -3898,7 +3908,7 @@ table.k-editor {
 	// 	border: 1px solid $gray-c;
 	// 	border-radius: 3px;
 	// 	color: $gray-5;
-	// 	transition: all 0.3s ease;
+	// 	transition: all 0.2s ease;
 	// }
 	&.sm {
 		.k-input {
@@ -3912,7 +3922,7 @@ table.k-editor {
 		border: 1px solid $gray-c;
 		border-radius: 3px;
 		color: $gray-5;
-		transition: all 0.3s ease;
+		transition: all 0.2s ease;
 		max-width: unset;
 		// border: 0;
 		// padding: 0;

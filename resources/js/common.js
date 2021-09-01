@@ -42,9 +42,9 @@ $(document).on("click", ".sidebar-body .has-submenu > .sidebar-1depth", function
 		// $(this).next(".sidebar-wrap .sidebar-2depth").slideUp(200);
 		// $(this).parent().removeClass("active");
 	// } else {
-		$(".sidebar-wrap .sidebar-2depth").slideUp(200);
+		$(".sidebar-wrap .sidebar-2depth").slideUp(100);
 		$(".sidebar-wrap .has-submenu").removeClass('active');
-		$(this).next(".sidebar-2depth").slideDown(200);
+		$(this).next(".sidebar-2depth").slideDown(100);
 		$(this).parent().addClass("active");
 		setTimeout(function () {
 			$(".sidebar-wrap .sidebar-2depth").css({ overflow: "visible" });
