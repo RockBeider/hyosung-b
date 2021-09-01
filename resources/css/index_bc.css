@@ -2922,8 +2922,8 @@ td .form-group.col > * + * {
   padding: 0 20px;
   border-radius: 3px;
   white-space: nowrap;
-  -webkit-transition: background 0.2s ease-in;
-  transition: background 0.2s ease-in;
+  -webkit-transition: background 0.1s ease-in;
+  transition: background 0.1s ease-in;
   background-color: #0e4194;
   border: 1px solid #0e4194;
   color: #fff;
@@ -3597,8 +3597,8 @@ td .form-group.col > * + * {
   background-size: contain;
   padding: 0;
   position: relative;
-  -webkit-transition: background 0.3s ease;
-  transition: background 0.3s ease;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
 }
 
 .h-ico.xs {
@@ -4349,6 +4349,7 @@ li {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -8156,8 +8157,8 @@ td .divide + .divide {
   width: 15px;
   height: 15px;
   background: url("../images_bc/icon/icon_arrow_down.svg") no-repeat center/15px 15px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .k-dropdown .k-dropdown-wrap.k-state-active .k-i-arrow-60-down:before {
@@ -10360,8 +10361,20 @@ div.k-grid-norecords {
           justify-content: center;
 }
 
+div.k-grid-header {
+  overflow: hidden;
+}
+
 .k-grid-header-wrap thead tr + tr th {
   border-top: 1px solid #e4e4e4;
+}
+
+.k-grid-header .k-header:last-child {
+  border-right-width: 0;
+}
+
+.k-grid .k-filter-row th {
+  border-top: none;
 }
 
 .table-content.grid {
@@ -11491,8 +11504,8 @@ table.k-editor {
   border: 1px solid #ccc;
   border-radius: 3px;
   color: #555;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   max-width: unset;
   height: 100%;
 }
@@ -16077,7 +16090,6 @@ body {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: -0.7px;
-  font-size: 16px;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16306,8 +16318,8 @@ body {
 .sidebar-wrap.fold .sidebar-foot .h-ico.lnb-close {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .sidebar-wrap .sidebar-head {
@@ -16488,8 +16500,6 @@ body {
   background-repeat: no-repeat;
   background-size: 15px 15px;
   text-align: center;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .has-submenu.active .sidebar-1depth::after {

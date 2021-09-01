@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+        <div data-role="dialog"
+             data-title="Q&A 상세정보"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="xmd">
+            <div class="content-group">
+                <div class="table-set">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">제목</th>
+                                    <td>개선 요청등록</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">등록자</th>
+                                    <td>홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">등록일시</th>
+                                    <td>2020/06/19 11:20:59</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">내용</th>
+                                    <td>
+                                        개선 요청등록 문의합니다.<br/>
+                                        상담 내역 첨부하니 확인부탁드립니다.<br/>
+                                        감사합니다.<br/><br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">첨부파일</th>
+                                    <td>
+                                        <a href="#;" class="text-link">상담내역(201905_06).xlsx</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="btn-box bottom justify-content-between">
+                    <button data-role="button" class="gray-border">목록</button>
+                    <div class="btn-box mt-0">
+                        <button data-role="button" class="light-blue">수정</button>
+                        <button data-role="button" class="">답변</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        var viewModel_fileUpload = kendo.observable({
+            isEnabled: true,
+            isVisible: true,
+        });
+        kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+    
+        kendo.bind($(".fileupload"), viewModel_fileUpload); 
+        
+       
+    </script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@
 	background-size: contain;
     padding: 0;
 	position: relative; //IE 버튼 흔들림 방지
-    transition: background 0.3s ease;
+    transition: background 0.1s ease;
 }
 .h-ico {
     &.xs {

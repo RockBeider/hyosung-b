@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+        <div data-role="dialog"
+             data-title="동의서 등록 및 확인"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="xmd">
+            <div class="content-group">
+                <div class="table-set">
+                    <div class="title-box xsm mt-0">
+                        <h4 class="sub-title">동의서 정보</h4>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px" />
+                                <col width="*" />
+                                <col width="120px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">업체ID</th>
+                                    <td>nhcms003</td>
+                                    <th scope="row">상호</th>
+                                    <td>세무사</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">회원번호</th>
+                                    <td>20190430</td>
+                                    <th scope="row">회원명</th>
+                                    <td>홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">은행</th>
+                                    <td>농협은행</td>
+                                    <th scope="row">예금주명</th>
+                                    <td>홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">계좌번호</th>
+                                    <td>010*******067</td>
+                                    <th scope="row">생년월일/사업자번호</th>
+                                    <td>76****</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">기본결제액</th>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">인증여부</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="대기" data-option-label="대기">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">승인일</th>
+                                    <td>2021/06/25 15:56:54</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">인증방법</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="미등록" data-option-label="미등록">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">동의서파일</th>
+                                    <td><a href="#;" class="text-link">Untitled.pdf</a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">파일업로드</th>
+                                    <td colspan="3">
+                                        <div class="form-group col">
+                                            <div class="upload">
+                                                <input type="file"
+                                                class="fileupload"
+                                                    name="files"
+                                                    type="file"
+                                                    data-role="upload"
+                                                    data-multiple="false"
+                                                    data-validation= "{
+                                                        allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                                                    }"
+                                                    data-show-file-list= "true"
+                                                    data-localization="{select: '선택'}"
+                                                    data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                                                    data-bind="visible: isVisible,
+                                                                enabled: isEnabled" 
+                                                >
+                                            </div>
+                                            <div class="upload-guide">
+                                                <div class="h-checkbox">
+                                                    <input type="checkbox" id="checkbox_upload" name="checkbox" checked="checked" />
+                                                    <label for="checkbox_upload"><span>동의서파일 사용여부</span></label>
+                                                </div>
+                                                <p class="list">* 파일은 2mb 이하만 등록 가능합니다.</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">비고</th>
+                                    <td colspan="3">
+                                        <div class="form-group col">
+                                            <p>2021/06/22 15:49:02 >> test01<br/>
+                                            2021/06/25 15:49:02 >> test02</p>
+                                            <input type="text" class="h-input" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="btn-box bottom">
+                    <button data-role="button" class="">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        var viewModel_fileUpload = kendo.observable({
+            isEnabled: true,
+            isVisible: true,
+        });
+        kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+    
+        kendo.bind($(".fileupload"), viewModel_fileUpload); 
+        
+       
+    </script>
+</body>
+
+</html>
