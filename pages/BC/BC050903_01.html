@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="수정요청 결과"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="xmd">
+            <div class="content-group">
+                <!-- 업무정보 -->
+                <div class="table-set">
+                    <div class="title-box xsm mt-0">
+                        <div class="left-group">
+                            <h2 class="sub-title">수정요청</h2>
+                        </div>
+                    </div>    
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px">
+                                <col width="*">
+                                <col width="120px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">업무종류</th>
+                                    <td>이용변경신청</td>
+                                    <th scope="row">접수일</th>
+                                    <td>2021/06/23</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">업체명</th>
+                                    <td colspan="3">효성에프엠에스</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">협력사</th>
+                                    <td colspan="3">(주)애드웹/홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">처리자</th>
+                                    <td colspan="3">홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">문서파일</th>
+                                    <td colspan="3">총 등록건수 : <span>4</span>건</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">요청사항</th>
+                                    <td colspan="3">요청드립니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-box bottom">
+                        <button data-role="button" class="light-blue"><span>상세보기</span></button>
+                    </div>
+                </div>
+                <!-- //업무정보 -->
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+       
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"추천",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"추천",  "제목":"공지사항", "내용":"안녕하세요 OOO학원입니다. OOO학원에 귀하의 자녀를 보내주..." },
+                { "NO":"추천",  "제목":"납부안내", "내용":"{ 회 원 명 } 고객님의 가정에 건강과 평안을 기원합니다. O월O일..." },
+                { "NO":"1",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"2",  "제목":"청구안내", "내용":"안내" },
+                { "NO":"3",  "제목":"가입인사", "내용":"{ 업 체 명 }입니다. { 회 원 명 }님의 청구 발송일은 {청구서발송..." },
+                { "NO":"4",  "제목":"공지사항", "내용":"안내" },
+                { "NO":"5",  "제목":"공지사항", "내용":"안내" },
+                { "NO":"6",  "제목":"공지사항", "내용":"안내" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+        function SetColor(NO) {
+            if(NO=="추천")
+                return "<span class=\"notice-title\">"+NO+"</span>";
+            else
+                return NO;
+        }
+        var viewModel_fileUpload = kendo.observable({
+            isEnabled: true,
+            isVisible: true,
+        });
+        kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+        var template_upload = kendo.template($("#template_upload").html());
+        $(document).on('click', '#add_fileList', function() {
+            $('#templateList').append(template_upload);
+            kendo.bind($(".fileupload"), viewModel_fileUpload); 
+            kendo.bind($(".dropdownlistFunc"), {}); //드롭다운
+        }) 
+    </script> 
+</body>
+
+</html>

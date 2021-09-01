@@ -28,180 +28,181 @@
                             events: { close: onClose}"
             class="md">
             <div class="content-group">
-
+                <div class="table-set">
                 <!-- 계약변경 정보 -->
-                <div class="title-box xsm mt-0">
-                    <div class="left-group">
-                        <h2 class="sub-title">계약변경 정보</h2>
+                    <div class="title-box xsm mt-0">
+                        <div class="left-group">
+                            <h2 class="sub-title">계약변경 정보</h2>
+                        </div>
+                    </div>    
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="80px">
+                                <col width="*">
+                                <col width="80px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">고객사명</th>
+                                    <td>햇님유치원</td>
+                                    <th scope="row">고객사ID</th>
+                                    <td>newasp001</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">전화번호</th>
+                                    <td>02-1234-5678</td>
+                                    <th scope="row">휴대전화</th>
+                                    <td>010-1234-5678</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">협력사명</th>
+                                    <td>테스트대리점</td>
+                                    <th scope="row">접수일</th>
+                                    <td>2021/05/20 14:29:57</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">업무종류</th>
+                                    <td>업무종류</td>
+                                    <th scope="row">접수처</th>
+                                    <td>협력사</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">처리상태</th>
+                                    <td colspan="3">
+                                        <span class="badge gray">대기</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">변경요청항목</th>
+                                    <td colspan="3">
+                                        변경요청 항목입니다.<br/>
+                                        변경요청 항목입니다.<br/>
+                                        변경요청 항목입니다.<br/>
+                                        변경요청 항목입니다.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">변경전/후</th>
+                                    <td colspan="3">
+                                        <div class="table">
+                                            <table>
+                                                <colgroup>
+                                                    <col width="130px">
+                                                    <col width="*">
+                                                    <col width="*">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>항목</th>
+                                                        <th>변경전</th>
+                                                        <th>변경후</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">항목1</td>
+                                                        <td>변경전 내용</td>
+                                                        <td>변경후 내용</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">항목2</td>
+                                                        <td>변경전 내용</td>
+                                                        <td>변경후 내용</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">첨부파일</th>
+                                    <td colspan="3">
+                                        <div class="t-widget t-upload">
+                                            <ul class="t-upload-files t-reset">
+                                                <li class="t-file">
+                                                    <span class="file-title">사업자등록증</span>
+                                                    <span class="file-desc">
+                                                        <span class="t-icon t-success"></span>
+                                                        <a href="#" class="text-link">Untitled.pdf</a>
+                                                        <span class="file-date">2021/03/11 16:40:58</span>
+                                                    </span>
+                                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                                </li>
+                                                <li class="t-file">
+                                                    <span class="file-title">보증보험</span>
+                                                    <span class="file-desc">
+                                                        <span class="t-icon t-success"></span>
+                                                        <a href="#" class="text-link">Untitled.pdf</a>
+                                                        <span class="file-date">2021/03/11 16:40:58</span>
+                                                    </span>
+                                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td colspan="3">
+                                        <div class="table">
+                                            <table>
+                                                <colgroup>
+                                                    <col width="132px">
+                                                    <col width="*">
+                                                    <col width="96px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기타사항</th>
+                                                        <th>안내사항</th>
+                                                        <th>해당여부 조회</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">담보형태</td>
+                                                        <td>담보 종류가 보증보험 담보의 경우 보증보험 계약변경 증권
+                                                            제출이 필요합니다</td>
+                                                        <td class="text-center">조회</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">무선결제서비스사용</td>
+                                                        <td>무선결제서비스 사용중인 경우 통신사의 변경 정보 갱신시까지 2일~3일간 사용에 일시 중지될 예정입니다</td>
+                                                        <td class="text-center">조회</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">사용료정산계좌</td>
+                                                        <td>사용료 및 정산계좌 정보가 대표자의 주민번호일 경우 
+                                                            사용료 및 정산계좌 정보변경이 필요합니다</td>
+                                                        <td class="text-center">조회</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">결과메모</th>
+                                    <td colspan="3">
+                                        <textarea data-role="textarea"
+                                        data-format="c"
+                                        data-min="0"
+                                        data-max="100"
+                                        data-rows="4"
+                                        data-placeholder="" class="sm" disabled="disabled"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">고객사명</th>
+                                    <td>홍길동</td>
+                                    <th scope="row">대응일</th>
+                                    <td>대응일</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </div>    
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col width="80px">
-                            <col width="*">
-                            <col width="80px">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th scope="row">고객사명</th>
-                                <td>햇님유치원</td>
-                                <th scope="row">고객사ID</th>
-                                <td>newasp001</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">전화번호</th>
-                                <td>02-1234-5678</td>
-                                <th scope="row">휴대전화</th>
-                                <td>010-1234-5678</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">협력사명</th>
-                                <td>테스트대리점</td>
-                                <th scope="row">접수일</th>
-                                <td>2021/05/20 14:29:57</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">업무종류</th>
-                                <td>업무종류</td>
-                                <th scope="row">접수처</th>
-                                <td>협력사</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">처리상태</th>
-                                <td colspan="3">
-                                    <span class="badge gray">대기</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">변경요청항목</th>
-                                <td colspan="3">
-                                    변경요청 항목입니다.<br/>
-                                    변경요청 항목입니다.<br/>
-                                    변경요청 항목입니다.<br/>
-                                    변경요청 항목입니다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">변경전/후</th>
-                                <td colspan="3">
-                                    <div class="table">
-                                        <table>
-                                            <colgroup>
-                                                <col width="130px">
-                                                <col width="*">
-                                                <col width="*">
-                                            </colgroup>
-                                            <thead>
-                                                <tr>
-                                                    <th>항목</th>
-                                                    <th>변경전</th>
-                                                    <th>변경후</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center">항목1</td>
-                                                    <td>변경전 내용</td>
-                                                    <td>변경후 내용</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">항목2</td>
-                                                    <td>변경전 내용</td>
-                                                    <td>변경후 내용</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">첨부파일</th>
-                                <td colspan="3">
-                                    <div class="t-widget t-upload">
-                                        <ul class="t-upload-files t-reset">
-                                            <li class="t-file">
-                                                <span class="file-title">사업자등록증</span>
-                                                <span class="file-desc">
-                                                    <span class="t-icon t-success"></span>
-                                                    <a href="#" class="text-link">Untitled.pdf</a>
-                                                    <span class="file-date">2021/03/11 16:40:58</span>
-                                                </span>
-                                                <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
-                                            </li>
-                                            <li class="t-file">
-                                                <span class="file-title">보증보험</span>
-                                                <span class="file-desc">
-                                                    <span class="t-icon t-success"></span>
-                                                    <a href="#" class="text-link">Untitled.pdf</a>
-                                                    <span class="file-date">2021/03/11 16:40:58</span>
-                                                </span>
-                                                <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row"></th>
-                                <td colspan="3">
-                                    <div class="table">
-                                        <table>
-                                            <colgroup>
-                                                <col width="132px">
-                                                <col width="*">
-                                                <col width="96px">
-                                            </colgroup>
-                                            <thead>
-                                                <tr>
-                                                    <th>기타사항</th>
-                                                    <th>안내사항</th>
-                                                    <th>해당여부 조회</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center">담보형태</td>
-                                                    <td>담보 종류가 보증보험 담보의 경우 보증보험 계약변경 증권
-                                                        제출이 필요합니다</td>
-                                                    <td class="text-center">조회</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">무선결제서비스사용</td>
-                                                    <td>무선결제서비스 사용중인 경우 통신사의 변경 정보 갱신시까지 2일~3일간 사용에 일시 중지될 예정입니다</td>
-                                                    <td class="text-center">조회</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">사용료정산계좌</td>
-                                                    <td>사용료 및 정산계좌 정보가 대표자의 주민번호일 경우 
-                                                        사용료 및 정산계좌 정보변경이 필요합니다</td>
-                                                    <td class="text-center">조회</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">결과메모</th>
-                                <td colspan="3">
-                                    <textarea data-role="textarea"
-                                    data-format="c"
-                                    data-min="0"
-                                    data-max="100"
-                                    data-rows="4"
-                                    data-placeholder="" class="sm" disabled="disabled"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">고객사명</th>
-                                <td>홍길동</td>
-                                <th scope="row">대응일</th>
-                                <td>대응일</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="btn-box bottom justify-content-between">
                     <button data-role="button" class="light-blue">문서보기</button>

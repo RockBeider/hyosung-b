@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+        <div data-role="dialog"
+            data-title="업체입력"
+            data-modal="false"
+            data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}" class="xsm">
+            <div class="content-group">
+                <div class="search-control">
+                    <div class="form-group">
+                        <div class="form-set">
+                            <div class="h-checkbox">
+                                <input type="radio" id="radio1-1" name="radio" checked="checked" />
+                                <label for="radio1-1"><span>업체명</span></label>
+                            </div>
+                            <div class="h-checkbox">
+                                <input type="radio" id="radio1-2" name="radio" />
+                                <label for="radio1-2"><span>업체ID</span></label>
+                            </div>
+                            <input type="text" class="h-input ml-20" value="녹즙">
+                        </div>
+                        <button data-role="button" class="blue-border">검색</button>
+                    </div>
+                </div>
+                <div class="table-content grid border-none" id="viewModel_grid">
+                    <div data-role="grid"
+                        data-columns='[
+                        { "field": "고객사명", "width": 250, "attributes" : {"class": "text-left"}, "headerAttributes": { "style": "display: none"}},
+                        { "field": "고객사ID", "attributes" : {"class": "text-left"}, "headerAttributes": { "style": "display: none"} }
+                        ]' 
+                        data-no-records="{ template : '<p>검색 내역이 없습니다.</p>'}" 
+                        data-bind="source: gridSource"
+                        class="text-center" style="height: 200px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<!-- Default Script Include -->
+<script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+<script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+<script src="../../resources/js/common.js"></script>
+<script> 
+    // Implement custom binder for the 'visible' configuration option
+    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+        },
+        refresh: function () {
+            var that = this;
+            var value = that.bindings["dialogOpen"].get();
+            var dialog = $(that.element).data("kendoDialog");
+
+            if (value) {
+                dialog.open();
+                console.log('open');
+                if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                    $('.k-dialog').css({"height":"100%"});
+                }
+            } else {
+                dialog.close();
+            }
+        }
+    });
+
+    var viewModel = kendo.observable({
+        isVisible: true,
+        isClosable: true,
+        isEnabled: false,
+        onClose: function (e) {
+            this.set("isVisible", false);
+            this.set("isEnabled", true);
+        },
+        show: function (e) {
+            this.set("isVisible", true);
+            this.set("isEnabled", false);
+        },
+
+    });
+    kendo.bind($(".wrap"), viewModel);
+   
+    //grid
+    var viewModel_grid = kendo.observable({
+        gridSource: [
+        ],
+        displayGridSource: function() {
+            return stringify(this.get("gridSource").toJSON());
+        },
+    });
+    kendo.bind($("#viewModel_grid"), viewModel_grid);
+   
+</script>
+</body>
+
+</html>

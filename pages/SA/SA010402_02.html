@@ -28,107 +28,109 @@
                             events: { close: onClose}"
             class="md">
             <div class="content-group">
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col width="90px">
-                            <col width="*">
-                            <col width="90px">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th scope="row">상품구분</th>
-                                <td>
-                                    <div class="check-group">
-                                        <div class="h-checkbox">
-                                            <input type="radio" id="radio1-1" name="radio" checked="checked" />
-                                            <label for="radio1-1"><span>할인</span></label>
+                <div class="table-set">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="90px">
+                                <col width="*">
+                                <col width="90px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">상품구분</th>
+                                    <td>
+                                        <div class="check-group">
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio1-1" name="radio" checked="checked" />
+                                                <label for="radio1-1"><span>할인</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio1-2" name="radio" />
+                                                <label for="radio1-2"><span>프로모션</span></label>
+                                            </div>
                                         </div>
-                                        <div class="h-checkbox">
-                                            <input type="radio" id="radio1-2" name="radio" />
-                                            <label for="radio1-2"><span>프로모션</span></label>
+                                    </td>
+                                    <th scope="row">상품코드</th>
+                                    <td><input type="text" class="h-input" value="자동생성" disabled="disabled"/></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">할인명</th>
+                                    <td><input type="text" class="h-input" value="신규 고객 6월 할인"/></td>
+                                    <th scope="row">사용여부</th>
+                                    <td>
+                                        <div class="check-group">
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio2-1" name="radio2" checked="checked" />
+                                                <label for="radio2-1"><span>미사용</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio2-2" name="radio2" />
+                                                <label for="radio2-2"><span>사용</span></label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <th scope="row">상품코드</th>
-                                <td><input type="text" class="h-input" value="자동생성" disabled="disabled"/></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">할인명</th>
-                                <td><input type="text" class="h-input" value="신규 고객 6월 할인"/></td>
-                                <th scope="row">사용여부</th>
-                                <td>
-                                    <div class="check-group">
-                                        <div class="h-checkbox">
-                                            <input type="radio" id="radio2-1" name="radio2" checked="checked" />
-                                            <label for="radio2-1"><span>미사용</span></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">할인정보</th>
+                                    <td colspan="3"><input type="text" class="h-input" value="6월 한정 신규 고객 할인 프로모션"/></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">할인방식</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="정율" data-option-label="정율">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">할인율</th>
+                                    <td>
+                                        <div class="form-set">
+                                            <input type="text" class="h-input" value="" />
+                                            <span class="unit">%</span>
                                         </div>
-                                        <div class="h-checkbox">
-                                            <input type="radio" id="radio2-2" name="radio2" />
-                                            <label for="radio2-2"><span>사용</span></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">프로모션기간</th>
+                                    <td colspan="3">
+                                        <div class="form-set">
+                                            <input data-role="datepicker" 
+                                                data-format="yyyy/MM/dd"
+                                                placeholder="yyyymmdd" 
+                                                data-culture="ko-KR"
+                                                data-footer="false"
+                                                class="datepicker sm" /> 
+                                            <span class="bar">~</span>
+                                            <input data-role="datepicker" 
+                                                data-format="yyyy/MM/dd"
+                                                placeholder="yyyymmdd" 
+                                                data-culture="ko-KR"
+                                                data-footer="false"
+                                                class="datepicker sm" /> 
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">할인정보</th>
-                                <td colspan="3"><input type="text" class="h-input" value="6월 한정 신규 고객 할인 프로모션"/></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">할인방식</th>
-                                <td>
-                                    <select data-role="dropdownlist" data-value="정율" data-option-label="정율">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                </td>
-                                <th scope="row">할인율</th>
-                                <td>
-                                    <div class="form-set">
-                                        <input type="text" class="h-input" value="" />
-                                        <span class="unit">%</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">프로모션기간</th>
-                                <td colspan="3">
-                                    <div class="form-set">
-                                        <input data-role="datepicker" 
-                                            data-format="yyyy/MM/dd"
-                                            placeholder="yyyymmdd" 
-                                            data-culture="ko-KR"
-                                            data-footer="false"
-                                            class="datepicker sm" /> 
-                                        <span class="bar">~</span>
-                                        <input data-role="datepicker" 
-                                            data-format="yyyy/MM/dd"
-                                            placeholder="yyyymmdd" 
-                                            data-culture="ko-KR"
-                                            data-footer="false"
-                                            class="datepicker sm" /> 
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">적용시점</th>
-                                <td>
-                                    <select data-role="dropdownlist" data-value="오픈일" data-option-label="오픈일">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                </td>
-                                <th scope="row">적용가능개월</th>
-                                <td>
-                                    <select data-role="dropdownlist" data-value="24개월" data-option-label="24개월">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">적용시점</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="오픈일" data-option-label="오픈일">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">적용가능개월</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="24개월" data-option-label="24개월">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <!-- 할인적용상품 -->
                 <div class="table-set">

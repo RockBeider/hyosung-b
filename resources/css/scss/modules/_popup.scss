@@ -122,9 +122,9 @@
             &window-restore {
                 @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_minimized', $size: contain );
             }
-            &close {
-                @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_closed', $size: contain );
-            }
+            // &close {
+            //     @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_closed', $size: contain );
+            // }
         }
     }
 }

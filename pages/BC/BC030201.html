@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="카드 수수료 변경이력 조회"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+            events: { close: onClose}" class="xmd">
+            <div class="content-group">
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                        <div class="title-box sm mt-0">
+                            <span class="amount-set">
+                                <span class="amount current">1</span><span class="unit">건</span>
+                            </span>
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_number">
+                        <div data-role="grid" 
+                            data-sortable="true" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "NO.", "field": "NO", "width": 38, "attributes" : {"class": "text-center"}, "sortable": false  },
+                            { "field": "시작일", "width": 84 },
+                            { "field": "종료일", "width": 84 },
+                            { "field": "적용등급", "width": 77 },
+                            { "field": "PG사", "width": 92 },
+                            { "field": "카드사", "width": 99 },
+                            { "field": "일반", "width": 56 },
+                            { "field": "영세", "width": 56 },
+                            { "field": "중소1", "width": 58 },
+                            { "field": ""  }
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-toolbar="#=toolbarTemplate_count()#"
+                            style="height: 360px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"1", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"이니시스", "카드사":"그외", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"2", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"국민", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"3", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"삼성", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"4", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"하나(구, 외환)", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"5", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"롯데", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"6", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"현대", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"7", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"신한", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"8", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"효성", "카드사":"비씨", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"9", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"중소1","PG사":"효성", "카드사":"농협", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"10", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"중소1","PG사":"효성", "카드사":"농협", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

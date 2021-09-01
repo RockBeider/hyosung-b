@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">계약문의관리</h2>
+                            <h2 class="main-title">은행수수료</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -36,8 +36,8 @@
                                 data-editable=false,
                                 data-navigational=true,
                                 data-items='[
-                            { type:"rootitem", href: "", text: "계약", showText: true },
-                            { type:"item", href: "", text: "겨약문의관리", showText: true}
+                            { type:"rootitem", href: "", text: "배분", showText: true },
+                            { type:"item", href: "", text: "은행수수료", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -54,42 +54,31 @@
                                         <option value="1">온라인</option>
                                         <option value="2">오프라인</option>
                                     </select>
-                                    <div class="input-set search lg">
-                                        <i class="h-ico search"></i>
-                                        <input type="text" class="h-input" placeholder="입력해주세요">
-                                    </div>
+                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="form-set">
-                                    <div class="h-checkbox">
-                                        <input type="checkbox" id="checkbox1-1" name="checkbox" />
-                                        <label for="checkbox1-1"><span>미할당 계약 문의만 조회</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <span class="label">검색기간</span>
+                                <span class="label">거래일</span>
                                 <div class="form-set">
                                     <input data-role="datepicker" 
                                         data-format="yyyy/MM/dd"
                                         placeholder="yyyymmdd" 
                                         data-culture="ko-KR"
                                         data-footer="false"
-                                        class="datepicker sm" />
+                                        class="datepicker sm" /> 
                                     <span class="bar">~</span>
                                     <input data-role="datepicker" 
                                         data-format="yyyy/MM/dd"
                                         placeholder="yyyymmdd" 
                                         data-culture="ko-KR"
                                         data-footer="false"
-                                        class="datepicker sm" />
-                                        <div data-role="buttongroup" class="period"
-                                        data-index="0">
-                                            <button data-role="button"><span>오늘</span></button>
-                                            <button data-role="button"><span>1주</span></button>
-                                        </div>
+                                        class="datepicker sm" /> 
                                 </div>
+                                
+                                
                             </div>
                             
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
@@ -99,19 +88,16 @@
                                 <div class="title-box sm">
                                     <div class="left-group">
                                         <span class="amount-set">
-                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                            <span class="amount">26</span><span class="unit">건</span>
+                                            <span class="amount current">1</span><span class="unit">건</span>
                                         </span>
                                     </div>
-                                    <div class="right-group">
+                                    <div class="form-group">
                                         <div class="form-set">
-                                            <span class="form-label">협력사</span>
-                                            <select id="dropdownlist"  data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
-                                                <option value="1">온라인</option>
-                                                <option value="2">오프라인</option>
-                                            </select>
-                                            <button role="button" class="k-button blue-border">지정</button>
-                                            <button role="button" class="k-button gray-border">대상 외</button>
+                                            <button role="button" class="k-button gray-border"><span>수수료이력</span></button>
+                                            <button role="button" class="k-button gray-border"><span>명세서</span></button>
+                                        </div>
+                                        <div class="form-set">
+                                            <button role="button" class="k-button green"><span>엑셀</span></button>
                                         </div>
                                     </div>
                                 </div>
@@ -122,20 +108,16 @@
                                     <label for="checkbox-nolabel"></label> 
                                 </div>
                             </script>
-                            <div class="table-content grid has-bottom" id="viewModel_grid">
+                            <div class="table-content grid">
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
                                     data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
                                     { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
                                     { "field": ""  }
                                     ]' 
                                     data-bind="source: gridSource"
                                     data-toolbar="#=toolbarTemplate()#">
-                                </div>
-                                <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
                                 </div>
                             </div>
                         </div>
@@ -153,30 +135,27 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-        var viewModel_grid = kendo.observable({
-            gridSource: [
-                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
-            ],
-            displayGridSource: function() {
-                return stringify(this.get("gridSource").toJSON());
-            },
-        });
-        kendo.bind($(".wrap"), {}); //전체 스타일
-        kendo.bind($("#viewModel_grid"), viewModel_grid); //그리드 스타일
-        kendo.bind($("#dropdownlist"), {}); //템플릿 안 드롭다운
-        function toolbarTemplate() {
-            var template = kendo.template($('.toolbarTemplate').html());
-            var result = template({});
-            return result
-        }
-        function checkboxTemplate() {
-            var template = kendo.template($('.checkboxTemplate').html());
-            var result = template({});
-            return result
-        }
-        
+            var viewModel = kendo.observable({
+                gridSource: [
+                    { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                    { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+            });
+            kendo.bind($(".wrap"), viewModel);
+            function toolbarTemplate() {
+                var template = kendo.template($('.toolbarTemplate').html());
+                var result = template({});
+                return result
+            }
+            function checkboxTemplate() {
+                var template = kendo.template($('.checkboxTemplate').html());
+                var result = template({});
+                return result
+            }
     </script>
 </body>
 

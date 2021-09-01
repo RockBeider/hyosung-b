@@ -3393,10 +3393,19 @@ div.k-grid-norecords {
 		border-top: 1px solid $gray-e4;
 	}
 }
+// .k-grid-content {
+// 	height: 100%;
+// }
 .table-content.grid {
 	position: relative; 
 	background: $white;
 	border-bottom: 1px solid $gray-a;
+	&.border-none {
+		.k-grid th, .k-grid td {
+			border-left: 0;
+			border-right: 0;
+		}
+	}
 	&.has-bottom {
 		padding-bottom: 58px;
 		.table-bottom {
@@ -3412,6 +3421,11 @@ div.k-grid-norecords {
 }
 
 
+.k-grid-norecords {
+	@include font-size-sm;
+	padding: 90px 0 88px;
+	color: $gray-5;
+}
 .table-bottom {
 	display: none;
     padding: 15px 20px;
@@ -3594,6 +3608,49 @@ div.k-grid-norecords {
 		border-top: 0;
 	}
 }
+
+/*
+* ------------------------------
+* accordion
+* ------------------------------
+*/
+.k-expander {
+	&.line {
+
+	}
+	.k-expander-header {
+		position: relative;
+		margin-top: 12px;
+		
+	}
+	.k-expander-title {
+		@include font-size-sm;
+		min-height: 20px;
+		padding-bottom: 6px;
+		border-bottom: 1px solid $bc-table-th;
+		font-weight: 500;
+		line-height: 20px;
+	}
+	.k-i-arrow-chevron-down,
+	.k-i-arrow-chevron-up {
+		position: absolute;
+		right: 0;
+		top: 50%; 
+		margin-top: -7px;
+	}
+	.line.k-expander-content  {
+		padding: 10px 0;
+		border-bottom: 1px solid $gray-e4;
+		.list-set {
+			.title {
+				@include font-size-sm;
+			}
+		}
+	}
+
+}
+
+
 
 /*
 * ------------------------------
@@ -3844,7 +3901,9 @@ table.k-editor {
 	// 	transition: all 0.3s ease;
 	// }
 	&.sm {
-		height: 80px;
+		.k-input {
+			height: 80px;
+		}
 	}
 	.k-input {
 		@include font-size-sm;

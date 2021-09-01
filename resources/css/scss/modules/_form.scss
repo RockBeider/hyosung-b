@@ -57,6 +57,7 @@ td .form-group {
 .form-set {
     display: flex;
     align-items: center;
+    width: 100%;
     > *:not(.bar) + *:not(.bar) {
         margin-left: 8px;
     }
@@ -92,9 +93,12 @@ td .form-group {
             border: 1px solid $gray-e4;
             padding: 20px;
         }
-        .label, .form-set {
+        .label {
             padding: 0;
             margin-right: 8px;
+        }
+        .form-set {
+            flex: unset;
         }
         .form-set + .form-set {
             margin-left: 12px;
@@ -135,6 +139,9 @@ td .form-group {
     overflow: hidden;
     flex: 0 0 auto;
     flex-wrap: wrap;
+    .form-group + .form-group {
+        margin-left: 20px;
+    }
     &.control-3 .form-group {
         width: 33.3%;
         .label {
@@ -168,8 +175,11 @@ td .form-group {
     .form-set {
         // float: left;
         flex: 1 1 auto;
-        padding-right: 20px;
+        // padding-right: 20px;
     }
+    .k-button.blue-border {
+        margin-left: 8px;
+}
     .h-btn.search {
         margin-left: 10px;
         background: $white;

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="간편동의 세부설정"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+            events: { close: onClose}" class="xmd">
+            <div class="content-group">
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                        <div class="title-box sm mt-0">
+                            <span class="amount-set">
+                                <span class="amount current">1</span><span class="unit">건</span>
+                            </span>
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_number">
+                        <div data-role="grid" 
+                            data-sortable="true" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "NO.", "field": "NO", "width": 38, "attributes" : {"class": "text-center"}, "sortable": false  },
+                            { "field": "결제구분", "width": 78 },
+                            { "field": "수단사용", "width": 78 },
+                            { "field": "설정대상", "width": 79 },
+                            { "field": "사용", "width": 56 },
+                            { "field": "설정값", "width": 83 },
+                            { "field": "입력ID", "width": 90 },
+                            { "field": "입력일" },
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-toolbar="#=toolbarTemplate_count()#"
+                            style="height: 360px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"1", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"Y", "설정값":"직접입력", "입력ID":"has", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"2", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"N", "설정값":"100,000", "입력ID":"1004930", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"3", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"N", "설정값":"12,000", "입력ID":"hyosung01", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"4", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"N", "설정값":"300,000", "입력ID":"ipsum", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"5", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"N", "설정값":"직접입력", "입력ID":"lorem", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"6", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"N", "설정값":"직접입력", "입력ID":"simply", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"7", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"N", "설정값":"직접입력", "입력ID":"dummy", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"8", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"Y", "설정값":"1일", "입력ID":"te", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"9", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"Y", "설정값":"10일", "입력ID":"yaya", "입력일":"2020/10/30 20:58:06"},
+                { "NO":"10", "결제구분":"CMS","수단사용":"Y", "설정대상":"납부금액","사용":"Y", "설정값":"농10일협", "입력ID":"ei090", "입력일":"2020/10/30 20:58:06"},
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

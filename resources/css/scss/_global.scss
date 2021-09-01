@@ -113,6 +113,9 @@ button {
 .ml-8 {
 	margin-left: 8px !important;
 }
+.ml-10 {
+	margin-left: 10px !important;
+}
 .mt-4 {
 	margin-top: 4px !important;
 }
@@ -501,6 +504,7 @@ td .divide {
 		}
 	}
 }
+
 
 
 /*
@@ -1318,9 +1322,14 @@ td .divide {
         font-weight: 400;
     }
 }
-
+.t-upload-files {
+	width: 100%;
+}
 .t-file {
+	display: flex;
+	align-items: center;
 	position: relative;
+	padding-right: 24px;
 	background-color: $gray-ef;
 	border-radius: 3px;
 	+ .t-file {
@@ -1348,6 +1357,9 @@ td .divide {
 		}
 	}
 	.file-desc {
+		display: flex;
+		align-items: center;
+		width: 100%;
 		padding: 0 10px;
 	}
 	.text-link {
@@ -1365,7 +1377,7 @@ td .divide {
 	.k-button.close {
 		position: absolute;
 		top: 50%;
-		right: 10px;
+		right: 6px;
 		width: 20px; 
 		height: 20px;
 		margin-top: -10px;
@@ -1551,3 +1563,4 @@ td .divide {
 		background-repeat: no-repeat
 	}
  }
+

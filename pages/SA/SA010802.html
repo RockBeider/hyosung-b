@@ -27,83 +27,85 @@
                             events: { close: onClose}"
             class="md">
             <div class="content-group">
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col width="110px">
-                            <col width="*">
-                            <col width="110px">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th scope="row">어플리케이션 ID</th>
-                                <td><input type="text" class="h-input" value="" /></td>
-                                <th scope="row">어플리케이션명</th>
-                                <td><input type="text" class="h-input" value="ASP 3.0" /></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">어플리케이션 구분</th>
-                                <td>
-                                    <div class="check-group">
-                                        <div class="h-checkbox">
-                                            <input type="radio" id="radio1-1" name="radio1" checked="checked" />
-                                            <label for="radio1-1"><span>자사SW</span></label>
-                                        </div>
-                                        <div class="h-checkbox">
-                                            <input type="radio" id="radio1-2" name="radio1" />
-                                            <label for="radio1-2"><span>연동SW</span></label>
-                                        </div>
-                                    </div>
-                                </td>
-                                <th scope="row">어플리케이션 버전</th>
-                                <td><input type="text" class="h-input" value="3" /></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">연동 유형</th>
-                                <td colspan="3">
-                                    <div class="check-group">
-                                        <div class="h-checkbox">
-                                            <input type="radio" id="radio2-1" name="radio2" checked="checked" />
-                                            <label for="radio2-1"><span>직접연동</span></label>
-                                        </div>
-                                        <div class="form-set">
+                <div class="table-set">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="110px">
+                                <col width="*">
+                                <col width="110px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">어플리케이션 ID</th>
+                                    <td><input type="text" class="h-input" value="" /></td>
+                                    <th scope="row">어플리케이션명</th>
+                                    <td><input type="text" class="h-input" value="ASP 3.0" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">어플리케이션 구분</th>
+                                    <td>
+                                        <div class="check-group">
                                             <div class="h-checkbox">
-                                                <input type="radio" id="radio2-2" name="radio2" />
-                                                <label for="radio2-2"><span>프로그램협력사</span></label>
+                                                <input type="radio" id="radio1-1" name="radio1" checked="checked" />
+                                                <label for="radio1-1"><span>자사SW</span></label>
                                             </div>
-                                            <select data-role="dropdownlist" data-value="협력사 선택" data-option-label="협력사 선택" class="md" disabled="disabled">
-                                                <option value="1">온라인</option>
-                                                <option value="2">오프라인</option>
-                                            </select>
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio1-2" name="radio1" />
+                                                <label for="radio1-2"><span>연동SW</span></label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">연동 비밀번호</th>
-                                <td colspan="3">
-                                    <div class="form-set">
-                                        <input type="text" class="h-input lg" value="" />
-                                        <button data-role="button" class="gray-border"><span>변경</span></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">연동 API 키</th>
-                                <td colspan="3">
-                                    <div class="form-set">
-                                        <input type="text" class="h-input lg" value="P192ufkwlmfnvj(자동생성)" disabled="disabled"/>
-                                        <button data-role="button" class="gray-border"><span>재발급</span></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">콜백URL</th>
-                                <td colspan="3"><input type="text" class="h-input" value="ASP 3.0" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <th scope="row">어플리케이션 버전</th>
+                                    <td><input type="text" class="h-input" value="3" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">연동 유형</th>
+                                    <td colspan="3">
+                                        <div class="check-group">
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio2-1" name="radio2" checked="checked" />
+                                                <label for="radio2-1"><span>직접연동</span></label>
+                                            </div>
+                                            <div class="form-set">
+                                                <div class="h-checkbox">
+                                                    <input type="radio" id="radio2-2" name="radio2" />
+                                                    <label for="radio2-2"><span>프로그램협력사</span></label>
+                                                </div>
+                                                <select data-role="dropdownlist" data-value="협력사 선택" data-option-label="협력사 선택" class="md" disabled="disabled">
+                                                    <option value="1">온라인</option>
+                                                    <option value="2">오프라인</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">연동 비밀번호</th>
+                                    <td colspan="3">
+                                        <div class="form-set">
+                                            <input type="text" class="h-input lg" value="" />
+                                            <button data-role="button" class="gray-border"><span>변경</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">연동 API 키</th>
+                                    <td colspan="3">
+                                        <div class="form-set">
+                                            <input type="text" class="h-input lg" value="P192ufkwlmfnvj(자동생성)" disabled="disabled"/>
+                                            <button data-role="button" class="gray-border"><span>재발급</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">콜백URL</th>
+                                    <td colspan="3"><input type="text" class="h-input" value="ASP 3.0" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="table-group">
                     <div class="title-box md">

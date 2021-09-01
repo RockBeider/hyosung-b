@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="할당건 영업진행상황 관리"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+            events: { close: onClose}" class="xmd">
+            <div class="content-group">
+                <!-- 일반사항 -->
+                <div class="table-set">
+                    <div class="title-box xsm mt-0">
+                        <h3 class="sub-title">일반사항</h3>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="130px" />
+                                <col width="*" />
+                                <col width="130px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">진단형태</th>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">회사명</th>
+                                    <td>테스트</td>
+                                    <th scope="row">문의자명</th>
+                                    <td>문의</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상담가능시간</th>
+                                    <td>11:00-12:00</td>
+                                    <th scope="row">회사전화번호</th>
+                                    <td>010-1234-5678</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">문의내용</th>
+                                    <td colspan="3">케이비지트 사용자입니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //일반사항 -->
+                <!-- 사업정보 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <h3 class="sub-title">사업정보</h3>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="130px" />
+                                <col width="*" />
+                                <col width="130px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>종사업종</th>
+                                    <td>일반가맹점</td>
+                                    <th>사업운영형태</th>
+                                    <td>일반가맹점</td>
+                                </tr>
+                                <tr>
+                                    <th>신규사업자 여부</th>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <th>취급하는 상품 종류</th>
+                                    <td></td>
+                                    <th>취급하는 상품계약 형태</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>관심 분야</th>
+                                    <td colspan="3">수납률 향상</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //사업정보 -->
+
+                <!-- 수납관련 정보 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <h3 class="sub-title">수납관련 정보</h3>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="130px" />
+                                <col width="*" />
+                                <col width="130px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>요금청구방식</th>
+                                    <td>요금청구방식</td>
+                                    <th>이용중인 결제서비스</th>
+                                    <td>문의</td>
+                                </tr>
+                                <tr>
+                                    <th>월 수납 고객규모</th>
+                                    <td></td>
+                                    <th>고객별 평균 수납기간</th>
+                                    <td>010-1234-5678</td>
+                                </tr>
+                                <tr>
+                                    <th>수납 건당 평균 결제금액</th>
+                                    <td colspan="3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //수납관련 정보 -->
+
+                <!-- 시스템 일반 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <h3 class="sub-title">시스템 일반</h3>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="130px" />
+                                <col width="*" />
+                                <col width="130px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>경영관리시스템 유/무</th>
+                                    <td>유</td>
+                                    <th>시스템기술 담당자 유/무</th>
+                                    <td>무</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //시스템 일반 -->
+
+                <div class="bg-box gray sm">
+                    <p class="title">상담이력 정보</p>
+                    <p class="desc">등록된 상담이력이 없습니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"1", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"이니시스", "카드사":"그외", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"2", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"국민", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"3", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"삼성", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"4", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"하나(구, 외환)", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"5", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"롯데", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"6", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"현대", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"7", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"신한", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"8", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"효성", "카드사":"비씨", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"9", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"중소1","PG사":"효성", "카드사":"농협", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"10", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"중소1","PG사":"효성", "카드사":"농협", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>
