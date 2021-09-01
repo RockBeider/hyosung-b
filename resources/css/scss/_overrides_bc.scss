@@ -23,6 +23,10 @@
         max-width: 120px;
         min-width: 120px;
 	}
+	&.xmd {
+        max-width: 140px;
+        min-width: 140px;
+	}
 	&.lg {
         // max-width: 220px;
         // min-width: 220px;
@@ -93,7 +97,12 @@
 } 
 
 .k-grid-content {
-	border-bottom: 1px solid $gray-c;
+	// border-bottom: 1px solid $gray-c;
+}
+.k-grid-norecords {
+	@include bc-font-size-xsm;
+	padding: 90px 0;
+	color: $gray-5;
 }
 //body
 .k-grid {
@@ -101,6 +110,62 @@
 		@include bc-font-size-xsm;
 		height: 30px;
 	}
+}
+
+
+/*
+* ------------------------------
+* accordion
+* ------------------------------
+*/
+.k-expander {
+	&.line {
+
+	}
+	.k-expander-header {
+		position: relative;
+		margin-top: 12px;
+		
+	}
+	.k-expander-title {
+		@include bc-font-size-xsm;
+		min-height: 20px;
+		padding-bottom: 6px;
+		border-bottom: 1px solid $bc-table-th;
+		font-weight: 500;
+		line-height: 20px;
+	}
+	.k-i-arrow-chevron-down,
+	.k-i-arrow-chevron-up {
+		position: absolute;
+		right: 0;
+		top: 50%; 
+		margin-top: -7px;
+	}
+	.line.k-expander-content  {
+		padding: 7px 0;
+		border-bottom: 1px solid $gray-e4;
+		.list-set {
+			.title {
+				@include bc-font-size-xsm;
+				min-width: 103px;
+				margin: 6px 0;
+			}
+			.list {
+				width: 100%;
+				.form-group {
+					margin: 3px 0;
+					.form-label.md {
+						min-width: 63px;
+					} 
+					.form-set {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
 }
 
 /*
@@ -135,7 +200,16 @@
 */
 .k-textarea {
 	@include bc-font-size-xsm;
-	
+	&.sm {
+		.k-input {
+			height: 60px;
+		}
+	}
+	&.md {
+		.k-input {
+			height: 100px;
+		}
+	}
 	.k-input {
 		@include bc-font-size-xsm;
 	}

@@ -5,73 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
-    <link rel="stylesheet" href="../../resources/css/index.css">
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
 </head>
 <body>
     <div class="wrap">
         <!-- Header Include -->
-        <div data-include-path="../layout/header.html"></div>
-
+        <div data-include-path="../layout/header_bc.html"></div>
         <div id="container">
-            <!-- Header Include -->
-            <div data-include-path="../layout/lnb.html"></div>
-            <!-- Contents -->
-            <main class="contents-wrap">
+             <!-- Contents -->
+             <main class="contents-wrap">
                 <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
             </main>
         </div>
         <div data-role="dialog"
-             data-title="해지계좌 복원"
+             data-title="Q&A 수정"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
                             events: { close: onClose}"
-            class="md">
+            class="xmd">
             <div class="content-group">
                 <div class="table-set">
-                    <div class="title-box xsm mt-0">
-                        <h4 class="sub-title">동의서 정보</h4>
-                    </div>
                     <div class="table">
                         <table>
                             <colgroup>
-                                <col width="80px" />
-                                <col width="*" />
-                                <col width="80px" />
+                                <col width="120px" />
                                 <col width="*" />
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th scope="row">고객사ID</th>
-                                    <td>hyosung001</td>
-                                    <th scope="row">고객사명</th>
-                                    <td>고객사명</td>
+                                    <th scope="row">제목</th>
+                                    <td><input type="text" class="h-input" value="개선 요청등록 제목" /></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">은행명</th>
-                                    <td>국민은행</td>
-                                    <th scope="row">예금주명</th>
+                                    <th scope="row">등록자</th>
                                     <td>홍길동</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">계좌번호</th>
-                                    <td>107***123456</td>
-                                    <th scope="row">생년월일</th>
-                                    <td>80****</td>
+                                    <th scope="row">등록일시</th>
+                                    <td>2020/06/19 11:20:59</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">동의서타입</th>
-                                    <td colspan="3">
-                                        <select data-role="dropdownlist" data-value="서면" data-option-label="서면" class="lg">
-                                            <option value="1">온라인</option>
-                                            <option value="2">오프라인</option>
-                                        </select>
-                                    </td>
+                                    <th scope="row">내용</th>
+                                        <td>
+                                            <textarea data-role="textarea"
+                                                data-format="c"
+                                                data-min="0"
+                                                data-max="100"
+                                                data-rows="4"
+                                                data-placeholder="" class="md">개선 요청등록 문의합니다.
+상담 내역 첨부하니 확인부탁드립니다.
+감사합니다.</textarea>
+                                        </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">파일업로드</th>
-                                    <td colspan="3">
+                                    <th scope="row">첨부파일</th>
+                                    <td>
                                         <div class="form-group col">
-                                            <div class="upload">
+                                            <div class="upload type2">
                                                 <input type="file"
                                                 class="fileupload"
                                                     name="files"
@@ -82,40 +72,23 @@
                                                         allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
                                                     }"
                                                     data-show-file-list= "true"
-                                                    data-localization="{select: '선택'}"
+                                                    data-localization="{select: '파일선택'}"
                                                     data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
                                                     data-bind="visible: isVisible,
                                                                 enabled: isEnabled" 
                                                 >
                                             </div>
-                                            <div class="upload-guide">
-                                                <div class="h-checkbox">
-                                                    <input type="checkbox" id="checkbox_upload" name="checkbox" checked="checked" />
-                                                    <label for="checkbox_upload"><span>동의서파일 사용여부</span></label>
-                                                </div>
-                                                <p class="list">* 파일은 2mb 이하만 등록 가능합니다.</p>
-                                            </div>
+                                            
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">이메일</th>
-                                    <td colspan="3">
-                                        <textarea data-role="textarea"
-                                            data-format="c"
-                                            data-min="0"
-                                            data-max="100"
-                                            data-rows="4"
-                                            data-placeholder="" class="sm"></textarea>
-                                    </td> 
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="btn-box bottom justify-content-between">
-                    <button data-role="button" class="gray-border">취소</button>
-                    <button data-role="button" class="">복원</button>
+                    <button data-role="button" class="gray-border">목록</button>
+                    <button data-role="button" class="">확인</button>
                 </div>
             </div>
         </div>

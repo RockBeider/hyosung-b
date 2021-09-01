@@ -249,3 +249,12 @@ if( $('.radioTab').hasClass('disabled') ) {
 if( $('.check-group').hasClass('disabled') ) {
 	$('.check-group.disabled').find('input').attr('disabled', true);
 }
+/* =====================================
+ * file close 
+ * =====================================
+ */
+
+$(document).on('click', '.t-file .close', function() {
+	$(this).parents('.t-file').remove();
+})
+

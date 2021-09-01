@@ -5,111 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
-    <link rel="stylesheet" href="../../resources/css/index.css">
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
 </head>
 <body>
     <div class="wrap">
         <!-- Header Include -->
-        <div data-include-path="../layout/header.html"></div>
-
+        <div data-include-path="../layout/header_bc.html"></div>
         <div id="container">
-            <!-- Header Include -->
-            <div data-include-path="../layout/lnb.html"></div>
-            <!-- Contents -->
-            <main class="contents-wrap">
+             <!-- Contents -->
+             <main class="contents-wrap">
                 <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
             </main>
         </div>
+
         <div data-role="dialog"
-             data-title="요청사항 등록"
+             data-title="요청사항관리"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
                             events: { close: onClose}"
-            class="md">
+            class="xmd">
             <div class="content-group">
+                <!-- 업무정보 -->
                 <div class="table-set">
                     <div class="title-box xsm mt-0">
-                        <h4 class="sub-title">업무정보</h4>
-                    </div>
+                        <div class="left-group">
+                            <h2 class="sub-title">업무정보</h2>
+                        </div>
+                    </div>    
                     <div class="table">
                         <table>
                             <colgroup>
-                                <col width="80px" />
-                                <col width="*" />
-                                <col width="80px" />
-                                <col width="140px" />
+                                <col width="120px">
+                                <col width="*">
+                                <col width="120px">
+                                <col width="*">
                             </colgroup>
                             <tbody>
                                 <tr>
                                     <th scope="row">업무종류</th>
                                     <td>
-                                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="sm">
+                                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
                                             <option value="1">온라인</option>
                                             <option value="2">오프라인</option>
                                         </select>
                                     </td>
-                                    <th scope="row">등록일</th>
-                                    <td>2021/07/20 12:35:26</td>
+                                    <th scope="row">접수일</th>
+                                    <td>2021/06/23</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">고객사명</th>
-                                    <td>
+                                    <th scope="row">업체명</th>
+                                    <td colspan="3">
                                         <div class="form-set">
-                                            <input type="text" class="h-input" placeholder="" />
-                                            <button data-role="button" class="gray-border"><span>고객사 선택</span></button>
+                                            <input type="text" class="h-input" value="효성에프엠에스" disabled="disabled" />
+                                            <button data-role="button" class="gray-border"><span>업체이력</span></button>
                                         </div>
                                     </td>
-                                    <th scope="row">등록자</th>
-                                    <td><input type="text" class="h-input" value="홍길동"/></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">협력사</th>
-                                    <td>
+                                    <th scope="row">접수자</th>
+                                    <td colspan="3">
                                         <div class="form-set">
-                                            <select data-role="dropdownlist" data-value="영업 협력사" data-option-label="영업 협력사">
-                                                <option value="1">온라인</option>
-                                                <option value="2">오프라인</option>
-                                            </select>
-                                            <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
-                                                <option value="1">온라인</option>
-                                                <option value="2">오프라인</option>
-                                            </select>
+                                            <input type="text" class="h-input" value="홍길동" />
                                         </div>
                                     </td>
-                                    <th scope="row">접수처</th>
-                                    <td><input type="text" class="h-input" value="본사" disabled="disabled"/></td>
                                 </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="table-set">
-                    <div class="title-box xsm">
-                        <div class="left-group">
-                            <h4 class="sub-title">구비서류 등록</h4>
-                        </div>
-                    </div>
-                    <div class="table">
-                        <table>
-                            <colgroup>
-                                <col width="80px" />
-                                <col width="*" />
-                            </colgroup>
-                            <tbody>
                                 <tr>
-                                    <th scope="row">첨부파일</th>
-                                    <td>
+                                    <th scope="row">요청사항</th>
+                                    <td colspan="3">
+                                        <textarea data-role="textarea"
+                                        data-format="c"
+                                        data-min="0"
+                                        data-max="100"
+                                        data-rows="3"
+                                        data-placeholder="" class="sm"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">문서파일 업로드</th>
+                                    <td colspan="3">
                                         <div class="form-group col" id="templateList">
-                                            <button id="add_fileList" data-role="button" data-icon="plus" class="blue-border"><span>첨부파일 추가</span></button>
-                                            
+                                            <div class="form-set">
+                                                <button id="add_fileList" data-role="button" data-icon="plus" class="blue-border"><span>첨부파일 추가</span></button>
+                                                <span class="upload-title">파일은 2mb 이하만 등록 가능합니다.</span>
+                                            </div>
                                             <script type="text/x-kendo-tmpl" id="template_upload">
                                                 <div class="form-set">
-                                                    <select class="dropdownlistFunc" data-role="dropdownlist" data-value="구비서류 선택" data-option-label="구비서류 선택" class="md">
+                                                    <select class="dropdownlistFunc xmd" data-role="dropdownlist" data-value="구비서류 선택" data-option-label="구비서류 선택">
                                                         <option value="1">온라인</option>
                                                         <option value="2">오프라인</option>
                                                     </select>
-                                                    <div class="upload lg">
+                                                    <div class="upload">
                                                         <input type="file"
                                                         class="fileupload"
                                                             name="files"
@@ -131,31 +116,21 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">요청사항</th>
-                                    <td>
-                                        <textarea data-role="textarea"
-                                            data-format="c"
-                                            data-min="0"
-                                            data-max="100"
-                                            data-rows="4"
-                                            data-placeholder="" class="sm"></textarea>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <ul class="pop-guide">
-                        <li class="list">* 파일은 5mb 이하만 등록 가능합니다.</li>
-                        <li class="list">* 요청 시 필요한 문서종류 파일만 접수하시면 됩니다.</li>
+                        <li class="list">* 요청시 필요한 문서종류 파일만 접수하시면 됩니다.</li>
                     </ul>
+                    <div class="btn-box bottom">
+                        <button data-role="button"><span>접수</span></button>
+                    </div>
                 </div>
-
-                <div class="btn-box bottom">
-                    <button data-role="button" class="">등록</button>
-                </div>
+                <!-- //업무정보 -->
+                
             </div>
         </div>
+
     </div>
 
     <!-- Default Script Include -->
@@ -176,6 +151,7 @@
 
                 if (value) {
                     dialog.open();
+                    console.log('open');
                     if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
                         $('.k-dialog').css({"height":"100%"});
                     }
@@ -185,7 +161,7 @@
             }
         });
 
-        var viewModel_popup = kendo.observable({
+        var viewModel = kendo.observable({
             isVisible: true,
             isClosable: true,
             isEnabled: false,
@@ -197,10 +173,44 @@
                 this.set("isVisible", true);
                 this.set("isEnabled", false);
             },
-        });
-        kendo.bind($(".wrap"), viewModel_popup);
 
-        //upload
+        });
+        kendo.bind($(".wrap"), viewModel);
+       
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"추천",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"추천",  "제목":"공지사항", "내용":"안녕하세요 OOO학원입니다. OOO학원에 귀하의 자녀를 보내주..." },
+                { "NO":"추천",  "제목":"납부안내", "내용":"{ 회 원 명 } 고객님의 가정에 건강과 평안을 기원합니다. O월O일..." },
+                { "NO":"1",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"2",  "제목":"청구안내", "내용":"안내" },
+                { "NO":"3",  "제목":"가입인사", "내용":"{ 업 체 명 }입니다. { 회 원 명 }님의 청구 발송일은 {청구서발송..." },
+                { "NO":"4",  "제목":"공지사항", "내용":"안내" },
+                { "NO":"5",  "제목":"공지사항", "내용":"안내" },
+                { "NO":"6",  "제목":"공지사항", "내용":"안내" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+        function SetColor(NO) {
+            if(NO=="추천")
+                return "<span class=\"notice-title\">"+NO+"</span>";
+            else
+                return NO;
+        }
         var viewModel_fileUpload = kendo.observable({
             isEnabled: true,
             isVisible: true,
@@ -212,7 +222,7 @@
             kendo.bind($(".fileupload"), viewModel_fileUpload); 
             kendo.bind($(".dropdownlistFunc"), {}); //드롭다운
         }) 
-    </script>
+    </script> 
 </body>
 
 </html>

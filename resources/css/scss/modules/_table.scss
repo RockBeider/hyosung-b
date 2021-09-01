@@ -6,15 +6,21 @@
     margin-top: 30px;
 }
 .table-group {
+    &.h-sm {
+        max-height: 184px;
+        > * {
+            overflow: auto;
+        }
+    }
     display: flex;
     flex-direction: column;
     &.half {
         flex-direction: row;
+        margin: 0 -10px;
         > * {
-            width: 50%;
-            + * {
-                margin-left: 20px;
-            }
+            width: calc(50% - 20px);
+            flex: 0 0 calc(50% - 20px);
+            margin: 0 10px;
         }
         .table-set {
             display: flex;
@@ -25,6 +31,18 @@
         }
        
     }
+    &.sm {
+        flex-direction: row;
+		margin-top: 12px;
+		align-items: stretch;
+		> :first-child {
+            width: 298px;
+			flex: 0 0 298px;
+            + * {
+                margin-left: 10px;
+            }
+		}
+	}
 }
 .table-set {
     flex: 1;

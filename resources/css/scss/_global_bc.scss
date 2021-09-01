@@ -77,6 +77,12 @@
         line-height: 17px;
         font-weight: 400;
     }
+	&.xsm {
+		margin-top: 12px;
+		.sub-title {
+            @include bc-font-size-default;
+        }
+	}
     &.sm {
         min-height: 26px; 
         margin: 20px 0 6px;
@@ -93,6 +99,266 @@
 			@include bc-font-size-xsm;
 			// line-height: 18px;
 		}
+	}
+}
+
+/*
+* ------------------------------
+* List 
+* ------------------------------
+*/
+.list-wrap {
+	padding: 20px;
+	background: $gray-ef;
+	border-top: 1px solid $gray-2;
+}
+
+.list-set {
+    display: flex;
+    + .list-set {
+        margin-top: 10px;
+    }
+    &.answer {
+        .list-title {
+            color: $gray-5;
+            margin-right: 10px;
+        }
+        .list-box {
+            &::before {
+                left: -6px;
+                width: 0px;
+                height: 0px;
+                border-top: 4px solid transparent;
+                border-right: 6px solid $white;
+                border-left: 4px solid none;
+                border-bottom: 4px solid transparent;
+            }
+        }
+        .badge.count {
+            background-color: $gray-5;
+            color: $white;
+        }
+    }
+    &.receipt {
+        .list-title {
+            color: $main;
+            order: 2;
+        }
+        .list-box {
+            margin-right: 10px;
+            order: 1;
+            &::before {
+                right: -6px;
+                width: 0px;
+                height: 0px;
+                border-top: 4px solid transparent;
+                border-left: 6px solid $white;
+                border-right: 4px solid none;
+                border-bottom: 4px solid transparent;
+            }
+        }
+        .badge.count {
+            background-color: $main;
+            color: $white;
+        }
+    }
+    .list-title {
+        @include font-size-sm;
+        color: $gray-7;
+        font-weight: 500;
+       
+    }
+    .list-box {
+        position: relative;
+        flex: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+        }
+    }
+}
+.list-box {
+	position: relative;
+    display: flex;
+    align-items: flex-start;
+    white-space: nowrap;
+    
+    &.gray-box {
+        padding: 20px;
+        background: $gray-f5;
+        border: 1px solid $gray-e4;
+        .label {
+			color: $gray-7;
+		}
+        .desc {
+			color: $gray-2;
+		}
+    }
+    &.pop {
+        &.row {
+            display: flex;
+            flex-direction: row;
+        }
+        // padding: 20px;
+        background: $gray-f5;
+		flex-direction: column;
+        border-radius: 3px;
+        .list-set {
+            display: flex;
+            flex-direction: column;
+            + .list-set {
+                margin-top: 0;
+                margin-left: 30px;
+            }
+            &.sm {
+                width: 258px;
+            }
+        }
+		.label {
+            justify-content: flex-start;
+			color: $gray-7;
+            &.sm {
+                min-width: 58px;
+            }
+            &.md {
+                min-width: 70px;
+            }
+		}
+		.desc {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+			color: $gray-2;
+		}
+		.badge {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			height: 20px;
+		}
+        .k-button.bottom {
+            position: absolute;
+            bottom: 20px; 
+            right: 0;
+        }
+	}
+    &.half {
+        > * {
+            width: 50%;
+        }
+    }
+    .form-label {
+		@include bc-font-size-xsm;
+        color: $gray-5;
+    }
+    &.has-bar {
+        padding: 26px 20px;
+        > * { 
+            position: relative;
+            justify-content: center;
+            + *::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 1px;
+                height: 21px;
+                margin-top: -10px;
+                background: $gray-d;
+            }
+        }
+        .label, .form-label {
+            @include bc-font-size-xsm;
+            color: $gray-2;
+            font-weight: 500;
+        }
+        .desc {
+            @include bc-font-size-xsm;
+        }
+        .unit {
+            margin-left: 2px;
+            color: $gray-7;
+        }
+    }
+	&.history {
+		flex-direction: column;
+		padding: 16px 20px;
+		background: $white;
+        border-radius: 3px;
+		.label {
+			color: $gray-7;
+		}
+		.desc {
+			color: $gray-2;
+		}
+		.badge {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			height: 20px;
+		}
+		+ .list-box {
+			margin-top: 8px;
+		}
+        &.row {
+            flex-direction: row;
+            .desc {
+                flex-direction: column;
+            }
+            .label.has-bar::after {
+                top: 6px;
+                margin-top: 0;
+            }
+            .list+.list {
+                margin-left: 30px;
+            }
+        }
+	}
+    
+    .list { display: flex; }
+    .label, .form-label {
+        @include bc-font-size-xsm;
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+		margin-right: 8px;
+		padding-right: 8px;
+        font-weight: 500;
+        &.has-bar::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 1px;
+			height: 14px;
+			margin-top: -7px;
+			background: $gray-d;
+        }
+    }
+    .desc {
+        @include font-size-sm;
+    }
+}
+
+/*
+* ------------------------------
+*  상단 라인 박스 
+* ------------------------------
+*/
+.line-box {
+	flex: 1;
+	padding: 30px 20px;
+	border: 1px solid $gray-e4;
+	border-top: 1px solid $gray-5;
+	&.sm {
+		padding: 15px 12px;
+	}
+	.title-box {
+		padding-bottom: 6px;
+		border-bottom: 1px solid $gray-c;
 	}
 }
 
@@ -134,7 +400,12 @@
 * ------------------------------
 */
 
-
+.text-link {
+	@include bc-font-size-xsm;
+	margin-right: 10px;
+	color: $bc-blue;
+	text-decoration: underline;
+}
 
 .upload-guide {
 	.list {
@@ -200,8 +471,8 @@
             order: 2;
             span {
                 margin: 0;
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 13px;
+                line-height: 19px;
             }
         }
     }
@@ -217,55 +488,25 @@
 }
 
 .t-file {
-	position: relative;
-	background-color: $gray-ef;
 	border-radius: 3px;
 	+ .t-file {
 		margin-top: 8px;
 	}
 	.file-title {
-		@include font-size-sm; 
-		position: relative;
-		display: inline-block;
-		min-width: 160px;
-		padding: 0 10px;
-		color: $gray-2;
-		font-weight: 500;
-		text-align: center;
-		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			right: 0;
-			top: 50%; 
-			margin-top: -7px;
-			width: 1px; 
-			height: 14px;
-			background-color: $gray-d;
-		}
+		@include bc-font-size-xsm;
+		
 	}
 	.file-desc {
+		display: flex;
+		align-items: center;
 		padding: 0 10px;
 	}
 	.text-link {
-		@include font-size-sm;
-		margin-right: 10px;
-		color: $main;
-		text-decoration: underline;
+		@include bc-font-size-xsm;
+		color: $bc-blue;
 	}
 	.file-date {
-		color: $gray-9;
-		font-size: 13px;
-		letter-spacing: -0.65px;
-		font-weight: 400;
-	}
-	.k-button.close {
-		position: absolute;
-		top: 50%;
-		right: 10px;
-		width: 20px; 
-		height: 20px;
-		margin-top: -10px;
+		color: $gray-7;
 	}
 }
 
@@ -332,4 +573,91 @@
         @include bc-font-size-xsm;
         padding: 4px 0;
     }
+}
+
+ /*
+* ------------------------------
+* question
+* ------------------------------
+*/
+.question-set {
+	+ .question-set {
+		margin-top: 17px;
+	}
+	.question {
+		@include bc-font-size-xsm;
+		font-weight: 500;
+		.no {
+			@include bc-font-size-sm;
+			margin-right: 6px;
+			font-weight: bold;
+		}
+	}
+	.answer {
+		padding-top: 4px;
+	}
+	.list {
+		display: flex;
+		align-items: center;
+		min-height: 26px;
+		margin: 3px 0;
+		.form-set {
+			flex: 1;
+		}
+	}
+}
+
+ /*
+* ------------------------------
+* question
+* ------------------------------
+*/
+.bg-box {
+	margin-top: 20px;
+	padding: 16px;
+	&.gray {
+		background-color: $gray-f5;
+		border: 1px solid $gray-c;
+	}
+	&.sm {
+		min-height: 120px;
+	}
+	.title {
+		@include bc-font-size-default;
+		color: $gray-2;
+		font-weight: 500;
+		line-height: 20px;
+	}
+	.desc {
+		@include bc-font-size-xsm;
+		color: $gray-a;
+	}
+}
+
+/*
+* ------------------------------
+* banner
+* ------------------------------
+*/
+
+
+.info-banner {
+	// flex-direction: column;
+	margin-bottom: 4px;
+	padding: 20px;
+	background: $main-sub;
+	&.request {
+		.tit {
+			@include bc-font-size-md;
+			color: $white;
+		}
+		.badge {
+			@include bc-font-size-xs;
+			display: inline-block;
+			position: relative;
+			height: 18px;
+			padding: 0 6px;
+			line-height: 17px;
+		}
+	}
 }

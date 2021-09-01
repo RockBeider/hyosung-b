@@ -22,36 +22,31 @@
         </div>
 
         <div data-role="dialog"
-             data-title="고객사 검색"
+             data-title="수수료 이력"
              data-modal="false"
              data-bind="dialogOpen: isVisible,
-                            events: { close: onClose}" class="sm">
+                            events: { close: onClose}" class="lg">
             <div class="content-group">
-                <div class="search-control">
-                    <div class="form-group">
-                        <div class="form-set">
-                            <div class="h-checkbox">
-                                <input type="radio" id="radio1-1" name="radio" />
-                                <label for="radio1-1"><span>고객사명</span></label>
-                            </div>
-                            <div class="h-checkbox">
-                                <input type="radio" id="radio1-2" name="radio" checked="checked" />
-                                <label for="radio1-2"><span>고객사ID</span></label>
-                            </div>
-                            <input type="text" class="h-input ml-20" value="녹즙">
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                        <div class="title-box sm mt-0">
+                            <span class="amount-set">
+                                <span class="amount current">1</span><span class="unit">건</span>
+                            </span>
                         </div>
-                        <button data-role="button" class="blue-border">검색</button>
-                    </div>
-                </div>
-                <div class="table-content grid border-none" id="viewModel_grid">
-                    <div data-role="grid"
-                        data-columns='[
-                        { "field": "고객사명", "width": 250, "attributes" : {"class": "text-left"}, "headerAttributes": { "style": "display: none"}},
-                        { "field": "고객사ID", "attributes" : {"class": "text-left"}, "headerAttributes": { "style": "display: none"} }
-                        ]' 
-                        data-no-records="{ template : '<p>검색 내역이 없습니다.</p>'}" 
-                        data-bind="source: gridSource"
-                        class="text-center" style="height: 200px">
+                    </script>
+                    <div class="table-content grid" id="viewModel_number">
+                        <div data-role="grid" 
+                            data-sortable="true" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                            { "field": "" },
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-toolbar="#=toolbarTemplate_count()#"
+                            >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,19 +99,23 @@
         kendo.bind($(".wrap"), viewModel);
        
         //grid
-        var viewModel_grid = kendo.observable({
+        var viewModel_number = kendo.observable({
             gridSource: [
-                { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
-                { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
-                { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
-                { "고객사명":"녹즙여의도지사(풀무원녹즙)", "고객사ID":"abcde01" },
+                { "NO":"1" },
+                { "NO":"2" },
+                { "NO":"3" },
             ],
             displayGridSource: function() {
                 return stringify(this.get("gridSource").toJSON());
             },
         });
-        kendo.bind($("#viewModel_grid"), viewModel_grid);
-       
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+            
     </script>
 </body>
 

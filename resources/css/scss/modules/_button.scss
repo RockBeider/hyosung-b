@@ -298,12 +298,12 @@
                     border-right: 1px solid $accent;
                 }
             }
-            + .k-button {
-                &.k-state-active {
-                    margin-left: 0px;
-                    padding-left: 20px;
-                }
-            }
+            // + .k-button {
+            //     &.k-state-active {
+            //         margin-left: 0px;
+            //         padding-left: 20px;
+            //     }
+            // }
         }
     }
     &.round {

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="상담정보 관리"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="xl">
+            <div class="content-group">
+                <!-- 기본정보 -->
+                <div class="table-set">
+                    <div class="title-box xsm mt-0">
+                        <h4 class="sub-title">기본정보<span class="badge blue">상담중</span></h4>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="72px">
+                                <col width="*">
+                                <col width="72px">
+                                <col width="*">
+                                <col width="72px">
+                                <col width="*">
+                                <col width="72px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">상담인</th>
+                                    <td>효성복지재단</td>
+                                    <th scope="row">협력사</th>
+                                    <td>효성FMS</td>
+                                    <th scope="row">상호</th>
+                                    <td>효성복지재단</td>
+                                    <th scope="row">회원명</th>
+                                    <td>김효성</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">연락처</th>
+                                    <td>01012345678</td>
+                                    <th scope="row">결제수단</th>
+                                    <td>CMS</td>
+                                    <th scope="row">결제사</th>
+                                    <td>국민은행</td>
+                                    <th scope="row">결제번호</th>
+                                    <td>1234567890</td>
+                                </tr> 
+                                <tr>
+                                    <th scope="row">접수기간</th>
+                                    <td>2021/06/30 12:31:25 </td>
+                                    <th scope="row">제목</th>
+                                    <td colspan="5">결제문의</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                 <!-- //기본정보 -->
+                <div class="table-group half">
+                    <!-- 문의내용 -->
+                    <div class="table-set">
+                        <div class="title-box xsm">
+                            <h4 class="sub-title">문의</h4>
+                        </div>
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col width="72px">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">문의내용</th>
+                                        <td>
+                                            <div class="form-set">
+                                                <input type="text" class="h-input" value="문의"/>
+                                                <button data-role="button" class="blue-border"><span>검색</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tree-box">
+                           
+                        </div>
+                        <h5 class="detail-title">문의상세</h4>
+                        <ul class="detail-box">
+                           <li class="list">이용고객 - 사양문의 - CMS - 출금관리 - 실시간 출금 블라블라</li>
+                           <li class="list">고객회원 - 유선전화결제 - KT - 결제사유문의 (홍길 블라블라</li>
+                           <li class="list">고객회원 - 유선전화결제 - KT - 결제사유문의 (홍길 블라블라</li>
+                        </ul>
+                    </div>
+                    <!-- //문의내용 -->
+                    <!-- 대응내용 -->
+                    <div class="table-set">
+                        <div class="title-box xsm">
+                            <h4 class="sub-title">대응</h4>
+                        </div>
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col width="72px">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">대응내용</th>
+                                        <td>
+                                            <div class="form-set">
+                                                <input 
+                                                    id="viewModel_autoComplete"
+                                                    data-role="autocomplete"
+                                                    data-placeholder="Type a product e.g. 'Chai'"
+                                                    data-value-primitive="true"
+                                                    data-text-field="ProductName"
+                                                    data-bind="value: selectedProduct,
+                                                                source: products,
+                                                                visible: isVisible,
+                                                                enabled: isEnabled,
+                                                                events: {
+                                                                    change: onChange,
+                                                                    open: onOpen,
+                                                                    close: onClose
+                                                                }"
+                                                    value="문의"
+                                                    
+                                                    />
+                                                <button data-role="button" class="blue-border"><span>검색</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tree-box">
+                           
+                        </div>
+                        <h5 class="detail-title">대응상세</h4>
+                        <ul class="detail-box">
+                           <li class="list">통화성공 후 안내완료</li>
+                        </ul>
+                    </div>
+                    <!-- //대응내용 -->
+                </div>
+                <!-- 민원관리 -->
+                <section class="line" data-role="expansionpanel" data-expanded="false" data-title="민원관리">
+                    <div class="list-set row">
+                        <div class="title">
+                            <div class="h-checkbox">
+                                <input type="checkbox" id="checkbox1-2" name="checkbox" checked="checked" />
+                                <label for="checkbox1-2"><span>민원선택</span></label>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="form-group">
+                                <div class="form-label md">민원유형</div>
+                                <div class="form-set">
+                                    <div data-role="buttongroup" class="period sm"
+                                    data-index="0">
+                                        <button data-role="button"><span>미동의 출금</span></button>
+                                        <button data-role="button"><span>해지후 출금</span></button>
+                                        <button data-role="button"><span>임의금액 출금</span></button>
+                                        <button data-role="button"><span>약정일 외 출금</span></button>
+                                        <button data-role="button"><span>기타</span></button>
+                                    </div>
+                                    <input type="text" class="h-input" value="고객회원 - 유선전화결제 - KT - 결제사유문의 (홍길동) " />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-label md">접수경로</div>
+                                <div class="form-set">
+                                    <div data-role="buttongroup" class="period sm"
+                                    data-index="0">
+                                        <button data-role="button"><span>고객센터</span></button>
+                                        <button data-role="button"><span>결제기관</span></button>
+                                        <button data-role="button"><span>기타</span></button>
+                                    </div>
+                                    <input type="text" class="h-input" value="" disabled="disabled"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-label md">예금주관계</div>
+                                <div class="form-set">
+                                    <div data-role="buttongroup" class="period sm"
+                                    data-index="0">
+                                        <button data-role="button"><span>본인</span></button>
+                                        <button data-role="button"><span>부모</span></button>
+                                        <button data-role="button"><span>자녀</span></button>
+                                        <button data-role="button"><span>형제</span></button>
+                                        <button data-role="button"><span>직원</span></button>
+                                        <button data-role="button"><span>직원</span></button>
+                                    </div>
+                                    <input type="text" class="h-input" value="" disabled="disabled"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // 민원관리 -->
+                <!-- 처리내용 -->
+                <div class="table-set">
+                    <script type="text/x-kendo-template" id="toolbarTemplate_count">
+                        <div class="title-box xsm">
+                            <h4 class="sub-title">처리내용</h4>
+                        </div>
+                    </script>
+                    <div class="table-content grid" id="viewModel_number">
+                        <div data-role="grid" 
+                            data-sortable="false" 
+                            data-editable="true" 
+                            data-columns='[
+                            { "title": "대응상담원", "field": "대응상담원", "width": 95, "attributes" : {"class": "text-center"} },
+                            { "title": "대응일시", "field": "대응일시", "width": 132, "attributes" : {"class": "text-center"} },
+                            { "title": "번호", "field": "번호", "width": 94, "attributes" : {"class": "text-center"} },
+                            { "title": "예금주", "field": "예금주", "width": 54, "attributes" : {"class": "text-center"} },
+                            { "title": "문의내용상세", "field": "문의내용상세" },
+                            { "title": "대응내용", "field": "대응내용", "width": 147 },
+                            { "field": "녹취듣기","field": "녹취듣기", "width": 111, "attributes" : {"class": "text-center"}  }
+                            ]' 
+                            data-bind="source: gridSource"
+                            data-toolbar="#=toolbarTemplate_count()#">
+                        </div>
+                    </div>
+                </div>
+                <!-- //처리내용 -->
+                <div class="table-group sm h-sm">
+                    <div class="line-box sm">
+                        <div class="title-box xsm mt-0">
+                            <h4 class="sub-title">첨부파일</h4>
+                            <button data-role="button" data-icon="plus" class="blue-border"><span>파일 업로드</span></button>
+                        </div>
+                        <div class="t-widget t-upload">
+                            <ul class="t-upload-files t-reset">
+                                <li class="t-file">
+                                    <span class="file-desc justify-content-between">
+                                        <a href="#" class="text-link">Untitled.pdf</a>
+                                        <span class="file-date">김효성</span>
+                                    </span>
+                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                </li>
+                                <li class="t-file">
+                                    <span class="file-desc justify-content-between">
+                                        <a href="#" class="text-link">Untitled.pdf</a>
+                                        <span class="file-date">김효성</span>
+                                    </span>
+                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                </li>
+                                <li class="t-file">
+                                    <span class="file-desc justify-content-between">
+                                        <a href="#" class="text-link">Untitled.pdf</a>
+                                        <span class="file-date">김효성</span>
+                                    </span>
+                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                </li>
+                                <li class="t-file">
+                                    <span class="file-desc justify-content-between">
+                                        <a href="#" class="text-link">Untitled.pdf</a>
+                                        <span class="file-date">김효성</span>
+                                    </span>
+                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-set">
+                        <div class="line-box">
+                            <div class="form-group">
+                                <span class="label">약속시간 설정</span>
+                                <div class="h-checkbox ml-10">
+                                    <input type="radio" id="radio1-1" name="radio"  checked="checked"/>
+                                    <label for="radio1-1"><span>설정</span></label>
+                                </div>
+                                <div class="h-checkbox">
+                                    <input type="radio" id="radio1-2" name="radio"  />
+                                    <label for="radio1-2"><span>미설정</span></label>
+                                </div>
+                                <span class="label">약속일시</span>
+                                <div class="form-set">
+                                    <input data-role="datepicker" 
+                                        data-format="yyyy/MM/dd"
+                                        placeholder="yyyymmdd" 
+                                        data-culture="ko-KR"
+                                        data-footer="false"
+                                        class="datepicker sm" /> 
+                                    <select data-role="dropdownlist" data-value="15시" data-option-label="15시" class="xs">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                    <select data-role="dropdownlist" data-value="30분" data-option-label="30분" class="xs">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-set mt-10">
+                            <div class="line-box">
+                                <div class="form-group">
+                                    <span class="label">협력사에 요청사항 정보 공유</span>
+                                    <div class="h-checkbox ml-10">
+                                        <input type="radio" id="radio2-1" name="radio2" checked="checked" />
+                                        <label for="radio2-1"><span>공유</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="radio2-2" name="radio2" />
+                                        <label for="radio2-2"><span>미공유</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-box">
+                                <div class="form-group">
+                                    <span class="label">상담상태</span>
+                                    <div class="h-checkbox ml-10">
+                                        <input type="radio" id="radio3-1" name="radio3" checked="checked"/>
+                                        <label for="radio3-1"><span>상담중</span></label>
+                                    </div>
+                                    <div class="h-checkbox">
+                                        <input type="radio" id="radio3-2" name="radio3" />
+                                        <label for="radio3-2"><span>상담완료</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box bottom">
+                    <button data-role="button"><span>등록</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+
+        var viewModel_autoComplete = kendo.observable({
+            selectedProduct: null,
+            isPrimitive: false,
+            isVisible: true,
+            isEnabled: true,
+            primitiveChanged: function () {
+                this.set("selectedProduct", null);
+            },
+            displaySelectedProduct: function () {
+                var selectedProduct = this.get("selectedProduct");
+                return kendo.stringify(selectedProduct, null, 4);
+            },
+            onOpen: function () {
+                // kendoConsole.log("event :: open");
+            },
+            onChange: function () {
+                // kendoConsole.log("event :: change (" + this.displaySelectedProduct() + ")");
+            },
+            onClose: function () {
+                // kendoConsole.log("event :: close");
+            },
+            products: new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "https://demos.telerik.com/kendo-ui/service/products",
+                        dataType: "jsonp"
+                    }
+                }
+            })
+        });
+        kendo.bind($("#viewModel_autoComplete"), viewModel_autoComplete);
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "대응상담원":"홍길동(본사)",  "대응일시":"2021/06/30 12:31:25", "번호":"012345678", "예금주":"본인","문의내용상세":"업체회원 - 은행결제 - 국민은행 - 계약사항 문의...","최소가격":"80,000 원","대응내용":"통화성공 후 안내완료","녹취듣기":"" },
+                { "대응상담원":"홍길동(본사)",  "대응일시":"2021/06/30 12:31:25", "번호":"012345678", "예금주":"본인","문의내용상세":"업체회원 - 은행결제 - 국민은행 - 계약사항 문의...","최소가격":"80,000 원","대응내용":"통화성공 후 안내완료","녹취듣기":"" },
+                { "대응상담원":"홍길동(본사)",  "대응일시":"2021/06/30 12:31:25", "번호":"012345678", "예금주":"본인","문의내용상세":"업체회원 - 은행결제 - 국민은행 - 계약사항 문의...","최소가격":"80,000 원","대응내용":"통화성공 후 안내완료","녹취듣기":"" },
+                { "대응상담원":"홍길동(본사)",  "대응일시":"2021/06/30 12:31:25", "번호":"012345678", "예금주":"본인","문의내용상세":"업체회원 - 은행결제 - 국민은행 - 계약사항 문의...","최소가격":"80,000 원","대응내용":"통화성공 후 안내완료","녹취듣기":"" }
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

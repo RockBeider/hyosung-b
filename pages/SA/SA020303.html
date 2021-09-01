@@ -27,43 +27,45 @@
              data-bind="dialogOpen: isVisible,
                             events: { close: onClose}" class="lg">
             <div class="content-group">
-                <div class="table">
-                    <table>
-                        <colgroup>
-                            <col width="90px"/>
-                            <col width="*"/>
-                            <col width="90px"/>
-                            <col width="*"/>
-                            <col width="90px"/>
-                            <col width="*"/>
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th scope="row">고객ID</th>
-                                <td>A00001</td>
-                                <th scope="row">고객사명</th>
-                                <td>테스트</td>
-                                <th scope="row">서비스일</th>
-                                <td>2021/06/03</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">담보구분</th>
-                                <td>현금담보</td>
-                                <th scope="row">담보율</th>
-                                <td>30%</td>
-                                <th scope="row">담보금액</th>
-                                <td>5,000,000</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">반환일</th>
-                                <td>2021/06/03</td>
-                                <th scope="row">납입방법</th>
-                                <td>정산공제</td>
-                                <th scope="row">납입금액</th>
-                                <td>5,000,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="table-set">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="90px"/>
+                                <col width="*"/>
+                                <col width="90px"/>
+                                <col width="*"/>
+                                <col width="90px"/>
+                                <col width="*"/>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">고객ID</th>
+                                    <td>A00001</td>
+                                    <th scope="row">고객사명</th>
+                                    <td>테스트</td>
+                                    <th scope="row">서비스일</th>
+                                    <td>2021/06/03</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">담보구분</th>
+                                    <td>현금담보</td>
+                                    <th scope="row">담보율</th>
+                                    <td>30%</td>
+                                    <th scope="row">담보금액</th>
+                                    <td>5,000,000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">반환일</th>
+                                    <td>2021/06/03</td>
+                                    <th scope="row">납입방법</th>
+                                    <td>정산공제</td>
+                                    <th scope="row">납입금액</th>
+                                    <td>5,000,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="table-content grid" id="viewModel_number">
                     <script type="text/x-kendo-template" id="toolbarTemplate_count">

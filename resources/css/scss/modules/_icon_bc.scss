@@ -19,7 +19,16 @@
             background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
     }
-     &calendar {
+    &calendar {
         @include iconSvg($width: 14px, $height: 14px, $name: 'icon_calendar', $size: contain );
+    }
+    &arrow-chevron-down {
+        @include iconSvg($width: 14px, $height: 14px, $name: 'icon_arrow_down', $size: contain );
+        transition: all 0.2s ease;
+    }
+    &arrow-chevron-up {
+        @include iconSvg($width: 14px, $height: 14px, $name: 'icon_arrow_down', $size: contain );
+        transform: rotate(-180deg);
+        transition: all 0.2s ease;
     }
 }
