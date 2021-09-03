@@ -43,10 +43,18 @@
             }
 		}
 	}
+    .search-control {
+        .form-group:only-child {
+            width: 100%;
+        }
+    }
 }
 .table-set {
     flex: 1;
     // margin-top: 12px;
+    .table-content.grid {
+        height: 100%;
+    }
 }
 .text-center th,
 .text-center td {

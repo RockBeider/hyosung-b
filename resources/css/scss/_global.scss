@@ -519,6 +519,7 @@ td .divide {
 	font-weight: 400;
 	line-height: 1;
 	letter-spacing: -0.75px;
+	white-space: nowrap;
 	.amount {
 		&.current {
 			color: $main;
@@ -646,14 +647,19 @@ td .divide {
 			padding: 20px;
 			background-color: $white;
 			border: 1px solid $gray-e4;
+			flex: 1;
 			&.no-line {
 				padding: 20px 0 0 0; border: none;
 			}
 		}
 		&.search {
+			.search-control {
+				margin-top: 0;
+			}
 			.tabpanel {
 				border: none;
 				padding: 0;
+				background-color: transparent;
 				.search-control + .table-set {
 					max-height: calc(100% - 78px);
 				}

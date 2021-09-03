@@ -57,7 +57,7 @@ td .form-group {
 .form-set {
     display: flex;
     align-items: center;
-    width: 100%;
+    // width: 100%;
     > *:not(.bar) + *:not(.bar) {
         margin-left: 8px;
     }
@@ -120,13 +120,18 @@ td .form-group {
         white-space: nowrap;
         font-weight: 500;
     }
+    .form-group + .form-group {
+        margin-left: 20px;
+    }
     .form-set {
         // float: left;
         flex: 1 1 auto;
-        padding-right: 20px;
+        // padding-right: 20px;
     }
 }
-
+.search-btn  {
+    padding: 9px 0;
+}
 .search-control {
     display: flex;
     align-items: center;
@@ -142,8 +147,12 @@ td .form-group {
     .form-group + .form-group {
         margin-left: 20px;
     }
+   
     &.control-3 .form-group {
-        width: 33.3%;
+        width: calc(33.3% - 20px);
+        &:nth-of-type(3n+1) {
+            margin-left: 0;
+        }
         .label {
             min-width: 62px;
         }

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+            <!-- Contents -->
+            <main class="contents-wrap">
+                <!-- Contents Header -->
+                <div class="contents-header">
+                    <div class="title-box lg">
+                        <div class="left-group">
+                            <h2 class="main-title">전표관리</h2>
+                            <span class="h-ico lg tip ml-8"
+                                title="툴팁 메세지 입니다."
+                                data-role="tooltip"
+                                data-auto-hide="true"
+                                data-position="left bottom"
+                            >팁</span>
+                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                        </div>
+                        <div class="right-group">
+                            <nav id="breadcrumb"
+                                data-role="breadcrumb"
+                                data-editable=false,
+                                data-navigational=true,
+                                data-items='[
+                            { type:"rootitem", href: "", text: "회계", showText: true },
+                            { type:"item", href: "", text: "전표관리", showText: true}
+                         ]'/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contents Body -->
+                <div class="contents-body">
+                    <div class="table-group">
+                        <div data-role="tabstrip" class="tab-control border search">
+                            <ul>
+                                <li class="k-state-active">일전표</li>
+                                <li>월전표</li>
+                            </ul>
+                            <!-- 일전표 -->
+                            <div class="tabpanel">
+                                <div class="search-control">
+                                    <div class="search-line">
+                                        <div class="form-group">
+                                            <span class="label">전표일자</span>
+                                            <div class="form-set">
+                                                <input data-role="datepicker" 
+                                                    data-format="yyyy/MM/dd"
+                                                    placeholder="yyyymmdd" 
+                                                    data-culture="ko-KR"
+                                                    data-footer="false"
+                                                    class="datepicker sm" />
+                                                <span class="bar">~</span>
+                                                <input data-role="datepicker" 
+                                                    data-format="yyyy/MM/dd"
+                                                    placeholder="yyyymmdd" 
+                                                    data-culture="ko-KR"
+                                                    data-footer="false"
+                                                    class="datepicker sm" />
+                                                    <ul data-role="buttongroup" class="period"
+                                                    data-index="0">
+                                                        <li data-role="button"><span>오늘</span></li>
+                                                        <li data-role="button"><span>1주</span></li>
+                                                        <li data-role="button"><span>이번달</span></li>
+                                                    </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-line">
+                                        <div class="form-group">
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-1" name="checkbox" />
+                                                <label for="csearch1-1"><span>전체</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-2" name="checkbox" checked="checked" />
+                                                <label for="search1-2"><span>입금</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-3" name="checkbox" checked="checked" />
+                                                <label for="search1-3"><span>집금</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-4" name="checkbox" checked="checked" />
+                                                <label for="search1-4"><span>정산</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-5" name="checkbox" />
+                                                <label for="search1-5"><span>지급수수료·은행</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-6" name="checkbox" />
+                                                <label for="search1-6"><span>지급수수료·카드사</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-7" name="checkbox" />
+                                                <label for="search1-7"><span>지급수수료·이통사</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-8" name="checkbox" />
+                                                <label for="search1-8"><span>지급수수료·협력사</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-9" name="checkbox" />
+                                                <label for="search1-9"><span>잡이익</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search1-10" name="checkbox" />
+                                                <label for="search1-10"><span>잡손실</span></label>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+                                </div>
+                                <div class="table-set">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate">
+                                        <div class="title-box sm">
+                                            <div class="form-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button data-role="button" class="k-button gray-border"><span>ERP연동</span></button>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <script type="text/x-kendo-template" class="checkboxTemplate">
+                                        <div class="h-checkbox no-label">
+                                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                            <label for="checkbox-nolabel"></label> 
+                                        </div>
+                                    </script>
+                                    <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
+                                    <div class="table-content grid">
+                                        <div data-role="grid" 
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-columns='[
+                                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
+                                            { "title": "NO.", "field": "NO", "width": 60, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                            { "field": ""  }
+                                            ]' 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate()#">
+                                        </div>
+                                        <div class="table-bottom">
+                                            <button data-role="button" class="gray-border">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //일전표 -->
+                            <!-- 월전표 -->
+                            <div class="tabpanel">
+                                <div class="search-btn">
+                                    <button data-role="button" class="md"><span>생성</span></button>
+                                </div>
+                                <div class="search-control">
+                                    <div class="search-line">
+                                        <div class="form-group">
+                                            <span class="label">처리일</span>
+                                            <div class="form-set">
+                                                <input data-role="datepicker" 
+                                                    data-format="yyyy/MM/dd"
+                                                    placeholder="yyyymmdd" 
+                                                    data-culture="ko-KR"
+                                                    data-footer="false"
+                                                    class="datepicker sm" />
+                                                <span class="bar">~</span>
+                                                <input data-role="datepicker" 
+                                                    data-format="yyyy/MM/dd"
+                                                    placeholder="yyyymmdd" 
+                                                    data-culture="ko-KR"
+                                                    data-footer="false"
+                                                    class="datepicker sm" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="label">업체ID</span>
+                                            <div class="form-set">
+                                                <input type="text" class="h-input md" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="label">유형</span>
+                                            <div class="form-set">
+                                                <input type="text" class="h-input md" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search2-1" name="checkbox" checked="checked" />
+                                                <label for="csearch2-1"><span>월말가수금</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search2-2" name="checkbox" />
+                                                <label for="search2-2"><span>업체별 내역</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="checkbox" id="search2-3" name="checkbox" />
+                                                <label for="search2-3"><span>월초가수금</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+                                </div>
+                                <div class="table-set">
+                                    <script type="text/x-kendo-template" class="toolbarTemplate">
+                                        <div class="title-box sm">
+                                            <div class="form-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-set">
+                                                    <button data-role="button" class="k-button gray-border"><span>반영</span></button>
+                                                    <button data-role="button" class="k-button gray-border"><span>연동</span></button>
+                                                </div>
+                                                <div class="form-set">
+                                                    <button data-role="button" class="k-button"><span>추가</span></button>
+                                                    <button data-role="button" class="k-button"><span>등록</span></button>
+                                                </div>
+                                                <div class="form-set">
+                                                    <button data-role="button" class="k-button green"><span>엑셀</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <script type="text/x-kendo-template" class="checkboxTemplate">
+                                        <div class="h-checkbox no-label">
+                                            <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                            <label for="checkbox-nolabel"></label> 
+                                        </div>
+                                    </script>
+                                    <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
+                                    <div class="table-content grid">
+                                        <div data-role="grid" 
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-columns='[
+                                            { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
+                                            { "title": "NO.", "field": "NO", "width": 60, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                            { "field": ""  }
+                                            ]' 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate()#">
+                                        </div>
+                                        <div class="table-bottom">
+                                            <button data-role="button" class="gray-border">삭제</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 월전표 -->
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script>
+            var viewModel = kendo.observable({
+                gridSource: [
+                    { "NO":"1", "출금일":"2020/12/31" },
+                    { "NO":"2", "출금일":"2020/12/31" },
+                    { "NO":"3", "출금일":"2020/12/31" }
+                ],
+                displayGridSource: function() {
+                    return stringify(this.get("gridSource").toJSON());
+                },
+            });
+            kendo.bind($(".wrap"), viewModel);
+            
+            function toolbarTemplate() {
+                var template = kendo.template($('.toolbarTemplate').html());
+                var result = template({});
+                return result
+            }
+            function checkboxTemplate() {
+                var template = kendo.template($('.checkboxTemplate').html());
+                var result = template({});
+                return result
+            }
+    </script>
+</body>
+
+</html>
