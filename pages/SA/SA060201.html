@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">정기자료 관리</h2>
+                            <h2 class="main-title">수기입출관리</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -36,8 +36,8 @@
                                 data-editable=false,
                                 data-navigational=true,
                                 data-items='[
-                            { type:"rootitem", href: "", text: "서비스품질", showText: true },
-                            { type:"item", href: "", text: "정기자료 관리", showText: true}
+                            { type:"rootitem", href: "", text: "회계", showText: true },
+                            { type:"item", href: "", text: "수기입출관리", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -46,73 +46,62 @@
                 <!-- Contents Body -->
                 <div class="contents-body">
                     <div class="table-group">
-
-                        <div data-role="buttongroup" class="square square-8 md"
-                        data-index="0">
-                            <button data-role="button"><span>ARS 녹취대행 이용현황</span></button>
-                            <button data-role="button"><span>Mobile ASP 사용현황</span></button>
-                            <button data-role="button"><span>SMS / LMS 발송내역</span></button>
-                            <button data-role="button"><span>가상계좌 발급이력</span></button>
-                            <button data-role="button"><span>결제번호 인증내역</span></button>
-                            <button data-role="button"><span>고객 매출분석</span></button>
-                            <button data-role="button"><span>국민은행 별단 지급수수료</span></button>
-                            <button data-role="button"><span>단체고객 현황</span></button>
-
-                            <button data-role="button"><span>동의자료 통계</span></button>
-                            <button data-role="button"><span>세무 / 회계 출금액 통계</span></button>
-                            <button data-role="button"><span>신규 / 소액 세무사 할인</span></button>
-                            <button data-role="button"><span>신용카드 결제금액</span></button>
-                            <button data-role="button"><span>신용카드 지급보류 관리</span></button>
-                            <button data-role="button"><span>알림뱅킹현황</span></button>
-                            <button data-role="button"><span>업체별 야쿠르트 미수 조회</span></button>
-                            <button data-role="button"><span>예수보증금 관리</span></button>
-
-                            <button data-role="button"><span>예수보증금 잔액확인</span></button>
-                            <button data-role="button"><span>온라인 간편가입 업체 조회</span></button>
-                            <button data-role="button"><span>은행별 가상계좌 조회</span></button>
-                            <button data-role="button"><span>전자세금계산서 발행내역</span></button>
-                            <button data-role="button"><span>통신사별 승인금액 조회</span></button>
-                            <button data-role="button"><span>풀무원 카드 수수료 조회</span></button>
-                            <button data-role="button"><span>현금영수증 발행 내역</span></button>
-                            <button class="blanked" disabled="disabled"><span></span></button>
-                        </div> 
-
-                        <div class="title-box md">
-                            <div class="left-group">
-                                <h2 class="sub-title dot">ARS 녹취대행 이용현황</h2>
-                            </div>
-                        </div>
                         <div class="search-control">
                             <div class="form-group">
-                                <span class="label">검색항목</span>
+                                <span class="label">입출금종류</span>
                                 <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="제목" data-option-label="제목" class="sm">
+                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="md">
                                         <option value="1">온라인</option>
                                         <option value="2">오프라인</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <span class="label">조회기간</span>
+                                <span class="label">기간</span>
                                 <div class="form-set">
+                                    <select data-role="dropdownlist" data-value="입출금일" data-option-label="입출금일" class="sm">
+                                        <option value="1">온라인</option>
+                                        <option value="2">오프라인</option>
+                                    </select>
                                     <input data-role="datepicker" 
                                         data-format="yyyy/MM/dd"
                                         placeholder="yyyymmdd" 
                                         data-culture="ko-KR"
                                         data-footer="false"
-                                        class="datepicker sm" /> 
+                                        class="datepicker sm">
                                     <span class="bar">~</span>
                                     <input data-role="datepicker" 
                                         data-format="yyyy/MM/dd"
                                         placeholder="yyyymmdd" 
                                         data-culture="ko-KR"
                                         data-footer="false"
-                                        class="datepicker sm" /> 
+                                        class="datepicker sm">
                                 </div>
-                                
-                                
                             </div>
-                            
+                            <div class="form-group">
+                                <span class="label">업체명</span>
+                                <div class="form-set">
+                                    <input type="text" class="h-input md" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="h-checkbox">
+                                    <input type="checkbox" id="checkbox1-1" name="checkbox" checked="checked" />
+                                    <label for="checkbox1-1"><span>전표없음</span></label>
+                                </div>
+                                <div class="h-checkbox">
+                                    <input type="checkbox" id="checkbox1-2" name="checkbox" />
+                                    <label for="checkbox1-2"><span>입출금&lt;&gt;전표일</span></label>
+                                </div>
+                                <div class="h-checkbox">
+                                    <input type="checkbox" id="checkbox1-3" name="checkbox" />
+                                    <label for="checkbox1-3"><span>1달/일</span></label>
+                                </div>
+                                <div class="h-checkbox">
+                                    <input type="checkbox" id="checkbox1-4" name="checkbox" />
+                                    <label for="checkbox1-4"><span>업체할당전</span></label>
+                                </div>
+                            </div>
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                         </div>
                         <div class="table-set">
@@ -120,13 +109,16 @@
                                 <div class="title-box sm">
                                     <div class="left-group">
                                         <span class="amount-set">
-                                            <span class="amount current">1</span><span class="unit">건</span>
+                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                            <span class="amount">26</span><span class="unit">건</span>
                                         </span>
                                     </div>
-                                    <div class="right-group">
+                                    <div class="form-group">
                                         <div class="btn-box">
-                                            <button role="button" class="k-button green"><span>엑셀</span></button>
+                                            <button role="button" class="k-button"><span>수기입출관리 등록</span></button>
+                                            <button role="button" class="k-button gray-border"><span>집금연동</span></button>
                                         </div>
+                                        <button role="button" class="k-button green"><span>엑셀</span></button>
                                     </div>
                                 </div>
                             </script>
@@ -136,7 +128,7 @@
                                     <label for="checkbox-nolabel"></label> 
                                 </div>
                             </script>
-                            <div class="table-content grid">
+                            <div class="table-content grid has-bottom">
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
@@ -174,6 +166,7 @@
                 },
             });
             kendo.bind($(".wrap"), viewModel);
+            
             function toolbarTemplate() {
                 var template = kendo.template($('.toolbarTemplate').html());
                 var result = template({});

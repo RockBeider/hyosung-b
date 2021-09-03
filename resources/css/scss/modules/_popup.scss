@@ -180,6 +180,7 @@
 }
 .k-window.k-dialog {
     // height: 100%;
+    height: auto !important;
     padding: 0;
     background: $white;
     outline: 0;

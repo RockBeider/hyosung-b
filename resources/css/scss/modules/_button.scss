@@ -34,7 +34,10 @@
     background-color: $main;
     border: 1px solid $main;
     color: $white;
-    
+    &.md {
+        height: 32px;
+        padding: 0 30px;
+    }
     &:hover, &:focus {
         background-color: $marine-blue;
         border: 1px solid $marine-blue;
