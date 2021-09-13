@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="수기입출등록"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="md">
+            <div class="content-group">
+                <div class="table-set">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="90px">
+                                <col width="*">
+                                <col width="90px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">입출금일자</th>
+                                    <td>
+                                        <input data-role="datepicker" 
+                                            data-format="yyyy/MM/dd"
+                                            placeholder="yyyymmdd" 
+                                            data-culture="ko-KR"
+                                            data-footer="false"
+                                            class="datepicker" /> 
+                                    </td>
+                                    <th scope="row">매출일자</th>
+                                    <td>
+                                        <input data-role="datepicker" 
+                                            data-format="yyyy/MM/dd"
+                                            placeholder="yyyymmdd" 
+                                            data-culture="ko-KR"
+                                            data-footer="false"
+                                            class="datepicker" /> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">업체명</th>
+                                    <td>
+                                        <div class="form-set">
+                                            <input type="text" class="h-input" value="" />
+                                            <button data-role="button" class="blue-border"><span>검색</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">유형</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="입출금종류 선택" data-option-label="입출금종류 선택">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">비고</th>
+                                    <td colspan="3">
+                                        <input type="text" class="h-input" value="" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table mt-20">
+                        <table>
+                            <colgroup>
+                                <col width="90px">
+                                <col width="*">
+                                <col width="90px">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">입금</th>
+                                    <th colspan="2">출금</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">해당은행</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">해당은행</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="선택" data-option-label="선택">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">계좌번호</th>
+                                    <td>
+                                        <input type="text" class="h-input" value="" />
+                                    </td>
+                                    <th scope="row">계좌번호</th>
+                                    <td>
+                                        <input type="text" class="h-input" value="" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">입금액</th>
+                                    <td>
+                                        <div class="form-set">
+                                            <input type="text" class="h-input" value="" />
+                                            <span class="unit">원</span>
+                                        </div>
+                                    </td>
+                                    <th scope="row">입금액</th>
+                                    <td>
+                                        <div class="form-set">
+                                            <input type="text" class="h-input" value="" />
+                                            <span class="unit">원</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              
+
+                <div class="btn-box bottom">
+                    <button data-role="button" class="">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        
+        
+
+    </script>
+</body>
+
+</html>

@@ -54,6 +54,9 @@ th .required {
     &.close { //이미지 요청
         @include iconSvg($width: 26px, $height: 26px, $name: 'btn_X', $size: 12px 12px );
     }
+    &.clear { //이미지 요청
+        @include iconSvg($width: 26px, $height: 26px, $name: 'btn_X', $size: 12px 12px );
+    }
     //xs 15*15
     &.up {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_arrow_up', $size: contain );

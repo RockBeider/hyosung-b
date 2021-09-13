@@ -28,6 +28,15 @@
 	@include font-size-badge;
     &.square {
 		@include font-size-menu;
+        .label {
+			color: #4d6595;
+        }
+        .desc {
+			color: $gray-2;
+        }
+    }
+    &.gray {
+        background-color: $gray-f5;
     }
 }
 
@@ -69,6 +78,15 @@
     //         @include bc-font-size-xsm;
     //     }
     // }
+    .sub-title {
+        &.blue {
+            color: #3b6ac5;
+        }
+    }
+    .label {
+        @include bc-font-size-xsm;
+        font-weight: 500;
+    }
     .badge {
         height: 18px;
         margin-left: 6px;
@@ -77,21 +95,45 @@
         line-height: 17px;
         font-weight: 400;
     }
+    &.notice {
+		padding-bottom: 10px;
+		border-bottom: 1px solid $bc-table-th;
+		.sub-title {
+			@include bc-font-size-md;
+		}
+		.date {
+			@include bc-font-size-xsm;
+			color: $gray-9;
+		}
+	}
 	&.xsm {
 		margin-top: 12px;
 		.sub-title {
             @include bc-font-size-default;
+            line-height: 20px;
         }
 	}
     &.sm {
         min-height: 26px; 
+        height: 26px;
         margin: 20px 0 6px;
         align-items: center;
         .sub-title {
             @include bc-font-size-xsm;
         }
         .noti {
-            @include bc-font-size-xsm;
+            font-size: 12px;
+        }
+        .badge.square {
+			height: 26px;
+		}
+    }
+    &.sm2 {
+        min-height: 20px; 
+        margin-top: 16px;
+        align-items: center;
+        .sub-title {
+            @include bc-font-size-sm2;
         }
     }
     .noti {
@@ -108,8 +150,8 @@
 * ------------------------------
 */
 .list-wrap {
-	padding: 20px;
-	background: $gray-ef;
+	padding: 16px;
+	background: $bc-table-th-bg;
 	border-top: 1px solid $gray-2;
 }
 
@@ -120,7 +162,7 @@
     }
     &.answer {
         .list-title {
-            color: $gray-5;
+            color: $bc-table-th;
             margin-right: 10px;
         }
         .list-box {
@@ -135,13 +177,13 @@
             }
         }
         .badge.count {
-            background-color: $gray-5;
+            background-color: $bc-table-th;
             color: $white;
         }
     }
     &.receipt {
         .list-title {
-            color: $main;
+            color: $bc-blue;
             order: 2;
         }
         .list-box {
@@ -158,12 +200,12 @@
             }
         }
         .badge.count {
-            background-color: $main;
+            background-color: $bc-blue;
             color: $white;
         }
     }
     .list-title {
-        @include font-size-sm;
+        @include bc-font-size-xsm;
         color: $gray-7;
         font-weight: 500;
        
@@ -284,20 +326,23 @@
     }
 	&.history {
 		flex-direction: column;
-		padding: 16px 20px;
+		padding: 12px 20px;
 		background: $white;
         border-radius: 3px;
 		.label {
-			color: $gray-7;
+			color: $bc-table-th;
+            font-weight: 500;
 		}
 		.desc {
 			color: $gray-2;
 		}
 		.badge {
 			position: absolute;
-			top: 20px;
+			top: 12px;
 			right: 20px;
-			height: 20px;
+			height: 17px;
+            font-size: 12px;
+            line-height: 17px;
 		}
 		+ .list-box {
 			margin-top: 8px;
@@ -489,11 +534,14 @@
 
 .t-file {
 	border-radius: 3px;
+    background-color: $gray-f5;
 	+ .t-file {
 		margin-top: 8px;
 	}
 	.file-title {
 		@include bc-font-size-xsm;
+        min-width: 170px;
+        padding: 0 6px;
 		
 	}
 	.file-desc {
@@ -606,6 +654,37 @@
 		}
 	}
 }
+/*
+* ------------------------------
+* tab control
+* ------------------------------
+*/
+
+.tab-control {
+    &.box {
+		.tabpanel {
+            margin-top: 0px;
+        }
+    }
+}
+
+/*
+* ------------------------------
+* box style
+* ------------------------------
+*/
+.border-box {
+    &.type2 {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border: 1px solid $gray-e;
+        .k-toolbar.k-grid-toolbar {
+            background-color: $white;
+        }
+    }
+}
+
 
  /*
 * ------------------------------
@@ -644,9 +723,11 @@
 .info-banner {
 	// flex-direction: column;
 	margin-bottom: 4px;
-	padding: 20px;
-	background: $main-sub;
+	padding: 18px 20px;
+	background: $bc-main-sub;
 	&.request {
+        justify-content: space-between;
+        align-items: center;
 		.tit {
 			@include bc-font-size-md;
 			color: $white;
@@ -659,5 +740,44 @@
 			padding: 0 6px;
 			line-height: 17px;
 		}
+        .date-set {
+            display: flex;
+            align-items: center;
+            .label {
+                @include bc-font-size-xsm;
+                position: relative;
+                padding: 0 6px;
+                color: $bc-light-blue;
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -8px;
+                    width: 1px;
+                    height: 16px;
+                    background-color: $bc-header-bar;
+                }
+            }
+            .desc {
+                @include bc-font-size-xsm;
+                padding-left: 6px;
+                color: $bc-light-blue;
+                font-weight: 400;
+            }
+        }
 	}
+}
+
+/*
+* ------------------------------
+* 공지사항
+* ------------------------------
+*/
+
+.notice-content {
+    @include bc-font-size-default;
+    padding: 16px 0 20px 0;
+    color: $gray-5;
 }

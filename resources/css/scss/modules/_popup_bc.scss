@@ -63,11 +63,20 @@
     }
     
 }
+.k-dialog {
+
+    .pop-guide {
+        .list {
+            @include bc-font-size-xs; 
+            color: $gray-7;
+            line-height: 18px;
+        }
+    }
+}
 .pop-guide {
     .list {
-        @include bc-font-size-xs; 
-        color: $gray-7;
-        line-height: 18px;
+        @include bc-font-size-xsm; 
+        color: $gray-2;
     }
 }
 

@@ -21,7 +21,7 @@
                 <div class="contents-header">
                     <div class="title-box lg">
                         <div class="left-group">
-                            <h2 class="main-title">배분산정</h2>
+                            <h2 class="main-title">신용카드수수료</h2>
                             <span class="h-ico lg tip ml-8"
                                 title="툴팁 메세지 입니다."
                                 data-role="tooltip"
@@ -37,7 +37,7 @@
                                 data-navigational=true,
                                 data-items='[
                             { type:"rootitem", href: "", text: "배분", showText: true },
-                            { type:"item", href: "", text: "배분산정", showText: true}
+                            { type:"item", href: "", text: "신용카드수수료", showText: true}
                          ]'/>
                         </div>
                     </div>
@@ -46,28 +46,16 @@
                 <!-- Contents Body -->
                 <div class="contents-body">
                     <div class="table-group">
-                        <div class="search-btn pt-0">
-                            <button data-role="button"><span>과금신청</span></button>
-                        </div>
                         <div class="search-control">
-                            <div class="search-line mt-6">
-                                <div class="form-group">
-                                    <span class="label">배분월</span>
-                                    <div class="form-set">
-                                        <input data-role="datepicker" 
-                                            data-format="yyyy/MM/dd"
-                                            placeholder="yyyymmdd" 
-                                            data-culture="ko-KR"
-                                            data-footer="false"
-                                            class="datepicker sm">
-                                        <span class="bar">~</span>
-                                        <input data-role="datepicker" 
-                                            data-format="yyyy/MM/dd"
-                                            placeholder="yyyymmdd" 
-                                            data-culture="ko-KR"
-                                            data-footer="false"
-                                            class="datepicker sm">
-                                    </div>
+                            <div class="form-group">
+                                <span class="label">지급월</span>
+                                <div class="form-set">
+                                    <input data-role="datepicker" 
+                                        data-format="yyyy/MM"
+                                        placeholder="yyyymm" 
+                                        data-culture="ko-KR"
+                                        data-footer="false"
+                                        class="datepicker sm" />
                                 </div>
                             </div>
                             <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
@@ -75,7 +63,7 @@
                         <div class="table-set">
                             <script type="text/x-kendo-template" class="toolbarTemplate">
                                 <div class="title-box sm">
-                                    <div class="left-group">
+                                    <div class="form-group">
                                         <span class="amount-set">
                                             <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
                                             <span class="amount">26</span><span class="unit">건</span>
@@ -83,8 +71,14 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="form-set">
-                                            <button role="button" class="k-button"><span>수정</span></button>
-                                            <button role="button" class="k-button"><span>추가</span></button>
+                                            <button data-role="button" class="k-button"><span>수정</span></button>
+                                            <button data-role="button" class="k-button"><span>등록</span></button>
+                                        </div>
+                                        <div class="form-set">
+                                            <button data-role="button" class="k-button"><span>수수료 등록</span></button>
+                                        </div>
+                                        <div class="form-set">
+                                            <button data-role="button" class="k-button green"><span>엑셀</span></button>
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +90,7 @@
                                 </div>
                             </script>
                             <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
-                            <div class="table-content grid">
+                            <div class="table-content grid ">
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
@@ -109,7 +103,7 @@
                                     data-toolbar="#=toolbarTemplate()#">
                                 </div>
                                 <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
+                                    <button data-role="button" class="gray-border"><span>삭제</span></button>
                                 </div>
                             </div>
                         </div>
@@ -129,9 +123,9 @@
     <script>
             var viewModel = kendo.observable({
                 gridSource: [
-                    { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                    { "NO":"1", "출금일":"2020/12/31" },
+                    { "NO":"2", "출금일":"2020/12/31" },
+                    { "NO":"3", "출금일":"2020/12/31" }
                 ],
                 displayGridSource: function() {
                     return stringify(this.get("gridSource").toJSON());

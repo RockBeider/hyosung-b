@@ -3,6 +3,12 @@
 * input - common
 * ------------------------------
 */
+.input-set {
+	&.xmd {
+		max-width: 160px;
+		min-width: 160px;
+	}
+}
 	.h-input,.k-input { //상태
 		@include bc-font-size-xsm;
 		flex-grow: 1;
@@ -41,6 +47,10 @@
 		}
 	}
 	.h-input,.k-input { //사이즈
+		&.xs {
+			max-width: 84px;
+			min-width: 84px;
+		}
 		// &.sm {
 		// 	max-width: 106px;
 		// 	min-width: 106px;
@@ -48,6 +58,10 @@
 		&.md {
 			max-width: 140px;
 			min-width: 140px;
+		}
+		&.xmd {
+			max-width: 160px;
+			min-width: 160px;
 		}
 		// &.lg {
 		// 	max-width: 230px;
@@ -82,6 +96,8 @@
 	}
 	.h-input,.k-input {
 		height: 26px;
+		border: none;
+		font-weight: 400;
 	}
 	.unit {
 		@include bc-font-size-xsm;

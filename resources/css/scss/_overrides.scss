@@ -1282,11 +1282,11 @@
 	}
 }
 .k-animation-container {
-	width: 150px !important;
+	// width: 150px !important;
 	margin: 0 !important;
 }
 .k-popup.k-list-container {
-	width: 100% !important;
+	// width: 100% !important;
 	margin-top: 3px;
 	padding: 8px 5px;
 	border: none;
@@ -3397,6 +3397,7 @@ div.k-grid-header {
 	}
 }
 
+
 .k-grid-header .k-header:last-child {
     border-right-width: 0;
 }
@@ -3444,11 +3445,31 @@ div.k-grid-header {
     border-bottom: 1px solid $inputDefault;
     box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, 0.1);
 }
+
+// 특정 클래스에만( !!!!!!)
+.k-grid td.k-state-selected, .k-grid tr.k-state-selected > td {
+	background-color: $lavender;
+	border-top: 1px solid $main;
+	border-bottom: 1px solid $main;
+}
+.k-grid tr.k-state-selected td {
+	&:first-child {
+		position: relative;
+		border-left: 1px solid $main !important;
+		&::before {
+			content: '';
+		}
+	}
+	&:last-child {
+		border-right: 1px solid $main !important;
+	}
+}
 //껍데기
 .k-grid {
 	border: none;
 	// border-bottom: 1px solid $gray-a;
 	// border-bottom: 1px solid $gray-a;
+	
 	table {
 		table-layout: fixed;
 	}
@@ -3458,11 +3479,15 @@ div.k-grid-header {
 	th, td {
 		height: 36px;
         padding: 0 10px;
+		.k-button {
+			margin: 0 auto;
+		}
     }
 	td {
 		border-width: 0 0 1px 1px;
 		transition: background 0.3s ease;
 		overflow: hidden;
+		white-space: nowrap;
 	}
     thead th, thead td {
         background: $table-th;
@@ -3488,16 +3513,25 @@ div.k-grid-header {
     }
 	tr {
 		// height: 36px !important;
-		th:first-child, td:first-child {
-			border-left: 0;
-		}
-		th:last-child, td:last-child {
-			border-right: 0;
-		}
+		// th:first-child, td:first-child {
+		// 	border-left: 0;
+		// }
+		// th:last-child, td:last-child {
+		// 	border-right: 0;
+		// }
 		&:hover td {
 			background-color: $tableBG1;
 		}
 	}
+	tr:first-child th:first-child,
+	tr:first-child td:first-child {
+		border-left: 0;
+	}
+	tr:first-child th:last-child,
+	tr:first-child td:last-child {
+		border-right: 0; 
+	}
+
 	.k-edit-cell .k-textbox {
 		width: 100%;
 		height: 28px;
@@ -3619,6 +3653,23 @@ div.k-grid-header {
 	}
 }
 
+.k-grid .k-edit-cell .k-textbox {
+	display: flex;
+	align-items: center;
+}
+
+.k-grid .k-footer-template td {
+	border-bottom: 0;
+}
+.k-grid .k-footer-template td {
+   text-align: right;
+   font-weight: 500;
+}
+.k-grid .k-footer-template td.merge {
+   border-width: 0;
+   display: none;
+   text-align: center;
+}
 /*
 * ------------------------------
 * accordion

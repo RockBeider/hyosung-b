@@ -104,7 +104,12 @@
                                             data-bound="trAddClass"
                                             data-bind="source: gridSource"
                                             data-toolbar="#=toolbarTemplate1()#"
-                                            data-filterable="{mode:'row'}">
+                                            data-filterable="{mode:'row', 
+                                                operators: { 
+                                                    'string' : {'contains': 'contains'},
+                                                    'enums': { eq: 'eq'}
+                                                }
+                                            }">
                                         </div>
                                     </div>
                                 </div>

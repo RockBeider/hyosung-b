@@ -11,6 +11,10 @@
 		max-width: 70px;
         min-width: 70px;
 	}
+	&.xs2 {
+		max-width: 84px;
+        min-width: 84px;
+	}
 	&.sm { 
 		max-width: 106px;
         min-width: 106px;
@@ -239,6 +243,34 @@
 		@include bc-font-size-xsm;
     }
 }
+/*
+* ------------------------------
+* tooltip
+* ------------------------------
+*/
+.k-tooltip {
+	@include bc-font-size-xsm;
+	margin: 10px 0;
+	padding: 10px;
+	background: $white;
+	border: 1px solid $bc-table-th;
+	border-radius: 3px;
+	color: $gray-2;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	.k-tooltip-button {
+		display: none;
+	}
+	&::before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: -10px;
+		left: 7px;
+		width: 12px; 
+		height: 10px;
+		background-image: url($imgPathIcon+'/img_tooltip.svg');
+	}
+}
 
 /*
 * ------------------------------
@@ -246,9 +278,10 @@
 * ------------------------------
 */
 .k-tabstrip-items {
-
+	border-bottom: none;
 	.k-item {
-		@include bc-font-size-menu;
+		// @include bc-font-size-menu;
+		@include bc-font-size-default;
 		height: 100%;
 		line-height: 21px;
 		margin-right: 20px;
@@ -268,4 +301,38 @@
 			color: $bc-blue;
 		}
 	}
+}
+/*
+* ------------------------------
+* grid
+* ------------------------------
+*/
+
+.k-grid .k-edit-cell .k-textbox {
+	height: 22px;
+}
+.k-grid tbody tr td {
+	position: relative;
+}
+.k-grid tbody tr:hover td:first-child::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background-color: $bc-blue;
+}
+
+
+/*
+* ------------------------------
+* tab
+* ------------------------------
+*/
+
+.k-tabstrip-content.k-state-active, 
+.k-tabstrip>.k-content.k-state-active {
+	display: flex !important;
 }
