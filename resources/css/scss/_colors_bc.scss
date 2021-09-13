@@ -94,10 +94,12 @@ $badge-pink: #fde3e3;
 }
 
 //BC
-
+$bc-main-sub: #214997;
 $bc-blue: #3b6ac5;
 $bc-blue-hover: #2253b4;
 $bc-blue-disabled: #d7e1f4;
+
+$bc-header-bar: #6288d1;
 
 $bc-light-blue: #dee9ff;
 $bc-light-blue-hover: #bcccee;
@@ -112,3 +114,11 @@ $bc-light-green-hover: #98d2b3;
 
 $bc-table-th-bg: #f2f4f7;
 $bc-table-th: #5e6b85;
+
+.color-blue {
+    color: $bc-blue !important;
+}
+.color-red {
+    color: $error !important;
+}
+

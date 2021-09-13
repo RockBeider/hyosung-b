@@ -28,8 +28,12 @@
 }
 .k-dialog {
     .search-control {
+        margin: 0;
         .label{
             margin-right: 6px;
+        }
+        .form-group {
+            margin: 0;
         }
     }
 

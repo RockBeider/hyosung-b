@@ -6,6 +6,17 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+.table {
+    tr:first-child th,
+    tr:first-child td {
+        border-top: 0;
+    }
+    &.sm {
+        th, td {
+            height: 30px;
+        }
+    }
+}
 
 .table-group + .table-group {
     margin-top :30px;
@@ -31,7 +42,9 @@ td .form-box, th .form-box {
     justify-content: space-between;
 }
 
-
+.inner-title {
+    background-color: #f5f5f5 !important;
+}
 /*
 * ------------------------------
 * 
@@ -58,6 +71,12 @@ td .form-box, th .form-box {
     }
     &.sm {
         td { height: 30px; }
+    }
+    td .table tbody {
+        th {
+            color: $bc-table-th;
+            // background: $white;
+        }
     }
 }
 

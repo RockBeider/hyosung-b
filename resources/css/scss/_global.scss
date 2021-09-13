@@ -111,11 +111,17 @@ button {
 .ml-4 {
 	margin-left: 4px !important;
 }
+.ml-6 {
+	margin-left: 6px !important;
+}
 .ml-8 {
 	margin-left: 8px !important;
 }
 .ml-10 {
 	margin-left: 10px !important;
+}
+.ml-30 {
+	margin-left: 30px !important;
 }
 .mt-4 {
 	margin-top: 4px !important;
@@ -128,6 +134,9 @@ button {
 }
 .mt-10 {
 	margin-top: 10px !important;
+}
+.mt-18 {
+	margin-top: 18px !important;
 }
 .mt-20 {
 	margin-top: 20px !important;
@@ -149,8 +158,17 @@ button {
 	margin-left: 0px !important;
 	margin-right: 0px !important;
 }
+.pd-0 { padding: 0px !important; }
 .pt-0 { padding-top: 0px !important; }
 .mt-0 { margin-top: 0px !important; }
+.py-6 {
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
+}
+.my-6 {
+	margin-top: 6px !important;
+	margin-bottom: 6px !important;
+}
 .mb-0 { margin-bottom: 0px !important; }
 .mb-10 { margin-bottom: 10px !important; }
 .ml-20 { margin-left: 20px !important; }
@@ -190,6 +208,18 @@ button {
 // .td-none {
 // 	background-color: $gray-f5 !important;
 // }
+.table .total td {
+	color: $main;
+	font-weight: 500;
+}
+.table .positive {
+	color: $main;
+	font-weight: 500;
+}
+.table .negative {
+	color: $error;
+	font-weight: 500;
+}
 /* 
 * ------------------------------
 * badge
@@ -400,6 +430,7 @@ td .divide {
 		display: flex;
 		align-items: center;
 	}
+	
 	.btn-box {
 		margin-top: 0;
 	}
@@ -409,6 +440,7 @@ td .divide {
 	}
 	&.md {
 		min-height: 28px;
+		height: 28px;
 		margin: 20px 0 4px;
         .sub-title {
             @include font-size-lg;

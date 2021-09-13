@@ -54,7 +54,7 @@
 .table-content.grid { 
     .k-grid {
     flex: 1;
-    min-height: 150px;
+    min-height: unset;
     }
 }
 .k-grid-header {
@@ -85,4 +85,9 @@
 }
 .status-wait td {
     background: $wait !important;
+}
+
+.status-total td {
+    background: $bc-table-th !important;
+    color: $white !important;
 }

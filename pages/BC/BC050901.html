@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="요청사항관리"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="xmd">
+            <div class="content-group">
+                <!-- 업무정보 -->
+                <div class="table-set">
+                    <div class="title-box xsm mt-0">
+                        <div class="left-group">
+                            <h2 class="sub-title">업무정보</h2>
+                        </div>
+                    </div>    
+                    <div class="info-banner request">
+                        <div class="list">
+                            <span class="tit">이용변경신청</span>
+                            <span class="badge yellow ml-6">수정요청</span>
+                        </div>
+                        <p class="date-set">
+                            <span class="label has-bar">접수일</span>
+                            <span class="desc">2021/05/20 14:29:57</span>
+                        </p>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">변경전/후</th>
+                                    <td>
+                                        <div class="table sm my-6">
+                                            <table>
+                                                <colgroup>
+                                                    <col width="130px">
+                                                    <col width="*">
+                                                    <col width="*">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>항목</th>
+                                                        <th>변경전</th>
+                                                        <th>변경후</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>대표자명</th>
+                                                        <td>홍길동</td>
+                                                        <td>김효성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>대표자생년월일</th>
+                                                        <td>901115</td>
+                                                        <td>850128</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>대표자휴대번호</th>
+                                                        <td>010-1234-5678</td>
+                                                        <td>010-8765-4321</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //업무정보 -->
+                <!-- 이력수정 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <div class="left-group">
+                            <h2 class="sub-title">이력수정</h2>
+                        </div>
+                    </div>    
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">업체명</th>
+                                    <td>
+                                        <input type="text" class="h-input" value="효성에프엠에스" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">접수자</th>
+                                    <td>
+                                        <input type="text" class="h-input" value="홍길동" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">첨부파일</th>
+                                    <td>
+                                        <div class="t-widget t-upload">
+                                            <ul class="t-upload-files t-reset">
+                                                <li class="t-file">
+                                                    <span class="file-title">고객거래확인서</span>
+                                                    <span class="file-desc">
+                                                        <span class="t-icon t-success"></span>
+                                                        <a href="#" class="text-link">pdf</a>
+                                                        <span class="file-date">2021/03/11 16:40:58</span>
+                                                    </span>
+                                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                                </li>
+                                                <li class="t-file">
+                                                    <span class="file-title">양도인인감증명서</span>
+                                                    <span class="file-desc">
+                                                        <span class="t-icon t-success"></span>
+                                                        <a href="#" class="text-link">Untitled02.pdf</a>
+                                                        <span class="file-date">2021/03/11 16:40:58</span>
+                                                    </span>
+                                                    <button data-role="button" data-icon="close" class="close hidden"><span>닫기</span></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">요청사항</th>
+                                    <td>
+                                        <textarea data-role="textarea"
+                                        data-format="c"
+                                        data-min="0"
+                                        data-max="100"
+                                        data-rows="3"
+                                        data-placeholder="" class="sm"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">문서파일 업로드</th>
+                                    <td>
+                                        <div class="form-group col" id="templateList">
+                                            <button id="add_fileList" data-role="button" data-icon="plus" class="blue-border"><span>첨부파일 추가</span></button>
+                                            
+                                            <script type="text/x-kendo-tmpl" id="template_upload">
+                                                <div class="form-set">
+                                                    <select class="dropdownlistFunc xmd" data-role="dropdownlist" data-value="구비서류 선택" data-option-label="구비서류 선택">
+                                                        <option value="1">온라인</option>
+                                                        <option value="2">오프라인</option>
+                                                    </select>
+                                                    <div class="upload">
+                                                        <input type="file"
+                                                        class="fileupload"
+                                                            name="files"
+                                                            type="file"
+                                                            data-role="upload"
+                                                            data-multiple="false"
+                                                            data-validation= "{
+                                                                allowedExtensions: ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
+                                                            }"
+                                                            data-show-file-list= "true"
+                                                            data-localization="{select: '선택'}"
+                                                            data-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                                                            data-bind="visible: isVisible,
+                                                                        enabled: isEnabled" 
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </script>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-box bottom justify-content-between">
+                        <button data-role="button" class="light-blue">문서보기</button>
+                        <div class="btn-box mt-0">
+                            <button data-role="button" class="">수정진행</button>
+                            <button data-role="button" class="">재접수</button>
+                            <button data-role="button" class="">수정</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //이력수정 -->
+                
+                <!-- 업무 이력 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <div class="left-group">
+                            <h2 class="sub-title">업무 이력</h2>
+                        </div>
+                    </div>    
+                    <div class="list-wrap">
+                        <div class="list-set answer">
+                            <div class="list-title">
+                                <span class="badge count">3</span>
+                                대응
+                            </div>
+                            <div class="list-box history">
+                                <span class="badge yellow">수정요청</span>
+                                <div class="list">
+                                    <span class="label has-bar">대응자</span>
+                                    <span class="desc">홍길동</span>
+                                </div>
+                                <div class="list">
+                                    <span class="label has-bar">처리일시</span>
+                                    <span class="desc">2021/05/20 14:29:57</span>
+                                </div>
+                                <div class="list">
+                                    <span class="label has-bar">대응자 요청사항</span>
+                                    <span class="desc">효성에프엠에스 요청사항입니다.</span>
+                                </div>
+                                <ul class="t-upload-files t-reset">
+                                    <li class="t-file">
+                                        <span class="file-title">고객거래확인서</span>
+                                        <span class="file-desc">
+                                            <span class="t-icon t-success"></span>
+                                            <a href="#" class="text-link">Untitled.pdf</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="list-set receipt">
+                            <div class="list-title">
+                                <span class="badge count">2</span>
+                                접수
+                            </div>
+                            <div class="list-box history">
+                                <span class="badge green">확인완료</span>
+                                <div class="list">
+                                    <span class="label has-bar">접수자</span>
+                                    <span class="desc">홍길동</span>
+                                </div>
+                                <div class="list">
+                                    <span class="label has-bar">처리일시</span>
+                                    <span class="desc">2021/05/20 14:29:57</span>
+                                </div>
+                                <div class="list">
+                                    <span class="label has-bar">접수자 요청사항</span>
+                                    <span class="desc">효성에프엠에스 요청사항입니다.</span>
+                                </div>
+                                <ul class="t-upload-files t-reset">
+                                    <li class="t-file">
+                                        <span class="file-title">고객거래확인서</span>
+                                        <span class="file-desc">
+                                            <span class="t-icon t-success"></span>
+                                            <a href="#" class="text-link">Untitled.pdf</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="list-set answer">
+                            <div class="list-title">
+                                <span class="badge count">1</span>
+                                대응
+                            </div>
+                            <div class="list-box history">
+                                <span class="badge gray">대기(계약변경)</span>
+                                <div class="list">
+                                    <span class="label has-bar">대응자</span>
+                                    <span class="desc">홍길동</span>
+                                </div>
+                                <div class="list">
+                                    <span class="label has-bar">처리일시</span>
+                                    <span class="desc">2021/05/20 14:29:57</span>
+                                </div>
+                                <div class="list">
+                                    <span class="label has-bar">대응자 요청사항</span>
+                                    <span class="desc">효성에프엠에스 요청사항입니다.</span>
+                                </div>
+                                <ul class="t-upload-files t-reset">
+                                    <li class="t-file">
+                                        <span class="file-title">사업자등록증</span>
+                                        <span class="file-desc">
+                                            <span class="t-icon t-success"></span>
+                                            <a href="#" class="text-link">Untitled.pdf</a>
+                                        </span>
+                                    </li>
+                                    <li class="t-file">
+                                        <span class="file-title">자동이체동의서보유여부확인서</span>
+                                        <span class="file-desc">
+                                            <span class="t-icon t-success"></span>
+                                            <a href="#" class="text-link">Untitled.pdf</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //업무 이력 -->
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+       
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"추천",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"추천",  "제목":"공지사항", "내용":"안녕하세요 OOO학원입니다. OOO학원에 귀하의 자녀를 보내주..." },
+                { "NO":"추천",  "제목":"납부안내", "내용":"{ 회 원 명 } 고객님의 가정에 건강과 평안을 기원합니다. O월O일..." },
+                { "NO":"1",  "제목":"가입인사", "내용":"저희 OOO 서비스에 가입해주셔서 진심으로 감사드립니다..." },
+                { "NO":"2",  "제목":"청구안내", "내용":"안내" },
+                { "NO":"3",  "제목":"가입인사", "내용":"{ 업 체 명 }입니다. { 회 원 명 }님의 청구 발송일은 {청구서발송..." },
+                { "NO":"4",  "제목":"공지사항", "내용":"안내" },
+                { "NO":"5",  "제목":"공지사항", "내용":"안내" },
+                { "NO":"6",  "제목":"공지사항", "내용":"안내" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+        function SetColor(NO) {
+            if(NO=="추천")
+                return "<span class=\"notice-title\">"+NO+"</span>";
+            else
+                return NO;
+        }
+        var viewModel_fileUpload = kendo.observable({
+            isEnabled: true,
+            isVisible: true,
+        });
+        kendo.ui.Upload.fn._supportsDrop = function() { return false; } //drag drop 없음
+        var template_upload = kendo.template($("#template_upload").html());
+        $(document).on('click', '#add_fileList', function() {
+            $('#templateList').append(template_upload);
+            kendo.bind($(".fileupload"), viewModel_fileUpload); 
+            kendo.bind($(".dropdownlistFunc"), {}); //드롭다운
+        }) 
+    </script> 
+</body>
+
+</html>

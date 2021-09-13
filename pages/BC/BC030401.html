@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index_bc.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header_bc.html"></div>
+        <div id="container">
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="사용료 수정"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+            events: { close: onClose}" class="md2">
+            <div class="content-group">
+                <div class="table-set">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px" />
+                                <col width="*" />
+                                <col width="120px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">업체명</th>
+                                    <td>효성에프엠에스</td>
+                                    <th scope="row">업체ID</th>
+                                    <td>hyosung001</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사용월</th>
+                                    <td>2020/11</td>
+                                    <th scope="row">월사용료-부가세포함</th>
+                                    <td><input type="text" class="h-input" value="55,000" disabled="disabled" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">납부일</th>
+                                    <td><input type="text" class="h-input" value="2020/11/15" /></td>
+                                    <th scope="row">납부여부</th>
+                                    <td>
+                                        <div class="form-set">
+                                            <select data-role="dropdownlist" data-value="P(월사용료면제)" data-option-label="P(월사용료면제)" class="md">
+                                                <option value="1">온라인</option>
+                                                <option value="2">오프라인</option>
+                                            </select>
+                                            <select data-role="dropdownlist" data-value="담보공제" data-option-label="담보공제">
+                                                <option value="1">온라인</option>
+                                                <option value="2">오프라인</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">납부금액</th>
+                                    <td><input type="text" class="h-input" value="10,000" /></td>
+                                    <th scope="row">수수료납부방법</th>
+                                    <td><span class="color-blue">선취</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">반환일</th>
+                                    <td><input type="text" class="h-input" placeholder="yyyymmdd" /></td>
+                                    <th scope="row">변환여부</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="N(미반환)" data-option-label="N(미반환)">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 월사용료 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <h3 class="sub-title">월사용료</h3>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>업체명</th>
+                                    <td><input type="text" class="h-input lg" value="0" disabled="disabled" /></td>
+                                </tr>
+                                <tr>
+                                    <th>사용월</th>
+                                    <td><input type="text" class="h-input lg" value="0" /></td>
+                                </tr>
+                                <tr>
+                                    <th>납부일</th>
+                                     <td><input type="text" class="h-input lg" value="0" disabled="disabled" /></td>
+                                </tr>
+                                <tr>
+                                    <th>비고</th>
+                                     <td><input type="text" class="h-input" value="11월 사용료 면제" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //월사용료 -->
+
+                <!-- NHCMS -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <h3 class="sub-title">NHCMS</h3>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px" />
+                                <col width="*" />
+                                <col width="120px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>의뢰수수료</th>
+                                    <td>50</td>
+                                    <th>성공수수료</th>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <th>의뢰건수</th>
+                                    <td colspan="3">0</td>
+                                </tr>
+                                <tr>
+                                    <th>출금건수</th>
+                                    <td>0</td>
+                                    <th>출금금액</th>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <th>정산건수</th>
+                                    <td>0</td>
+                                    <th>정산금액</th>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //NHCMS -->
+
+                <!-- 유선전화 -->
+                <div class="table-set">
+                    <div class="title-box xsm">
+                        <h3 class="sub-title">유선전화</h3>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="120px" />
+                                <col width="*" />
+                                <col width="120px" />
+                                <col width="*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>의뢰수수료</th>
+                                    <td>50</td>
+                                    <th>성공수수료</th>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <th>의뢰건수</th>
+                                    <td colspan="3">0</td>
+                                </tr>
+                                <tr>
+                                    <th>출금건수</th>
+                                    <td>0</td>
+                                    <th>출금금액</th>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <th>정산건수</th>
+                                    <td>0</td>
+                                    <th>정산금액</th>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //유선전화 -->
+                <div class="btn-box bottom">
+                    <button data-role="button"><span>수정</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+        
+        //grid
+        var viewModel_number = kendo.observable({
+            gridSource: [
+                { "NO":"1", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"이니시스", "카드사":"그외", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"2", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"국민", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"3", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"삼성", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"4", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"하나(구, 외환)", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"5", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"롯데", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"6", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"현대", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"7", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"갤럭시아컴즈", "카드사":"신한", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"8", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"일반","PG사":"효성", "카드사":"비씨", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"9", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"중소1","PG사":"효성", "카드사":"농협", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+                { "NO":"10", "시작일":"2020/12/31","종료일":"2020/12/31", "적용등급":"중소1","PG사":"효성", "카드사":"농협", "일반":"3.3", "영세":"3.3", "중소1":"3.3" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+        kendo.bind($("#viewModel_number"), viewModel_number); //그리드 스타일
+        function toolbarTemplate_count() {
+            var template = kendo.template($('#toolbarTemplate_count').html());
+            var result = template({});
+            return result
+        }
+        function checkboxTemplate() {
+            var template = kendo.template($('.checkboxTemplate').html());
+            var result = template({});
+            return result
+        }
+    </script>
+</body>
+
+</html>

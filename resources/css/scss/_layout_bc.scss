@@ -25,9 +25,167 @@
 * Header
 * ------------------------------
 */
-.bc .header-wrap { 
+.header-wrap { 
 	height: 56px;
-	padding: 0 28px;
-	background: #3b6ac5;
+	padding: 0 0 0 28px;
+	background: $bc-blue;
+	.right-group {
+		height: 100%;
+	}
+	.logo-set {
+		display: flex;
+		align-items: center;
+		.logo-info {
+			line-height: 19px;
+		}
+		&.has-bar {
+			position: relative;
+			margin-right: 30px;
+			padding-right: 30px;
+			&::after {
+				position: absolute;
+				right: 0;
+				content: '';
+				display: inline-block;
+				width: 1px;
+				height: 26px;
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+		}
+	}
+	.logo {
+		width: 124px;
+		height: 19px;
+		background: url('../images/CI_w@2x.png') no-repeat center /contain;
+	}
+	.user-set {
+		display: flex;
+	}
+	.profile-box {
+		@include bc-font-size-xsm
+	}
+	.timer-box {
+		height: 26px;
+		background-color: $bc-accent;
+		.timer-set {
+			@include bc-font-size-xsm;	
+		}
+		.time-add {
+			@include bc-font-size-xsm;	
+		}
+	}
+	.status-list {
+		display: flex;
+		.list {
+			@include bc-font-size-xsm;
+			display: flex;
+			color: $white;
+			+ .list {
+				margin-left: 20px;
+			}
+		}
+		.label {
+			position: relative;
+			color: $bc-light-blue;
+			&.has-bar {
+				margin-right: 4px;
+				padding-right: 5px; 
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%; 
+					right: 0;
+					margin-top: -8px;
+					width: 1px; 
+					height: 16px;
+					background-color: $bc-header-bar;
+				}
+			}
+			&.dot {
+				padding-left: 8px;
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0; 
+					top: 50%;
+					margin-top: -2px;
+					width: 4px; 
+					height: 4px;
+					border-radius: 50%;
+					background-color: $bc-light-blue;
+				}
+			}
+		}
+		.desc {
+			color: $bc-light-blue;
+		}
+
+	}
+	.btn-list {
+		display: flex;
+		height: 100%;
+		margin-left: 20px;
+		.list {
+			@include bc-font-size-xsm;
+			height: 100%;
+			padding: 0 20px;
+			color: $white;
+			border-left: 1px solid rgba(255, 255, 255, 0.2);
+		}
+	}
+
+}
+
+/*
+* ------------------------------
+* section
+* ------------------------------
+*/
+.section-group {
+	display: flex;
+	margin: 0 -10px;
+	&.md .section {
+		height: 572px;
+	}
+	&.group-3 {
+		.section {
+			width: 33.33%;
+			min-width: calc(33.33% - 20px);
+		}
+	}
+	.section {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		margin: 0 10px;
+		// height: 100%;
+		.section-content {
+			position: relative;
+			height: calc(100% - 32px);
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 auto;
+			&.has-tab {
+				.border-box {
+					height: calc(100% - 27px) !important;
+					max-height: calc(100% - 27px);
+				} 
+			}
+			.k-tabstrip-wrapper {
+				height: 100%;
+			}
+			.scroll {
+				height: 100%;
+				overflow: auto;
+			}
+			.border-box {
+				// overflow: auto;
+				flex: 1 1 auto;
+			}
+		}
+	}
+	
 }
 

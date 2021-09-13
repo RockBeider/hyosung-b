@@ -258,3 +258,8 @@ $(document).on('click', '.t-file .close', function() {
 	$(this).parents('.t-file').remove();
 })
 
+
+
+$(".input-set .clear").click(function(){
+	$(this).parent(".input-set").find('input').val("").trigger("input");                   
+});

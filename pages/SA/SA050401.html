@@ -45,63 +45,123 @@
 
                 <!-- Contents Body -->
                 <div class="contents-body">
+                    <div class="search-control">
+                        <div class="form-group">
+                            <span class="label">사용월</span>
+                            <div class="form-set">
+                                <input data-role="datepicker" 
+                                    data-format="yyyy/MM/dd"
+                                    placeholder="yyyymmdd" 
+                                    data-culture="ko-KR"
+                                    data-footer="false"
+                                    class="datepicker sm">
+                                <span class="bar">~</span>
+                                <input data-role="datepicker" 
+                                    data-format="yyyy/MM/dd"
+                                    placeholder="yyyymmdd" 
+                                    data-culture="ko-KR"
+                                    data-footer="false"
+                                    class="datepicker sm">
+                            </div>
+                        </div>
+                        <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+                    </div>
                     <div class="table-group">
-                        <div class="search-control">
-                            <div class="form-group">
-                                <span class="label">사용월</span>
+                        <div class="table-set">
+                            <div class="title-box sm">
+                                <div class="left-group">
+                                    <span class="amount-set">
+                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                        <span class="amount">26</span><span class="unit">건</span>
+                                    </span>
+                                </div>
                                 <div class="form-set">
-                                    <input data-role="datepicker" 
-                                        data-format="yyyy/MM/dd"
-                                        placeholder="yyyymmdd" 
-                                        data-culture="ko-KR"
-                                        data-footer="false"
-                                        class="datepicker sm">
-                                    <span class="bar">~</span>
-                                    <input data-role="datepicker" 
-                                        data-format="yyyy/MM/dd"
-                                        placeholder="yyyymmdd" 
-                                        data-culture="ko-KR"
-                                        data-footer="false"
-                                        class="datepicker sm">
+                                    <button data-role="button" class="k-button"><span>수정</span></button>
                                 </div>
                             </div>
-                            <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
-                        </div>
-                        <div class="table-set">
-                            <script type="text/x-kendo-template" class="toolbarTemplate">
-                                <div class="title-box sm">
-                                    <div class="left-group">
-                                        <span class="amount-set">
-                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                            <span class="amount">26</span><span class="unit">건</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </script>
-                            <script type="text/x-kendo-template" class="checkboxTemplate">
-                                <div class="h-checkbox no-label">
-                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                    <label for="checkbox-nolabel"></label> 
-                                </div>
-                            </script>
                             <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
-                            <div class="table-content grid">
+                            <div class="table-content grid grid-footer1" id="viewModel_grid1">
+                                <script type="text/x-kendo-template" class="checkboxTemplate1">
+                                    <div class="h-checkbox no-label">
+                                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                        <label for="checkbox-nolabel"></label> 
+                                    </div>
+                                </script>
                                 <div data-role="grid" 
                                     data-sortable="true" 
                                     data-editable="true" 
                                     data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
-                                    { "title": "NO.", "field": "NO", "width": 60, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "footerTemplate": "합계", footerAttributes: {"class": "merge"}, "template": "#=checkboxTemplate1()#" },
+                                    { "title": "NO.", "field": "NO", "width": 60, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "title": "해당월", "field": "해당월", "width": 100, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                    { "title": "CMS",
+                                        "columns" : [ {"title": "시스템", "field": "시스템", "width": 120, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} }, 
+                                                {"title": "출금액", "field": "출금액", "width": 120, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} }]
+                                    }, 
+                                    { "field": "" }]' 
+                                    data-bind="source: gridSource"
+                                    style="height: 320px;">
+                                </div>
+
+                                <div class="table-bottom">
+                                    <button data-role="button" class="gray-border">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-set">
+                            <div class="title-box sm">
+                                <div class="left-group">
+                                    <span class="amount-set">
+                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                        <span class="amount">26</span><span class="unit">건</span>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-set">
+                                        <span class="form-label">전표일</span>
+                                        <input data-role="datepicker" 
+                                            data-format="yyyy/MM/dd"
+                                            placeholder="yyyymmdd" 
+                                            data-culture="ko-KR"
+                                            data-footer="false"
+                                            class="datepicker sm">
+                                        <button data-role="button" class="k-button blue-border"><span>입력</span></button>
+                                        <button data-role="button" class="k-button"><span>수정</span></button>
+                                    </div>
+                                    <div class="form-set">
+                                        <button data-role="button" class="k-button"><span>총금액 연동</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
+                            <div class="table-content grid" id="viewModel_grid2">
+                                <script type="text/x-kendo-template" class="checkboxTemplate2">
+                                    <div class="h-checkbox no-label">
+                                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                        <label for="checkbox-nolabel"></label> 
+                                    </div>
+                                </script>
+                                <div data-role="grid" 
+                                    data-sortable="true" 
+                                    data-editable="true" 
+                                    data-columns='[
+                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "footerTemplate": "합계", footerAttributes: {"class": "merge"}, "template": "#=checkboxTemplate2()#" },
+                                    { "title": "NO.", "field": "NO", "width": 60, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                    { "title": "은행명", "field": "은행명", "width": 160, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                    { "title": "서비스명", "field": "서비스명", "width": 140, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                    { "title": "출금계좌", "field": "출금계좌", "width": 140, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                    { "title": "시스템", "field": "시스템", "width": 140, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} },
                                     { "field": ""  }
                                     ]' 
                                     data-bind="source: gridSource"
-                                    data-toolbar="#=toolbarTemplate()#">
+                                    style="height: 320px">
                                 </div>
                                 <div class="table-bottom">
                                     <button data-role="button" class="gray-border">삭제</button>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -116,25 +176,54 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-            var viewModel = kendo.observable({
+            var viewModel_grid1 = kendo.observable({
+                gridSource: new kendo.data.DataSource({
+                    data: [
+                        { "NO":"1",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" },
+                        { "NO":"2",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" },
+                        { "NO":"3",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" },
+                        { "NO":"4",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" },
+                        { "NO":"5",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" },
+                        { "NO":"6",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" },
+                        { "NO":"7",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" },
+                        { "NO":"8",  "해당월":"2021/06", "시스템":"186,028,370", "출금액":"186,028,370" }
+                    ],
+                    // aggregate: [
+                    //     { field: "NO" }
+                    // ],
+                })
+                // displayGridSource: function() {
+                //     return stringify(this.get("gridSource").toJSON());
+                // },
+            });
+            var viewModel_grid2 = kendo.observable({
                 gridSource: [
-                    { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
-                    { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
+                    { "NO":"1",  "은행명":"SC은행","서비스명":"CMS", "출금계좌":"809102040123","시스템":"7,791,000" },
+                    { "NO":"2",  "은행명":"SC은행","서비스명":"CMS", "출금계좌":"809102040123","시스템":"7,791,000" },
+                    { "NO":"3",  "은행명":"SC은행","서비스명":"CMS", "출금계좌":"809102040123","시스템":"7,791,000" },
+                    { "NO":"4",  "은행명":"SC은행","서비스명":"CMS", "출금계좌":"809102040123","시스템":"7,791,000" },
+                    { "NO":"5",  "은행명":"SC은행","서비스명":"CMS", "출금계좌":"809102040123","시스템":"7,791,000" },
+                    { "NO":"6",  "은행명":"SC은행","서비스명":"CMS", "출금계좌":"809102040123","시스템":"7,791,000" },
+                    { "NO":"7",  "은행명":"SC은행","서비스명":"CMS", "출금계좌":"809102040123","시스템":"7,791,000" },
                 ],
                 displayGridSource: function() {
                     return stringify(this.get("gridSource").toJSON());
                 },
             });
-            kendo.bind($(".wrap"), viewModel);
-            
-            function toolbarTemplate() {
-                var template = kendo.template($('.toolbarTemplate').html());
+            kendo.bind($(".wrap"), {});
+            kendo.bind($("#viewModel_grid1"), viewModel_grid1);
+            kendo.bind($("#viewModel_grid2"), viewModel_grid2);
+            $("#viewModel_grid1").find('.merge:first').css('display','table-cell').attr('colspan', $("#viewModel_grid1").find('.merge').size());
+            $("#viewModel_grid1 .k-footer-template").addClass('status-wait');
+            $("#viewModel_grid2").find('.merge:first').css('display','table-cell').attr('colspan', $("#viewModel_grid2").find('.merge').size());
+            $("#viewModel_grid2 .k-footer-template").addClass('status-wait');
+            function checkboxTemplate1() {
+                var template = kendo.template($('.checkboxTemplate1').html());
                 var result = template({});
                 return result
             }
-            function checkboxTemplate() {
-                var template = kendo.template($('.checkboxTemplate').html());
+            function checkboxTemplate2() {
+                var template = kendo.template($('.checkboxTemplate2').html());
                 var result = template({});
                 return result
             }

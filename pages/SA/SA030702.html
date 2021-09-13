@@ -163,6 +163,18 @@
                         </div>
                         <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>조회</span></button>
                     </div>
+                    <div class="table-content grid mt-10" id="viewModel_grid_check">
+                        <div data-role="grid" 
+                            data-sortable="false" 
+                            data-selectable="row"
+                            data-columns='[
+                            { "title": "고객ID", "field": "고객ID", "width": 280, "attributes" : {"class": "text-center"}  },
+                            { "title": "고객명", "field": "고객명", "attributes" : {"class": "text-center"}  }
+                            ]' 
+                            data-bind="source: gridSource"
+                            style="height: 189px;">
+                        </div>
+                    </div>
                 </div>
                 <div class="table-set">
                     <div class="title-box xsm">
@@ -181,7 +193,7 @@
                                         data-min="0"
                                         data-max="100"
                                         data-rows="4"
-                                        data-placeholder="" class="sm">5/20 납부자 홍길동님의 후원취소 요청에도 불구하고
+                                        data-placeholder="" class="md">5/20 납부자 홍길동님의 후원취소 요청에도 불구하고
 5,200원이 출금되어 당사에서 직권으로 환불처리합니다.
 (업체정보 - 효성복지재단 / dev_reg05</textarea>
                                     </td>
@@ -233,9 +245,24 @@
                 this.set("isVisible", true);
                 this.set("isEnabled", false);
             },
-
         });
+       
+
+        var viewModel_grid_check = kendo.observable({
+            gridSource: [
+                { "고객ID":"dev_reg502",  "고객명":"효성복지재단" },
+                { "고객ID":"dev_reg502",  "고객명":"효성복지재단" },
+                { "고객ID":"dev_reg502",  "고객명":"효성복지재단" },
+                { "고객ID":"dev_reg502",  "고객명":"효성복지재단" },
+                { "고객ID":"dev_reg502",  "고객명":"효성복지재단" },
+            ],
+            displayGridSource: function() {
+                return stringify(this.get("gridSource").toJSON());
+            },
+        });
+
         kendo.bind($(".wrap"), viewModel);
+        kendo.bind($("#viewModel_grid_check"), viewModel_grid_check);
 
         var viewModel_fileUpload_default = kendo.observable({
             isEnabled: true,

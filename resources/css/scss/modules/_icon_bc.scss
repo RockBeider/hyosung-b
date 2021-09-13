@@ -9,6 +9,30 @@
             background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
     }
+    &.profile-blue {
+        @include iconPng($width: 20px, $height: 20px, $name: 'icon_profile@2x', $size: contain );
+    }
+    &.questmark {
+        @include iconSvg($width: 26px, $height: 26px, $name: 'btn_tip_hover', $size: 26px 26px );
+        &.k-state-border-down {
+            background-image: url($imgPathIcon+'/btn_tip_hover.svg');
+        }
+    }
+    &.remote {
+        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_remote', $size: 20px 20px );
+    }
+    &.adduser {
+        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_user_regi', $size: 20px 20px );
+    }
+    &.mail {
+        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_sms', $size: 20px 20px );
+    }
+    &.call {
+        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_call', $size: 20px 20px );
+    }
+    &.consult {
+        @include iconSvg($width: 28px, $height: 28px, $name: 'icon_counsel_regi', $size: 20px 20px );
+    }
         
 }
 
