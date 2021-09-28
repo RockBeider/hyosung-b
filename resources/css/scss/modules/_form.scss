@@ -136,7 +136,7 @@ td .form-group {
     display: flex;
     align-items: center;
     position: relative;
-    margin-top: 4px;
+    // margin-top: 4px;
     padding: 20px 20px;
     padding-right: 89px;
     background: #fff;
@@ -171,11 +171,11 @@ td .form-group {
         width: 100%;
         min-height: 28px;
         + .search-line {
-            margin-top: 16px;
+            margin-top: 10px;
         }
     }
     .form-group {
-        margin: 4px 0;
+        // margin: 4px 0;
         white-space: nowrap;
         > * + * {
             margin-left: 0;

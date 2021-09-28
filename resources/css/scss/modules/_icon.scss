@@ -52,7 +52,7 @@ th .required {
         margin-right: -10px;
     }
     &.close { //이미지 요청
-        @include iconSvg($width: 26px, $height: 26px, $name: 'btn_X', $size: 12px 12px );
+        @include iconSvg($width: 26px, $height: 26px, $name: 'btn_X', $size: 18px 18px );
     }
     &.clear { //이미지 요청
         @include iconSvg($width: 26px, $height: 26px, $name: 'btn_X', $size: 12px 12px );
@@ -70,11 +70,18 @@ th .required {
     &.input-check {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_check_default', $size: contain );
     }
-    &.is-checked .input-check {
-        background-image: url($imgPathIcon+'/icon_check_blue.svg');
-    }
-    &.is-important .input-check {
-        background-image: url($imgPathIcon+'/icon_check_active.svg');
+    // &.is-checked .input-check {
+    //     background-image: url($imgPathIcon+'/icon_check_blue.svg');
+    // }
+    // &.is-important .input-check {
+    //     background-image: url($imgPathIcon+'/icon_check_active.svg');
+    // }
+    &.is-important {
+        &.k-state-focused, 
+        &.k-state-active {
+            background-image: url($imgPathIcon+'/icon_check_active.svg');
+          
+        }  
     }
     &.plus {
         @include iconSvg($width: 15px, $height: 15px, $name: 'icon_plus', $size: contain );
@@ -146,7 +153,7 @@ th .required {
         @include iconPng($width: 20px, $height: 20px, $name: 'icon_profile_blue@3x', $size: contain );
     }
     &.noti {
-        @include iconSvg($width: 20px, $height: 20px, $name: 'btn_tip_default', $size: contain );
+        @include iconSvg($width: 20px, $height: 20px, $name: 'icon_tip', $size: contain );
     }
     // 26*26
     &.tip {
@@ -228,57 +235,62 @@ th .required {
         }
     }
 }
-.active .h-ico {
-    &.menu1 {
-        background-image: url($imgPathIcon+'/icon_standard_selected.svg');
-    }
-    &.menu2 {
-        background-image: url($imgPathIcon+'/icon_contract_selected.svg');
-    }
-    &.menu3 {
-        background-image: url($imgPathIcon+'/icon_calculate_selected.svg');
-    }
-    &.menu4 {
-        background-image: url($imgPathIcon+'/icon_charge_selected.svg');
-    }
-    &.menu5 {
-        background-image: url($imgPathIcon+'/icon_distribution_selected.svg');
-    }
-    &.menu6 {
-        background-image: url($imgPathIcon+'/icon_accounting_selected.svg');
-    }
-    &.menu7 {
-        background-image: url($imgPathIcon+'/icon_service_selected.svg');
-    }
-    &.menu8 {
-        background-image: url($imgPathIcon+'/icon_athorize_selected.svg');
-    }
+.sidebar-1depth:hover .h-ico.menu1, .active .h-ico.menu1 {
+    background-image: url($imgPathIcon+'/icon_standard_selected.svg');
 }
+.sidebar-1depth:hover .h-ico.menu2, .active .h-ico.menu2 {
+    background-image: url($imgPathIcon+'/icon_contract_selected.svg');
+}
+.sidebar-1depth:hover .h-ico.menu3, .active .h-ico.menu3 {
+    background-image: url($imgPathIcon+'/icon_calculate_selected.svg');
+}
+.sidebar-1depth:hover .h-ico.menu4, .active .h-ico.menu4 {
+    background-image: url($imgPathIcon+'/icon_charge_selected.svg');
+}
+.sidebar-1depth:hover .h-ico.menu5, .active .h-ico.menu5 {
+    background-image: url($imgPathIcon+'/icon_distribution_selected.svg');
+}
+.sidebar-1depth:hover .h-ico.menu6, .active .h-ico.menu6 {
+    background-image: url($imgPathIcon+'/icon_accounting_selected.svg');
+}
+.sidebar-1depth:hover .h-ico.menu7, .active .h-ico.menu7 {
+    background-image: url($imgPathIcon+'/icon_service_selected.svg');
+}
+.sidebar-1depth:hover .h-ico.menu8, .active .h-ico.menu8 {
+    background-image: url($imgPathIcon+'/icon_athorize_selected.svg');
+}
+
 .input-check {
-    &.k-state-focused, 
-    &.k-state-active {
+    // &.k-state-focused, 
+    // &.k-state-active,
+    &.k-state-active-custom {
         color: $main;
         .k-i-input-check {
             background-image: url($imgPathIcon+'/icon_check_blue.svg');
         }
     }
-    &.is-checked {
-        color: $main;
-        &.k-state-focused, 
-        &.k-state-active { color: $main; }
-        .k-i-input-check {
-            background-image: url($imgPathIcon+'/icon_check_blue.svg');
-        }
-    }
+    // &.is-checked {
+    //     color: $main;
+    //     &.k-state-focused, 
+    //     &.k-state-active { color: $main; }
+    //     .k-i-input-check {
+    //         background-image: url($imgPathIcon+'/icon_check_blue.svg');
+    //     }
+    // }
     &.is-important {
-        color: $error;
-        &.k-state-focused, 
-        &.k-state-active { color: $error; }
-        .k-i-input-check {
-            background-image: url($imgPathIcon+'/icon_check_active.svg');
+        // color: $error;
+        // &.k-state-focused, 
+        // &.k-state-active,
+        &.k-state-active-custom { 
+            color: $error; 
+            .k-i-input-check {
+                background-image: url($imgPathIcon+'/icon_check_active.svg');
+            }
         }
     }
+   
 }
+
 .k-i- {
     &example {
      background: gray;
@@ -290,8 +302,13 @@ th .required {
     &k-i-x {
         @include iconSvg($width: 12px, $height: 12px, $name: 'btn_X', $size: 12px 12px );
     }
-    &close { //이미지 요청
-        @include iconSvg($width: 12px, $height: 12px, $name: 'btn_X', $size: 12px 12px );
+    &close { //이미지 요청-> 반영
+        @include iconSvg($width: 18px, $height: 18px, $name: 'btn_delete', $size: 15px 15px );
+    }
+    &btn_X { //이미지 요청-> 반영
+        @include iconSvg($width: 18px, $height: 18px, $name: 'btn_X', $size: 18px 18px );
+        width: 18px !important;
+        height: 18px !important;
     }
     //xs 15*15
     &up {

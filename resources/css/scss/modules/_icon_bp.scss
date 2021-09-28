@@ -29,7 +29,7 @@
         @include iconSvg($width: 16px, $height: 16px, $name: 'icon_arrow_up', $size: contain);
     }
     &.close {
-        @include iconSvg($width: 16px, $height: 16px, $name: 'btn_X', $size: 16px 16px );
+        @include iconSvg($width: 18px, $height: 18px, $name: 'btn_X', $size: 18px 18px );
     }
     &.plus {
         @include iconSvg($width: 16px, $height: 16px, $name: 'icon_plus', $size: contain );

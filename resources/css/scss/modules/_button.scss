@@ -55,10 +55,11 @@
         text-decoration: underline;
         &.is-checked {
             color: $main;
+            &.is-important {
+                color: $error;
+            }
         }
-        &.is-important {
-            color: $error;
-        }
+        
     }
     .k-icon {
         width: 16px;
@@ -126,13 +127,15 @@
         border: 1px solid $lavender;
         color: $main;
         &:hover, &:focus {
-            background-color: $btn-light-blue-hover-bg;
+            background-color: #b7cdef;
+            border: 1px solid #b7cdef;
         }
         &.k-state-active {
     
         }
         &.k-state-focused {
-            background-color: $btn-light-blue-hover-bg;
+            background-color: #b7cdef;
+            border: 1px solid #b7cdef;
         }
         &:disabled,
         &:disabled:hover, 
@@ -147,6 +150,7 @@
     &.light-blue-border {
         background-color: $tableBG1;
         border: 1px solid $gray-c;
+        
     }
     &.blue-border {
         background: $white;
@@ -173,17 +177,17 @@
     }
     &.gray-border {
         background-color: $white;
-        border: 1px solid $gray-9;
+        border: 1px solid $gray-a;
         color: $gray-2;
         &:hover, &:focus {
-            background-color: $gray-e;
+            background-color: $gray-ef;
             border: 1px solid $gray-a;
         }
         &.k-state-active {
 
         }
         &.k-state-focused {
-            background-color: $gray-e;
+            background-color: $gray-ef;
             border: 1px solid $gray-a;
         }
         &:disabled,
@@ -192,7 +196,7 @@
         &:disabled:active { //disabled 상태
             cursor: default;
             background: $white !important;
-            border: 1px solid $gray-c !important;
+            border: 1px solid $gray-e !important;
             color: $gray-c !important;
         }
     }
@@ -282,6 +286,7 @@
             border-right: 0;
             color: $gray-7;
             border-radius: 0;
+            cursor: pointer;
             &.k-state-active, &.k-state-focused  {
                 background-color: $accent;
                 border: 1px solid $accent;
