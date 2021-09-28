@@ -43,8 +43,13 @@
                                             <option value="2">오프라인</option>
                                         </select>
                                         <input type="text" class="h-input" placeholder="" />
-                                        <!-- [D] 체크 됐을 때 .is-checked 추가 -->
-                                        <button type="button" data-role="button" data-icon="input-check" class="text input-check"><span>제목강조</span></button>
+                                        <button 
+                                                data-role="button" 
+                                                data-icon="input-check" 
+                                                id="viewModel_button"
+                                                class="text input-check is-important"
+                                                data-bind="visible: isVisible, events: { click: onClick }"
+                                        ><span>제목강조</span></button>
                                     </div>
                                 </td>
                             </tr>
@@ -222,6 +227,15 @@
         });
         kendo.bind($(".wrap"), viewModel);
 
+        var viewModel_button = kendo.observable({
+            isVisible: true,
+            onClick: function () {
+                $("#viewModel_button").toggleClass("k-state-active-custom");
+            }
+            
+        });
+        kendo.bind($("#viewModel_button"), viewModel_button);
+        
         var viewModel_fileUpload = kendo.observable({
             isEnabled: true,
             isVisible: true,

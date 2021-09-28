@@ -170,6 +170,7 @@ button {
 	margin-bottom: 6px !important;
 }
 .mb-0 { margin-bottom: 0px !important; }
+.mb-4 { margin-bottom: 4px !important; }
 .mb-10 { margin-bottom: 10px !important; }
 .ml-20 { margin-left: 20px !important; }
 .text-left { text-align: left !important; }
@@ -500,6 +501,11 @@ td .divide {
 		&.red {
 			color: $error;
 		}
+	}
+}
+.k-dialog .title-box {
+	&.sm {
+		margin: 20px 0 8px;
 	}
 }
 .title-box {
@@ -855,7 +861,7 @@ td .divide {
 		}
 	}
 	&.settlement {
-		margin-bottom: 4px;
+		margin-bottom: 8px;
 		.list {
 			display: flex;
 			align-items: flex-start;
@@ -1314,8 +1320,9 @@ td .divide {
             right: -73px;
             order: 2;
 			background-color: $white;
-            border: 1px solid $gray-c;
+            border: 1px solid $gray-a;
 			color: $gray-2;
+			cursor: pointer;
             span {
                 margin: 0;
                 font-size: 14px;
@@ -1432,6 +1439,7 @@ td .divide {
 		position: absolute;
 		top: 20px; 
 		right: 20px;
+		height: 18px;
 	}
 }
 .add-recipient-pop:not(:first-child) {
@@ -1503,8 +1511,13 @@ td .divide {
 			}
 			.k-textarea .k-input {
 				height: calc(100% - 52px);
+				margin-top: 0;
 				padding: 8px 0;
 				border: none;
+				&::placeholder {
+					@include font-size-sm;
+					font-weight: 400 !important;
+				}
 			}
 		}
 		.number-box {

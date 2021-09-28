@@ -17,21 +17,52 @@ body {
 }
 .wrap {
 	width: 100%;
-	min-width: 1920px;
+	// min-width: 1920px;
 	height: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 	display: flex;
 	flex-direction: column;
+	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	background-color: $bg;
 }
 
-
+/*
+* ------------------------------
+* header
+* ------------------------------
+*/
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
 /*
 * ------------------------------
 * Container
 * ------------------------------
 */
+#container {
+	flex: 1;
+	display: flex;
+	// overflow: hidden;
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 60px;
+	overflow: auto;
+}
+.contents-wrap {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0;
+	min-width: 1900px;
+	padding: 20px 30px 30px;
+	padding-left: 250px;
+	overflow: auto;
+}
 .logout-page {
 	display: flex;
 	align-items: center;
@@ -67,18 +98,7 @@ body {
 		}
 	}
 }
-#container {
-	flex: 1;
-	display: flex;
-	overflow: hidden;
-}
-.contents-wrap {
-	display: flex;
-	flex-direction: column;
-	flex: 1 0;
-	padding: 20px 30px 30px;
-	overflow: auto;
-}
+
 
 /*
 * ------------------------------
@@ -239,7 +259,7 @@ body {
 .sidebar-wrap {
 	&.fold {
 		max-width: 60px;
-		transition: all 0.1s ease;
+		// transition: all 0.1s ease;
 		.sidebar-head .main-menu span,
 		.sidebar-head .sub-menu,
 		.sidebar-1depth span,
@@ -274,14 +294,23 @@ body {
 				transition: all 0.2s ease;
 			}
 		}
+		+ .contents-wrap {
+			padding-left: 90px;
+		}
 	}
 	display: flex;
 	flex-direction: column;
 	flex: 0 0 220px;
 	max-width: 220px;
+	position: fixed;
+	top: 60px;
+	left: 0;
+	height: 100%;
+	padding-bottom: 60px;
 	background-color: #fff;
 	border-right: 1px solid #ddd;
 	transition: max-width, margin 0.2s ease;
+	z-index: 20;
 	.sidebar-head {
 		position: relative;
 		padding: 12px 0 19px;
@@ -347,6 +376,10 @@ body {
 		.h-ico {
 			margin-right: 8px;
 		}
+		&:hover {
+			color: $main;
+			font-weight: 500;
+		}
 	}
 	&-2depth {
 		display: none;
@@ -401,6 +434,10 @@ body {
 /* 사이드바 - 2뎁스 메뉴 */
 .has-submenu.active .sidebar-2depth {
 	display: block;
+}
+.has-submenu.active .sidebar-1depth {
+	color: $main;
+	font-weight: 500;
 }
 .has-submenu.active .sidebar-1depth::before {
 	content: "";

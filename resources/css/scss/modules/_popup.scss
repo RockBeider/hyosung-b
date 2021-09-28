@@ -237,7 +237,9 @@
         height: calc(100% - 50px);
     }
     .k-button.k-dialog-close {
-        @include iconSvg($width: 18px, $height: 18px, $name: 'btn_X', $size: 18px 18px);
+        .k-i-close {
+            @include iconSvg($width: 18px, $height: 18px, $name: 'btn_X', $size: 18px 18px);
+        }
         position: absolute;
         right: 22px;
         top: 10px;

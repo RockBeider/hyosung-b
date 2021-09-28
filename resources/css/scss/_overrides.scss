@@ -3560,7 +3560,8 @@ div.k-grid-header {
 .k-grid-header {
 	background: $gray-e;
 	th.k-header {
-		@include font-size-sm;
+		// @include font-size-xsm;
+		font-size: 15px;
 		position: relative;
 		// height: auto;
 		height: 36px;
