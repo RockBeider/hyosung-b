@@ -1582,6 +1582,9 @@ td.point, th.point {
 .table.table-bg-box.type1 .cell:nth-of-type(1) {
   min-width: 36px;
   max-width: 36px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .table.table-bg-box.type1 .cell:nth-of-type(3) {
@@ -1600,8 +1603,8 @@ td.point, th.point {
 }
 
 .table.table-bg-box.type1 .cell:nth-of-type(6) {
-  min-width: 126px;
-  max-width: 126px;
+  min-width: 146px;
+  max-width: 146px;
 }
 
 .table.table-bg-box.type2 .cell .bar {
@@ -1641,6 +1644,113 @@ td.point, th.point {
 .table.table-bg-box.type2 .cell:nth-of-type(8) {
   min-width: 170px;
   max-width: 170px;
+}
+
+.table.table-bg-box.type3 .cell .bar {
+  text-align: center;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(1) {
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(2) {
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(3) {
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(4) {
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(5) {
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(6) {
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(7) {
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(8) {
+  min-width: 110px;
+  max-width: 110px;
+}
+
+.table.table-bg-box.type3 .cell:nth-of-type(9) {
+  min-width: 170px;
+  max-width: 170px;
+}
+
+.table.table-bg-box.type4 .cell .bar {
+  text-align: center;
+}
+
+.table.table-bg-box.type4 .cell:nth-of-type(1) {
+  min-width: 185px;
+  max-width: 185px;
+}
+
+.table.table-bg-box.type4 .cell:nth-of-type(2) {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.table.table-bg-box.type4 .cell:nth-of-type(3) {
+  min-width: 164px;
+  max-width: 164px;
+}
+
+.table.table-bg-box.type4 .cell:nth-of-type(4) {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.table.table-bg-box.type4 .cell:nth-of-type(5) {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.table.table-bg-box.type4 .cell:nth-of-type(6) {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.table.table-bg-box.type5 .cell .bar {
+  text-align: center;
+}
+
+.table.table-bg-box.type5 .cell:nth-of-type(1) {
+  min-width: 45px;
+  max-width: 45px;
+}
+
+.table.table-bg-box.type5 .cell:nth-of-type(3) {
+  min-width: 240px;
+  max-width: 240px;
+}
+
+.table.table-bg-box.type5 .cell:nth-of-type(4) {
+  min-width: 240px;
+  max-width: 240px;
+}
+
+.table.table-bg-box.type5 .cell:nth-of-type(5) {
+  min-width: 508px;
+  max-width: 508px;
 }
 
 .table.table-bg-box .head .row {
@@ -1694,8 +1804,12 @@ td.point, th.point {
           flex: 1;
 }
 
+.table.table-bg-box .cell .k-button.hidden {
+  margin-left: 20px;
+}
+
 .table.table-bg-box .body .row {
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: #efefef;
 }
 
@@ -3331,6 +3445,18 @@ td .form-group.col > * + * {
   border-left: 1px solid #48c3e6;
 }
 
+.k-button-group.period .k-button.k-state-disabled {
+  background-color: #f5f5f5;
+  border: 1px solid #aaa;
+  border-right: 0;
+  color: #aaa;
+  cursor: default;
+}
+
+.k-button-group.period .k-button.k-state-disabled + .k-button {
+  border-left: 1px solid #aaa;
+}
+
 .k-button-group.period .k-button:first-child {
   border-radius: 3px 0 0 3px;
 }
@@ -4633,6 +4759,11 @@ button {
   margin-top: 0px !important;
 }
 
+.py-10 {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
 .py-6 {
   padding-top: 6px !important;
   padding-bottom: 6px !important;
@@ -4682,6 +4813,14 @@ button {
 .px-0 {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+.w-120 {
+  width: 120px !important;
+}
+
+.w-128 {
+  width: 128px !important;
 }
 
 .w100 {
@@ -8099,6 +8238,11 @@ td .divide + .divide {
   border: 1px solid #ccc;
   border-radius: 3px;
   overflow: hidden;
+}
+
+.k-datepicker .k-picker-wrap.k-state-disabled {
+  background-color: #f5f5f5;
+  color: #aaa;
 }
 
 .k-datepicker .k-picker-wrap .k-input {
@@ -16715,6 +16859,7 @@ body {
 * ------------------------------
 */
 .contents-body.has-quickmenu {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16727,9 +16872,9 @@ body {
 * ------------------------------
 */
 .quick-menu {
-  position: fixed;
-  top: 166px;
-  left: calc(100% - 170px);
+  position: absolute;
+  top: 32px;
+  right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16791,12 +16936,6 @@ body {
 
 .quick-menu .foot .k-button {
   height: 32px;
-}
-
-@media (max-width: 1920px) {
-  .quick-menu {
-    left: 1750px;
-  }
 }
 
 /*

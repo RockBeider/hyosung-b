@@ -161,6 +161,10 @@ button {
 .pd-0 { padding: 0px !important; }
 .pt-0 { padding-top: 0px !important; }
 .mt-0 { margin-top: 0px !important; }
+.py-10 {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
 .py-6 {
 	padding-top: 6px !important;
 	padding-bottom: 6px !important;
@@ -180,6 +184,14 @@ button {
 .px-0 {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
+}
+
+.w-120 {
+	width: 120px !important;
+}
+
+.w-128 {
+	width: 128px !important;
 }
 
 .w100 {
