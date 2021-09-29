@@ -191,6 +191,7 @@ body {
 */
 .contents-body {
 	&.has-quickmenu {
+		position: relative;
 		display: flex;
 		padding-right: 160px;
 		// flex-direction: row;
@@ -202,9 +203,9 @@ body {
 * ------------------------------
 */
 .quick-menu {
-	position: fixed;
-    top: 166px;
-    left: calc(100% - 170px);
+	position: absolute;
+    top: 32px;
+	right: 0px;
 	display: flex;
 	flex-direction: column;
 	min-width: 140px;
@@ -247,7 +248,7 @@ body {
 }
 @media (max-width: 1920px) {
 	.quick-menu {
-		left: 1750px;
+		// left: 1750px;
 	}
 }
 

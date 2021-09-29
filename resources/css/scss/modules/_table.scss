@@ -128,6 +128,7 @@ td.point, th.point {
                 &:nth-of-type(1){
                     min-width: 36px;
                     max-width: 36px;
+                    justify-content: center;
                 }
                 &:nth-of-type(2) {
                     
@@ -145,8 +146,8 @@ td.point, th.point {
                     max-width: 200px;
                 }
                 &:nth-of-type(6) {
-                    min-width: 126px;
-                    max-width: 126px;
+                    min-width: 146px;
+                    max-width: 146px;
                 }
             }
         }
@@ -189,6 +190,112 @@ td.point, th.point {
                 }
             }
         }
+        &.type3 {
+            .cell {
+                .bar {
+                    text-align: center;
+                }
+                &:nth-of-type(1) {
+                    min-width: 160px;
+                    max-width: 160px;
+                }
+                &:nth-of-type(2) { //담보시작일
+                    min-width: 160px;
+                    max-width: 160px;
+                }
+                &:nth-of-type(3) { //담보만기일
+                    min-width: 160px;
+                    max-width: 160px;
+                }
+                &:nth-of-type(4) { //담보금액
+                    min-width: 160px;
+                    max-width: 160px;
+                }
+                &:nth-of-type(5) { //담보한도금액
+                    min-width: 160px;
+                    max-width: 160px;
+                }
+                &:nth-of-type(6) {//담보반환일
+                    min-width: 160px;
+                    max-width: 160px;
+                }
+                &:nth-of-type(7) { //담보유효일
+                    min-width: 160px;
+                    max-width: 160px;
+                }
+                &:nth-of-type(8) {
+                    min-width: 110px;
+                    max-width: 110px;
+                }
+                &:nth-of-type(9) {
+                    min-width: 170px;
+                    max-width: 170px;
+                }
+            }
+        }
+        &.type4 {
+            .cell {
+                .bar {
+                    text-align: center;
+                }
+                &:nth-of-type(1) {
+                    min-width: 185px;
+                    max-width: 185px;
+                }
+                &:nth-of-type(2) {
+                    min-width: 150px;
+                    max-width: 150px;
+                }
+                &:nth-of-type(3) {
+                    min-width: 164px;
+                    max-width: 164px;
+                }
+                &:nth-of-type(4) {
+                    min-width: 150px;
+                    max-width: 150px;
+                }
+                &:nth-of-type(5) {
+                    min-width: 150px;
+                    max-width: 150px;
+                }
+                &:nth-of-type(6) {
+                    min-width: 150px;
+                    max-width: 150px;
+                }
+                &:nth-of-type(7) {
+                    // min-width: 473px;
+                    // max-width: 473px;
+                }
+            }
+        }
+        &.type5 {
+            .cell {
+                .bar {
+                    text-align: center;
+                }
+                &:nth-of-type(1) {
+                    min-width: 45px;
+                    max-width: 45px;
+                }
+                &:nth-of-type(2) {
+                    // min-width: ;
+                    // max-width: ;
+                }
+                &:nth-of-type(3) {
+                    min-width: 240px;
+                    max-width: 240px;
+                }
+                &:nth-of-type(4) {
+                    min-width: 240px;
+                    max-width: 240px;
+                }
+                &:nth-of-type(5) {
+                    min-width: 508px;
+                    max-width: 508px;
+                }
+            }
+            
+        }
         .head {
             .row {
                 padding: 0px 20px;
@@ -219,10 +326,13 @@ td.point, th.point {
             > * {
                 flex: 1;
             }
+            .k-button.hidden {
+                margin-left: 20px;
+            }
         }
         .body {
             .row {
-                padding: 10px 20px;
+                padding: 10px 10px;
                 background-color: $gray-ef;
             }
        

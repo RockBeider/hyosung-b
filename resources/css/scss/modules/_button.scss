@@ -296,6 +296,16 @@
                     border-left: 1px solid $accent;
                 }
             }
+            &.k-state-disabled {
+                background-color: $gray-f5;
+                border: 1px solid $gray-a;
+                border-right: 0;
+                color: $gray-a;
+                cursor: default;
+                + .k-button {
+                    border-left: 1px solid $gray-a;
+                }
+            }
             &:first-child {
                 border-radius: 3px 0 0 3px;
             }

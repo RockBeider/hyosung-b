@@ -889,6 +889,10 @@
 		border: 1px solid $gray-c;
 		border-radius: 3px;
 		overflow: hidden;
+		&.k-state-disabled {
+			background-color: #f5f5f5;
+    		color: #aaa;
+		}
 		.k-input {
 			min-width: 0;
 			padding: 0 0 0 2px;
