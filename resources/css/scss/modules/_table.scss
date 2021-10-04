@@ -1,72 +1,67 @@
-
-
-
-
 .table-group + .table-group {
-    margin-top: 30px;
+	margin-top: 30px;
 }
 .table-group {
-    &.h-sm {
-        max-height: 184px;
-        > * {
-            overflow: auto;
-        }
-    }
-    display: flex;
-    flex-direction: column;
-    &.half {
-        flex-direction: row;
-        margin: 0 -10px;
-        > * {
-            width: calc(50% - 20px);
-            flex: 0 0 calc(50% - 20px);
-            margin: 0 10px;
-        }
-        .table-set {
-            display: flex;
-            flex-direction: column;
-        }
-        .table-box {
-            height: 100%;
-        }
-       
-    }
-    &.sm {
-        flex-direction: row;
-        margin: 12px -10px 0 -10px;
+	&.h-sm {
+		max-height: 184px;
+		> * {
+			overflow: auto;
+		}
+	}
+	display: flex;
+	flex-direction: column;
+	&.half {
+		flex-direction: row;
+		margin: 0 -10px;
+		> * {
+			width: calc(50% - 20px);
+			flex: 0 0 calc(50% - 20px);
+			margin: 0 10px;
+		}
+		.table-set {
+			display: flex;
+			flex-direction: column;
+		}
+		.table-box {
+			height: 100%;
+		}
+	}
+	&.sm {
+		flex-direction: row;
+		margin: 12px -10px 0 -10px;
 		align-items: stretch;
 		> :first-child {
-            width: 298px;
+			width: 298px;
 			flex: 0 0 298px;
 		}
-        > * {
-            margin: 0 10px;
-        }
+		> * {
+			margin: 0 10px;
+		}
 	}
-    &.md {
-        flex-direction: row;
+	&.md {
+		flex-direction: row;
 		margin: 0 -10px;
 		align-items: stretch;
 		> :first-child {
-            width: 380px;
+			width: 380px;
 			flex: 0 0 380px;
 		}
-        > * {
-            margin: 0 10px;
-        }
+		> * {
+			margin: 0 10px;
+		}
 	}
-    .search-control {
-        .form-group:only-child {
-            width: 100%;
-        }
-    }
+	.search-control {
+		.form-group:only-child {
+			width: 100%;
+		}
+	}
 }
 .table-set {
-    flex: 1;
-    // margin-top: 12px;
-    .table-content.grid {
-        height: 100%;
-    }
+	flex: 1;
+	// margin-top: 12px;
+	.table-content.grid {
+		height: 100%;
+	}
 }
 .text-center th,
 .text-center td {
@@ -79,402 +74,415 @@
 	}
 }
 
-
 .table-guide {
-    .list {
-        margin-top: 8px;
-        color: $gray-7;
-        font-size: 13px;
-        line-height: 22px;
-        letter-spacing: -0.65px;
-    }
+	.list {
+		margin-top: 8px;
+		color: $gray-7;
+		font-size: 13px;
+		line-height: 22px;
+		letter-spacing: -0.65px;
+	}
 }
 /*
 * ------------------------------
-* 
+*
 * ------------------------------
 */
 table {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    table-layout: fixed;
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
 }
-td .form-box, th .form-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+td .form-box,
+th .form-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 td.none {
-    background-color: $gray-f5 !important;
+	background-color: $gray-f5 !important;
 }
-td.point, th.point {
-    color: $main !important;
-    font-weight: 500 !important;
+td.point,
+th.point {
+	color: $main !important;
+	font-weight: 500 !important;
 }
 .table {
-    width: 100%; 
-    overflow: hidden;
-    .table {
-        border-top: 1px solid $gray-e4;
-    }
-    &.table-bg-box {
-        display: flex;
-        flex-direction: column;
-        border: none;
-        .k-button-group.period .k-button {
-            padding: 0 16px;
-        }
-        &.type1 {
-            .cell {
-                &:nth-of-type(1){
-                    min-width: 36px;
-                    max-width: 36px;
-                    justify-content: center;
-                }
-                &:nth-of-type(2) {
-                    
-                }
-                &:nth-of-type(3) {
-                    min-width: 448px;
-                    max-width: 448px;
-                }
-                &:nth-of-type(4) {
-                    min-width: 230px;
-                    max-width: 230px;
-                }
-                &:nth-of-type(5) {
-                    min-width: 200px;
-                    max-width: 200px;
-                }
-                &:nth-of-type(6) {
-                    min-width: 148px;
-                    max-width: 148px;
-                }
-            }
-        }
-        &.type2 {
-            .cell {
-                .bar {
-                    text-align: center;
-                }
-                &:nth-of-type(1) {
-                    // min-width: ;
-                    // max-width: ;
-                }
-                &:nth-of-type(2) {
-                    min-width: 190px;
-                    max-width: 190px;
-                }
-                &:nth-of-type(3) {
-                    min-width: 200px;
-                    max-width: 200px;
-                }
-                &:nth-of-type(4) {
-                    min-width: 160px;
-                    max-width: 160px;
-                }
-                &:nth-of-type(5) {
-                    min-width: 10px;
-                    max-width: 10px;
-                }
-                &:nth-of-type(6) {
-                    min-width: 160px;
-                    max-width: 160px;
-                }
-                &:nth-of-type(7) {
-                    min-width: 200px;
-                    max-width: 200px;
-                }
-                &:nth-of-type(8) {
-                    min-width: 170px;
-                    max-width: 170px;
-                }
-            }
-        }
-        &.type3 {
-            .cell {
-                .bar {
-                    text-align: center;
-                }
-                &:nth-of-type(1) {
-                    min-width: 159px;
-                    max-width: 159px;
-                }
-                &:nth-of-type(2) { //담보시작일
-                    min-width: 159px;
-                    max-width: 159px;
-                }
-                &:nth-of-type(3) { //담보만기일
-                    min-width: 159px;
-                    max-width: 159px;
-                }
-                &:nth-of-type(4) { //담보금액
-                    min-width: 159px;
-                    max-width: 159px;
-                }
-                &:nth-of-type(5) { //담보한도금액
-                    min-width: 159px;
-                    max-width: 159px;
-                }
-                &:nth-of-type(6) {//담보반환일
-                    min-width: 159px;
-                    max-width: 159px;
-                }
-                &:nth-of-type(7) { //담보유효일
-                    min-width: 159px;
-                    max-width: 159px;
-                }
-                &:nth-of-type(8) {
-                    min-width: 110px;
-                    max-width: 110px;
-                }
-                &:nth-of-type(9) {
-                    min-width: 196px;
-                    max-width: 196px;
-                }
-            }
-        }
-        &.type4 {
-            .cell {
-                .bar {
-                    text-align: center;
-                }
-                &:nth-of-type(1) {
-                    min-width: 185px;
-                    max-width: 185px;
-                }
-                &:nth-of-type(2) {
-                    min-width: 150px;
-                    max-width: 150px;
-                }
-                &:nth-of-type(3) {
-                    min-width: 164px;
-                    max-width: 164px;
-                }
-                &:nth-of-type(4) {
-                    min-width: 150px;
-                    max-width: 150px;
-                }
-                &:nth-of-type(5) {
-                    min-width: 150px;
-                    max-width: 150px;
-                }
-                &:nth-of-type(6) {
-                    min-width: 150px;
-                    max-width: 150px;
-                }
-                &:nth-of-type(7) {
-                    // min-width: 473px;
-                    // max-width: 473px;
-                }
-            }
-        }
-        &.type5 {
-            .cell {
-                .bar {
-                    text-align: center;
-                }
-                &:nth-of-type(1) {
-                    min-width: 45px;
-                    max-width: 45px;
-                }
-                &:nth-of-type(2) {
-                    // min-width: ;
-                    // max-width: ;
-                }
-                &:nth-of-type(3) {
-                    min-width: 240px;
-                    max-width: 240px;
-                }
-                &:nth-of-type(4) {
-                    min-width: 240px;
-                    max-width: 240px;
-                }
-                &:nth-of-type(5) {
-                    min-width: 508px;
-                    max-width: 508px;
-                }
-            }
-            
-        }
-        .head {
-            .row {
-                padding: 0px 20px;
-            }
-            .cell {
-                @include font-size-sm;
-                height: 26px;
-                padding: 0px 10px;
-                padding-bottom: 6px;
-                background: $white;
-                justify-content: center;
-                color: $gray-5;
-                font-weight: 500;
-            }
-        }
-        .row {
-            display: flex;
-            + .row {
-                margin-top: 10px;
-            }
-        }
-        .cell {
-            @include font-size-sm;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            > * {
-                flex: 1;
-            }
-            .k-button.hidden {
-                margin-left: 20px;
-            }
-        }
-        .body {
-            .row {
-                padding: 10px 10px;
-                background-color: $gray-ef;
-            }
-       
-            .td {
-                border: none;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-        }
-    }
-    &.has-border {
-        td + th {
-            border-left: 1px solid $gray-e4;
-        }
-    }
-    table {
-        width: calc(100% + 2px);
-        margin: 0 -1px;
-    }
-    thead th {
-        .h-checkbox {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    tbody {
-        th, td { text-align: left; }
-    }
-    th , td {
-        @include font-size-sm;
-       
-    }
-    th {
-        border: 1px solid $gray-e4;
-        border-left: none; 
-        border-right: none;
-        // border-right: none;
-        // color: $gray-2;
-        // @include font-size-sm;
-        + th {
-            border-left: 1px solid $gray-e4;
-        }
-    }
-    td {
-        border: 1px solid $gray-e4;
-        border-left: none; 
-        border-right: none;
-        // + th {
-        //     border-left: 1px solid $gray-e4;
-        // }
-    }
-    td + td {
-        border-left: 1px solid $gray-e4;
-        // border: 1px solid $gray-e4;
-        // color: $gray-2;
-        // @include font-size-sm;
-    }
-    // th + td {
-    //     border-left: none;
-    // }
-    td {
-        .form-group.col { 
-            padding: 0;
-            background: none;
-            align-items: flex-start;
-        }
-    }
-    th {
-        padding: 0 3px;
-        white-space: nowrap;
-    }
-    &.border-none {
-        td {
-            border-left: none;
-            border-right: none;
-        }
-    }
-    tfoot {
-        background-color: $wait;
-        td {
-            font-weight: 500;
-        }
-    }
+	width: 100%;
+	overflow: hidden;
+	.table {
+		border-top: 1px solid $gray-e4;
+	}
+	&.table-bg-box {
+		display: flex;
+		flex-direction: column;
+		border: none;
+		.k-button-group.period .k-button {
+			padding: 0 16px;
+		}
+		&.type1 {
+			.cell {
+				&:nth-of-type(1) {
+					min-width: 36px;
+					max-width: 36px;
+					justify-content: center;
+				}
+				&:nth-of-type(2) {
+				}
+				&:nth-of-type(3) {
+					min-width: 448px;
+					max-width: 448px;
+				}
+				&:nth-of-type(4) {
+					min-width: 230px;
+					max-width: 230px;
+				}
+				&:nth-of-type(5) {
+					min-width: 200px;
+					max-width: 200px;
+				}
+				&:nth-of-type(6) {
+					min-width: 148px;
+					max-width: 148px;
+				}
+			}
+		}
+		&.type2 {
+			.cell {
+				.bar {
+					text-align: center;
+				}
+				&:nth-of-type(1) {
+					// min-width: ;
+					// max-width: ;
+				}
+				&:nth-of-type(2) {
+					min-width: 190px;
+					max-width: 190px;
+				}
+				&:nth-of-type(3) {
+					min-width: 200px;
+					max-width: 200px;
+				}
+				&:nth-of-type(4) {
+					min-width: 160px;
+					max-width: 160px;
+				}
+				&:nth-of-type(5) {
+					min-width: 10px;
+					max-width: 10px;
+				}
+				&:nth-of-type(6) {
+					min-width: 160px;
+					max-width: 160px;
+				}
+				&:nth-of-type(7) {
+					min-width: 200px;
+					max-width: 200px;
+				}
+				&:nth-of-type(8) {
+					min-width: 170px;
+					max-width: 170px;
+				}
+			}
+		}
+		&.type3 {
+			.cell {
+				.bar {
+					text-align: center;
+				}
+				&:nth-of-type(1) {
+					min-width: 159px;
+					max-width: 159px;
+				}
+				&:nth-of-type(2) {
+					//담보시작일
+					min-width: 159px;
+					max-width: 159px;
+				}
+				&:nth-of-type(3) {
+					//담보만기일
+					min-width: 159px;
+					max-width: 159px;
+				}
+				&:nth-of-type(4) {
+					//담보금액
+					min-width: 159px;
+					max-width: 159px;
+				}
+				&:nth-of-type(5) {
+					//담보한도금액
+					min-width: 159px;
+					max-width: 159px;
+				}
+				&:nth-of-type(6) {
+					//담보반환일
+					min-width: 159px;
+					max-width: 159px;
+				}
+				&:nth-of-type(7) {
+					//담보유효일
+					min-width: 159px;
+					max-width: 159px;
+				}
+				&:nth-of-type(8) {
+					min-width: 110px;
+					max-width: 110px;
+				}
+				&:nth-of-type(9) {
+					min-width: 196px;
+					max-width: 196px;
+				}
+			}
+		}
+		&.type4 {
+			.cell {
+				.bar {
+					text-align: center;
+				}
+				&:nth-of-type(1) {
+					min-width: 185px;
+					max-width: 185px;
+				}
+				&:nth-of-type(2) {
+					min-width: 150px;
+					max-width: 150px;
+				}
+				&:nth-of-type(3) {
+					min-width: 164px;
+					max-width: 164px;
+				}
+				&:nth-of-type(4) {
+					min-width: 150px;
+					max-width: 150px;
+				}
+				&:nth-of-type(5) {
+					min-width: 150px;
+					max-width: 150px;
+				}
+				&:nth-of-type(6) {
+					min-width: 150px;
+					max-width: 150px;
+				}
+				&:nth-of-type(7) {
+					// min-width: 473px;
+					// max-width: 473px;
+				}
+			}
+		}
+		&.type5 {
+			.cell {
+				.bar {
+					text-align: center;
+				}
+				&:nth-of-type(1) {
+					min-width: 45px;
+					max-width: 45px;
+				}
+				&:nth-of-type(2) {
+					// min-width: ;
+					// max-width: ;
+				}
+				&:nth-of-type(3) {
+					min-width: 240px;
+					max-width: 240px;
+				}
+				&:nth-of-type(4) {
+					min-width: 240px;
+					max-width: 240px;
+				}
+				&:nth-of-type(5) {
+					min-width: 508px;
+					max-width: 508px;
+				}
+			}
+		}
+		.head {
+			.row {
+				padding: 0px 20px;
+			}
+			.cell {
+				@include font-size-sm;
+				height: 26px;
+				padding: 0px 10px;
+				padding-bottom: 6px;
+				background: $white;
+				justify-content: center;
+				color: $gray-5;
+				font-weight: 500;
+			}
+		}
+		.row {
+			display: flex;
+			+ .row {
+				margin-top: 10px;
+			}
+		}
+		.cell {
+			@include font-size-sm;
+			flex: 1;
+			display: flex;
+			align-items: center;
+			padding: 0 10px;
+			> * {
+				flex: 1;
+			}
+			.k-button.hidden {
+				margin-left: 20px;
+			}
+		}
+		.body {
+			.row {
+				padding: 10px 10px;
+				background-color: $gray-ef;
+			}
+
+			.td {
+				border: none;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+	}
+	&.has-border {
+		td + th {
+			border-left: 1px solid $gray-e4;
+		}
+	}
+	table {
+		width: calc(100% + 2px);
+		margin: 0 -1px;
+	}
+	thead th {
+		.h-checkbox {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	tbody {
+		th,
+		td {
+			text-align: left;
+		}
+	}
+	th,
+	td {
+		@include font-size-sm;
+	}
+	th {
+		border: 1px solid $gray-e4;
+		border-left: none;
+		border-right: none;
+		// border-right: none;
+		// color: $gray-2;
+		// @include font-size-sm;
+		+ th {
+			border-left: 1px solid $gray-e4;
+		}
+	}
+	td {
+		border: 1px solid $gray-e4;
+		border-left: none;
+		border-right: none;
+		// + th {
+		//     border-left: 1px solid $gray-e4;
+		// }
+	}
+	td + td {
+		border-left: 1px solid $gray-e4;
+		// border: 1px solid $gray-e4;
+		// color: $gray-2;
+		// @include font-size-sm;
+	}
+	// th + td {
+	//     border-left: none;
+	// }
+	td {
+		.form-group.col {
+			padding: 0;
+			background: none;
+			align-items: flex-start;
+		}
+	}
+	th {
+		padding: 0 3px;
+		white-space: nowrap;
+	}
+	&.border-none {
+		td {
+			border-left: none;
+			border-right: none;
+		}
+	}
+	tfoot {
+		background-color: $wait;
+		td {
+			font-weight: 500;
+		}
+	}
+
+	&.gray-table {
+		background-color: #efefef;
+		table {
+			th, td {
+				border: 0;
+				background-color: transparent;
+			}
+		}
+	}
 }
 .inner-column {
-    padding: 0 !important;
+	padding: 0 !important;
 }
 .inner-column .table {
-    border-top: 0;
-    tbody tr:last-child th, 
-    tbody tr:last-child td {
-        border-bottom: 0;
-    } 
+	border-top: 0;
+	tbody tr:last-child th,
+	tbody tr:last-child td {
+		border-bottom: 0;
+	}
 }
 
-
-
-
 .table-box {
-    // > [class^="table"]+ [class^="table"] {
-    //     margin-top: 10px;
-    // }
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background: $white;
-    border: 1px solid $gray-e4;
-   &.has-bar {
-       padding: 20px;
-       border: 1px solid $gray-c;
-       border-left: 1px solid $gray-3;
-       .sub-title {
-           color: $layer-blue;
-           
-       }
-   }
-   .btn-box.bottom:only-child {
-       margin-top: -10px;
-   }
-   + .table-box {
-       border-top: 0;
-   }
-   &.justify-content-between {
-       flex-direction: row;
-   }
+	// > [class^="table"]+ [class^="table"] {
+	//     margin-top: 10px;
+	// }
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background: $white;
+	border: 1px solid $gray-e4;
+	&.has-bar {
+		padding: 20px;
+		border: 1px solid $gray-c;
+		border-left: 1px solid $gray-3;
+		.sub-title {
+			color: $layer-blue;
+		}
+	}
+	.btn-box.bottom:only-child {
+		margin-top: -10px;
+	}
+	+ .table-box {
+		border-top: 0;
+	}
+	&.justify-content-between {
+		flex-direction: row;
+	}
 }
 
 .table-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    .btn-box.bottom {
-        margin-top: 10px;
-    }
-    .mark {
-        @include font-size-lg;
-        margin-top: 10px;
-        font-weight: 500;
-    }
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	.btn-box.bottom {
+		margin-top: 10px;
+	}
+	.mark {
+		@include font-size-lg;
+		margin-top: 10px;
+		font-weight: 500;
+	}
 }
-
