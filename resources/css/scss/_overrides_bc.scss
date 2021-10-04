@@ -298,11 +298,14 @@
 		border-bottom: 2px solid $bc-blue;
 		color: $bc-blue;
 	}
+	.k-link {
+		white-space: nowrap;
+	}
 }
 
 .tab-control.border {
 	.k-tabstrip-items {
-		border-bottom: 1px solid $gray-e4;
+		border-bottom: 1px solid $gray-d;
 		.k-item.k-state-active, 
 		.k-item.k-state-selected {
 			border-top: 1px solid $bc-blue;

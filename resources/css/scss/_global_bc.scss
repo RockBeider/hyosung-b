@@ -19,6 +19,7 @@
 .notice-title {
 	color: $bc-blue;
 }
+
 /* 
 * ------------------------------
 * badge
@@ -37,6 +38,11 @@
     }
     &.gray {
         background-color: $gray-f5;
+    }
+    &.red {
+        background-color: $badge-pink-bg;
+        border: 1px solid $badge-pink-border;
+        color: $error;
     }
 }
 

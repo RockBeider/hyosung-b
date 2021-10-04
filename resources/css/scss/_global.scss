@@ -195,6 +195,9 @@ button {
 .mb-10 {
 	margin-bottom: 10px !important;
 }
+.mb-30 {
+	margin-bottom: 30px !important;
+}
 .ml-20 {
 	margin-left: 20px !important;
 }
@@ -822,6 +825,20 @@ td .divide {
 		margin-top: 0;
 		padding-left: 8px;
 		background: $gray-f5;
+	}
+	.has-new {
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: -5px;
+			top: 0;
+			width: 4px;
+			height: 4px;
+			background-color: $error;
+			border-radius: 50%;
+		}
 	}
 }
 

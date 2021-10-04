@@ -36,8 +36,11 @@ table {
 }
 .table-set {
     // margin-top: 12px;
+    .table-content.grid {
+        flex: 1;
+        height: auto;
+    }
 }
-
 
 .text-center th,
 .text-center td {

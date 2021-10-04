@@ -143,9 +143,11 @@
         .desc { 
             padding: 0 20px; 
             color: $gray-3;
+            font-weight: 400;
         }
         .info {
             color: $gray-6;
+            font-weight: 400;
         }
         &.k-state-active { //blue bg
             border: 1px solid $layer-blue;
