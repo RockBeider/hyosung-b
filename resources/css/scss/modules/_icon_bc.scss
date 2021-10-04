@@ -43,6 +43,9 @@
             background-image: url($imgPathIcon+'/icon_search_disabled.svg');
         }
     }
+    &search-blue { //공통
+        @include iconSvg($width: 14px !important, $height: 14px !important, $name: 'icon_search_blue', $size: contain );
+    }
     &calendar {
         @include iconSvg($width: 14px, $height: 14px, $name: 'icon_calendar', $size: contain );
     }

@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-    <path fill="rgba(255,255,255,0)" d="M0 0H15V15H0z"/>
-    <path fill="#999" d="M.944 0L6.5 5.133 12.056.015 13 .96 6.5 7.054 0 .96z" transform="translate(14 11.054) rotate(180)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13">
+    <path data-name="Rectangle 1219" style="fill:transparent" d="M0 0h13v13H0z"/>
+    <g data-name="icon_arrow_up" style="isolation:isolate">
+        <path data-name="Path 362" d="m434.473 361.389 4.7 4.405 4.7-4.392.8.811-5.5 5.23-5.5-5.23z" transform="rotate(180 222.838 185.221)" style="fill:#999"/>
+    </g>
 </svg>

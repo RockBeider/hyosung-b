@@ -17,94 +17,98 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-                <!-- Contents Header -->
-                <div class="contents-header">
-                    <div class="title-box lg">
-                        <div class="left-group">
-                            <h2 class="main-title">어플리케이션 정보</h2>
-                            <span class="h-ico lg tip ml-8"
-                                title="툴팁 메세지 입니다."
-                                data-role="tooltip"
-                                data-auto-hide="true"
-                                data-position="left bottom"
-                            >팁</span>
-                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
-                        </div>
-                        <div class="right-group">
-                            <nav id="breadcrumb"
-                                data-role="breadcrumb"
-                                data-editable=false,
-                                data-navigational=true,
-                                data-items='[
-                            { type:"rootitem", href: "", text: "기준정보", showText: true },
-                            { type:"item", href: "", text: "어플리케이션 정보", showText: true}
-                         ]'/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contents Body -->
-                <div class="contents-body">
-                    <div class="table-group">
-                        <div class="search-control">
-                            <div class="form-group">
-                                <span class="label">검색항목</span>
-                                <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                    <div class="input-set search lg">
-                                        <i class="h-ico search"></i>
-                                        <input type="text" class="h-input" placeholder="입력해주세요">
+                <div id="mainTab" class="tab-control main">
+                    <div class="contents">
+                        <div class="scroll">
+                            <div class="contents-header">
+                                <div class="title-box lg">
+                                    <div class="left-group">
+                                        <h2 class="main-title">어플리케이션 정보</h2>
+                                        <span class="h-ico lg tip ml-8"
+                                            title="툴팁 메세지 입니다."
+                                            data-role="tooltip"
+                                            data-auto-hide="true"
+                                            data-position="left bottom"
+                                        >팁</span>
+                                        <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                                    </div>
+                                    <div class="right-group">
+                                        <nav id="breadcrumb"
+                                            data-role="breadcrumb"
+                                            data-editable=false,
+                                            data-navigational=true,
+                                            data-items='[
+                                        { type:"rootitem", href: "", text: "기준정보", showText: true },
+                                        { type:"item", href: "", text: "어플리케이션 정보", showText: true}
+                                    ]'/>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
-                        </div>
-                        <div class="table-set">
-                            <script type="text/x-kendo-template" class="toolbarTemplate">
-                                <div class="title-box sm">
-                                    <div class="left-group">
-                                        <span class="amount-set">
-                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                            <span class="amount">26</span><span class="unit">건</span>
-                                        </span>
+
+                            <!-- Contents Body -->
+                            <div class="contents-body">
+                                <div class="table-group">
+                                    <div class="search-control">
+                                        <div class="form-group">
+                                            <span class="label">검색항목</span>
+                                            <div class="form-set">
+                                                <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                                    <option value="1">온라인</option>
+                                                    <option value="2">오프라인</option>
+                                                </select>
+                                                <div class="input-set search lg">
+                                                    <i class="h-ico search"></i>
+                                                    <input type="text" class="h-input" placeholder="입력해주세요">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                                     </div>
-                                    <div class="right-group">
-                                        <div class="btn-box">
-                                            <button role="button" class="k-button k-grid-add">등록</button>
+                                    <div class="table-set">
+                                        <script type="text/x-kendo-template" class="toolbarTemplate">
+                                            <div class="title-box sm">
+                                                <div class="left-group">
+                                                    <span class="amount-set">
+                                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                        <span class="amount">26</span><span class="unit">건</span>
+                                                    </span>
+                                                </div>
+                                                <div class="right-group">
+                                                    <div class="btn-box">
+                                                        <button role="button" class="k-button k-grid-add">등록</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <script type="text/x-kendo-template" class="checkboxTemplate">
+                                            <div class="h-checkbox no-label">
+                                                <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                                <label for="checkbox-nolabel"></label> 
+                                            </div>
+                                        </script>
+                                        <div class="table-content grid has-bottom">
+                                            <div data-role="grid" 
+                                                data-sortable="true" 
+                                                data-editable="true" 
+                                                data-columns='[
+                                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                                { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                { "field": ""  }
+                                                ]' 
+                                                data-bind="source: gridSource"
+                                                data-toolbar="#=toolbarTemplate()#">
+                                            </div>
+                                            <div class="table-bottom">
+                                                <button data-role="button" class="gray-border">삭제</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </script>
-                            <script type="text/x-kendo-template" class="checkboxTemplate">
-                                <div class="h-checkbox no-label">
-                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                    <label for="checkbox-nolabel"></label> 
-                                </div>
-                            </script>
-                            <div class="table-content grid has-bottom">
-                                <div data-role="grid" 
-                                    data-sortable="true" 
-                                    data-editable="true" 
-                                    data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
-                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "field": ""  }
-                                    ]' 
-                                    data-bind="source: gridSource"
-                                    data-toolbar="#=toolbarTemplate()#">
-                                </div>
-                                <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </main>
         </div>
 

@@ -69,10 +69,12 @@ $(document).on('click', '#sidebarFold', function() {
 		console.log('닫힌상태')
 		$(".sidebar-wrap .sidebar-2depth").slideUp(200);
 		$('.sidebar-wrap').removeClass('fold');
+		$('header .logo').css({'display': 'block'});
 	}else {
 		console.log('열린상태')
 		$(".sidebar-wrap .sidebar-2depth").slideUp(200);
 		$('.sidebar-wrap').addClass('fold');
+		$('header .logo').css({'display': 'none'});
 	}
 })
 $(document).on('click', '.sidebar-wrap.fold .sidebar-head, .sidebar-wrap.fold .sidebar-1depth', function() {

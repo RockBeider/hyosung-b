@@ -17,113 +17,117 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-                <!-- Contents Header -->
-                <div class="contents-header">
-                    <div class="title-box lg">
-                        <div class="left-group">
-                            <h2 class="main-title">은행수수료</h2>
-                            <span class="h-ico lg tip ml-8"
-                                title="툴팁 메세지 입니다."
-                                data-role="tooltip"
-                                data-auto-hide="true"
-                                data-position="left bottom"
-                            >팁</span>
-                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
-                        </div>
-                        <div class="right-group">
-                            <nav id="breadcrumb"
-                                data-role="breadcrumb"
-                                data-editable=false,
-                                data-navigational=true,
-                                data-items='[
-                            { type:"rootitem", href: "", text: "배분", showText: true },
-                            { type:"item", href: "", text: "은행수수료", showText: true}
-                         ]'/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contents Body -->
-                <div class="contents-body">
-                    <div class="table-group">
-                        <div class="search-control">
-                            <div class="form-group">
-                                <span class="label">검색항목</span>
-                                <div class="form-set">
-                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                    <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
-                                        <option value="1">온라인</option>
-                                        <option value="2">오프라인</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <span class="label">거래일</span>
-                                <div class="form-set">
-                                    <input data-role="datepicker" 
-                                        data-format="yyyy/MM/dd"
-                                        placeholder="yyyymmdd" 
-                                        data-culture="ko-KR"
-                                        data-footer="false"
-                                        class="datepicker sm" /> 
-                                    <span class="bar">~</span>
-                                    <input data-role="datepicker" 
-                                        data-format="yyyy/MM/dd"
-                                        placeholder="yyyymmdd" 
-                                        data-culture="ko-KR"
-                                        data-footer="false"
-                                        class="datepicker sm" /> 
-                                </div>
-                                
-                                
-                            </div>
-                            
-                            <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
-                        </div>
-                        <div class="table-set">
-                            <script type="text/x-kendo-template" class="toolbarTemplate">
-                                <div class="title-box sm">
+                <div id="mainTab" class="tab-control main">
+                    <div class="contents">
+                        <div class="scroll">
+                            <div class="contents-header">
+                                <div class="title-box lg">
                                     <div class="left-group">
-                                        <span class="amount-set">
-                                            <span class="amount current">1</span><span class="unit">건</span>
-                                        </span>
+                                        <h2 class="main-title">은행수수료</h2>
+                                        <span class="h-ico lg tip ml-8"
+                                            title="툴팁 메세지 입니다."
+                                            data-role="tooltip"
+                                            data-auto-hide="true"
+                                            data-position="left bottom"
+                                        >팁</span>
+                                        <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="form-set">
-                                            <button role="button" class="k-button gray-border"><span>수수료이력</span></button>
-                                            <button role="button" class="k-button gray-border"><span>명세서</span></button>
-                                        </div>
-                                        <div class="form-set">
-                                            <button role="button" class="k-button green"><span>엑셀</span></button>
-                                        </div>
+                                    <div class="right-group">
+                                        <nav id="breadcrumb"
+                                            data-role="breadcrumb"
+                                            data-editable=false,
+                                            data-navigational=true,
+                                            data-items='[
+                                        { type:"rootitem", href: "", text: "배분", showText: true },
+                                        { type:"item", href: "", text: "은행수수료", showText: true}
+                                    ]'/>
                                     </div>
                                 </div>
-                            </script>
-                            <script type="text/x-kendo-template" class="checkboxTemplate">
-                                <div class="h-checkbox no-label">
-                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                    <label for="checkbox-nolabel"></label> 
-                                </div>
-                            </script>
-                            <div class="table-content grid">
-                                <div data-role="grid" 
-                                    data-sortable="true" 
-                                    data-editable="true" 
-                                    data-columns='[
-                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "field": ""  }
-                                    ]' 
-                                    data-bind="source: gridSource"
-                                    data-toolbar="#=toolbarTemplate()#">
+                            </div>
+
+                            <!-- Contents Body -->
+                            <div class="contents-body">
+                                <div class="table-group">
+                                    <div class="search-control">
+                                        <div class="form-group">
+                                            <span class="label">검색항목</span>
+                                            <div class="form-set">
+                                                <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                                    <option value="1">온라인</option>
+                                                    <option value="2">오프라인</option>
+                                                </select>
+                                                <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
+                                                    <option value="1">온라인</option>
+                                                    <option value="2">오프라인</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="label">거래일</span>
+                                            <div class="form-set">
+                                                <input data-role="datepicker" 
+                                                    data-format="yyyy/MM/dd"
+                                                    placeholder="yyyymmdd" 
+                                                    data-culture="ko-KR"
+                                                    data-footer="false"
+                                                    class="datepicker sm" /> 
+                                                <span class="bar">~</span>
+                                                <input data-role="datepicker" 
+                                                    data-format="yyyy/MM/dd"
+                                                    placeholder="yyyymmdd" 
+                                                    data-culture="ko-KR"
+                                                    data-footer="false"
+                                                    class="datepicker sm" /> 
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                        <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+                                    </div>
+                                    <div class="table-set">
+                                        <script type="text/x-kendo-template" class="toolbarTemplate">
+                                            <div class="title-box sm">
+                                                <div class="left-group">
+                                                    <span class="amount-set">
+                                                        <span class="amount current">1</span><span class="unit">건</span>
+                                                    </span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-set">
+                                                        <button role="button" class="k-button gray-border"><span>수수료이력</span></button>
+                                                        <button role="button" class="k-button gray-border"><span>명세서</span></button>
+                                                    </div>
+                                                    <div class="form-set">
+                                                        <button role="button" class="k-button green"><span>엑셀</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <script type="text/x-kendo-template" class="checkboxTemplate">
+                                            <div class="h-checkbox no-label">
+                                                <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                                <label for="checkbox-nolabel"></label> 
+                                            </div>
+                                        </script>
+                                        <div class="table-content grid">
+                                            <div data-role="grid" 
+                                                data-sortable="true" 
+                                                data-editable="true" 
+                                                data-columns='[
+                                                { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                { "field": ""  }
+                                                ]' 
+                                                data-bind="source: gridSource"
+                                                data-toolbar="#=toolbarTemplate()#">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </main>
         </div>
 

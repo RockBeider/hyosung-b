@@ -30,6 +30,7 @@
     .search-control {
         margin: 0;
         .label{
+            height: 26px;
             margin-right: 6px;
         }
         .form-group {
@@ -57,6 +58,7 @@
     }
      .label {
         @include bc-font-size-xsm;
+        height: 26px;
     }
 }
 

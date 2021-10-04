@@ -17,154 +17,158 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-                <!-- Contents Header -->
-                <div class="contents-header">
-                    <div class="title-box lg">
-                        <div class="left-group">
-                            <h2 class="main-title">은행후취수수료관리</h2>
-                            <span class="h-ico lg tip ml-8"
-                                title="툴팁 메세지 입니다."
-                                data-role="tooltip"
-                                data-auto-hide="true"
-                                data-position="left bottom"
-                            >팁</span>
-                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
-                        </div>
-                        <div class="right-group">
-                            <nav id="breadcrumb"
-                                data-role="breadcrumb"
-                                data-editable=false,
-                                data-navigational=true,
-                                data-items='[
-                            { type:"rootitem", href: "", text: "배분", showText: true },
-                            { type:"item", href: "", text: "은행후취수수료관리", showText: true}
-                         ]'/>
+                <div id="mainTab" class="tab-control main">
+                    <div class="contents">
+                        <div class="scroll">
+                            <div class="contents-header">
+                                <div class="title-box lg">
+                                    <div class="left-group">
+                                        <h2 class="main-title">은행후취수수료관리</h2>
+                                        <span class="h-ico lg tip ml-8"
+                                            title="툴팁 메세지 입니다."
+                                            data-role="tooltip"
+                                            data-auto-hide="true"
+                                            data-position="left bottom"
+                                        >팁</span>
+                                        <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                                    </div>
+                                    <div class="right-group">
+                                        <nav id="breadcrumb"
+                                            data-role="breadcrumb"
+                                            data-editable=false,
+                                            data-navigational=true,
+                                            data-items='[
+                                        { type:"rootitem", href: "", text: "배분", showText: true },
+                                        { type:"item", href: "", text: "은행후취수수료관리", showText: true}
+                                    ]'/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contents Body -->
+                            <div class="contents-body">
+                                <div class="search-control">
+                                    <div class="form-group">
+                                        <span class="label">사용월</span>
+                                        <div class="form-set">
+                                            <input data-role="datepicker" 
+                                                data-format="yyyy/MM/dd"
+                                                placeholder="yyyymmdd" 
+                                                data-culture="ko-KR"
+                                                data-footer="false"
+                                                class="datepicker sm">
+                                            <span class="bar">~</span>
+                                            <input data-role="datepicker" 
+                                                data-format="yyyy/MM/dd"
+                                                placeholder="yyyymmdd" 
+                                                data-culture="ko-KR"
+                                                data-footer="false"
+                                                class="datepicker sm">
+                                        </div>
+                                    </div>
+                                    <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+                                </div>
+                                <div class="table-group">
+                                    <div class="table-set">
+                                        <div class="title-box sm">
+                                            <div class="left-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="form-set">
+                                                <button data-role="button" class="k-button"><span>수정</span></button>
+                                            </div>
+                                        </div>
+                                        <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
+                                        <div class="table-content grid grid-footer1" id="viewModel_grid1">
+                                            <script type="text/x-kendo-template" class="checkboxTemplate1">
+                                                <div class="h-checkbox no-label">
+                                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                                    <label for="checkbox-nolabel"></label> 
+                                                </div>
+                                            </script>
+                                            <div data-role="grid" 
+                                                data-sortable="true" 
+                                                data-editable="true" 
+                                                data-columns='[
+                                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "footerTemplate": "합계", footerAttributes: {"class": "merge"}, "template": "#=checkboxTemplate1()#" },
+                                                { "title": "NO.", "field": "NO", "width": 60, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                { "title": "해당월", "field": "해당월", "width": 100, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                                { "title": "CMS",
+                                                    "columns" : [ {"title": "시스템", "field": "시스템", "width": 120, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} }, 
+                                                            {"title": "출금액", "field": "출금액", "width": 120, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} }]
+                                                }, 
+                                                { "field": "" }]' 
+                                                data-bind="source: gridSource"
+                                                style="height: 320px;">
+                                            </div>
+
+                                            <div class="table-bottom">
+                                                <button data-role="button" class="gray-border">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-set">
+                                        <div class="title-box sm">
+                                            <div class="left-group">
+                                                <span class="amount-set">
+                                                    <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                    <span class="amount">26</span><span class="unit">건</span>
+                                                </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-set">
+                                                    <span class="form-label">전표일</span>
+                                                    <input data-role="datepicker" 
+                                                        data-format="yyyy/MM/dd"
+                                                        placeholder="yyyymmdd" 
+                                                        data-culture="ko-KR"
+                                                        data-footer="false"
+                                                        class="datepicker sm">
+                                                    <button data-role="button" class="k-button blue-border"><span>입력</span></button>
+                                                    <button data-role="button" class="k-button"><span>수정</span></button>
+                                                </div>
+                                                <div class="form-set">
+                                                    <button data-role="button" class="k-button"><span>총금액 연동</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
+                                        <div class="table-content grid" id="viewModel_grid2">
+                                            <script type="text/x-kendo-template" class="checkboxTemplate2">
+                                                <div class="h-checkbox no-label">
+                                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                                    <label for="checkbox-nolabel"></label> 
+                                                </div>
+                                            </script>
+                                            <div data-role="grid" 
+                                                data-sortable="true" 
+                                                data-editable="true" 
+                                                data-columns='[
+                                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "footerTemplate": "합계", footerAttributes: {"class": "merge"}, "template": "#=checkboxTemplate2()#" },
+                                                { "title": "NO.", "field": "NO", "width": 60, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                { "title": "은행명", "field": "은행명", "width": 160, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                                { "title": "서비스명", "field": "서비스명", "width": 140, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                                { "title": "출금계좌", "field": "출금계좌", "width": 140, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
+                                                { "title": "시스템", "field": "시스템", "width": 140, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} },
+                                                { "field": ""  }
+                                                ]' 
+                                                data-bind="source: gridSource"
+                                                style="height: 320px">
+                                            </div>
+                                            <div class="table-bottom">
+                                                <button data-role="button" class="gray-border">삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Contents Body -->
-                <div class="contents-body">
-                    <div class="search-control">
-                        <div class="form-group">
-                            <span class="label">사용월</span>
-                            <div class="form-set">
-                                <input data-role="datepicker" 
-                                    data-format="yyyy/MM/dd"
-                                    placeholder="yyyymmdd" 
-                                    data-culture="ko-KR"
-                                    data-footer="false"
-                                    class="datepicker sm">
-                                <span class="bar">~</span>
-                                <input data-role="datepicker" 
-                                    data-format="yyyy/MM/dd"
-                                    placeholder="yyyymmdd" 
-                                    data-culture="ko-KR"
-                                    data-footer="false"
-                                    class="datepicker sm">
-                            </div>
-                        </div>
-                        <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
-                    </div>
-                    <div class="table-group">
-                        <div class="table-set">
-                            <div class="title-box sm">
-                                <div class="left-group">
-                                    <span class="amount-set">
-                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                        <span class="amount">26</span><span class="unit">건</span>
-                                    </span>
-                                </div>
-                                <div class="form-set">
-                                    <button data-role="button" class="k-button"><span>수정</span></button>
-                                </div>
-                            </div>
-                            <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
-                            <div class="table-content grid grid-footer1" id="viewModel_grid1">
-                                <script type="text/x-kendo-template" class="checkboxTemplate1">
-                                    <div class="h-checkbox no-label">
-                                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                        <label for="checkbox-nolabel"></label> 
-                                    </div>
-                                </script>
-                                <div data-role="grid" 
-                                    data-sortable="true" 
-                                    data-editable="true" 
-                                    data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "footerTemplate": "합계", footerAttributes: {"class": "merge"}, "template": "#=checkboxTemplate1()#" },
-                                    { "title": "NO.", "field": "NO", "width": 60, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "title": "해당월", "field": "해당월", "width": 100, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
-                                    { "title": "CMS",
-                                        "columns" : [ {"title": "시스템", "field": "시스템", "width": 120, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} }, 
-                                                {"title": "출금액", "field": "출금액", "width": 120, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} }]
-                                    }, 
-                                    { "field": "" }]' 
-                                    data-bind="source: gridSource"
-                                    style="height: 320px;">
-                                </div>
-
-                                <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-set">
-                            <div class="title-box sm">
-                                <div class="left-group">
-                                    <span class="amount-set">
-                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                        <span class="amount">26</span><span class="unit">건</span>
-                                    </span>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-set">
-                                        <span class="form-label">전표일</span>
-                                        <input data-role="datepicker" 
-                                            data-format="yyyy/MM/dd"
-                                            placeholder="yyyymmdd" 
-                                            data-culture="ko-KR"
-                                            data-footer="false"
-                                            class="datepicker sm">
-                                        <button data-role="button" class="k-button blue-border"><span>입력</span></button>
-                                        <button data-role="button" class="k-button"><span>수정</span></button>
-                                    </div>
-                                    <div class="form-set">
-                                        <button data-role="button" class="k-button"><span>총금액 연동</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
-                            <div class="table-content grid" id="viewModel_grid2">
-                                <script type="text/x-kendo-template" class="checkboxTemplate2">
-                                    <div class="h-checkbox no-label">
-                                        <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                        <label for="checkbox-nolabel"></label> 
-                                    </div>
-                                </script>
-                                <div data-role="grid" 
-                                    data-sortable="true" 
-                                    data-editable="true" 
-                                    data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "footerTemplate": "합계", footerAttributes: {"class": "merge"}, "template": "#=checkboxTemplate2()#" },
-                                    { "title": "NO.", "field": "NO", "width": 60, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "title": "은행명", "field": "은행명", "width": 160, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
-                                    { "title": "서비스명", "field": "서비스명", "width": 140, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
-                                    { "title": "출금계좌", "field": "출금계좌", "width": 140, footerAttributes: {"class": "merge"}, "attributes" : {"class": "text-center"} },
-                                    { "title": "시스템", "field": "시스템", "width": 140, "footerTemplate": "2,754,854,830", "attributes" : {"class": "text-right"} },
-                                    { "field": ""  }
-                                    ]' 
-                                    data-bind="source: gridSource"
-                                    style="height: 320px">
-                                </div>
-                                <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-
             </main>
         </div>
 

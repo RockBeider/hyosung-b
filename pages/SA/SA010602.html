@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Header Include -->
+        <div data-include-path="../layout/header.html"></div>
+
+        <div id="container">
+            <!-- Header Include -->
+            <div data-include-path="../layout/lnb.html"></div>
+             <!-- Contents -->
+             <main class="contents-wrap">
+                <button id="show" data-role="button" data-bind="click: show, enabled: isEnabled">Popup Button</button>
+            </main>
+        </div>
+
+        <div data-role="dialog"
+             data-title="실적대상설정"
+             data-modal="false"
+             data-bind="dialogOpen: isVisible,
+                            events: { close: onClose}"
+            class="md">
+            <div class="content-group">
+                <div class="table-set">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="90px">
+                                <col width="*">
+                                <col width="90px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">대상구분</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="업종/상품" data-option-label="업종/상품" class="lg">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                    <th scope="row">대상선택</th>
+                                    <td>
+                                        <select data-role="dropdownlist" data-value="업종/상품코드" data-option-label="업종/상품코드" class="lg">
+                                            <option value="1">온라인</option>
+                                            <option value="2">오프라인</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">가점/감점</th>
+                                    <td>
+                                        <div class="check-group">
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio1-1" name="radio" checked="checked" />
+                                                <label for="radio1-1"><span>법인</span></label>
+                                            </div>
+                                            <div class="h-checkbox">
+                                                <input type="radio" id="radio1-2" name="radio" />
+                                                <label for="radio1-2"><span>개인</span></label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th scope="row">대상점수</th>
+                                    <td><input type="text" class="h-input" value=""/></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">시작일</th>
+                                    <td>
+                                        <input data-role="datepicker" 
+                                            data-format="yyyy/MM/dd"
+                                            placeholder="yyyymmdd" 
+                                            data-culture="ko-KR"
+                                            data-footer="false"
+                                            class="datepicker" />
+                                    </td>
+                                    <th scope="row">종료일</th>
+                                    <td>
+                                        <input data-role="datepicker" 
+                                        data-format="yyyy/MM/dd"
+                                        placeholder="yyyymmdd" 
+                                        data-culture="ko-KR"
+                                        data-footer="false"
+                                        class="datepicker" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="btn-box bottom justify-content-between">
+                    <button data-role="button" class="light-blue">삭제</button>
+                    <button data-role="button" class="">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Default Script Include -->
+    <script src="../../resources/lib/kendo/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
+    <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script> 
+        // Implement custom binder for the 'visible' configuration option
+        kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                    console.log('open');
+                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                        $('.k-dialog').css({"height":"100%"});
+                    }
+                } else {
+                    dialog.close();
+                }
+            }
+        });
+        var viewModel = kendo.observable({
+            isVisible: true,
+            isClosable: true,
+            isEnabled: false,
+            onClose: function (e) {
+                this.set("isVisible", false);
+                this.set("isEnabled", true);
+            },
+            show: function (e) {
+                this.set("isVisible", true);
+                this.set("isEnabled", false);
+            },
+
+        });
+        kendo.bind($(".wrap"), viewModel);
+      
+
+    </script>
+</body>
+
+</html>

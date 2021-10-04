@@ -17,468 +17,472 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-                <!-- Contents Header -->
-                <div class="contents-header">
-                    <div class="title-box lg">
-                        <div class="left-group">
-                            <h2 class="main-title">심사조건</h2>
-                            <span class="h-ico lg tip ml-8"
-                                title="툴팁 메세지 입니다."
-                                data-role="tooltip"
-                                data-auto-hide="true"
-                                data-position="left bottom"
-                            >팁</span>
-                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
-                        </div>
-                        <div class="right-group">
-                            <nav id="breadcrumb"
-                                data-role="breadcrumb"
-                                data-editable=false,
-                                data-navigational=true,
-                                data-items='[
-                            { type:"rootitem", href: "", text: "기준정보", showText: true },
-                            { type:"item", href: "", text: "심사조건", showText: true}
-                         ]'/>
+                <div id="mainTab" class="tab-control main">
+                    <div class="contents">
+                        <div class="scroll">
+                            <div class="contents-header">
+                                <div class="title-box lg">
+                                    <div class="left-group">
+                                        <h2 class="main-title">심사조건</h2>
+                                        <span class="h-ico lg tip ml-8"
+                                            title="툴팁 메세지 입니다."
+                                            data-role="tooltip"
+                                            data-auto-hide="true"
+                                            data-position="left bottom"
+                                        >팁</span>
+                                        <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                                    </div>
+                                    <div class="right-group">
+                                        <nav id="breadcrumb"
+                                            data-role="breadcrumb"
+                                            data-editable=false,
+                                            data-navigational=true,
+                                            data-items='[
+                                        { type:"rootitem", href: "", text: "기준정보", showText: true },
+                                        { type:"item", href: "", text: "심사조건", showText: true}
+                                    ]'/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contents Body -->
+                            <div class="contents-body">
+
+                                <div class="table-group">
+                                    <div data-role="tabstrip" class="tab-control border"
+                                        id="viewModel_tab"
+                                        data-bind="visible: isVisible">
+                                        <ul class="tab-menu">
+                                            <li class="k-state-active">안전업종</li>
+                                            <li>표준업종</li>
+                                            <li>정밀업종</li>
+                                            <li>불가업종</li>
+                                            <li>업종공통조건</li>
+                                            <div class="btn-box">
+                                                <button data-role="button" class=""><span>심사조건추가</span></button>
+                                                <button data-role="button" class=""><span>심사서류추가</span></button>
+                                            </div>
+                                        </ul>
+                                        <!-- 첫번째 탭(안전업종) -->
+                                        <div class="tabpanel">
+                                            <!-- 신용정보조회 -->
+                                            <div class="divide">
+                                                <div class="check-group">
+                                                    <div class="h-checkbox">
+                                                        <input type="checkbox" id="checkbox1-1" name="checkbox" disabled="disabled" checked="checked" />
+                                                        <label for="checkbox1-1"><span>신용정보조회</span></label>
+                                                    </div>
+                                                    <div class="h-checkbox">
+                                                        <input type="checkbox" id="checkbox1-2" name="checkbox" checked="checked" />
+                                                        <label for="checkbox1-2"><span>AML</span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- //신용정보조회 -->
+                                            <!-- 구비서류 -->
+                                            <div class="divide">
+                                                <div class="title-box md mt-0">
+                                                    <h2 class="sub-title dot">구비서류</h2>
+                                                </div>
+                                                <div class="check-group">
+                                                    <div class="h-checkbox">
+                                                        <input type="checkbox" id="checkbox2-1" name="checkbox" />
+                                                        <label for="checkbox2-1"><span>서비스 이용신청서</span></label>
+                                                    </div>
+                                                    <div class="h-checkbox">
+                                                        <input type="checkbox" id="checkbox2-2" name="checkbox" checked="checked" />
+                                                        <label for="checkbox2-2"><span>사업자등록증</span></label>
+                                                    </div>
+                                                    <div class="h-checkbox">
+                                                        <input type="checkbox" id="checkbox2-3" name="checkbox" checked="checked" />
+                                                        <label for="checkbox2-3"><span>개인정보취급위탁동의서</span></label>
+                                                    </div>
+                                                    <div class="h-checkbox">
+                                                        <input type="checkbox" id="checkbox2-4" name="checkbox" checked="checked" />
+                                                        <label for="checkbox2-4"><span>고객거래확인서</span></label>
+                                                    </div>
+                                                    <div class="h-checkbox">
+                                                        <input type="checkbox" id="checkbox2-5" name="checkbox" />
+                                                        <label for="checkbox2-5"><span>사업여부증빙</span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- //구비서류 -->
+                                            <!-- 담보방식 -->
+                                            <div class="divide">
+                                                <div class="title-box md mt-0">
+                                                    <h2 class="sub-title dot">담보방식 / 정산주기 별 담보율</h2>
+                                                </div>
+                                                <div class="table-group half">
+                                                    <div class="table-set mt-0">
+                                                        <div class="title-box xsm mt-0">
+                                                            <h2 class="sub-title">CMS</h2>
+                                                        </div>
+                                                        <div class="table">
+                                                            <table>
+                                                                <colgroup>
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">담보방식</th>
+                                                                        <th scope="col">D + 2일</th>
+                                                                        <th scope="col">D + 3일</th>
+                                                                        <th scope="col">D + 4일</th>
+                                                                        <th scope="col">D + 5일</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-center">현금담보</td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center">보증보험</td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-set mt-0">
+                                                        <div class="title-box xsm mt-0">
+                                                            <h2 class="sub-title">신용카드</h2>
+                                                        </div>
+                                                        <div class="table">
+                                                            <table>
+                                                                <colgroup>
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">담보방식</th>
+                                                                        <th scope="col">D + 7일</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-center">보증보험</td>
+                                                                        <td>
+                                                                            <div class="form-set">
+                                                                                <input type="text" class="h-input" value="30" />
+                                                                                <span class="unit">%</span>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- //담보방식 -->
+                                            <!-- 업종 -->
+                                            <div class="divide">
+                                                <div class="title-box md mt-0">
+                                                    <h2 class="sub-title dot">업종</h2>
+                                                </div>
+                                                <div class="title-box xs">
+                                                    <div class="left-group">
+                                                        <div class="h-checkbox" id="listTransferAllTo1">
+                                                            <input type="checkbox" id="checkbox_list1" name="checkbox" />
+                                                            <label for="checkbox_list1"><span>모두선택</span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-group">
+                                                        <span class="amount-set">
+                                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                            <span class="amount">26</span><span class="unit">건</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="optional-box" id="viewModel_listbox1">
+                                                    <script type="text/x-kendo-template" id="leftboxTemplate1">
+                                                        <div class="list-box listTransferTo1">
+                                                            <h3 class="title">#: ProductName #</h3>
+                                                            <span class="#: ProductClass #">#: ProductID #</span>
+                                                        </div>
+                                                    </script>
+                                                    <script type="text/x-kendo-template" id="rightboxTemplate1">
+                                                        <div class="list-box listTransferFrom1">
+                                                            <h3 class="title">#: ProductName #</h3>
+                                                            <i class="h-ico close"></i>
+                                                        </div>
+                                                    </script> 
+                                                    <select id="listbox1_1" 
+                                                        data-role="listbox"
+                                                        data-text-field="ProductName"
+                                                        data-value-field="ProductID"
+                                                        data-connect-with="listbox1_2"
+                                                        data-template="leftboxTemplate1"
+                                                        data-toolbar='{
+                                                            tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
+                                                        }'
+                                                        data-bind="source: sectors">
+                                                    </select>
+                                                    <select id="listbox1_2" 
+                                                        data-role="listbox"
+                                                        data-text-field="ProductName"
+                                                        data-value-field="ProductID"
+                                                        data-connect-with="listbox1_1"
+                                                        data-template="rightboxTemplate1"
+                                                        >
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- //업종 -->
+                                            <div class="btn-box bottom">
+                                                <button data-role="button" class="">수정완료</button>
+                                            </div>
+                                        </div>
+                                        <!-- //첫번째 탭 -->
+                                        <!-- 두번째 탭 -->
+                                        <div class="tabpanel">
+                                            두번째 탭
+                                        </div>
+                                        <!-- //두번째 탭 -->
+                                        <!-- 세번째 탭 -->
+                                        <div class="tabpanel">
+                                            세번째 탭
+                                        </div>
+                                        <!-- //세번째 탭 -->
+                                        <!-- 네번째 탭 -->
+                                        <div class="tabpanel">
+                                            네번째 탭
+                                        </div>
+                                        <!-- //네번째 탭 -->
+                                        <!-- 다섯번째 탭 -->
+                                        <div class="tabpanel">
+                                            <div class="divide">
+                                                <div class="table-group half">
+                                                    <div class="table-set mt-0">
+                                                        <div class="title-box md mt-0">
+                                                            <h2 class="sub-title dot">FMS 제공 자동이체 동의 방식</h2>
+                                                        </div>
+                                                        <div class="table">
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">상품명</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="간편인증동의" data-option-label="간편인증동의" class="lg">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="간편녹취동의" data-option-label="간편녹취동의" class="lg">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <ul class="table-guide">
+                                                            <li class="list">사용인 경우 한단계 위 심사기준으로 간주 함</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="table-set mt-0">
+                                                        <div class="title-box md mt-0">
+                                                            <h2 class="sub-title dot">사업개시일 & 매출규모 기준</h2>
+                                                        </div>
+                                                        <div class="table">
+                                                            <table>
+                                                                <colgroup>
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                    <col width="*">
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">매출규모</th>
+                                                                        <th scope="col">영세(~3억)</th>
+                                                                        <th scope="col">중소1(3~5억)</th>
+                                                                        <th scope="col">중소2(5~10억)</th>
+                                                                        <th scope="col">중소3(10~30억)</th>
+                                                                        <th scope="col">일반(30억~)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-center">사업개시 1년미만</td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center">사업개시 1~3년</td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center">사업개시 1~3년</td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select data-role="dropdownlist" data-value="0" data-option-label="0">
+                                                                                <option value="1">온라인</option>
+                                                                                <option value="2">오프라인</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <ul class="table-guide">
+                                                            <li class="list">O에 해당되는 경우 한단계 위 심사기준으로 간주 함</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //다섯번째 탭 -->
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Contents Body -->
-                <div class="contents-body">
-
-                    <div class="table-group">
-                        <div data-role="tabstrip" class="tab-control box"
-                            id="viewModel_tab"
-                            data-bind="visible: isVisible">
-                            <ul class="tab-menu">
-                                <li class="k-state-active">안전업종</li>
-                                <li>표준업종</li>
-                                <li>정밀업종</li>
-                                <li>불가업종</li>
-                                <li>업종공통조건</li>
-                                <div class="btn-box">
-                                    <button data-role="button" class=""><span>심사조건추가</span></button>
-                                    <button data-role="button" class=""><span>심사서류추가</span></button>
-                                </div>
-                            </ul>
-                            <!-- 첫번째 탭(안전업종) -->
-                            <div class="tabpanel">
-                                <!-- 신용정보조회 -->
-                                <div class="divide">
-                                    <div class="check-group">
-                                        <div class="h-checkbox">
-                                            <input type="checkbox" id="checkbox1-1" name="checkbox" disabled="disabled" checked="checked" />
-                                            <label for="checkbox1-1"><span>신용정보조회</span></label>
-                                        </div>
-                                        <div class="h-checkbox">
-                                            <input type="checkbox" id="checkbox1-2" name="checkbox" checked="checked" />
-                                            <label for="checkbox1-2"><span>AML</span></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- //신용정보조회 -->
-                                <!-- 구비서류 -->
-                                <div class="divide">
-                                    <div class="title-box md mt-0">
-                                        <h2 class="sub-title dot">구비서류</h2>
-                                    </div>
-                                    <div class="check-group">
-                                        <div class="h-checkbox">
-                                            <input type="checkbox" id="checkbox2-1" name="checkbox" />
-                                            <label for="checkbox2-1"><span>서비스 이용신청서</span></label>
-                                        </div>
-                                        <div class="h-checkbox">
-                                            <input type="checkbox" id="checkbox2-2" name="checkbox" checked="checked" />
-                                            <label for="checkbox2-2"><span>사업자등록증</span></label>
-                                        </div>
-                                        <div class="h-checkbox">
-                                            <input type="checkbox" id="checkbox2-3" name="checkbox" checked="checked" />
-                                            <label for="checkbox2-3"><span>개인정보취급위탁동의서</span></label>
-                                        </div>
-                                        <div class="h-checkbox">
-                                            <input type="checkbox" id="checkbox2-4" name="checkbox" checked="checked" />
-                                            <label for="checkbox2-4"><span>고객거래확인서</span></label>
-                                        </div>
-                                        <div class="h-checkbox">
-                                            <input type="checkbox" id="checkbox2-5" name="checkbox" />
-                                            <label for="checkbox2-5"><span>사업여부증빙</span></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- //구비서류 -->
-                                <!-- 담보방식 -->
-                                <div class="divide">
-                                    <div class="title-box md mt-0">
-                                        <h2 class="sub-title dot">담보방식 / 정산주기 별 담보율</h2>
-                                    </div>
-                                    <div class="table-group half">
-                                        <div class="table-set mt-0">
-                                            <div class="title-box xsm mt-0">
-                                                <h2 class="sub-title">CMS</h2>
-                                            </div>
-                                            <div class="table">
-                                                <table>
-                                                    <colgroup>
-                                                        <col width="*">
-                                                        <col width="*">
-                                                        <col width="*">
-                                                        <col width="*">
-                                                        <col width="*">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">담보방식</th>
-                                                            <th scope="col">D + 2일</th>
-                                                            <th scope="col">D + 3일</th>
-                                                            <th scope="col">D + 4일</th>
-                                                            <th scope="col">D + 5일</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text-center">현금담보</td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-center">보증보험</td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="table-set mt-0">
-                                            <div class="title-box xsm mt-0">
-                                                <h2 class="sub-title">신용카드</h2>
-                                            </div>
-                                            <div class="table">
-                                                <table>
-                                                    <colgroup>
-                                                        <col width="*">
-                                                        <col width="*">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">담보방식</th>
-                                                            <th scope="col">D + 7일</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text-center">보증보험</td>
-                                                            <td>
-                                                                <div class="form-set">
-                                                                    <input type="text" class="h-input" value="30" />
-                                                                    <span class="unit">%</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- //담보방식 -->
-                                <!-- 업종 -->
-                                <div class="divide">
-                                    <div class="title-box md mt-0">
-                                        <h2 class="sub-title dot">업종</h2>
-                                    </div>
-                                    <div class="title-box xs">
-                                        <div class="left-group">
-                                            <div class="h-checkbox" id="listTransferAllTo1">
-                                                <input type="checkbox" id="checkbox_list1" name="checkbox" />
-                                                <label for="checkbox_list1"><span>모두선택</span></label>
-                                            </div>
-                                        </div>
-                                        <div class="right-group">
-                                            <span class="amount-set">
-                                                <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                                <span class="amount">26</span><span class="unit">건</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="optional-box" id="viewModel_listbox1">
-                                        <script type="text/x-kendo-template" id="leftboxTemplate1">
-                                            <div class="list-box listTransferTo1">
-                                                <h3 class="title">#: ProductName #</h3>
-                                                <span class="#: ProductClass #">#: ProductID #</span>
-                                            </div>
-                                        </script>
-                                        <script type="text/x-kendo-template" id="rightboxTemplate1">
-                                            <div class="list-box listTransferFrom1">
-                                                <h3 class="title">#: ProductName #</h3>
-                                                <i class="h-ico close"></i>
-                                            </div>
-                                        </script> 
-                                        <select id="listbox1_1" 
-                                            data-role="listbox"
-                                            data-text-field="ProductName"
-                                            data-value-field="ProductID"
-                                            data-connect-with="listbox1_2"
-                                            data-template="leftboxTemplate1"
-                                            data-toolbar='{
-                                                tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom", "remove"]
-                                            }'
-                                            data-bind="source: sectors">
-                                        </select>
-                                        <select id="listbox1_2" 
-                                            data-role="listbox"
-                                            data-text-field="ProductName"
-                                            data-value-field="ProductID"
-                                            data-connect-with="listbox1_1"
-                                            data-template="rightboxTemplate1"
-                                            >
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- //업종 -->
-                                <div class="btn-box bottom">
-                                    <button data-role="button" class="">수정완료</button>
-                                </div>
-                            </div>
-                            <!-- //첫번째 탭 -->
-                            <!-- 두번째 탭 -->
-                            <div class="tabpanel">
-                                두번째 탭
-                            </div>
-                            <!-- //두번째 탭 -->
-                            <!-- 세번째 탭 -->
-                            <div class="tabpanel">
-                                세번째 탭
-                            </div>
-                            <!-- //세번째 탭 -->
-                            <!-- 네번째 탭 -->
-                            <div class="tabpanel">
-                                네번째 탭
-                            </div>
-                            <!-- //네번째 탭 -->
-                            <!-- 다섯번째 탭 -->
-                            <div class="tabpanel">
-                                <div class="divide">
-                                    <div class="table-group half">
-                                        <div class="table-set mt-0">
-                                            <div class="title-box md mt-0">
-                                                <h2 class="sub-title dot">FMS 제공 자동이체 동의 방식</h2>
-                                            </div>
-                                            <div class="table">
-                                                <table>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">상품명</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="간편인증동의" data-option-label="간편인증동의" class="lg">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="간편녹취동의" data-option-label="간편녹취동의" class="lg">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <ul class="table-guide">
-                                                <li class="list">사용인 경우 한단계 위 심사기준으로 간주 함</li>
-                                            </ul>
-                                        </div>
-                                        <div class="table-set mt-0">
-                                            <div class="title-box md mt-0">
-                                                <h2 class="sub-title dot">사업개시일 & 매출규모 기준</h2>
-                                            </div>
-                                            <div class="table">
-                                                <table>
-                                                    <colgroup>
-                                                        <col width="*">
-                                                        <col width="*">
-                                                        <col width="*">
-                                                        <col width="*">
-                                                        <col width="*">
-                                                        <col width="*">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">매출규모</th>
-                                                            <th scope="col">영세(~3억)</th>
-                                                            <th scope="col">중소1(3~5억)</th>
-                                                            <th scope="col">중소2(5~10억)</th>
-                                                            <th scope="col">중소3(10~30억)</th>
-                                                            <th scope="col">일반(30억~)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text-center">사업개시 1년미만</td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-center">사업개시 1~3년</td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-center">사업개시 1~3년</td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select data-role="dropdownlist" data-value="0" data-option-label="0">
-                                                                    <option value="1">온라인</option>
-                                                                    <option value="2">오프라인</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <ul class="table-guide">
-                                                <li class="list">O에 해당되는 경우 한단계 위 심사기준으로 간주 함</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //다섯번째 탭 -->
-                        </div>
-                        
-                    </div>
-                </div>
-
             </main>
         </div>
 

@@ -573,6 +573,10 @@
 					font-weight: 500 !important;
 				}
             }
+            .k-textarea .k-input {
+                @include bc-font-size-xsm;
+                color: $gray-2;
+            }
         }
     }
     .reserve-title {

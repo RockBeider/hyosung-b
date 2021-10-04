@@ -158,15 +158,13 @@
         max-width: 250px;  
         margin-top: 0;
         padding: 7px;
-        
-        .list {
-            width: 50%;
-            padding: 3px;
-        }
-        .k-button { 
-            display: flex;
-            width: 100%;
+        justify-content: flex-start;
+        .list.k-button {
+            width: calc(50% - 6px);
             height: 40px;
+            margin: 3px;
+            display: flex;
+            border-radius: 3px;
             background: $white;
             border: 1px solid $gray-c;
             color: $gray-2;
@@ -188,13 +186,43 @@
         margin: -3px;
         
         .list {
+            &.k-button {
+                height: auto;
+                border: none;
+                background-color: #fff;
+                &.k-state-active, &.k-state-focused, &:hover {
+                    &:last-child {
+                        border: none;
+                    }
+                    .col {
+                        border: 1px solid $layer-blue;
+                        color: $layer-blue;
+                        font-weight: bold;
+                    }
+                    + .k-button {
+                        border: none;
+                    }
+                    // .col {
+                    // }
+                }
+                + .k-state-active, .k-state-focused {
+                    padding-left: 3px;
+                }
+                + .k-button {
+                    margin-left: 0;
+                }
+            }
             padding: 3px;
             .h-ico {
                 width: 40px;
                 height: 40px;
                 margin-bottom: 7px;
             }
-            .k-button {
+            .col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 width: 104px;
                 height: 90px;
                 padding: 14px 3px 8px;
@@ -203,14 +231,6 @@
                 border-radius: 3px;
                 color: $gray-2;
                 font-weight: 400;
-                &.k-state-active, &.k-state-focused, &:hover {
-                    border: 1px solid $layer-blue;
-                    color: $layer-blue;
-                    font-weight: bold;
-                }
-                &.col {
-                    flex-direction: column;
-                }
             }
         }
     }

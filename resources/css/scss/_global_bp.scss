@@ -130,6 +130,7 @@
         overflow: hidden;
     }
     &.border {
+        background-color: $white;
         border: 1px solid $gray-c;
         .label {
             color: $gray-2;
@@ -139,9 +140,32 @@
                 background-color: $gray-d;
             }
         }
-        .desc { padding: 0 20px; }
+        .desc { 
+            padding: 0 20px; 
+            color: $gray-3;
+        }
         .info {
             color: $gray-6;
+        }
+        &.k-state-active { //blue bg
+            border: 1px solid $layer-blue;
+            background-color: $layer-blue;
+            color: $white;
+            .label {
+                color: $white;
+                &.has-bar::after {
+                    height: 20px;
+                    margin-top: -10px;
+                    background-color: $bp-light-blue;
+                }
+            }
+            .desc { 
+                color: $white;
+                padding: 0 20px; 
+            }
+            .info {
+                color: $bp-light-blue;
+            }
         }
     }
     &.blue { //blue bg
