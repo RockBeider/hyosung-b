@@ -45,11 +45,12 @@
                 </div>
                 <div class="table-content grid border-none" id="viewModel_grid">
                     <div data-role="grid"
+                        data-editable="true"
                         data-columns='[
                         { "field": "고객사명", "width": 250, "attributes" : {"class": "text-left"}, "headerAttributes": { "style": "display: none"}},
                         { "field": "고객사ID", "attributes" : {"class": "text-left"}, "headerAttributes": { "style": "display: none"} }
-                        ]' 
-                        data-no-records="{ template : '<p>검색 내역이 없습니다.</p>'}" 
+                        ]'
+                        data-no-records="{ template : '<p>검색 내역이 없습니다.</p>'}"
                         data-bind="source: gridSource"
                         class="text-center" style="height: 200px">
                     </div>
@@ -64,7 +65,7 @@
     <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
-    <script> 
+    <script>
         // Implement custom binder for the 'visible' configuration option
         kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
             init: function (widget, bindings, options) {
@@ -102,7 +103,7 @@
 
         });
         kendo.bind($(".wrap"), viewModel);
-       
+
         //grid
         var viewModel_grid = kendo.observable({
             gridSource: [
@@ -116,7 +117,7 @@
             },
         });
         kendo.bind($("#viewModel_grid"), viewModel_grid);
-       
+
     </script>
 </body>
 

@@ -46,12 +46,12 @@
         background-color: $marine-blue;
         border: 1px solid $marine-blue;
     }
-    
+
     &.text {
         background: transparent;
         border: 1px solid transparent;
         height: auto;
-        padding: 0; 
+        padding: 0;
         text-decoration: underline;
         &.is-checked {
             color: $main;
@@ -59,7 +59,7 @@
                 color: $error;
             }
         }
-        
+
     }
     .k-icon {
         width: 16px;
@@ -74,9 +74,9 @@
         > * + * {
             margin-left: 4px;
         }
-        &.md > * + * { 
-            margin-left: 8px; 
-        } 
+        &.md > * + * {
+            margin-left: 8px;
+        }
         &.hidden > * + * {
             margin-left: 0;
         }
@@ -99,7 +99,7 @@
 }
 .h-btn, .k-button { //color
     &:disabled,
-    &:disabled:hover, 
+    &:disabled:hover,
     &:disabled:focus,
     &:disabled:active { //disabled 상태
         cursor: default;
@@ -120,7 +120,7 @@
         &.k-state-focused {
             background-color: $marine-blue;
         }
-        
+
     }
     &.light-blue {
         background-color: $lavender;
@@ -131,14 +131,14 @@
             border: 1px solid #b7cdef;
         }
         &.k-state-active {
-    
+
         }
         &.k-state-focused {
             background-color: #b7cdef;
             border: 1px solid #b7cdef;
         }
         &:disabled,
-        &:disabled:hover, 
+        &:disabled:hover,
         &:disabled:focus,
         &:disabled:active { //disabled 상태
             cursor: default;
@@ -150,7 +150,7 @@
     &.light-blue-border {
         background-color: $tableBG1;
         border: 1px solid $gray-c;
-        
+
     }
     &.blue-border {
         background: $white;
@@ -166,7 +166,7 @@
             background-color: $btn-blue-border-hover-bg;
         }
         &:disabled,
-        &:disabled:hover, 
+        &:disabled:hover,
         &:disabled:focus,
         &:disabled:active { //disabled 상태
             cursor: default;
@@ -191,7 +191,7 @@
             border: 1px solid $gray-a;
         }
         &:disabled,
-        &:disabled:hover, 
+        &:disabled:hover,
         &:disabled:focus,
         &:disabled:active { //disabled 상태
             cursor: default;
@@ -225,14 +225,14 @@
             color: $green;
         }
         &.k-state-active {
-     
+
         }
         &.k-state-focused {
             background-color: $green-light-hover;
             border: 1px solid $green-light-hover;
-            color: $green; 
+            color: $green;
         }
-    }    
+    }
 }
 
 /*
@@ -283,14 +283,14 @@
             min-width: 57px;
             background-color: $white;
             border:  1px solid $gray-a;
-            border-right: 0;
+            border-right-color: transparent;
             color: $gray-7;
             border-radius: 0;
             cursor: pointer;
             &.k-state-active, &.k-state-focused  {
                 background-color: $accent;
                 border: 1px solid $accent;
-                border-right: 0;
+                // border-right: 0;
                 color: $white;
                 + .k-button {
                     border-left: 1px solid $accent;
@@ -299,7 +299,7 @@
             &.k-state-disabled {
                 background-color: $gray-f5;
                 border: 1px solid $gray-a;
-                border-right: 0;
+                // border-right: 0;
                 color: $gray-a;
                 cursor: default;
                 + .k-button {
@@ -348,10 +348,10 @@
                 color: $main;
             }
         }
-        
+
     }
-    
-    &.multi, &.square { 
+
+    &.multi, &.square {
         &.square-8 {
             flex-wrap: wrap;
             justify-content: flex-start;
@@ -395,7 +395,7 @@
                         padding-left: 1px;
                         border: 1px solid $main;
                         right: -1px !important;
-                        z-index: 11; 
+                        z-index: 11;
                     }
                     // background-color: $white;
                     // border-right: 0;
@@ -444,7 +444,7 @@
         }
     }
 
-    
+
 }
 
 .center-box {

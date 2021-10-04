@@ -27,16 +27,16 @@
                             events: { close: onClose}" class="md">
             <div class="content-group">
                 <div class="table-content grid" id="viewModel_number">
-                    <div data-role="grid" 
-                        data-sortable="true" 
-                        data-editable="false" 
+                    <div data-role="grid"
+                        data-sortable="true"
+                        data-editable="true"
                         data-columns='[
                         { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false, "template": "#=SetColor(NO)#" },
                         { "field": "제목", "width": 110, "attributes" : {"class": "text-center"} },
                         { "field": "내용"},
-                        ]' 
+                        ]'
                         data-bind="source: gridSource"
-                        
+
                         style="height: 240px;">
                     </div>
                 </div>
@@ -50,7 +50,7 @@
     <script src="https://kendo.cdn.telerik.com/2014.1.528/js/cultures/kendo.culture.ko-KR.min.js"></script>
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
-    <script> 
+    <script>
         // Implement custom binder for the 'visible' configuration option
         kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
             init: function (widget, bindings, options) {
@@ -88,7 +88,7 @@
 
         });
         kendo.bind($(".wrap"), viewModel);
-       
+
         //grid
         var viewModel_number = kendo.observable({
             gridSource: [
@@ -123,7 +123,7 @@
             else
                 return NO;
         }
-    </script> 
+    </script>
 </body>
 
 </html>
