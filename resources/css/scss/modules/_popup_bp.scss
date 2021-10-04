@@ -24,12 +24,25 @@
 * window
 * ------------------------------
 */
+.k-window {
+    .k-window-titlebar { //head 
+        .k-button {
+            width: 42px;
+            height: 42px;
+        }
+        .k-i-close {
+            @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_closed@2x', $size: 22px 22px );
+            
+        }
+    }
+}
 .select-industry-group {
     display: flex;
     .left-group {
 
     }
     .right-group {
+        flex: 1;
         margin-left: 10px;
         background: $gray-f7;
         border: 1px solid $gray-e;

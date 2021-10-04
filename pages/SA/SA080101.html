@@ -18,89 +18,93 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-                <!-- Contents Header -->
-                <div class="contents-header">
-                    <div class="title-box lg">
-                        <div class="left-group">
-                            <h2 class="main-title">사용자관리</h2>
-                            <span class="h-ico lg tip ml-8"
-                                title="툴팁 메세지 입니다."
-                                data-role="tooltip"
-                                data-auto-hide="true"
-                                data-position="left bottom"
-                            >팁</span>
-                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
-                        </div>
-                        <div class="right-group">
-                            <nav id="breadcrumb"
-                                data-role="breadcrumb"
-                                data-editable=false,
-                                data-navigational=true,
-                                data-items='[
-                            { type:"rootitem", href: "", text: "권한관리", showText: true },
-                            { type:"item", href: "", text: "사용자관리", showText: true}
-                         ]'/>
+                <div id="mainTab" class="tab-control main">
+                    <div class="contents">
+                        <div class="scroll">
+                            <div class="contents-header">
+                                <div class="title-box lg">
+                                    <div class="left-group">
+                                        <h2 class="main-title">사용자관리</h2>
+                                        <span class="h-ico lg tip ml-8"
+                                            title="툴팁 메세지 입니다."
+                                            data-role="tooltip"
+                                            data-auto-hide="true"
+                                            data-position="left bottom"
+                                        >팁</span>
+                                        <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                                    </div>
+                                    <div class="right-group">
+                                        <nav id="breadcrumb"
+                                            data-role="breadcrumb"
+                                            data-editable=false,
+                                            data-navigational=true,
+                                            data-items='[
+                                        { type:"rootitem", href: "", text: "권한관리", showText: true },
+                                        { type:"item", href: "", text: "사용자관리", showText: true}
+                                    ]'/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contents Body -->
+                            <div class="contents-body">
+                                <div class="table-group md">
+                                    <div class="table-set">
+                                        <div class="title-box sm mt-0">
+                                            <span class="amount-set">
+                                                <span class="amount current">1</span><span class="unit">건</span>
+                                            </span>
+                                            <div class="form-set">
+                                                <button data-role="button"><span>그룹등록</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="table-content grid" style="height: calc(100% - 36px);">
+                                            <div data-role="grid" 
+                                                data-scrollable="true"
+                                                data-sortable="false" 
+                                                data-editable="true" 
+                                                data-columns='[
+                                                { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                { "field": "그룹명", "attributes" : {"class": "text-center"}  },
+                                                { "field": "인원", "width": 120, "attributes" : {"class": "text-center"}  }
+                                                ]' 
+                                                data-bind="source: gridSource">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-set">
+                                        <div class="title-box sm mt-0">
+                                            <span class="amount-set">
+                                                <span class="amount current">1</span><span class="unit">건</span>
+                                            </span>
+                                            <div class="form-set">
+                                                <button data-role="button"><span>사용자등록</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="table-content grid" style="height: calc(100% - 36px);">
+                                            <div data-role="grid" 
+                                                data-sortable="true" 
+                                                data-editable="true" 
+                                                data-columns='[
+                                                { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                { "field": "사용자ID", "width": 160, "attributes" : {"class": "text-center"}  },
+                                                { "field": "사용자명", "width": 160, "attributes" : {"class": "text-center"}  },
+                                                { "field": "그룹권한", "width": 160, "attributes" : {"class": "text-center"}  },
+                                                { "field": "휴대전화", "width": 140, "attributes" : {"class": "text-center"}  },
+                                                { "field": "이메일", "width": 160, "attributes" : {"class": "text-center"}  },
+                                                { "field": "부서", "width": 140, "attributes" : {"class": "text-center"}  },
+                                                { "field": "사용유무", "width": 120, "attributes" : {"class": "text-center"}  },
+                                                { "field": "IP", "attributes" : {"class": "text-center"}  },
+                                                ]' 
+                                                data-bind="source: gridSource">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Contents Body -->
-                <div class="contents-body">
-                    <div class="table-group md">
-                        <div class="table-set">
-                            <div class="title-box sm mt-0">
-                                <span class="amount-set">
-                                    <span class="amount current">1</span><span class="unit">건</span>
-                                </span>
-                                <div class="form-set">
-                                    <button data-role="button"><span>그룹등록</span></button>
-                                </div>
-                            </div>
-                            <div class="table-content grid" style="height: calc(100% - 36px);">
-                                <div data-role="grid" 
-                                    data-scrollable="true"
-                                    data-sortable="false" 
-                                    data-editable="true" 
-                                    data-columns='[
-                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "field": "그룹명", "attributes" : {"class": "text-center"}  },
-                                    { "field": "인원", "width": 120, "attributes" : {"class": "text-center"}  }
-                                    ]' 
-                                    data-bind="source: gridSource">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-set">
-                            <div class="title-box sm mt-0">
-                                <span class="amount-set">
-                                    <span class="amount current">1</span><span class="unit">건</span>
-                                </span>
-                                <div class="form-set">
-                                    <button data-role="button"><span>사용자등록</span></button>
-                                </div>
-                            </div>
-                            <div class="table-content grid" style="height: calc(100% - 36px);">
-                                <div data-role="grid" 
-                                    data-sortable="true" 
-                                    data-editable="true" 
-                                    data-columns='[
-                                    { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "field": "사용자ID", "width": 160, "attributes" : {"class": "text-center"}  },
-                                    { "field": "사용자명", "width": 160, "attributes" : {"class": "text-center"}  },
-                                    { "field": "그룹권한", "width": 160, "attributes" : {"class": "text-center"}  },
-                                    { "field": "휴대전화", "width": 140, "attributes" : {"class": "text-center"}  },
-                                    { "field": "이메일", "width": 160, "attributes" : {"class": "text-center"}  },
-                                    { "field": "부서", "width": 140, "attributes" : {"class": "text-center"}  },
-                                    { "field": "사용유무", "width": 120, "attributes" : {"class": "text-center"}  },
-                                    { "field": "IP", "attributes" : {"class": "text-center"}  },
-                                    ]' 
-                                    data-bind="source: gridSource">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </main>
         </div>
 

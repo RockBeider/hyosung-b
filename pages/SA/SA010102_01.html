@@ -73,8 +73,13 @@
                                     <td>
                                         <div class="form-set">
                                             <input type="text" class="h-input" placeholder="" />
-                                            <!-- [D] 체크 됐을 때 .is-checked 추가 -->
-                                            <button type="button" data-role="button" data-icon="input-check" class="text input-check"><span>ID체크</span></button>
+                                            <button 
+                                                data-role="button" 
+                                                data-icon="input-check" 
+                                                id="viewModel_button"
+                                                class="text input-check"
+                                                data-bind="visible: isVisible, events: { click: onClick }"
+                                            ><span>ID체크</span></button>
                                         </div>
                                     </td>
                                     <th scope="row">거래처코드<span class="required">*</span></th>
@@ -254,6 +259,15 @@
 
         });
         kendo.bind($(".wrap"), viewModel);
+
+        var viewModel_button = kendo.observable({
+            isVisible: true,
+            onClick: function () {
+                $("#viewModel_button").toggleClass("k-state-active-custom");
+            }
+            
+        });
+        kendo.bind($("#viewModel_button"), viewModel_button);
 
        
     </script>

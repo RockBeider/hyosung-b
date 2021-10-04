@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../resources/css/index.css">
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap"> 
         <!-- Header Include -->
         <div data-include-path="../layout/header.html"></div>
 
@@ -23,7 +23,7 @@
                             <div class="contents-header">
                                 <div class="title-box lg">
                                     <div class="left-group">
-                                        <h2 class="main-title">이메일 관리</h2>
+                                        <h2 class="main-title">거래처정보</h2>
                                         <span class="h-ico lg tip ml-8"
                                             title="툴팁 메세지 입니다."
                                             data-role="tooltip"
@@ -38,8 +38,8 @@
                                             data-editable=false,
                                             data-navigational=true,
                                             data-items='[
-                                        { type:"rootitem", href: "", text: "서비스품질", showText: true },
-                                        { type:"item", href: "", text: "이메일 관리", showText: true}
+                                        { type:"rootitem", href: "", text: "기준정보", showText: true },
+                                        { type:"item", href: "", text: "거래처정보", showText: true}
                                     ]'/>
                                     </div>
                                 </div>
@@ -52,20 +52,20 @@
                                         <div class="form-group">
                                             <span class="label">검색항목</span>
                                             <div class="form-set">
-                                                <select data-role="dropdownlist" data-value="제목" data-option-label="제목" class="sm">
+                                                <select data-role="dropdownlist" data-value="전체" data-option-label="전체" class="sm">
                                                     <option value="1">온라인</option>
                                                     <option value="2">오프라인</option>
                                                 </select>
                                                 <div class="input-set search lg">
-                                                    <i class="h-ico sm search">검색</i>
+                                                    <i class="h-ico search"></i>
                                                     <input type="text" class="h-input" placeholder="입력해주세요">
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                         <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
                                     </div>
                                     <div class="table-set">
-                                        <!-- toolbar template -->
                                         <script type="text/x-kendo-template" class="toolbarTemplate">
                                             <div class="title-box sm">
                                                 <div class="left-group">
@@ -76,29 +76,37 @@
                                                 </div>
                                                 <div class="right-group">
                                                     <div class="btn-box">
-                                                        <button role="button" class="k-button"><span>이메일발송</span></button>
-                                                        <button role="button" class="k-button light-blue"><span>수신거부관리</span></button>
+                                                        <button role="button" class="k-button k-grid-add"><span>등록</span></button>
+                                                        <button role="button" class="k-button green"><span>엑셀</span></button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </script>
-                                        <!-- checkbox template -->
                                         <script type="text/x-kendo-template" class="checkboxTemplate">
                                             <div class="h-checkbox no-label">
                                                 <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
                                                 <label for="checkbox-nolabel"></label> 
                                             </div>
                                         </script>
-                                        <div class="table-content grid" id="viewModel_grid_sort">
+                                        <div class="table-content grid has-bottom">
                                             <div data-role="grid" 
-                                                data-sortable="true" 
-                                                data-editable="true" 
-                                                data-toolbar="#=toolbarTemplate()#"
-                                                data-columns='[
-                                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 50, "template": "#=checkboxTemplate()#" },
+                                            data-sortable="true" 
+                                            data-editable="true" 
+                                            data-bind="source: gridSource"
+                                            data-toolbar="#=toolbarTemplate()#"
+                                            data-columns='[
+                                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
                                                 { "title": "NO.", "field": "NO", "width": 50, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                                { "field": "기타"}
-                                            ]' data-bind="source: gridSource">
+                                                { "field": "상품코드", "width": 90 },
+                                                { "field": "상품명", "width": 170 },
+                                                { "field": "어플리케이션", "width": 146 },
+                                                { "field": "표준가격", "width": 140 },
+                                                { "field": "최소가격", "width": 146 },
+                                                { "field": "승인상태", "width": 140 },
+                                                { "field": "사용가능업종", "width": 140 },
+                                                { "field": "등록일", "width": 120 },
+                                                { "field": "종료일", "width": 120 }
+                                            ]'>
                                             </div>
                                             <div class="table-bottom">
                                                 <button data-role="button" class="gray-border">삭제</button>
@@ -121,21 +129,19 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script>
-      
-        var viewModel_grid_sort = kendo.observable({
+        var viewModel = kendo.observable({
             gridSource: [
-                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"40,000 원"},
-                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"20,000 원"},
-                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원"}
+                { "NO":"1",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"2",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" },
+                { "NO":"3",  "상품코드":"00001","상품명":"효성CMS", "어플리케이션":"CMS","표준가격":"100,000 원","최소가격":"80,000 원","승인상태":"승인완료","사용가능업종":"전업종","등록일":"2020/12/31","종료일":"2020/12/31" }
             ],
             displayGridSource: function() {
                 return stringify(this.get("gridSource").toJSON());
             },
         });
-        kendo.bind($("#viewModel_grid_sort"), viewModel_grid_sort);
-        kendo.bind($(".wrap"), {});
+        kendo.bind($(".wrap"), viewModel);
         function toolbarTemplate() {
-            var template = kendo.template($('.toolbarTemplate').html()); 
+            var template = kendo.template($('.toolbarTemplate').html());
             var result = template({});
             return result
         }
@@ -144,7 +150,94 @@
             var result = template({});
             return result
         }
-    </script>
+
+
+        // mainTab
+        var tabstrip;
+        var createTabStrip = function () {
+            tabstrip = $("#mainTab").kendoTabStrip({
+                animation: false,
+                dataTextField: "text",
+                dataContentField: "content",
+                dataSource: [
+                    {
+                        text: "메뉴1",
+                        
+                    },
+                    {
+                        text: "메뉴2",
+                        content: "두번째 내용"
+                    },
+                    {
+                        text: "메뉴3",
+                        content: "세번째 내용"
+                    },
+                    {
+                        text: "메뉴4",
+                        content: "네번째 내용"
+                    }
+                ]
+            }).data("kendoTabStrip");
+        };
+
+        var configureSortable = function () {
+            $("#mainTab ul.k-tabstrip-items").kendoSortable({
+                filter: "li.k-item",
+                axis: "x",
+                container: "ul.k-tabstrip-items",
+                hint: function (element) {
+                    return $("<div id='hint' class='k-widget k-tabstrip'><ul class='k-tabstrip-items k-reset'><li class='k-item k-state-active k-tab-on-top'>" + element.html() + "</li></ul></div>");
+                },
+                start: function (e) {
+                    tabstrip.activateTab(e.item);
+                },
+                change: function (e) {
+                    var tabstrip = $("#mainTab").data("kendoTabStrip"),
+                        reference = tabstrip.tabGroup.children().eq(e.newIndex);
+
+                    if (e.oldIndex < e.newIndex) {
+                        tabstrip.insertAfter(e.item, reference);
+                    } else {
+                        tabstrip.insertBefore(e.item, reference);
+                    }
+                }
+            });
+        };
+
+        var configureCloseTab = function () {
+            var tabsElements = $('#mainTab li[role="tab"]');
+            tabsElements.append('<span data-type="remove" class="k-link"><span class="k-icon k-i-x"></span></span>');
+
+            tabstrip.tabGroup.on("click", "[data-type='remove']", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var item = $(e.target).closest(".k-item");
+                tabstrip.remove(item.index());
+
+                if (tabstrip.items().length > 0 && item.hasClass('k-state-active')) {
+                    tabstrip.select(0);
+                }
+            });
+        };
+
+        createTabStrip();
+        configureSortable();
+        tabstrip.select(0);
+        configureCloseTab();
+
+        $("#resetButton").kendoButton({
+            click: function (e) {
+                tabstrip.destroy();
+                $("#mainTab").empty();
+                createTabStrip();
+                configureSortable();
+                tabstrip.select(0);
+                configureCloseTab();
+            }
+        });
+
+</script>
 </body>
 
 </html>

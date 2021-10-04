@@ -62,6 +62,12 @@
 			width: 14px;
 			height: 14px;
 		}
+		&.k-state-active {
+			.k-i-arrow-60-down:before {
+				// transform: rotate(180deg);
+				background: url($imgPathIcon+'/icon_arrow_up.svg') no-repeat center / 15px 15px;
+			}
+		}
 	}
 }
 /*
@@ -113,6 +119,7 @@
 	td {
 		@include bc-font-size-xsm;
 		height: 30px;
+		padding: 2px 9px;
 	}
 }
 
@@ -295,10 +302,17 @@
 
 .tab-control.border {
 	.k-tabstrip-items {
+		border-bottom: 1px solid $gray-e4;
 		.k-item.k-state-active, 
 		.k-item.k-state-selected {
 			border-top: 1px solid $bc-blue;
+			border-bottom-color: transparent;
 			color: $bc-blue;
+		}
+		.k-item {
+			position: relative;
+			@include bc-font-size-default;
+			
 		}
 	}
 }

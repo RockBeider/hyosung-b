@@ -7,7 +7,7 @@
    
 .table { 
     border-top: 1px solid $gray-2;
-    th, td {
+    th {
         color: $gray-5;
     }
     tbody {
@@ -32,6 +32,7 @@
     td {
         padding: 6px 10px;
         height: 36px;
+        color: $gray-2;
     }
     tr:first-child th, 
     tr:first-child td {

@@ -17,100 +17,104 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-                <!-- Contents Header -->
-                <div class="contents-header">
-                    <div class="title-box lg">
-                        <div class="left-group">
-                            <h2 class="main-title">과금정보</h2>
-                            <span class="h-ico lg tip ml-8"
-                                title="툴팁 메세지 입니다."
-                                data-role="tooltip"
-                                data-auto-hide="true"
-                                data-position="left bottom"
-                            >팁</span>
-                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
-                        </div>
-                        <div class="right-group">
-                            <nav id="breadcrumb"
-                                data-role="breadcrumb"
-                                data-editable=false,
-                                data-navigational=true,
-                                data-items='[
-                            { type:"rootitem", href: "", text: "기준정보", showText: true },
-                            { type:"item", href: "", text: "어플리케이션 정보", showText: true}
-                         ]'/>
-                        </div>
-                    </div> 
-                </div>
+                <div id="mainTab" class="tab-control main">
+                    <div class="contents">
+                        <div class="scroll">
+                            <div class="contents-header">
+                                <div class="title-box lg">
+                                    <div class="left-group">
+                                        <h2 class="main-title">과금정보</h2>
+                                        <span class="h-ico lg tip ml-8"
+                                            title="툴팁 메세지 입니다."
+                                            data-role="tooltip"
+                                            data-auto-hide="true"
+                                            data-position="left bottom"
+                                        >팁</span>
+                                        <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                                    </div>
+                                    <div class="right-group">
+                                        <nav id="breadcrumb"
+                                            data-role="breadcrumb"
+                                            data-editable=false,
+                                            data-navigational=true,
+                                            data-items='[
+                                        { type:"rootitem", href: "", text: "기준정보", showText: true },
+                                        { type:"item", href: "", text: "어플리케이션 정보", showText: true}
+                                    ]'/>
+                                    </div>
+                                </div> 
+                            </div>
 
-                <!-- Contents Body -->
-                <div class="contents-body">
-                    <div class="table-group">
-                        <div class="border-box flex-1">
-                            <!-- 과금일 기준 -->
-                            <div class="divide">
-                                <div class="title-box md mt-0">
-                                    <h2 class="sub-title dot">과금일 기준</h2>
-                                </div>
-                                <div class="list-info">
-                                    <span>매월</span>
-                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="xs">
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                    <span>일에 출금하며, 휴일일 경우</span>
-                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="xs">
-                                        <option value="익">익</option>
-                                        <option value="익">익</option>
-                                    </select>
-                                    <span>영업일에 출금</span>
+                            <!-- Contents Body -->
+                            <div class="contents-body">
+                                <div class="table-group">
+                                    <div class="border-box flex-1">
+                                        <!-- 과금일 기준 -->
+                                        <div class="divide">
+                                            <div class="title-box md mt-0">
+                                                <h2 class="sub-title dot">과금일 기준</h2>
+                                            </div>
+                                            <div class="list-info">
+                                                <span>매월</span>
+                                                <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="xs">
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                </select>
+                                                <span>일에 출금하며, 휴일일 경우</span>
+                                                <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="xs">
+                                                    <option value="익">익</option>
+                                                    <option value="익">익</option>
+                                                </select>
+                                                <span>영업일에 출금</span>
+                                            </div>
+                                        </div>
+                                        <!-- //과금일 기준 -->
+                                        <!-- 어플리케이션 사용료 -->
+                                        <div class="divide">
+                                            <div class="title-box md mt-0">
+                                                <h2 class="sub-title dot">어플리케이션 사용료</h2>
+                                            </div>
+                                            <div class="list-info">
+                                                <span>계약즉시 부과하되</span>
+                                                <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="xs">
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                </select>
+                                                <span>일 이후 계약시 당월 과금개시 대상에서 제외</span>
+                                            </div>
+                                        </div>
+                                        <!-- //어플리케이션 사용료 -->
+                                        <!-- 결제 수수료 -->
+                                        <div class="divide">
+                                            <div class="title-box md mt-0">
+                                                <h2 class="sub-title dot">결제 수수료</h2>
+                                            </div>
+                                            <div class="list-info">
+                                                <span>사용 시 부과</span><br/>
+                                                <span>세무사의 경우, 배치/실시간CMS 출금성공금액</span>
+                                                <input type="text" class="h-input sm" placeholder="" value="10,000,000"/>
+                                                <span>원 당</span>
+                                                <input type="text" class="h-input xs" placeholder="" value="25,000"/>
+                                                <span>원의 수수료를 기본 월사용료에 합산하여 부과</span>
+                                            </div>
+                                        </div>
+                                        <!-- //결제 수수료 -->
+                                        <!-- 부가서비스 수수료 -->
+                                        <div class="divide">
+                                            <div class="title-box md mt-0">
+                                                <h2 class="sub-title dot">부가서비스 수수료</h2>
+                                            </div>
+                                            <div class="list-info">
+                                                <span>사용 시 부과</span>
+                                            </div>
+                                        </div>
+                                        <!-- //부가서비스 수수료 -->
+                                    </div>
                                 </div>
                             </div>
-                            <!-- //과금일 기준 -->
-                            <!-- 어플리케이션 사용료 -->
-                            <div class="divide">
-                                <div class="title-box md mt-0">
-                                    <h2 class="sub-title dot">어플리케이션 사용료</h2>
-                                </div>
-                                <div class="list-info">
-                                    <span>계약즉시 부과하되</span>
-                                    <select data-role="dropdownlist" data-value="선택" data-option-label="선택" class="xs">
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                    </select>
-                                    <span>일 이후 계약시 당월 과금개시 대상에서 제외</span>
-                                </div>
-                            </div>
-                            <!-- //어플리케이션 사용료 -->
-                            <!-- 결제 수수료 -->
-                            <div class="divide">
-                                <div class="title-box md mt-0">
-                                    <h2 class="sub-title dot">결제 수수료</h2>
-                                </div>
-                                <div class="list-info">
-                                    <span>사용 시 부과</span><br/>
-                                    <span>세무사의 경우, 배치/실시간CMS 출금성공금액</span>
-                                    <input type="text" class="h-input sm" placeholder="" value="10,000,000"/>
-                                    <span>원 당</span>
-                                    <input type="text" class="h-input xs" placeholder="" value="25,000"/>
-                                    <span>원의 수수료를 기본 월사용료에 합산하여 부과</span>
-                                </div>
-                            </div>
-                            <!-- //결제 수수료 -->
-                            <!-- 부가서비스 수수료 -->
-                            <div class="divide">
-                                <div class="title-box md mt-0">
-                                    <h2 class="sub-title dot">부가서비스 수수료</h2>
-                                </div>
-                                <div class="list-info">
-                                    <span>사용 시 부과</span>
-                                </div>
-                            </div>
-                            <!-- //부가서비스 수수료 -->
                         </div>
                     </div>
                 </div>
-
             </main>
         </div>
 

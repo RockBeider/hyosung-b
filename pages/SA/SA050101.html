@@ -17,105 +17,109 @@
             <div data-include-path="../layout/lnb.html"></div>
             <!-- Contents -->
             <main class="contents-wrap">
-                <!-- Contents Header -->
-                <div class="contents-header">
-                    <div class="title-box lg">
-                        <div class="left-group">
-                            <h2 class="main-title">정산산정</h2>
-                            <span class="h-ico lg tip ml-8"
-                                title="툴팁 메세지 입니다."
-                                data-role="tooltip"
-                                data-auto-hide="true"
-                                data-position="left bottom"
-                            >팁</span>
-                            <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
-                        </div>
-                        <div class="right-group">
-                            <nav id="breadcrumb"
-                                data-role="breadcrumb"
-                                data-editable=false,
-                                data-navigational=true,
-                                data-items='[
-                            { type:"rootitem", href: "", text: "배분", showText: true },
-                            { type:"item", href: "", text: "배분산정", showText: true}
-                         ]'/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contents Body -->
-                <div class="contents-body">
-                    <div class="table-group">
-                        <div class="search-btn pt-0">
-                            <button data-role="button"><span>과금신청</span></button>
-                        </div>
-                        <div class="search-control">
-                            <div class="search-line mt-6">
-                                <div class="form-group">
-                                    <span class="label">배분월</span>
-                                    <div class="form-set">
-                                        <input data-role="datepicker" 
-                                            data-format="yyyy/MM/dd"
-                                            placeholder="yyyymmdd" 
-                                            data-culture="ko-KR"
-                                            data-footer="false"
-                                            class="datepicker sm">
-                                        <span class="bar">~</span>
-                                        <input data-role="datepicker" 
-                                            data-format="yyyy/MM/dd"
-                                            placeholder="yyyymmdd" 
-                                            data-culture="ko-KR"
-                                            data-footer="false"
-                                            class="datepicker sm">
+                <div id="mainTab" class="tab-control main">
+                    <div class="contents">
+                        <div class="scroll">
+                            <div class="contents-header">
+                                <div class="title-box lg">
+                                    <div class="left-group">
+                                        <h2 class="main-title">정산산정</h2>
+                                        <span class="h-ico lg tip ml-8"
+                                            title="툴팁 메세지 입니다."
+                                            data-role="tooltip"
+                                            data-auto-hide="true"
+                                            data-position="left bottom"
+                                        >팁</span>
+                                        <button type="button" class="h-ico sm bookmark ml-4 funcToggle">북마크</button>
+                                    </div>
+                                    <div class="right-group">
+                                        <nav id="breadcrumb"
+                                            data-role="breadcrumb"
+                                            data-editable=false,
+                                            data-navigational=true,
+                                            data-items='[
+                                        { type:"rootitem", href: "", text: "배분", showText: true },
+                                        { type:"item", href: "", text: "배분산정", showText: true}
+                                    ]'/>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
-                        </div>
-                        <div class="table-set">
-                            <script type="text/x-kendo-template" class="toolbarTemplate">
-                                <div class="title-box sm">
-                                    <div class="left-group">
-                                        <span class="amount-set">
-                                            <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
-                                            <span class="amount">26</span><span class="unit">건</span>
-                                        </span>
+
+                            <!-- Contents Body -->
+                            <div class="contents-body">
+                                <div class="table-group">
+                                    <div class="search-btn pt-0">
+                                        <button data-role="button"><span>과금신청</span></button>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="form-set">
-                                            <button role="button" class="k-button"><span>수정</span></button>
-                                            <button role="button" class="k-button"><span>등록</span></button>
+                                    <div class="search-control">
+                                        <div class="search-line mt-6">
+                                            <div class="form-group">
+                                                <span class="label">배분월</span>
+                                                <div class="form-set">
+                                                    <input data-role="datepicker" 
+                                                        data-format="yyyy/MM/dd"
+                                                        placeholder="yyyymmdd" 
+                                                        data-culture="ko-KR"
+                                                        data-footer="false"
+                                                        class="datepicker sm">
+                                                    <span class="bar">~</span>
+                                                    <input data-role="datepicker" 
+                                                        data-format="yyyy/MM/dd"
+                                                        placeholder="yyyymmdd" 
+                                                        data-culture="ko-KR"
+                                                        data-footer="false"
+                                                        class="datepicker sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" data-role="button" class="search" data-icon="search-blue"><span>검색</span></button>
+                                    </div>
+                                    <div class="table-set">
+                                        <script type="text/x-kendo-template" class="toolbarTemplate">
+                                            <div class="title-box sm">
+                                                <div class="left-group">
+                                                    <span class="amount-set">
+                                                        <span class="amount current">1</span><span class="unit">건</span><span class="dash">/</span>
+                                                        <span class="amount">26</span><span class="unit">건</span>
+                                                    </span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-set">
+                                                        <button role="button" class="k-button"><span>수정</span></button>
+                                                        <button role="button" class="k-button"><span>등록</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <script type="text/x-kendo-template" class="checkboxTemplate">
+                                            <div class="h-checkbox no-label">
+                                                <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
+                                                <label for="checkbox-nolabel"></label> 
+                                            </div>
+                                        </script>
+                                        <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
+                                        <div class="table-content grid">
+                                            <div data-role="grid" 
+                                                data-sortable="true" 
+                                                data-editable="true" 
+                                                data-columns='[
+                                                { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
+                                                { "title": "NO.", "field": "NO", "width": 60, "attributes" : {"class": "text-center"}, "sortable": false  },
+                                                { "field": ""  }
+                                                ]' 
+                                                data-bind="source: gridSource"
+                                                data-toolbar="#=toolbarTemplate()#">
+                                            </div>
+                                            <div class="table-bottom">
+                                                <button data-role="button" class="gray-border">삭제</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </script>
-                            <script type="text/x-kendo-template" class="checkboxTemplate">
-                                <div class="h-checkbox no-label">
-                                    <input type="checkbox" data-bind="checked: Discontinued" id="checkbox-nolabel" name="checkbox" />
-                                    <label for="checkbox-nolabel"></label> 
-                                </div>
-                            </script>
-                            <!-- [D] 체크박스 체크 시 .has-bottom 클래스 추가 -->
-                            <div class="table-content grid">
-                                <div data-role="grid" 
-                                    data-sortable="true" 
-                                    data-editable="true" 
-                                    data-columns='[
-                                    { "title": "<div class=h-checkbox><input type=checkbox data-bind=checked: Discontinued id=checkbox-nolabel name=checkbox /><label for=checkbox-nolabel></label></div>", "width": 60, "template": "#=checkboxTemplate()#" },
-                                    { "title": "NO.", "field": "NO", "width": 60, "attributes" : {"class": "text-center"}, "sortable": false  },
-                                    { "field": ""  }
-                                    ]' 
-                                    data-bind="source: gridSource"
-                                    data-toolbar="#=toolbarTemplate()#">
-                                </div>
-                                <div class="table-bottom">
-                                    <button data-role="button" class="gray-border">삭제</button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </main>
         </div>
 
