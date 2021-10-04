@@ -31,120 +31,14 @@
     -webkit-tap-highlight-color: transparent;
 }
     
-/*
-* ------------------------------
-* window
-* ------------------------------
-*/
-/* 임시! */
-
-.k-window { 
-    border-radius: 3px;
-    padding: 0;
-    background: $white;
-    outline: 0;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    position: absolute;
-    z-index: 10002;
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: transparent;
-// }
-// /* 임시! */
-// .k-window {
-    margin: 10px 0;
-    box-sizing: border-box;
-    margin: 0 10px;
-    max-height: calc(100% - 20px);
-    border-radius: 0;
-    overflow: hidden;
-    border: 1px solid $gray-c;
-    box-shadow: 1px 1px 7px 1px rgba(128,128,128,.3);
-    .content-group {
-        
-        overflow: auto;
-        height: calc(100% - 90px);
-        background-color: $gray-f7;
-        padding: 30px;
-        border-top: 0;
-        border-bottom: 0;
-        .agree-area {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-    }
-}
-.k-window-titlebar { //head
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    min-height: 60px;
-    padding: 0 21px 0 30px;
-    background-color: $layer-blue;
-    white-space: nowrap;
-
-    color: $white;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: -1.5px;
-}
-.k-window-content { //body
-    outline: 0;
-    position: relative;
-    flex: 1 1 auto;
-    background: $gray-f7;
-    // overflow: hidden;
-    overflow: auto;
-}
-.k-window-actions {
-    display: flex;
-    .k-button {
-        min-width: 0;
-        width: 40px;
-        height: 40px;
-        outline: none;
-        &:hover, &:focus {
-            background-color: transparent;
-            border: none;
-        }
-        &.k-state-focused {
-            background-color: transparent;
-            border: none;
-        }
-        .k-i- {
-            &window-minimize {
-                @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_min', $size: contain );
-            }
-            &window-restore {
-                @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_minimized', $size: contain );
-            }
-            // &close {
-            //     @include iconPng($width: 22px, $height: 22px, $name: 'btn_pop_closed', $size: contain );
-            // }
-        }
-    }
-}
-
-.window-footer {
-    display: block;
-    padding: 20px 30px;
-    border-top: 1px solid #e5e5e5;
-    text-align: right;
-    .btn-box {
-        margin-top: 0; //bp
-    }
-}
 
 /*
 * ------------------------------
 * dialog
 * ------------------------------
 */
-.k-dialog .k-dialog-content {
+.k-dialog .k-dialog-content,
+.k-window .k-window-content {
     &.alert {
         width: 320px;
         text-align: center;
@@ -179,9 +73,16 @@
         width: 960px;
     }
 }
-.k-window.k-dialog {
+.k-window {
+    max-height: calc(100% - 20px);
+    .k-window-content {
+        overflow: auto;
+    }
+}
+.k-window.k-dialog, 
+.k-window {
     // height: 100%;
-    height: auto !important;
+    height: auto;
     padding: 0;
     background: $white;
     outline: 0;
@@ -212,7 +113,8 @@
         padding-left: 30px;
         padding-right: 30px;
     }
-    .k-dialog-titlebar {
+    .k-dialog-titlebar,
+    .k-window-titlebar {
         @include font-size-lg;
         display: flex;
         justify-content: space-between;
@@ -232,11 +134,14 @@
             margin-right: 35px;
         }
     }
-    .k-dialog-content {
-        height: 100%;
-        height: calc(100% - 50px);
+    .k-dialog-content,
+    .k-window-content {
+        // height: 100%;
+        max-height: calc(100% - 50px);
+        height: auto;
     }
-    .k-button.k-dialog-close {
+    .k-button.k-dialog-close,
+    .k-button.k-window-action {
         .k-i-close {
             @include iconSvg($width: 18px, $height: 18px, $name: 'btn_X', $size: 18px 18px);
         }

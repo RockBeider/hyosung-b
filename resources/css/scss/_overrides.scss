@@ -829,12 +829,13 @@
 	.k-tabstrip-items {
 		height: 40px;
 		border-left: 1px solid $gray-e4;
+		border-bottom: 1px solid $gray-d;
 		// border-right: 1px solid $gray-e4;
-		border-bottom: none;
+		// border-bottom: none;
 		// border: none;
 		color: $gray-5;
 		z-index: 1;
-		overflow: hidden;
+		// overflow: hidden;
 		.k-item {
 			@include font-size-menu;
 			position: relative;
@@ -861,7 +862,7 @@
 			&:first-of-type {
 				// border-left: 1px solid $gray-e4;
 			}
-			&::after {
+			&::before {
 				content: '';
 				position: absolute;
 				top: 10px;
@@ -871,16 +872,7 @@
 				background-color: $gray-e4;
 				z-index: 1;
 			}
-			// &::after {
-			// 	content: '';
-			// 	opacity: 1;
-			// 	width: 100%;
-			// 	height: 1px;
-			// 	position: absolute;
-			// 	bottom: -1px;
-			// 	left: 0;
-			// 	background-color: #fff;
-			// }
+			
 		}
 		.k-link {
 			padding-bottom: 0;
@@ -894,12 +886,22 @@
 			
 			color: $main;
 			font-weight: bold;
-			&::after { 
+			&::after {
+				content: '';
+				opacity: 1;
+				width: 100%;
+				height: 1px;
+				position: absolute;
+				bottom: -1px;
+				left: 0;
+				background-color: #fff;
+			}
+			&::before { 
 				display: none;
 			}
 			+ .k-item {
 				border-left: 1px solid $gray-e4;
-				&::after { 
+				&::before { 
 					display: none;
 				}
 			}

@@ -51,7 +51,7 @@
         width: 960px;
     }
 }
-.k-window.k-dialog {
+.k-window {
     .k-dialog-titlebar {
         @include bc-font-size-sm;  
     }
@@ -84,7 +84,7 @@
  * BC0003
  * ------------------------------
  */
-.bc {
+
     .main-info {
         @include bc-font-size-md;
         margin-top: 20px;
@@ -102,7 +102,7 @@
         display: block;
         margin: 0 auto;
     }
-}
+
 
 /*
  * ------------------------------

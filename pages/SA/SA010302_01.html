@@ -21,12 +21,14 @@
             </main>
         </div>
 
-        <div data-role="dialog"
+        <div data-role="window"
              data-title="상품 등록"
              data-modal="false"
-             data-bind="dialogOpen: isVisible,
-                            events: { close: onClose}"
-            class="md">
+            class="md"
+            data-bind="dialogOpen: isVisible,
+                            enabled: isEnabled,
+                            events: { resize: onResize, dragstart: onDragStart, dragend: onDragEnd, close: onClose }"
+            >
             <div class="content-group">
                 <div class="table-set">
                     <div class="table">
@@ -430,41 +432,50 @@
     <script src="../../resources/lib/kendo/js/kendo.all.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <script> 
+        
         // Implement custom binder for the 'visible' configuration option
         kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
-            init: function (widget, bindings, options) {
-                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
-            },
-            refresh: function () {
-                var that = this;
-                var value = that.bindings["dialogOpen"].get();
-                var dialog = $(that.element).data("kendoDialog");
+                init: function (widget, bindings, options) {
+                    kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+                },
+                refresh: function () {
+                    var that = this;
+                    var value = that.bindings["dialogOpen"].get();
+                    var dialog = $(that.element).data("kendoWindow");
 
-                if (value) {
-                    dialog.open();
-                    console.log('open');
-                    if($('.k-dialog .content-group').prop('scrollHeight') + 60 > $(window).height()) {
-                        $('.k-dialog').css({"height":"100%"});
+                    if (value) {
+                        dialog.center().open();
+                        if($('.k-window .content-group').prop('scrollHeight') + 60 > $(window).height()) {
+                            $('.k-window').css({"height":"100%"});
+                            $('.k-window .content-group').css({"overflow": "auto"});
+                        }
+                        
+                    } else {
+                        dialog.close();
                     }
-                } else {
-                    dialog.close();
                 }
-            }
         });
         var viewModel = kendo.observable({
-            isVisible: true,
-            isClosable: true,
-            isEnabled: false,
-            onClose: function (e) {
-                this.set("isVisible", false);
-                this.set("isEnabled", true);
-            },
-            show: function (e) {
-                this.set("isVisible", true);
-                this.set("isEnabled", false);
-            },
-
-        });
+                isVisible: true,
+                isEnabled: false,
+                onResize: function (e) {
+                    console.log("event :: resize");
+                },
+                onDragEnd: function (e) {
+                    console.log("event :: dragend");
+                },
+                onDragStart: function (e) {
+                    console.log("event :: dragstart");
+                },
+                onClose: function (e) {
+                    this.set("isVisible", false);
+                    this.set("isEnabled", true);
+                },
+                show: function (e) {
+                    this.set("isVisible", true);
+                    this.set("isEnabled", false);
+                },
+            });
         kendo.bind($(".wrap"), viewModel);
         
         //결제상품
